@@ -1,16 +1,20 @@
 #!/usr/bin/env python3
 """Regenerate index.html for the BigCat Learning Hub.
 
-Fetches each repo's last content-commit date via `gh` CLI, then renders the hub.
-Run from repo root: python3 generate_hub.py
+Fetches each repo's latest commit date via the GitHub REST API, then renders
+the hub. Run from repo root:  python3 generate_hub.py
+
+In CI, set GITHUB_TOKEN env var to raise rate limit (5000/hr instead of 60/hr).
 """
 
 import datetime
 import json
-import subprocess
+import os
+import urllib.error
+import urllib.request
 from pathlib import Path
 
-# Each card: (accent_class, emoji, title_zh, subtitle_en, desc, repo, section)
+# (accent_class, emoji, title_zh, subtitle_en, desc, repo, section)
 CARDS = [
     # Daily
     ("mental",     "📚", "每日思维模型",   "Mental Models Daily · Daily 3:00am",   "决策、认知、系统思维、博弈、概率、心理学——每天 3-4 个模型，构建跨学科心智工具箱。",                    "mental-models-daily",         "daily"),
@@ -47,46 +51,38 @@ CSS_VARS = {
 }
 
 
-def latest_content_date(repo: str) -> str:
-    """Return YYYY-MM-DD of the latest commit that touched a content html
-    (a *-day*.html / *-week*.html / *-book*.html file, not index.html).
-    Falls back to repo's most recent commit if no content commit found."""
+def gh_get(url: str):
+    req = urllib.request.Request(url, headers={
+        "Accept": "application/vnd.github+json",
+        "User-Agent": "bigcat-hub-generator",
+    })
+    token = os.environ.get("GITHUB_TOKEN")
+    if token:
+        req.add_header("Authorization", f"Bearer {token}")
+    with urllib.request.urlopen(req, timeout=15) as resp:
+        return json.loads(resp.read().decode())
+
+
+def latest_commit_date(repo: str) -> str:
+    """YYYY-MM-DD of the most recent commit on the default branch.
+
+    Uses a single API call; for our routines, the latest commit is almost
+    always the content commit since they push and exit.
+    """
     try:
-        out = subprocess.check_output(
-            ["gh", "api", f"repos/cissy0802/{repo}/commits?per_page=50"],
-            stderr=subprocess.DEVNULL,
-        )
-        commits = json.loads(out)
-    except subprocess.CalledProcessError:
+        commits = gh_get(f"https://api.github.com/repos/cissy0802/{repo}/commits?per_page=1")
+    except (urllib.error.URLError, urllib.error.HTTPError) as e:
+        print(f"  WARN {repo}: {e}")
         return ""
-    for c in commits:
-        sha = c["sha"]
-        try:
-            files_out = subprocess.check_output(
-                ["gh", "api", f"repos/cissy0802/{repo}/commits/{sha}"],
-                stderr=subprocess.DEVNULL,
-            )
-            files = json.loads(files_out).get("files", [])
-        except subprocess.CalledProcessError:
-            continue
-        for f in files:
-            name = f["filename"]
-            if name == "index.html" or name == "README.md" or name == "generate.py":
-                continue
-            if name.endswith(".html"):
-                return c["commit"]["committer"]["date"][:10]
-    if commits:
-        return commits[0]["commit"]["committer"]["date"][:10]
-    return ""
+    if not commits:
+        return ""
+    return commits[0]["commit"]["committer"]["date"][:10]
 
 
 def card_css() -> str:
     lines = []
     for key, (accent, grad) in CSS_VARS.items():
-        if grad.startswith("linear-gradient"):
-            bg = grad
-        else:
-            bg = f"linear-gradient(90deg,{accent},{grad})"
+        bg = grad if grad.startswith("linear-gradient") else f"linear-gradient(90deg,{accent},{grad})"
         lines.append(f".card.{key}{{--accent:{accent}}}")
         lines.append(f".card.{key}::before{{background:{bg}}}")
     return "\n".join(lines)
@@ -112,18 +108,18 @@ def section(label_en: str, label_zh: str, cards_html: list[str]) -> str:
 
 
 def main():
-    print("Fetching last update dates...")
+    print("Fetching last commit dates...")
     dates = {}
     for c in CARDS:
         repo = c[5]
-        dates[repo] = latest_content_date(repo)
+        dates[repo] = latest_commit_date(repo)
         print(f"  {repo}: {dates[repo] or 'N/A'}")
 
     today = datetime.date.today().strftime("%Y-%m-%d")
 
-    daily = [card_html(c, dates[c[5]]) for c in CARDS if c[6] == "daily"]
+    daily   = [card_html(c, dates[c[5]]) for c in CARDS if c[6] == "daily"]
     bidaily = [card_html(c, dates[c[5]]) for c in CARDS if c[6] == "bidaily"]
-    weekly = [card_html(c, dates[c[5]]) for c in CARDS if c[6] == "weekly"]
+    weekly  = [card_html(c, dates[c[5]]) for c in CARDS if c[6] == "weekly"]
 
     grid = "\n\n".join([
         section("Daily", "每日", daily),
@@ -183,7 +179,7 @@ footer a:hover{{color:#00d4ff}}
 </div>
 
 <footer>
-  BigCat · {today} · <a href="https://github.com/cissy0802">GitHub</a> · regenerated via <code>generate_hub.py</code>
+  BigCat · refreshed {today} · <a href="https://github.com/cissy0802">GitHub</a> · auto-regenerated daily
 </footer>
 </div>
 </body>

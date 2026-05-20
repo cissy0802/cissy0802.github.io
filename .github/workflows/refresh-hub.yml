@@ -1,0 +1,44 @@
+name: Refresh Hub
+
+# Regenerates index.html with latest commit dates from all linked repos.
+# Runs daily after routines have fired, plus on-demand via workflow_dispatch.
+
+on:
+  schedule:
+    # 12:00 UTC = 5am PDT (1h after the latest routine at 4am PDT)
+    - cron: '0 12 * * *'
+  workflow_dispatch:    # manual trigger via UI / `gh workflow run`
+  push:
+    paths:
+      - 'generate_hub.py'    # re-run if generator config changes
+      - '.github/workflows/refresh-hub.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate index.html
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 generate_hub.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet index.html; then
+            echo "No changes to index.html."
+            exit 0
+          fi
+          git add index.html
+          git commit -m "Auto-refresh hub: update last-commit dates"
+          git push
