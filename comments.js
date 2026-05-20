@@ -6,6 +6,25 @@
 (function () {
   if (document.getElementById("giscus-container")) return; // idempotent
 
+  // Detect page background luminance and pick a matching Giscus theme.
+  function pageIsDark() {
+    let el = document.body;
+    while (el) {
+      const c = getComputedStyle(el).backgroundColor;
+      if (c && c !== "transparent" && c !== "rgba(0, 0, 0, 0)") {
+        const m = c.match(/\d+(?:\.\d+)?/g);
+        if (m && m.length >= 3) {
+          const lum = m[0] * 0.299 + m[1] * 0.587 + m[2] * 0.114;
+          return lum < 128;
+        }
+      }
+      el = el.parentElement;
+    }
+    return false;
+  }
+  const dark = pageIsDark();
+  const theme = dark ? "noborder_dark" : "light";
+
   const container = document.createElement("section");
   container.id = "giscus-container";
   container.style.cssText =
@@ -34,7 +53,7 @@
   s.setAttribute("data-reactions-enabled", "1");
   s.setAttribute("data-emit-metadata", "0");
   s.setAttribute("data-input-position", "top");
-  s.setAttribute("data-theme", "preferred_color_scheme");
+  s.setAttribute("data-theme", theme);
   s.setAttribute("data-lang", "zh-CN");
   s.setAttribute("data-loading", "lazy");
   container.appendChild(s);
