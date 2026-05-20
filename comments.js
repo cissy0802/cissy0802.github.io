@@ -1,0 +1,41 @@
+/* BigCat Learning Hub — shared Giscus comments loader.
+ * Each page including this script gets a comment section mapped by pathname.
+ * Comments are stored as GitHub Discussions on cissy0802/cissy0802.github.io.
+ * Skip on hub landing page.
+ */
+(function () {
+  if (document.getElementById("giscus-container")) return; // idempotent
+
+  const container = document.createElement("section");
+  container.id = "giscus-container";
+  container.style.cssText =
+    "max-width:760px;margin:56px auto 24px;padding:28px 20px 8px;border-top:1px solid rgba(127,127,127,0.22)";
+  container.innerHTML =
+    '<h3 style="font-size:1.05rem;font-weight:600;margin-bottom:18px;letter-spacing:1px;opacity:0.78">💬 评论 · Comments</h3>';
+
+  // Insert just before <footer> if present, else at end of body
+  const footer = document.querySelector("footer");
+  if (footer && footer.parentNode) {
+    footer.parentNode.insertBefore(container, footer);
+  } else {
+    document.body.appendChild(container);
+  }
+
+  const s = document.createElement("script");
+  s.src = "https://giscus.app/client.js";
+  s.async = true;
+  s.crossOrigin = "anonymous";
+  s.setAttribute("data-repo", "cissy0802/cissy0802.github.io");
+  s.setAttribute("data-repo-id", "R_kgDOShlsYQ");
+  s.setAttribute("data-category", "General");
+  s.setAttribute("data-category-id", "DIC_kwDOShlsYc4C9f-A");
+  s.setAttribute("data-mapping", "pathname");
+  s.setAttribute("data-strict", "0");
+  s.setAttribute("data-reactions-enabled", "1");
+  s.setAttribute("data-emit-metadata", "0");
+  s.setAttribute("data-input-position", "top");
+  s.setAttribute("data-theme", "preferred_color_scheme");
+  s.setAttribute("data-lang", "zh-CN");
+  s.setAttribute("data-loading", "lazy");
+  container.appendChild(s);
+})();
