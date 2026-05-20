@@ -22,21 +22,21 @@ CONTENT_RE = re.compile(r'-(day|week|book)\d+\.html$|-\d{4}-\d{2}-\d{2}\.html$')
 # (accent_class, emoji, title_zh, subtitle_en, desc, repo, section)
 CARDS = [
     # Daily
-    ("mental",     "📚", "每日思维模型",   "Mental Models Daily · Daily 3:00am",   "决策、认知、系统思维、博弈、概率、心理学——每天 3-4 个模型，构建跨学科心智工具箱。",                    "mental-models-daily",         "daily"),
-    ("aiml",       "🤖", "每日 AI / ML",   "AI & ML Daily · Daily 3:05am",         "LLM、Agent、RAG、强化学习、多模态、可解释性——深入技术原理，构建 AI 超级个体能力。",                "ai-ml-daily",                 "daily"),
-    ("meta",       "🧠", "每日元知识",     "Meta Knowledge Daily · Daily 3:10am",  "神经科学、行为经济学、复杂系统、社会学、管理学、量子物理——跨学科的世界模型工具箱。",                "meta-knowledge-daily",        "daily"),
+    ("mental",     "📚", "每日思维模型",   "Mental Models Daily",   "决策、认知、系统思维、博弈、概率、心理学——每天 3-4 个模型，构建跨学科心智工具箱。",                    "mental-models-daily",         "daily"),
+    ("aiml",       "🤖", "每日 AI / ML",   "AI & ML Daily",         "LLM、Agent、RAG、强化学习、多模态、可解释性——深入技术原理，构建 AI 超级个体能力。",                "ai-ml-daily",                 "daily"),
+    ("meta",       "🧠", "每日元知识",     "Meta Knowledge Daily",  "神经科学、行为经济学、复杂系统、社会学、管理学、量子物理——跨学科的世界模型工具箱。",                "meta-knowledge-daily",        "daily"),
     # Bi-daily
-    ("book",       "📖", "隔日好书推荐",   "Book Recommendations · Tue/Thu/Fri 3:15am", "每期一本书的深度推荐——金句、思想谱系、阅读策略、限制与争议，覆盖商业、科学、文学、哲学。",             "book-recommendations-bidaily","bidaily"),
-    ("sysd",       "🏗️", "隔日 System Design","System Design · Wed/Fri/Sat 3:20am",   "分布式系统、架构 trade-off、真实案例拆解、面试题示范——给资深工程师的 system design 训练。",          "system-design-bidaily",       "bidaily"),
+    ("book",       "📖", "隔日好书推荐",   "Book Recommendations · Tue/Thu/Fri", "每期一本书的深度推荐——金句、思想谱系、阅读策略、限制与争议，覆盖商业、科学、文学、哲学。",             "book-recommendations-bidaily","bidaily"),
+    ("sysd",       "🏗️", "隔日 System Design","System Design · Wed/Fri/Sat",   "分布式系统、架构 trade-off、真实案例拆解、面试题示范——给资深工程师的 system design 训练。",          "system-design-bidaily",       "bidaily"),
     # Weekly
-    ("health",     "🫀", "每周健康长寿",   "Health & Longevity · Mon 3:25am",     "循证医学、长寿科学、女性健康、运动营养睡眠——可执行的健康协议，不是养生鸡汤。",                       "health-longevity-weekly",     "weekly"),
-    ("history",    "🏛️", "每周历史大事件", "History · Mon 3:30am",                 "冷战转折、技术史、商业史、地缘政治——具体事件与反事实思考，Munger 的最佳教材。",                       "history-weekly",              "weekly"),
-    ("parenting",  "👶", "每周育儿与教育", "Parenting · Tue 3:35am",               "循证育儿、儿童脑科学、AI 时代教育——具体话术与场景，妈妈视角。",                                       "parenting-weekly",            "weekly"),
-    ("writing",    "✍️", "每周写作与表达", "Writing · Wed 3:40am",                 "Zinsser、Orwell、金字塔原理、备忘录、AI 时代写作——超级个体的表达工具箱。",                            "writing-weekly",              "weekly"),
-    ("bio",        "👩‍💼", "每周人物传记", "Biographies · Thu 3:45am",            "领导者、科学家、思想家、女性领袖——关键决策、生涯转折、争议与阴面，深度学习一个人。",                  "biographies-weekly",          "weekly"),
-    ("philosophy", "📜", "每周哲学经典",   "Philosophy · Sat 3:50am",              "东西方哲学经典，从柏拉图到庄子，从康德到王阳明，跨越时空的思想对话。",                                   "philosophy-weekly",           "weekly"),
-    ("buddhism",   "🪷", "每周佛经",       "Buddhism · Sun 3:55am",                "经藏智慧，般若、中观、唯识、禅宗、华严、净土，每周四部经典，闻思修行。",                                 "buddhism-weekly",             "weekly"),
-    ("investing",  "📈", "每周投资经典",   "Investing · Sun 4:00am",               "Buffett、Munger、Howard Marks、Klarman、Damodaran——投资决策思维的深度训练。",                          "investing-weekly",            "weekly"),
+    ("health",     "🫀", "每周健康长寿",   "Health & Longevity · Mon",     "循证医学、长寿科学、女性健康、运动营养睡眠——可执行的健康协议，不是养生鸡汤。",                       "health-longevity-weekly",     "weekly"),
+    ("history",    "🏛️", "每周历史大事件", "History · Mon",                 "冷战转折、技术史、商业史、地缘政治——具体事件与反事实思考，Munger 的最佳教材。",                       "history-weekly",              "weekly"),
+    ("parenting",  "👶", "每周育儿与教育", "Parenting · Tue",               "循证育儿、儿童脑科学、AI 时代教育——具体话术与场景，妈妈视角。",                                       "parenting-weekly",            "weekly"),
+    ("writing",    "✍️", "每周写作与表达", "Writing · Wed",                 "Zinsser、Orwell、金字塔原理、备忘录、AI 时代写作——超级个体的表达工具箱。",                            "writing-weekly",              "weekly"),
+    ("bio",        "👩‍💼", "每周人物传记", "Biographies · Thu",            "领导者、科学家、思想家、女性领袖——关键决策、生涯转折、争议与阴面，深度学习一个人。",                  "biographies-weekly",          "weekly"),
+    ("philosophy", "📜", "每周哲学经典",   "Philosophy · Sat",              "东西方哲学经典，从柏拉图到庄子，从康德到王阳明，跨越时空的思想对话。",                                   "philosophy-weekly",           "weekly"),
+    ("buddhism",   "🪷", "每周佛经",       "Buddhism · Sun",                "经藏智慧，般若、中观、唯识、禅宗、华严、净土，每周四部经典，闻思修行。",                                 "buddhism-weekly",             "weekly"),
+    ("investing",  "📈", "每周投资经典",   "Investing · Sun",               "Buffett、Munger、Howard Marks、Klarman、Damodaran——投资决策思维的深度训练。",                          "investing-weekly",            "weekly"),
 ]
 
 CSS_VARS = {
@@ -194,7 +194,7 @@ footer a:hover{{color:#00d4ff}}
 <header>
   <h1>BigCat's Learning Hub</h1>
   <div class="tagline">每日学习 · 跨界思考 · 超级个体</div>
-  <div class="subtitle">&gt; All times in PDT · curated by AI · auto-published to GitHub Pages</div>
+  
 </header>
 
 <div class="list">
