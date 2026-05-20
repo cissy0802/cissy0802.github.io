@@ -48,7 +48,7 @@ CSS_VARS = {
     "health":     ("#3aa17e", "#0d6e6e"),
     "history":    ("#a35d2b", "#5a3a1e"),
     "parenting":  ("#e07a9b", "#c45a8e"),
-    "writing":    ("#1f1f1f", "#6a6a6a"),
+    "writing":    ("#e8e4d8", "#a8a294"),
     "bio":        ("#d4af37", "#f4e3a1"),
     "philosophy": ("#a29bfe", "#6c5ce7"),
     "buddhism":   ("#b8956a", "#8a6d3b"),
