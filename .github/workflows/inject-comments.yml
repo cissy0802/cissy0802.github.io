@@ -1,0 +1,70 @@
+name: Inject Comments (all repos)
+
+# After routines fire, iterate over all routine repos and ensure each HTML
+# page includes the shared Giscus comments loader. Replaces the per-repo
+# workflows that used to live in each routine repo.
+#
+# Requires secret CROSS_REPO_TOKEN: a PAT with contents:write on all 13
+# routine repos (fine-grained PAT recommended).
+
+on:
+  # Disabled until CROSS_REPO_TOKEN (fine-grained PAT with contents:write
+  # on all 13 routine repos) is added as a secret. Per-repo workflows
+  # inside each routine repo currently handle injection; this centralized
+  # version is a backup/replacement option.
+  workflow_dispatch:
+
+jobs:
+  inject:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        repo:
+          - mental-models-daily
+          - ai-ml-daily
+          - meta-knowledge-daily
+          - book-recommendations-bidaily
+          - system-design-bidaily
+          - health-longevity-weekly
+          - history-weekly
+          - parenting-weekly
+          - writing-weekly
+          - biographies-weekly
+          - philosophy-weekly
+          - buddhism-weekly
+          - investing-weekly
+    steps:
+      - name: Checkout ${{ matrix.repo }}
+        uses: actions/checkout@v4
+        with:
+          repository: cissy0802/${{ matrix.repo }}
+          token: ${{ secrets.CROSS_REPO_TOKEN }}
+
+      - name: Inject comments.js into HTML files missing it
+        run: |
+          changed=0
+          while IFS= read -r f; do
+            if ! grep -q "comments\.js" "$f"; then
+              if grep -qi "</body>" "$f"; then
+                sed -i 's|</body>|<script src="https://cissy0802.github.io/comments.js" defer></script>\n</body>|i' "$f"
+              else
+                printf '\n<script src="https://cissy0802.github.io/comments.js" defer></script>\n' >> "$f"
+              fi
+              changed=$((changed+1))
+              echo "  + $f"
+            fi
+          done < <(find . -name '*.html' -not -path './.git/*' -not -path './node_modules/*')
+          echo "Injected into $changed file(s) in ${{ matrix.repo }}."
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet; then
+            echo "Nothing to commit."
+            exit 0
+          fi
+          git add -A
+          git commit -m "Auto-inject Giscus comments loader"
+          git push
