@@ -110,11 +110,12 @@ def card_html(c, date_str: str) -> str:
     accent_class, emoji, title, subtitle, desc, repo, _section = c
     return f"""  <a class="card {accent_class}" href="https://cissy0802.github.io/{repo}/">
     <span class="emoji">{emoji}</span>
-    <div class="title">{title}</div>
-    <div class="subtitle-en">{subtitle}</div>
-    <div class="desc">{desc}</div>
-    <div class="meta-row">
-      <span class="updated">Updated: {date_str or "—"}</span>
+    <div class="body">
+      <div class="title-row"><span class="title">{title}</span><span class="subtitle-en">{subtitle}</span></div>
+      <div class="desc">{desc}</div>
+    </div>
+    <div class="meta">
+      <span class="updated">{date_str or "—"}</span>
       <span class="arrow">进入 →</span>
     </div>
   </a>"""
@@ -154,33 +155,37 @@ def main():
 <style>
 *{{margin:0;padding:0;box-sizing:border-box}}
 body{{font-family:-apple-system,"SF Pro Display","Noto Serif SC","Songti SC",sans-serif;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0a0e1a 100%);color:#e4e6eb;line-height:1.7;min-height:100vh}}
-.container{{max-width:920px;margin:0 auto;padding:48px 24px 80px}}
-header{{text-align:center;padding:48px 0 56px}}
+.container{{max-width:980px;margin:0 auto;padding:48px 24px 80px}}
+header{{text-align:center;padding:48px 0 48px}}
 header h1{{font-size:2.6rem;font-weight:800;background:linear-gradient(135deg,#00d4ff 0%,#7b61ff 50%,#ff6ec4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:2px;margin-bottom:12px}}
 header .tagline{{font-size:1.1rem;color:#a0a8c0;font-weight:300;letter-spacing:1px}}
 header .subtitle{{font-size:0.85rem;color:#7b61ff;margin-top:8px;font-family:"SF Mono",Menlo,monospace}}
-.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px;margin-top:24px}}
-.card{{display:flex;flex-direction:column;padding:24px 24px 20px;background:rgba(255,255,255,0.04);backdrop-filter:blur(10px);border-radius:16px;border:1px solid rgba(255,255,255,0.08);text-decoration:none;color:inherit;transition:all 0.25s ease;position:relative;overflow:hidden}}
-.card::before{{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);opacity:0.8}}
-.card:hover{{transform:translateY(-4px);background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.15);box-shadow:0 12px 32px rgba(0,0,0,0.4)}}
-.card .emoji{{font-size:2rem;margin-bottom:10px;display:block}}
-.card .title{{font-size:1.25rem;font-weight:700;margin-bottom:4px;color:#fff}}
-.card .subtitle-en{{font-size:0.78rem;color:#8b92a8;font-family:"SF Mono",Menlo,monospace;margin-bottom:12px;letter-spacing:0.3px}}
-.card .desc{{font-size:0.92rem;color:#c0c6d4;line-height:1.6;flex:1}}
-.card .meta-row{{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.06)}}
-.card .updated{{font-size:0.72rem;color:#6a7080;font-family:"SF Mono",Menlo,monospace;letter-spacing:0.3px}}
-.card .arrow{{font-size:0.85rem;color:var(--accent);font-weight:600;transition:transform 0.2s}}
-.card:hover .arrow{{transform:translateX(4px)}}
+.list{{display:flex;flex-direction:column;gap:10px;margin-top:24px}}
+.card{{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:16px 22px;background:rgba(255,255,255,0.04);backdrop-filter:blur(10px);border-radius:12px;border:1px solid rgba(255,255,255,0.08);text-decoration:none;color:inherit;transition:all 0.2s ease;position:relative;overflow:hidden}}
+.card::before{{content:"";position:absolute;top:0;left:0;bottom:0;width:4px;background:var(--accent);opacity:0.85}}
+.card:hover{{transform:translateX(3px);background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.15);box-shadow:0 4px 16px rgba(0,0,0,0.3)}}
+.card .emoji{{font-size:1.7rem;flex-shrink:0;padding-left:6px}}
+.card .body{{min-width:0;overflow:hidden}}
+.card .title-row{{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:3px}}
+.card .title{{font-size:1.1rem;font-weight:700;color:#fff}}
+.card .subtitle-en{{font-size:0.74rem;color:#7b61ff;font-family:"SF Mono",Menlo,monospace;letter-spacing:0.3px;opacity:0.85}}
+.card .desc{{font-size:0.88rem;color:#a8b0c0;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+.card .meta{{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;font-family:"SF Mono",Menlo,monospace}}
+.card .updated{{font-size:0.72rem;color:#6a7080;letter-spacing:0.3px}}
+.card .arrow{{font-size:0.78rem;color:var(--accent);font-weight:600;transition:transform 0.2s}}
+.card:hover .arrow{{transform:translateX(3px)}}
 {card_css()}
-.section-label{{grid-column:1/-1;font-size:0.85rem;color:#7b61ff;letter-spacing:2px;text-transform:uppercase;margin-top:24px;margin-bottom:-4px;font-family:"SF Mono",Menlo,monospace}}
-.section-label:first-of-type{{margin-top:0}}
-footer{{text-align:center;padding:56px 0 12px;font-size:0.78rem;color:#5a6378}}
+.section-label{{font-size:0.78rem;color:#7b61ff;letter-spacing:2px;text-transform:uppercase;margin-top:24px;margin-bottom:2px;font-family:"SF Mono",Menlo,monospace;opacity:0.75}}
+.section-label:first-of-type{{margin-top:8px}}
+footer{{text-align:center;padding:48px 0 12px;font-size:0.78rem;color:#5a6378}}
 footer a{{color:#7b61ff;text-decoration:none}}
 footer a:hover{{color:#00d4ff}}
-@media(max-width:600px){{
+@media(max-width:700px){{
   header h1{{font-size:1.8rem}}
-  .container{{padding:32px 18px 60px}}
-  .grid{{grid-template-columns:1fr}}
+  .container{{padding:32px 16px 60px}}
+  .card{{grid-template-columns:auto 1fr;gap:14px;padding:14px 18px}}
+  .card .meta{{display:none}}
+  .card .desc{{white-space:normal;font-size:0.85rem}}
 }}
 </style>
 </head>
@@ -192,7 +197,7 @@ footer a:hover{{color:#00d4ff}}
   <div class="subtitle">&gt; All times in PDT · curated by AI · auto-published to GitHub Pages</div>
 </header>
 
-<div class="grid">
+<div class="list">
 {grid}
 </div>
 
