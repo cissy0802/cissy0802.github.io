@@ -10,9 +10,14 @@ In CI, set GITHUB_TOKEN env var to raise rate limit (5000/hr instead of 60/hr).
 import datetime
 import json
 import os
+import re
 import urllib.error
 import urllib.request
 from pathlib import Path
+
+# Matches content files: *-day1.html, *-week1.html, *-book1.html,
+# or older date-based pattern *-YYYY-MM-DD.html (mental-models legacy).
+CONTENT_RE = re.compile(r'-(day|week|book)\d+\.html$|-\d{4}-\d{2}-\d{2}\.html$')
 
 # (accent_class, emoji, title_zh, subtitle_en, desc, repo, section)
 CARDS = [
@@ -64,18 +69,31 @@ def gh_get(url: str):
 
 
 def latest_commit_date(repo: str) -> str:
-    """YYYY-MM-DD of the most recent commit on the default branch.
+    """YYYY-MM-DD of the latest commit that added/modified a content file
+    (matches CONTENT_RE), ignoring index.html, README, workflows, generator.
 
-    Uses a single API call; for our routines, the latest commit is almost
-    always the content commit since they push and exit.
+    Falls back to the repo's most recent commit if no content commit found
+    in the last 50 commits.
     """
     try:
-        commits = gh_get(f"https://api.github.com/repos/cissy0802/{repo}/commits?per_page=1")
+        commits = gh_get(f"https://api.github.com/repos/cissy0802/{repo}/commits?per_page=50")
     except (urllib.error.URLError, urllib.error.HTTPError) as e:
         print(f"  WARN {repo}: {e}")
         return ""
     if not commits:
         return ""
+    for c in commits:
+        sha = c["sha"]
+        try:
+            detail = gh_get(f"https://api.github.com/repos/cissy0802/{repo}/commits/{sha}")
+        except (urllib.error.URLError, urllib.error.HTTPError):
+            continue
+        for f in detail.get("files", []):
+            name = f.get("filename", "")
+            status = f.get("status", "")
+            # Only count commits that ADD a new content file (not edits to existing ones).
+            if status == "added" and CONTENT_RE.search(name):
+                return c["commit"]["committer"]["date"][:10]
     return commits[0]["commit"]["committer"]["date"][:10]
 
 
