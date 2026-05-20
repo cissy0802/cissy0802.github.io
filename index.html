@@ -32,6 +32,20 @@ header .subtitle{font-size:0.9rem;color:#7b61ff;margin-top:8px;font-family:"SF M
 .card.aiml::before{background:linear-gradient(90deg,#ff6ec4,#7b61ff)}
 .card.meta{--accent:#52b788}
 .card.meta::before{background:linear-gradient(90deg,#e85a4f,#f7a072,#52b788,#3a86ff)}
+.card.health{--accent:#3aa17e}
+.card.health::before{background:linear-gradient(90deg,#0d6e6e,#3aa17e)}
+.card.investing{--accent:#b8893a}
+.card.investing::before{background:linear-gradient(90deg,#7a5c1f,#b8893a)}
+.card.history{--accent:#a35d2b}
+.card.history::before{background:linear-gradient(90deg,#5a3a1e,#a35d2b)}
+.card.parenting{--accent:#e07a9b}
+.card.parenting::before{background:linear-gradient(90deg,#c45a8e,#e07a9b)}
+.card.writing{--accent:#1f1f1f}
+.card.writing::before{background:linear-gradient(90deg,#1f1f1f,#6a6a6a)}
+.card.bio{--accent:#d4af37}
+.card.bio::before{background:linear-gradient(90deg,#d4af37,#f4e3a1)}
+.section-label{grid-column:1/-1;font-size:0.85rem;color:#7b61ff;letter-spacing:2px;text-transform:uppercase;margin-top:24px;margin-bottom:-4px;font-family:"SF Mono",Menlo,monospace}
+.section-label:first-of-type{margin-top:0}
 footer{text-align:center;padding:56px 0 12px;font-size:0.82rem;color:#5a6378}
 footer a{color:#7b61ff;text-decoration:none}
 footer a:hover{color:#00d4ff}
@@ -51,6 +65,8 @@ footer a:hover{color:#00d4ff}
 </header>
 
 <div class="grid">
+  <div class="section-label">// Daily — 每日</div>
+
   <a class="card mental" href="https://cissy0802.github.io/mental-models-daily/">
     <span class="emoji">📚</span>
     <div class="title">每日思维模型</div>
@@ -88,6 +104,56 @@ footer a:hover{color:#00d4ff}
     <div class="title">每日元知识</div>
     <div class="subtitle-en">Meta Knowledge Daily</div>
     <div class="desc">神经科学、行为经济学、复杂系统、社会学、管理学、量子物理——跨学科的世界模型工具箱。</div>
+    <span class="arrow">进入 →</span>
+  </a>
+
+  <a class="card health" href="https://cissy0802.github.io/health-longevity-daily/">
+    <span class="emoji">🫀</span>
+    <div class="title">每日健康长寿</div>
+    <div class="subtitle-en">Health &amp; Longevity Daily</div>
+    <div class="desc">循证医学、长寿科学、女性健康、运动营养睡眠——可执行的健康协议，不是养生鸡汤。</div>
+    <span class="arrow">进入 →</span>
+  </a>
+
+  <div class="section-label">// Weekly — 每周</div>
+
+  <a class="card investing" href="https://cissy0802.github.io/investing-weekly/">
+    <span class="emoji">📈</span>
+    <div class="title">每周投资经典</div>
+    <div class="subtitle-en">Investing Weekly · Mon</div>
+    <div class="desc">Buffett、Munger、Howard Marks、Klarman、Damodaran——投资决策思维的深度训练。</div>
+    <span class="arrow">进入 →</span>
+  </a>
+
+  <a class="card history" href="https://cissy0802.github.io/history-weekly/">
+    <span class="emoji">🏛️</span>
+    <div class="title">每周历史大事件</div>
+    <div class="subtitle-en">History Weekly · Tue</div>
+    <div class="desc">冷战转折、技术史、商业史、地缘政治——具体事件与反事实思考，Munger 的最佳教材。</div>
+    <span class="arrow">进入 →</span>
+  </a>
+
+  <a class="card parenting" href="https://cissy0802.github.io/parenting-weekly/">
+    <span class="emoji">👶</span>
+    <div class="title">每周育儿与教育</div>
+    <div class="subtitle-en">Parenting Weekly · Wed</div>
+    <div class="desc">循证育儿、儿童脑科学、AI 时代教育——具体话术与场景，妈妈视角。</div>
+    <span class="arrow">进入 →</span>
+  </a>
+
+  <a class="card writing" href="https://cissy0802.github.io/writing-weekly/">
+    <span class="emoji">✍️</span>
+    <div class="title">每周写作与表达</div>
+    <div class="subtitle-en">Writing Weekly · Thu</div>
+    <div class="desc">Zinsser、Orwell、金字塔原理、备忘录、AI 时代写作——超级个体的表达工具箱。</div>
+    <span class="arrow">进入 →</span>
+  </a>
+
+  <a class="card bio" href="https://cissy0802.github.io/biographies-weekly/">
+    <span class="emoji">👩‍💼</span>
+    <div class="title">每周人物传记</div>
+    <div class="subtitle-en">Biographies Weekly · Fri</div>
+    <div class="desc">领导者、科学家、思想家、女性领袖——关键决策、生涯转折、争议与阴面，深度学习一个人。</div>
     <span class="arrow">进入 →</span>
   </a>
 </div>
