@@ -1,0 +1,62 @@
+name: Build Search Index
+
+# Aggregate HTML from all routine repos, run Pagefind, publish index.
+# Output lives at /pagefind/ on cissy0802.github.io.
+
+on:
+  schedule:
+    # 13:00 UTC = 6 AM PDT (after all routines + per-repo comments injection)
+    - cron: '0 13 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Clone all routine repos into _src
+        run: |
+          rm -rf _src
+          mkdir -p _src
+          for repo in \
+            mental-models-daily ai-ml-daily meta-knowledge-daily \
+            book-recommendations-bidaily system-design-bidaily \
+            health-longevity-weekly history-weekly parenting-weekly \
+            writing-weekly biographies-weekly philosophy-weekly \
+            buddhism-weekly investing-weekly; do
+            echo "Cloning $repo..."
+            git clone --depth 1 --quiet "https://github.com/cissy0802/$repo" "_src/$repo"
+            rm -rf "_src/$repo/.git" "_src/$repo/.github"
+          done
+          # Also include hub's own index (for searching hub content)
+          # — skip; hub landing is just nav, not content.
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Pagefind
+        run: |
+          npx -y pagefind@latest \
+            --site _src \
+            --output-path pagefind \
+            --exclude-selectors "footer,nav,.section-label,#giscus-container,a[href*='cissy0802.github.io/']"
+
+      - name: Cleanup _src (only ship index)
+        run: rm -rf _src
+
+      - name: Commit and push index if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add pagefind
+          if git diff --cached --quiet; then
+            echo "No search-index changes."
+            exit 0
+          fi
+          git commit -m "Refresh Pagefind search index"
+          git push

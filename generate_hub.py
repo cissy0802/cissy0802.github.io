@@ -177,6 +177,8 @@ header .subtitle{{font-size:0.85rem;color:#7b61ff;margin-top:8px;font-family:"SF
 {card_css()}
 .section-label{{font-size:0.78rem;color:#7b61ff;letter-spacing:2px;text-transform:uppercase;margin-top:24px;margin-bottom:2px;font-family:"SF Mono",Menlo,monospace;opacity:0.75}}
 .section-label:first-of-type{{margin-top:8px}}
+.search-prompt{{margin:24px auto 0;max-width:520px;text-align:center;padding:14px 18px;background:rgba(255,255,255,0.04);border:1px solid rgba(123,97,255,0.25);border-radius:10px;font-size:0.88rem;color:#a0a8c0;font-family:"SF Mono",Menlo,monospace}}
+.search-prompt kbd{{background:rgba(123,97,255,0.25);color:#fff;padding:2px 8px;border-radius:5px;font-family:inherit;font-size:0.85rem}}
 footer{{text-align:center;padding:48px 0 12px;font-size:0.78rem;color:#5a6378}}
 footer a{{color:#7b61ff;text-decoration:none}}
 footer a:hover{{color:#00d4ff}}
@@ -194,7 +196,7 @@ footer a:hover{{color:#00d4ff}}
 <header>
   <h1>BigCat's Learning Hub</h1>
   <div class="tagline">每日学习 · 跨界思考 · 超级个体</div>
-  
+  <div class="search-prompt">🔍 按 <kbd>/</kbd> 或点击右下角搜索全站</div>
 </header>
 
 <div class="list">
@@ -205,6 +207,7 @@ footer a:hover{{color:#00d4ff}}
   BigCat · refreshed {today} · <a href="https://github.com/cissy0802">GitHub</a> · auto-regenerated daily
 </footer>
 </div>
+<script src="/search.js" defer></script>
 </body>
 </html>
 """
