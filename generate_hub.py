@@ -21,24 +21,31 @@ CONTENT_RE = re.compile(r'-(day|week|book)\d+\.html$|-\d{4}-\d{2}-\d{2}\.html$')
 
 # (accent_class, emoji, title_zh, subtitle_en, desc, repo, section)
 CARDS = [
-    # Daily
+    # Daily (3)
     ("mental",     "📚", "每日思维模型",   "Mental Models Daily",   "决策、认知、系统思维、博弈、概率、心理学——每天 3-4 个模型，构建跨学科心智工具箱。",                    "mental-models-daily",         "daily"),
-    ("aiml",       "🤖", "每日 AI / ML",   "AI & ML Daily",         "LLM、Agent、RAG、强化学习、多模态、可解释性——深入技术原理，构建 AI 超级个体能力。",                "ai-ml-daily",                 "daily"),
     ("meta",       "🧠", "每日元知识",     "Meta Knowledge Daily",  "神经科学、行为经济学、复杂系统、社会学、管理学、量子物理——跨学科的世界模型工具箱。",                "meta-knowledge-daily",        "daily"),
-    # Bi-daily
-    ("book",       "📖", "隔日好书推荐",   "Book Recommendations · Tue/Thu/Fri", "每期一本书的深度推荐——金句、思想谱系、阅读策略、限制与争议，覆盖商业、科学、文学、哲学。",             "book-recommendations-bidaily","bidaily"),
-    ("sysd",       "🏗️", "隔日 System Design","System Design · Wed/Fri/Sat",   "分布式系统、架构 trade-off、真实案例拆解、面试题示范——给资深工程师的 system design 训练。",          "system-design-bidaily",       "bidaily"),
-    # Weekly
-    ("health",     "🫀", "每周健康长寿",   "Health & Longevity · Mon",     "循证医学、长寿科学、女性健康、运动营养睡眠——可执行的健康协议，不是养生鸡汤。",                       "health-longevity-weekly",     "weekly"),
-    ("history",    "🏛️", "每周历史大事件", "History · Mon",                 "冷战转折、技术史、商业史、地缘政治——具体事件与反事实思考，Munger 的最佳教材。",                       "history-weekly",              "weekly"),
-    ("parenting",  "👶", "每周育儿与教育", "Parenting · Tue",               "循证育儿、儿童脑科学、AI 时代教育——具体话术与场景，妈妈视角。",                                       "parenting-weekly",            "weekly"),
-    ("writing",    "✍️", "每周写作与表达", "Writing · Wed",                 "Zinsser、Orwell、金字塔原理、备忘录、AI 时代写作——超级个体的表达工具箱。",                            "writing-weekly",              "weekly"),
-    ("bio",        "👩‍💼", "每周人物传记", "Biographies · Thu",            "领导者、科学家、思想家、女性领袖——关键决策、生涯转折、争议与阴面，深度学习一个人。",                  "biographies-weekly",          "weekly"),
-    ("philosophy", "📜", "每周哲学经典",   "Philosophy · Sat",              "东西方哲学经典，从柏拉图到庄子，从康德到王阳明，跨越时空的思想对话。",                                   "philosophy-weekly",           "weekly"),
-    ("buddhism",   "🪷", "每周佛经",       "Buddhism · Sun",                "经藏智慧，般若、中观、唯识、禅宗、华严、净土，每周四部经典，闻思修行。",                                 "buddhism-weekly",             "weekly"),
-    ("investing",  "📈", "每周投资经典",   "Investing · Sun",               "Buffett、Munger、Howard Marks、Klarman、Damodaran——投资决策思维的深度训练。",                          "investing-weekly",            "weekly"),
-    ("super",      "⚡", "AI 超级个体实战", "Super Individual · Tue",        "AI 工具栈、Prompt 库、PKM、自动化、Agent——AI 时代个人生产力的战术手册。",                                "super-individual-weekly",     "weekly"),
-    ("leadership", "🎯", "每周领导力实践", "Leadership · Wed",              "1:1、反馈、难对话、招聘、coaching——具体话术与检查表，技术 leader 的处方性 craft。",                       "leadership-weekly",           "weekly"),
+    ("super",      "⚡", "AI 超级个体实战", "Super Individual Daily","AI 工具栈、Prompt 库、PKM、自动化、Agent——AI 时代个人生产力的战术手册。",                                "super-individual-weekly",     "daily"),
+    # Monday
+    ("health",     "🫀", "每周健康长寿",   "Health & Longevity",    "循证医学、长寿科学、女性健康、运动营养睡眠——可执行的健康协议，不是养生鸡汤。",                       "health-longevity-weekly",     "mon"),
+    ("history",    "🏛️", "每周历史大事件", "History",               "冷战转折、技术史、商业史、地缘政治——具体事件与反事实思考，Munger 的最佳教材。",                       "history-weekly",              "mon"),
+    # Tuesday
+    ("parenting",  "👶", "每周育儿与教育", "Parenting",             "循证育儿、儿童脑科学、AI 时代教育——具体话术与场景，妈妈视角。",                                       "parenting-weekly",            "tue"),
+    ("psych",      "🧩", "每周心理学",     "Psychology",            "人格、依恋、创伤、认知、治疗——理解自己与他人的内在世界。",                                             "psychology-weekly",           "tue"),
+    # Wednesday
+    ("leadership", "🎯", "每周领导力实践", "Leadership",            "1:1、反馈、难对话、招聘、coaching——具体话术与检查表，技术 leader 的处方性 craft。",                       "leadership-weekly",           "wed"),
+    ("writing",    "✍️", "每周写作与表达", "Writing",               "Zinsser、Orwell、金字塔原理、备忘录、AI 时代写作——超级个体的表达工具箱。",                            "writing-weekly",              "wed"),
+    # Thursday
+    ("bio",        "👩‍💼", "每周人物传记", "Biographies",          "领导者、科学家、思想家、女性领袖——关键决策、生涯转折、争议与阴面，深度学习一个人。",                  "biographies-weekly",          "thu"),
+    ("book",       "📖", "每周好书推荐",   "Book Recommendations",  "每期一本书的深度推荐——金句、思想谱系、阅读策略、限制与争议，覆盖商业、科学、文学、哲学。",             "book-recommendations-bidaily","thu"),
+    # Friday
+    ("aiml",       "🤖", "每周 AI / ML",   "AI & ML",               "LLM、Agent、RAG、强化学习、多模态、可解释性——深入技术原理，构建 AI 超级个体能力。",                "ai-ml-daily",                 "fri"),
+    ("sysd",       "🏗️", "每周 System Design","System Design",     "分布式系统、架构 trade-off、真实案例拆解、面试题示范——给资深工程师的 system design 训练。",          "system-design-bidaily",       "fri"),
+    # Saturday
+    ("math",       "📐", "每周数学之美",   "Mathematics",           "概率、微积分、线代、拓扑、信息论——数学之美与跨学科的优雅工具。",                                       "mathematics-weekly",          "sat"),
+    ("philosophy", "📜", "每周哲学经典",   "Philosophy",            "东西方哲学经典，从柏拉图到庄子，从康德到王阳明，跨越时空的思想对话。",                                   "philosophy-weekly",           "sat"),
+    # Sunday
+    ("buddhism",   "🪷", "每周佛经",       "Buddhism",              "经藏智慧，般若、中观、唯识、禅宗、华严、净土，每周四部经典，闻思修行。",                                 "buddhism-weekly",             "sun"),
+    ("investing",  "📈", "每周投资经典",   "Investing",             "Buffett、Munger、Howard Marks、Klarman、Damodaran——投资决策思维的深度训练。",                          "investing-weekly",            "sun"),
 ]
 
 CSS_VARS = {
@@ -57,6 +64,8 @@ CSS_VARS = {
     "investing":  ("#b8893a", "#7a5c1f"),
     "super":      ("#ff6ec4", "linear-gradient(90deg,#ff6ec4,#7b61ff,#00d4ff)"),
     "leadership": ("#a8702d", "#5c3a18"),
+    "psych":      ("#a85aa8", "#7a3e8c"),
+    "math":       ("#3a6088", "#1e3a5f"),
 }
 
 
@@ -140,14 +149,17 @@ def main():
 
     today = datetime.date.today().strftime("%Y-%m-%d")
 
-    daily   = [card_html(c, dates[c[5]]) for c in CARDS if c[6] == "daily"]
-    bidaily = [card_html(c, dates[c[5]]) for c in CARDS if c[6] == "bidaily"]
-    weekly  = [card_html(c, dates[c[5]]) for c in CARDS if c[6] == "weekly"]
+    def cards_for(sec): return [card_html(c, dates[c[5]]) for c in CARDS if c[6] == sec]
 
     grid = "\n\n".join([
-        section("Daily", "每日", daily),
-        section("Bi-daily", "隔日", bidaily),
-        section("Weekly", "每周", weekly),
+        section("Daily",     "每日",     cards_for("daily")),
+        section("Monday",    "周一",     cards_for("mon")),
+        section("Tuesday",   "周二",     cards_for("tue")),
+        section("Wednesday", "周三",     cards_for("wed")),
+        section("Thursday",  "周四",     cards_for("thu")),
+        section("Friday",    "周五",     cards_for("fri")),
+        section("Saturday",  "周六",     cards_for("sat")),
+        section("Sunday",    "周日",     cards_for("sun")),
     ])
 
     html = f"""<!DOCTYPE html>
