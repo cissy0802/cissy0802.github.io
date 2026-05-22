@@ -36,7 +36,7 @@ CARDS = [
     ("writing",    "✍️", "每周写作与表达", "Writing",               "Zinsser、Orwell、金字塔原理、备忘录、AI 时代写作——超级个体的表达工具箱。",                            "writing-weekly",              "wed"),
     # Thursday
     ("bio",        "👩‍💼", "每周人物传记", "Biographies",          "领导者、科学家、思想家、女性领袖——关键决策、生涯转折、争议与阴面，深度学习一个人。",                  "biographies-weekly",          "thu"),
-    ("book",       "📖", "每周好书推荐",   "Book Recommendations",  "每期一本书的深度推荐——金句、思想谱系、阅读策略、限制与争议，覆盖商业、科学、文学、哲学。",             "book-recommendations-bidaily","thu"),
+    ("book",       "📖", "每周好书推荐",   "Book Recommendations",  "每期 4 本同主题相关好书——思想脉络、阅读顺序、金句与争议，覆盖商业、科学、文学、哲学。",                 "book-recommendations-bidaily","thu"),
     # Friday
     ("aiml",       "🤖", "每周 AI / ML",   "AI & ML",               "LLM、Agent、RAG、强化学习、多模态、可解释性——深入技术原理，构建 AI 超级个体能力。",                "ai-ml-daily",                 "fri"),
     ("sysd",       "🏗️", "每周 System Design","System Design",     "分布式系统、架构 trade-off、真实案例拆解、面试题示范——给资深工程师的 system design 训练。",          "system-design-bidaily",       "fri"),
