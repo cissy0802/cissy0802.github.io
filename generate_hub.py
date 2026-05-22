@@ -37,6 +37,8 @@ CARDS = [
     ("philosophy", "📜", "每周哲学经典",   "Philosophy · Sat",              "东西方哲学经典，从柏拉图到庄子，从康德到王阳明，跨越时空的思想对话。",                                   "philosophy-weekly",           "weekly"),
     ("buddhism",   "🪷", "每周佛经",       "Buddhism · Sun",                "经藏智慧，般若、中观、唯识、禅宗、华严、净土，每周四部经典，闻思修行。",                                 "buddhism-weekly",             "weekly"),
     ("investing",  "📈", "每周投资经典",   "Investing · Sun",               "Buffett、Munger、Howard Marks、Klarman、Damodaran——投资决策思维的深度训练。",                          "investing-weekly",            "weekly"),
+    ("super",      "⚡", "AI 超级个体实战", "Super Individual · Tue",        "AI 工具栈、Prompt 库、PKM、自动化、Agent——AI 时代个人生产力的战术手册。",                                "super-individual-weekly",     "weekly"),
+    ("leadership", "🎯", "每周领导力实践", "Leadership · Wed",              "1:1、反馈、难对话、招聘、coaching——具体话术与检查表，技术 leader 的处方性 craft。",                       "leadership-weekly",           "weekly"),
 ]
 
 CSS_VARS = {
@@ -53,6 +55,8 @@ CSS_VARS = {
     "philosophy": ("#a29bfe", "#6c5ce7"),
     "buddhism":   ("#b8956a", "#8a6d3b"),
     "investing":  ("#b8893a", "#7a5c1f"),
+    "super":      ("#ff6ec4", "linear-gradient(90deg,#ff6ec4,#7b61ff,#00d4ff)"),
+    "leadership": ("#a8702d", "#5c3a18"),
 }
 
 
