@@ -14,6 +14,17 @@
 
   const repo = parts[0];
 
+  // Detect current page language so the buttons return to the same language.
+  // Priority: <html lang> attribute, then URL filename (.en.html).
+  const htmlLang = (document.documentElement.lang || "").toLowerCase();
+  const isEn = htmlLang.startsWith("en") || /\.en\.html$/i.test(last);
+  const hubHref = isEn
+    ? "https://cissy0802.github.io/index.en.html"
+    : "https://cissy0802.github.io/";
+  const indexHref = isEn
+    ? "/" + repo + "/index.en.html"
+    : "/" + repo + "/";
+
   function makeBtn(id, href, text, left) {
     const btn = document.createElement("a");
     btn.id = id;
@@ -67,11 +78,11 @@
 
   // 1) ← Hub button (left:14px) — inject only if no existing hub button.
   if (!hasExistingHubBtn()) {
-    root.appendChild(makeBtn("bigcat-hub-btn", "https://cissy0802.github.io/", "← Hub", 14));
+    root.appendChild(makeBtn("bigcat-hub-btn", hubHref, "← Hub", 14));
   }
 
   // 2) ← Index button (left:108px) — always inject if not present.
   if (!document.getElementById("bigcat-index-btn")) {
-    root.appendChild(makeBtn("bigcat-index-btn", "/" + repo + "/", "← Index", 108));
+    root.appendChild(makeBtn("bigcat-index-btn", indexHref, "← Index", 108));
   }
 })();
