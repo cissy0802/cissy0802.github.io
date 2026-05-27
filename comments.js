@@ -59,12 +59,17 @@
   const dark = pageIsDark();
   const theme = dark ? "noborder_dark" : "light";
 
+  // Detect page language for Giscus i18n
+  const pageLangAttr = (document.documentElement.lang || "").toLowerCase();
+  const giscusLang = pageLangAttr.startsWith("en") ? "en" : "zh-CN";
+  const heading = giscusLang === "en" ? "💬 Comments" : "💬 评论 · Comments";
+
   const container = document.createElement("section");
   container.id = "giscus-container";
   container.style.cssText =
     "max-width:760px;margin:56px auto 24px;padding:28px 20px 8px;border-top:1px solid rgba(127,127,127,0.22)";
   container.innerHTML =
-    '<h3 style="font-size:1.05rem;font-weight:600;margin-bottom:18px;letter-spacing:1px;opacity:0.78">💬 评论 · Comments</h3>';
+    '<h3 style="font-size:1.05rem;font-weight:600;margin-bottom:18px;letter-spacing:1px;opacity:0.78">' + heading + '</h3>';
 
   // Insert just before <footer> if present, else at end of body
   const footer = document.querySelector("footer");
@@ -88,7 +93,7 @@
   s.setAttribute("data-emit-metadata", "0");
   s.setAttribute("data-input-position", "top");
   s.setAttribute("data-theme", theme);
-  s.setAttribute("data-lang", "zh-CN");
+  s.setAttribute("data-lang", giscusLang);
   s.setAttribute("data-loading", "lazy");
   container.appendChild(s);
 })();
