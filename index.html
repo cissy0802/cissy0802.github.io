@@ -73,10 +73,19 @@ footer a:hover{color:#00d4ff}
   .card{grid-template-columns:auto 1fr;gap:14px;padding:14px 18px}
   .card .meta{display:none}
   .card .desc{white-space:normal;font-size:0.85rem}
+  .lang-toggle{top:10px;right:10px}
 }
+.lang-toggle{position:fixed;top:18px;right:18px;background:rgba(255,255,255,0.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:5px;display:flex;gap:0;z-index:100;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem}
+.lang-toggle a{padding:5px 12px;border-radius:14px;color:#a0a8c0;text-decoration:none;transition:all 0.15s}
+.lang-toggle a.active{background:#7b61ff;color:#fff;font-weight:700}
+.lang-toggle a:not(.active):hover{background:rgba(255,255,255,0.08);color:#fff}
 </style>
 </head>
 <body>
+<div class="lang-toggle">
+  <a href="index.html" class="active">中文</a>
+  <a href="index.en.html">EN</a>
+</div>
 <div class="container">
 <header>
   <h1>BigCat's Learning Hub</h1>
