@@ -5,8 +5,8 @@ name: Refresh Hub
 
 on:
   schedule:
-    # 12:00 UTC = 5am PDT (1h after the latest routine at 4am PDT)
-    - cron: '0 12 * * *'
+    # 15:00 UTC = 8am PDT (45min after the latest routine at 14:15 UTC)
+    - cron: '0 15 * * *'
   workflow_dispatch:    # manual trigger via UI / `gh workflow run`
   push:
     paths:

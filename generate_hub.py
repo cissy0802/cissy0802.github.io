@@ -21,31 +21,29 @@ CONTENT_RE = re.compile(r'-(day|week|book)\d+\.html$|-\d{4}-\d{2}-\d{2}\.html$')
 
 # (accent_class, emoji, title_zh, subtitle_en, desc, repo, section)
 CARDS = [
-    # Daily (3)
-    ("mental",     "📚", "每日思维模型",   "Mental Models Daily",   "决策、认知、系统思维、博弈、概率、心理学——每天 3-4 个模型，构建跨学科心智工具箱。",                    "mental-models-daily",         "daily"),
-    ("meta",       "🧠", "每日元知识",     "Meta Knowledge Daily",  "神经科学、行为经济学、复杂系统、社会学、管理学、量子物理——跨学科的世界模型工具箱。",                "meta-knowledge-daily",        "daily"),
-    ("super",      "⚡", "AI 超级个体实战", "Super Individual Daily","AI 工具栈、Prompt 库、PKM、自动化、Agent——AI 时代个人生产力的战术手册。",                                "super-individual-weekly",     "daily"),
-    # Monday
-    ("health",     "🫀", "每周健康长寿",   "Health & Longevity",    "循证医学、长寿科学、女性健康、运动营养睡眠——可执行的健康协议，不是养生鸡汤。",                       "health-longevity-weekly",     "mon"),
-    ("history",    "🏛️", "每周历史大事件", "History",               "冷战转折、技术史、商业史、地缘政治——具体事件与反事实思考，Munger 的最佳教材。",                       "history-weekly",              "mon"),
-    # Tuesday
-    ("parenting",  "👶", "每周育儿与教育", "Parenting",             "循证育儿、儿童脑科学、AI 时代教育——具体话术与场景，妈妈视角。",                                       "parenting-weekly",            "tue"),
-    ("psych",      "🧩", "每周心理学",     "Psychology",            "人格、依恋、创伤、认知、治疗——理解自己与他人的内在世界。",                                             "psychology-weekly",           "tue"),
-    # Wednesday
-    ("leadership", "🎯", "每周领导力实践", "Leadership",            "1:1、反馈、难对话、招聘、coaching——具体话术与检查表，技术 leader 的处方性 craft。",                       "leadership-weekly",           "wed"),
-    ("writing",    "✍️", "每周写作与表达", "Writing",               "Zinsser、Orwell、金字塔原理、备忘录、AI 时代写作——超级个体的表达工具箱。",                            "writing-weekly",              "wed"),
-    # Thursday
-    ("bio",        "👩‍💼", "每周人物传记", "Biographies",          "领导者、科学家、思想家、女性领袖——关键决策、生涯转折、争议与阴面，深度学习一个人。",                  "biographies-weekly",          "thu"),
-    ("book",       "📖", "每周好书推荐",   "Book Recommendations",  "每期 4 本同主题相关好书——思想脉络、阅读顺序、金句与争议，覆盖商业、科学、文学、哲学。",                 "book-recommendations-bidaily","thu"),
-    # Friday
-    ("aiml",       "🤖", "每周 AI / ML",   "AI & ML",               "LLM、Agent、RAG、强化学习、多模态、可解释性——深入技术原理，构建 AI 超级个体能力。",                "ai-ml-daily",                 "fri"),
-    ("sysd",       "🏗️", "每周 System Design","System Design",     "分布式系统、架构 trade-off、真实案例拆解、面试题示范——给资深工程师的 system design 训练。",          "system-design-bidaily",       "fri"),
-    # Saturday
-    ("math",       "📐", "每周数学之美",   "Mathematics",           "概率、微积分、线代、拓扑、信息论——数学之美与跨学科的优雅工具。",                                       "mathematics-weekly",          "sat"),
-    ("philosophy", "📜", "每周哲学经典",   "Philosophy",            "东西方哲学经典，从柏拉图到庄子，从康德到王阳明，跨越时空的思想对话。",                                   "philosophy-weekly",           "sat"),
-    # Sunday
-    ("buddhism",   "🪷", "每周佛经",       "Buddhism",              "经藏智慧，般若、中观、唯识、禅宗、华严、净土，每周四部经典，闻思修行。",                                 "buddhism-weekly",             "sun"),
-    ("investing",  "📈", "每周投资经典",   "Investing",             "Buffett、Munger、Howard Marks、Klarman、Damodaran——投资决策思维的深度训练。",                          "investing-weekly",            "sun"),
+    # 思维 · Thinking
+    ("mental",     "📚", "思维模型",       "Mental Models",         "决策、认知、系统思维、博弈、概率、心理学——每天 3-4 个模型，构建跨学科心智工具箱。",                    "mental-models-daily",         "thinking"),
+    ("meta",       "🧠", "元知识",         "Meta Knowledge",        "神经科学、行为经济学、复杂系统、社会学、管理学、量子物理——跨学科的世界模型工具箱。",                "meta-knowledge-daily",        "thinking"),
+    # 技术 · Tech
+    ("super",      "⚡", "AI 超级个体实战", "Super Individual",     "AI 工具栈、Prompt 库、PKM、自动化、Agent——AI 时代个人生产力的战术手册。",                                "super-individual-weekly",     "tech"),
+    ("aiml",       "🤖", "AI / ML",        "AI & ML",               "LLM、Agent、RAG、强化学习、多模态、可解释性——深入技术原理，构建 AI 超级个体能力。",                "ai-ml-daily",                 "tech"),
+    ("sysd",       "🏗️", "System Design",  "System Design",         "分布式系统、架构 trade-off、真实案例拆解、面试题示范——给资深工程师的 system design 训练。",          "system-design-bidaily",       "tech"),
+    # 职场 · Career
+    ("leadership", "🎯", "领导力实践",     "Leadership",            "1:1、反馈、难对话、招聘、coaching——具体话术与检查表，技术 leader 的处方性 craft。",                       "leadership-weekly",           "career"),
+    ("writing",    "✍️", "写作与表达",     "Writing",               "Zinsser、Orwell、金字塔原理、备忘录、AI 时代写作——超级个体的表达工具箱。",                            "writing-weekly",              "career"),
+    # 生活 · Life
+    ("health",     "🫀", "健康长寿",       "Health & Longevity",    "循证医学、长寿科学、女性健康、运动营养睡眠——可执行的健康协议，不是养生鸡汤。",                       "health-longevity-weekly",     "life"),
+    ("parenting",  "👶", "育儿与教育",     "Parenting",             "循证育儿、儿童脑科学、AI 时代教育——具体话术与场景，妈妈视角。",                                       "parenting-weekly",            "life"),
+    ("psych",      "🧩", "心理学",         "Psychology",            "人格、依恋、创伤、认知、治疗——理解自己与他人的内在世界。",                                             "psychology-weekly",           "life"),
+    # 人文 · Humanities
+    ("philosophy", "📜", "哲学经典",       "Philosophy",            "东西方哲学经典，从柏拉图到庄子，从康德到王阳明，跨越时空的思想对话。",                                   "philosophy-weekly",           "humanities"),
+    ("buddhism",   "🪷", "佛经",           "Buddhism",              "经藏智慧，般若、中观、唯识、禅宗、华严、净土，四部经典，闻思修行。",                                     "buddhism-weekly",             "humanities"),
+    ("bio",        "👩‍💼", "人物传记",     "Biographies",           "领导者、科学家、思想家、女性领袖——关键决策、生涯转折、争议与阴面，深度学习一个人。",                  "biographies-weekly",          "humanities"),
+    ("book",       "📖", "好书推荐",       "Book Recommendations",  "每期 4 本同主题相关好书——思想脉络、阅读顺序、金句与争议，覆盖商业、科学、文学、哲学。",                 "book-recommendations-bidaily","humanities"),
+    # 探索 · Explore
+    ("math",       "📐", "数学之美",       "Mathematics",           "概率、微积分、线代、拓扑、信息论——数学之美与跨学科的优雅工具。",                                       "mathematics-weekly",          "explore"),
+    ("history",    "🏛️", "历史大事件",     "History",               "冷战转折、技术史、商业史、地缘政治——具体事件与反事实思考，Munger 的最佳教材。",                       "history-weekly",              "explore"),
+    ("investing",  "📈", "投资经典",       "Investing",             "Buffett、Munger、Howard Marks、Klarman、Damodaran——投资决策思维的深度训练。",                          "investing-weekly",            "explore"),
 ]
 
 CSS_VARS = {
@@ -136,7 +134,7 @@ def card_html(c, date_str: str) -> str:
 
 def section(label_en: str, label_zh: str, cards_html: list[str]) -> str:
     body = "\n\n".join(cards_html)
-    return f'  <div class="section-label">// {label_en} — {label_zh}</div>\n\n{body}'
+    return f'  <div class="section-label">// {label_zh} · {label_en}</div>\n\n{body}'
 
 
 def main():
@@ -152,14 +150,12 @@ def main():
     def cards_for(sec): return [card_html(c, dates[c[5]]) for c in CARDS if c[6] == sec]
 
     grid = "\n\n".join([
-        section("Daily",     "每日",     cards_for("daily")),
-        section("Monday",    "周一",     cards_for("mon")),
-        section("Tuesday",   "周二",     cards_for("tue")),
-        section("Wednesday", "周三",     cards_for("wed")),
-        section("Thursday",  "周四",     cards_for("thu")),
-        section("Friday",    "周五",     cards_for("fri")),
-        section("Saturday",  "周六",     cards_for("sat")),
-        section("Sunday",    "周日",     cards_for("sun")),
+        section("Thinking",   "思维",     cards_for("thinking")),
+        section("Tech",       "技术",     cards_for("tech")),
+        section("Career",     "职场",     cards_for("career")),
+        section("Life",       "生活",     cards_for("life")),
+        section("Humanities", "人文",     cards_for("humanities")),
+        section("Explore",    "探索",     cards_for("explore")),
     ])
 
     html = f"""<!DOCTYPE html>
@@ -220,7 +216,7 @@ footer a:hover{{color:#00d4ff}}
 </div>
 
 <footer>
-  BigCat · refreshed {today} · <a href="https://github.com/cissy0802">GitHub</a> · auto-regenerated daily
+  BigCat · refreshed {today} · <a href="https://github.com/cissy0802">GitHub</a> · auto-regenerated
 </footer>
 </div>
 <script src="/search.js" defer></script>
