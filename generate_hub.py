@@ -35,15 +35,18 @@ CARDS = [
     ("health",     "🫀", "健康长寿",       "Health & Longevity",    "循证医学、长寿科学、女性健康、运动营养睡眠——可执行的健康协议，不是养生鸡汤。",                       "health-longevity-weekly",     "life"),
     ("parenting",  "👶", "育儿与教育",     "Parenting",             "循证育儿、儿童脑科学、AI 时代教育——具体话术与场景，妈妈视角。",                                       "parenting-weekly",            "life"),
     ("psych",      "🧩", "心理学",         "Psychology",            "人格、依恋、创伤、认知、治疗——理解自己与他人的内在世界。",                                             "psychology-weekly",           "life"),
+    ("family",     "🧺", "一起做",         "Doing Together",        "烹饪、园艺、小实验、手工、自然观察——和孩子一起动手的日常实践，每期分龄三段。",                         "family-craft-weekly",         "life"),
     # 人文 · Humanities
     ("philosophy", "📜", "哲学经典",       "Philosophy",            "东西方哲学经典，从柏拉图到庄子，从康德到王阳明，跨越时空的思想对话。",                                   "philosophy-weekly",           "humanities"),
     ("buddhism",   "🪷", "佛经",           "Buddhism",              "经藏智慧，般若、中观、唯识、禅宗、华严、净土，四部经典，闻思修行。",                                     "buddhism-weekly",             "humanities"),
+    ("art",        "🎨", "艺术与审美",     "Art & Aesthetics",      "看画、听乐、读影、赏建筑——怎么看怎么听的感受力训练，东西方兼顾。",                                       "art-aesthetics-weekly",       "humanities"),
     ("bio",        "👩‍💼", "人物传记",     "Biographies",           "领导者、科学家、思想家、女性领袖——关键决策、生涯转折、争议与阴面，深度学习一个人。",                  "biographies-weekly",          "humanities"),
     ("book",       "📖", "好书推荐",       "Book Recommendations",  "每期 4 本同主题相关好书——思想脉络、阅读顺序、金句与争议，覆盖商业、科学、文学、哲学。",                 "book-recommendations-bidaily","humanities"),
     # 探索 · Explore
     ("math",       "📐", "数学之美",       "Mathematics",           "概率、微积分、线代、拓扑、信息论——数学之美与跨学科的优雅工具。",                                       "mathematics-weekly",          "explore"),
     ("history",    "🏛️", "历史大事件",     "History",               "冷战转折、技术史、商业史、地缘政治——具体事件与反事实思考，Munger 的最佳教材。",                       "history-weekly",              "explore"),
     ("investing",  "📈", "投资经典",       "Investing",             "Buffett、Munger、Howard Marks、Klarman、Damodaran——投资决策思维的深度训练。",                          "investing-weekly",            "explore"),
+    ("civics",     "🌍", "政治·法律·地缘", "Civics & Geopolitics",  "制度、法律、国际关系、地缘——中立、多视角、不站队的世界运作框架。",                                       "civics-geopolitics-weekly",   "explore"),
 ]
 
 CSS_VARS = {
@@ -64,6 +67,9 @@ CSS_VARS = {
     "leadership": ("#a8702d", "#5c3a18"),
     "psych":      ("#a85aa8", "#7a3e8c"),
     "math":       ("#3a6088", "#1e3a5f"),
+    "art":        ("#e76f51", "#9b2d30"),
+    "civics":     ("#6ea8d8", "#1f3a5f"),
+    "family":     ("#ffd166", "#e8743b"),
 }
 
 
