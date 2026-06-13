@@ -49,6 +49,14 @@ CARDS = [
     ("civics",     "🌍", "政治·法律·地缘", "Civics & Geopolitics",  "制度、法律、国际关系、地缘——中立、多视角、不站队的世界运作框架。",                                       "civics-geopolitics-weekly",   "explore"),
 ]
 
+# BigCat's Thinking Hub —— 互动型思想实验，链到自建静态站(非每日内容仓库，故无 commit 日期)。
+# (accent_class, emoji, title_zh, subtitle_en, desc, href, badge)
+THINKING_CARDS = [
+    ("thinker", "⚖️", "思想家圆桌辩论", "Thinker Roundtable",
+     "古今中外 70+ 位思想家就一个问题数轮辩论，立场表态、古文白话，最后 Claude / GPT / Gemini 三家 AI 收尾。",
+     "https://cissy0802.github.io/thinker-arena/", "圆桌"),
+]
+
 CSS_VARS = {
     "mental":     ("#00d4ff", "#0096c7"),
     "aiml":       ("#ff6ec4", "#7b61ff"),
@@ -70,6 +78,7 @@ CSS_VARS = {
     "art":        ("#e76f51", "#9b2d30"),
     "civics":     ("#6ea8d8", "#1f3a5f"),
     "family":     ("#ffd166", "#e8743b"),
+    "thinker":    ("#a29bfe", "linear-gradient(90deg,#a29bfe,#7b61ff,#ff6ec4)"),
 }
 
 
@@ -138,6 +147,21 @@ def card_html(c, date_str: str) -> str:
   </a>"""
 
 
+def thinking_card_html(c) -> str:
+    accent_class, emoji, title, subtitle, desc, href, badge = c
+    return f"""  <a class="card {accent_class}" href="{href}">
+    <span class="emoji">{emoji}</span>
+    <div class="body">
+      <div class="title-row"><span class="title">{title}</span><span class="subtitle-en">{subtitle}</span></div>
+      <div class="desc">{desc}</div>
+    </div>
+    <div class="meta">
+      <span class="updated">{badge}</span>
+      <span class="arrow">进入 →</span>
+    </div>
+  </a>"""
+
+
 def section(label_en: str, label_zh: str, cards_html: list[str]) -> str:
     body = "\n\n".join(cards_html)
     return f'  <div class="section-label">// {label_zh} · {label_en}</div>\n\n{body}'
@@ -163,6 +187,8 @@ def main():
         section("Humanities", "人文",     cards_for("humanities")),
         section("Explore",    "探索",     cards_for("explore")),
     ])
+
+    thinking_grid = "\n\n".join(thinking_card_html(c) for c in THINKING_CARDS)
 
     html = f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -195,6 +221,9 @@ header .subtitle{{font-size:0.85rem;color:#7b61ff;margin-top:8px;font-family:"SF
 {card_css()}
 .section-label{{font-size:0.78rem;color:#7b61ff;letter-spacing:2px;text-transform:uppercase;margin-top:24px;margin-bottom:2px;font-family:"SF Mono",Menlo,monospace;opacity:0.75}}
 .section-label:first-of-type{{margin-top:8px}}
+.hub2-header{{text-align:center;margin:60px 0 6px}}
+.hub2-header h2{{font-size:1.9rem;font-weight:800;letter-spacing:1.5px;background:linear-gradient(135deg,#a29bfe 0%,#7b61ff 50%,#ff6ec4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}}
+.hub2-header .hub2-tag{{font-size:0.95rem;color:#a0a8c0;font-weight:300;letter-spacing:0.5px}}
 .search-prompt{{margin:24px auto 0;max-width:520px;text-align:center;padding:14px 18px;background:rgba(255,255,255,0.04);border:1px solid rgba(123,97,255,0.25);border-radius:10px;font-size:0.88rem;color:#a0a8c0;font-family:"SF Mono",Menlo,monospace}}
 .search-prompt kbd{{background:rgba(123,97,255,0.25);color:#fff;padding:2px 8px;border-radius:5px;font-family:inherit;font-size:0.85rem}}
 footer{{text-align:center;padding:48px 0 12px;font-size:0.78rem;color:#5a6378}}
@@ -219,6 +248,15 @@ footer a:hover{{color:#00d4ff}}
 
 <div class="list">
 {grid}
+</div>
+
+<div class="hub2-header">
+  <h2>BigCat's Thinking Hub</h2>
+  <div class="hub2-tag">让思想家替你思考 · 互动圆桌</div>
+</div>
+
+<div class="list">
+{thinking_grid}
 </div>
 
 <footer>
