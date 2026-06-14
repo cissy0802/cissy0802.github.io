@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Regenerate index.html for the BigCat Learning Hub.
+"""Regenerate index.html (中文) AND index.en.html (English) for the BigCat Learning Hub.
 
-Fetches each repo's latest commit date via the GitHub REST API, then renders
-the hub. Run from repo root:  python3 generate_hub.py
+Fetches each repo's latest commit date via the GitHub REST API, then renders BOTH
+language versions from a single source of truth (CARDS below carry both desc_zh and
+desc_en). Run from repo root:  python3 generate_hub.py
 
 In CI, set GITHUB_TOKEN env var to raise rate limit (5000/hr instead of 60/hr).
 """
@@ -19,42 +20,103 @@ from pathlib import Path
 # or older date-based pattern *-YYYY-MM-DD.html (mental-models legacy).
 CONTENT_RE = re.compile(r'-(day|week|book)\d+\.html$|-\d{4}-\d{2}-\d{2}\.html$')
 
-# (accent_class, emoji, title_zh, subtitle_en, desc, repo, section)
+# (accent_class, emoji, title_zh, subtitle_en, desc_zh, desc_en, repo, section)
 CARDS = [
     # 思维 · Thinking
-    ("mental",     "📚", "思维模型",       "Mental Models",         "决策、认知、系统思维、博弈、概率、心理学——每天 3-4 个模型，构建跨学科心智工具箱。",                    "mental-models-daily",         "thinking"),
-    ("meta",       "🧠", "元知识",         "Meta Knowledge",        "神经科学、行为经济学、复杂系统、社会学、管理学、量子物理——跨学科的世界模型工具箱。",                "meta-knowledge-daily",        "thinking"),
+    ("mental", "📚", "思维模型", "Mental Models",
+     "决策、认知、系统思维、博弈、概率、心理学——每天 3-4 个模型，构建跨学科心智工具箱。",
+     "Decision, cognition, systems thinking, game theory, probability, psychology — 3-4 models per day to build a cross-disciplinary toolkit.",
+     "mental-models-daily", "thinking"),
+    ("meta", "🧠", "元知识", "Meta Knowledge",
+     "神经科学、行为经济学、复杂系统、社会学、管理学、量子物理——跨学科的世界模型工具箱。",
+     "Neuroscience, behavioral economics, complex systems, sociology, management, quantum physics — a cross-disciplinary world-model toolkit.",
+     "meta-knowledge-daily", "thinking"),
     # 技术 · Tech
-    ("super",      "⚡", "AI 超级个体实战", "Super Individual",     "AI 工具栈、Prompt 库、PKM、自动化、Agent——AI 时代个人生产力的战术手册。",                                "super-individual-weekly",     "tech"),
-    ("aiml",       "🤖", "AI / ML",        "AI & ML",               "LLM、Agent、RAG、强化学习、多模态、可解释性——深入技术原理，构建 AI 超级个体能力。",                "ai-ml-daily",                 "tech"),
-    ("sysd",       "🏗️", "System Design",  "System Design",         "分布式系统、架构 trade-off、真实案例拆解、面试题示范——给资深工程师的 system design 训练。",          "system-design-bidaily",       "tech"),
+    ("super", "⚡", "AI 超级个体实战", "Super Individual",
+     "AI 工具栈、Prompt 库、PKM、自动化、Agent——AI 时代个人生产力的战术手册。",
+     "AI tool stack, prompt library, PKM, automation, agents — a tactical handbook for personal productivity in the AI era.",
+     "super-individual-weekly", "tech"),
+    ("aiml", "🤖", "AI / ML", "AI & ML",
+     "LLM、Agent、RAG、强化学习、多模态、可解释性——深入技术原理，构建 AI 超级个体能力。",
+     "LLMs, agents, RAG, reinforcement learning, multimodal, interpretability — deep technical principles to build super-individual AI capabilities.",
+     "ai-ml-daily", "tech"),
+    ("sysd", "🏗️", "System Design", "System Design",
+     "分布式系统、架构 trade-off、真实案例拆解、面试题示范——给资深工程师的 system design 训练。",
+     "Distributed systems, architecture trade-offs, real-world case studies, interview demos — system design training for senior engineers.",
+     "system-design-bidaily", "tech"),
     # 职场 · Career
-    ("leadership", "🎯", "领导力实践",     "Leadership",            "1:1、反馈、难对话、招聘、coaching——具体话术与检查表，技术 leader 的处方性 craft。",                       "leadership-weekly",           "career"),
-    ("writing",    "✍️", "写作与表达",     "Writing",               "Zinsser、Orwell、金字塔原理、备忘录、AI 时代写作——超级个体的表达工具箱。",                            "writing-weekly",              "career"),
+    ("leadership", "🎯", "领导力实践", "Leadership",
+     "1:1、反馈、难对话、招聘、coaching——具体话术与检查表，技术 leader 的处方性 craft。",
+     "1:1s, feedback, hard conversations, hiring, coaching — concrete scripts and checklists; prescriptive craft for tech leaders.",
+     "leadership-weekly", "career"),
+    ("writing", "✍️", "写作与表达", "Writing",
+     "Zinsser、Orwell、金字塔原理、备忘录、AI 时代写作——超级个体的表达工具箱。",
+     "Zinsser, Orwell, Pyramid Principle, memos, writing in the AI era — the super-individual's expression toolkit.",
+     "writing-weekly", "career"),
     # 生活 · Life
-    ("health",     "🫀", "健康长寿",       "Health & Longevity",    "循证医学、长寿科学、女性健康、运动营养睡眠——可执行的健康协议，不是养生鸡汤。",                       "health-longevity-weekly",     "life"),
-    ("parenting",  "👶", "育儿与教育",     "Parenting",             "循证育儿、儿童脑科学、AI 时代教育——具体话术与场景，妈妈视角。",                                       "parenting-weekly",            "life"),
-    ("psych",      "🧩", "心理学",         "Psychology",            "人格、依恋、创伤、认知、治疗——理解自己与他人的内在世界。",                                             "psychology-weekly",           "life"),
-    ("family",     "🧺", "一起做",         "Doing Together",        "烹饪、园艺、小实验、手工、自然观察——和孩子一起动手的日常实践，每期分龄三段。",                         "family-craft-weekly",         "life"),
+    ("health", "🫀", "健康长寿", "Health & Longevity",
+     "循证医学、长寿科学、女性健康、运动营养睡眠——可执行的健康协议，不是养生鸡汤。",
+     "Evidence-based medicine, longevity science, women's health, exercise, nutrition, sleep — actionable protocols, not wellness fluff.",
+     "health-longevity-weekly", "life"),
+    ("parenting", "👶", "育儿与教育", "Parenting",
+     "循证育儿、儿童脑科学、AI 时代教育——具体话术与场景，妈妈视角。",
+     "Evidence-based parenting, child neuroscience, education for the AI era — concrete scripts and scenarios from a mother's perspective.",
+     "parenting-weekly", "life"),
+    ("psych", "🧩", "心理学", "Psychology",
+     "人格、依恋、创伤、认知、治疗——理解自己与他人的内在世界。",
+     "Personality, attachment, trauma, cognition, therapy — understanding the inner world of yourself and others.",
+     "psychology-weekly", "life"),
+    ("family", "🧺", "一起做", "Doing Together",
+     "烹饪、园艺、小实验、手工、自然观察——和孩子一起动手的日常实践，每期分龄三段。",
+     "Cooking, gardening, kitchen science, crafts — hands-on family practice with the kids, age-tiered and sibling-friendly.",
+     "family-craft-weekly", "life"),
     # 人文 · Humanities
-    ("philosophy", "📜", "哲学经典",       "Philosophy",            "东西方哲学经典，从柏拉图到庄子，从康德到王阳明，跨越时空的思想对话。",                                   "philosophy-weekly",           "humanities"),
-    ("buddhism",   "🪷", "佛经",           "Buddhism",              "经藏智慧，般若、中观、唯识、禅宗、华严、净土，四部经典，闻思修行。",                                     "buddhism-weekly",             "humanities"),
-    ("art",        "🎨", "艺术与审美",     "Art & Aesthetics",      "看画、听乐、读影、赏建筑——怎么看怎么听的感受力训练，东西方兼顾。",                                       "art-aesthetics-weekly",       "humanities"),
-    ("bio",        "👩‍💼", "人物传记",     "Biographies",           "领导者、科学家、思想家、女性领袖——关键决策、生涯转折、争议与阴面，深度学习一个人。",                  "biographies-weekly",          "humanities"),
-    ("book",       "📖", "好书推荐",       "Book Recommendations",  "每期 4 本同主题相关好书——思想脉络、阅读顺序、金句与争议，覆盖商业、科学、文学、哲学。",                 "book-recommendations-bidaily","humanities"),
+    ("philosophy", "📜", "哲学经典", "Philosophy",
+     "东西方哲学经典，从柏拉图到庄子，从康德到王阳明，跨越时空的思想对话。",
+     "Eastern and Western classics, from Plato to Zhuangzi, Kant to Wang Yangming — a dialogue of ideas across time and space.",
+     "philosophy-weekly", "humanities"),
+    ("buddhism", "🪷", "佛经", "Buddhism",
+     "经藏智慧，般若、中观、唯识、禅宗、华严、净土，四部经典，闻思修行。",
+     "Wisdom from the Tripitaka — Prajna, Madhyamaka, Yogacara, Chan, Huayan, Pure Land — four classics per issue, hearing, reflection, practice.",
+     "buddhism-weekly", "humanities"),
+    ("art", "🎨", "艺术与审美", "Art & Aesthetics",
+     "看画、听乐、读影、赏建筑——怎么看怎么听的感受力训练，东西方兼顾。",
+     "How to look at paintings, listen to music, read film, appreciate architecture — training perception, East and West in balance.",
+     "art-aesthetics-weekly", "humanities"),
+    ("bio", "👩‍💼", "人物传记", "Biographies",
+     "领导者、科学家、思想家、女性领袖——关键决策、生涯转折、争议与阴面，深度学习一个人。",
+     "Leaders, scientists, thinkers, women leaders — key decisions, career turning points, controversies and shadow sides; deep study of one person.",
+     "biographies-weekly", "humanities"),
+    ("book", "📖", "好书推荐", "Book Recommendations",
+     "每期 4 本同主题相关好书——思想脉络、阅读顺序、金句与争议，覆盖商业、科学、文学、哲学。",
+     "4 thematically linked books per issue — intellectual lineage, reading order, key quotes and controversies; business, science, literature, philosophy.",
+     "book-recommendations-bidaily", "humanities"),
     # 探索 · Explore
-    ("math",       "📐", "数学之美",       "Mathematics",           "概率、微积分、线代、拓扑、信息论——数学之美与跨学科的优雅工具。",                                       "mathematics-weekly",          "explore"),
-    ("history",    "🏛️", "历史大事件",     "History",               "冷战转折、技术史、商业史、地缘政治——具体事件与反事实思考，Munger 的最佳教材。",                       "history-weekly",              "explore"),
-    ("investing",  "📈", "投资经典",       "Investing",             "Buffett、Munger、Howard Marks、Klarman、Damodaran——投资决策思维的深度训练。",                          "investing-weekly",            "explore"),
-    ("civics",     "🌍", "政治·法律·地缘", "Civics & Geopolitics",  "制度、法律、国际关系、地缘——中立、多视角、不站队的世界运作框架。",                                       "civics-geopolitics-weekly",   "explore"),
+    ("math", "📐", "数学之美", "Mathematics",
+     "概率、微积分、线代、拓扑、信息论——数学之美与跨学科的优雅工具。",
+     "Probability, calculus, linear algebra, topology, information theory — the beauty of mathematics and elegant cross-disciplinary tools.",
+     "mathematics-weekly", "explore"),
+    ("history", "🏛️", "历史大事件", "History",
+     "冷战转折、技术史、商业史、地缘政治——具体事件与反事实思考，Munger 的最佳教材。",
+     "Cold War turning points, history of technology, business history, geopolitics — specific events and counterfactual thinking, Munger's favorite textbook.",
+     "history-weekly", "explore"),
+    ("investing", "📈", "投资经典", "Investing",
+     "Buffett、Munger、Howard Marks、Klarman、Damodaran——投资决策思维的深度训练。",
+     "Buffett, Munger, Howard Marks, Klarman, Damodaran — deep training in investment decision thinking.",
+     "investing-weekly", "explore"),
+    ("civics", "🌍", "政治·法律·地缘", "Civics & Geopolitics",
+     "制度、法律、国际关系、地缘——中立、多视角、不站队的世界运作框架。",
+     "Institutions, law, international relations, geography of power — how the world is governed and divided, neutral and multi-perspective.",
+     "civics-geopolitics-weekly", "explore"),
 ]
 
 # BigCat's Thinking Hub —— 互动型思想实验，链到自建静态站(非每日内容仓库，故无 commit 日期)。
-# (accent_class, emoji, title_zh, subtitle_en, desc, href, badge)
+# (accent_class, emoji, title_zh, subtitle_en, desc_zh, desc_en, href, badge_zh, badge_en)
 THINKING_CARDS = [
     ("thinker", "⚖️", "思想家圆桌辩论", "Thinker Roundtable",
      "古今中外 70+ 位思想家就一个问题数轮辩论，立场表态、古文白话，最后 Claude / GPT / Gemini 三家 AI 收尾。",
-     "https://cissy0802.github.io/thinker-arena/", "圆桌"),
+     "70+ thinkers across eras and traditions debate one question over several rounds — taking sides, classical texts glossed in plain language, closed by a three-way Claude / GPT / Gemini AI panel.",
+     "https://cissy0802.github.io/thinker-arena/", "圆桌", "Roundtable"),
 ]
 
 CSS_VARS = {
@@ -81,6 +143,26 @@ CSS_VARS = {
     "thinker":    ("#a29bfe", "linear-gradient(90deg,#a29bfe,#7b61ff,#ff6ec4)"),
 }
 
+# Per-language chrome strings.
+I18N = {
+    "zh": {
+        "html_lang": "zh-CN",
+        "tagline": "每日学习 · 跨界思考 · 超级个体",
+        "search_prompt": '🔍 按 <kbd>/</kbd> 或点击右下角搜索全站',
+        "hub2_tag": "让思想家替你思考 · 互动圆桌",
+        "arrow": "进入 →",
+        "toggle": '<a href="index.html" class="active">中文</a>\n  <a href="index.en.html">EN</a>',
+    },
+    "en": {
+        "html_lang": "en",
+        "tagline": "Daily learning · Cross-domain thinking · Super-individual",
+        "search_prompt": '🔍 Press <kbd>/</kbd> or click the search button (bottom right) to search the whole site',
+        "hub2_tag": "Let great thinkers think for you · an interactive roundtable",
+        "arrow": "enter →",
+        "toggle": '<a href="index.html">中文</a>\n  <a href="index.en.html" class="active">EN</a>',
+    },
+}
+
 
 def gh_get(url: str):
     req = urllib.request.Request(url, headers={
@@ -95,12 +177,9 @@ def gh_get(url: str):
 
 
 def latest_commit_date(repo: str) -> str:
-    """YYYY-MM-DD of the latest commit that added/modified a content file
-    (matches CONTENT_RE), ignoring index.html, README, workflows, generator.
-
-    Falls back to the repo's most recent commit if no content commit found
-    in the last 50 commits.
-    """
+    """YYYY-MM-DD of the latest commit that added a content file (matches CONTENT_RE),
+    ignoring index.html, README, workflows, generator. Falls back to the repo's most
+    recent commit if no content commit found in the last 50 commits."""
     try:
         commits = gh_get(f"https://api.github.com/repos/cissy0802/{repo}/commits?per_page=50")
     except (urllib.error.URLError, urllib.error.HTTPError) as e:
@@ -117,7 +196,6 @@ def latest_commit_date(repo: str) -> str:
         for f in detail.get("files", []):
             name = f.get("filename", "")
             status = f.get("status", "")
-            # Only count commits that ADD a new content file (not edits to existing ones).
             if status == "added" and CONTENT_RE.search(name):
                 return c["commit"]["committer"]["date"][:10]
     return commits[0]["commit"]["committer"]["date"][:10]
@@ -132,66 +210,65 @@ def card_css() -> str:
     return "\n".join(lines)
 
 
-def card_html(c, date_str: str) -> str:
-    accent_class, emoji, title, subtitle, desc, repo, _section = c
-    return f"""  <a class="card {accent_class}" href="https://cissy0802.github.io/{repo}/">
+def _amp(s: str) -> str:
+    return s.replace("&", "&amp;")
+
+
+def card_html(c, date_str: str, lang: str) -> str:
+    accent_class, emoji, title_zh, subtitle_en, desc_zh, desc_en, repo, _section = c
+    base = f"https://cissy0802.github.io/{repo}/"
+    if lang == "zh":
+        href = base
+        title_row = f'<span class="title">{title_zh}</span><span class="subtitle-en">{_amp(subtitle_en)}</span>'
+        desc = desc_zh
+    else:
+        href = base + "index.en.html"
+        title_row = f'<span class="title">{_amp(subtitle_en)}</span>'
+        desc = desc_en
+    return f"""  <a class="card {accent_class}" href="{href}">
     <span class="emoji">{emoji}</span>
     <div class="body">
-      <div class="title-row"><span class="title">{title}</span><span class="subtitle-en">{subtitle}</span></div>
+      <div class="title-row">{title_row}</div>
       <div class="desc">{desc}</div>
     </div>
     <div class="meta">
       <span class="updated">{date_str or "—"}</span>
-      <span class="arrow">进入 →</span>
+      <span class="arrow">{I18N[lang]["arrow"]}</span>
     </div>
   </a>"""
 
 
-def thinking_card_html(c) -> str:
-    accent_class, emoji, title, subtitle, desc, href, badge = c
+def thinking_card_html(c, lang: str) -> str:
+    accent_class, emoji, title_zh, subtitle_en, desc_zh, desc_en, href, badge_zh, badge_en = c
+    if lang == "zh":
+        title_row = f'<span class="title">{title_zh}</span><span class="subtitle-en">{_amp(subtitle_en)}</span>'
+        desc, badge = desc_zh, badge_zh
+    else:
+        title_row = f'<span class="title">{_amp(subtitle_en)}</span>'
+        desc, badge = desc_en, badge_en
     return f"""  <a class="card {accent_class}" href="{href}">
     <span class="emoji">{emoji}</span>
     <div class="body">
-      <div class="title-row"><span class="title">{title}</span><span class="subtitle-en">{subtitle}</span></div>
+      <div class="title-row">{title_row}</div>
       <div class="desc">{desc}</div>
     </div>
     <div class="meta">
       <span class="updated">{badge}</span>
-      <span class="arrow">进入 →</span>
+      <span class="arrow">{I18N[lang]["arrow"]}</span>
     </div>
   </a>"""
 
 
-def section(label_en: str, label_zh: str, cards_html: list[str]) -> str:
+def section(label_en: str, label_zh: str, cards_html: list[str], lang: str) -> str:
     body = "\n\n".join(cards_html)
-    return f'  <div class="section-label">// {label_zh} · {label_en}</div>\n\n{body}'
+    label = f"{label_zh} · {label_en}" if lang == "zh" else label_en
+    return f'  <div class="section-label">// {label}</div>\n\n{body}'
 
 
-def main():
-    print("Fetching last commit dates...")
-    dates = {}
-    for c in CARDS:
-        repo = c[5]
-        dates[repo] = latest_commit_date(repo)
-        print(f"  {repo}: {dates[repo] or 'N/A'}")
-
-    today = datetime.date.today().strftime("%Y-%m-%d")
-
-    def cards_for(sec): return [card_html(c, dates[c[5]]) for c in CARDS if c[6] == sec]
-
-    grid = "\n\n".join([
-        section("Thinking",   "思维",     cards_for("thinking")),
-        section("Tech",       "技术",     cards_for("tech")),
-        section("Career",     "职场",     cards_for("career")),
-        section("Life",       "生活",     cards_for("life")),
-        section("Humanities", "人文",     cards_for("humanities")),
-        section("Explore",    "探索",     cards_for("explore")),
-    ])
-
-    thinking_grid = "\n\n".join(thinking_card_html(c) for c in THINKING_CARDS)
-
-    html = f"""<!DOCTYPE html>
-<html lang="zh-CN">
+def render_page(lang: str, grid: str, thinking_grid: str, today: str) -> str:
+    t = I18N[lang]
+    return f"""<!DOCTYPE html>
+<html lang="{t['html_lang']}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -245,14 +322,13 @@ footer a:hover{{color:#00d4ff}}
 </head>
 <body>
 <div class="lang-toggle">
-  <a href="index.html" class="active">中文</a>
-  <a href="index.en.html">EN</a>
+  {t['toggle']}
 </div>
 <div class="container">
 <header>
   <h1>BigCat's Learning Hub</h1>
-  <div class="tagline">每日学习 · 跨界思考 · 超级个体</div>
-  <div class="search-prompt">🔍 按 <kbd>/</kbd> 或点击右下角搜索全站</div>
+  <div class="tagline">{t['tagline']}</div>
+  <div class="search-prompt">{t['search_prompt']}</div>
 </header>
 
 <div class="list">
@@ -261,7 +337,7 @@ footer a:hover{{color:#00d4ff}}
 
 <div class="hub2-header">
   <h2>BigCat's Thinking Hub</h2>
-  <div class="hub2-tag">让思想家替你思考 · 互动圆桌</div>
+  <div class="hub2-tag">{t['hub2_tag']}</div>
 </div>
 
 <div class="list">
@@ -276,8 +352,33 @@ footer a:hover{{color:#00d4ff}}
 </body>
 </html>
 """
-    Path("index.html").write_text(html, encoding="utf-8")
-    print(f"\nWritten index.html ({len(html)} bytes)")
+
+
+def main():
+    print("Fetching last commit dates...")
+    dates = {}
+    for c in CARDS:
+        repo = c[6]
+        dates[repo] = latest_commit_date(repo)
+        print(f"  {repo}: {dates[repo] or 'N/A'}")
+
+    today = datetime.date.today().strftime("%Y-%m-%d")
+
+    for lang, fname in (("zh", "index.html"), ("en", "index.en.html")):
+        def cards_for(sec):
+            return [card_html(c, dates[c[6]], lang) for c in CARDS if c[7] == sec]
+        grid = "\n\n".join([
+            section("Thinking",   "思维",     cards_for("thinking"), lang),
+            section("Tech",       "技术",     cards_for("tech"), lang),
+            section("Career",     "职场",     cards_for("career"), lang),
+            section("Life",       "生活",     cards_for("life"), lang),
+            section("Humanities", "人文",     cards_for("humanities"), lang),
+            section("Explore",    "探索",     cards_for("explore"), lang),
+        ])
+        thinking_grid = "\n\n".join(thinking_card_html(c, lang) for c in THINKING_CARDS)
+        html = render_page(lang, grid, thinking_grid, today)
+        Path(fname).write_text(html, encoding="utf-8")
+        print(f"Written {fname} ({len(html)} bytes)")
 
 
 if __name__ == "__main__":
