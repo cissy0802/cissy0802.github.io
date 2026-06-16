@@ -37,6 +37,20 @@ jobs:
           # Also include hub's own index (for searching hub content)
           # — skip; hub landing is just nav, not content.
 
+      - name: Add Thinking Hub (thinker-arena) debates
+        run: |
+          git clone --depth 1 --quiet "https://github.com/cissy0802/thinker-arena" "_src/thinker-arena"
+          rm -rf "_src/thinker-arena/.git" "_src/thinker-arena/.github"
+          # Debates render client-side from JSON, so Pagefind sees empty shells.
+          # Pre-render static, crawlable snapshots (one per debate per language)
+          # whose result URLs point back at the live interactive debate page.
+          python3 render_search_snapshots.py _src/thinker-arena
+          # Keep only the generated snapshots under search/; drop the client-rendered
+          # scaffolding (index.html, debate.html, *.js, *.json) so the empty shells
+          # don't surface as junk search results.
+          find _src/thinker-arena -maxdepth 1 -type f -delete
+          rm -rf _src/thinker-arena/debates
+
       - uses: actions/setup-node@v4
         with:
           node-version: '20'

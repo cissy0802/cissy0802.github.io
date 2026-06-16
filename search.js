@@ -127,8 +127,31 @@
           showSubResults: true,
           pageSize: 5,
           bundlePath: `${HUB}/pagefind/`,
+          // Thinking Hub debates are indexed via static snapshots under
+          // /thinker-arena/search/<slug>.html (the live page renders client-side,
+          // so Pagefind can't crawl it directly). Those snapshot files aren't
+          // shipped — only the index is — so rewrite their result URLs back to the
+          // live interactive debate page. The generator stores that live URL in
+          // meta.url; fall back to parsing the snapshot slug if meta is missing.
+          processResult: (result) => {
+            const live =
+              (result.meta && result.meta.url) ||
+              (() => {
+                const m = /\/thinker-arena\/search\/(.+?)(?:\.en)?\.html$/.exec(
+                  result.url || ""
+                );
+                return m ? `/thinker-arena/debate.html?id=${m[1]}` : null;
+              })();
+            if (live) {
+              result.url = live;
+              (result.sub_results || []).forEach((s) => {
+                s.url = live;
+              });
+            }
+            return result;
+          },
           translations: {
-            placeholder: "搜索 13 个主题的所有内容...",
+            placeholder: "搜索全站内容（含圆桌辩论）...",
             zero_results: "未找到相关结果",
             many_results: "[COUNT] 条结果",
             one_result: "1 条结果",
