@@ -92,7 +92,7 @@ CARDS = [
      "4 thematically linked books per issue — intellectual lineage, reading order, key quotes and controversies; business, science, literature, philosophy.",
      "book-recommendations-bidaily", "humanities"),
     ("deepread", "📰", "每日精读", "Deep Reading",
-     "每天精读一本好书——把它反复在讲的几个核心概念彻底讲透，读完这页≈读完原书；术语带英文、中英双语。",
+     "每天精读一本好书——把它反复在讲的几个核心概念彻底讲透，读完这页≈读完原书。",
      "One book a day, read closely — the few core concepts it keeps circling, made clear; read this page instead of the whole book.",
      "deep-reading-daily", "humanities"),
     # 探索 · Explore
