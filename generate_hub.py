@@ -91,6 +91,10 @@ CARDS = [
      "每期 4 本同主题相关好书——思想脉络、阅读顺序、金句与争议，覆盖商业、科学、文学、哲学。",
      "4 thematically linked books per issue — intellectual lineage, reading order, key quotes and controversies; business, science, literature, philosophy.",
      "book-recommendations-bidaily", "humanities"),
+    ("deepread", "📰", "每日精读", "Deep Reading",
+     "每天精读一本好书——把它反复在讲的几个核心概念彻底讲透，读完这页≈读完原书；术语带英文、中英双语。",
+     "One book a day, read closely — the few core concepts it keeps circling, made clear; read this page instead of the whole book.",
+     "deep-reading-daily", "humanities"),
     # 探索 · Explore
     ("math", "📐", "数学之美", "Mathematics",
      "概率、微积分、线代、拓扑、信息论——数学之美与跨学科的优雅工具。",
@@ -124,6 +128,7 @@ CSS_VARS = {
     "aiml":       ("#ff6ec4", "#7b61ff"),
     "meta":       ("#52b788", "linear-gradient(90deg,#e85a4f,#f7a072,#52b788,#3a86ff)"),
     "book":       ("#a87a3e", "#6b4423"),
+    "deepread":   ("#3f8b7f", "#2f5d57"),
     "sysd":       ("#64c8ff", "#5eead4"),
     "health":     ("#3aa17e", "#0d6e6e"),
     "history":    ("#a35d2b", "#5a3a1e"),
