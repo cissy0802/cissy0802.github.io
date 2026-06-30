@@ -61,9 +61,11 @@
     return btn;
   }
 
-  // Detect existing hardcoded ← Hub button (matches any anchor pointing to the hub root).
-  function hasExistingHubBtn() {
-    if (document.getElementById("bigcat-hub-btn")) return true;
+  // Detect existing hardcoded ← Hub button (any fixed/floating anchor pointing to the hub root).
+  // Returns the anchor element if found, else null.
+  function findExistingHubBtn() {
+    const byId = document.getElementById("bigcat-hub-btn");
+    if (byId) return byId;
     const anchors = document.querySelectorAll('a[href]');
     for (const a of anchors) {
       const href = a.getAttribute("href");
@@ -78,17 +80,27 @@
         // Only count if it looks like a fixed/floating nav button, not a footer link.
         const style = (a.getAttribute("style") || "").toLowerCase();
         if (style.includes("position:fixed") || style.includes("position: fixed")) {
-          return true;
+          return a;
         }
       }
     }
-    return false;
+    return null;
   }
 
   const root = document.body || document.documentElement;
 
-  // 1) ← Hub button (left:14px) — inject only if no existing hub button.
-  if (!hasExistingHubBtn()) {
+  // 1) ← Hub button (left:14px).
+  const existingHub = findExistingHubBtn();
+  if (existingHub) {
+    // Self-heal: on an EN page, a hardcoded ← Hub pointing at the zh hub root
+    // would send the reader to the Chinese hub. Correct it to the EN hub.
+    if (isEn) {
+      const h = existingHub.getAttribute("href") || "";
+      if (/^https?:\/\/cissy0802\.github\.io\/?$/.test(h) || h === "/") {
+        existingHub.setAttribute("href", hubHref);
+      }
+    }
+  } else {
     root.appendChild(makeBtn("bigcat-hub-btn", hubHref, "← Hub", 14));
   }
 
