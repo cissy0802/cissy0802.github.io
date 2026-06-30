@@ -251,10 +251,9 @@ def thinking_card_html(c, lang: str) -> str:
     else:
         title_row = f'<span class="title">{_amp(subtitle_en)}</span>'
         desc, badge = desc_en, badge_en
-    # Single-page bilingual sites (thinker-arena) persist language in localStorage,
-    # so BOTH hubs must pass ?lang= explicitly — otherwise a bare link falls back to
-    # whatever was last persisted (e.g. zh hub opening EN because EN was visited before).
-    href = href + (("&" if "?" in href else "?") + "lang=" + lang)
+        # English page lives at index.en.html (same split-file convention as the
+        # other sites); zh stays at the bare dir (index.html).
+        href = href + "index.en.html"
     return f"""  <a class="card {accent_class}" href="{href}">
     <span class="emoji">{emoji}</span>
     <div class="body">

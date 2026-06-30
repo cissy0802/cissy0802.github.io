@@ -16,23 +16,14 @@
 
   const repo = parts[0];
 
-  // Single-page sites that carry language via localStorage + ?lang= (no .en.html
-  // files). Their English "index" is the same dir, not an index.en.html.
-  const LOCALE_PERSIST_REPOS = ["thinker-arena"];
-  const isLocalePersist = LOCALE_PERSIST_REPOS.includes(repo);
-
   // Detect current page language so the buttons return to the same language.
-  // Priority: <html lang> attribute, then URL filename (.en.html), then ?lang=.
+  // Priority: <html lang> attribute, then URL filename (.en.html).
   const htmlLang = (document.documentElement.lang || "").toLowerCase();
-  const urlLang = new URLSearchParams(window.location.search).get("lang");
-  const isEn =
-    htmlLang.startsWith("en") || /\.en\.html$/i.test(last) || urlLang === "en";
+  const isEn = htmlLang.startsWith("en") || /\.en\.html$/i.test(last);
   const hubHref = isEn
     ? "https://cissy0802.github.io/index.en.html"
     : "https://cissy0802.github.io/";
-  const indexHref = isLocalePersist
-    ? "/" + repo + "/" + (isEn ? "?lang=en" : "")
-    : isEn
+  const indexHref = isEn
     ? "/" + repo + "/index.en.html"
     : "/" + repo + "/";
 
