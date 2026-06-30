@@ -251,6 +251,9 @@ def thinking_card_html(c, lang: str) -> str:
     else:
         title_row = f'<span class="title">{_amp(subtitle_en)}</span>'
         desc, badge = desc_en, badge_en
+        # Single-page bilingual sites (thinker-arena) carry language via ?lang=;
+        # the English hub must hand them lang=en so they don't open in Chinese.
+        href = href + ("&lang=en" if "?" in href else "?lang=en")
     return f"""  <a class="card {accent_class}" href="{href}">
     <span class="emoji">{emoji}</span>
     <div class="body">
