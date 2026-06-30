@@ -9,8 +9,10 @@
   const parts = window.location.pathname.split("/").filter(Boolean);
   if (parts.length === 0) return; // hub root
   const last = parts[parts.length - 1];
-  if (parts.length === 1) return; // /{repo}/  → already at category index
-  if (last === "index.html") return;
+  // Category index page (/{repo}/, /{repo}/index.html, /{repo}/index.en.html):
+  // still show ← Hub, but skip ← Index (it would just point to this same page).
+  const isCategoryIndex =
+    parts.length === 1 || last === "index.html" || last === "index.en.html";
 
   const repo = parts[0];
 
@@ -81,8 +83,9 @@
     root.appendChild(makeBtn("bigcat-hub-btn", hubHref, "← Hub", 14));
   }
 
-  // 2) ← Index button (left:108px) — always inject if not present.
-  if (!document.getElementById("bigcat-index-btn")) {
+  // 2) ← Index button (left:108px) — inject on content sub-pages only,
+  //    not on the category index itself (would point to this same page).
+  if (!isCategoryIndex && !document.getElementById("bigcat-index-btn")) {
     root.appendChild(makeBtn("bigcat-index-btn", indexHref, "← Index", 108));
   }
 })();
