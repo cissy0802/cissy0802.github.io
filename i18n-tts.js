@@ -137,7 +137,7 @@
         const myToken = ++this._token;
         const isStale = () => myToken !== this._token;
         audio.onended = () => {
-          if (isStale() || !this.playing) return;
+          if (isStale() || !this.playing || audio._priming) return;
           this.idx++;
           this.speakCurrent();
         };
@@ -149,11 +149,25 @@
         audio.onloadedmetadata = () => {
           if (isStale()) return;
           setSeekEnabled(true);
-          updateSeek(0, audio.duration);
+          if (isFinite(audio.duration) && audio.duration > 0) {
+            updateSeek(0, audio.duration);
+          } else {
+            // Azure mp3s often ship without a duration in the header, so the
+            // browser reports Infinity/NaN until the file is fully scanned.
+            // Probe for the real duration so seek math has something to work with.
+            primeDuration(audio, isStale);
+          }
+        };
+        audio.ondurationchange = () => {
+          if (isStale() || audio._priming) return;
+          if (isFinite(audio.duration) && audio.duration > 0) {
+            setSeekEnabled(true);
+            if (!isScrubbing) updateSeek(audio.currentTime, audio.duration);
+          }
         };
         audio.ontimeupdate = () => {
-          if (isStale() || isScrubbing) return;
-          updateSeek(audio.currentTime, audio.duration);
+          if (isStale() || isScrubbing || audio._priming) return;
+          updateSeek(audio.currentTime, durationOf(audio));
         };
         this.audio = audio;
         audio.play().catch((e) => {
@@ -171,17 +185,21 @@
     },
 
     seekTo(fraction) {
-      if (!this.audio || !this.audio.duration) return;
-      const t = Math.max(0, Math.min(this.audio.duration, fraction * this.audio.duration));
-      this.audio.currentTime = t;
-      updateSeek(t, this.audio.duration);
+      const dur = durationOf(this.audio);
+      if (!this.audio || !dur) return;
+      const t = Math.max(0, Math.min(dur, fraction * dur));
+      if (!isFinite(t)) return;
+      try { this.audio.currentTime = t; } catch (e) {}
+      updateSeek(t, dur);
     },
 
     skip(deltaSeconds) {
-      if (!this.audio || !isFinite(this.audio.duration)) return;
-      const t = Math.max(0, Math.min(this.audio.duration, this.audio.currentTime + deltaSeconds));
-      this.audio.currentTime = t;
-      updateSeek(t, this.audio.duration);
+      const dur = durationOf(this.audio);
+      if (!this.audio || !dur) return;
+      const t = Math.max(0, Math.min(dur, this.audio.currentTime + deltaSeconds));
+      if (!isFinite(t)) return;
+      try { this.audio.currentTime = t; } catch (e) {}
+      updateSeek(t, dur);
     },
 
     speakWebSpeech(seg, isStale) {
@@ -464,6 +482,47 @@ body{padding-bottom:96px!important}
   // ---------- Seek bar ----------
   let isScrubbing = false;
 
+  // Robust duration: audio.duration can be Infinity/NaN for header-less mp3s,
+  // so fall back to the end of the seekable range when available.
+  function durationOf(audio) {
+    if (!audio) return 0;
+    const d = audio.duration;
+    if (isFinite(d) && d > 0) return d;
+    try {
+      const sk = audio.seekable;
+      if (sk && sk.length) {
+        const end = sk.end(sk.length - 1);
+        if (isFinite(end) && end > 0) return end;
+      }
+    } catch (e) {}
+    return 0;
+  }
+
+  // Force the browser to compute a real duration for streamed/header-less mp3s
+  // by seeking far past the end; it clamps and fires durationchange with the
+  // true length, after which we restore playback to the start.
+  function primeDuration(audio, isStale) {
+    if (audio._priming || (isFinite(audio.duration) && audio.duration > 0)) return;
+    audio._priming = true;
+    const cleanup = () => {
+      audio.removeEventListener('durationchange', onResolve);
+      audio.removeEventListener('timeupdate', onResolve);
+    };
+    const onResolve = () => {
+      if (isStale && isStale()) { cleanup(); audio._priming = false; return; }
+      if (isFinite(audio.duration) && audio.duration > 0) {
+        cleanup();
+        try { audio.currentTime = 0; } catch (e) {}
+        audio._priming = false;
+        setSeekEnabled(true);
+        if (!isScrubbing) updateSeek(0, audio.duration);
+      }
+    };
+    audio.addEventListener('durationchange', onResolve);
+    audio.addEventListener('timeupdate', onResolve);
+    try { audio.currentTime = 1e7; } catch (e) { audio._priming = false; }
+  }
+
   function fmtTime(s) {
     if (!isFinite(s) || s < 0) s = 0;
     const m = Math.floor(s / 60);
@@ -495,50 +554,61 @@ body{padding-bottom:96px!important}
     const bar = document.querySelector('.mmd-controls .seek-bar');
     if (!bar) return;
 
-    const fractionFromEvent = (e) => {
+    // clientX − rect.left (NOT offsetX, which is wrong once the pointer leaves
+    // the bar), clamped to [0,1].
+    const fractionFromX = (clientX) => {
       const rect = bar.getBoundingClientRect();
-      const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
-      return Math.max(0, Math.min(1, x / rect.width));
+      if (!rect.width) return 0;
+      return Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
     };
 
-    const startScrub = (e) => {
-      if (bar.classList.contains('disabled')) return;
+    const previewAt = (f) => {
+      const dur = durationOf(tts.audio);
+      if (dur > 0) updateSeek(f * dur, dur);
+    };
+
+    // Pointer Events unify mouse / touch / pen; setPointerCapture keeps the
+    // drag alive even when the pointer slides outside the (small) bar.
+    const onDown = (e) => {
+      if (bar.classList.contains('disabled') || !tts.audio) return;
       e.preventDefault();
       isScrubbing = true;
       bar.classList.add('scrubbing');
-      const f = fractionFromEvent(e);
-      if (tts.audio) updateSeek(f * tts.audio.duration, tts.audio.duration);
+      try { bar.setPointerCapture(e.pointerId); } catch (err) {}
+      previewAt(fractionFromX(e.clientX));
     };
-    const moveScrub = (e) => {
+    const onMove = (e) => {
       if (!isScrubbing) return;
-      const f = fractionFromEvent(e);
-      if (tts.audio) updateSeek(f * tts.audio.duration, tts.audio.duration);
+      e.preventDefault();
+      previewAt(fractionFromX(e.clientX));
     };
-    const endScrub = (e) => {
+    const onUp = (e) => {
       if (!isScrubbing) return;
-      const f = fractionFromEvent(e.changedTouches ? e : (e.type === 'mouseup' ? e : e));
-      tts.seekTo(f);
+      e.preventDefault();
+      const f = fractionFromX(e.clientX);
       isScrubbing = false;
       bar.classList.remove('scrubbing');
+      try { bar.releasePointerCapture(e.pointerId); } catch (err) {}
+      tts.seekTo(f);
     };
 
-    bar.addEventListener('mousedown', startScrub);
-    bar.addEventListener('touchstart', startScrub, { passive: false });
-    window.addEventListener('mousemove', moveScrub);
-    window.addEventListener('touchmove', moveScrub, { passive: false });
-    window.addEventListener('mouseup', endScrub);
-    window.addEventListener('touchend', endScrub);
+    bar.addEventListener('pointerdown', onDown);
+    bar.addEventListener('pointermove', onMove);
+    bar.addEventListener('pointerup', onUp);
+    bar.addEventListener('pointercancel', onUp);
 
     // Keyboard support (arrows = ±5s)
     bar.addEventListener('keydown', (e) => {
       if (!tts.audio || bar.classList.contains('disabled')) return;
+      const dur = durationOf(tts.audio);
+      if (!dur) return;
       const step = 5;
       if (e.key === 'ArrowLeft') {
         e.preventDefault();
         tts.audio.currentTime = Math.max(0, tts.audio.currentTime - step);
       } else if (e.key === 'ArrowRight') {
         e.preventDefault();
-        tts.audio.currentTime = Math.min(tts.audio.duration, tts.audio.currentTime + step);
+        tts.audio.currentTime = Math.min(dur, tts.audio.currentTime + step);
       }
     });
   }
