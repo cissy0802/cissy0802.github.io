@@ -44,6 +44,10 @@ CARDS = [
      "分布式系统、架构 trade-off、真实案例拆解、面试题示范——给资深工程师的 system design 训练。",
      "Distributed systems, architecture trade-offs, real-world case studies, interview demos — system design training for senior engineers.",
      "system-design-bidaily", "tech"),
+    ("papers", "📄", "IT 论文精读", "CS Papers",
+     "计算机 / AI 里程碑论文精读——问题、核心思想、方法、影响一次讲透，配自绘示意图，读这页≈读懂论文。",
+     "Milestone CS/AI papers, distilled — the problem, key idea, method and impact in one read, with hand-drawn diagrams; read this page instead of the paper.",
+     "cs-papers-deepread", "tech"),
     # 职场 · Career
     ("leadership", "🎯", "领导力实践", "Leadership",
      "1:1、反馈、难对话、招聘、coaching——具体话术与检查表，技术 leader 的处方性 craft。",
@@ -130,6 +134,7 @@ CSS_VARS = {
     "book":       ("#a87a3e", "#6b4423"),
     "deepread":   ("#3f8b7f", "#2f5d57"),
     "sysd":       ("#64c8ff", "#5eead4"),
+    "papers":     ("#f0b429", "#e8794b"),
     "health":     ("#3aa17e", "#0d6e6e"),
     "history":    ("#a35d2b", "#5a3a1e"),
     "parenting":  ("#e07a9b", "#c45a8e"),
