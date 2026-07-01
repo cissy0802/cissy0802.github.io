@@ -181,29 +181,49 @@ def gh_get(url: str):
         return json.loads(resp.read().decode())
 
 
-def latest_commit_date(repo: str) -> str:
-    """YYYY-MM-DD of the latest commit that added a content file (matches CONTENT_RE),
-    ignoring index.html, README, workflows, generator. Falls back to the repo's most
-    recent commit if no content commit found in the last 50 commits."""
+# Routines whose roadmap has been 收口/封顶. When a routine's highest published number
+# reaches its cap, its hub card shows a "已完结 / Completed" badge instead of a date.
+# (Auto-detected from 'Add #N' commit messages, so each self-marks when it finishes.)
+CAPS = {
+    "mental-models-daily": 68,
+    "super-individual-weekly": 51,
+    "ai-ml-daily": 53,
+    "philosophy-weekly": 49,
+    "system-design-bidaily": 48,
+    "leadership-weekly": 69,
+    "health-longevity-weekly": 60,
+    "buddhism-weekly": 36,
+    "investing-weekly": 56,
+    "history-weekly": 57,
+}
+
+
+def latest_commit_date(repo: str):
+    """Return (date, is_done). date = YYYY-MM-DD of the latest commit that added a
+    content file (matches CONTENT_RE). is_done = True when a capped routine (CAPS) has
+    published up to its cap (highest 'Add #N' >= cap). Falls back to newest commit date."""
     try:
         commits = gh_get(f"https://api.github.com/repos/cissy0802/{repo}/commits?per_page=50")
     except (urllib.error.URLError, urllib.error.HTTPError) as e:
         print(f"  WARN {repo}: {e}")
-        return ""
+        return "", False
     if not commits:
-        return ""
+        return "", False
+    # done: highest published #N (from 'Add #N' commit messages) reached the cap
+    done = False
+    if repo in CAPS:
+        nums = [int(n) for c in commits for n in re.findall(r"Add #(\d+)", c["commit"]["message"])]
+        done = bool(nums) and max(nums) >= CAPS[repo]
+    # date: latest commit that ADDED a content file (fallback: newest commit)
     for c in commits:
-        sha = c["sha"]
         try:
-            detail = gh_get(f"https://api.github.com/repos/cissy0802/{repo}/commits/{sha}")
+            detail = gh_get(f"https://api.github.com/repos/cissy0802/{repo}/commits/{c['sha']}")
         except (urllib.error.URLError, urllib.error.HTTPError):
             continue
         for f in detail.get("files", []):
-            name = f.get("filename", "")
-            status = f.get("status", "")
-            if status == "added" and CONTENT_RE.search(name):
-                return c["commit"]["committer"]["date"][:10]
-    return commits[0]["commit"]["committer"]["date"][:10]
+            if f.get("status") == "added" and CONTENT_RE.search(f.get("filename", "")):
+                return c["commit"]["committer"]["date"][:10], done
+    return commits[0]["commit"]["committer"]["date"][:10], done
 
 
 def card_css() -> str:
@@ -219,8 +239,9 @@ def _amp(s: str) -> str:
     return s.replace("&", "&amp;")
 
 
-def card_html(c, date_str: str, lang: str) -> str:
+def card_html(c, meta, lang: str) -> str:
     accent_class, emoji, title_zh, subtitle_en, desc_zh, desc_en, repo, _section = c
+    date_str, done = meta
     base = f"https://cissy0802.github.io/{repo}/"
     if lang == "zh":
         href = base
@@ -237,7 +258,7 @@ def card_html(c, date_str: str, lang: str) -> str:
       <div class="desc">{desc}</div>
     </div>
     <div class="meta">
-      <span class="updated">{date_str or "—"}</span>
+      {'<span class="updated" style="color:#3fb955;font-weight:600" title="收口完结">✓ ' + ('已完结' if lang == 'zh' else 'Completed') + '</span>' if done else f'<span class="updated">{date_str or "—"}</span>'}
       <span class="arrow">{I18N[lang]["arrow"]}</span>
     </div>
   </a>"""
@@ -368,7 +389,8 @@ def main():
     for c in CARDS:
         repo = c[6]
         dates[repo] = latest_commit_date(repo)
-        print(f"  {repo}: {dates[repo] or 'N/A'}")
+        _d, _done = dates[repo]
+        print(f"  {repo}: {_d or 'N/A'}{' [已完结]' if _done else ''}")
 
     today = datetime.date.today().strftime("%Y-%m-%d")
 
