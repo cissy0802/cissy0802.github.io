@@ -6,6 +6,41 @@
   if (document.getElementById("search-fab")) return; // idempotent
   const HUB = "https://cissy0802.github.io";
 
+  // Detect page language so the search overlay matches it (EN pages must not open in Chinese).
+  // Priority: <html lang>, then .en.html filename, then ?lang=en.
+  const _last = location.pathname.split("/").filter(Boolean).pop() || "";
+  const isEn =
+    (document.documentElement.lang || "").toLowerCase().startsWith("en") ||
+    /\.en\.html$/i.test(_last) ||
+    new URLSearchParams(location.search).get("lang") === "en";
+  const T = isEn
+    ? {
+        aria: "Search the site",
+        title: "Search the site (press /)",
+        header: "🔍 Search",
+        esc: "Esc to close",
+        placeholder: "Search everything (incl. roundtable debates)…",
+        zero: "No results found",
+        many: "[COUNT] results",
+        one: "1 result",
+        searching: "Searching…",
+        errBuilt: "Search index isn't built yet, or it failed to load. Please wait for the GitHub Action's first build.",
+        errPending: "Search index isn't built yet. Please wait for the GitHub Action's first build (auto-refreshes daily at 6am PDT).",
+      }
+    : {
+        aria: "搜索全站",
+        title: "搜索全站 (按 / 触发)",
+        header: "🔍 搜索全站",
+        esc: "Esc 关闭",
+        placeholder: "搜索全站内容（含圆桌辩论）...",
+        zero: "未找到相关结果",
+        many: "[COUNT] 条结果",
+        one: "1 条结果",
+        searching: "搜索中...",
+        errBuilt: "搜索索引尚未生成或加载失败。请等待 GitHub Action 完成首次构建。",
+        errPending: "搜索索引尚未生成。请等待 GitHub Action 完成首次构建（每天 6am PDT 自动刷新）。",
+      };
+
   // Detect dark mode like comments.js
   function pageIsDark() {
     let el = document.body;
@@ -27,8 +62,8 @@
   // Floating search button
   const fab = document.createElement("button");
   fab.id = "search-fab";
-  fab.setAttribute("aria-label", "搜索全站");
-  fab.title = "搜索全站 (按 / 触发)";
+  fab.setAttribute("aria-label", T.aria);
+  fab.title = T.title;
   fab.innerHTML = "🔍";
   fab.style.cssText =
     "position:fixed;bottom:22px;right:22px;z-index:9998;width:48px;height:48px;border-radius:50%;border:none;" +
@@ -58,8 +93,8 @@
     "padding:20px 22px;box-shadow:0 20px 60px rgba(0,0,0,0.5);position:relative";
   modal.innerHTML =
     '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px">' +
-      '<h3 style="margin:0;font-size:1.1rem;font-weight:600">🔍 搜索全站</h3>' +
-      '<span style="font-size:0.75rem;opacity:0.55">Esc 关闭</span>' +
+      '<h3 style="margin:0;font-size:1.1rem;font-weight:600">' + T.header + '</h3>' +
+      '<span style="font-size:0.75rem;opacity:0.55">' + T.esc + '</span>' +
     '</div>' +
     '<div id="pagefind-search"></div>';
   overlay.appendChild(modal);
@@ -151,21 +186,21 @@
             return result;
           },
           translations: {
-            placeholder: "搜索全站内容（含圆桌辩论）...",
-            zero_results: "未找到相关结果",
-            many_results: "[COUNT] 条结果",
-            one_result: "1 条结果",
-            searching: "搜索中...",
+            placeholder: T.placeholder,
+            zero_results: T.zero,
+            many_results: T.many,
+            one_result: T.one,
+            searching: T.searching,
           },
         });
       } catch (err) {
         modal.querySelector("#pagefind-search").innerHTML =
-          '<p style="opacity:0.7">搜索索引尚未生成或加载失败。请等待 GitHub Action 完成首次构建。</p>';
+          '<p style="opacity:0.7">' + T.errBuilt + '</p>';
       }
     };
     script.onerror = () => {
       modal.querySelector("#pagefind-search").innerHTML =
-        '<p style="opacity:0.7">搜索索引尚未生成。请等待 GitHub Action 完成首次构建（每天 6am PDT 自动刷新）。</p>';
+        '<p style="opacity:0.7">' + T.errPending + '</p>';
     };
     document.head.appendChild(script);
   }
