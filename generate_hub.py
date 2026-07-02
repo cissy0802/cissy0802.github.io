@@ -69,7 +69,7 @@ CARDS = [
     ("psych", "🧩", "心理学", "Psychology",
      "人格、依恋、创伤、认知、治疗——理解自己与他人的内在世界。",
      "Personality, attachment, trauma, cognition, therapy — understanding the inner world of yourself and others.",
-     "psychology-weekly", "life"),
+     "psychology", "life"),
     ("family", "🧺", "一起做", "Doing Together",
      "烹饪、园艺、小实验、手工、自然观察——和孩子一起动手的日常实践，每期分龄三段。",
      "Cooking, gardening, kitchen science, crafts — hands-on family practice with the kids, age-tiered and sibling-friendly.",
