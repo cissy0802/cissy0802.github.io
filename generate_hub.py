@@ -90,7 +90,7 @@ CARDS = [
     ("bio", "👩‍💼", "人物传记", "Biographies",
      "领导者、科学家、思想家、女性领袖——关键决策、生涯转折、争议与阴面，深度学习一个人。",
      "Leaders, scientists, thinkers, women leaders — key decisions, career turning points, controversies and shadow sides; deep study of one person.",
-     "biographies-weekly", "humanities"),
+     "biographies", "humanities"),
     ("book", "📖", "好书推荐", "Book Recommendations",
      "每期 4 本同主题相关好书——思想脉络、阅读顺序、金句与争议，覆盖商业、科学、文学、哲学。",
      "4 thematically linked books per issue — intellectual lineage, reading order, key quotes and controversies; business, science, literature, philosophy.",
