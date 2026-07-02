@@ -26,7 +26,7 @@ CARDS = [
     ("mental", "📚", "思维模型", "Mental Models",
      "决策、认知、系统思维、博弈、概率、心理学——每天 3-4 个模型，构建跨学科心智工具箱。",
      "Decision, cognition, systems thinking, game theory, probability, psychology — 3-4 models per day to build a cross-disciplinary toolkit.",
-     "mental-models-daily", "thinking"),
+     "mental-models", "thinking"),
     ("meta", "🧠", "元知识", "Meta Knowledge",
      "神经科学、行为经济学、复杂系统、社会学、管理学、量子物理——跨学科的世界模型工具箱。",
      "Neuroscience, behavioral economics, complex systems, sociology, management, quantum physics — a cross-disciplinary world-model toolkit.",
@@ -190,7 +190,7 @@ def gh_get(url: str):
 # reaches its cap, its hub card shows a "已完结 / Completed" badge instead of a date.
 # (Auto-detected from 'Add #N' commit messages, so each self-marks when it finishes.)
 CAPS = {
-    "mental-models-daily": 68,
+    "mental-models": 68,
     "super-individual-weekly": 51,
     "ai-ml-daily": 53,
     "philosophy-weekly": 49,
