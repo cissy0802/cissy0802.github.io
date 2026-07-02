@@ -111,7 +111,7 @@ CARDS = [
     ("investing", "📈", "投资经典", "Investing",
      "Buffett、Munger、Howard Marks、Klarman、Damodaran——投资决策思维的深度训练。",
      "Buffett, Munger, Howard Marks, Klarman, Damodaran — deep training in investment decision thinking.",
-     "investing-weekly", "explore"),
+     "investing", "explore"),
     ("civics", "🌍", "政治·法律·地缘", "Civics & Geopolitics",
      "制度、法律、国际关系、地缘——中立、多视角、不站队的世界运作框架。",
      "Institutions, law, international relations, geography of power — how the world is governed and divided, neutral and multi-perspective.",
@@ -200,7 +200,7 @@ CAPS = {
     "leadership": 69,
     "health-longevity": 60,
     "buddhism": 36,
-    "investing-weekly": 56,
+    "investing": 56,
     "history": 57,
 }
 
