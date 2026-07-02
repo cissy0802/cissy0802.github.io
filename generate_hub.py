@@ -86,7 +86,7 @@ CARDS = [
     ("art", "🎨", "艺术与审美", "Art & Aesthetics",
      "看画、听乐、读影、赏建筑——怎么看怎么听的感受力训练，东西方兼顾。",
      "How to look at paintings, listen to music, read film, appreciate architecture — training perception, East and West in balance.",
-     "art-aesthetics-weekly", "humanities"),
+     "art-aesthetics", "humanities"),
     ("bio", "👩‍💼", "人物传记", "Biographies",
      "领导者、科学家、思想家、女性领袖——关键决策、生涯转折、争议与阴面，深度学习一个人。",
      "Leaders, scientists, thinkers, women leaders — key decisions, career turning points, controversies and shadow sides; deep study of one person.",
