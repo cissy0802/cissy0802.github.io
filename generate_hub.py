@@ -107,7 +107,7 @@ CARDS = [
     ("history", "🏛️", "历史大事件", "History",
      "冷战转折、技术史、商业史、地缘政治——具体事件与反事实思考，Munger 的最佳教材。",
      "Cold War turning points, history of technology, business history, geopolitics — specific events and counterfactual thinking, Munger's favorite textbook.",
-     "history-weekly", "explore"),
+     "history", "explore"),
     ("investing", "📈", "投资经典", "Investing",
      "Buffett、Munger、Howard Marks、Klarman、Damodaran——投资决策思维的深度训练。",
      "Buffett, Munger, Howard Marks, Klarman, Damodaran — deep training in investment decision thinking.",
@@ -201,7 +201,7 @@ CAPS = {
     "health-longevity": 60,
     "buddhism": 36,
     "investing-weekly": 56,
-    "history-weekly": 57,
+    "history": 57,
 }
 
 
