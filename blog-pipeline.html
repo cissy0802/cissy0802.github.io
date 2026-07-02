@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一个人 + 一支 Agent 车队：这个 Hub 是怎么搭起来的</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Serif SC","Songti SC",serif;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0a0e1a 100%);color:#e4e6eb;line-height:1.95;min-height:100vh}
+.container{max-width:780px;margin:0 auto;padding:48px 24px 80px}
+.lang-toggle{position:fixed;top:18px;right:18px;background:rgba(255,255,255,0.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:5px;display:flex;z-index:100;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem}
+.lang-toggle a{padding:5px 12px;border-radius:14px;color:#a0a8c0;text-decoration:none;transition:all 0.15s}
+.lang-toggle a.active{background:#7b61ff;color:#fff;font-weight:700}
+.lang-toggle a:not(.active):hover{background:rgba(255,255,255,0.08);color:#fff}
+header{text-align:center;padding:40px 0 8px}
+header .kicker{font-size:0.78rem;color:#7b61ff;letter-spacing:2px;text-transform:uppercase;font-family:"SF Mono",Menlo,monospace;margin-bottom:14px}
+header h1{font-size:1.9rem;font-weight:800;line-height:1.5;background:linear-gradient(135deg,#00d4ff 0%,#7b61ff 50%,#ff6ec4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px}
+header .meta{font-size:0.82rem;color:#6a7080;font-family:"SF Mono",Menlo,monospace}
+.lede{margin:32px 0 8px;padding:18px 22px;background:rgba(123,97,255,0.08);border-left:3px solid #7b61ff;border-radius:0 10px 10px 0;color:#c9cede;font-size:0.98rem}
+h2{font-size:1.35rem;font-weight:700;color:#fff;margin:52px 0 18px;padding-left:14px;border-left:4px solid #7b61ff;line-height:1.5}
+h3{font-size:1.05rem;font-weight:700;color:#c4b8ff;margin:32px 0 10px}
+p{margin:14px 0;color:#c9cede}
+strong{color:#fff}
+a{color:#7b61ff;text-decoration:none}
+a:hover{color:#00d4ff}
+ul,ol{margin:14px 0 14px 1.6em;color:#c9cede}
+li{margin:7px 0}
+code{font-family:"SF Mono",Menlo,monospace;font-size:0.86em;background:rgba(0,212,255,0.1);color:#7dd8f0;padding:1px 6px;border-radius:5px}
+pre{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:18px;overflow-x:auto;margin:18px 0;font-family:"SF Mono",Menlo,monospace;font-size:0.76rem;line-height:1.6;color:#a8d8e8}
+pre code{background:none;padding:0;color:inherit;font-size:inherit}
+blockquote{margin:18px 0;padding:14px 20px;background:rgba(255,255,255,0.03);border-left:3px solid #00d4ff;border-radius:0 10px 10px 0;color:#a8b0c0;font-size:0.92rem}
+.principle{margin:14px 0;padding:14px 18px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px}
+.principle b{color:#00d4ff}
+footer{text-align:center;padding:56px 0 12px;font-size:0.78rem;color:#5a6378;font-family:"SF Mono",Menlo,monospace}
+footer a{color:#7b61ff}
+@media(max-width:700px){header h1{font-size:1.4rem}.container{padding:32px 16px 60px}h2{font-size:1.2rem}}
+</style>
+</head>
+<body>
+<div class="lang-toggle">
+  <a href="blog-pipeline.html" class="active">中文</a>
+  <a href="blog-pipeline.en.html">EN</a>
+</div>
+<div class="container">
+<header>
+  <div class="kicker">// Engineering Notes</div>
+  <h1>一个人 + 一支 Agent 车队：<br>这个 Hub 是怎么搭起来的</h1>
+  <div class="meta">BigCat · 2026-07 · 技术博客</div>
+</header>
+
+<div class="lede">
+BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模型、AI/ML、System Design、论文精读、哲学、佛学、育儿、投资……20 多个主题，每个是一个独立的 GitHub Pages 仓库。它们每天自动更新、中英双语、带全站搜索、评论区和语音朗读——而日常运营几乎不需要我动手。这篇文章讲整条 pipeline 是怎么搭起来的。
+</div>
+
+<h2>0. 先看它长什么样</h2>
+<ul>
+<li><strong>一个 Hub 首页</strong>聚合所有站点卡片，自动显示每个站的最近更新日期，写完封顶的站自动打上「✓ 已完结」徽章。</li>
+<li><strong>每个主题站</strong>是一个独立 repo：<code>ai-ml-daily</code>、<code>mental-models</code>、<code>system-design-bidaily</code>、<code>cs-papers-deepread</code>……每天（或隔天/每周）新增一页深度内容，中文页 + 英文页各一个独立 HTML。</li>
+<li><strong>全站基础设施</strong>：Pagefind 静态搜索（按 <code>/</code> 呼出）、Giscus 评论区、图片 lightbox、双语切换 + TTS 朗读——全部由共享 JS 提供，内容页自己一行都不用写。</li>
+<li><strong>托管成本为零</strong>：全部 GitHub Pages + GitHub Actions 免费额度，唯一的外部服务是 Azure Speech 免费层（TTS）。</li>
+</ul>
+<p>核心思路一句话：<strong>我只维护每个站的路线图（TOPICS.md），内容生产、发布、加工、聚合、巡检全部交给自动化——其中「写内容」这一步交给云端定时运行的 Claude agent。</strong></p>
+
+<h2>1. 总体架构</h2>
+<pre>        ┌─ 人（我）──────────────────────────────┐
+        │  维护 TOPICS.md 路线图 · 定封顶 · 审月度建议 │
+        └──────────────┬────────────────────────┘
+                       ▼
+  ┌── 生成层：claude.ai 云端 routine（20 个定时 trigger）──┐
+  │  cron 错峰触发 → 挂载对应 repo → 按 CLAUDE.md 写作规范  │
+  │  选题(文件系统幂等) → 写 zh+en 页 → 更新索引 → publish.sh │
+  └──────────────┬────────────────────────────────────┘
+                 ▼  git push
+  ┌── 仓库层：20+ 内容 repo（GitHub Pages）───────────────┐
+  │  TOPICS.md · CLAUDE.md · .maxchars · publish.sh 校验闸门 │
+  └──────────────┬────────────────────────────────────┘
+                 ▼  push 触发
+  ┌── 加工层：每仓 GitHub Actions ────────────────────────┐
+  │  注入共享 JS · (mental-models) Azure TTS bake          │
+  └──────────────┬────────────────────────────────────┘
+                 ▼  每日定时
+  ┌── 聚合层：hub 仓 GitHub Actions ──────────────────────┐
+  │  refresh-hub.yml 重渲染首页 · build-search.yml 搜索索引  │
+  └──────────────┬────────────────────────────────────┘
+                 ▼
+  ┌── 治理层 ────────────────────────────────────────┐
+  │  封顶自动停机 + 中文泄漏检测 · 云端月度前沿刷新          │
+  └────────────────────────────────────────────────┘</pre>
+<p>分层的原则是：<strong>每一层只信任下一层的产物，不信任它的过程</strong>。生成层可能写崩，所以仓库层有校验闸门；校验闸门可能漏，所以治理层有巡检。</p>
+
+<h2>2. 内容仓的解剖：四个文件定义一个站</h2>
+<p>每个内容 repo 除了 HTML 页面，只有四样东西，各司其职。</p>
+
+<h3>TOPICS.md —— 人类维护的路线图（对 bot 只读）</h3>
+<p>整个系统里唯一持续需要我投入的地方。它按顺序列出这个站要覆盖的全部主题，好几个站还写明了封顶编号（比如思维模型封顶 68 期）。关键设计是<strong>权限单向</strong>：routine 只能读它，<code>publish.sh</code> 会直接拒绝任何修改了 TOPICS.md 的提交。选题耗尽时，routine 不许自己续写路线图，只能给我发一条推送通知请求补充。</p>
+<p>这条线划在这里，是整个系统「不跑偏」的根本：<strong>AI 决定怎么写，人决定写什么。</strong></p>
+
+<h3>CLAUDE.md —— 写作规范</h3>
+<p>需要精确控制版式和深度的站（system-design、论文精读、每日精读）有一份详细的执行规范：目标读者（资深工程师）、篇幅区间、必备章节结构（比如论文精读的「一句话 → Glossary → 坐标 → 问题动机 → 核心思想 → 关键结果 → 影响 → 局限与批评 → 要点收尾」九段式）、配色（每个站有独立的视觉签名：system-design 是青色暗色系，论文精读是琥珀铜色）、以及诚实性要求——引文拿不准要标「大意」，局限和反方观点必须写。</p>
+<p>规范里最值得一提的是<strong>以已发布页面为基准</strong>：prompt 会指着某一篇（「以 read1 为深度、格式与腔调基准」）说照这个来。比起在规范里描述风格，直接给范例样本要稳定得多。</p>
+
+<h3>.maxchars —— 长度 ratchet</h3>
+<p>一个只有一行数字的文件（3500/4000/5000），<code>publish.sh</code> 会统计新页面的 CJK 字符数并卡在这个上限。这是踩过坑之后加的：LLM 生成内容有「长度棘轮」倾向——每篇都比上一篇略长一点，因为模型倾向参考最近的页面，几十天后页面就膨胀失控。解法是双向夹住：prompt 里给目标区间，闸门上给硬上限。</p>
+
+<h3>publish.sh —— 发布闸门</h3>
+<p>所有 repo 共用同一个 150 行的 bash 脚本，routine 写完页面后必须通过它发布。它做的检查：</p>
+<ul>
+<li>新页面 &gt; 2KB（防空壳页）</li>
+<li>CJK 字数 ≤ <code>.maxchars</code>（防膨胀）</li>
+<li>新页面已被 index.html 引用（防孤儿页）</li>
+<li><code>&lt;div&gt;</code> 开闭平衡（防截断的 HTML——LLM 输出被截断是真实会发生的）</li>
+<li>期数不重复（防覆盖已有内容）</li>
+<li>没有硬编码共享脚本（那是注入层的事，见下文）</li>
+<li>TOPICS.md 未被修改</li>
+<li>全过 → 自动 <code>git add/commit/push</code>，commit message 统一为 <code>Add #N: 标题</code></li>
+</ul>
+<p>最后这个格式约定不是小事——<strong>commit message 本身成了机器可读的发布记录</strong>，下游的完结检测、hub 徽章都靠解析它工作。</p>
+
+<h2>3. 生成引擎：云端 Claude routine</h2>
+<p>内容生产由 claude.ai 的云端定时任务（scheduled agent / routine）完成，目前有 20 个 trigger。每个 trigger 的 job 结构：</p>
+<ul>
+<li><strong>cron 表达式</strong>：所有 routine 在每天 10:00–16:00 UTC 之间以约 15 分钟为间隔错峰排开，避免同时跑</li>
+<li><strong>挂载仓库</strong>：工作目录直接挂载对应的 GitHub repo，agent 可以 ls、读旧页面、git push</li>
+<li><strong>模型</strong>：Opus 档——内容深度是这个系统的立身之本，不在这里省</li>
+<li><strong>工具白名单</strong>：<code>Bash / Read / Write / Edit / Glob / Grep / WebSearch / WebFetch / PushNotification</code>，够用即止</li>
+<li><strong>一段 prompt</strong>：完整描述从选题到发布的闭环</li>
+</ul>
+<p>以「每日精读」为例，它的 prompt 就五步：</p>
+<ol>
+<li><strong>选题</strong>：从 TOPICS.md 挑编号最小、且还没做过的——「做没做」看 <code>ls *-read*.html</code>。<strong>文件系统就是数据库</strong>：不需要任何状态存储，重复触发天然幂等，因为下一次运行看到的文件列表已经变了。</li>
+<li><strong>写作</strong>：按 CLAUDE.md 的段落结构写深读，明确「宁深勿浅」、术语首现补英文、真实不编造。</li>
+<li><strong>双语落盘</strong>：<code>{slug}-read{N}.html</code> + <code>{slug}-read{N}.en.html</code>，两版都要求地道而非直译，互相有语言切换链接；同时更新两个语言的索引页。</li>
+<li><strong>发布</strong>：跑 <code>./publish.sh</code>，过闸即上线。</li>
+<li><strong>通知</strong>：PushNotification 推一句「已更新 + 一句核心 + 链接」到我手机。</li>
+</ol>
+<p>Prompt 最后一句是「务必自主完成、不等任何确认」——云端 routine 没有人在场，任何一步等确认就是死锁。</p>
+<p>除了 20 个内容 routine，还有两个<strong>元 routine</strong>：</p>
+<ul>
+<li><strong>月度前沿刷新</strong>：每月 1 号检查快速演进领域（AI/ML、agent 工程）的 roadmap 是否落后于最新进展，WebSearch 核实后把建议写进 hub 仓的 <code>ROADMAP-SUGGESTIONS.md</code>——<strong>只建议，绝不直接改任何 TOPICS.md</strong>。经典领域（哲学、佛学、数学）默认「本月无新增」。建议也必须先搜索验证来源真实存在，宁缺勿滥。</li>
+<li><strong>Cross-reference 同步</strong>：定期在 ai-ml-daily（学术概念）和 super-individual-weekly（工程实战）两个站之间交叉引用、防止重复覆盖。</li>
+</ul>
+
+<h2>4. 加工层：push 之后发生的事</h2>
+<p>routine push 完就下班了，但页面还没到最终形态。每个 repo 的 GitHub Actions 接手做两类后处理。</p>
+
+<h3>共享 JS 注入（所有仓）</h3>
+<p>评论区、搜索、双语 TTS、导航按钮、lightbox 这五个能力由 hub 仓托管的共享脚本提供（<code>comments.js</code>、<code>search.js</code>、<code>i18n-tts.js</code>、<code>index-button.js</code>、<code>lightbox.js</code>）。内容页<strong>不允许</strong>硬编码这些 script 标签（publish.sh 会拦），而是 push 后由注入 Action 扫描 HTML、缺哪个补哪个，再以 <code>Auto-inject shared scripts</code> 自动提交。</p>
+<p>为什么注入而不是让 routine 直接写进模板？因为<strong>基础设施要能独立于内容演进</strong>。20 多个仓、几百个页面，如果 script 标签写死在生成模板里，升级一个搜索脚本就要重训 20 个 prompt、重刷几百页。注入制下，共享脚本改一处，全站下一次注入即生效；旧页面也能追溯补齐。</p>
+
+<h3>Azure TTS bake（mental-models）</h3>
+<p>思维模型站的每一节都能点击朗读，音频是预先「烘焙」好的：</p>
+<ul>
+<li>push 触发 <code>bake-tts.yml</code> → 跑 <code>bake-tts.py</code></li>
+<li>按 <code>&lt;h2&gt;</code> 分节提取正文 → 对文本取 <strong>hash</strong> → 查 <code>audio/zh/&lt;hash&gt;.mp3</code> 是否已存在 → 不存在才调 Azure Speech REST API 合成</li>
+<li>生成后把 <code>data-tts-zh="&lt;hash&gt;"</code> 写回 HTML 元素，前端 <code>i18n-tts.js</code> 按属性找音频播放；没有预烘焙音频的站自动降级到浏览器 Web Speech API</li>
+<li>bake 的自动提交带 <code>[skip bake]</code> 标记，防止「提交触发 bake、bake 又产生提交」的死循环</li>
+</ul>
+<p>hash 寻址让整条链路幂等：内容没变就不花一分钱 API 配额，改了一节只重烘那一节。这个站目前积累了 500 多个 mp3、约 1.2 GB——全部躺在 git 仓库里由 Pages 直接伺服，零额外存储成本。</p>
+<p>（这条 TTS 链路早期用的是火山引擎，后来整体迁到 Azure，旧脚本还留着 <code>.bak</code> 当化石。）</p>
+
+<h2>5. 聚合层：Hub 怎么知道下面 20 个仓的动静</h2>
+<p>Hub 仓自己也是全自动的，两个每日 Action。</p>
+
+<h3>refresh-hub.yml —— 首页重渲染</h3>
+<p>跑 <code>generate_hub.py</code>。这个脚本是典型的「单一数据源渲染双语」：卡片元数据（标题、双语简介、配色、分区）是脚本里一个 CARDS 数组，中文页和英文页从同一数组渲染，不存在两份要同步的 HTML。</p>
+<p>动态部分靠 GitHub REST API：</p>
+<ul>
+<li>对每个 repo 拉最近 50 条 commit，找到<strong>最近一次真正新增内容页</strong>的提交（按文件名正则匹配 <code>-dayN/-weekN/-readN.html</code>），把日期渲染到卡片上——所以徽章日期反映的是「最近更新了内容」，而不是被 bot 的注入提交污染的「最近有 commit」。</li>
+<li><strong>完结检测</strong>：脚本里有一张 CAPS 表（哪个站封顶多少期），从 commit message 里解析 <code>Add #N</code> 的最大值，达到封顶就把日期换成「✓ 已完结」徽章。这就是前面说的 commit message 格式约定的下游收益——完结状态不需要任何人标记，每个站自己「宣布」毕业。</li>
+</ul>
+<p>时间上，这个 Action 排在所有内容 routine 之后约 45 分钟跑，保证当天新页面能反映到首页。</p>
+
+<h3>build-search.yml —— 全站搜索</h3>
+<p>静态站没有后端，全站搜索用 <a href="https://pagefind.app/">Pagefind</a>：每天把所有内容仓 clone 到 <code>_src/</code> 聚合成一棵树，跑 Pagefind 生成分片索引（中英文分开索引），发布到 hub 仓的 <code>/pagefind/</code>。前端 <code>search.js</code> 提供一个悬浮搜索按钮，按页面语言弹相应语言的搜索层。索引时排除页脚、导航、评论容器这些噪音区块。</p>
+<p>有一个特殊处理：思想家圆桌辩论站（thinker-arena）是客户端渲染的（内容在 JSON 里），爬不到文本。解法是 <code>render_search_snapshots.py</code> 在建索引前把 JSON 辩论渲染成纯 HTML 快照专供 Pagefind 消费——<strong>给爬虫做一份 SSR</strong>，只不过是每日批处理版。</p>
+
+<h2>6. 治理层：让系统自己管自己</h2>
+<p>跑起来只是开始，长期无人值守才是难的部分。几道防线：</p>
+
+<h3>封顶 + 自动停机</h3>
+<p>每个站的 roadmap 是有限的——学完就该毕业，而不是为了「日更」注水。封顶编号写进三处：TOPICS.md（routine 可见）、hub 的 CAPS 表（徽章）、以及一个<strong>本地定时巡检任务</strong>：每周核对每个封顶站实际发布的最高期数，写到顶的就通过 API 把对应云端 trigger 直接 <code>enabled=false</code> 停掉。</p>
+<p>停机操作有两道防呆，都是踩坑换来的：</p>
+<ol>
+<li>停之前先 <code>get</code> 该 trigger，确认它挂载的仓确实是要停的那个仓——防止 trigger ID 对错位置，把别的站停了；</li>
+<li>update 请求体<strong>只发 <code>{"enabled": false}</code></strong>。因为这个 API 的 update 对 job_config 是整体替换而非合并——带上不完整的 job_config 会把 prompt、挂载仓、模型配置整个洗掉。</li>
+</ol>
+
+<h3>英文页中文泄漏检测</h3>
+<p>双语生成最常见的退化是中文漏进英文页的模板槽（副标题、标签、人名栏）。同一个巡检任务对全部仓的 <code>*.en.html</code> 跑一组指纹 grep（如 <code>class="en"&gt;[一-鿿]</code>），命中即报。指纹是精心挑的——佛经原文配英译、术语括注这类<strong>合法</strong>的中文不用这些 class，不会误报。</p>
+
+<h3>内容质量的 ratchet 们</h3>
+<ul>
+<li>长度 ratchet：前述 <code>.maxchars</code> 硬上限 + prompt 目标区间</li>
+<li>真实性纪律：所有 routine 的 prompt 里都有「真实不编造、来源先验证、搜不到就不写」条款；月度刷新 routine 更是每条建议都要求附已验证的链接</li>
+<li>新 routine 上线前先小批量试跑人工验收，再放开批量（TTS bake 尤其如此——结构错一次浪费的是整月 Azure 配额）</li>
+</ul>
+
+<h2>7. 沉淀下来的设计原则</h2>
+<div class="principle"><b>静态优先。</b>没有数据库、没有服务器、没有构建框架。HTML 就是产物，git 就是 CMS，GitHub Pages 就是 CDN。搜索（Pagefind）、评论（Giscus）、TTS（预烘焙 mp3）全部用静态方案解决了传统上「需要后端」的功能。</div>
+<div class="principle"><b>文件系统就是状态。</b>选题进度 = <code>ls</code> 的结果；发布记录 = commit message；完结状态 = 从 commit 解析。没有任何一处需要独立维护的状态存储，所以没有任何一处会和现实脱节。</div>
+<div class="principle"><b>每一步都幂等。</b>routine 重复触发不会重写已有页面（文件已存在）；TTS 重跑不会重复计费（hash 命中）；注入重跑不会叠加标签（缺才补）。无人值守系统的重试是常态，幂等不是优化而是前提。</div>
+<div class="principle"><b>生成和校验分离。</b>永远不假设 LLM 输出正确，publish.sh 用最笨的 bash 检查兜底。生成端越智能，校验端越要笨而确定。</div>
+<div class="principle"><b>人类只把守一个入口。</b>我的全部日常投入收敛到 TOPICS.md 和封顶决策上，其余一切推导自它。AI 想扩大自己的工作范围（续写路线图）在机制上被禁止，只能申请。</div>
+<div class="principle"><b>约定优于协议。</b><code>Add #N</code> 的 commit 格式、<code>{slug}-day{N}.html</code> 的命名、<code>.maxchars</code> 单行文件——组件之间靠这些朴素约定通信，没有一处 JSON schema，但每处约定都有至少两个消费者。</div>
+<div class="principle"><b>该毕业就毕业。</b>每个站有封顶，写完自动停机、打完结徽章。这个系统是为我自己学习服务的，学完一个领域就该收口，而不是被「持续产出」绑架。</div>
+
+<h2>8. 成本</h2>
+<ul>
+<li>GitHub Pages / Actions：免费额度内</li>
+<li>内容生成：claude.ai 订阅内的云端 routine，无额外 API 费</li>
+<li>Azure Speech：免费层（F0）</li>
+<li>我的时间：维护 20 多份 TOPICS.md，加上偶尔审一眼月度建议和巡检报告</li>
+</ul>
+<p>一个人的注意力是这个系统里最贵的资源。整条 pipeline 的设计目标从来不是「全自动」本身，而是把我的注意力从生产和运维里解放出来，全部花在唯一值得花的地方：<strong>决定接下来学什么。</strong></p>
+
+<footer>
+  <a href="index.html">← BigCat's Learning Hub</a>
+</footer>
+</div>
+<script src="https://cissy0802.github.io/comments.js" defer></script>
+<script src="https://cissy0802.github.io/search.js" defer></script>
+<script src="https://cissy0802.github.io/i18n-tts.js" defer></script>
+</body></html>

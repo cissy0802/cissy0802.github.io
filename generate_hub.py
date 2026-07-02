@@ -35,7 +35,7 @@ CARDS = [
     ("super", "⚡", "AI 超级个体实战", "Super Individual",
      "AI 工具栈、Prompt 库、PKM、自动化、Agent——AI 时代个人生产力的战术手册。",
      "AI tool stack, prompt library, PKM, automation, agents — a tactical handbook for personal productivity in the AI era.",
-     "super-individual-weekly", "tech"),
+     "super-individual", "tech"),
     ("aiml", "🤖", "AI / ML", "AI & ML",
      "LLM、Agent、RAG、强化学习、多模态、可解释性——深入技术原理，构建 AI 超级个体能力。",
      "LLMs, agents, RAG, reinforcement learning, multimodal, interpretability — deep technical principles to build super-individual AI capabilities.",
@@ -191,7 +191,7 @@ def gh_get(url: str):
 # (Auto-detected from 'Add #N' commit messages, so each self-marks when it finishes.)
 CAPS = {
     "mental-models": 68,
-    "super-individual-weekly": 51,
+    "super-individual": 51,
     "ai-ml": 53,
     "philosophy-weekly": 49,
     "system-design": 48,
