@@ -82,7 +82,7 @@ CARDS = [
     ("buddhism", "🪷", "佛经", "Buddhism",
      "经藏智慧，般若、中观、唯识、禅宗、华严、净土，四部经典，闻思修行。",
      "Wisdom from the Tripitaka — Prajna, Madhyamaka, Yogacara, Chan, Huayan, Pure Land — four classics per issue, hearing, reflection, practice.",
-     "buddhism-weekly", "humanities"),
+     "buddhism", "humanities"),
     ("art", "🎨", "艺术与审美", "Art & Aesthetics",
      "看画、听乐、读影、赏建筑——怎么看怎么听的感受力训练，东西方兼顾。",
      "How to look at paintings, listen to music, read film, appreciate architecture — training perception, East and West in balance.",
@@ -199,7 +199,7 @@ CAPS = {
     "system-design": 48,
     "leadership": 69,
     "health-longevity": 60,
-    "buddhism-weekly": 36,
+    "buddhism": 36,
     "investing-weekly": 56,
     "history-weekly": 57,
 }
