@@ -293,12 +293,15 @@ def thinking_card_html(c, lang: str) -> str:
   </a>"""
 
 
-def section(label_en: str, label_zh: str, cards_html: list[str], lang: str, group=None) -> str:
+def section(label_en: str, label_zh: str, cards_html: list[str], lang: str) -> str:
     body = "\n\n".join(cards_html)
     label = f"{label_zh} · {label_en}" if lang == "zh" else label_en
-    if group:
-        label = f"{group[0 if lang == 'zh' else 1]} · {label}"
     return f'  <div class="section-label">// {label}</div>\n\n{body}'
+
+
+def group_label(label_zh: str, label_en: str, lang: str) -> str:
+    label = f"{label_zh} · {label_en}" if lang == "zh" else label_en
+    return f'  <div class="group-label">// {label}</div>'
 
 
 def render_page(lang: str, grid: str, today: str) -> str:
@@ -336,8 +339,10 @@ header .subtitle{{font-size:0.85rem;color:#7b61ff;margin-top:8px;font-family:"SF
 .card .arrow{{font-size:0.78rem;color:var(--accent);font-weight:600;transition:transform 0.2s}}
 .card:hover .arrow{{transform:translateX(3px)}}
 {card_css()}
+.group-label{{font-size:1.02rem;font-weight:700;color:#b9a8ff;letter-spacing:2.5px;text-transform:uppercase;margin-top:42px;margin-bottom:6px;font-family:"SF Mono",Menlo,monospace}}
+.group-label:first-of-type{{margin-top:12px}}
 .section-label{{font-size:0.78rem;color:#7b61ff;letter-spacing:2px;text-transform:uppercase;margin-top:24px;margin-bottom:2px;font-family:"SF Mono",Menlo,monospace;opacity:0.75}}
-.section-label:first-of-type{{margin-top:8px}}
+.section-label:first-of-type{{margin-top:6px}}
 .search-prompt{{margin:24px auto 0;max-width:520px;text-align:center;padding:14px 18px;background:rgba(255,255,255,0.04);border:1px solid rgba(123,97,255,0.25);border-radius:10px;font-size:0.88rem;color:#a0a8c0;font-family:"SF Mono",Menlo,monospace}}
 .search-prompt kbd{{background:rgba(123,97,255,0.25);color:#fff;padding:2px 8px;border-radius:5px;font-family:inherit;font-size:0.85rem}}
 footer{{text-align:center;padding:48px 0 12px;font-size:0.78rem;color:#5a6378}}
@@ -393,15 +398,18 @@ def main():
     for lang, fname in (("zh", "index.html"), ("en", "index.en.html")):
         def cards_for(sec):
             return [card_html(c, dates[c[6]], lang) for c in CARDS if c[7] == sec]
-        brain = ("第二大脑", "Second Brain")
+        thinking_cards = "\n\n".join(thinking_card_html(c, lang) for c in THINKING_CARDS)
+        brain = "\n\n".join([
+            section("Thinking",   "思维",     cards_for("thinking"), lang),
+            section("Tech",       "技术",     cards_for("tech"), lang),
+            section("Career",     "职场",     cards_for("career"), lang),
+            section("Life",       "生活",     cards_for("life"), lang),
+            section("Humanities", "人文",     cards_for("humanities"), lang),
+            section("Explore",    "探索",     cards_for("explore"), lang),
+        ])
         grid = "\n\n".join([
-            section("Thinking Hub", "思想圆桌", [thinking_card_html(c, lang) for c in THINKING_CARDS], lang),
-            section("Thinking",   "思维",     cards_for("thinking"), lang, brain),
-            section("Tech",       "技术",     cards_for("tech"), lang, brain),
-            section("Career",     "职场",     cards_for("career"), lang, brain),
-            section("Life",       "生活",     cards_for("life"), lang, brain),
-            section("Humanities", "人文",     cards_for("humanities"), lang, brain),
-            section("Explore",    "探索",     cards_for("explore"), lang, brain),
+            group_label("思想圆桌", "Thinking Hub", lang) + "\n\n" + thinking_cards,
+            group_label("第二大脑", "Second Brain", lang) + "\n\n" + brain,
         ])
         html = render_page(lang, grid, today)
         Path(fname).write_text(html, encoding="utf-8")
