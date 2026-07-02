@@ -56,7 +56,7 @@ CARDS = [
     ("writing", "✍️", "写作与表达", "Writing",
      "Zinsser、Orwell、金字塔原理、备忘录、AI 时代写作——超级个体的表达工具箱。",
      "Zinsser, Orwell, Pyramid Principle, memos, writing in the AI era — the super-individual's expression toolkit.",
-     "writing-weekly", "career"),
+     "writing", "career"),
     # 生活 · Life
     ("health", "🫀", "健康长寿", "Health & Longevity",
      "循证医学、长寿科学、女性健康、运动营养睡眠——可执行的健康协议，不是养生鸡汤。",

@@ -55,7 +55,7 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <h2>0. What it looks like</h2>
 <ul>
 <li><strong>One hub landing page</strong> aggregates every site as a card, automatically shows each site's last-updated date, and stamps a "✓ Completed" badge on any site that has finished its roadmap.</li>
-<li><strong>Each subject site</strong> is an independent repo — <code>ai-ml-daily</code>, <code>mental-models</code>, <code>system-design-bidaily</code>, <code>cs-papers-deepread</code> — adding one page of in-depth content per day (or every other day / weekly), as a standalone Chinese HTML file plus a standalone English one.</li>
+<li><strong>Each subject site</strong> is an independent repo — <code>ai-ml</code>, <code>mental-models</code>, <code>system-design</code>, <code>cs-papers-deepread</code> — adding one page of in-depth content per day (or every other day / weekly), as a standalone Chinese HTML file plus a standalone English one.</li>
 <li><strong>Site-wide infrastructure</strong>: Pagefind static search (press <code>/</code>), Giscus comments, an image lightbox, language toggle + TTS narration — all provided by shared JavaScript; content pages don't carry a single line of it themselves.</li>
 <li><strong>Hosting cost is zero</strong>: everything runs on GitHub Pages and the free GitHub Actions tier; the only external service is Azure Speech's free tier for TTS.</li>
 </ul>
@@ -141,7 +141,7 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <p>Beyond the 20 content routines there are two <strong>meta-routines</strong>:</p>
 <ul>
 <li><strong>Monthly frontier refresh</strong>: on the 1st of each month, check whether the roadmaps of fast-moving fields (AI/ML, agent engineering) have fallen behind, verify candidates via web search, and write suggestions into the hub repo's <code>ROADMAP-SUGGESTIONS.md</code> — <strong>suggestions only; it never edits any TOPICS.md directly</strong>. Classical fields (philosophy, Buddhism, mathematics) default to "nothing new this month." Every suggestion must cite a source verified to exist; when in doubt, leave it out.</li>
-<li><strong>Cross-reference sync</strong>: periodically cross-links ai-ml-daily (academic concepts) and super-individual-weekly (engineering practice) and keeps the two from covering the same ground twice.</li>
+<li><strong>Cross-reference sync</strong>: periodically cross-links ai-ml (academic concepts) and super-individual (engineering practice) and keeps the two from covering the same ground twice.</li>
 </ul>
 
 <h2>4. Post-processing: what happens after the push</h2>
