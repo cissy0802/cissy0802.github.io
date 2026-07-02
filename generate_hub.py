@@ -301,7 +301,7 @@ def section(label_en: str, label_zh: str, cards_html: list[str], lang: str) -> s
 
 def group_label(label_zh: str, label_en: str, lang: str) -> str:
     label = f"{label_zh} · {label_en}" if lang == "zh" else label_en
-    return f'  <div class="group-label">// {label}</div>'
+    return f'  <div class="group-label">{label}</div>'
 
 
 def render_page(lang: str, grid: str, today: str) -> str:
