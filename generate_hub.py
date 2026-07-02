@@ -95,10 +95,10 @@ CARDS = [
      "每期 4 本同主题相关好书——思想脉络、阅读顺序、金句与争议，覆盖商业、科学、文学、哲学。",
      "4 thematically linked books per issue — intellectual lineage, reading order, key quotes and controversies; business, science, literature, philosophy.",
      "book-recommendations-bidaily", "humanities"),
-    ("deepread", "📰", "每日精读", "Deep Reading",
+    ("deepread", "📰", "精读", "Deep Reading",
      "每天精读一本好书——把它反复在讲的几个核心概念彻底讲透，读完这页≈读完原书。",
      "One book a day, read closely — the few core concepts it keeps circling, made clear; read this page instead of the whole book.",
-     "deep-reading-daily", "humanities"),
+     "deep-reading", "humanities"),
     # 探索 · Explore
     ("math", "📐", "数学之美", "Mathematics",
      "概率、微积分、线代、拓扑、信息论——数学之美与跨学科的优雅工具。",
