@@ -30,7 +30,7 @@ CARDS = [
     ("meta", "🧠", "元知识", "Meta Knowledge",
      "神经科学、行为经济学、复杂系统、社会学、管理学、量子物理——跨学科的世界模型工具箱。",
      "Neuroscience, behavioral economics, complex systems, sociology, management, quantum physics — a cross-disciplinary world-model toolkit.",
-     "meta-knowledge-daily", "thinking"),
+     "meta-knowledge", "thinking"),
     # 技术 · Tech
     ("super", "⚡", "AI 超级个体实战", "Super Individual",
      "AI 工具栈、Prompt 库、PKM、自动化、Agent——AI 时代个人生产力的战术手册。",

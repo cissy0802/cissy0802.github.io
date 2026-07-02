@@ -24,7 +24,7 @@
 
 ---
 
-## meta-knowledge-daily（元知识，Day 1–64）
+## meta-knowledge（元知识，Day 1–64）
 
 本月无新增。经典跨学科领域时新度低，未见范式级新发现值得单列。
 
