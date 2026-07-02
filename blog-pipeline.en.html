@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Human + a Fleet of Agents: How This Hub Is Built</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Serif SC","Songti SC",serif;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0a0e1a 100%);color:#e4e6eb;line-height:1.85;min-height:100vh}
+.container{max-width:780px;margin:0 auto;padding:48px 24px 80px}
+.lang-toggle{position:fixed;top:18px;right:18px;background:rgba(255,255,255,0.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:5px;display:flex;z-index:100;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem}
+.lang-toggle a{padding:5px 12px;border-radius:14px;color:#a0a8c0;text-decoration:none;transition:all 0.15s}
+.lang-toggle a.active{background:#7b61ff;color:#fff;font-weight:700}
+.lang-toggle a:not(.active):hover{background:rgba(255,255,255,0.08);color:#fff}
+header{text-align:center;padding:40px 0 8px}
+header .kicker{font-size:0.78rem;color:#7b61ff;letter-spacing:2px;text-transform:uppercase;font-family:"SF Mono",Menlo,monospace;margin-bottom:14px}
+header h1{font-size:1.9rem;font-weight:800;line-height:1.5;background:linear-gradient(135deg,#00d4ff 0%,#7b61ff 50%,#ff6ec4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px}
+header .meta{font-size:0.82rem;color:#6a7080;font-family:"SF Mono",Menlo,monospace}
+.lede{margin:32px 0 8px;padding:18px 22px;background:rgba(123,97,255,0.08);border-left:3px solid #7b61ff;border-radius:0 10px 10px 0;color:#c9cede;font-size:0.98rem}
+h2{font-size:1.35rem;font-weight:700;color:#fff;margin:52px 0 18px;padding-left:14px;border-left:4px solid #7b61ff;line-height:1.5}
+h3{font-size:1.05rem;font-weight:700;color:#c4b8ff;margin:32px 0 10px}
+p{margin:14px 0;color:#c9cede}
+strong{color:#fff}
+a{color:#7b61ff;text-decoration:none}
+a:hover{color:#00d4ff}
+ul,ol{margin:14px 0 14px 1.6em;color:#c9cede}
+li{margin:7px 0}
+code{font-family:"SF Mono",Menlo,monospace;font-size:0.86em;background:rgba(0,212,255,0.1);color:#7dd8f0;padding:1px 6px;border-radius:5px}
+pre{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:18px;overflow-x:auto;margin:18px 0;font-family:"SF Mono",Menlo,monospace;font-size:0.76rem;line-height:1.6;color:#a8d8e8}
+pre code{background:none;padding:0;color:inherit;font-size:inherit}
+blockquote{margin:18px 0;padding:14px 20px;background:rgba(255,255,255,0.03);border-left:3px solid #00d4ff;border-radius:0 10px 10px 0;color:#a8b0c0;font-size:0.92rem}
+.principle{margin:14px 0;padding:14px 18px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px}
+.principle b{color:#00d4ff}
+footer{text-align:center;padding:56px 0 12px;font-size:0.78rem;color:#5a6378;font-family:"SF Mono",Menlo,monospace}
+footer a{color:#7b61ff}
+@media(max-width:700px){header h1{font-size:1.4rem}.container{padding:32px 16px 60px}h2{font-size:1.2rem}}
+</style>
+</head>
+<body>
+<div class="lang-toggle">
+  <a href="blog-pipeline.html">中文</a>
+  <a href="blog-pipeline.en.html" class="active">EN</a>
+</div>
+<div class="container">
+<header>
+  <div class="kicker">// Engineering Notes</div>
+  <h1>One Human + a Fleet of Agents:<br>How This Hub Is Built</h1>
+  <div class="meta">BigCat · 2026-07 · Tech Blog</div>
+</header>
+
+<div class="lede">
+BigCat's Learning Hub is a family of static sites I built for my own learning: mental models, AI/ML, system design, CS papers, philosophy, Buddhism, parenting, investing — 20+ subjects, each living in its own GitHub Pages repository. They update themselves daily, ship in both Chinese and English, and come with site-wide search, comments, and text-to-speech — while day-to-day operation requires almost none of my time. This post walks through how the whole pipeline is put together.
+</div>
+
+<h2>0. What it looks like</h2>
+<ul>
+<li><strong>One hub landing page</strong> aggregates every site as a card, automatically shows each site's last-updated date, and stamps a "✓ Completed" badge on any site that has finished its roadmap.</li>
+<li><strong>Each subject site</strong> is an independent repo — <code>ai-ml-daily</code>, <code>mental-models</code>, <code>system-design-bidaily</code>, <code>cs-papers-deepread</code> — adding one page of in-depth content per day (or every other day / weekly), as a standalone Chinese HTML file plus a standalone English one.</li>
+<li><strong>Site-wide infrastructure</strong>: Pagefind static search (press <code>/</code>), Giscus comments, an image lightbox, language toggle + TTS narration — all provided by shared JavaScript; content pages don't carry a single line of it themselves.</li>
+<li><strong>Hosting cost is zero</strong>: everything runs on GitHub Pages and the free GitHub Actions tier; the only external service is Azure Speech's free tier for TTS.</li>
+</ul>
+<p>The core idea in one sentence: <strong>I only maintain each site's roadmap (TOPICS.md); production, publishing, post-processing, aggregation, and inspection are all automated — with the "write the content" step delegated to Claude agents running on a schedule in the cloud.</strong></p>
+
+<h2>1. Overall architecture</h2>
+<pre>        ┌─ Human (me) ────────────────────────────────┐
+        │  curate TOPICS.md roadmaps · set caps ·       │
+        │  review monthly suggestions                   │
+        └──────────────┬──────────────────────────────┘
+                       ▼
+  ┌── Generation: claude.ai cloud routines (20 triggers) ──┐
+  │  staggered cron → repo mounted → follow CLAUDE.md spec  │
+  │  pick topic (fs-idempotent) → write zh+en pages →       │
+  │  update index → publish.sh                              │
+  └──────────────┬─────────────────────────────────────────┘
+                 ▼  git push
+  ┌── Repos: 20+ content repos (GitHub Pages) ─────────────┐
+  │  TOPICS.md · CLAUDE.md · .maxchars · publish.sh gate    │
+  └──────────────┬─────────────────────────────────────────┘
+                 ▼  on push
+  ┌── Post-processing: per-repo GitHub Actions ────────────┐
+  │  inject shared JS · (mental-models) Azure TTS bake      │
+  └──────────────┬─────────────────────────────────────────┘
+                 ▼  daily cron
+  ┌── Aggregation: hub repo GitHub Actions ────────────────┐
+  │  refresh-hub.yml re-renders index ·                     │
+  │  build-search.yml rebuilds Pagefind index               │
+  └──────────────┬─────────────────────────────────────────┘
+                 ▼
+  ┌── Governance ──────────────────────────────────────────┐
+  │  auto-pause finished routines + English-page leak scan  │
+  │  · monthly frontier-refresh meta-routine                │
+  └────────────────────────────────────────────────────────┘</pre>
+<p>The layering principle: <strong>each layer trusts only the artifacts of the layer below it, never that layer's process</strong>. Generation can go wrong, so the repo layer has a validation gate; the gate can miss things, so the governance layer patrols.</p>
+
+<h2>2. Anatomy of a content repo: four files define a site</h2>
+<p>Besides the HTML pages, each content repo contains exactly four things, each with one job.</p>
+
+<h3>TOPICS.md — the human-curated roadmap (read-only to the bot)</h3>
+<p>The only part of the system that needs my ongoing attention. It lists, in order, every topic the site will cover; several sites also state a hard cap (mental models is capped at issue 68). The key design decision is <strong>one-way authority</strong>: the routine may only read it — <code>publish.sh</code> flatly rejects any commit that modifies TOPICS.md. When topics run out, the routine is not allowed to extend the roadmap itself; it can only send me a push notification asking for a refill.</p>
+<p>Drawing the line here is what keeps the whole system on course: <strong>the AI decides how to write; the human decides what gets written.</strong></p>
+
+<h3>CLAUDE.md — the writing spec</h3>
+<p>Sites that need precise control over layout and depth (system design, paper deep-reads, daily book deep-reads) carry a detailed execution spec: target reader (senior engineers), length band, required section structure (the paper site's nine-part skeleton: one-liner → glossary → context → problem &amp; motivation → core idea → key results → impact → limitations &amp; critiques → takeaways), color palette (each site has its own visual signature — system design is dark cyan, papers are amber-copper), and honesty requirements — uncertain quotes must be marked as paraphrase, and limitations and counterarguments must be written.</p>
+<p>The most useful trick in these specs: <strong>anchor on a published page</strong>. The prompt points at a specific article ("match read1 for depth, format, and voice") and says: do it like that. A concrete exemplar is far more stable than any prose description of style.</p>
+
+<h3>.maxchars — the length ratchet</h3>
+<p>A one-line file containing a single number (3500/4000/5000). <code>publish.sh</code> counts the CJK characters of every new page and enforces this ceiling. This one was earned the hard way: LLM-generated series exhibit a "length ratchet" — each article comes out slightly longer than the last, because the model anchors on the most recent pages, and a few dozen days later the pages have bloated out of control. The fix clamps from both sides: a target band in the prompt, a hard ceiling at the gate.</p>
+
+<h3>publish.sh — the publishing gate</h3>
+<p>All repos share the same ~150-line bash script; the routine must publish through it. What it checks:</p>
+<ul>
+<li>New page &gt; 2KB (no hollow pages)</li>
+<li>CJK character count ≤ <code>.maxchars</code> (no bloat)</li>
+<li>The new page is referenced from index.html (no orphan pages)</li>
+<li>Balanced <code>&lt;div&gt;</code> tags (no truncated HTML — truncated LLM output really does happen)</li>
+<li>No duplicate issue number (no overwriting existing content)</li>
+<li>No hard-coded shared scripts (that's the injection layer's job — see below)</li>
+<li>TOPICS.md untouched</li>
+<li>All green → automatic <code>git add/commit/push</code>, with the commit message normalized to <code>Add #N: title</code></li>
+</ul>
+<p>That last convention is no small thing — <strong>the commit message itself becomes a machine-readable publishing record</strong>; downstream completion detection and hub badges all work by parsing it.</p>
+
+<h2>3. The generation engine: cloud Claude routines</h2>
+<p>Content is produced by scheduled agents ("routines") running on claude.ai — currently 20 triggers. Each trigger's job consists of:</p>
+<ul>
+<li><strong>A cron expression</strong>: all routines are staggered across 10:00–16:00 UTC at roughly 15-minute intervals so they never run at once</li>
+<li><strong>A mounted repository</strong>: the working directory is the corresponding GitHub repo — the agent can ls, read old pages, and git push</li>
+<li><strong>The model</strong>: Opus tier — depth of content is this system's whole reason to exist, so this is not where you economize</li>
+<li><strong>A tool allowlist</strong>: <code>Bash / Read / Write / Edit / Glob / Grep / WebSearch / WebFetch / PushNotification</code> — enough and no more</li>
+<li><strong>One prompt</strong>: a complete description of the loop from topic selection to publication</li>
+</ul>
+<p>Take the daily book deep-read routine. Its prompt is five steps:</p>
+<ol>
+<li><strong>Pick a topic</strong>: choose the lowest-numbered entry in TOPICS.md not yet done — where "done" is determined by <code>ls *-read*.html</code>. <strong>The filesystem is the database</strong>: no state store anywhere, and repeated firings are naturally idempotent, because the next run sees a different file listing.</li>
+<li><strong>Write</strong>: follow CLAUDE.md's section structure; err on the side of depth; gloss technical terms in English on first mention; never fabricate.</li>
+<li><strong>Land both languages</strong>: <code>{slug}-read{N}.html</code> + <code>{slug}-read{N}.en.html</code>, each required to read natively rather than as a stiff translation, cross-linked via a language bar; both language index pages get updated too.</li>
+<li><strong>Publish</strong>: run <code>./publish.sh</code>; through the gate means live.</li>
+<li><strong>Notify</strong>: a PushNotification lands on my phone — "updated + one-line essence + link."</li>
+</ol>
+<p>The prompt's last sentence is "complete autonomously, wait for no confirmation" — nobody is present when a cloud routine runs, so any step that waits for approval is a deadlock.</p>
+<p>Beyond the 20 content routines there are two <strong>meta-routines</strong>:</p>
+<ul>
+<li><strong>Monthly frontier refresh</strong>: on the 1st of each month, check whether the roadmaps of fast-moving fields (AI/ML, agent engineering) have fallen behind, verify candidates via web search, and write suggestions into the hub repo's <code>ROADMAP-SUGGESTIONS.md</code> — <strong>suggestions only; it never edits any TOPICS.md directly</strong>. Classical fields (philosophy, Buddhism, mathematics) default to "nothing new this month." Every suggestion must cite a source verified to exist; when in doubt, leave it out.</li>
+<li><strong>Cross-reference sync</strong>: periodically cross-links ai-ml-daily (academic concepts) and super-individual-weekly (engineering practice) and keeps the two from covering the same ground twice.</li>
+</ul>
+
+<h2>4. Post-processing: what happens after the push</h2>
+<p>The routine clocks out after pushing, but the page isn't in final form yet. Each repo's GitHub Actions take over for two kinds of post-processing.</p>
+
+<h3>Shared-script injection (all repos)</h3>
+<p>Comments, search, bilingual TTS, navigation buttons, and the lightbox are all provided by shared scripts hosted in the hub repo (<code>comments.js</code>, <code>search.js</code>, <code>i18n-tts.js</code>, <code>index-button.js</code>, <code>lightbox.js</code>). Content pages are <strong>forbidden</strong> from hard-coding these script tags (publish.sh blocks it); instead, an injection Action scans the HTML after each push, adds whatever is missing, and auto-commits as <code>Auto-inject shared scripts</code>.</p>
+<p>Why injection instead of baking the tags into the generation template? Because <strong>infrastructure must be able to evolve independently of content</strong>. With 20+ repos and hundreds of pages, script tags hard-wired into templates would mean retraining 20 prompts and re-touching hundreds of pages just to upgrade the search script. Under injection, you change the shared script once and the whole fleet picks it up on the next pass — and old pages get retrofitted for free.</p>
+
+<h3>Azure TTS bake (mental-models)</h3>
+<p>Every section of the mental-models site is click-to-listen, and the audio is pre-baked:</p>
+<ul>
+<li>A push triggers <code>bake-tts.yml</code> → runs <code>bake-tts.py</code></li>
+<li>Text is extracted per <code>&lt;h2&gt;</code> section → <strong>hashed</strong> → check whether <code>audio/zh/&lt;hash&gt;.mp3</code> already exists → only call the Azure Speech REST API when it doesn't</li>
+<li>The script then writes <code>data-tts-zh="&lt;hash&gt;"</code> back onto the HTML element; the front-end <code>i18n-tts.js</code> resolves audio by that attribute. Sites without pre-baked audio degrade gracefully to the browser's Web Speech API</li>
+<li>The bake's auto-commit is tagged <code>[skip bake]</code>, breaking the "commit triggers bake, bake makes a commit" loop</li>
+</ul>
+<p>Hash addressing makes the whole chain idempotent: unchanged content costs zero API quota, and editing one section re-bakes only that section. The site has accumulated 500+ mp3 files, about 1.2 GB — all sitting in the git repo, served directly by Pages, at zero extra storage cost.</p>
+<p>(This TTS chain originally ran on Volcano Engine and was later migrated wholesale to Azure; the old script survives as a <code>.bak</code> fossil.)</p>
+
+<h2>5. Aggregation: how the hub tracks 20 repos beneath it</h2>
+<p>The hub repo is fully automated too, via two daily Actions.</p>
+
+<h3>refresh-hub.yml — re-rendering the landing page</h3>
+<p>Runs <code>generate_hub.py</code>, a textbook case of "one source of truth, two language renders": card metadata (titles, bilingual blurbs, palettes, sections) lives in a single CARDS array, and both the Chinese and English pages render from it — there are never two HTML files to keep in sync.</p>
+<p>The dynamic parts come from the GitHub REST API:</p>
+<ul>
+<li>For each repo, fetch the last 50 commits and find the most recent one that <strong>actually added a content page</strong> (filename regex matching <code>-dayN/-weekN/-readN.html</code>), and render that date on the card — so the badge reflects "content last updated," not a "last commit" date polluted by the bot's injection commits.</li>
+<li><strong>Completion detection</strong>: the script holds a CAPS table (which site caps at which issue), parses the maximum <code>Add #N</code> from commit messages, and when a site reaches its cap, swaps the date for a "✓ Completed" badge. This is the downstream payoff of the commit-message convention — no one has to mark a site finished; each site announces its own graduation.</li>
+</ul>
+<p>Timing-wise, this Action runs about 45 minutes after all content routines, so the day's new pages always make it to the landing page.</p>
+
+<h3>build-search.yml — site-wide search</h3>
+<p>Static sites have no backend, so search is <a href="https://pagefind.app/">Pagefind</a>: every day, clone all content repos into <code>_src/</code> as one tree, run Pagefind to build a sharded index (Chinese and English indexed separately), and publish it to <code>/pagefind/</code> in the hub repo. The front-end <code>search.js</code> provides a floating search button and opens the search overlay in the page's language. Footers, navigation, and comment containers are excluded from indexing as noise.</p>
+<p>One special case: the Thinker Roundtable site (thinker-arena) is client-rendered — its content lives in JSON, invisible to a crawler. The fix is <code>render_search_snapshots.py</code>, which renders the JSON debates into plain HTML snapshots purely for Pagefind to consume before indexing — <strong>SSR for the crawler's benefit</strong>, just as a daily batch job.</p>
+
+<h2>6. Governance: making the system police itself</h2>
+<p>Getting it running is the easy part; running unattended for the long haul is the hard part. The lines of defense:</p>
+
+<h3>Caps + auto-pause</h3>
+<p>Every site's roadmap is finite — when the material is learned, the site should graduate, not pad itself for the sake of a daily streak. The cap is recorded in three places: TOPICS.md (visible to the routine), the hub's CAPS table (badges), and a <strong>local scheduled inspection task</strong>: weekly, it checks each capped site's highest published issue, and any site that has written to its cap gets its cloud trigger flipped to <code>enabled=false</code> via the API.</p>
+<p>The pause operation has two safety interlocks, both paid for with real mistakes:</p>
+<ol>
+<li>Before pausing, <code>get</code> the trigger and confirm that the repo it mounts really is the one being retired — protection against a trigger ID mapped to the wrong site;</li>
+<li>The update body sends <strong>only <code>{"enabled": false}</code></strong>, because this API's update replaces job_config wholesale rather than merging — sending a partial job_config would wipe out the prompt, the mounted repo, and the model configuration.</li>
+</ol>
+
+<h3>Chinese-leak detection on English pages</h3>
+<p>The most common failure mode of bilingual generation is Chinese leaking into the English page's template slots (subtitles, tags, name fields). The same inspection task runs a set of fingerprint greps (like <code>class="en"&gt;[一-鿿]</code>) over every repo's <code>*.en.html</code> and reports any hit. The fingerprints are chosen carefully — <strong>legitimate</strong> Chinese, like Buddhist scripture alongside its English translation or glossed terms, doesn't use those classes and never false-positives.</p>
+
+<h3>The quality ratchets</h3>
+<ul>
+<li>Length ratchet: the <code>.maxchars</code> hard ceiling plus the prompt's target band, as above</li>
+<li>Truthfulness discipline: every routine's prompt carries a "never fabricate, verify sources first, if you can't find it don't write it" clause; the monthly refresh routine further requires a verified link on every suggestion</li>
+<li>New routines run a small validated batch before scaling up (especially TTS baking — one structural mistake burns a whole month of Azure quota)</li>
+</ul>
+
+<h2>7. Design principles that emerged</h2>
+<div class="principle"><b>Static first.</b> No database, no server, no build framework. HTML is the artifact, git is the CMS, GitHub Pages is the CDN. Search (Pagefind), comments (Giscus), and TTS (pre-baked mp3s) all solve traditionally "needs a backend" problems with static answers.</div>
+<div class="principle"><b>The filesystem is the state.</b> Topic progress = the output of <code>ls</code>; the publishing record = commit messages; completion status = parsed from commits. There is no independently maintained state store anywhere — so nothing can drift out of sync with reality.</div>
+<div class="principle"><b>Every step is idempotent.</b> A re-fired routine won't rewrite existing pages (the file already exists); a re-run TTS bake won't double-bill (hash hit); a re-run injection won't stack tags (only adds what's missing). For unattended systems, retries are the norm — idempotency is a precondition, not an optimization.</div>
+<div class="principle"><b>Separate generation from validation.</b> Never assume LLM output is correct; publish.sh backstops it with the dumbest possible bash checks. The smarter the generator, the dumber and more deterministic the validator should be.</div>
+<div class="principle"><b>The human guards exactly one entrance.</b> All my recurring effort converges on TOPICS.md and cap decisions; everything else derives from them. The AI expanding its own mandate (extending the roadmap) is mechanically forbidden — it can only file a request.</div>
+<div class="principle"><b>Convention over protocol.</b> The <code>Add #N</code> commit format, the <code>{slug}-day{N}.html</code> naming, the one-line <code>.maxchars</code> file — components talk through these humble conventions. There isn't a JSON schema anywhere, yet every convention has at least two consumers.</div>
+<div class="principle"><b>Graduate when it's time.</b> Every site has a cap; when it's reached, the routine auto-pauses and the badge flips to Completed. This system serves my own learning — a finished field deserves closure, not hostage-taking by "consistent output."</div>
+
+<h2>8. Cost</h2>
+<ul>
+<li>GitHub Pages / Actions: within the free tier</li>
+<li>Content generation: cloud routines included in a claude.ai subscription, no extra API bills</li>
+<li>Azure Speech: free tier (F0)</li>
+<li>My time: curating 20+ TOPICS.md files, plus the occasional glance at monthly suggestions and inspection reports</li>
+</ul>
+<p>One person's attention is the most expensive resource in this system. The design goal of the pipeline was never "full automation" for its own sake — it was to free my attention from production and operations and spend all of it on the only thing worth spending it on: <strong>deciding what to learn next.</strong></p>
+
+<footer>
+  <a href="index.en.html">← BigCat's Learning Hub</a>
+</footer>
+</div>
+<script src="https://cissy0802.github.io/comments.js" defer></script>
+<script src="https://cissy0802.github.io/search.js" defer></script>
+<script src="https://cissy0802.github.io/i18n-tts.js" defer></script>
+</body></html>

@@ -52,7 +52,7 @@ CARDS = [
     ("leadership", "🎯", "领导力实践", "Leadership",
      "1:1、反馈、难对话、招聘、coaching——具体话术与检查表，技术 leader 的处方性 craft。",
      "1:1s, feedback, hard conversations, hiring, coaching — concrete scripts and checklists; prescriptive craft for tech leaders.",
-     "leadership-weekly", "career"),
+     "leadership", "career"),
     ("writing", "✍️", "写作与表达", "Writing",
      "Zinsser、Orwell、金字塔原理、备忘录、AI 时代写作——超级个体的表达工具箱。",
      "Zinsser, Orwell, Pyramid Principle, memos, writing in the AI era — the super-individual's expression toolkit.",
@@ -162,6 +162,7 @@ I18N = {
         "hub2_tag": "让思想家替你思考 · 互动圆桌",
         "arrow": "进入 →",
         "toggle": '<a href="index.html" class="active">中文</a>\n  <a href="index.en.html">EN</a>',
+        "blog": '<a href="blog-pipeline.html">🛠 这个 Hub 是怎么搭的</a>',
     },
     "en": {
         "html_lang": "en",
@@ -170,6 +171,7 @@ I18N = {
         "hub2_tag": "Let great thinkers think for you · an interactive roundtable",
         "arrow": "enter →",
         "toggle": '<a href="index.html">中文</a>\n  <a href="index.en.html" class="active">EN</a>',
+        "blog": '<a href="blog-pipeline.en.html">🛠 how this hub is built</a>',
     },
 }
 
@@ -195,7 +197,7 @@ CAPS = {
     "ai-ml": 53,
     "philosophy-weekly": 49,
     "system-design": 48,
-    "leadership-weekly": 69,
+    "leadership": 69,
     "health-longevity-weekly": 60,
     "buddhism-weekly": 36,
     "investing-weekly": 56,
@@ -379,6 +381,7 @@ footer a:hover{{color:#00d4ff}}
 </div>
 
 <footer>
+  {t['blog']}<br>
   BigCat · refreshed {today} · <a href="https://github.com/cissy0802">GitHub</a> · auto-regenerated
 </footer>
 </div>
