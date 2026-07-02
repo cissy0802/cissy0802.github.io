@@ -103,7 +103,7 @@ CARDS = [
     ("math", "📐", "数学之美", "Mathematics",
      "概率、微积分、线代、拓扑、信息论——数学之美与跨学科的优雅工具。",
      "Probability, calculus, linear algebra, topology, information theory — the beauty of mathematics and elegant cross-disciplinary tools.",
-     "mathematics-weekly", "explore"),
+     "mathematics", "explore"),
     ("history", "🏛️", "历史大事件", "History",
      "冷战转折、技术史、商业史、地缘政治——具体事件与反事实思考，Munger 的最佳教材。",
      "Cold War turning points, history of technology, business history, geopolitics — specific events and counterfactual thinking, Munger's favorite textbook.",
@@ -382,7 +382,7 @@ footer a:hover{{color:#00d4ff}}
 
 <footer>
   {t['blog']}<br>
-  BigCat · refreshed {today} · <a href="https://github.com/cissy0802">GitHub</a> · auto-regenerated
+  BigCat · refreshed {today} · <a href="https://github.com/cissy0802">GitHub</a> · <a href="mailto:cissychen0802@gmail.com">cissychen0802@gmail.com</a>
 </footer>
 </div>
 <script src="/search.js" defer></script>
