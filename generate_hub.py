@@ -293,9 +293,11 @@ def thinking_card_html(c, lang: str) -> str:
   </a>"""
 
 
-def section(label_en: str, label_zh: str, cards_html: list[str], lang: str) -> str:
+def section(label_en: str, label_zh: str, cards_html: list[str], lang: str, group=None) -> str:
     body = "\n\n".join(cards_html)
     label = f"{label_zh} · {label_en}" if lang == "zh" else label_en
+    if group:
+        label = f"{group[0 if lang == 'zh' else 1]} · {label}"
     return f'  <div class="section-label">// {label}</div>\n\n{body}'
 
 
@@ -391,14 +393,15 @@ def main():
     for lang, fname in (("zh", "index.html"), ("en", "index.en.html")):
         def cards_for(sec):
             return [card_html(c, dates[c[6]], lang) for c in CARDS if c[7] == sec]
+        brain = ("第二大脑", "Second Brain")
         grid = "\n\n".join([
             section("Thinking Hub", "思想圆桌", [thinking_card_html(c, lang) for c in THINKING_CARDS], lang),
-            section("Thinking",   "思维",     cards_for("thinking"), lang),
-            section("Tech",       "技术",     cards_for("tech"), lang),
-            section("Career",     "职场",     cards_for("career"), lang),
-            section("Life",       "生活",     cards_for("life"), lang),
-            section("Humanities", "人文",     cards_for("humanities"), lang),
-            section("Explore",    "探索",     cards_for("explore"), lang),
+            section("Thinking",   "思维",     cards_for("thinking"), lang, brain),
+            section("Tech",       "技术",     cards_for("tech"), lang, brain),
+            section("Career",     "职场",     cards_for("career"), lang, brain),
+            section("Life",       "生活",     cards_for("life"), lang, brain),
+            section("Humanities", "人文",     cards_for("humanities"), lang, brain),
+            section("Explore",    "探索",     cards_for("explore"), lang, brain),
         ])
         html = render_page(lang, grid, today)
         Path(fname).write_text(html, encoding="utf-8")
