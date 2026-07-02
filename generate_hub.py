@@ -159,7 +159,6 @@ I18N = {
         "html_lang": "zh-CN",
         "tagline": "每日学习 · 跨界思考 · 超级个体",
         "search_prompt": '🔍 按 <kbd>/</kbd> 或点击右下角搜索全站',
-        "hub2_tag": "让思想家替你思考 · 互动圆桌",
         "arrow": "进入 →",
         "toggle": '<a href="index.html" class="active">中文</a>\n  <a href="index.en.html">EN</a>',
         "blog": '<a href="blog-pipeline.html">🛠 这个 Hub 是怎么搭的</a>',
@@ -168,7 +167,6 @@ I18N = {
         "html_lang": "en",
         "tagline": "Daily learning · Cross-domain thinking · Super-individual",
         "search_prompt": '🔍 Press <kbd>/</kbd> or click the search button (bottom right) to search the whole site',
-        "hub2_tag": "Let great thinkers think for you · an interactive roundtable",
         "arrow": "enter →",
         "toggle": '<a href="index.html">中文</a>\n  <a href="index.en.html" class="active">EN</a>',
         "blog": '<a href="blog-pipeline.en.html">🛠 how this hub is built</a>',
@@ -301,7 +299,7 @@ def section(label_en: str, label_zh: str, cards_html: list[str], lang: str) -> s
     return f'  <div class="section-label">// {label}</div>\n\n{body}'
 
 
-def render_page(lang: str, grid: str, thinking_grid: str, today: str) -> str:
+def render_page(lang: str, grid: str, today: str) -> str:
     t = I18N[lang]
     return f"""<!DOCTYPE html>
 <html lang="{t['html_lang']}">
@@ -338,9 +336,6 @@ header .subtitle{{font-size:0.85rem;color:#7b61ff;margin-top:8px;font-family:"SF
 {card_css()}
 .section-label{{font-size:0.78rem;color:#7b61ff;letter-spacing:2px;text-transform:uppercase;margin-top:24px;margin-bottom:2px;font-family:"SF Mono",Menlo,monospace;opacity:0.75}}
 .section-label:first-of-type{{margin-top:8px}}
-.hub2-header{{text-align:center;margin:60px 0 6px}}
-.hub2-header h2{{font-size:1.9rem;font-weight:800;letter-spacing:1.5px;background:linear-gradient(135deg,#a29bfe 0%,#7b61ff 50%,#ff6ec4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}}
-.hub2-header .hub2-tag{{font-size:0.95rem;color:#a0a8c0;font-weight:300;letter-spacing:0.5px}}
 .search-prompt{{margin:24px auto 0;max-width:520px;text-align:center;padding:14px 18px;background:rgba(255,255,255,0.04);border:1px solid rgba(123,97,255,0.25);border-radius:10px;font-size:0.88rem;color:#a0a8c0;font-family:"SF Mono",Menlo,monospace}}
 .search-prompt kbd{{background:rgba(123,97,255,0.25);color:#fff;padding:2px 8px;border-radius:5px;font-family:inherit;font-size:0.85rem}}
 footer{{text-align:center;padding:48px 0 12px;font-size:0.78rem;color:#5a6378}}
@@ -366,15 +361,6 @@ footer a:hover{{color:#00d4ff}}
   <div class="tagline">{t['tagline']}</div>
   <div class="search-prompt">{t['search_prompt']}</div>
 </header>
-
-<div class="hub2-header">
-  <h2>BigCat's Thinking Hub</h2>
-  <div class="hub2-tag">{t['hub2_tag']}</div>
-</div>
-
-<div class="list">
-{thinking_grid}
-</div>
 
 <div class="list">
 {grid}
@@ -406,6 +392,7 @@ def main():
         def cards_for(sec):
             return [card_html(c, dates[c[6]], lang) for c in CARDS if c[7] == sec]
         grid = "\n\n".join([
+            section("Thinking Hub", "思想圆桌", [thinking_card_html(c, lang) for c in THINKING_CARDS], lang),
             section("Thinking",   "思维",     cards_for("thinking"), lang),
             section("Tech",       "技术",     cards_for("tech"), lang),
             section("Career",     "职场",     cards_for("career"), lang),
@@ -413,8 +400,7 @@ def main():
             section("Humanities", "人文",     cards_for("humanities"), lang),
             section("Explore",    "探索",     cards_for("explore"), lang),
         ])
-        thinking_grid = "\n\n".join(thinking_card_html(c, lang) for c in THINKING_CARDS)
-        html = render_page(lang, grid, thinking_grid, today)
+        html = render_page(lang, grid, today)
         Path(fname).write_text(html, encoding="utf-8")
         print(f"Written {fname} ({len(html)} bytes)")
 
