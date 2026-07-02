@@ -39,7 +39,7 @@ CARDS = [
     ("aiml", "🤖", "AI / ML", "AI & ML",
      "LLM、Agent、RAG、强化学习、多模态、可解释性——深入技术原理，构建 AI 超级个体能力。",
      "LLMs, agents, RAG, reinforcement learning, multimodal, interpretability — deep technical principles to build super-individual AI capabilities.",
-     "ai-ml-daily", "tech"),
+     "ai-ml", "tech"),
     ("sysd", "🏗️", "System Design", "System Design",
      "分布式系统、架构 trade-off、真实案例拆解、面试题示范——给资深工程师的 system design 训练。",
      "Distributed systems, architecture trade-offs, real-world case studies, interview demos — system design training for senior engineers.",
@@ -192,7 +192,7 @@ def gh_get(url: str):
 CAPS = {
     "mental-models": 68,
     "super-individual-weekly": 51,
-    "ai-ml-daily": 53,
+    "ai-ml": 53,
     "philosophy-weekly": 49,
     "system-design-bidaily": 48,
     "leadership-weekly": 69,
