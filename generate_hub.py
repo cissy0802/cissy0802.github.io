@@ -65,7 +65,7 @@ CARDS = [
     ("parenting", "👶", "育儿与教育", "Parenting",
      "循证育儿、儿童脑科学、AI 时代教育——具体话术与场景，妈妈视角。",
      "Evidence-based parenting, child neuroscience, education for the AI era — concrete scripts and scenarios from a mother's perspective.",
-     "parenting-weekly", "life"),
+     "parenting", "life"),
     ("psych", "🧩", "心理学", "Psychology",
      "人格、依恋、创伤、认知、治疗——理解自己与他人的内在世界。",
      "Personality, attachment, trauma, cognition, therapy — understanding the inner world of yourself and others.",
