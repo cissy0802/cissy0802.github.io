@@ -122,8 +122,8 @@ CARDS = [
 # (accent_class, emoji, title_zh, subtitle_en, desc_zh, desc_en, href, badge_zh, badge_en)
 THINKING_CARDS = [
     ("thinker", "⚖️", "思想家圆桌辩论", "Thinker Roundtable",
-     "古今中外 70+ 位思想家就一个问题数轮辩论，立场表态、古文白话，最后 Claude / GPT / Gemini 三家 AI 收尾。",
-     "70+ thinkers across eras and traditions debate one question over several rounds — taking sides, classical texts glossed in plain language, closed by a three-way Claude / GPT / Gemini AI panel.",
+     "古今中外 100+ 位思想家就一个问题数轮辩论，立场表态、古文白话，最后 Claude / GPT / Gemini 三家 AI 收尾。",
+     "100+ thinkers across eras and traditions debate one question over several rounds — taking sides, classical texts glossed in plain language, closed by a three-way Claude / GPT / Gemini AI panel.",
      "https://cissy0802.github.io/thinker-arena/", "圆桌", "Roundtable"),
 ]
 
@@ -367,10 +367,6 @@ footer a:hover{{color:#00d4ff}}
   <div class="search-prompt">{t['search_prompt']}</div>
 </header>
 
-<div class="list">
-{grid}
-</div>
-
 <div class="hub2-header">
   <h2>BigCat's Thinking Hub</h2>
   <div class="hub2-tag">{t['hub2_tag']}</div>
@@ -378,6 +374,10 @@ footer a:hover{{color:#00d4ff}}
 
 <div class="list">
 {thinking_grid}
+</div>
+
+<div class="list">
+{grid}
 </div>
 
 <footer>
