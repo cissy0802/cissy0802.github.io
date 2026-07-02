@@ -73,7 +73,7 @@ CARDS = [
     ("family", "🧺", "一起做", "Doing Together",
      "烹饪、园艺、小实验、手工、自然观察——和孩子一起动手的日常实践，每期分龄三段。",
      "Cooking, gardening, kitchen science, crafts — hands-on family practice with the kids, age-tiered and sibling-friendly.",
-     "family-craft-weekly", "life"),
+     "family-craft", "life"),
     # 人文 · Humanities
     ("philosophy", "📜", "哲学经典", "Philosophy",
      "东西方哲学经典，从柏拉图到庄子，从康德到王阳明，跨越时空的思想对话。",
