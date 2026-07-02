@@ -115,7 +115,7 @@ CARDS = [
     ("civics", "🌍", "政治·法律·地缘", "Civics & Geopolitics",
      "制度、法律、国际关系、地缘——中立、多视角、不站队的世界运作框架。",
      "Institutions, law, international relations, geography of power — how the world is governed and divided, neutral and multi-perspective.",
-     "civics-geopolitics-weekly", "explore"),
+     "civics-geopolitics", "explore"),
 ]
 
 # BigCat's Thinking Hub —— 互动型思想实验，链到自建静态站(非每日内容仓库，故无 commit 日期)。
