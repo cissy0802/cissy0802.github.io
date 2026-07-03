@@ -12,7 +12,7 @@
   var API = window.BIGCAT_API || "https://bigcat-engage.cissychen.workers.dev";
   // Optional: paste a Cloudflare Turnstile site key to require a captcha.
   // Leave "" to rely on honeypot + server rate-limit only.
-  var TURNSTILE_SITEKEY = "";
+  var TURNSTILE_SITEKEY = "0x4AAAAAADu325m36GEOOMP-";
   // ==========================================================================
 
   var isEn = (document.documentElement.lang || "").toLowerCase().startsWith("en");
