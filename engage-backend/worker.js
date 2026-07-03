@@ -14,6 +14,7 @@
 
 const ALLOWED_ORIGINS = new Set([
   "https://cissy0802.github.io",
+  "https://hub.cissychen.com", // custom-domain hub mirror (English-default)
   "http://localhost:8000", // local preview
   "http://127.0.0.1:8000",
 ]);
