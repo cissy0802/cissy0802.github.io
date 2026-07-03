@@ -120,6 +120,27 @@ export default {
         return json({ ok: true, poll, tally, mine }, 200, origin);
       }
 
+      // ---- Batch net votes by poll prefix (for thinker-arena ranking) --
+      // GET /votes-net?prefix=topic:  ->  { "topic:foo": {up,down,net}, ... }
+      // choice "up"/"down"; net = up - down. Used by ideas.js + refresh_votes.py.
+      if (url.pathname === "/votes-net" && request.method === "GET") {
+        const prefix = String(url.searchParams.get("prefix") || "").trim().slice(0, 64);
+        if (!prefix) return json({ ok: false, error: "missing_prefix" }, 400, origin);
+        const { results } = await env.DB.prepare(
+          "SELECT poll, choice, COUNT(*) AS n FROM votes WHERE poll LIKE ?1 GROUP BY poll, choice"
+        )
+          .bind(prefix + "%")
+          .all();
+        const votes = {};
+        for (const r of results) {
+          const p = votes[r.poll] || (votes[r.poll] = { up: 0, down: 0, net: 0 });
+          if (r.choice === "up") p.up = r.n;
+          else if (r.choice === "down") p.down = r.n;
+        }
+        for (const k in votes) votes[k].net = votes[k].up - votes[k].down;
+        return json({ ok: true, prefix, votes }, 200, origin);
+      }
+
       // ---- List comments -----------------------------------------------
       if (url.pathname === "/comments" && request.method === "GET") {
         const page = String(url.searchParams.get("page") || "").trim().slice(0, 200);
