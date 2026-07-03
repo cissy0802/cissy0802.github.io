@@ -94,6 +94,40 @@ npx wrangler d1 execute bigcat-engage --remote \
   --command "SELECT poll, choice, COUNT(*) n FROM votes GROUP BY poll, choice ORDER BY poll, n DESC"
 ```
 
+### Digest report (`report.py`)
+
+Nicer than raw SQL — one command prints subscribers + poll bars + recent comments:
+
+```bash
+python3 report.py                 # full digest
+python3 report.py --days 7        # only signups/comments from last 7 days
+python3 report.py --comments 50   # show up to 50 recent comments
+python3 report.py --summary       # one compact line (used by the daily job)
+```
+
+## Daily local digest (launchd routine)
+
+A macOS LaunchAgent runs the digest every day at **09:00** and pops a notification
+with a one-line summary; the full report is appended to a log.
+
+- **Job:** `~/Library/LaunchAgents/com.bigcat.hub-digest.plist`
+  (reference copy: `hub-digest.plist` in this folder).
+- **Runner + log:** `~/.bigcat-hub/` (a copy of `report.py` + `daily-digest.sh`).
+  Read the history any time with `cat ~/.bigcat-hub/digest.log`.
+
+> **Why not run it from this folder?** macOS TCC blocks `launchd` from accessing
+> `~/Desktop`, so the scheduled runner lives in `~/.bigcat-hub` instead. Your
+> interactive shell *can* reach the Desktop, so `python3 report.py` here still works.
+> If you edit `report.py`, sync it: `cp report.py ~/.bigcat-hub/`.
+
+Manage the job:
+
+```bash
+launchctl unload ~/Library/LaunchAgents/com.bigcat.hub-digest.plist   # stop
+launchctl load   ~/Library/LaunchAgents/com.bigcat.hub-digest.plist   # start
+launchctl start  com.bigcat.hub-digest                                # run now
+```
+
 ## Local dev
 
 ```bash
