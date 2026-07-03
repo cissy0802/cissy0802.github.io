@@ -30,7 +30,7 @@ const IP_SALT = "bigcat-comments-v1"; // just so stored hashes aren't raw IPs
 
 // Double opt-in (only active once RESEND_API_KEY is bound as a secret).
 const SITE_BASE = "https://cissy0802.github.io"; // where /confirm.html lives
-const FROM_EMAIL = "BigCat Hub <onboarding@resend.dev>"; // change to your verified sender once set up
+const FROM_EMAIL = "BigCat <hi@cissychen.com>"; // needs cissychen.com verified in Resend
 
 function cors(origin) {
   const allow = ALLOWED_ORIGINS.has(origin) ? origin : "https://cissy0802.github.io";
@@ -118,7 +118,17 @@ export default {
           .bind(email, list, Date.now(), token)
           .run();
         const sent = await sendConfirmEmail(env, email, list, token);
-        return json({ ok: true, already: false, list, pending: true, sent }, 200, origin);
+        if (!sent) {
+          // Couldn't email (e.g. Resend domain not verified yet) — confirm now
+          // so the subscriber isn't stranded in an unconfirmable pending state.
+          await env.DB.prepare(
+            "UPDATE subscriptions SET confirmed = 1, token = NULL WHERE email = ? AND list = ?"
+          )
+            .bind(email, list)
+            .run();
+          return json({ ok: true, already: false, list, pending: false, sent: false }, 200, origin);
+        }
+        return json({ ok: true, already: false, list, pending: true, sent: true }, 200, origin);
       }
 
       // ---- Confirm a subscription (double opt-in link target) ----------
