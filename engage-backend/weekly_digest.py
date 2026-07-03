@@ -325,6 +325,9 @@ def build_hub_email(sections, en):
     cta = "去 BigCat 首页 →" if not en else "Open BigCat →"
     read = "阅读 →" if not en else "Read →"
     unit = "篇" if not en else "new"
+    # With several tabs the email gets long, so cap each tab and fold the rest
+    # behind a "…N more" link. A single-tab digest shows everything.
+    per_tab = 3 if len(sections) > 1 else None
     body = ""
     for label, tab_url, items in sections:
         body += (
@@ -333,7 +336,16 @@ def build_hub_email(sections, en):
             '<span style="font-size:12px;color:#8a90a0;font-weight:600;margin-left:7px">%d %s</span>'
             "</div>" % (esc(tab_url), esc(label), len(items), unit)
         )
-        body += "".join(_item_row(url, t, read) for url, t in items)
+        shown = items[:per_tab] if per_tab else items
+        body += "".join(_item_row(url, t, read) for url, t in shown)
+        if per_tab and len(items) > per_tab:
+            extra = len(items) - per_tab
+            more = ("…还有 %d 篇" % extra) if not en else ("…and %d more" % extra)
+            body += (
+                '<div style="margin:0 0 14px 18px">'
+                '<a href="%s" style="font-size:13px;color:#7b61ff;text-decoration:none;font-weight:600">%s →</a>'
+                "</div>" % (esc(tab_url), esc(more))
+            )
     return _wrap(head_sub, title, intro, body, SITE, cta, en)
 
 
