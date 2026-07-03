@@ -41,6 +41,7 @@
         subBtn: "Subscribe",
         subOk: "✓ You're on the list. Thanks!",
         subDup: "✓ You're already subscribed.",
+        subPending: "✓ Almost there — check your inbox to confirm.",
         subErr: "Please enter a valid email.",
         subNet: "Something went wrong — try again.",
         pollHead: "🗳️ Vote",
@@ -54,6 +55,7 @@
         subBtn: "订阅",
         subOk: "✓ 已加入订阅，谢谢！",
         subDup: "✓ 你已经订阅过啦。",
+        subPending: "✓ 就差一步——去邮箱点确认链接。",
         subErr: "请输入有效的邮箱地址。",
         subNet: "出错了，请再试一次。",
         pollHead: "🗳️ 投票",
@@ -140,7 +142,7 @@
       .then(function (d) {
         if (d.ok) {
           subMsg.className = "eg-msg";
-          subMsg.textContent = d.already ? t.subDup : t.subOk;
+          subMsg.textContent = d.already ? t.subDup : d.pending ? t.subPending : t.subOk;
           input.value = "";
         } else {
           subMsg.className = "eg-msg err";

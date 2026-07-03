@@ -28,6 +28,10 @@ const BODY_MAX = 2000;
 const NAME_MAX = 40;
 const IP_SALT = "bigcat-comments-v1"; // just so stored hashes aren't raw IPs
 
+// Double opt-in (only active once RESEND_API_KEY is bound as a secret).
+const SITE_BASE = "https://cissy0802.github.io"; // where /confirm.html lives
+const FROM_EMAIL = "BigCat Hub <onboarding@resend.dev>"; // change to your verified sender once set up
+
 function cors(origin) {
   const allow = ALLOWED_ORIGINS.has(origin) ? origin : "https://cissy0802.github.io";
   return {
@@ -80,13 +84,56 @@ export default {
         // list slug: letters/digits/dash, default "hub".
         let list = String(body.list || "hub").trim().toLowerCase().slice(0, 64);
         if (!/^[a-z0-9][a-z0-9-]*$/.test(list)) list = "hub";
-        const res = await env.DB.prepare(
-          "INSERT OR IGNORE INTO subscriptions (email, list, ts) VALUES (?, ?, ?)"
+
+        // Double opt-in only when an email sender is configured; otherwise
+        // fall back to immediate confirmed subscription (current behaviour).
+        const doubleOptIn = !!env.RESEND_API_KEY;
+
+        // Already confirmed on this list? Nothing to do.
+        const existing = await env.DB.prepare(
+          "SELECT confirmed FROM subscriptions WHERE email = ? AND list = ?"
         )
-          .bind(email, list, Date.now())
+          .bind(email, list)
+          .first();
+        if (existing && existing.confirmed === 1) {
+          return json({ ok: true, already: true, list, pending: false }, 200, origin);
+        }
+
+        if (!doubleOptIn) {
+          await env.DB.prepare(
+            "INSERT INTO subscriptions (email, list, ts, confirmed, token) VALUES (?1, ?2, ?3, 1, NULL) " +
+              "ON CONFLICT(email, list) DO UPDATE SET confirmed = 1"
+          )
+            .bind(email, list, Date.now())
+            .run();
+          return json({ ok: true, already: false, list, pending: false }, 200, origin);
+        }
+
+        // Pending: store token, email a confirmation link.
+        const token = crypto.randomUUID().replace(/-/g, "");
+        await env.DB.prepare(
+          "INSERT INTO subscriptions (email, list, ts, confirmed, token) VALUES (?1, ?2, ?3, 0, ?4) " +
+            "ON CONFLICT(email, list) DO UPDATE SET token = ?4, ts = ?3"
+        )
+          .bind(email, list, Date.now(), token)
           .run();
-        const already = res.meta.changes === 0;
-        return json({ ok: true, already, list }, 200, origin);
+        const sent = await sendConfirmEmail(env, email, list, token);
+        return json({ ok: true, already: false, list, pending: true, sent }, 200, origin);
+      }
+
+      // ---- Confirm a subscription (double opt-in link target) ----------
+      if (url.pathname === "/confirm" && request.method === "GET") {
+        const token = String(url.searchParams.get("t") || "").trim().slice(0, 64);
+        if (!token || !/^[a-f0-9]{16,64}$/.test(token)) {
+          return json({ ok: false, error: "bad_token" }, 400, origin);
+        }
+        const res = await env.DB.prepare(
+          "UPDATE subscriptions SET confirmed = 1, token = NULL WHERE token = ?"
+        )
+          .bind(token)
+          .run();
+        const ok = res.meta.changes > 0;
+        return json({ ok, confirmed: ok }, ok ? 200 : 404, origin);
       }
 
       // ---- Vote --------------------------------------------------------
@@ -236,6 +283,37 @@ export default {
     }
   },
 };
+
+async function sendConfirmEmail(env, email, list, token) {
+  const link = SITE_BASE + "/confirm.html?t=" + token;
+  const label = list === "hub" ? "BigCat's Learning Hub" : list;
+  try {
+    const r = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + env.RESEND_API_KEY,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: FROM_EMAIL,
+        to: email,
+        subject: "确认订阅 · Confirm your subscription (" + label + ")",
+        html:
+          '<div style="font-family:-apple-system,sans-serif;max-width:480px;margin:0 auto;color:#222">' +
+          "<h2>确认订阅 · Confirm your subscription</h2>" +
+          "<p>你（或有人用这个邮箱）订阅了 <b>" + label + "</b>。点下面确认，之后才会给你发邮件。<br>" +
+          "You (or someone) subscribed to <b>" + label + "</b>. Click to confirm — we won't email you until you do.</p>" +
+          '<p><a href="' + link + '" style="display:inline-block;background:#7b61ff;color:#fff;' +
+          'padding:11px 22px;border-radius:8px;text-decoration:none;font-weight:700">确认订阅 · Confirm</a></p>' +
+          '<p style="font-size:12px;color:#888">没订阅过就忽略这封邮件。 · Not you? Just ignore this email.</p>' +
+          "</div>",
+      }),
+    });
+    return r.ok;
+  } catch (e) {
+    return false;
+  }
+}
 
 async function tallyPoll(env, poll) {
   const { results } = await env.DB.prepare(

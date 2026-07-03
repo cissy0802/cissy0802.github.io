@@ -67,8 +67,8 @@ def main():
     args = ap.parse_args()
 
     if args.summary:
-        n_subs = q("SELECT COUNT(*) AS n FROM subscriptions")[0]["n"]
-        new_subs = q("SELECT COUNT(*) AS n FROM subscriptions WHERE ts > ?".replace(
+        n_subs = q("SELECT COUNT(*) AS n FROM subscriptions WHERE confirmed=1")[0]["n"]
+        new_subs = q("SELECT COUNT(*) AS n FROM subscriptions WHERE confirmed=1 AND ts > ?".replace(
             "?", str(int((datetime.now(tz=timezone.utc).timestamp() - 86400) * 1000)))
         )[0]["n"]
         n_votes = q("SELECT COUNT(*) AS n FROM votes")[0]["n"]
@@ -88,29 +88,32 @@ def main():
     print("  " + datetime.now().astimezone().strftime("%Y-%m-%d %H:%M %Z"))
     print("=" * 60)
 
-    # ---- Subscribers (per list/tab) ----
-    subs = q("SELECT email, list, ts FROM subscriptions ORDER BY ts DESC")
-    recent_subs = [s for s in subs if days_ago(s["ts"], args.days)]
-    uniq = len({s["email"] for s in subs})
-    print(f"\n📬 SUBSCRIBERS — {len(subs)} subscriptions · {uniq} unique emails", end="")
+    # ---- Subscribers (per list/tab; confirmed vs pending) ----
+    subs = q("SELECT email, list, ts, confirmed FROM subscriptions ORDER BY ts DESC")
+    conf = [s for s in subs if s.get("confirmed", 1)]
+    pending = [s for s in subs if not s.get("confirmed", 1)]
+    recent_subs = [s for s in conf if days_ago(s["ts"], args.days)]
+    uniq = len({s["email"] for s in conf})
+    print(f"\n📬 SUBSCRIBERS — {len(conf)} confirmed · {uniq} unique emails"
+          + (f" · {len(pending)} unconfirmed" if pending else ""), end="")
     if args.days is not None:
         print(f"  ({len(recent_subs)} new in last {args.days}d)")
     else:
         print()
-    # per-list breakdown
+    # per-list breakdown (confirmed only)
     by_list = {}
-    for s in subs:
+    for s in conf:
         by_list[s["list"]] = by_list.get(s["list"], 0) + 1
     for lst, n in sorted(by_list.items(), key=lambda kv: -kv[1]):
         print(f"     {n:>4}  {lst}")
-    # recent signups
-    show = (recent_subs if args.days is not None else subs)[:30]
+    # recent confirmed signups
+    show = (recent_subs if args.days is not None else conf)[:30]
     if show:
         print("   recent:")
         for s in show:
             print(f"     {fmt_ts(s['ts'])}   {s['email']}  [{s['list']}]")
-    if not subs:
-        print("   (none yet)")
+    if not conf:
+        print("   (none confirmed yet)")
 
     # ---- Votes ----
     votes = q("SELECT poll, choice, COUNT(*) AS n FROM votes GROUP BY poll, choice")

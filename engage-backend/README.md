@@ -62,8 +62,38 @@ are built in:
    - In the Cloudflare dashboard → Turnstile → create a widget → get a **site key**
      and **secret key**.
    - Bind the secret to the Worker: `npx wrangler secret put TURNSTILE_SECRET`
-     (paste the secret). The Worker auto-enforces it once bound.
-   - Put the **site key** into `TURNSTILE_SITEKEY` at the top of `../comments.js`.
+     (paste the secret). The Worker auto-enforces it on `/comment` once bound.
+   - Put the **site key** into `TURNSTILE_SITEKEY` at the top of **all three** comment
+     UIs: `../comments.js`, `../../thinker-arena/ideas.js`, `../../thinker-arena/app.js`.
+   - Until the site key is set, the widget simply doesn't render (comments still work).
+
+## Verified subscribers (double opt-in)
+
+`/subscribe` supports double opt-in, **activated only once an email sender is
+configured**. Until then it behaves as before (stores the email immediately).
+
+Setup (uses [Resend](https://resend.com) — free 3,000 emails/month):
+
+```bash
+# 1. Sign up at resend.com, create an API key.
+# 2. Bind it to the Worker:
+npx wrangler secret put RESEND_API_KEY      # paste the key
+```
+
+- Once bound, `/subscribe` stores the row as **unconfirmed** and emails a
+  confirmation link (`/confirm.html?t=…`). Clicking it calls `/confirm` → the row
+  flips to `confirmed=1`. Only confirmed rows count as real subscribers.
+- The confirmation email's **from** address is `FROM_EMAIL` in `worker.js`
+  (defaults to Resend's `onboarding@resend.dev`; switch to your own address once you
+  verify a domain in Resend).
+- `report.py` and exports count `confirmed=1` only. To export a tab's confirmed list:
+  `SELECT email FROM subscriptions WHERE list='mental-models' AND confirmed=1`.
+- Prune stale unconfirmed rows anytime:
+  `DELETE FROM subscriptions WHERE confirmed=0 AND ts < <ms>`.
+
+> **Full login later?** This double-opt-in flow (email → verify) is the foundation of
+> passwordless login. To upgrade, add a signed session token issued at `/confirm` and
+> check it on `/comment` and `/vote` — no schema redo.
 
 ### Moderation
 

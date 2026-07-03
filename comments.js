@@ -57,11 +57,13 @@
           sub: "New posts in this tab, straight to your inbox. No spam, unsubscribe anytime.",
           ph: "you@example.com", btn: "Subscribe",
           ok: "✓ Subscribed. Thanks!", dup: "✓ You're already subscribed here.",
+          pending: "✓ Almost there — check your inbox to confirm.",
           bad: "Please enter a valid email.", net: "Something went wrong — try again." }
       : { head: "📬 订阅这个专栏",
           sub: "这个 tab 有新内容时给你发邮件，只发本专栏。不发垃圾，随时退订。",
           ph: "you@example.com", btn: "订阅",
           ok: "✓ 已订阅，谢谢！", dup: "✓ 你已经订阅过这个专栏啦。",
+          pending: "✓ 就差一步——去邮箱点确认链接。",
           bad: "请输入有效的邮箱地址。", net: "出错了，请再试一次。" };
 
     var css = document.createElement("style");
@@ -108,7 +110,7 @@
       })
         .then(function (r) { return r.json(); })
         .then(function (d) {
-          if (d.ok) { msg.className = "bs-msg"; msg.textContent = d.already ? sT.dup : sT.ok; input.value = ""; }
+          if (d.ok) { msg.className = "bs-msg"; msg.textContent = d.already ? sT.dup : d.pending ? sT.pending : sT.ok; input.value = ""; }
           else { msg.className = "bs-msg err"; msg.textContent = sT.bad; }
         })
         .catch(function () { msg.className = "bs-msg err"; msg.textContent = sT.net; })

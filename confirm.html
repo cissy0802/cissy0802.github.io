@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>确认订阅 · Confirm subscription</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"Noto Serif SC",sans-serif;background:linear-gradient(135deg,#1a1a2e,#16213e 50%,#0a0e1a);color:#e4e6eb;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.card{max-width:460px;text-align:center;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:40px 32px}
+.icon{font-size:3rem;margin-bottom:14px}
+h1{font-size:1.4rem;margin-bottom:10px;background:linear-gradient(135deg,#00d4ff,#7b61ff 50%,#ff6ec4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+p{color:#a0a8c0;font-size:0.95rem;line-height:1.7;margin-bottom:8px}
+a.home{display:inline-block;margin-top:18px;color:#7b61ff;text-decoration:none;font-size:0.9rem}
+a.home:hover{color:#00d4ff}
+</style>
+</head>
+<body>
+<div class="card" id="card">
+  <div class="icon" id="icon">⏳</div>
+  <h1 id="title">确认中… · Confirming…</h1>
+  <p id="msg"></p>
+  <a class="home" href="/">← BigCat's Learning Hub</a>
+</div>
+<script>
+(function () {
+  var API = "https://bigcat-engage.cissychen.workers.dev";
+  var t = new URLSearchParams(location.search).get("t") || "";
+  var icon = document.getElementById("icon"),
+      title = document.getElementById("title"),
+      msg = document.getElementById("msg");
+  function show(i, ti, m) { icon.textContent = i; title.textContent = ti; msg.textContent = m; }
+  if (!/^[a-f0-9]{16,64}$/.test(t)) {
+    show("⚠️", "链接无效 · Invalid link", "确认链接不完整或已过期。请重新订阅。 · The confirmation link is invalid or expired — please subscribe again.");
+    return;
+  }
+  fetch(API + "/confirm?t=" + encodeURIComponent(t))
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (d.ok && d.confirmed) {
+        show("✅", "订阅已确认！ · Subscribed!", "谢谢，你的订阅已生效，之后有新内容会给你发邮件。 · Thanks — your subscription is now active. You'll get an email when new content goes up.");
+      } else {
+        show("🤔", "已确认或链接失效 · Already confirmed or expired", "这个链接可能已经用过了，或已过期。若还没订阅成功，请重新订阅。 · This link may already be used or expired. If you're not subscribed yet, please subscribe again.");
+      }
+    })
+    .catch(function () {
+      show("⚠️", "出错了 · Something went wrong", "请稍后重试。 · Please try again in a moment.");
+    });
+})();
+</script>
+</body>
+</html>

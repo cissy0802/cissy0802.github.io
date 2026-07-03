@@ -5,9 +5,11 @@
 -- One row per (email, list): an address can subscribe to several tabs.
 -- `list` = which tab they subscribed under ("mental-models", ..., or "hub").
 CREATE TABLE IF NOT EXISTS subscriptions (
-  email TEXT    NOT NULL,
-  list  TEXT    NOT NULL DEFAULT 'hub',
-  ts    INTEGER NOT NULL,
+  email     TEXT    NOT NULL,
+  list      TEXT    NOT NULL DEFAULT 'hub',
+  ts        INTEGER NOT NULL,
+  confirmed INTEGER NOT NULL DEFAULT 1, -- 0 = awaiting double-opt-in click
+  token     TEXT,                       -- confirm token while pending, else NULL
   PRIMARY KEY (email, list)
 );
 CREATE INDEX IF NOT EXISTS idx_subscriptions_list ON subscriptions (list);
