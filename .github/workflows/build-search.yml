@@ -23,13 +23,13 @@ jobs:
           rm -rf _src
           mkdir -p _src
           for repo in \
-            mental-models-daily ai-ml-daily meta-knowledge-daily \
-            book-recommendations-bidaily system-design-bidaily \
-            health-longevity-weekly history-weekly parenting-weekly \
-            writing-weekly biographies-weekly philosophy-weekly \
-            buddhism-weekly investing-weekly \
-            super-individual-weekly leadership-weekly \
-            psychology-weekly mathematics-weekly \
+            mental-models meta-knowledge \
+            super-individual ai-ml system-design cs-papers-deepread \
+            leadership writing \
+            health-longevity parenting psychology family-craft \
+            philosophy buddhism art-aesthetics biographies \
+            book-recommendations deep-reading \
+            mathematics history investing civics-geopolitics \
             deep-research; do
             echo "Cloning $repo..."
             git clone --depth 1 --quiet "https://github.com/cissy0802/$repo" "_src/$repo"
