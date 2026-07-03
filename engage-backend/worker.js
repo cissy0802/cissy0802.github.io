@@ -84,6 +84,8 @@ export default {
         // list slug: letters/digits/dash, default "hub".
         let list = String(body.list || "hub").trim().toLowerCase().slice(0, 64);
         if (!/^[a-z0-9][a-z0-9-]*$/.test(list)) list = "hub";
+        // language of the page they subscribed from → language of their emails.
+        const lang = String(body.lang || "").toLowerCase().startsWith("en") ? "en" : "zh";
 
         // Double opt-in only when an email sender is configured; otherwise
         // fall back to immediate confirmed subscription (current behaviour).
@@ -101,10 +103,10 @@ export default {
 
         if (!doubleOptIn) {
           await env.DB.prepare(
-            "INSERT INTO subscriptions (email, list, ts, confirmed, token) VALUES (?1, ?2, ?3, 1, NULL) " +
-              "ON CONFLICT(email, list) DO UPDATE SET confirmed = 1"
+            "INSERT INTO subscriptions (email, list, ts, confirmed, token, lang) VALUES (?1, ?2, ?3, 1, NULL, ?4) " +
+              "ON CONFLICT(email, list) DO UPDATE SET confirmed = 1, lang = ?4"
           )
-            .bind(email, list, Date.now())
+            .bind(email, list, Date.now(), lang)
             .run();
           return json({ ok: true, already: false, list, pending: false }, 200, origin);
         }
@@ -112,12 +114,12 @@ export default {
         // Pending: store token, email a confirmation link.
         const token = crypto.randomUUID().replace(/-/g, "");
         await env.DB.prepare(
-          "INSERT INTO subscriptions (email, list, ts, confirmed, token) VALUES (?1, ?2, ?3, 0, ?4) " +
-            "ON CONFLICT(email, list) DO UPDATE SET token = ?4, ts = ?3"
+          "INSERT INTO subscriptions (email, list, ts, confirmed, token, lang) VALUES (?1, ?2, ?3, 0, ?4, ?5) " +
+            "ON CONFLICT(email, list) DO UPDATE SET token = ?4, ts = ?3, lang = ?5"
         )
-          .bind(email, list, Date.now(), token)
+          .bind(email, list, Date.now(), token, lang)
           .run();
-        const sent = await sendConfirmEmail(env, email, list, token);
+        const sent = await sendConfirmEmail(env, email, list, token, lang);
         if (!sent) {
           // Couldn't email (e.g. Resend domain not verified yet) — confirm now
           // so the subscriber isn't stranded in an unconfirmable pending state.
@@ -177,11 +179,17 @@ export default {
         if (!subject || !html) return json({ ok: false, error: "missing_fields" }, 400, origin);
         if (!env.RESEND_API_KEY) return json({ ok: false, error: "no_sender" }, 400, origin);
 
-        const { results } = await env.DB.prepare(
-          "SELECT email FROM subscriptions WHERE list = ? AND confirmed = 1"
-        )
-          .bind(list)
-          .all();
+        // Optional language filter: "en" or "zh" targets only that language's subscribers.
+        const langFilter = String(body.lang || "").toLowerCase();
+        const useLang = langFilter === "en" || langFilter === "zh";
+        const { results } = await (useLang
+          ? env.DB.prepare(
+              "SELECT email FROM subscriptions WHERE list = ? AND confirmed = 1 AND lang = ?"
+            ).bind(list, langFilter)
+          : env.DB.prepare(
+              "SELECT email FROM subscriptions WHERE list = ? AND confirmed = 1"
+            ).bind(list)
+        ).all();
         const emails = results.map((r) => r.email);
         if (body.dry) {
           return json({ ok: true, dry: true, list, recipients: emails.length }, 200, origin);
@@ -401,9 +409,35 @@ function unsubFooter(list, link) {
   );
 }
 
-async function sendConfirmEmail(env, email, list, token) {
+async function sendConfirmEmail(env, email, list, token, lang) {
   const link = SITE_BASE + "/confirm.html?t=" + token;
+  const en = lang === "en";
   const label = list === "hub" ? "BigCat's Learning Hub" : list;
+  const wrap = (inner) =>
+    '<div style="font-family:-apple-system,sans-serif;max-width:480px;margin:0 auto;color:#222">' +
+    inner +
+    "</div>";
+  const subject = en
+    ? "Confirm your subscription (" + label + ")"
+    : "确认订阅 · " + label;
+  const btn =
+    '<p><a href="' + link + '" style="display:inline-block;background:#7b61ff;color:#fff;' +
+    'padding:11px 22px;border-radius:8px;text-decoration:none;font-weight:700">' +
+    (en ? "Confirm subscription" : "确认订阅") +
+    "</a></p>";
+  const html = en
+    ? wrap(
+        "<h2>Confirm your subscription</h2>" +
+          "<p>You (or someone) subscribed to <b>" + label + "</b>. Click to confirm — we won't email you until you do.</p>" +
+          btn +
+          '<p style="font-size:12px;color:#888">Not you? Just ignore this email.</p>'
+      )
+    : wrap(
+        "<h2>确认订阅</h2>" +
+          "<p>你（或有人用这个邮箱）订阅了 <b>" + label + "</b>。点下面确认，之后才会给你发邮件。</p>" +
+          btn +
+          '<p style="font-size:12px;color:#888">没订阅过就忽略这封邮件。</p>'
+      );
   try {
     const r = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -411,20 +445,7 @@ async function sendConfirmEmail(env, email, list, token) {
         Authorization: "Bearer " + env.RESEND_API_KEY,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        from: FROM_EMAIL,
-        to: email,
-        subject: "确认订阅 · Confirm your subscription (" + label + ")",
-        html:
-          '<div style="font-family:-apple-system,sans-serif;max-width:480px;margin:0 auto;color:#222">' +
-          "<h2>确认订阅 · Confirm your subscription</h2>" +
-          "<p>你（或有人用这个邮箱）订阅了 <b>" + label + "</b>。点下面确认，之后才会给你发邮件。<br>" +
-          "You (or someone) subscribed to <b>" + label + "</b>. Click to confirm — we won't email you until you do.</p>" +
-          '<p><a href="' + link + '" style="display:inline-block;background:#7b61ff;color:#fff;' +
-          'padding:11px 22px;border-radius:8px;text-decoration:none;font-weight:700">确认订阅 · Confirm</a></p>' +
-          '<p style="font-size:12px;color:#888">没订阅过就忽略这封邮件。 · Not you? Just ignore this email.</p>' +
-          "</div>",
-      }),
+      body: JSON.stringify({ from: FROM_EMAIL, to: email, subject, html }),
     });
     return r.ok;
   } catch (e) {

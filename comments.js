@@ -106,7 +106,7 @@
       btn.disabled = true; msg.className = "bs-msg"; msg.textContent = "…";
       fetch(API + "/subscribe", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email, list: list })
+        body: JSON.stringify({ email: email, list: list, lang: isEn ? "en" : "zh" })
       })
         .then(function (r) { return r.json(); })
         .then(function (d) {

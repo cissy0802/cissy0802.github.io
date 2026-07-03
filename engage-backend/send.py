@@ -56,6 +56,7 @@ def main():
     ap.add_argument("--list", required=True, help="tab/list slug, e.g. mental-models or hub")
     ap.add_argument("--subject", required=True)
     ap.add_argument("--html", required=True, help="path to an HTML file (email body)")
+    ap.add_argument("--lang", choices=["en", "zh"], help="only subscribers who joined via this language's page")
     ap.add_argument("--dry", action="store_true", help="show recipient count, send nothing")
     args = ap.parse_args()
 
@@ -76,6 +77,8 @@ def main():
         "html": html,
         "dry": bool(args.dry),
     }
+    if args.lang:
+        payload["lang"] = args.lang
 
     if args.dry:
         d = post(payload)

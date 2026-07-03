@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS subscriptions (
   ts        INTEGER NOT NULL,
   confirmed INTEGER NOT NULL DEFAULT 1, -- 0 = awaiting double-opt-in click
   token     TEXT,                       -- confirm token while pending, else NULL
+  lang      TEXT    NOT NULL DEFAULT 'zh', -- language of the page they subscribed from
   PRIMARY KEY (email, list)
 );
 CREATE INDEX IF NOT EXISTS idx_subscriptions_list ON subscriptions (list);

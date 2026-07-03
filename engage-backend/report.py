@@ -89,7 +89,7 @@ def main():
     print("=" * 60)
 
     # ---- Subscribers (per list/tab; confirmed vs pending) ----
-    subs = q("SELECT email, list, ts, confirmed FROM subscriptions ORDER BY ts DESC")
+    subs = q("SELECT email, list, ts, confirmed, lang FROM subscriptions ORDER BY ts DESC")
     conf = [s for s in subs if s.get("confirmed", 1)]
     pending = [s for s in subs if not s.get("confirmed", 1)]
     recent_subs = [s for s in conf if days_ago(s["ts"], args.days)]
@@ -106,12 +106,17 @@ def main():
         by_list[s["list"]] = by_list.get(s["list"], 0) + 1
     for lst, n in sorted(by_list.items(), key=lambda kv: -kv[1]):
         print(f"     {n:>4}  {lst}")
+    # language split
+    n_en = sum(1 for s in conf if s.get("lang") == "en")
+    n_zh = len(conf) - n_en
+    if conf:
+        print(f"   language: {n_zh} zh · {n_en} en")
     # recent confirmed signups
     show = (recent_subs if args.days is not None else conf)[:30]
     if show:
         print("   recent:")
         for s in show:
-            print(f"     {fmt_ts(s['ts'])}   {s['email']}  [{s['list']}]")
+            print(f"     {fmt_ts(s['ts'])}   {s['email']}  [{s['list']}/{s.get('lang','zh')}]")
     if not conf:
         print("   (none confirmed yet)")
 
