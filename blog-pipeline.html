@@ -49,14 +49,14 @@ footer a{color:#7b61ff}
 </header>
 
 <div class="lede">
-BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模型、AI/ML、System Design、论文精读、哲学、佛学、育儿、投资……20 多个主题，每个是一个独立的 GitHub Pages 仓库。它们每天自动更新、中英双语、带全站搜索、评论区和语音朗读——而日常运营几乎不需要我动手。这篇文章讲整条 pipeline 是怎么搭起来的。
+BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模型、AI/ML、System Design、论文精读、哲学、佛学、育儿、投资……20 多个主题，每个是一个独立的 GitHub Pages 仓库。它们每天自动更新、中英双语、带全站搜索、登录-free 评论、邮件订阅/投票和语音朗读——而日常运营几乎不需要我动手。这篇文章讲整条 pipeline 是怎么搭起来的。
 </div>
 
 <h2>0. 先看它长什么样</h2>
 <ul>
 <li><strong>一个 Hub 首页</strong>聚合所有站点卡片，自动显示每个站的最近更新日期，写完封顶的站自动打上「✓ 已完结」徽章。</li>
 <li><strong>每个主题站</strong>是一个独立 repo：<code>ai-ml</code>、<code>mental-models</code>、<code>system-design</code>、<code>cs-papers-deepread</code>……每天（或隔天/每周）新增一页深度内容，中文页 + 英文页各一个独立 HTML。</li>
-<li><strong>全站基础设施</strong>：Pagefind 静态搜索（按 <code>/</code> 呼出）、Giscus 评论区、图片 lightbox、双语切换 + TTS 朗读——全部由共享 JS 提供，内容页自己一行都不用写。</li>
+<li><strong>全站基础设施</strong>：Pagefind 静态搜索（按 <code>/</code> 呼出）、登录-free 评论、邮件订阅与投票、图片 lightbox、双语切换 + TTS 朗读——全部由共享 JS 提供，内容页自己一行都不用写。</li>
 <li><strong>托管成本为零</strong>：全部 GitHub Pages + GitHub Actions 免费额度，唯一的外部服务是 Azure Speech 免费层（TTS）。</li>
 </ul>
 <p>核心思路一句话：<strong>我只维护每个站的路线图（TOPICS.md），内容生产、发布、加工、聚合、巡检全部交给自动化——其中「写内容」这一步交给云端定时运行的 Claude agent。</strong></p>
@@ -174,7 +174,34 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <p>静态站没有后端，全站搜索用 <a href="https://pagefind.app/">Pagefind</a>：每天把所有内容仓 clone 到 <code>_src/</code> 聚合成一棵树，跑 Pagefind 生成分片索引（中英文分开索引），发布到 hub 仓的 <code>/pagefind/</code>。前端 <code>search.js</code> 提供一个悬浮搜索按钮，按页面语言弹相应语言的搜索层。索引时排除页脚、导航、评论容器这些噪音区块。</p>
 <p>有一个特殊处理：思想家圆桌辩论站（thinker-arena）是客户端渲染的（内容在 JSON 里），爬不到文本。解法是 <code>render_search_snapshots.py</code> 在建索引前把 JSON 辩论渲染成纯 HTML 快照专供 Pagefind 消费——<strong>给爬虫做一份 SSR</strong>，只不过是每日批处理版。</p>
 
-<h2>6. 治理层：让系统自己管自己</h2>
+<h2>6. 互动层：订阅、评论、投票——唯一的一块后端</h2>
+<p>前面五层没有一行服务器代码。但「订阅邮件、留言、投票」这三件事天然要写状态，纯静态做不到。这是整个系统里<strong>唯一一处后端</strong>，我把它压到最小：一个 Cloudflare Worker（<code>worker.js</code>）+ 一个 D1（SQLite）库，全在免费额度内（Worker 每天 10 万请求、D1 每天 500 万行读）。</p>
+
+<h3>一个 Worker，三件事</h3>
+<p>三个功能共用一个 Worker、一个库，靠 <code>pathname</code> 分流：</p>
+<ul>
+<li><strong>邮件订阅</strong> <code>POST /subscribe</code>：按「每个主题 tab 一个列表」收邮箱（<code>hub</code> 或某站 slug），并记下订阅时的页面语言。</li>
+<li><strong>投票 / 民调</strong> <code>POST /vote</code>、<code>GET /poll</code>、<code>GET /votes-net</code>：每人每题一票（可改），前端 <code>engage.js</code> 渲染实时票数条。</li>
+<li><strong>登录-free 评论</strong> <code>GET /comments</code>、<code>POST /comment</code>：<code>comments.js</code> 全站替换了原来的 Giscus——访客不再需要 GitHub 账号就能留言。</li>
+</ul>
+<p>数据落在 D1 的三张表：<code>subscriptions</code>（邮箱+列表为主键，带 confirmed 标志与语言）、<code>votes</code>（题+投票人为主键，天然去重）、<code>comments</code>（页面路径、名字、正文、审核位、加盐 iphash）。前端只有 <code>engage.js</code>（订阅框+投票）和 <code>comments.js</code> 两个脚本，跟其他共享 JS 一样由注入层铺到全站；Worker 的 CORS 锁死只认 <code>cissy0802.github.io</code>。</p>
+
+<h3>为什么亲手写，而不用现成服务</h3>
+<p>评论原本用 Giscus（GitHub Discussions 套壳），但它逼每个访客登录 GitHub——对一个给普通人读的学习站是过高的门槛。换成自建后<strong>登录门槛没了，代价是反垃圾的墙也没了</strong>——GitHub 登录本身就是原来的那道墙。所以自建版内置三道防线：<strong>蜜罐字段</strong>（隐藏的 <code>website</code> 输入，人不填、机器人会填，填了就静默丢弃）、<strong>按 IP 限流</strong>（60 秒最多 3 条，用加盐哈希记 IP、不存原始地址）、以及可选的 <strong>Cloudflare Turnstile</strong>（绑上 secret 后 Worker 自动强制，垃圾真出现再开）。评论正文一律用 <code>textContent</code> 渲染、绝不当 HTML，从根上堵死 XSS。</p>
+
+<h3>双重确认订阅 = 以后免密登录的地基</h3>
+<p>订阅走 double opt-in：<code>/subscribe</code> 先存一条<strong>未确认</strong>行、发一封带确认链接的邮件（用 Resend 免费层，每月 3000 封），点了链接触发 <code>/confirm</code> 才翻成 <code>confirmed=1</code>，只有确认过的才算真订户。这一步不只是防拼错的邮箱——<strong>「邮箱 → 验证」正是免密登录的地基</strong>：以后想给评论/投票加登录，只要在 <code>/confirm</code> 签发一个会话 token、在 <code>/comment</code> 和 <code>/vote</code> 校验它即可，数据库不用重构。</p>
+
+<h3>周报：把静态内容变成推送</h3>
+<p>收了邮箱就得能发。这条链路刻意不碰我的机器：</p>
+<ul>
+<li><code>weekly_digest.py</code> 跑在任意联网环境（本地或云端 routine，不挂任何仓）：对每个内容站问 GitHub API「这一周新增了哪些内容页」，抓标题、拼出中英双语邮件，调 Worker 的 <code>/send</code>——Worker 只发给<strong>该列表、该语言、已确认</strong>的订户；这周没更新的站直接跳过。</li>
+<li>发信密钥（Resend key）只存在 Worker 里，<code>send.py</code> / <code>weekly_digest.py</code> 只是调管理端点，<strong>密钥从不落到我本地</strong>。每封信自动带退订页脚和 <code>List-Unsubscribe</code> 头，退订链接用 <code>ADMIN_TOKEN</code> 做 HMAC 签名。</li>
+<li>本地还有一个 launchd 任务每天 09:00 跑 <code>report.py</code>、弹一条「订阅数 / 新评论 / 投票」摘要通知（完整报告进日志）。它住在 <code>~/.bigcat-hub</code> 而非 Desktop——因为 macOS 的 TCC 权限不让 launchd 碰 <code>~/Desktop</code>，也是踩坑换来的。</li>
+</ul>
+<p>投票去重只靠前端一个随机 localStorage token——清掉就能重投。对一个随手玩的 hub 民调，<strong>诚实但不严防</strong>足够了；真要严格，用上面那套登录地基升级即可。这一层的取舍贯穿始终：<strong>能静态就静态；非有状态不可的那一小块，用最小的后端 + 免费额度兜住，并且每处都预留了「以后要更严怎么长上去」。</strong></p>
+
+<h2>7. 治理层：让系统自己管自己</h2>
 <p>跑起来只是开始，长期无人值守才是难的部分。几道防线：</p>
 
 <h3>封顶 + 自动停机</h3>
@@ -195,8 +222,8 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <li>新 routine 上线前先小批量试跑人工验收，再放开批量（TTS bake 尤其如此——结构错一次浪费的是整月 Azure 配额）</li>
 </ul>
 
-<h2>7. 沉淀下来的设计原则</h2>
-<div class="principle"><b>静态优先。</b>没有数据库、没有服务器、没有构建框架。HTML 就是产物，git 就是 CMS，GitHub Pages 就是 CDN。搜索（Pagefind）、评论（Giscus）、TTS（预烘焙 mp3）全部用静态方案解决了传统上「需要后端」的功能。</div>
+<h2>8. 沉淀下来的设计原则</h2>
+<div class="principle"><b>静态优先，后端只留一小块。</b>内容侧没有数据库、没有服务器、没有构建框架：HTML 就是产物，git 就是 CMS，GitHub Pages 就是 CDN，搜索（Pagefind）、TTS（预烘焙 mp3）都用静态方案解决了传统上「需要后端」的功能。唯一非有状态不可的订阅 / 评论 / 投票，收敛到一个 Cloudflare Worker + D1、全在免费额度内——静态优先不是教条，是把后端的面积压到最小。</div>
 <div class="principle"><b>文件系统就是状态。</b>选题进度 = <code>ls</code> 的结果；发布记录 = commit message；完结状态 = 从 commit 解析。没有任何一处需要独立维护的状态存储，所以没有任何一处会和现实脱节。</div>
 <div class="principle"><b>每一步都幂等。</b>routine 重复触发不会重写已有页面（文件已存在）；TTS 重跑不会重复计费（hash 命中）；注入重跑不会叠加标签（缺才补）。无人值守系统的重试是常态，幂等不是优化而是前提。</div>
 <div class="principle"><b>生成和校验分离。</b>永远不假设 LLM 输出正确，publish.sh 用最笨的 bash 检查兜底。生成端越智能，校验端越要笨而确定。</div>
@@ -204,11 +231,13 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <div class="principle"><b>约定优于协议。</b><code>Add #N</code> 的 commit 格式、<code>{slug}-day{N}.html</code> 的命名、<code>.maxchars</code> 单行文件——组件之间靠这些朴素约定通信，没有一处 JSON schema，但每处约定都有至少两个消费者。</div>
 <div class="principle"><b>该毕业就毕业。</b>每个站有封顶，写完自动停机、打完结徽章。这个系统是为我自己学习服务的，学完一个领域就该收口，而不是被「持续产出」绑架。</div>
 
-<h2>8. 成本</h2>
+<h2>9. 成本</h2>
 <ul>
 <li>GitHub Pages / Actions：免费额度内</li>
 <li>内容生成：claude.ai 订阅内的云端 routine，无额外 API 费</li>
 <li>Azure Speech：免费层（F0）</li>
+<li>互动后端：Cloudflare Worker + D1，免费额度内</li>
+<li>邮件发送：Resend 免费层（每月 3000 封）</li>
 <li>我的时间：维护 20 多份 TOPICS.md，加上偶尔审一眼月度建议和巡检报告</li>
 </ul>
 <p>一个人的注意力是这个系统里最贵的资源。整条 pipeline 的设计目标从来不是「全自动」本身，而是把我的注意力从生产和运维里解放出来，全部花在唯一值得花的地方：<strong>决定接下来学什么。</strong></p>
