@@ -95,6 +95,37 @@ npx wrangler secret put RESEND_API_KEY      # paste the key
 > passwordless login. To upgrade, add a signed session token issued at `/confirm` and
 > check it on `/comment` and `/vote` — no schema redo.
 
+## Sending updates (newsletters) — `send.py`
+
+Emails a tab/list's **confirmed** subscribers. Sending runs server-side in the Worker
+(which holds `RESEND_API_KEY`), so no key touches your machine — `send.py` just calls
+the admin `/send` endpoint. Each email gets an unsubscribe footer + `List-Unsubscribe`
+header automatically.
+
+One-time setup — pick an admin token and bind it, then expose it to `send.py`:
+
+```bash
+npx wrangler secret put ADMIN_TOKEN            # paste any long random string
+export BIGCAT_ADMIN_TOKEN='the-same-string'    # add to ~/.zshrc so it persists
+```
+
+Send:
+
+```bash
+# write your email body as HTML, then:
+python3 send.py --list mental-models --subject "本周更新" --html update.html --dry   # preview count
+python3 send.py --list mental-models --subject "本周更新" --html update.html          # real send (asks to confirm)
+```
+
+- `--list hub` targets the hub-landing subscribers; a tab slug (e.g. `mental-models`)
+  targets that tab. Recipients = confirmed subscribers of that list only.
+- Unsubscribe links are signed with `ADMIN_TOKEN` (HMAC) — don't rotate it, or links in
+  already-sent emails stop working.
+- Recipients are sent in batches of 100 via Resend's batch API.
+
+To automate (e.g. weekly from the generator), have your publish step write `update.html`
+and call `send.py`; or add a `/send` call from a cron. Start manual until you trust it.
+
 ### Moderation
 
 Comments are auto-approved by default. To hold every new comment for review instead,

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>退订 · Unsubscribe</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"Noto Serif SC",sans-serif;background:linear-gradient(135deg,#1a1a2e,#16213e 50%,#0a0e1a);color:#e4e6eb;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.card{max-width:460px;text-align:center;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:40px 32px}
+.icon{font-size:3rem;margin-bottom:14px}
+h1{font-size:1.4rem;margin-bottom:10px}
+p{color:#a0a8c0;font-size:0.95rem;line-height:1.7;margin-bottom:8px}
+a.home{display:inline-block;margin-top:18px;color:#7b61ff;text-decoration:none;font-size:0.9rem}
+a.home:hover{color:#00d4ff}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="icon" id="icon">⏳</div>
+  <h1 id="title">处理中… · Working…</h1>
+  <p id="msg"></p>
+  <a class="home" href="/">← BigCat's Learning Hub</a>
+</div>
+<script>
+(function () {
+  var API = "https://bigcat-engage.cissychen.workers.dev";
+  var p = new URLSearchParams(location.search);
+  var e = p.get("e") || "", l = p.get("l") || "", t = p.get("t") || "";
+  var icon = document.getElementById("icon"),
+      title = document.getElementById("title"),
+      msg = document.getElementById("msg");
+  function show(i, ti, m) { icon.textContent = i; title.textContent = ti; msg.textContent = m; }
+  if (!e || !l || !t) {
+    show("⚠️", "链接无效 · Invalid link", "退订链接不完整。 · The unsubscribe link is incomplete.");
+    return;
+  }
+  fetch(API + "/unsubscribe?e=" + encodeURIComponent(e) + "&l=" + encodeURIComponent(l) + "&t=" + encodeURIComponent(t))
+    .then(function (r) { return r.json(); })
+    .then(function (d) {
+      if (d.ok) {
+        show("👋", "已退订 · Unsubscribed", "你已从「" + l + "」退订，不会再收到这个专栏的邮件。 · You won't get emails from “" + l + "” anymore.");
+      } else {
+        show("⚠️", "退订失败 · Couldn't unsubscribe", "链接可能已失效。 · The link may be invalid or expired.");
+      }
+    })
+    .catch(function () { show("⚠️", "出错了 · Error", "请稍后重试。 · Please try again."); });
+})();
+</script>
+</body>
+</html>

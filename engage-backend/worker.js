@@ -146,6 +146,83 @@ export default {
         return json({ ok, confirmed: ok }, ok ? 200 : 404, origin);
       }
 
+      // ---- Unsubscribe (signed link from a newsletter) -----------------
+      if (url.pathname === "/unsubscribe" && (request.method === "GET" || request.method === "POST")) {
+        const e = String(url.searchParams.get("e") || "").trim().toLowerCase().slice(0, 254);
+        const l = String(url.searchParams.get("l") || "").trim().toLowerCase().slice(0, 64);
+        const tk = String(url.searchParams.get("t") || "").trim().slice(0, 64);
+        if (!e || !l || !tk) return json({ ok: false, error: "bad_request" }, 400, origin);
+        const expect = await unsubToken(env, e, l);
+        if (tk !== expect) return json({ ok: false, error: "bad_token" }, 403, origin);
+        const res = await env.DB.prepare(
+          "DELETE FROM subscriptions WHERE email = ? AND list = ?"
+        )
+          .bind(e, l)
+          .run();
+        return json({ ok: true, removed: res.meta.changes > 0 }, 200, origin);
+      }
+
+      // ---- Send a newsletter to a list (admin only) --------------------
+      if (url.pathname === "/send" && request.method === "POST") {
+        const body = await request.json().catch(() => ({}));
+        if (!env.ADMIN_TOKEN || body.admin !== env.ADMIN_TOKEN) {
+          return json({ ok: false, error: "unauthorized" }, 401, origin);
+        }
+        const list = String(body.list || "").trim().toLowerCase().slice(0, 64);
+        if (!/^[a-z0-9][a-z0-9-]*$/.test(list)) {
+          return json({ ok: false, error: "bad_list" }, 400, origin);
+        }
+        const subject = String(body.subject || "").trim().slice(0, 200);
+        const html = String(body.html || "");
+        if (!subject || !html) return json({ ok: false, error: "missing_fields" }, 400, origin);
+        if (!env.RESEND_API_KEY) return json({ ok: false, error: "no_sender" }, 400, origin);
+
+        const { results } = await env.DB.prepare(
+          "SELECT email FROM subscriptions WHERE list = ? AND confirmed = 1"
+        )
+          .bind(list)
+          .all();
+        const emails = results.map((r) => r.email);
+        if (body.dry) {
+          return json({ ok: true, dry: true, list, recipients: emails.length }, 200, origin);
+        }
+        if (!emails.length) return json({ ok: true, sent: 0, list }, 200, origin);
+
+        let sent = 0;
+        for (let i = 0; i < emails.length; i += 100) {
+          const chunk = emails.slice(i, i + 100);
+          const batch = [];
+          for (const e of chunk) {
+            const tk = await unsubToken(env, e, list);
+            const api = new URL(request.url).origin;
+            const q =
+              "?e=" + encodeURIComponent(e) + "&l=" + encodeURIComponent(list) + "&t=" + tk;
+            const humanUnsub = SITE_BASE + "/unsubscribe.html" + q;
+            const machineUnsub = api + "/unsubscribe" + q;
+            batch.push({
+              from: FROM_EMAIL,
+              to: e,
+              subject,
+              html: html + unsubFooter(list, humanUnsub),
+              headers: {
+                "List-Unsubscribe": "<" + machineUnsub + ">",
+                "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+              },
+            });
+          }
+          const r = await fetch("https://api.resend.com/emails/batch", {
+            method: "POST",
+            headers: {
+              Authorization: "Bearer " + env.RESEND_API_KEY,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(batch),
+          });
+          if (r.ok) sent += chunk.length;
+        }
+        return json({ ok: true, sent, total: emails.length, list }, 200, origin);
+      }
+
       // ---- Vote --------------------------------------------------------
       if (url.pathname === "/vote" && request.method === "POST") {
         const body = await request.json().catch(() => ({}));
@@ -293,6 +370,36 @@ export default {
     }
   },
 };
+
+async function unsubToken(env, email, list) {
+  const key = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode(env.ADMIN_TOKEN || "bigcat-unsub"),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"]
+  );
+  const sig = await crypto.subtle.sign(
+    "HMAC",
+    key,
+    new TextEncoder().encode(email.toLowerCase() + "|" + list)
+  );
+  return [...new Uint8Array(sig)]
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("")
+    .slice(0, 32);
+}
+
+function unsubFooter(list, link) {
+  const label = list === "hub" ? "BigCat's Learning Hub" : list;
+  return (
+    '<hr style="border:none;border-top:1px solid #eee;margin:26px 0 12px">' +
+    '<p style="font-size:12px;color:#999;line-height:1.6;font-family:-apple-system,sans-serif">' +
+    "你收到这封邮件是因为订阅了 <b>" + label + "</b>。" +
+    '<a href="' + link + '" style="color:#999">退订</a> · ' +
+    'You subscribed to <b>' + label + '</b>. <a href="' + link + '" style="color:#999">Unsubscribe</a></p>'
+  );
+}
 
 async function sendConfirmEmail(env, email, list, token) {
   const link = SITE_BASE + "/confirm.html?t=" + token;
