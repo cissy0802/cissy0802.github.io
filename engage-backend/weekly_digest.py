@@ -92,8 +92,8 @@ def new_pages(repo, since_iso):
     seen = {}
     for f in cmp.get("files", []):
         fn = f.get("filename", "")
-        if f.get("status") not in ("added", "modified"):
-            continue
+        if f.get("status") != "added":
+            continue  # only genuinely new pages (skip reformats/bake edits)
         if fn.endswith(".en.html"):
             continue  # dedupe: track the zh file; en title fetched alongside
         if CONTENT_RE.search(fn):
@@ -114,8 +114,10 @@ def build_email(repo, items, en):
     intro = ("这周 %s 有 %d 篇新内容:" % (label, len(items))) if not en \
         else ("%d new piece(s) this week on %s:" % (len(items), label))
     cta = "去这个专栏看看 →" if not en else "Open this tab →"
+    MAX_ITEMS = 15
+    extra = len(items) - MAX_ITEMS
     rows = ""
-    for url, t in items:
+    for url, t in items[:MAX_ITEMS]:
         read = "阅读 →" if not en else "Read →"
         rows += (
             '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" style="margin:0 0 12px 0"><tr>'
@@ -124,6 +126,9 @@ def build_email(repo, items, en):
             '<div style="font-size:13px;margin-top:2px"><a href="%s" style="color:#7b61ff;text-decoration:none;font-weight:600">%s</a></div>'
             "</td></tr></table>" % (esc(t), esc(url), read)
         )
+    if extra > 0:
+        more = ("…还有 %d 篇，去专栏看全部。" % extra) if not en else ("…and %d more — see them all on the tab." % extra)
+        rows += '<p style="font-size:13px;color:#8a90a0;margin:2px 0 0">%s</p>' % more
     tab_url = "%s/%s/%s" % (SITE, repo, "index.en.html" if en else "")
     return (
         '<!DOCTYPE html><html lang="%s"><head><meta charset="utf-8">'
