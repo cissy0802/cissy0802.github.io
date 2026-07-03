@@ -249,7 +249,7 @@
     tsDiv.className = "cf-turnstile";
     tsDiv.setAttribute("data-sitekey", TURNSTILE_SITEKEY);
     tsDiv.setAttribute("data-callback", "__bcTsCb");
-    tsDiv.setAttribute("data-theme", dark ? "dark" : "light");
+    tsDiv.setAttribute("data-theme", "dark");
     window.__bcTsCb = function (tok) {
       tsToken = tok;
     };
