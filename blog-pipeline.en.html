@@ -49,47 +49,90 @@ footer a{color:#7b61ff}
 </header>
 
 <div class="lede">
-BigCat's Learning Hub is a family of static sites I built for my own learning: mental models, AI/ML, system design, CS papers, philosophy, Buddhism, parenting, investing — 20+ subjects, each living in its own GitHub Pages repository. They update themselves daily, ship in both Chinese and English, and come with site-wide search, comments, and text-to-speech — while day-to-day operation requires almost none of my time. This post walks through how the whole pipeline is put together.
+BigCat's Learning Hub is a family of static sites I built for my own learning: mental models, AI/ML, system design, CS papers, philosophy, Buddhism, parenting, investing — 20+ subjects, each living in its own GitHub Pages repository. They update themselves daily, ship in both Chinese and English, and come with site-wide search, login-free comments, email subscribe/polls, and text-to-speech — while day-to-day operation requires almost none of my time. This post walks through how the whole pipeline is put together.
 </div>
 
 <h2>0. What it looks like</h2>
 <ul>
 <li><strong>One hub landing page</strong> aggregates every site as a card, automatically shows each site's last-updated date, and stamps a "✓ Completed" badge on any site that has finished its roadmap.</li>
 <li><strong>Each subject site</strong> is an independent repo — <code>ai-ml</code>, <code>mental-models</code>, <code>system-design</code>, <code>cs-papers-deepread</code> — adding one page of in-depth content per day (or every other day / weekly), as a standalone Chinese HTML file plus a standalone English one.</li>
-<li><strong>Site-wide infrastructure</strong>: Pagefind static search (press <code>/</code>), Giscus comments, an image lightbox, language toggle + TTS narration — all provided by shared JavaScript; content pages don't carry a single line of it themselves.</li>
+<li><strong>Site-wide infrastructure</strong>: Pagefind static search (press <code>/</code>), login-free comments, email subscribe &amp; polls, an image lightbox, language toggle + TTS narration — all provided by shared JavaScript; content pages don't carry a single line of it themselves.</li>
 <li><strong>Hosting cost is zero</strong>: everything runs on GitHub Pages and the free GitHub Actions tier; the only external service is Azure Speech's free tier for TTS.</li>
 </ul>
 <p>The core idea in one sentence: <strong>I only maintain each site's roadmap (TOPICS.md); production, publishing, post-processing, aggregation, and inspection are all automated — with the "write the content" step delegated to Claude agents running on a schedule in the cloud.</strong></p>
 
 <h2>1. Overall architecture</h2>
-<pre>        ┌─ Human (me) ────────────────────────────────┐
-        │  curate TOPICS.md roadmaps · set caps ·       │
-        │  review monthly suggestions                   │
-        └──────────────┬──────────────────────────────┘
-                       ▼
-  ┌── Generation: claude.ai cloud routines (20 triggers) ──┐
-  │  staggered cron → repo mounted → follow CLAUDE.md spec  │
-  │  pick topic (fs-idempotent) → write zh+en pages →       │
-  │  update index → publish.sh                              │
-  └──────────────┬─────────────────────────────────────────┘
-                 ▼  git push
-  ┌── Repos: 20+ content repos (GitHub Pages) ─────────────┐
-  │  TOPICS.md · CLAUDE.md · .maxchars · publish.sh gate    │
-  └──────────────┬─────────────────────────────────────────┘
-                 ▼  on push
-  ┌── Post-processing: per-repo GitHub Actions ────────────┐
-  │  inject shared JS · (mental-models) Azure TTS bake      │
-  └──────────────┬─────────────────────────────────────────┘
-                 ▼  daily cron
-  ┌── Aggregation: hub repo GitHub Actions ────────────────┐
-  │  refresh-hub.yml re-renders index ·                     │
-  │  build-search.yml rebuilds Pagefind index               │
-  └──────────────┬─────────────────────────────────────────┘
-                 ▼
-  ┌── Governance ──────────────────────────────────────────┐
-  │  auto-pause finished routines + English-page leak scan  │
-  │  · monthly frontier-refresh meta-routine                │
-  └────────────────────────────────────────────────────────┘</pre>
+<div style="overflow-x:auto;margin:20px 0">
+<svg viewBox="0 0 720 600" width="100%" style="min-width:600px;height:auto;display:block" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,'SF Pro Display',sans-serif">
+<defs>
+<marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L7,3 L0,6 Z" fill="#6a7080"/></marker>
+<marker id="ahs" markerWidth="9" markerHeight="9" refX="0" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M7,0 L0,3 L7,6 Z" fill="#6a7080"/></marker>
+</defs>
+
+<rect x="36" y="16" width="336" height="52" rx="10" fill="rgba(255,255,255,0.04)" stroke="#ff6ec4" stroke-width="1.6"/>
+<text x="204" y="40" text-anchor="middle" fill="#fff" font-size="14.5" font-weight="700">Human (me)</text>
+<text x="204" y="58" text-anchor="middle" fill="#9aa2b8" font-size="11">curate TOPICS.md · set caps · review suggestions</text>
+
+<line x1="204" y1="68" x2="204" y2="94" stroke="#6a7080" stroke-width="1.4" marker-end="url(#ah)"/>
+
+<rect x="36" y="94" width="336" height="76" rx="10" fill="rgba(255,255,255,0.04)" stroke="#7b61ff" stroke-width="1.6"/>
+<text x="204" y="118" text-anchor="middle" fill="#fff" font-size="14.5" font-weight="700">Generation · cloud Claude routines ×20</text>
+<text x="204" y="139" text-anchor="middle" fill="#9aa2b8" font-size="11">staggered cron → mount repo → write per CLAUDE.md</text>
+<text x="204" y="157" text-anchor="middle" fill="#9aa2b8" font-size="11">pick topic (fs-idempotent) → zh+en → publish.sh</text>
+
+<line x1="204" y1="170" x2="204" y2="196" stroke="#6a7080" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="212" y="187" fill="#7b61ff" font-size="10.5" font-style="italic">git push</text>
+
+<rect x="36" y="196" width="336" height="76" rx="10" fill="rgba(255,255,255,0.04)" stroke="#00d4ff" stroke-width="1.6"/>
+<text x="204" y="220" text-anchor="middle" fill="#fff" font-size="14.5" font-weight="700">Repos · 20+ content repos (GitHub Pages)</text>
+<text x="204" y="241" text-anchor="middle" fill="#9aa2b8" font-size="11">TOPICS.md · CLAUDE.md · .maxchars</text>
+<text x="204" y="259" text-anchor="middle" fill="#9aa2b8" font-size="11">publish.sh gate (8 checks)</text>
+
+<line x1="204" y1="272" x2="204" y2="298" stroke="#6a7080" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="212" y="289" fill="#7b61ff" font-size="10.5" font-style="italic">on push</text>
+
+<rect x="36" y="298" width="336" height="62" rx="10" fill="rgba(255,255,255,0.04)" stroke="#34d0ba" stroke-width="1.6"/>
+<text x="204" y="322" text-anchor="middle" fill="#fff" font-size="14.5" font-weight="700">Post-processing · per-repo Actions</text>
+<text x="204" y="343" text-anchor="middle" fill="#9aa2b8" font-size="11">inject shared JS · (mental-models) Azure TTS bake</text>
+
+<line x1="204" y1="360" x2="204" y2="386" stroke="#6a7080" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="212" y="377" fill="#7b61ff" font-size="10.5" font-style="italic">daily cron</text>
+
+<rect x="36" y="386" width="336" height="62" rx="10" fill="rgba(255,255,255,0.04)" stroke="#7b61ff" stroke-width="1.6"/>
+<text x="204" y="410" text-anchor="middle" fill="#fff" font-size="14.5" font-weight="700">Aggregation · hub GitHub Actions</text>
+<text x="204" y="431" text-anchor="middle" fill="#9aa2b8" font-size="11">refresh-hub landing · build-search Pagefind index</text>
+
+<line x1="204" y1="448" x2="204" y2="476" stroke="#6a7080" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="212" y="466" fill="#7b61ff" font-size="10.5" font-style="italic">GitHub Pages deploy</text>
+
+<rect x="36" y="476" width="336" height="58" rx="10" fill="rgba(255,255,255,0.04)" stroke="#00d4ff" stroke-width="1.6"/>
+<text x="204" y="500" text-anchor="middle" fill="#fff" font-size="14.5" font-weight="700">Reader's browser · static site</text>
+<text x="204" y="520" text-anchor="middle" fill="#9aa2b8" font-size="11">search / read / TTS / language toggle</text>
+
+<rect x="410" y="94" width="282" height="354" rx="10" fill="rgba(82,183,136,0.06)" stroke="#52b788" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="551" y="122" text-anchor="middle" fill="#7ee0b0" font-size="13.5" font-weight="700">Governance · the system polices itself</text>
+<text x="428" y="164" fill="#c2d8cc" font-size="11.5">• cap reached → API pause (enabled=false)</text>
+<text x="428" y="190" fill="#c2d8cc" font-size="11.5">• *.en.html Chinese-leak fingerprint scan</text>
+<text x="428" y="216" fill="#c2d8cc" font-size="11.5">• monthly frontier refresh →</text>
+<text x="440" y="233" fill="#c2d8cc" font-size="11.5">ROADMAP-SUGGESTIONS.md (advisory)</text>
+<text x="428" y="259" fill="#c2d8cc" font-size="11.5">• ai-ml ⇄ super-individual</text>
+<text x="440" y="276" fill="#c2d8cc" font-size="11.5">cross-ref sync (no dup coverage)</text>
+<text x="428" y="312" fill="#8fb9a6" font-size="10.5" font-style="italic">each layer trusts the layer below's</text>
+<text x="428" y="329" fill="#8fb9a6" font-size="10.5" font-style="italic">artifacts, not its process — hence gates.</text>
+<line x1="410" y1="235" x2="372" y2="235" stroke="#52b788" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.6" marker-end="url(#ah)"/>
+<line x1="410" y1="417" x2="372" y2="417" stroke="#52b788" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.6" marker-end="url(#ah)"/>
+
+<rect x="410" y="470" width="282" height="112" rx="10" fill="rgba(255,209,102,0.07)" stroke="#ffd166" stroke-width="1.6"/>
+<text x="551" y="494" text-anchor="middle" fill="#ffdf8a" font-size="13" font-weight="700">Interaction backend · the one backend</text>
+<text x="551" y="515" text-anchor="middle" fill="#d8cba0" font-size="11">Cloudflare Worker: /subscribe · /vote · /comment</text>
+<text x="551" y="533" text-anchor="middle" fill="#d8cba0" font-size="11">D1 (SQLite): subscriptions · votes · comments</text>
+<text x="551" y="551" text-anchor="middle" fill="#d8cba0" font-size="11">double opt-in · anti-spam · CORS-locked</text>
+<text x="551" y="569" text-anchor="middle" fill="#9fae86" font-size="10.5" font-style="italic">Action bridges votes/comments → repo JSON /12h</text>
+
+<line x1="372" y1="505" x2="410" y2="505" stroke="#6a7080" stroke-width="1.4" marker-end="url(#ah)" marker-start="url(#ahs)"/>
+<text x="391" y="498" text-anchor="middle" fill="#9aa2b8" font-size="9">fetch</text>
+</svg>
+</div>
 <p>The layering principle: <strong>each layer trusts only the artifacts of the layer below it, never that layer's process</strong>. Generation can go wrong, so the repo layer has a validation gate; the gate can miss things, so the governance layer patrols.</p>
 
 <h2>2. Anatomy of a content repo: four files define a site</h2>
@@ -178,7 +221,34 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <p>Static sites have no backend, so search is <a href="https://pagefind.app/">Pagefind</a>: every day, clone all content repos into <code>_src/</code> as one tree, run Pagefind to build a sharded index (Chinese and English indexed separately), and publish it to <code>/pagefind/</code> in the hub repo. The front-end <code>search.js</code> provides a floating search button and opens the search overlay in the page's language. Footers, navigation, and comment containers are excluded from indexing as noise.</p>
 <p>One special case: the Thinker Roundtable site (thinker-arena) is client-rendered — its content lives in JSON, invisible to a crawler. The fix is <code>render_search_snapshots.py</code>, which renders the JSON debates into plain HTML snapshots purely for Pagefind to consume before indexing — <strong>SSR for the crawler's benefit</strong>, just as a daily batch job.</p>
 
-<h2>6. Governance: making the system police itself</h2>
+<h2>6. Interaction layer: subscribe, comment, vote — the one backend</h2>
+<p>The five layers above contain not a single line of server code. But three things — email subscription, comments, voting — inherently write state, which pure static can't do. This is the <strong>one place in the whole system with a backend</strong>, kept as small as I could make it: one Cloudflare Worker (<code>worker.js</code>) plus one D1 (SQLite) database, entirely within the free tier (100k Worker requests/day, 5M D1 row-reads/day).</p>
+
+<h3>One Worker, three jobs</h3>
+<p>The three features share a single Worker and database, routed by <code>pathname</code>:</p>
+<ul>
+<li><strong>Email subscribe</strong> <code>POST /subscribe</code>: collects emails under "one list per subject tab" (<code>hub</code> or a site slug), recording the page language at signup.</li>
+<li><strong>Voting / polls</strong> <code>POST /vote</code>, <code>GET /poll</code>, <code>GET /votes-net</code>: one vote per person per question (changeable); the front-end <code>engage.js</code> renders live tallies.</li>
+<li><strong>Login-free comments</strong> <code>GET /comments</code>, <code>POST /comment</code>: <code>comments.js</code> replaced Giscus site-wide — visitors no longer need a GitHub account to comment.</li>
+</ul>
+<p>Data lands in three D1 tables: <code>subscriptions</code> (email+list as primary key, with a confirmed flag and language), <code>votes</code> (poll+voter as primary key, deduped by construction), and <code>comments</code> (page path, name, body, moderation flag, salted iphash). The front end is just two scripts — <code>engage.js</code> (subscribe box + poll) and <code>comments.js</code> — injected site-wide like the other shared JS; the Worker's CORS is locked to <code>cissy0802.github.io</code>.</p>
+
+<h3>Why hand-roll it instead of using a service</h3>
+<p>Comments originally ran on Giscus (a wrapper over GitHub Discussions), but it forced every visitor to log in with GitHub — too high a bar for a site meant for general readers. Going self-hosted <strong>removed the login barrier, but also removed the anti-spam wall</strong> — GitHub's login <em>was</em> that wall. So the self-hosted version builds in three defenses: a <strong>honeypot field</strong> (a hidden <code>website</code> input a human won't fill and a bot will — filled means silently dropped), <strong>per-IP rate limiting</strong> (max 3 per 60s, keyed on a salted hash of the IP, never the raw address), and optional <strong>Cloudflare Turnstile</strong> (once a secret is bound, the Worker auto-enforces it — turn it on if spam appears). Comment bodies are always rendered with <code>textContent</code>, never as HTML, closing off XSS at the root.</p>
+
+<h3>Double opt-in subscribe = the foundation for passwordless login later</h3>
+<p>Subscription uses double opt-in: <code>/subscribe</code> first stores an <strong>unconfirmed</strong> row and emails a confirmation link (via Resend's free tier, 3,000 emails/month); clicking it hits <code>/confirm</code>, which flips the row to <code>confirmed=1</code>. Only confirmed rows count as real subscribers. This isn't just about catching typo'd addresses — <strong>"email → verify" is exactly the foundation of passwordless login</strong>: to add login to comments/voting later, just issue a session token at <code>/confirm</code> and check it at <code>/comment</code> and <code>/vote</code> — no schema redo.</p>
+
+<h3>The weekly digest: turning static content into a push</h3>
+<p>Once you collect emails you have to be able to send. This chain deliberately never touches my machine:</p>
+<ul>
+<li><code>weekly_digest.py</code> runs anywhere with internet (locally or as a cloud routine, mounting no repo): for each content site it asks the GitHub API "what content pages were added this week," pulls the titles, assembles a bilingual (zh+en) email, and calls the Worker's <code>/send</code> — which mails only that list's <strong>confirmed</strong> subscribers, per language; sites with no new content that week are skipped.</li>
+<li>The sending key (Resend key) lives only inside the Worker; <code>send.py</code> / <code>weekly_digest.py</code> merely call the admin endpoint, so <strong>the key never touches my machine</strong>. Every email carries an unsubscribe footer and a <code>List-Unsubscribe</code> header, with unsubscribe links HMAC-signed by <code>ADMIN_TOKEN</code>.</li>
+<li>A local launchd job also runs <code>report.py</code> every day at 09:00 and pops a "subscribers / new comments / votes" summary notification (the full report goes to a log). It lives in <code>~/.bigcat-hub</code> rather than the Desktop — because macOS's TCC won't let launchd touch <code>~/Desktop</code>, another lesson paid for in mistakes.</li>
+</ul>
+<p>Vote dedup relies only on a random front-end localStorage token — clear it and you can vote again. For a casual hub poll, <strong>honest-but-not-airtight</strong> is enough; tighten it by upgrading with the login foundation above. The trade-off runs through the whole layer: <strong>static wherever possible; for the one piece that must be stateful, cover it with the smallest possible backend on a free tier — and design in, at every point, how it could later grow stricter.</strong></p>
+
+<h2>7. Governance: making the system police itself</h2>
 <p>Getting it running is the easy part; running unattended for the long haul is the hard part. The lines of defense:</p>
 
 <h3>Caps + auto-pause</h3>
@@ -199,8 +269,8 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <li>New routines run a small validated batch before scaling up (especially TTS baking — one structural mistake burns a whole month of Azure quota)</li>
 </ul>
 
-<h2>7. Design principles that emerged</h2>
-<div class="principle"><b>Static first.</b> No database, no server, no build framework. HTML is the artifact, git is the CMS, GitHub Pages is the CDN. Search (Pagefind), comments (Giscus), and TTS (pre-baked mp3s) all solve traditionally "needs a backend" problems with static answers.</div>
+<h2>8. Design principles that emerged</h2>
+<div class="principle"><b>Static first, with one small backend.</b> On the content side: no database, no server, no build framework — HTML is the artifact, git is the CMS, GitHub Pages is the CDN, and search (Pagefind) and TTS (pre-baked mp3s) solve traditionally "needs a backend" problems with static answers. The only genuinely stateful piece — subscribe / comment / vote — is confined to one Cloudflare Worker + D1, entirely on the free tier. Static-first isn't dogma; it's keeping the backend's footprint as small as possible.</div>
 <div class="principle"><b>The filesystem is the state.</b> Topic progress = the output of <code>ls</code>; the publishing record = commit messages; completion status = parsed from commits. There is no independently maintained state store anywhere — so nothing can drift out of sync with reality.</div>
 <div class="principle"><b>Every step is idempotent.</b> A re-fired routine won't rewrite existing pages (the file already exists); a re-run TTS bake won't double-bill (hash hit); a re-run injection won't stack tags (only adds what's missing). For unattended systems, retries are the norm — idempotency is a precondition, not an optimization.</div>
 <div class="principle"><b>Separate generation from validation.</b> Never assume LLM output is correct; publish.sh backstops it with the dumbest possible bash checks. The smarter the generator, the dumber and more deterministic the validator should be.</div>
@@ -208,11 +278,13 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <div class="principle"><b>Convention over protocol.</b> The <code>Add #N</code> commit format, the <code>{slug}-day{N}.html</code> naming, the one-line <code>.maxchars</code> file — components talk through these humble conventions. There isn't a JSON schema anywhere, yet every convention has at least two consumers.</div>
 <div class="principle"><b>Graduate when it's time.</b> Every site has a cap; when it's reached, the routine auto-pauses and the badge flips to Completed. This system serves my own learning — a finished field deserves closure, not hostage-taking by "consistent output."</div>
 
-<h2>8. Cost</h2>
+<h2>9. Cost</h2>
 <ul>
 <li>GitHub Pages / Actions: within the free tier</li>
 <li>Content generation: cloud routines included in a claude.ai subscription, no extra API bills</li>
 <li>Azure Speech: free tier (F0)</li>
+<li>Interaction backend: Cloudflare Worker + D1, within the free tier</li>
+<li>Email sending: Resend free tier (3,000/month)</li>
 <li>My time: curating 20+ TOPICS.md files, plus the occasional glance at monthly suggestions and inspection reports</li>
 </ul>
 <p>One person's attention is the most expensive resource in this system. The design goal of the pipeline was never "full automation" for its own sake — it was to free my attention from production and operations and spend all of it on the only thing worth spending it on: <strong>deciding what to learn next.</strong></p>
