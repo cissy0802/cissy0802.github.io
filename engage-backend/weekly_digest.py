@@ -35,17 +35,33 @@ SITE = "https://cissy0802.github.io"
 OWNER = "cissy0802"
 BRANCH = "main"
 
+# The site itself is the source of truth for which tabs exist and in what
+# order: discover_tabs() reads the landing page's column cards at runtime, so
+# the digest never drifts out of sync (new tabs are picked up automatically).
 # repo name == subscription list slug (that's how the site tags subscribers).
-# Edit this to match the tabs you want weekly digests for.
-REPOS = [
-    "mental-models", "meta-knowledge", "super-individual", "ai-ml", "system-design",
-    "cs-papers-deepread", "health-longevity", "history", "parenting", "psychology",
-    "mathematics", "civics-geopolitics", "book-recommendations", "buddhism",
-    "philosophy", "art-aesthetics", "investing", "biographies",
+# This list is only a fallback if the landing page can't be fetched/parsed;
+# keep it in the same order the cards appear on the site.
+SITE_REPO = "cissy0802.github.io"  # the landing-page repo
+FALLBACK_TABS = [
+    "thinker-arena", "deep-research", "mental-models", "meta-knowledge",
+    "super-individual", "ai-ml", "system-design", "cs-papers-deepread",
+    "leadership", "writing", "health-longevity", "parenting", "psychology",
+    "family-craft", "philosophy", "buddhism", "art-aesthetics", "biographies",
+    "book-recommendations", "deep-reading", "mathematics", "history",
+    "investing", "civics-geopolitics",
 ]
 
-# content pages: *-day1.html / *-week1.html / *-book1.html / *-YYYY-MM-DD.html
-CONTENT_RE = re.compile(r"-(day|week|book)\d+\.html$|-\d{4}-\d{2}-\d{2}\.html$")
+# content pages, by tab naming scheme:
+#   *-day1 / *-week1 / *-book1 / *-read1 (opt. letter, e.g. read3b) numbered,
+#   *-YYYY-MM-DD dated, and deep-research's *-deep pages (its *-plain twin is
+#   intentionally not matched, so each piece is listed once).
+CONTENT_RE = re.compile(
+    r"-(day|week|book|read)\d+[a-z]?\.html$|-\d{4}-\d{2}-\d{2}\.html$|-deep\.html$"
+)
+
+# git's well-known empty tree — diffing against it lists every file as "added",
+# used for a tab launched entirely within the window (all its pages are new).
+EMPTY_TREE = "4b825dc642cb6eb9a060e54bf8d69288fbee4904"
 
 UA = "bigcat-weekly-digest/1.0"
 
@@ -152,6 +168,24 @@ def raw_title(repo, fn):
     return re.sub(r"<[^>]+>", "", m.group(1)).strip() or None
 
 
+def discover_tabs():
+    """Tab slugs in site order, read from the landing page's column cards, so
+    the digest tracks the site automatically. Falls back to FALLBACK_TABS."""
+    url = "https://raw.githubusercontent.com/%s/%s/%s/index.html" % (OWNER, SITE_REPO, BRANCH)
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": UA})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            html = r.read().decode("utf-8", "ignore")
+    except Exception:
+        return list(FALLBACK_TABS)
+    slugs = []
+    for m in re.finditer(re.escape(SITE) + r'/([a-z0-9-]+)/"', html):
+        s = m.group(1)
+        if s not in slugs:
+            slugs.append(s)
+    return slugs or list(FALLBACK_TABS)
+
+
 def new_pages(repo, since_iso):
     """Return list of added content .html files (zh version) since `since_iso`."""
     # base = last commit before the window; compare base...HEAD gives changed files.
@@ -161,9 +195,9 @@ def new_pages(repo, since_iso):
         if e.code == 404:
             return []  # repo missing / renamed
         raise
-    if not before:
-        return []  # no history before window (brand-new repo) — skip to stay safe
-    base = before[0]["sha"]
+    # brand-new tab (no commit before the window): everything it holds is new,
+    # so diff against the empty tree instead of skipping it.
+    base = before[0]["sha"] if before else EMPTY_TREE
     cmp = gh("/repos/%s/%s/compare/%s...%s" % (OWNER, repo, base, BRANCH))
     seen = {}
     for f in cmp.get("files", []):
@@ -346,7 +380,12 @@ def main():
     # page's "subscribe to all" list). Accumulated across every tab below.
     hub_zh, hub_en = [], []
 
-    for repo in REPOS:
+    tabs = discover_tabs()
+    order = {slug: i for i, slug in enumerate(tabs)}
+    content_repos = [t for t in tabs if t != "thinker-arena"]
+    print("Tabs: %d columns in site order\n" % len(tabs))
+
+    for repo in content_repos:
         try:
             pages = new_pages(repo, since)
         except Exception as e:  # noqa: BLE001
@@ -370,9 +409,9 @@ def main():
                 en_items.append(("%s/%s/%s" % (SITE, repo, en_fn), et))
 
         if zh_items:
-            hub_zh.append((repo, "%s/%s/" % (SITE, repo), zh_items))
+            hub_zh.append((order.get(repo, 999), repo, "%s/%s/" % (SITE, repo), zh_items))
         if en_items:
-            hub_en.append((repo, "%s/%s/index.en.html" % (SITE, repo), en_items))
+            hub_en.append((order.get(repo, 999), repo, "%s/%s/index.en.html" % (SITE, repo), en_items))
 
         print("  %-22s %d new page(s)" % (repo, len(pages)))
         for lang, items, subj in (
@@ -404,9 +443,9 @@ def main():
         zh_items = [("%s/thinker-arena/debate.html?d=%s" % (SITE, s), q) for s, q, _ in debs if q]
         en_items = [("%s/thinker-arena/debate.en.html?d=%s" % (SITE, s), qe) for s, _, qe in debs if qe]
         if zh_items:
-            hub_zh.append(("思想圆桌", "%s/thinker-arena/" % SITE, zh_items))
+            hub_zh.append((order.get("thinker-arena", 999), "思想圆桌", "%s/thinker-arena/" % SITE, zh_items))
         if en_items:
-            hub_en.append(("Thinking Hub", "%s/thinker-arena/index.en.html" % SITE, en_items))
+            hub_en.append((order.get("thinker-arena", 999), "Thinking Hub", "%s/thinker-arena/index.en.html" % SITE, en_items))
         print("  %-22s %d new debate(s)" % ("thinker-arena", len(debs)))
         for lang, items, subj, lbl in (
             ("zh", zh_items, "本周新辩论 · 思想圆桌", "思想圆桌"),
@@ -425,15 +464,19 @@ def main():
             else:
                 print("      [%s] sent to %d/%d" % (lang, r.get("sent", 0), r.get("total", 0)))
 
-    # hub: one combined digest of everything new this week -> list "hub"
-    for lang, sections, subj in (
+    # hub: one combined digest of everything new this week -> list "hub".
+    # Sort sections into site (card) order so the email matches the landing page.
+    hub_zh.sort(key=lambda x: x[0])
+    hub_en.sort(key=lambda x: x[0])
+    for lang, tagged, subj in (
         ("zh", hub_zh, "本周更新 · BigCat 全站精选"),
         ("en", hub_en, "This week across BigCat"),
     ):
-        if not sections:
+        if not tagged:
             continue
         if args.only and args.only != "hub":
             continue
+        sections = [(lbl, url, items) for _, lbl, url, items in tagged]
         n = sum(len(items) for _, _, items in sections)
         html = build_hub_email(sections, en=(lang == "en"))
         r = send("hub", subj, html, lang, admin, args.dry)
