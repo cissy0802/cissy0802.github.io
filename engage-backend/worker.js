@@ -30,7 +30,7 @@ const IP_SALT = "bigcat-comments-v1"; // just so stored hashes aren't raw IPs
 
 // Double opt-in (only active once RESEND_API_KEY is bound as a secret).
 const SITE_BASE = "https://cissy0802.github.io"; // where /confirm.html lives
-const FROM_EMAIL = "BigCat <cissy@cissychen.com>"; // needs cissychen.com verified in Resend
+const FROM_EMAIL = "BigCat <hi@cissychen.com>"; // needs cissychen.com verified in Resend
 
 function cors(origin) {
   const allow = ALLOWED_ORIGINS.has(origin) ? origin : "https://cissy0802.github.io";
