@@ -207,11 +207,15 @@ export default {
               "?e=" + encodeURIComponent(e) + "&l=" + encodeURIComponent(list) + "&t=" + tk;
             const humanUnsub = SITE_BASE + "/unsubscribe.html" + q;
             const machineUnsub = api + "/unsubscribe" + q;
+            const footer = unsubFooter(list, humanUnsub);
+            const fullHtml = html.includes("</body>")
+              ? html.replace("</body>", footer + "</body>")
+              : html + footer;
             batch.push({
               from: FROM_EMAIL,
               to: e,
               subject,
-              html: html + unsubFooter(list, humanUnsub),
+              html: fullHtml,
               headers: {
                 "List-Unsubscribe": "<" + machineUnsub + ">",
                 "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",

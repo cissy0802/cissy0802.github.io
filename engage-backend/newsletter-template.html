@@ -1,0 +1,106 @@
+<!--
+  BigCat 邮件模板 · 复制这个文件、改内容、用 send.py 发出去：
+    cp newsletter-template.html my-update.html   # 改里面的内容
+    python3 send.py --list hub --subject "本周更新" --html my-update.html --dry
+    python3 send.py --list hub --subject "本周更新" --html my-update.html
+
+  规则：
+  - 只需改下面标了「← 改这里」的部分（标题、正文、几条更新、按钮）。
+  - 退订链接由后端自动追加，别在这里加。
+  - 邮件客户端不支持外链 CSS / <style> 里的复杂选择器，所以全用行内样式 + 表格布局，别改结构。
+  - 想发英文版：复制一份改成英文文案即可，发送时加 --lang en。
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+</head>
+<body style="margin:0;padding:0;background:#f4f5f8">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f5f8;margin:0;padding:0">
+  <tr>
+    <td align="center" style="padding:28px 12px">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #e6e8ee">
+
+        <!-- 顶部品牌条 -->
+        <tr>
+          <td style="background:#141726;background:linear-gradient(135deg,#1a1a2e 0%,#2a2350 55%,#3a2a5e 100%);padding:26px 32px">
+            <div style="font-family:-apple-system,'Segoe UI',sans-serif;font-size:20px;font-weight:800;color:#ffffff;letter-spacing:1px">
+              BigCat&#39;s Learning Hub
+            </div>
+            <div style="font-family:-apple-system,'Segoe UI',sans-serif;font-size:12px;color:#a9b0c8;margin-top:4px;letter-spacing:2px;text-transform:uppercase">
+              每日学习 · 跨界思考 <!-- ← 改这里（栏目副标题） -->
+            </div>
+          </td>
+        </tr>
+
+        <!-- 正文 -->
+        <tr>
+          <td style="padding:32px 32px 8px 32px;font-family:-apple-system,'Segoe UI','Noto Serif SC',sans-serif;color:#1f2330">
+
+            <h1 style="margin:0 0 14px 0;font-size:22px;line-height:1.35;font-weight:800;color:#1a1a2e">
+              本期标题写这里 <!-- ← 改这里 -->
+            </h1>
+
+            <p style="margin:0 0 22px 0;font-size:15px;line-height:1.7;color:#454b5c">
+              这里写一段开场白，介绍这期的主题或本周更新概览。<!-- ← 改这里 -->
+            </p>
+
+            <!-- 更新条目：复制这一块 <table>…</table> 就能加更多条 -->
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 14px 0">
+              <tr>
+                <td style="border-left:3px solid #7b61ff;padding:4px 0 4px 16px">
+                  <div style="font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:3px">
+                    条目标题 <!-- ← 改这里 -->
+                  </div>
+                  <div style="font-size:14px;line-height:1.6;color:#5a6072">
+                    一两句话描述这条更新。<!-- ← 改这里 -->
+                    <a href="https://cissy0802.github.io/mental-models/" style="color:#7b61ff;text-decoration:none;font-weight:600">阅读 →</a> <!-- ← 改链接 -->
+                  </div>
+                </td>
+              </tr>
+            </table>
+
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 14px 0">
+              <tr>
+                <td style="border-left:3px solid #00c2c7;padding:4px 0 4px 16px">
+                  <div style="font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:3px">
+                    第二条 <!-- ← 改这里 -->
+                  </div>
+                  <div style="font-size:14px;line-height:1.6;color:#5a6072">
+                    描述文字。<a href="https://cissy0802.github.io/" style="color:#7b61ff;text-decoration:none;font-weight:600">阅读 →</a>
+                  </div>
+                </td>
+              </tr>
+            </table>
+
+            <!-- 行动按钮 -->
+            <table role="presentation" cellpadding="0" cellspacing="0" style="margin:24px 0 8px 0">
+              <tr>
+                <td style="border-radius:9px;background:#7b61ff">
+                  <a href="https://cissy0802.github.io/" style="display:inline-block;padding:12px 26px;font-family:-apple-system,'Segoe UI',sans-serif;font-size:15px;font-weight:700;color:#ffffff;text-decoration:none">
+                    去 Learning Hub 看看 → <!-- ← 改这里 -->
+                  </a>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+
+        <!-- 页脚（退订链接由后端自动加在这之后，别在这写） -->
+        <tr>
+          <td style="padding:20px 32px 28px 32px;border-top:1px solid #eef0f4;font-family:-apple-system,'Segoe UI',sans-serif">
+            <div style="font-size:12px;color:#9aa0b0;line-height:1.6">
+              BigCat · <a href="https://cissy0802.github.io/" style="color:#7b61ff;text-decoration:none">cissy0802.github.io</a>
+            </div>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
