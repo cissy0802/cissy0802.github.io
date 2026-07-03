@@ -1,0 +1,11 @@
+name = "bigcat-engage"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+# D1 database binding. Create it once with:
+#   npx wrangler d1 create bigcat-engage
+# then paste the printed database_id below.
+[[d1_databases]]
+binding = "DB"
+database_name = "bigcat-engage"
+database_id = "2989a792-bc40-4bbd-9be7-118f98315556"

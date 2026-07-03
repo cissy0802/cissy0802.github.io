@@ -379,6 +379,8 @@ footer a:hover{{color:#00d4ff}}
 </footer>
 </div>
 <script src="/search.js" defer></script>
+<script src="/engage.js" defer></script>
+<script src="/comments.js" defer></script>
 </body>
 </html>
 """

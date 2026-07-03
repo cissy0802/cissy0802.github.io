@@ -1,99 +1,311 @@
-/* BigCat Learning Hub — shared Giscus comments loader + AI disclaimer.
- * Each page including this script gets a comment section mapped by pathname.
- * Comments are stored as GitHub Discussions on cissy0802/cissy0802.github.io.
- * Also injects an AI-content disclaimer above the comments section.
- * Skip on hub landing page.
+/* BigCat Learning Hub — shared comments loader (login-free, no GitHub required).
+ * Replaces Giscus. Comments are stored in the Cloudflare Worker + D1 backend
+ * (see engage-backend/). Each page's thread is keyed by pathname.
+ * Also injects an AI-content disclaimer above the comments on content pages.
+ *
+ * User content is rendered with textContent only — never innerHTML — so a
+ * comment body can never inject markup or scripts.
  */
 (function () {
-  // ---------- AI 引用 disclaimer ----------
-  // Only inject on content pages (skip hub landing root index).
-  function injectDisclaimer() {
-    if (document.getElementById("ai-disclaimer")) return;
-    const path = window.location.pathname;
-    // Skip on root hub page
-    if (path === "/" || path === "/index.html") return;
-    // Skip on per-repo landing pages (no specific content)
-    const seg = path.split("/").filter(Boolean);
-    if (seg.length <= 1) return;
-    if (seg.length === 2 && (seg[1] === "" || seg[1].startsWith("index"))) return;
+  // ======= CONFIG ===========================================================
+  // Set this to your deployed Worker URL (same value as in engage.js).
+  var API = window.BIGCAT_API || "https://bigcat-engage.cissychen.workers.dev";
+  // Optional: paste a Cloudflare Turnstile site key to require a captcha.
+  // Leave "" to rely on honeypot + server rate-limit only.
+  var TURNSTILE_SITEKEY = "";
+  // ==========================================================================
 
-    const isEn = document.documentElement.lang && document.documentElement.lang.toLowerCase().startsWith("en");
-    const msg = isEn
+  var isEn = (document.documentElement.lang || "").toLowerCase().startsWith("en");
+  var pageKey = window.location.pathname;
+
+  // ---------- AI 引用 disclaimer (content pages only) ----------
+  (function injectDisclaimer() {
+    if (document.getElementById("ai-disclaimer")) return;
+    var path = window.location.pathname;
+    if (path === "/" || path === "/index.html" || path === "/index.en.html") return;
+    var seg = path.split("/").filter(Boolean);
+    if (seg.length <= 1) return;
+    if (seg.length === 2 && (seg[1] === "" || seg[1].indexOf("index") === 0)) return;
+
+    var msg = isEn
       ? "⚠️ Specific citations on this page (quotes, chapters, page numbers, paper claims) are AI-generated and may be inaccurate. Verify before sharing."
       : "⚠️ 本页 AI 生成的具体引用（金句、章节、页码、论文 claim）可能不准确，引用前请验证。";
-
-    const el = document.createElement("div");
+    var el = document.createElement("div");
     el.id = "ai-disclaimer";
     el.style.cssText =
       "max-width:760px;margin:32px auto 0;padding:12px 16px;font-size:0.82rem;opacity:0.55;text-align:center;border-top:1px dashed rgba(127,127,127,0.4);line-height:1.5";
     el.textContent = msg;
-    // Insert before <footer> if present, else at end of body
-    const footer = document.querySelector("footer");
-    if (footer && footer.parentNode) {
-      footer.parentNode.insertBefore(el, footer);
-    } else {
-      document.body.appendChild(el);
-    }
-  }
-  injectDisclaimer();
+    var footer = document.querySelector("footer");
+    if (footer && footer.parentNode) footer.parentNode.insertBefore(el, footer);
+    else document.body.appendChild(el);
+  })();
 
-  // ---------- Giscus comments ----------
-  if (document.getElementById("giscus-container")) return; // idempotent
+  // ---------- Comments ----------
+  if (document.getElementById("bigcat-comments")) return; // idempotent
 
-  // Detect page background luminance and pick a matching Giscus theme.
+  // Detect page luminance so inputs read well on both light and dark pages.
   function pageIsDark() {
-    let el = document.body;
+    var el = document.body;
     while (el) {
-      const c = getComputedStyle(el).backgroundColor;
+      var c = getComputedStyle(el).backgroundColor;
       if (c && c !== "transparent" && c !== "rgba(0, 0, 0, 0)") {
-        const m = c.match(/\d+(?:\.\d+)?/g);
+        var m = c.match(/\d+(?:\.\d+)?/g);
         if (m && m.length >= 3) {
-          const lum = m[0] * 0.299 + m[1] * 0.587 + m[2] * 0.114;
-          return lum < 128;
+          return m[0] * 0.299 + m[1] * 0.587 + m[2] * 0.114 < 128;
         }
       }
       el = el.parentElement;
     }
     return false;
   }
-  const dark = pageIsDark();
-  const theme = dark ? "noborder_dark" : "light";
+  var dark = pageIsDark();
+  var fieldBg = dark ? "rgba(0,0,0,0.25)" : "rgba(0,0,0,0.03)";
+  var fieldBorder = dark ? "rgba(255,255,255,0.14)" : "rgba(0,0,0,0.15)";
 
-  // Detect page language for Giscus i18n
-  const pageLangAttr = (document.documentElement.lang || "").toLowerCase();
-  const giscusLang = pageLangAttr.startsWith("en") ? "en" : "zh-CN";
-  const heading = giscusLang === "en" ? "💬 Comments" : "💬 评论 · Comments";
+  var t = isEn
+    ? {
+        head: "💬 Comments",
+        sub: "No account needed — just leave a name (optional) and your comment.",
+        namePh: "Name (optional)",
+        bodyPh: "Write a comment…",
+        send: "Post",
+        empty: "Be the first to comment.",
+        ok: "Posted. Thanks!",
+        held: "Thanks! Your comment will show after review.",
+        err: "Couldn't post — check your comment and try again.",
+        rate: "You're posting too fast — wait a moment.",
+        net: "Network error — try again.",
+        loading: "Loading comments…",
+      }
+    : {
+        head: "💬 留言 · Comments",
+        sub: "无需登录 —— 填个名字（可选）就能留言。",
+        namePh: "名字（可选）",
+        bodyPh: "写下你的留言…",
+        send: "发表",
+        empty: "还没有留言，来做第一个吧。",
+        ok: "已发表，谢谢！",
+        held: "谢谢！留言将在审核后显示。",
+        err: "发表失败 —— 检查一下内容再试。",
+        rate: "发得太快啦，稍等一下。",
+        net: "网络出错，请重试。",
+        loading: "正在加载留言…",
+      };
 
-  const container = document.createElement("section");
-  container.id = "giscus-container";
-  container.style.cssText =
-    "max-width:760px;margin:56px auto 24px;padding:28px 20px 8px;border-top:1px solid rgba(127,127,127,0.22)";
-  container.innerHTML =
-    '<h3 style="font-size:1.05rem;font-weight:600;margin-bottom:18px;letter-spacing:1px;opacity:0.78">' + heading + '</h3>';
+  var css = document.createElement("style");
+  css.textContent =
+    "#bigcat-comments{max-width:760px;margin:56px auto 24px;padding:28px 20px 8px;border-top:1px solid rgba(127,127,127,0.22)}" +
+    "#bigcat-comments h3{font-size:1.05rem;font-weight:600;margin-bottom:6px;letter-spacing:1px;opacity:0.85}" +
+    "#bigcat-comments .bc-sub{font-size:0.83rem;opacity:0.55;margin-bottom:16px}" +
+    "#bigcat-comments .bc-name{width:100%;max-width:280px;padding:10px 13px;margin-bottom:9px;border-radius:9px;font-size:0.9rem;font-family:inherit;color:inherit;background:" +
+    fieldBg + ";border:1px solid " + fieldBorder + "}" +
+    "#bigcat-comments textarea{display:block;width:100%;min-height:88px;padding:11px 14px;border-radius:9px;font-size:0.92rem;font-family:inherit;color:inherit;resize:vertical;background:" +
+    fieldBg + ";border:1px solid " + fieldBorder + "}" +
+    "#bigcat-comments .bc-name:focus,#bigcat-comments textarea:focus{outline:none;border-color:#7b61ff}" +
+    "#bigcat-comments .bc-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}" +
+    "#bigcat-comments .bc-row{display:flex;align-items:center;gap:12px;margin-top:10px}" +
+    "#bigcat-comments button.bc-send{padding:10px 22px;border:none;border-radius:9px;background:linear-gradient(135deg,#7b61ff,#00d4ff);color:#fff;font-weight:700;font-size:0.9rem;cursor:pointer;font-family:inherit;transition:opacity 0.15s}" +
+    "#bigcat-comments button.bc-send:hover{opacity:0.88}" +
+    "#bigcat-comments button.bc-send:disabled{opacity:0.5;cursor:default}" +
+    "#bigcat-comments .bc-msg{font-size:0.83rem;min-height:18px;color:#00c07a}" +
+    "#bigcat-comments .bc-msg.err{color:#ff6ec4}" +
+    "#bigcat-comments .bc-list{margin-top:26px;display:flex;flex-direction:column;gap:16px}" +
+    "#bigcat-comments .bc-item{padding:13px 16px;border-radius:10px;background:rgba(127,127,127,0.06);border:1px solid rgba(127,127,127,0.14)}" +
+    "#bigcat-comments .bc-meta{font-size:0.78rem;opacity:0.6;margin-bottom:5px}" +
+    "#bigcat-comments .bc-meta b{font-weight:700;opacity:0.9}" +
+    "#bigcat-comments .bc-body{font-size:0.92rem;line-height:1.6;white-space:pre-wrap;word-break:break-word}" +
+    "#bigcat-comments .bc-empty{font-size:0.86rem;opacity:0.5;padding:8px 0}";
+  document.head.appendChild(css);
 
-  // Insert just before <footer> if present, else at end of body
-  const footer = document.querySelector("footer");
-  if (footer && footer.parentNode) {
-    footer.parentNode.insertBefore(container, footer);
-  } else {
-    document.body.appendChild(container);
+  var box = document.createElement("section");
+  box.id = "bigcat-comments";
+  var h = document.createElement("h3");
+  h.textContent = t.head;
+  var sub = document.createElement("div");
+  sub.className = "bc-sub";
+  sub.textContent = t.sub;
+  box.appendChild(h);
+  box.appendChild(sub);
+
+  // form
+  var form = document.createElement("form");
+  form.style.position = "relative";
+  var nameInput = document.createElement("input");
+  nameInput.type = "text";
+  nameInput.className = "bc-name";
+  nameInput.placeholder = t.namePh;
+  nameInput.maxLength = 40;
+  var ta = document.createElement("textarea");
+  ta.placeholder = t.bodyPh;
+  ta.maxLength = 2000;
+  ta.required = true;
+  // honeypot — hidden from humans, tempting to bots
+  var hp = document.createElement("input");
+  hp.type = "text";
+  hp.className = "bc-hp";
+  hp.tabIndex = -1;
+  hp.setAttribute("autocomplete", "off");
+  hp.setAttribute("aria-hidden", "true");
+  hp.name = "website";
+  var row = document.createElement("div");
+  row.className = "bc-row";
+  var send = document.createElement("button");
+  send.type = "submit";
+  send.className = "bc-send";
+  send.textContent = t.send;
+  var msg = document.createElement("div");
+  msg.className = "bc-msg";
+  row.appendChild(send);
+  row.appendChild(msg);
+  form.appendChild(nameInput);
+  form.appendChild(ta);
+  form.appendChild(hp);
+  form.appendChild(row);
+  box.appendChild(form);
+
+  // optional Turnstile widget
+  var tsToken = "";
+  if (TURNSTILE_SITEKEY) {
+    var tsDiv = document.createElement("div");
+    tsDiv.style.marginTop = "10px";
+    tsDiv.className = "cf-turnstile";
+    tsDiv.setAttribute("data-sitekey", TURNSTILE_SITEKEY);
+    tsDiv.setAttribute("data-callback", "__bcTsCb");
+    tsDiv.setAttribute("data-theme", dark ? "dark" : "light");
+    window.__bcTsCb = function (tok) {
+      tsToken = tok;
+    };
+    form.insertBefore(tsDiv, row);
+    var tsScript = document.createElement("script");
+    tsScript.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+    tsScript.async = true;
+    tsScript.defer = true;
+    document.head.appendChild(tsScript);
   }
 
-  const s = document.createElement("script");
-  s.src = "https://giscus.app/client.js";
-  s.async = true;
-  s.crossOrigin = "anonymous";
-  s.setAttribute("data-repo", "cissy0802/cissy0802.github.io");
-  s.setAttribute("data-repo-id", "R_kgDOShlsYQ");
-  s.setAttribute("data-category", "General");
-  s.setAttribute("data-category-id", "DIC_kwDOShlsYc4C9f-A");
-  s.setAttribute("data-mapping", "pathname");
-  s.setAttribute("data-strict", "0");
-  s.setAttribute("data-reactions-enabled", "1");
-  s.setAttribute("data-emit-metadata", "0");
-  s.setAttribute("data-input-position", "top");
-  s.setAttribute("data-theme", theme);
-  s.setAttribute("data-lang", giscusLang);
-  s.setAttribute("data-loading", "lazy");
-  container.appendChild(s);
+  var list = document.createElement("div");
+  list.className = "bc-list";
+  var loadingEl = document.createElement("div");
+  loadingEl.className = "bc-empty";
+  loadingEl.textContent = t.loading;
+  list.appendChild(loadingEl);
+  box.appendChild(list);
+
+  // mount before footer
+  var footer = document.querySelector("footer");
+  if (footer && footer.parentNode) footer.parentNode.insertBefore(box, footer);
+  else document.body.appendChild(box);
+
+  function fmt(ts) {
+    try {
+      return new Date(ts).toLocaleString(isEn ? "en-US" : "zh-CN", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+    } catch (e) {
+      return "";
+    }
+  }
+
+  function renderItem(c) {
+    var item = document.createElement("div");
+    item.className = "bc-item";
+    var meta = document.createElement("div");
+    meta.className = "bc-meta";
+    var b = document.createElement("b");
+    b.textContent = c.name; // textContent = safe
+    meta.appendChild(b);
+    meta.appendChild(document.createTextNode(" · " + fmt(c.ts)));
+    var body = document.createElement("div");
+    body.className = "bc-body";
+    body.textContent = c.body; // textContent = safe, no HTML injection
+    item.appendChild(meta);
+    item.appendChild(body);
+    return item;
+  }
+
+  function renderList(comments) {
+    list.innerHTML = "";
+    if (!comments || !comments.length) {
+      var e = document.createElement("div");
+      e.className = "bc-empty";
+      e.textContent = t.empty;
+      list.appendChild(e);
+      return;
+    }
+    comments.forEach(function (c) {
+      list.appendChild(renderItem(c));
+    });
+  }
+
+  function load() {
+    fetch(API + "/comments?page=" + encodeURIComponent(pageKey))
+      .then(function (r) {
+        return r.json();
+      })
+      .then(function (d) {
+        if (d.ok) renderList(d.comments);
+        else renderList([]);
+      })
+      .catch(function () {
+        list.innerHTML = "";
+      });
+  }
+  load();
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var text = ta.value.trim();
+    if (!text) return;
+    send.disabled = true;
+    msg.className = "bc-msg";
+    msg.textContent = "…";
+    fetch(API + "/comment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        page: pageKey,
+        name: nameInput.value.trim(),
+        body: text,
+        website: hp.value, // honeypot
+        token: tsToken,
+      }),
+    })
+      .then(function (r) {
+        return r.json().then(function (d) {
+          return { status: r.status, d: d };
+        });
+      })
+      .then(function (res) {
+        var d = res.d;
+        if (d.ok) {
+          msg.className = "bc-msg";
+          if (d.approved && d.comment) {
+            var empty = list.querySelector(".bc-empty");
+            if (empty) empty.remove();
+            list.appendChild(renderItem(d.comment));
+            msg.textContent = t.ok;
+          } else {
+            msg.textContent = t.held;
+          }
+          ta.value = "";
+        } else if (res.status === 429) {
+          msg.className = "bc-msg err";
+          msg.textContent = t.rate;
+        } else {
+          msg.className = "bc-msg err";
+          msg.textContent = t.err;
+        }
+      })
+      .catch(function () {
+        msg.className = "bc-msg err";
+        msg.textContent = t.net;
+      })
+      .finally(function () {
+        send.disabled = false;
+      });
+  });
 })();
