@@ -215,36 +215,8 @@ def esc(s):
             .replace(">", "&gt;").replace('"', "&quot;"))
 
 
-def build_email(repo, items, en, label=None, debate=False):
-    """items: list of (url, title). Returns full HTML email body."""
-    label = label or repo
-    head_sub = "每日学习 · 跨界思考" if not en else "Daily learning · cross-domain thinking"
-    if debate:
-        title = ("本周新辩论 · %s" % label) if not en else ("New debates · %s" % label)
-        intro = ("这周思想圆桌新开了 %d 场辩论:" % len(items)) if not en \
-            else ("%d new debate(s) this week:" % len(items))
-        cta = "去思想圆桌看看 →" if not en else "Open the Round Table →"
-    else:
-        title = ("本周更新 · %s" % label) if not en else ("This week · %s" % label)
-        intro = ("这周 %s 有 %d 篇新内容:" % (label, len(items))) if not en \
-            else ("%d new piece(s) this week on %s:" % (len(items), label))
-        cta = "去这个专栏看看 →" if not en else "Open this tab →"
-    MAX_ITEMS = 15
-    extra = len(items) - MAX_ITEMS
-    rows = ""
-    for url, t in items[:MAX_ITEMS]:
-        read = "阅读 →" if not en else "Read →"
-        rows += (
-            '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" style="margin:0 0 12px 0"><tr>'
-            '<td style="border-left:3px solid #7b61ff;padding:3px 0 3px 15px">'
-            '<div style="font-size:15px;font-weight:700;color:#1a1a2e;line-height:1.45">%s</div>'
-            '<div style="font-size:13px;margin-top:2px"><a href="%s" style="color:#7b61ff;text-decoration:none;font-weight:600">%s</a></div>'
-            "</td></tr></table>" % (esc(t), esc(url), read)
-        )
-    if extra > 0:
-        more = ("…还有 %d 篇，去专栏看全部。" % extra) if not en else ("…and %d more — see them all on the tab." % extra)
-        rows += '<p style="font-size:13px;color:#8a90a0;margin:2px 0 0">%s</p>' % more
-    tab_url = "%s/%s/%s" % (SITE, repo, "index.en.html" if en else "")
+def _wrap(head_sub, title, intro, body_html, cta_url, cta, en):
+    """Shared BigCat email chrome (header / title / body / CTA / footer)."""
     return (
         '<!DOCTYPE html><html lang="%s"><head><meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width,initial-scale=1.0"></head>'
@@ -267,8 +239,68 @@ def build_email(repo, items, en, label=None, debate=False):
         '<tr><td style="padding:18px 32px 26px;border-top:1px solid #eef0f4;font-family:-apple-system,sans-serif">'
         '<div style="font-size:12px;color:#9aa0b0">BigCat · <a href="%s" style="color:#7b61ff;text-decoration:none">cissy0802.github.io</a></div>'
         "</td></tr></table></td></tr></table></body></html>"
-        % ("en" if en else "zh-CN", head_sub, esc(title), esc(intro), rows, esc(tab_url), esc(cta), SITE)
+        % ("en" if en else "zh-CN", head_sub, esc(title), esc(intro), body_html, esc(cta_url), esc(cta), SITE)
     )
+
+
+def _item_row(url, t, read):
+    return (
+        '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" style="margin:0 0 12px 0"><tr>'
+        '<td style="border-left:3px solid #7b61ff;padding:3px 0 3px 15px">'
+        '<div style="font-size:15px;font-weight:700;color:#1a1a2e;line-height:1.45">%s</div>'
+        '<div style="font-size:13px;margin-top:2px"><a href="%s" style="color:#7b61ff;text-decoration:none;font-weight:600">%s</a></div>'
+        "</td></tr></table>" % (esc(t), esc(url), read)
+    )
+
+
+def build_email(repo, items, en, label=None, debate=False):
+    """items: list of (url, title). Returns full HTML email body."""
+    label = label or repo
+    head_sub = "每日学习 · 跨界思考" if not en else "Daily learning · cross-domain thinking"
+    if debate:
+        title = ("本周新辩论 · %s" % label) if not en else ("New debates · %s" % label)
+        intro = ("这周思想圆桌新开了 %d 场辩论:" % len(items)) if not en \
+            else ("%d new debate(s) this week:" % len(items))
+        cta = "去思想圆桌看看 →" if not en else "Open the Round Table →"
+    else:
+        title = ("本周更新 · %s" % label) if not en else ("This week · %s" % label)
+        intro = ("这周 %s 有 %d 篇新内容:" % (label, len(items))) if not en \
+            else ("%d new piece(s) this week on %s:" % (len(items), label))
+        cta = "去这个专栏看看 →" if not en else "Open this tab →"
+    MAX_ITEMS = 15
+    extra = len(items) - MAX_ITEMS
+    read = "阅读 →" if not en else "Read →"
+    rows = "".join(_item_row(url, t, read) for url, t in items[:MAX_ITEMS])
+    if extra > 0:
+        more = ("…还有 %d 篇，去专栏看全部。" % extra) if not en else ("…and %d more — see them all on the tab." % extra)
+        rows += '<p style="font-size:13px;color:#8a90a0;margin:2px 0 0">%s</p>' % more
+    tab_url = "%s/%s/%s" % (SITE, repo, "index.en.html" if en else "")
+    return _wrap(head_sub, title, intro, rows, tab_url, cta, en)
+
+
+def build_hub_email(sections, en):
+    """One combined 'everything new this week' digest for the hub list.
+
+    sections: [(label, tab_url, [(url, title), ...]), ...] — one entry per tab
+    that had new content, in the order tabs were scanned."""
+    total = sum(len(items) for _, _, items in sections)
+    head_sub = "每日学习 · 跨界思考" if not en else "Daily learning · cross-domain thinking"
+    title = "本周更新 · 全站精选" if not en else "This week across BigCat"
+    intro = ("这周各专栏共有 %d 篇新内容:" % total) if not en \
+        else ("%d new pieces across all tabs this week:" % total)
+    cta = "去 BigCat 首页 →" if not en else "Open BigCat →"
+    read = "阅读 →" if not en else "Read →"
+    unit = "篇" if not en else "new"
+    body = ""
+    for label, tab_url, items in sections:
+        body += (
+            '<div style="margin:24px 0 10px">'
+            '<a href="%s" style="font-size:16px;font-weight:800;color:#1a1a2e;text-decoration:none">%s</a>'
+            '<span style="font-size:12px;color:#8a90a0;font-weight:600;margin-left:7px">%d %s</span>'
+            "</div>" % (esc(tab_url), esc(label), len(items), unit)
+        )
+        body += "".join(_item_row(url, t, read) for url, t in items)
+    return _wrap(head_sub, title, intro, body, SITE, cta, en)
 
 
 def send(list_slug, subject, html, lang, admin, dry):
@@ -296,6 +328,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--days", type=int, default=7)
     ap.add_argument("--dry", action="store_true")
+    ap.add_argument("--only", default=None,
+                    help="only send to this list slug (e.g. 'hub'); others are still "
+                         "scanned so the hub digest stays complete, just not emailed")
     args = ap.parse_args()
 
     admin = os.environ.get("BIGCAT_ADMIN_TOKEN", "")
@@ -306,6 +341,10 @@ def main():
         "%Y-%m-%dT%H:%M:%SZ"
     )
     print("Window: since %s (%d days)\n" % (since, args.days))
+
+    # hub = a single combined digest of everything new this week (the landing
+    # page's "subscribe to all" list). Accumulated across every tab below.
+    hub_zh, hub_en = [], []
 
     for repo in REPOS:
         try:
@@ -330,12 +369,19 @@ def main():
             if et:
                 en_items.append(("%s/%s/%s" % (SITE, repo, en_fn), et))
 
+        if zh_items:
+            hub_zh.append((repo, "%s/%s/" % (SITE, repo), zh_items))
+        if en_items:
+            hub_en.append((repo, "%s/%s/index.en.html" % (SITE, repo), en_items))
+
         print("  %-22s %d new page(s)" % (repo, len(pages)))
         for lang, items, subj in (
             ("zh", zh_items, "本周更新 · %s" % repo),
             ("en", en_items, "This week · %s" % repo),
         ):
             if not items:
+                continue
+            if args.only and args.only != repo:
                 continue
             html = build_email(repo, items, en=(lang == "en"))
             r = send(repo, subj, html, lang, admin, args.dry)
@@ -357,12 +403,18 @@ def main():
     if debs:
         zh_items = [("%s/thinker-arena/debate.html?d=%s" % (SITE, s), q) for s, q, _ in debs if q]
         en_items = [("%s/thinker-arena/debate.en.html?d=%s" % (SITE, s), qe) for s, _, qe in debs if qe]
+        if zh_items:
+            hub_zh.append(("思想圆桌", "%s/thinker-arena/" % SITE, zh_items))
+        if en_items:
+            hub_en.append(("Thinking Hub", "%s/thinker-arena/index.en.html" % SITE, en_items))
         print("  %-22s %d new debate(s)" % ("thinker-arena", len(debs)))
         for lang, items, subj, lbl in (
             ("zh", zh_items, "本周新辩论 · 思想圆桌", "思想圆桌"),
             ("en", en_items, "New debates · Thinking Hub", "Thinking Hub"),
         ):
             if not items:
+                continue
+            if args.only and args.only != "thinker-arena":
                 continue
             html = build_email("thinker-arena", items, en=(lang == "en"), label=lbl, debate=True)
             r = send("thinker-arena", subj, html, lang, admin, args.dry)
@@ -372,6 +424,27 @@ def main():
                 print("      [%s] would send to %d subscriber(s)" % (lang, r.get("recipients", 0)))
             else:
                 print("      [%s] sent to %d/%d" % (lang, r.get("sent", 0), r.get("total", 0)))
+
+    # hub: one combined digest of everything new this week -> list "hub"
+    for lang, sections, subj in (
+        ("zh", hub_zh, "本周更新 · BigCat 全站精选"),
+        ("en", hub_en, "This week across BigCat"),
+    ):
+        if not sections:
+            continue
+        if args.only and args.only != "hub":
+            continue
+        n = sum(len(items) for _, _, items in sections)
+        html = build_hub_email(sections, en=(lang == "en"))
+        r = send("hub", subj, html, lang, admin, args.dry)
+        if not r.get("ok"):
+            print("  %-22s [%s] ✗ %s" % ("hub", lang, r.get("error")))
+        elif args.dry:
+            print("  %-22s [%s] %d item(s) across %d tab(s) → would send to %d subscriber(s)"
+                  % ("hub", lang, n, len(sections), r.get("recipients", 0)))
+        else:
+            print("  %-22s [%s] %d item(s) across %d tab(s) → sent to %d/%d"
+                  % ("hub", lang, n, len(sections), r.get("sent", 0), r.get("total", 0)))
     print("\nDone.")
 
 
