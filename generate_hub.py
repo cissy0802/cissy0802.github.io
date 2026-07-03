@@ -201,7 +201,7 @@ def gh_get(url: str):
 # (Auto-detected from 'Add #N' commit messages, so each self-marks when it finishes.)
 CAPS = {
     "mental-models": 68,
-    "super-individual": 52,
+    "super-individual": 53,
     "ai-ml": 53,
     "philosophy": 49,
     "system-design": 48,
