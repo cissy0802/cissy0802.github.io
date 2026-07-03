@@ -251,7 +251,21 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 </ul>
 <p>投票去重只靠前端一个随机 localStorage token——清掉就能重投。对一个随手玩的 hub 民调，<strong>诚实但不严防</strong>足够了；真要严格，用上面那套登录地基升级即可。这一层的取舍贯穿始终：<strong>能静态就静态；非有状态不可的那一小块，用最小的后端 + 免费额度兜住，并且每处都预留了「以后要更严怎么长上去」。</strong></p>
 
-<h2>7. 治理层：让系统自己管自己</h2>
+<h2>7. 两个偏离标准模板的站：Thinking Hub 与 Deep Research</h2>
+<p>前面讲的是「人定题、routine 写一页」的标准内容站。有两个站不走这个模板——它们更复杂，也最能说明这套架构能往哪儿伸。</p>
+
+<h3>Thinking Hub（思想家圆桌辩论）—— 观众投票决定写什么</h3>
+<p>标准站是「人维护 TOPICS.md、AI 照着写」；这个站把<strong>选题权交给了观众</strong>。它还是客户端渲染的：每场辩论是一个 <code>debates/*.json</code>，由浏览器脚本渲染成聊天流（所以全站搜索得靠 §5 的快照 SSR 才爬得到）。</p>
+<p>难点在<strong>一道墙</strong>：云端 routine 跑在带出口代理的容器里，那个代理不放行自建后端（访问 <code>bigcat-engage…workers.dev</code> 直接 403），<strong>routine 自己读不到票、也读不到评论</strong>。解法是<strong>架一座桥</strong>：用一个 GitHub Action（它的 runner 不在墙后）每 12 小时把后端的净票和评论快照写回仓库的 <code>ideas.json</code> / <code>audience_inbox.json</code>。于是 routine 只读仓库文件，就拿到了后端数据——不必连后端。</p>
+<p>这就闭成一个<strong>观众反馈回路</strong>：观众投票/提议 → Worker + D1 → Action 每 12h 桥接 → 仓库 JSON → routine 开辩时选「净票最高」的议题（或人工置顶队列），收尾时再从观众评论里挖出新候选。<strong>观众成了 roadmap 的一部分</strong>——这是标准站刻意不给 AI 的权限，在这里安全地还给了人群。</p>
+<p>生成端也更重：从 100+ 人的人设名册里选 6–10 位思想家（选角前先跑 <code>diversity_report.py</code> 看分布统计、照聚合数字选，专门<strong>反「照抄最近几场形状」的过拟合</strong>），routine 亲自写三轮双语辩论、最后由三家 AI 收尾。连人物图鉴都要求「对本场议题盲」地写，防止介绍被当场话题污染。</p>
+
+<h3>Deep Research —— 多智能体调研 + 对抗式核查</h3>
+<p>标准站是一个 routine 一次写一页；这个站的内容是一套<strong>多智能体调研管线</strong>的产物。每条<strong>承重论断</strong>都被 <strong>3 个独立的验证 agent</strong> 拿着一手来源反复反驳过（对抗式事实核查）——通不过的要么补证据、要么砍掉。</p>
+<p>它还是全系统里<strong>唯一有构建步骤</strong>的站：别的站 routine 直接吐 HTML，这里源文件是 markdown（放在 <code>sources/</code>，每篇分「通俗版 plain」和「深挖版 deep」、中英双语），由 <code>build.py</code> 按注册表渲染成 HTML——一篇 = 通俗 × 深挖 × 中英 = 4 个页面。改内容改 markdown、重跑 <code>build.py</code>。</p>
+<p>为什么单列：它把「生成」从「写一页」升级成「<strong>调研 → 对抗核查 → 带引用合成</strong>」，是这套系统里研究强度最高、也最贴合本文标题「一个人指挥一支 agent 车队」的一支。</p>
+
+<h2>8. 治理层：让系统自己管自己</h2>
 <p>跑起来只是开始，长期无人值守才是难的部分。几道防线：</p>
 
 <h3>封顶 + 自动停机</h3>
@@ -272,7 +286,7 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <li>新 routine 上线前先小批量试跑人工验收，再放开批量（TTS bake 尤其如此——结构错一次浪费的是整月 Azure 配额）</li>
 </ul>
 
-<h2>8. 沉淀下来的设计原则</h2>
+<h2>9. 沉淀下来的设计原则</h2>
 <div class="principle"><b>静态优先，后端只留一小块。</b>内容侧没有数据库、没有服务器、没有构建框架：HTML 就是产物，git 就是 CMS，GitHub Pages 就是 CDN，搜索（Pagefind）、TTS（预烘焙 mp3）都用静态方案解决了传统上「需要后端」的功能。唯一非有状态不可的订阅 / 评论 / 投票，收敛到一个 Cloudflare Worker + D1、全在免费额度内——静态优先不是教条，是把后端的面积压到最小。</div>
 <div class="principle"><b>文件系统就是状态。</b>选题进度 = <code>ls</code> 的结果；发布记录 = commit message；完结状态 = 从 commit 解析。没有任何一处需要独立维护的状态存储，所以没有任何一处会和现实脱节。</div>
 <div class="principle"><b>每一步都幂等。</b>routine 重复触发不会重写已有页面（文件已存在）；TTS 重跑不会重复计费（hash 命中）；注入重跑不会叠加标签（缺才补）。无人值守系统的重试是常态，幂等不是优化而是前提。</div>
@@ -281,7 +295,7 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <div class="principle"><b>约定优于协议。</b><code>Add #N</code> 的 commit 格式、<code>{slug}-day{N}.html</code> 的命名、<code>.maxchars</code> 单行文件——组件之间靠这些朴素约定通信，没有一处 JSON schema，但每处约定都有至少两个消费者。</div>
 <div class="principle"><b>该毕业就毕业。</b>每个站有封顶，写完自动停机、打完结徽章。这个系统是为我自己学习服务的，学完一个领域就该收口，而不是被「持续产出」绑架。</div>
 
-<h2>9. 成本</h2>
+<h2>10. 成本</h2>
 <ul>
 <li>GitHub Pages / Actions：免费额度内</li>
 <li>内容生成：claude.ai 订阅内的云端 routine，无额外 API 费</li>

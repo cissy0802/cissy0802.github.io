@@ -247,7 +247,21 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 </ul>
 <p>Vote dedup relies only on a random front-end localStorage token — clear it and you can vote again. For a casual hub poll, <strong>honest-but-not-airtight</strong> is enough; tighten it by upgrading with the login foundation above. The trade-off runs through the whole layer: <strong>static wherever possible; for the one piece that must be stateful, cover it with the smallest possible backend on a free tier — and design in, at every point, how it could later grow stricter.</strong></p>
 
-<h2>7. Governance: making the system police itself</h2>
+<h2>7. Two sites that break the standard template: Thinking Hub and Deep Research</h2>
+<p>Everything above describes the standard content site — "a human sets the topic, the routine writes a page." Two sites don't follow that template; they're more complex, and they best show how far this architecture can stretch.</p>
+
+<h3>Thinking Hub (the Thinker Roundtable) — the audience votes on what gets written</h3>
+<p>On a standard site the human maintains TOPICS.md and the AI writes to it; this site <strong>hands topic selection to the audience</strong>. It's also client-rendered: each debate is a <code>debates/*.json</code> rendered into a chat stream by browser scripts (which is why site-wide search needs the snapshot SSR from §5 to crawl it at all).</p>
+<p>The hard part is <strong>a wall</strong>: the cloud routine runs in a container behind an egress proxy that doesn't allow the self-hosted backend (hitting <code>bigcat-engage…workers.dev</code> returns 403 outright), so <strong>the routine can't read votes or comments itself</strong>. The fix is <strong>a bridge</strong>: a GitHub Action (its runner isn't behind that wall) writes the backend's net votes and comment snapshots back into the repo's <code>ideas.json</code> / <code>audience_inbox.json</code> every 12 hours. The routine then reads repo files only and has the backend data — without ever connecting to the backend.</p>
+<p>That closes into an <strong>audience feedback loop</strong>: audience votes/proposals → Worker + D1 → the Action bridges every 12h → repo JSON → the routine opens a debate on the <strong>highest-net-vote</strong> topic (or a human-pinned queue), and while wrapping up mines audience comments for new candidates. <strong>The audience becomes part of the roadmap</strong> — the very authority the standard sites deliberately withhold from the AI is here handed safely back to a crowd.</p>
+<p>Generation is heavier too: pick 6–10 thinkers from a 100+ persona registry (run <code>diversity_report.py</code> first and cast by the aggregate distribution — explicitly <strong>fighting the overfit of "copy the shape of recent debates"</strong>), then the routine writes three bilingual rounds itself and closes with a three-AI panel. Even the character-encyclopedia entries must be written "blind to this debate," so a profile never gets polluted by the topic it happened to be cast for.</p>
+
+<h3>Deep Research — multi-agent investigation + adversarial fact-checking</h3>
+<p>A standard site has one routine write one page; this site's content is the output of a <strong>multi-agent research pipeline</strong>. Every <strong>load-bearing claim</strong> is challenged by <strong>3 independent verifier agents</strong> against primary sources (adversarial fact-checking) — a claim that doesn't survive either gets more evidence or gets cut.</p>
+<p>It's also the <strong>only site with a build step</strong>: other sites have the routine emit HTML directly, but here the source is markdown (in <code>sources/</code>, each piece in a "plain" and a "deep" edition, both languages), which <code>build.py</code> renders into HTML via its registries — one piece = plain × deep × zh/en = 4 pages. To change content you edit the markdown and re-run <code>build.py</code>.</p>
+<p>Why it earns its own entry: it upgrades "generation" from "write a page" to "<strong>research → adversarial verify → synthesize with citations</strong>" — the most research-intensive branch of the system, and the one that best fits this post's title, one human directing a fleet of agents.</p>
+
+<h2>8. Governance: making the system police itself</h2>
 <p>Getting it running is the easy part; running unattended for the long haul is the hard part. The lines of defense:</p>
 
 <h3>Caps + auto-pause</h3>
@@ -268,7 +282,7 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <li>New routines run a small validated batch before scaling up (especially TTS baking — one structural mistake burns a whole month of Azure quota)</li>
 </ul>
 
-<h2>8. Design principles that emerged</h2>
+<h2>9. Design principles that emerged</h2>
 <div class="principle"><b>Static first, with one small backend.</b> On the content side: no database, no server, no build framework — HTML is the artifact, git is the CMS, GitHub Pages is the CDN, and search (Pagefind) and TTS (pre-baked mp3s) solve traditionally "needs a backend" problems with static answers. The only genuinely stateful piece — subscribe / comment / vote — is confined to one Cloudflare Worker + D1, entirely on the free tier. Static-first isn't dogma; it's keeping the backend's footprint as small as possible.</div>
 <div class="principle"><b>The filesystem is the state.</b> Topic progress = the output of <code>ls</code>; the publishing record = commit messages; completion status = parsed from commits. There is no independently maintained state store anywhere — so nothing can drift out of sync with reality.</div>
 <div class="principle"><b>Every step is idempotent.</b> A re-fired routine won't rewrite existing pages (the file already exists); a re-run TTS bake won't double-bill (hash hit); a re-run injection won't stack tags (only adds what's missing). For unattended systems, retries are the norm — idempotency is a precondition, not an optimization.</div>
@@ -277,7 +291,7 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <div class="principle"><b>Convention over protocol.</b> The <code>Add #N</code> commit format, the <code>{slug}-day{N}.html</code> naming, the one-line <code>.maxchars</code> file — components talk through these humble conventions. There isn't a JSON schema anywhere, yet every convention has at least two consumers.</div>
 <div class="principle"><b>Graduate when it's time.</b> Every site has a cap; when it's reached, the routine auto-pauses and the badge flips to Completed. This system serves my own learning — a finished field deserves closure, not hostage-taking by "consistent output."</div>
 
-<h2>9. Cost</h2>
+<h2>10. Cost</h2>
 <ul>
 <li>GitHub Pages / Actions: within the free tier</li>
 <li>Content generation: cloud routines included in a claude.ai subscription, no extra API bills</li>
