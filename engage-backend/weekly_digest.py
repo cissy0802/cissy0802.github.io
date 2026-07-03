@@ -196,6 +196,11 @@ def main():
         try:
             pages = new_pages(repo, since)
         except Exception as e:  # noqa: BLE001
+            if "rate limit" in str(e).lower() or "403" in str(e):
+                print("\n✗ GitHub API rate limit. Set a token and retry:")
+                print("    export GITHUB_TOKEN='ghp_...'   # any GitHub token → 5000/hr")
+                print("  (Cloud routines already have a token, so this only bites local runs.)")
+                return
             print("  %-22s ! %s" % (repo, e))
             continue
         if not pages:
