@@ -101,19 +101,58 @@ def new_pages(repo, since_iso):
     return list(seen)
 
 
+def new_debates(since_iso):
+    """thinker-arena new content is a debate JSON, not an .html page.
+    Return [(slug, question_zh, question_en)] for debates added this week."""
+    try:
+        before = gh("/repos/%s/thinker-arena/commits?until=%s&per_page=1" % (OWNER, since_iso))
+    except urllib.error.HTTPError as e:
+        if e.code == 404:
+            return []
+        raise
+    if not before:
+        return []
+    base = before[0]["sha"]
+    cmp = gh("/repos/%s/thinker-arena/compare/%s...%s" % (OWNER, base, BRANCH))
+    out = []
+    for f in cmp.get("files", []):
+        fn = f.get("filename", "")
+        if f.get("status") != "added":
+            continue
+        m = re.match(r"debates/([^/]+)\.json$", fn)
+        if not m or m.group(1) == "index":
+            continue
+        slug = m.group(1)
+        try:
+            url = "https://raw.githubusercontent.com/%s/thinker-arena/%s/%s" % (OWNER, BRANCH, fn)
+            req = urllib.request.Request(url, headers={"User-Agent": UA})
+            with urllib.request.urlopen(req, timeout=30) as r:
+                d = json.loads(r.read().decode("utf-8", "ignore"))
+        except Exception:
+            continue
+        out.append((slug, d.get("question"), d.get("question_en")))
+    return out
+
+
 def esc(s):
     return (str(s or "").replace("&", "&amp;").replace("<", "&lt;")
             .replace(">", "&gt;").replace('"', "&quot;"))
 
 
-def build_email(repo, items, en):
+def build_email(repo, items, en, label=None, debate=False):
     """items: list of (url, title). Returns full HTML email body."""
-    label = repo
+    label = label or repo
     head_sub = "每日学习 · 跨界思考" if not en else "Daily learning · cross-domain thinking"
-    title = ("本周更新 · %s" % label) if not en else ("This week · %s" % label)
-    intro = ("这周 %s 有 %d 篇新内容:" % (label, len(items))) if not en \
-        else ("%d new piece(s) this week on %s:" % (len(items), label))
-    cta = "去这个专栏看看 →" if not en else "Open this tab →"
+    if debate:
+        title = ("本周新辩论 · %s" % label) if not en else ("New debates · %s" % label)
+        intro = ("这周思想圆桌新开了 %d 场辩论:" % len(items)) if not en \
+            else ("%d new debate(s) this week:" % len(items))
+        cta = "去思想圆桌看看 →" if not en else "Open the Round Table →"
+    else:
+        title = ("本周更新 · %s" % label) if not en else ("This week · %s" % label)
+        intro = ("这周 %s 有 %d 篇新内容:" % (label, len(items))) if not en \
+            else ("%d new piece(s) this week on %s:" % (len(items), label))
+        cta = "去这个专栏看看 →" if not en else "Open this tab →"
     MAX_ITEMS = 15
     extra = len(items) - MAX_ITEMS
     rows = ""
@@ -224,6 +263,33 @@ def main():
                 continue
             html = build_email(repo, items, en=(lang == "en"))
             r = send(repo, subj, html, lang, admin, args.dry)
+            if not r.get("ok"):
+                print("      [%s] ✗ %s" % (lang, r.get("error")))
+            elif args.dry:
+                print("      [%s] would send to %d subscriber(s)" % (lang, r.get("recipients", 0)))
+            else:
+                print("      [%s] sent to %d/%d" % (lang, r.get("sent", 0), r.get("total", 0)))
+
+    # thinker-arena: new debates (list slug "thinker-arena")
+    try:
+        debs = new_debates(since)
+    except Exception as e:  # noqa: BLE001
+        if "rate limit" in str(e).lower() or "403" in str(e):
+            print("\n✗ GitHub API rate limit — set GITHUB_TOKEN and retry.")
+            return
+        debs = []
+    if debs:
+        zh_items = [("%s/thinker-arena/debate.html?d=%s" % (SITE, s), q) for s, q, _ in debs if q]
+        en_items = [("%s/thinker-arena/debate.en.html?d=%s" % (SITE, s), qe) for s, _, qe in debs if qe]
+        print("  %-22s %d new debate(s)" % ("thinker-arena", len(debs)))
+        for lang, items, subj, lbl in (
+            ("zh", zh_items, "本周新辩论 · 思想圆桌", "思想圆桌"),
+            ("en", en_items, "New debates · Thinking Hub", "Thinking Hub"),
+        ):
+            if not items:
+                continue
+            html = build_email("thinker-arena", items, en=(lang == "en"), label=lbl, debate=True)
+            r = send("thinker-arena", subj, html, lang, admin, args.dry)
             if not r.get("ok"):
                 print("      [%s] ✗ %s" % (lang, r.get("error")))
             elif args.dry:
