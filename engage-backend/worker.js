@@ -68,19 +68,25 @@ export default {
 
     try {
       // ---- Subscribe ---------------------------------------------------
+      // { email, list }  — `list` tags which tab they subscribed under
+      // (e.g. "mental-models", or "hub" for the landing). One row per
+      // (email, list), so an address can subscribe to several tabs.
       if (url.pathname === "/subscribe" && request.method === "POST") {
         const body = await request.json().catch(() => ({}));
         const email = String(body.email || "").trim().toLowerCase();
         if (!EMAIL_RE.test(email) || email.length > 254) {
           return json({ ok: false, error: "invalid_email" }, 400, origin);
         }
+        // list slug: letters/digits/dash, default "hub".
+        let list = String(body.list || "hub").trim().toLowerCase().slice(0, 64);
+        if (!/^[a-z0-9][a-z0-9-]*$/.test(list)) list = "hub";
         const res = await env.DB.prepare(
-          "INSERT OR IGNORE INTO subscribers (email, ts) VALUES (?, ?)"
+          "INSERT OR IGNORE INTO subscriptions (email, list, ts) VALUES (?, ?, ?)"
         )
-          .bind(email, Date.now())
+          .bind(email, list, Date.now())
           .run();
         const already = res.meta.changes === 0;
-        return json({ ok: true, already }, 200, origin);
+        return json({ ok: true, already, list }, 200, origin);
       }
 
       // ---- Vote --------------------------------------------------------

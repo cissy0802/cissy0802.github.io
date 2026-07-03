@@ -127,6 +127,15 @@ THINKING_CARDS = [
      "https://cissy0802.github.io/thinker-arena/", "圆桌", "Roundtable"),
 ]
 
+# Deep Research —— 多 agent 调研 + 对抗式核查的研究报告站(独立静态站,非每日 routine)。
+# Tuple shape identical to THINKING_CARDS.
+RESEARCH_CARDS = [
+    ("research", "🔬", "深度研究", "Deep Research",
+     "多 agent 并行调研一手来源,关键论断各经 3 名独立验证者对抗核查,正反证据并陈;每篇出易读版+深入版、中英双语。首篇:传统软件组织的 AI-native 转型。",
+     "Parallel AI agents over primary sources, every load-bearing claim adversarially checked by 3 independent verifiers, counter-evidence included; plain + deep editions, bilingual. First up: the AI-native transformation of software organizations.",
+     "https://cissy0802.github.io/deep-research/", "研究", "Research"),
+]
+
 CSS_VARS = {
     "mental":     ("#00d4ff", "#0096c7"),
     "aiml":       ("#ff6ec4", "#7b61ff"),
@@ -151,6 +160,7 @@ CSS_VARS = {
     "civics":     ("#6ea8d8", "#1f3a5f"),
     "family":     ("#ffd166", "#e8743b"),
     "thinker":    ("#a29bfe", "linear-gradient(90deg,#a29bfe,#7b61ff,#ff6ec4)"),
+    "research":   ("#4cc9f0", "linear-gradient(90deg,#4cc9f0,#7b61ff)"),
 }
 
 # Per-language chrome strings.
@@ -401,6 +411,7 @@ def main():
         def cards_for(sec):
             return [card_html(c, dates[c[6]], lang) for c in CARDS if c[7] == sec]
         thinking_cards = "\n\n".join(thinking_card_html(c, lang) for c in THINKING_CARDS)
+        research_cards = "\n\n".join(thinking_card_html(c, lang) for c in RESEARCH_CARDS)
         brain = "\n\n".join([
             section("Thinking",   "思维",     cards_for("thinking"), lang),
             section("Tech",       "技术",     cards_for("tech"), lang),
@@ -411,6 +422,7 @@ def main():
         ])
         grid = "\n\n".join([
             group_label("思想圆桌", "Thinking Hub", lang) + "\n\n" + thinking_cards,
+            group_label("深度研究", "Deep Research", lang) + "\n\n" + research_cards,
             group_label("第二大脑", "Second Brain", lang) + "\n\n" + brain,
         ])
         html = render_page(lang, grid, today)

@@ -2,10 +2,15 @@
 -- Apply with:
 --   npx wrangler d1 execute bigcat-engage --file=schema.sql --remote
 
-CREATE TABLE IF NOT EXISTS subscribers (
-  email TEXT PRIMARY KEY,
-  ts    INTEGER NOT NULL
+-- One row per (email, list): an address can subscribe to several tabs.
+-- `list` = which tab they subscribed under ("mental-models", ..., or "hub").
+CREATE TABLE IF NOT EXISTS subscriptions (
+  email TEXT    NOT NULL,
+  list  TEXT    NOT NULL DEFAULT 'hub',
+  ts    INTEGER NOT NULL,
+  PRIMARY KEY (email, list)
 );
+CREATE INDEX IF NOT EXISTS idx_subscriptions_list ON subscriptions (list);
 
 CREATE TABLE IF NOT EXISTS votes (
   poll   TEXT    NOT NULL,

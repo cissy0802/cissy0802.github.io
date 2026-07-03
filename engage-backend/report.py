@@ -88,16 +88,27 @@ def main():
     print("  " + datetime.now().astimezone().strftime("%Y-%m-%d %H:%M %Z"))
     print("=" * 60)
 
-    # ---- Subscribers ----
-    subs = q("SELECT email, ts FROM subscribers ORDER BY ts DESC")
+    # ---- Subscribers (per list/tab) ----
+    subs = q("SELECT email, list, ts FROM subscriptions ORDER BY ts DESC")
     recent_subs = [s for s in subs if days_ago(s["ts"], args.days)]
-    print(f"\n📬 SUBSCRIBERS — {len(subs)} total", end="")
+    uniq = len({s["email"] for s in subs})
+    print(f"\n📬 SUBSCRIBERS — {len(subs)} subscriptions · {uniq} unique emails", end="")
     if args.days is not None:
-        print(f"  ({len(recent_subs)} in last {args.days}d)")
+        print(f"  ({len(recent_subs)} new in last {args.days}d)")
     else:
         print()
-    for s in (recent_subs if args.days is not None else subs)[:30]:
-        print(f"   {fmt_ts(s['ts'])}   {s['email']}")
+    # per-list breakdown
+    by_list = {}
+    for s in subs:
+        by_list[s["list"]] = by_list.get(s["list"], 0) + 1
+    for lst, n in sorted(by_list.items(), key=lambda kv: -kv[1]):
+        print(f"     {n:>4}  {lst}")
+    # recent signups
+    show = (recent_subs if args.days is not None else subs)[:30]
+    if show:
+        print("   recent:")
+        for s in show:
+            print(f"     {fmt_ts(s['ts'])}   {s['email']}  [{s['list']}]")
     if not subs:
         print("   (none yet)")
 

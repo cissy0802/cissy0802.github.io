@@ -29,7 +29,8 @@ jobs:
             writing-weekly biographies-weekly philosophy-weekly \
             buddhism-weekly investing-weekly \
             super-individual-weekly leadership-weekly \
-            psychology-weekly mathematics-weekly; do
+            psychology-weekly mathematics-weekly \
+            deep-research; do
             echo "Cloning $repo..."
             git clone --depth 1 --quiet "https://github.com/cissy0802/$repo" "_src/$repo"
             rm -rf "_src/$repo/.git" "_src/$repo/.github"
