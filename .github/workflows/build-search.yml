@@ -58,6 +58,9 @@ jobs:
 
       - name: Run Pagefind
         run: |
+          # Pagefind doesn't clean its output dir; wipe it so fragments from
+          # previous builds (stale URLs) don't accumulate in the repo.
+          rm -rf pagefind
           npx -y pagefind@latest \
             --site _src \
             --output-path pagefind \
