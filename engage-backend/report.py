@@ -67,8 +67,8 @@ def main():
     args = ap.parse_args()
 
     if args.summary:
-        n_subs = q("SELECT COUNT(*) AS n FROM subscribers")[0]["n"]
-        new_subs = q("SELECT COUNT(*) AS n FROM subscribers WHERE ts > ?".replace(
+        n_subs = q("SELECT COUNT(*) AS n FROM subscriptions")[0]["n"]
+        new_subs = q("SELECT COUNT(*) AS n FROM subscriptions WHERE ts > ?".replace(
             "?", str(int((datetime.now(tz=timezone.utc).timestamp() - 86400) * 1000)))
         )[0]["n"]
         n_votes = q("SELECT COUNT(*) AS n FROM votes")[0]["n"]

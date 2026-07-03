@@ -85,9 +85,13 @@ npx wrangler d1 execute bigcat-engage --remote --command "DELETE FROM comments W
 ## Reading your data
 
 ```bash
-# All subscribed emails
+# All subscribed emails, per tab/list (mental-models, ai-ml, …, or hub)
 npx wrangler d1 execute bigcat-engage --remote \
-  --command "SELECT email, datetime(ts/1000,'unixepoch') AS at FROM subscribers ORDER BY ts DESC"
+  --command "SELECT list, email, datetime(ts/1000,'unixepoch') AS at FROM subscriptions ORDER BY list, ts DESC"
+
+# Emails for one tab only (what you'd export to send that tab's newsletter)
+npx wrangler d1 execute bigcat-engage --remote \
+  --command "SELECT email FROM subscriptions WHERE list='mental-models'"
 
 # Poll results
 npx wrangler d1 execute bigcat-engage --remote \

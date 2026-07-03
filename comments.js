@@ -40,6 +40,82 @@
     else document.body.appendChild(el);
   })();
 
+  // ---------- Per-tab subscribe (on each repo's landing/index only) ----------
+  // Subscribing here tags the email with this tab, so they only get this tab's mail.
+  (function injectSubscribe() {
+    if (document.getElementById("bigcat-subscribe")) return;
+    var segs = window.location.pathname.split("/").filter(Boolean);
+    // repo landing = /<repo>/ or /<repo>/index(.en).html ; skip hub root (engage.js owns it)
+    var isLanding =
+      segs.length === 1 || (segs.length === 2 && segs[1].indexOf("index") === 0);
+    if (segs.length === 0 || !isLanding) return;
+    var list = segs[0].toLowerCase();
+    if (!/^[a-z0-9][a-z0-9-]*$/.test(list)) return;
+
+    var sT = isEn
+      ? { head: "📬 Subscribe to this section",
+          sub: "New posts in this tab, straight to your inbox. No spam, unsubscribe anytime.",
+          ph: "you@example.com", btn: "Subscribe",
+          ok: "✓ Subscribed. Thanks!", dup: "✓ You're already subscribed here.",
+          bad: "Please enter a valid email.", net: "Something went wrong — try again." }
+      : { head: "📬 订阅这个专栏",
+          sub: "这个 tab 有新内容时给你发邮件，只发本专栏。不发垃圾，随时退订。",
+          ph: "you@example.com", btn: "订阅",
+          ok: "✓ 已订阅，谢谢！", dup: "✓ 你已经订阅过这个专栏啦。",
+          bad: "请输入有效的邮箱地址。", net: "出错了，请再试一次。" };
+
+    var css = document.createElement("style");
+    css.textContent =
+      "#bigcat-subscribe{max-width:760px;margin:48px auto 0;padding:22px 20px;border-top:1px solid rgba(127,127,127,0.22)}" +
+      "#bigcat-subscribe h3{font-size:1.02rem;font-weight:600;margin-bottom:5px;letter-spacing:0.5px;opacity:0.85}" +
+      "#bigcat-subscribe .bs-sub{font-size:0.83rem;opacity:0.6;margin-bottom:14px}" +
+      "#bigcat-subscribe form{display:flex;gap:10px;flex-wrap:wrap}" +
+      "#bigcat-subscribe input{flex:1;min-width:180px;padding:10px 13px;border-radius:9px;border:1px solid rgba(127,127,127,0.4);background:rgba(127,127,127,0.08);color:inherit;font-size:0.9rem;font-family:inherit}" +
+      "#bigcat-subscribe input:focus{outline:none;border-color:#7b61ff}" +
+      "#bigcat-subscribe button{padding:10px 20px;border:none;border-radius:9px;background:linear-gradient(135deg,#7b61ff,#00d4ff);color:#fff;font-weight:700;font-size:0.9rem;cursor:pointer;font-family:inherit;transition:opacity .15s}" +
+      "#bigcat-subscribe button:hover{opacity:0.88}" +
+      "#bigcat-subscribe button:disabled{opacity:0.5;cursor:default}" +
+      "#bigcat-subscribe .bs-msg{font-size:0.82rem;margin-top:9px;min-height:16px;color:#00c07a}" +
+      "#bigcat-subscribe .bs-msg.err{color:#ff6ec4}";
+    document.head.appendChild(css);
+
+    var box = document.createElement("section");
+    box.id = "bigcat-subscribe";
+    box.innerHTML = "<h3>" + sT.head + "</h3><div class='bs-sub'>" + sT.sub + "</div>";
+    var form = document.createElement("form");
+    var input = document.createElement("input");
+    input.type = "email"; input.placeholder = sT.ph; input.required = true;
+    var btn = document.createElement("button");
+    btn.type = "submit"; btn.textContent = sT.btn;
+    var msg = document.createElement("div"); msg.className = "bs-msg";
+    form.appendChild(input); form.appendChild(btn);
+    box.appendChild(form); box.appendChild(msg);
+
+    var footer2 = document.querySelector("footer");
+    if (footer2 && footer2.parentNode) footer2.parentNode.insertBefore(box, footer2);
+    else document.body.appendChild(box);
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var email = input.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        msg.className = "bs-msg err"; msg.textContent = sT.bad; return;
+      }
+      btn.disabled = true; msg.className = "bs-msg"; msg.textContent = "…";
+      fetch(API + "/subscribe", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email, list: list })
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (d.ok) { msg.className = "bs-msg"; msg.textContent = d.already ? sT.dup : sT.ok; input.value = ""; }
+          else { msg.className = "bs-msg err"; msg.textContent = sT.bad; }
+        })
+        .catch(function () { msg.className = "bs-msg err"; msg.textContent = sT.net; })
+        .finally(function () { btn.disabled = false; });
+    });
+  })();
+
   // ---------- Comments ----------
   if (document.getElementById("bigcat-comments")) return; // idempotent
 
