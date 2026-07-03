@@ -22,7 +22,9 @@ import argparse
 import json
 import os
 import re
+import subprocess
 import sys
+import tempfile
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -48,7 +50,48 @@ CONTENT_RE = re.compile(r"-(day|week|book)\d+\.html$|-\d{4}-\d{2}-\d{2}\.html$")
 UA = "bigcat-weekly-digest/1.0"
 
 
-def gh(path):
+# --- GitHub data via local git ---
+# api.github.com REST is unreachable from the Claude Code cloud sandbox (the
+# security proxy gates it behind a connected GitHub App), but `git clone` and
+# raw.githubusercontent.com are allowed. We therefore serve the two
+# api.github.com shapes this script uses — `commits?until=` and
+# `compare/BASE...HEAD` — from a lightweight blobless, no-checkout clone
+# (which skips the large baked TTS audio blobs, ~250K per repo). Callers
+# (new_pages / new_debates) are unchanged. Locally, where api.github.com is
+# reachable, set ENGAGE_USE_API=1 to fall back to the original REST path.
+_CLONE_ROOT = None
+_CLONES = {}
+
+
+def _clone(repo):
+    """Blobless, checkout-free clone of OWNER/repo. Returns local path, or
+    None if the repo is missing/unreachable (mapped to a 404 by callers)."""
+    global _CLONE_ROOT
+    if repo in _CLONES:
+        return _CLONES[repo]
+    if _CLONE_ROOT is None:
+        _CLONE_ROOT = tempfile.mkdtemp(prefix="wd-clones-")
+    dest = os.path.join(_CLONE_ROOT, repo)
+    url = "https://github.com/%s/%s" % (OWNER, repo)
+    try:
+        r = subprocess.run(
+            ["git", "clone", "--filter=blob:none", "--no-checkout", "--quiet", url, dest],
+            capture_output=True, text=True, timeout=300,
+        )
+        ok = r.returncode == 0
+    except Exception:
+        ok = False
+    _CLONES[repo] = dest if ok else None
+    return _CLONES[repo]
+
+
+def _git(dest, *args):
+    return subprocess.run(
+        ["git", "-C", dest, *args], capture_output=True, text=True, timeout=120
+    ).stdout
+
+
+def _gh_api(path):
     url = "https://api.github.com" + path
     headers = {"User-Agent": UA, "Accept": "application/vnd.github+json"}
     tok = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
@@ -57,6 +100,39 @@ def gh(path):
     req = urllib.request.Request(url, headers=headers)
     with urllib.request.urlopen(req, timeout=30) as r:
         return json.loads(r.read().decode("utf-8"))
+
+
+def gh(path):
+    if os.environ.get("ENGAGE_USE_API"):
+        return _gh_api(path)
+    # /repos/OWNER/REPO/commits?until=ISO&per_page=1 -> [{"sha": last-before-ISO}]
+    m = re.match(r"/repos/[^/]+/([^/]+)/commits\?until=([^&]+)", path)
+    if m:
+        repo, until = m.group(1), urllib.parse.unquote(m.group(2))
+        dest = _clone(repo)
+        if dest is None:
+            raise urllib.error.HTTPError(path, 404, "Not Found", {}, None)
+        sha = _git(dest, "rev-list", "-1", "--before=" + until, "origin/HEAD").strip()
+        return [{"sha": sha}] if sha else []
+    # /repos/OWNER/REPO/compare/BASE...HEAD -> {"files": [{"filename","status"}]}
+    m = re.match(r"/repos/[^/]+/([^/]+)/compare/([^.]+)\.\.\.(.+)$", path)
+    if m:
+        repo, base, head = m.group(1), m.group(2), m.group(3)
+        dest = _clone(repo)
+        if dest is None:
+            raise urllib.error.HTTPError(path, 404, "Not Found", {}, None)
+        head_ref = "origin/HEAD" if head == BRANCH else head
+        out = _git(dest, "diff", "--name-status", base, head_ref)
+        smap = {"A": "added", "M": "modified", "D": "removed"}
+        files = []
+        for line in out.splitlines():
+            parts = line.split("\t")
+            if len(parts) < 2:
+                continue
+            status = smap.get(parts[0][:1], parts[0].lower())
+            files.append({"filename": parts[-1], "status": status})
+        return {"files": files}
+    raise ValueError("unsupported gh path: " + path)
 
 
 def raw_title(repo, fn):
