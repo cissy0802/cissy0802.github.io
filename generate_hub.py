@@ -131,8 +131,8 @@ THINKING_CARDS = [
 # Tuple shape identical to THINKING_CARDS.
 RESEARCH_CARDS = [
     ("research", "🔬", "深度研究", "Deep Research",
-     "多 agent 并行调研一手来源,关键论断各经 3 名独立验证者对抗核查,正反证据并陈;每篇出易读版+深入版、中英双语。首篇:传统软件组织的 AI-native 转型。",
-     "Parallel AI agents over primary sources, every load-bearing claim adversarially checked by 3 independent verifiers, counter-evidence included; plain + deep editions, bilingual. First up: the AI-native transformation of software organizations.",
+     "多 agent 调研 + 对抗式事实核查的研究报告——每篇易读版 + 深入版,中英双语。",
+     "Multi-agent research with adversarial fact-checking — plain and deep editions, bilingual.",
      "https://cissy0802.github.io/deep-research/", "研究", "Research"),
 ]
 
