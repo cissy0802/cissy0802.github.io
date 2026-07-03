@@ -207,7 +207,6 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <li>bake 的自动提交带 <code>[skip bake]</code> 标记，防止「提交触发 bake、bake 又产生提交」的死循环</li>
 </ul>
 <p>hash 寻址让整条链路幂等：内容没变就不花一分钱 API 配额，改了一节只重烘那一节。这个站目前积累了 500 多个 mp3、约 1.2 GB——全部躺在 git 仓库里由 Pages 直接伺服，零额外存储成本。</p>
-<p>（这条 TTS 链路早期用的是火山引擎，后来整体迁到 Azure，旧脚本还留着 <code>.bak</code> 当化石。）</p>
 
 <h2>5. 聚合层：Hub 怎么知道下面 20 个仓的动静</h2>
 <p>Hub 仓自己也是全自动的，两个每日 Action。</p>
@@ -233,12 +232,12 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <ul>
 <li><strong>邮件订阅</strong> <code>POST /subscribe</code>：按「每个主题 tab 一个列表」收邮箱（<code>hub</code> 或某站 slug），并记下订阅时的页面语言。</li>
 <li><strong>投票 / 民调</strong> <code>POST /vote</code>、<code>GET /poll</code>、<code>GET /votes-net</code>：每人每题一票（可改），前端 <code>engage.js</code> 渲染实时票数条。</li>
-<li><strong>登录-free 评论</strong> <code>GET /comments</code>、<code>POST /comment</code>：<code>comments.js</code> 全站替换了原来的 Giscus——访客不再需要 GitHub 账号就能留言。</li>
+<li><strong>登录-free 评论</strong> <code>GET /comments</code>、<code>POST /comment</code>：<code>comments.js</code> 提供全站登录-free 评论——访客不需要 GitHub 账号就能留言。</li>
 </ul>
 <p>数据落在 D1 的三张表：<code>subscriptions</code>（邮箱+列表为主键，带 confirmed 标志与语言）、<code>votes</code>（题+投票人为主键，天然去重）、<code>comments</code>（页面路径、名字、正文、审核位、加盐 iphash）。前端只有 <code>engage.js</code>（订阅框+投票）和 <code>comments.js</code> 两个脚本，跟其他共享 JS 一样由注入层铺到全站；Worker 的 CORS 锁死只认 <code>cissy0802.github.io</code>。</p>
 
-<h3>为什么亲手写，而不用现成服务</h3>
-<p>评论原本用 Giscus（GitHub Discussions 套壳），但它逼每个访客登录 GitHub——对一个给普通人读的学习站是过高的门槛。换成自建后<strong>登录门槛没了，代价是反垃圾的墙也没了</strong>——GitHub 登录本身就是原来的那道墙。所以自建版内置三道防线：<strong>蜜罐字段</strong>（隐藏的 <code>website</code> 输入，人不填、机器人会填，填了就静默丢弃）、<strong>按 IP 限流</strong>（60 秒最多 3 条，用加盐哈希记 IP、不存原始地址）、以及可选的 <strong>Cloudflare Turnstile</strong>（绑上 secret 后 Worker 自动强制，垃圾真出现再开）。评论正文一律用 <code>textContent</code> 渲染、绝不当 HTML，从根上堵死 XSS。</p>
+<h3>登录-free 的代价：三道反垃圾防线</h3>
+<p>不要求登录，门槛低了，但<strong>「账号」这道天然的反垃圾墙也没了</strong>——谁都能发，机器人尤其能发。所以自建版内置三道防线：<strong>蜜罐字段</strong>（隐藏的 <code>website</code> 输入，人不填、机器人会填，填了就静默丢弃）、<strong>按 IP 限流</strong>（60 秒最多 3 条，用加盐哈希记 IP、不存原始地址）、以及可选的 <strong>Cloudflare Turnstile</strong>（绑上 secret 后 Worker 自动强制，垃圾真出现再开）。评论正文一律用 <code>textContent</code> 渲染、绝不当 HTML，从根上堵死 XSS。</p>
 
 <h3>双重确认订阅 = 以后免密登录的地基</h3>
 <p>订阅走 double opt-in：<code>/subscribe</code> 先存一条<strong>未确认</strong>行、发一封带确认链接的邮件（用 Resend 免费层，每月 3000 封），点了链接触发 <code>/confirm</code> 才翻成 <code>confirmed=1</code>，只有确认过的才算真订户。这一步不只是防拼错的邮箱——<strong>「邮箱 → 验证」正是免密登录的地基</strong>：以后想给评论/投票加登录，只要在 <code>/confirm</code> 签发一个会话 token、在 <code>/comment</code> 和 <code>/vote</code> 校验它即可，数据库不用重构。</p>

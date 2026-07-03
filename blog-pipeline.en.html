@@ -203,7 +203,6 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <li>The bake's auto-commit is tagged <code>[skip bake]</code>, breaking the "commit triggers bake, bake makes a commit" loop</li>
 </ul>
 <p>Hash addressing makes the whole chain idempotent: unchanged content costs zero API quota, and editing one section re-bakes only that section. The site has accumulated 500+ mp3 files, about 1.2 GB — all sitting in the git repo, served directly by Pages, at zero extra storage cost.</p>
-<p>(This TTS chain originally ran on Volcano Engine and was later migrated wholesale to Azure; the old script survives as a <code>.bak</code> fossil.)</p>
 
 <h2>5. Aggregation: how the hub tracks 20 repos beneath it</h2>
 <p>The hub repo is fully automated too, via two daily Actions.</p>
@@ -229,12 +228,12 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <ul>
 <li><strong>Email subscribe</strong> <code>POST /subscribe</code>: collects emails under "one list per subject tab" (<code>hub</code> or a site slug), recording the page language at signup.</li>
 <li><strong>Voting / polls</strong> <code>POST /vote</code>, <code>GET /poll</code>, <code>GET /votes-net</code>: one vote per person per question (changeable); the front-end <code>engage.js</code> renders live tallies.</li>
-<li><strong>Login-free comments</strong> <code>GET /comments</code>, <code>POST /comment</code>: <code>comments.js</code> replaced Giscus site-wide — visitors no longer need a GitHub account to comment.</li>
+<li><strong>Login-free comments</strong> <code>GET /comments</code>, <code>POST /comment</code>: <code>comments.js</code> provides site-wide login-free comments — visitors don't need a GitHub account to comment.</li>
 </ul>
 <p>Data lands in three D1 tables: <code>subscriptions</code> (email+list as primary key, with a confirmed flag and language), <code>votes</code> (poll+voter as primary key, deduped by construction), and <code>comments</code> (page path, name, body, moderation flag, salted iphash). The front end is just two scripts — <code>engage.js</code> (subscribe box + poll) and <code>comments.js</code> — injected site-wide like the other shared JS; the Worker's CORS is locked to <code>cissy0802.github.io</code>.</p>
 
-<h3>Why hand-roll it instead of using a service</h3>
-<p>Comments originally ran on Giscus (a wrapper over GitHub Discussions), but it forced every visitor to log in with GitHub — too high a bar for a site meant for general readers. Going self-hosted <strong>removed the login barrier, but also removed the anti-spam wall</strong> — GitHub's login <em>was</em> that wall. So the self-hosted version builds in three defenses: a <strong>honeypot field</strong> (a hidden <code>website</code> input a human won't fill and a bot will — filled means silently dropped), <strong>per-IP rate limiting</strong> (max 3 per 60s, keyed on a salted hash of the IP, never the raw address), and optional <strong>Cloudflare Turnstile</strong> (once a secret is bound, the Worker auto-enforces it — turn it on if spam appears). Comment bodies are always rendered with <code>textContent</code>, never as HTML, closing off XSS at the root.</p>
+<h3>The cost of login-free: three anti-spam defenses</h3>
+<p>No login means a low barrier — but it also means <strong>losing the account gate that was the natural anti-spam wall</strong>: anyone can post, bots especially. So the self-hosted version builds in three defenses: a <strong>honeypot field</strong> (a hidden <code>website</code> input a human won't fill and a bot will — filled means silently dropped), <strong>per-IP rate limiting</strong> (max 3 per 60s, keyed on a salted hash of the IP, never the raw address), and optional <strong>Cloudflare Turnstile</strong> (once a secret is bound, the Worker auto-enforces it — turn it on if spam appears). Comment bodies are always rendered with <code>textContent</code>, never as HTML, closing off XSS at the root.</p>
 
 <h3>Double opt-in subscribe = the foundation for passwordless login later</h3>
 <p>Subscription uses double opt-in: <code>/subscribe</code> first stores an <strong>unconfirmed</strong> row and emails a confirmation link (via Resend's free tier, 3,000 emails/month); clicking it hits <code>/confirm</code>, which flips the row to <code>confirmed=1</code>. Only confirmed rows count as real subscribers. This isn't just about catching typo'd addresses — <strong>"email → verify" is exactly the foundation of passwordless login</strong>: to add login to comments/voting later, just issue a session token at <code>/confirm</code> and check it at <code>/comment</code> and <code>/vote</code> — no schema redo.</p>
