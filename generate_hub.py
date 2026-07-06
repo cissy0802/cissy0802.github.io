@@ -388,7 +388,7 @@ footer a:hover{{color:#00d4ff}}
 <footer>
   {t['blog']}<br>
   {t['about']}<br>
-  BigCat · refreshed {today} · <a href="https://github.com/cissy0802">GitHub</a> · <a href="mailto:cissychen0802@gmail.com">cissychen0802@gmail.com</a>
+  BigCat · refreshed {today} · <a href="https://github.com/cissy0802">GitHub</a> · <a href="mailto:cissy@cissychen.com">cissy@cissychen.com</a>
 </footer>
 </div>
 <script src="/search.js" defer></script>
