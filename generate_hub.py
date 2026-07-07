@@ -172,7 +172,7 @@ I18N = {
         "arrow": "进入 →",
         "toggle": '<a href="index.html" class="active">中文</a>\n  <a href="index.en.html">EN</a>',
         "blog": '<a href="blog-pipeline.html">🛠 这个 Hub 是怎么搭的</a>',
-        "about": '关于作者：BigCat，Staff 技术 / AI 工程师 · <a href="https://www.cissychen.com" target="_blank" rel="noopener">cissychen.com ↗</a>',
+        "about": '关于作者：BigCat，Staff 技术 / AI 工程师',
     },
     "en": {
         "html_lang": "en",
@@ -181,7 +181,7 @@ I18N = {
         "arrow": "enter →",
         "toggle": '<a href="index.html">中文</a>\n  <a href="index.en.html" class="active">EN</a>',
         "blog": '<a href="blog-pipeline.en.html">🛠 how this hub is built</a>',
-        "about": 'About the builder: BigCat, staff tech / AI engineer · <a href="https://www.cissychen.com" target="_blank" rel="noopener">cissychen.com ↗</a>',
+        "about": 'About the builder: BigCat, staff tech / AI engineer',
     },
 }
 
