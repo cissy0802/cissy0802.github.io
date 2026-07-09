@@ -198,27 +198,31 @@ def gh_get(url: str):
         return json.loads(resp.read().decode())
 
 
-# Routines whose roadmap has been 收口/封顶. When a routine's highest published number
-# reaches its cap, its hub card shows a "已完结 / Completed" badge instead of a date.
-# (Auto-detected from 'Add #N' commit messages, so each self-marks when it finishes.)
-CAPS = {
-    "mental-models": 68,
-    "super-individual": 53,
-    "ai-ml": 53,
-    "philosophy": 49,
-    "system-design": 48,
-    "leadership": 69,
-    "health-longevity": 60,
-    "buddhism": 36,
-    "investing": 57,
-    "history": 57,
-}
+# Dynamic cap: TOPICS.md is the single source of truth. A routine is "已完结 / Completed"
+# once it has published up to the highest Day in its TOPICS.md — no static cap numbers
+# to keep in sync. Add new TOPICS (e.g. back-fed from deep-research) and the badge
+# automatically un-marks; the routine reopens. Mirrors the verify-routine-caps task.
+def roadmap_max(repo: str):
+    """Highest planned Day/Week/Issue number in the repo's TOPICS.md list items, or None
+    (no TOPICS.md, or a non-numbered curated list like the paper/book roadmaps)."""
+    try:
+        req = urllib.request.Request(
+            f"https://raw.githubusercontent.com/cissy0802/{repo}/main/TOPICS.md",
+            headers={"User-Agent": "bigcat-hub-generator"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            text = r.read().decode("utf-8", "replace")
+    except (urllib.error.URLError, urllib.error.HTTPError):
+        return None
+    # only line-leading list items (matches the verify-caps regex) — avoids inline
+    # prose mentions like "已在 Day 4/22 覆盖" inflating the max.
+    nums = [int(m) for m in re.findall(r"(?im)^[-*#]*\s*(?:day|week|issue)\s*(\d+)", text)]
+    return max(nums) if nums else None
 
 
 def latest_commit_date(repo: str):
     """Return (date, is_done). date = YYYY-MM-DD of the latest commit that added a
-    content file (matches CONTENT_RE). is_done = True when a capped routine (CAPS) has
-    published up to its cap (highest 'Add #N' >= cap). Falls back to newest commit date."""
+    content file (matches CONTENT_RE). is_done = True when the highest published 'Add #N'
+    has caught up to the repo's TOPICS.md roadmap (roadmap_max). Falls back to newest commit date."""
     try:
         commits = gh_get(f"https://api.github.com/repos/cissy0802/{repo}/commits?per_page=50")
     except (urllib.error.URLError, urllib.error.HTTPError) as e:
@@ -226,11 +230,11 @@ def latest_commit_date(repo: str):
         return "", False
     if not commits:
         return "", False
-    # done: highest published #N (from 'Add #N' commit messages) reached the cap
-    done = False
-    if repo in CAPS:
-        nums = [int(n) for c in commits for n in re.findall(r"Add #(\d+)", c["commit"]["message"])]
-        done = bool(nums) and max(nums) >= CAPS[repo]
+    # done: published caught up to the dynamic cap = highest Day in TOPICS.md.
+    pub_nums = [int(n) for c in commits for n in re.findall(r"Add #(\d+)", c["commit"]["message"])]
+    pub = max(pub_nums) if pub_nums else 0
+    tmax = roadmap_max(repo)
+    done = tmax is not None and pub >= tmax
     # date: latest commit that ADDED a content file (fallback: newest commit)
     for c in commits:
         try:
