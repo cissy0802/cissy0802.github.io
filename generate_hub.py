@@ -18,7 +18,7 @@ from pathlib import Path
 
 # Matches content files: *-day1.html, *-week1.html, *-book1.html,
 # or older date-based pattern *-YYYY-MM-DD.html (mental-models legacy).
-CONTENT_RE = re.compile(r'-(day|week|book)\d+\.html$|-\d{4}-\d{2}-\d{2}\.html$')
+CONTENT_RE = re.compile(r'-(day|week|book|topic)\d+\.html$|-\d{4}-\d{2}-\d{2}\.html$')
 
 # (accent_class, emoji, title_zh, subtitle_en, desc_zh, desc_en, repo, section)
 CARDS = [
@@ -116,6 +116,10 @@ CARDS = [
      "制度、法律、国际关系、地缘——中立、多视角、不站队的世界运作框架。",
      "Institutions, law, international relations, geography of power — how the world is governed and divided, neutral and multi-perspective.",
      "civics-geopolitics", "explore"),
+    ("neuro", "🧠", "神经科学", "Neuroscience",
+     "脑作为物理+计算系统的机制层——认知与意识优先、AI 对读贯穿；构件/系统按需查参考库。",
+     "The brain as a physical & computational system — cognition and consciousness first, with an AI cross-read throughout; building blocks live in an on-demand reference library.",
+     "neuroscience", "explore"),
 ]
 
 # BigCat's Thinking Hub —— 互动型思想实验，链到自建静态站(非每日内容仓库，故无 commit 日期)。
@@ -158,6 +162,7 @@ CSS_VARS = {
     "math":       ("#3a6088", "#1e3a5f"),
     "art":        ("#e76f51", "#9b2d30"),
     "civics":     ("#6ea8d8", "#1f3a5f"),
+    "neuro":      ("#a78bfa", "#e879f9"),
     "family":     ("#ffd166", "#e8743b"),
     "thinker":    ("#a29bfe", "linear-gradient(90deg,#a29bfe,#7b61ff,#ff6ec4)"),
     "research":   ("#4cc9f0", "linear-gradient(90deg,#4cc9f0,#7b61ff)"),
@@ -215,7 +220,7 @@ def roadmap_max(repo: str):
         return None
     # only line-leading list items (matches the verify-caps regex) — avoids inline
     # prose mentions like "已在 Day 4/22 覆盖" inflating the max.
-    nums = [int(m) for m in re.findall(r"(?im)^[-*#]*\s*(?:day|week|issue)\s*(\d+)", text)]
+    nums = [int(m) for m in re.findall(r"(?im)^[-*#]*\s*(?:day|week|issue|topic)\s*(\d+)", text)]
     return max(nums) if nums else None
 
 
