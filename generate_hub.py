@@ -117,8 +117,8 @@ CARDS = [
      "Institutions, law, international relations, geography of power — how the world is governed and divided, neutral and multi-perspective.",
      "civics-geopolitics", "explore"),
     ("neuro", "🧠", "神经科学", "Neuroscience",
-     "脑作为物理+计算系统的机制层——认知与意识优先、AI 对读贯穿；构件/系统按需查参考库。",
-     "The brain as a physical & computational system — cognition and consciousness first, with an AI cross-read throughout; building blocks live in an on-demand reference library.",
+     "脑作为物理+计算系统的机制层——认知与意识优先，AI 对读贯穿每一期。",
+     "The brain as a physical & computational system — cognition and consciousness first, with an AI cross-read running through every topic.",
      "neuroscience", "explore"),
 ]
 
