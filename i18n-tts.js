@@ -341,10 +341,20 @@
         for (const c of el.children) if (BLOCK_TAGS.has(c.tagName)) return false;
         return true;
       };
-      const nodes = document.querySelectorAll('h1, h2, h3, h4, p, li, summary, div');
+      const nodes = document.querySelectorAll('h1, h2, h3, h4, p, li, summary, div, span');
       tts.segments = Array.from(nodes).filter((el) => {
         if (!visible(el)) return false;
         if (el.tagName === 'DIV' && !isLeafDiv(el)) return false;
+        // Spans are only useful when they're direct children of a non-leaf
+        // div (e.g. <div class="sec"><span class="label">[Header]</span>
+        // <p>...</p></div>) — the label text isn't inside the <p> so nothing
+        // else would capture it. Otherwise the parent (leaf div / p / h*)
+        // already narrates the span's text.
+        if (el.tagName === 'SPAN') {
+          const p = el.parentElement;
+          if (!p || p.tagName !== 'DIV' || isLeafDiv(p)) return false;
+          if (!el.textContent.trim()) return false;
+        }
         return true;
       });
     }
