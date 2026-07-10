@@ -332,9 +332,21 @@
     if (tagged.length > 0) {
       tts.segments = Array.from(tagged).filter(visible);
     } else {
-      // Fallback for un-baked pages: read all headings + paragraphs via Web Speech
-      const nodes = document.querySelectorAll('h1, h2, h3, p');
-      tts.segments = Array.from(nodes).filter(visible);
+      // Fallback for un-baked pages: read headings + paragraphs + leaf content
+      // divs (summary/details, per-card section wrappers, prompt boxes, etc.).
+      // A "leaf" div has no block-level children — its text is its own content
+      // rather than aggregated from inner blocks.
+      const BLOCK_TAGS = new Set(['DIV','P','H1','H2','H3','H4','H5','H6','UL','OL','LI','SECTION','ARTICLE','TABLE','TR','TD','TH','PRE','BLOCKQUOTE']);
+      const isLeafDiv = (el) => {
+        for (const c of el.children) if (BLOCK_TAGS.has(c.tagName)) return false;
+        return true;
+      };
+      const nodes = document.querySelectorAll('h1, h2, h3, h4, p, li, summary, div');
+      tts.segments = Array.from(nodes).filter((el) => {
+        if (!visible(el)) return false;
+        if (el.tagName === 'DIV' && !isLeafDiv(el)) return false;
+        return true;
+      });
     }
     updateProgress();
   }
