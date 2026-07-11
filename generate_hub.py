@@ -103,7 +103,7 @@ CARDS = [
     ("math", "📐", "数学之美", "Mathematics",
      "概率、微积分、线代、拓扑、信息论——数学之美与跨学科的优雅工具。",
      "Probability, calculus, linear algebra, topology, information theory — the beauty of mathematics and elegant cross-disciplinary tools.",
-     "mathematics", "explore"),
+     "mathematics", "science"),
     ("history", "🏛️", "历史大事件", "History",
      "冷战转折、技术史、商业史、地缘政治——具体事件与反事实思考，Munger 的最佳教材。",
      "Cold War turning points, history of technology, business history, geopolitics — specific events and counterfactual thinking, Munger's favorite textbook.",
@@ -119,7 +119,7 @@ CARDS = [
     ("neuro", "🧠", "神经科学", "Neuroscience",
      "脑作为物理+计算系统的机制层——认知与意识优先，AI 对读贯穿每一期。",
      "The brain as a physical & computational system — cognition and consciousness first, with an AI cross-read running through every topic.",
-     "neuroscience", "explore"),
+     "neuroscience", "science"),
 ]
 
 # BigCat's Thinking Hub —— 互动型思想实验，链到自建静态站(非每日内容仓库，故无 commit 日期)。
@@ -430,6 +430,7 @@ def main():
             section("Career",     "职场",     cards_for("career"), lang),
             section("Life",       "生活",     cards_for("life"), lang),
             section("Humanities", "人文",     cards_for("humanities"), lang),
+            section("Science",    "科学",     cards_for("science"), lang),
             section("Explore",    "探索",     cards_for("explore"), lang),
         ])
         grid = "\n\n".join([
