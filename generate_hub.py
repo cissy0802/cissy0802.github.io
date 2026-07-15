@@ -128,6 +128,10 @@ CARDS = [
      "脑作为物理+计算系统的机制层——认知与意识优先，AI 对读贯穿每一期。",
      "The brain as a physical & computational system — cognition and consciousness first, with an AI cross-read running through every topic.",
      "neuroscience", "science"),
+    ("physics", "⚛️", "物理", "Physics",
+     "从经典力学到量子到涌现——物理世界怎么运作的连贯机制主线，直觉优先，每期挂一条 AI/复杂系统对读线。",
+     "From classical mechanics to the quantum to emergence — how the physical world works, one deep mechanistic path; intuition first, with an AI / complex-systems cross-read each issue.",
+     "physics", "science"),
 ]
 
 # BigCat's Thinking Hub —— 互动型思想实验，链到自建静态站(非每日内容仓库，故无 commit 日期)。
@@ -172,6 +176,7 @@ CSS_VARS = {
     "art":        ("#e76f51", "#9b2d30"),
     "civics":     ("#6ea8d8", "#1f3a5f"),
     "neuro":      ("#a78bfa", "#e879f9"),
+    "physics":    ("#5b9bff", "#2f6df6"),
     "family":     ("#ffd166", "#e8743b"),
     "thinker":    ("#a29bfe", "linear-gradient(90deg,#a29bfe,#7b61ff,#ff6ec4)"),
     "research":   ("#4cc9f0", "linear-gradient(90deg,#4cc9f0,#7b61ff)"),
