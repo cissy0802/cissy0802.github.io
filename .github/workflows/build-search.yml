@@ -30,6 +30,7 @@ jobs:
             philosophy buddhism art-aesthetics biographies \
             book-recommendations deep-reading \
             mathematics history investing civics-geopolitics \
+            neuroscience physics world-religions personal-finance \
             deep-research; do
             echo "Cloning $repo..."
             git clone --depth 1 --quiet "https://github.com/cissy0802/$repo" "_src/$repo"
