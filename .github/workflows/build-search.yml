@@ -25,7 +25,7 @@ jobs:
           for repo in \
             mental-models meta-knowledge \
             super-individual ai-ml system-design cs-papers-deepread \
-            leadership writing \
+            leadership writing sales \
             health-longevity parenting psychology family-craft \
             philosophy buddhism art-aesthetics biographies \
             book-recommendations deep-reading \
