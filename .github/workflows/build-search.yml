@@ -65,7 +65,7 @@ jobs:
           npx -y pagefind@latest \
             --site _src \
             --output-path pagefind \
-            --exclude-selectors "footer,nav,.section-label,#giscus-container,a[href*='cissy0802.github.io/']"
+            --exclude-selectors "footer,nav,.section-label,#bigcat-comments,a[href*='cissy0802.github.io/']"
 
       - name: Cleanup _src (only ship index)
         run: rm -rf _src
