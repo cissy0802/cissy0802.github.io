@@ -48,6 +48,10 @@ CARDS = [
      "计算机 / AI 里程碑论文精读——问题、核心思想、方法、影响一次讲透，配自绘示意图，读这页≈读懂论文。",
      "Milestone CS/AI papers, distilled — the problem, key idea, method and impact in one read, with hand-drawn diagrams; read this page instead of the paper.",
      "cs-papers-deepread", "tech"),
+    ("csbooks", "📚", "专业书籍精读", "CS Books",
+     "计算机 / 软件经典好书逐章精读——一章一页讲透核心概念与关键权衡，配对比表、真实系统量级与大厂公开实证，读这页≈读懂这一章。",
+     "Great CS/software books, chapter by chapter — core concepts and key trade-offs distilled one chapter per page, with comparison tables, real-system magnitudes and public industry evidence; read this page instead of the chapter.",
+     "chapter-deepread", "tech"),
     # 职场 · Career
     ("leadership", "🎯", "领导力实践", "Leadership",
      "1:1、反馈、难对话、招聘、coaching——具体话术与检查表，技术 leader 的处方性 craft。",
