@@ -148,7 +148,7 @@ THINKING_CARDS = [
     ("thinker", "⚖️", "思想家圆桌辩论", "Thinker Roundtable",
      "古今中外 100+ 位思想家就一个问题数轮辩论，立场表态、古文白话，最后 Claude / GPT / Gemini 三家 AI 收尾。",
      "100+ thinkers across eras and traditions debate one question over several rounds — taking sides, classical texts glossed in plain language, closed by a three-way Claude / GPT / Gemini AI panel.",
-     "https://cissy0802.github.io/thinker-arena/", "圆桌", "Roundtable"),
+     "/thinker-arena/", "圆桌", "Roundtable"),
 ]
 
 # Deep Research —— 多 agent 调研 + 对抗式核查的研究报告站(独立静态站,非每日 routine)。
@@ -157,7 +157,7 @@ RESEARCH_CARDS = [
     ("research", "🔬", "深度研究", "Deep Research",
      "多 agent 调研 + 对抗式事实核查的研究报告——每篇易读版 + 深入版。",
      "Multi-agent research with adversarial fact-checking — plain and deep editions.",
-     "https://cissy0802.github.io/deep-research/", "研究", "Research"),
+     "/deep-research/", "研究", "Research"),
 ]
 
 CSS_VARS = {
@@ -293,7 +293,7 @@ def _amp(s: str) -> str:
 def card_html(c, meta, lang: str) -> str:
     accent_class, emoji, title_zh, subtitle_en, desc_zh, desc_en, repo, _section = c
     date_str, done = meta
-    base = f"https://cissy0802.github.io/{repo}/"
+    base = f"/{repo}/"
     if lang == "zh":
         href = base
         title_row = f'<span class="title">{title_zh}</span><span class="subtitle-en">{_amp(subtitle_en)}</span>'
