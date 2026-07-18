@@ -20,7 +20,7 @@
 
   const LANG_KEY = 'mmd-lang';
   const RATE_KEY = 'mmd-tts-rate';
-  const RATES = [0.75, 1, 1.25, 1.5, 2];
+  const RATES = [0.75, 1, 1.25, 1.5, 1.75, 2];
 
   const fullMode = document.documentElement.getAttribute('data-i18n-mode') === 'full';
   const hasDataZh = document.querySelector('[data-zh][data-en]') !== null;
