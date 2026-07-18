@@ -366,7 +366,7 @@
     const css = `
 body{padding-bottom:96px!important}
 body.mmd-tts-on #search-fab{bottom:78px!important}
-.mmd-controls{position:fixed;bottom:18px;right:18px;background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:28px;box-shadow:0 6px 24px rgba(0,0,0,0.15);padding:6px;display:flex;align-items:center;gap:2px;z-index:9999;font-family:-apple-system,"Noto Sans SC","Segoe UI",Roboto,sans-serif;border:1px solid rgba(0,0,0,0.06);user-select:none}
+.mmd-controls{position:fixed;bottom:18px;right:18px;background:rgba(255,255,255,0.98);border-radius:28px;box-shadow:0 6px 24px rgba(0,0,0,0.15);padding:6px;display:flex;align-items:center;gap:2px;z-index:9999;font-family:-apple-system,"Noto Sans SC","Segoe UI",Roboto,sans-serif;border:1px solid rgba(0,0,0,0.06);user-select:none}
 .mmd-controls button{background:transparent;border:none;cursor:pointer;padding:8px 11px;border-radius:18px;color:#2d3436;font-size:14px;font-weight:600;line-height:1;display:flex;align-items:center;justify-content:center;transition:background 0.15s,color 0.15s;min-width:36px;min-height:36px}
 .mmd-controls button:hover{background:#f0f0f4}
 .mmd-controls button.active{background:#6c5ce7;color:#fff}
@@ -376,7 +376,7 @@ body.mmd-tts-on #search-fab{bottom:78px!important}
 .mmd-controls .rate:hover{background:#f0f0f4}
 .mmd-controls .progress{font-size:11px;color:#8a93a0;padding:0 6px;min-width:38px;text-align:center;font-variant-numeric:tabular-nums;letter-spacing:0.5px}
 .mmd-controls .skip{font-size:11px;font-weight:700;letter-spacing:0;padding:8px 8px;min-width:auto}
-.mmd-lang-toggle{position:fixed;top:16px;right:16px;z-index:10000;background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:22px;box-shadow:0 4px 16px rgba(0,0,0,0.12);padding:4px;display:flex;align-items:center;gap:0;font-family:-apple-system,"Noto Sans SC","Segoe UI",Roboto,sans-serif;border:1px solid rgba(0,0,0,0.06);user-select:none}
+.mmd-lang-toggle{position:fixed;top:16px;right:16px;z-index:10000;background:rgba(255,255,255,0.98);border-radius:22px;box-shadow:0 4px 16px rgba(0,0,0,0.12);padding:4px;display:flex;align-items:center;gap:0;font-family:-apple-system,"Noto Sans SC","Segoe UI",Roboto,sans-serif;border:1px solid rgba(0,0,0,0.06);user-select:none}
 .mmd-lang-toggle button{background:transparent;border:none;cursor:pointer;font-size:13px;font-weight:700;letter-spacing:0.5px;padding:6px 14px;border-radius:18px;color:#636e72;transition:background 0.15s,color 0.15s;line-height:1;min-width:38px}
 .mmd-lang-toggle button.active{background:#6c5ce7;color:#fff}
 .mmd-lang-toggle button:not(.active):hover{background:#f0f0f4;color:#2d3436}
