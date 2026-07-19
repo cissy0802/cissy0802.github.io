@@ -238,8 +238,16 @@
       const voice = pickVoice(lang);
       const rate = this.rate;
       const playing = () => (isStale ? !isStale() : true) && this.playing;
+      // iOS Safari's u.onend is famously unreliable — it sometimes never
+      // fires after a chunk completes. Poll speechSynthesis.speaking as a
+      // fallback so we always advance.
+      let pollTimer = null;
+      const clearPoll = () => { if (pollTimer) { clearInterval(pollTimer); pollTimer = null; } };
+      if (this._chunker) this._chunker.cancelled = true;
+      const chunker = this._chunker = { cancelled: false };
       const speakChunk = (i) => {
-        if (!playing()) return;
+        clearPoll();
+        if (chunker.cancelled || !playing()) return;
         if (i >= chunks.length) {
           this.idx++;
           this.speakCurrent();
@@ -249,15 +257,33 @@
         u.lang = lang;
         u.rate = rate;
         if (voice) u.voice = voice;
-        u.onend = () => { if (playing()) speakChunk(i + 1); };
+        let advanced = false;
+        const advance = () => {
+          if (advanced) return;
+          advanced = true;
+          clearPoll();
+          if (chunker.cancelled || !playing()) return;
+          speakChunk(i + 1);
+        };
+        u.onend = advance;
         u.onerror = (e) => {
           if (!playing()) return;
-          if (e.error && e.error !== 'interrupted' && e.error !== 'canceled') {
-            speakChunk(i + 1);
-          }
+          if (e.error && e.error !== 'interrupted' && e.error !== 'canceled') advance();
         };
         this.utter = u;
         speechSynthesis.speak(u);
+        // Fallback poll — if the engine stops speaking without firing onend
+        // (iOS bug), treat that as end after 400ms of continuous silence.
+        let stopStreak = 0;
+        pollTimer = setInterval(() => {
+          if (advanced) { clearPoll(); return; }
+          if (speechSynthesis.speaking || speechSynthesis.pending) {
+            stopStreak = 0;
+          } else {
+            stopStreak += 200;
+            if (stopStreak >= 400) advance();
+          }
+        }, 200);
       };
       speechSynthesis.cancel();
       speakChunk(0);
