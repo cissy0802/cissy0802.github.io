@@ -120,7 +120,7 @@
       const seg = this.segments[this.idx];
       document.querySelectorAll('.tts-active').forEach((el) => el.classList.remove('tts-active'));
       seg.classList.add('tts-active');
-      seg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      seg.scrollIntoView({ behavior: 'smooth', block: 'start' });
       updateProgress();
 
       // Tear down any in-flight audio/utterance from the previous segment
