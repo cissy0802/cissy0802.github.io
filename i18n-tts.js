@@ -122,16 +122,6 @@
       seg.classList.add('tts-active');
       seg.scrollIntoView({ behavior: 'smooth', block: 'start' });
       updateProgress();
-      // Slow follow-along scroll: gradually pan through the section as audio
-      // progresses so long sections don't leave the viewport frozen at the top.
-      // Recorded once per segment; user can override anytime by scrolling.
-      const rect = seg.getBoundingClientRect();
-      const segTopY = window.scrollY + rect.top - 80;
-      const overflow = Math.max(0, seg.offsetHeight - window.innerHeight * 0.6);
-      this._segScrollStart = segTopY;
-      this._segScrollEnd = segTopY + overflow;
-      this._followScroll = true;
-      this._lastAutoY = -1;
 
       // Tear down any in-flight audio/utterance from the previous segment
       this._cancelPlayback();
@@ -178,14 +168,6 @@
         audio.ontimeupdate = () => {
           if (isStale() || isScrubbing || audio._priming) return;
           updateSeek(audio.currentTime, durationOf(audio));
-          // Slow follow-along scroll
-          const dur = durationOf(audio);
-          if (this._followScroll && dur > 0 && this._segScrollEnd > this._segScrollStart) {
-            const frac = Math.min(1, audio.currentTime / dur);
-            const y = this._segScrollStart + (this._segScrollEnd - this._segScrollStart) * frac;
-            this._lastAutoY = y;
-            window.scrollTo(0, y);
-          }
         };
         this.audio = audio;
         audio.play().catch((e) => {
@@ -762,15 +744,6 @@ body.mmd-tts-on #search-fab{bottom:78px!important}
     }
     updateRateLabel();
     rebuildSegments();
-    // Disable auto-scroll follow if the user manually scrolls. Compare against
-    // the last y we set — anything > ~40px away is a real user gesture.
-    window.addEventListener('scroll', () => {
-      if (!tts._followScroll) return;
-      if (tts._lastAutoY < 0) return;
-      if (Math.abs(window.scrollY - tts._lastAutoY) > 40) {
-        tts._followScroll = false;
-      }
-    }, { passive: true });
     if ('speechSynthesis' in window && speechSynthesis.getVoices().length === 0) {
       speechSynthesis.addEventListener?.('voiceschanged', () => {}, { once: true });
     }
