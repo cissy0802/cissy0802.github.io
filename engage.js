@@ -28,7 +28,8 @@
   // Only run on the hub landing page.
   var path = window.location.pathname;
   var isLanding =
-    path === "/" || path === "/index.html" || path === "/index.en.html";
+    path === "/" || path === "/index.html" || path === "/index.en.html" ||
+    path === "/index.zh.html";
   if (!isLanding) return;
   if (document.getElementById("engage-widget")) return; // idempotent
 
