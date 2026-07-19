@@ -220,6 +220,8 @@
       updateSeek(t, dur);
     },
 
+    _chunker: null,
+
     speakWebSpeech(seg, isStale) {
       if (!('speechSynthesis' in window)) return;
       const text = seg.textContent.trim();
@@ -229,26 +231,36 @@
         this.speakCurrent();
         return;
       }
-      const u = new SpeechSynthesisUtterance(text);
-      u.lang = currentLang === 'zh' ? 'zh-CN' : 'en-US';
-      u.rate = this.rate;
-      const voice = pickVoice(u.lang);
-      if (voice) u.voice = voice;
-      u.onend = () => {
-        if ((isStale && isStale()) || !this.playing) return;
-        this.idx++;
-        this.speakCurrent();
-      };
-      u.onerror = (e) => {
-        if (isStale && isStale()) return;
-        if (e.error && e.error !== 'interrupted' && e.error !== 'canceled') {
+      // iOS Safari silently truncates utterances past ~200 chars. Chunk long
+      // text at sentence boundaries so every part is read on all platforms.
+      const chunks = chunkForSpeech(text, 160);
+      const lang = currentLang === 'zh' ? 'zh-CN' : 'en-US';
+      const voice = pickVoice(lang);
+      const rate = this.rate;
+      const playing = () => (isStale ? !isStale() : true) && this.playing;
+      const speakChunk = (i) => {
+        if (!playing()) return;
+        if (i >= chunks.length) {
           this.idx++;
-          if (this.playing) this.speakCurrent();
+          this.speakCurrent();
+          return;
         }
+        const u = new SpeechSynthesisUtterance(chunks[i]);
+        u.lang = lang;
+        u.rate = rate;
+        if (voice) u.voice = voice;
+        u.onend = () => { if (playing()) speakChunk(i + 1); };
+        u.onerror = (e) => {
+          if (!playing()) return;
+          if (e.error && e.error !== 'interrupted' && e.error !== 'canceled') {
+            speakChunk(i + 1);
+          }
+        };
+        this.utter = u;
+        speechSynthesis.speak(u);
       };
-      this.utter = u;
       speechSynthesis.cancel();
-      speechSynthesis.speak(u);
+      speakChunk(0);
     },
 
     _token: 0,
@@ -318,6 +330,43 @@
       }
     },
   };
+
+  // Chunk text at natural boundaries (sentence, then clause) so no piece
+  // exceeds `max` chars. Works around iOS Safari's ~200-char utterance
+  // truncation and generally reduces stalls on other engines too.
+  function chunkForSpeech(text, max) {
+    const out = [];
+    // Split on sentence enders first (keep punctuation with the previous piece)
+    const sentences = text.split(/(?<=[。！？!?\.])\s*/).filter(Boolean);
+    let buf = '';
+    const flush = () => { if (buf) { out.push(buf); buf = ''; } };
+    for (const s of sentences) {
+      if (s.length <= max) {
+        if ((buf + s).length <= max) buf += s;
+        else { flush(); buf = s; }
+      } else {
+        flush();
+        // Sentence too long — split further on commas / semi-colons
+        const parts = s.split(/(?<=[，,;；：:])\s*/).filter(Boolean);
+        let sub = '';
+        for (const p of parts) {
+          if (p.length > max) {
+            // Hard-cap: slice at max
+            if (sub) { out.push(sub); sub = ''; }
+            for (let i = 0; i < p.length; i += max) out.push(p.slice(i, i + max));
+          } else if ((sub + p).length <= max) {
+            sub += p;
+          } else {
+            out.push(sub);
+            sub = p;
+          }
+        }
+        if (sub) out.push(sub);
+      }
+    }
+    flush();
+    return out;
+  }
 
   function pickVoice(lang) {
     const voices = speechSynthesis.getVoices();
