@@ -341,10 +341,21 @@
         for (const c of el.children) if (BLOCK_TAGS.has(c.tagName)) return false;
         return true;
       };
+      // A div with block children may ALSO carry bare direct text (e.g.
+      // <div class="tryit"><div class="label">THIS WEEK</div>bare instruction
+      // text<br/>思考：...</div>). That bare text isn't covered by any child
+      // element, so we must still include the outer div. Check for any non-
+      // whitespace text node child.
+      const hasDirectText = (el) => {
+        for (const n of el.childNodes) {
+          if (n.nodeType === 3 && n.nodeValue.trim()) return true;
+        }
+        return false;
+      };
       const nodes = document.querySelectorAll('h1, h2, h3, h4, p, li, summary, div, span');
       tts.segments = Array.from(nodes).filter((el) => {
         if (!visible(el)) return false;
-        if (el.tagName === 'DIV' && !isLeafDiv(el)) return false;
+        if (el.tagName === 'DIV' && !isLeafDiv(el) && !hasDirectText(el)) return false;
         // Spans are only useful when they're direct children of a non-leaf
         // div (e.g. <div class="sec"><span class="label">[Header]</span>
         // <p>...</p></div>) — the label text isn't inside the <p> so nothing
