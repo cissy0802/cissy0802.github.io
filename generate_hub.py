@@ -146,8 +146,8 @@ CARDS = [
 # (accent_class, emoji, title_zh, subtitle_en, desc_zh, desc_en, href, badge_zh, badge_en)
 THINKING_CARDS = [
     ("thinker", "⚖️", "思想家圆桌辩论", "Thinker Roundtable",
-     "古今中外 100+ 位思想家就一个问题数轮辩论，立场表态、古文白话，最后 Claude / GPT / Gemini 三家 AI 收尾。",
-     "100+ thinkers across eras and traditions debate one question over several rounds — taking sides, classical texts glossed in plain language, closed by a three-way Claude / GPT / Gemini AI panel.",
+     "古今中外 150+ 位思想家就一个问题数轮辩论，立场表态、古文白话，最后 Claude / GPT / Gemini 三家 AI 收尾。",
+     "150+ thinkers across eras and traditions debate one question over several rounds — taking sides, classical texts glossed in plain language, closed by a three-way Claude / GPT / Gemini AI panel.",
      "/thinker-arena/", "圆桌", "Roundtable"),
 ]
 
