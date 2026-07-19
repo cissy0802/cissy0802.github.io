@@ -47,9 +47,9 @@ jobs:
           while IFS= read -r f; do
             if ! grep -q "comments\.js" "$f"; then
               if grep -qi "</body>" "$f"; then
-                sed -i 's|</body>|<script src="https://cissy0802.github.io/comments.js" defer></script>\n</body>|i' "$f"
+                sed -i 's|</body>|<script src="https://hub.cissychen.com/comments.js" defer></script>\n</body>|i' "$f"
               else
-                printf '\n<script src="https://cissy0802.github.io/comments.js" defer></script>\n' >> "$f"
+                printf '\n<script src="https://hub.cissychen.com/comments.js" defer></script>\n' >> "$f"
               fi
               changed=$((changed+1))
               echo "  + $f"

@@ -35,10 +35,10 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet index.html index.en.html index.zh.html; then
-            echo "No changes to index.html / index.en.html / index.zh.html."
+          if git diff --quiet index.html index.en.html index.zh.html sitemap.xml; then
+            echo "No changes to index pages / sitemap."
             exit 0
           fi
-          git add index.html index.en.html index.zh.html
+          git add index.html index.en.html index.zh.html sitemap.xml
           git commit -m "Auto-refresh hub: update last-commit dates (zh + en)"
           git push

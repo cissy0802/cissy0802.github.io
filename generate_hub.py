@@ -193,10 +193,16 @@ CSS_VARS = {
     "research":   ("#4cc9f0", "linear-gradient(90deg,#4cc9f0,#7b61ff)"),
 }
 
+SITE_ORIGIN = "https://hub.cissychen.com"
+FAVICON = ("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 "
+           "viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐱</text></svg>")
+
 # Per-language chrome strings.
 I18N = {
     "zh": {
         "html_lang": "zh-CN",
+        "fname": "index.zh.html",
+        "desc": "30 个主题站的 AI 驱动第二大脑：思维模型、哲学、神经科学、AI 与系统设计、健康长寿、育儿、投资、艺术、历史——每日自动更新，中英双语 + TTS 朗读。",
         "tagline": "每日学习 · 跨界思考 · 超级个体",
         "search_prompt": '🔍 按 <kbd>/</kbd> 或点击右下角搜索全站',
         "arrow": "进入 →",
@@ -207,6 +213,8 @@ I18N = {
     },
     "en": {
         "html_lang": "en",
+        "fname": "index.en.html",
+        "desc": "An AI-driven second brain of 30 topic sites — mental models, philosophy, neuroscience, AI & system design, health, parenting, investing, art, history — updated daily, bilingual with TTS.",
         "tagline": "Daily learning · Cross-domain thinking · Super-individual",
         "search_prompt": '🔍 Press <kbd>/</kbd> or click the search button (bottom right) to search the whole site',
         "arrow": "enter →",
@@ -360,6 +368,17 @@ def render_page(lang: str, grid: str, today: str) -> str:
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BigCat's Learning Hub</title>
+<meta name="description" content="{t['desc']}">
+<link rel="canonical" href="{SITE_ORIGIN}/{t['fname']}">
+<link rel="alternate" hreflang="zh" href="{SITE_ORIGIN}/index.zh.html">
+<link rel="alternate" hreflang="en" href="{SITE_ORIGIN}/index.en.html">
+<link rel="alternate" hreflang="x-default" href="{SITE_ORIGIN}/index.en.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BigCat's Learning Hub">
+<meta property="og:title" content="BigCat's Learning Hub">
+<meta property="og:description" content="{t['desc']}">
+<meta property="og:url" content="{SITE_ORIGIN}/{t['fname']}">
+<link rel="icon" href="{FAVICON}">
 <style>
 *{{margin:0;padding:0;box-sizing:border-box}}
 body{{font-family:-apple-system,"SF Pro Display","Noto Serif SC","Songti SC",sans-serif;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0a0e1a 100%);color:#e4e6eb;line-height:1.7;min-height:100vh}}
@@ -485,6 +504,30 @@ def main():
 """
     Path("index.html").write_text(stub, encoding="utf-8")
     print(f"Written index.html (English-default redirect stub, {len(stub)} bytes)")
+
+    # sitemap.xml — hub pages + every card's zh/en landing. Content pages get
+    # discovered from the landings; regenerating here keeps the map in lockstep
+    # with the card registry (no separate list to forget).
+    urls = [
+        f"{SITE_ORIGIN}/index.en.html",
+        f"{SITE_ORIGIN}/index.zh.html",
+        f"{SITE_ORIGIN}/blog-pipeline.html",
+        f"{SITE_ORIGIN}/blog-pipeline.en.html",
+    ]
+    for c in THINKING_CARDS + RESEARCH_CARDS:
+        href = c[6]
+        if href.startswith("/"):
+            urls.append(SITE_ORIGIN + href)
+            urls.append(SITE_ORIGIN + href + "index.en.html")
+    for c in CARDS:
+        urls.append(f"{SITE_ORIGIN}/{c[6]}/")
+        urls.append(f"{SITE_ORIGIN}/{c[6]}/index.en.html")
+    body = "\n".join(f"  <url><loc>{u}</loc></url>" for u in urls)
+    sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+               '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+               f"{body}\n</urlset>\n")
+    Path("sitemap.xml").write_text(sitemap, encoding="utf-8")
+    print(f"Written sitemap.xml ({len(urls)} URLs)")
 
 
 if __name__ == "__main__":

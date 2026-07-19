@@ -25,12 +25,14 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MODERATE = false; // true => new comments start hidden (approved=0) until you approve
 const RATE_WINDOW_MS = 60000; // per-IP window
 const RATE_MAX = 3; // max comments per IP per window
+const VOTE_RATE_WINDOW_MS = 60000; // per-IP window for votes
+const VOTE_RATE_MAX = 30; // generous for a human on the ideas list, fatal for a script
 const BODY_MAX = 2000;
 const NAME_MAX = 40;
 const IP_SALT = "bigcat-comments-v1"; // just so stored hashes aren't raw IPs
 
 // Double opt-in (only active once RESEND_API_KEY is bound as a secret).
-const SITE_BASE = "https://cissy0802.github.io"; // where /confirm.html lives
+const SITE_BASE = "https://hub.cissychen.com"; // where /confirm.html lives
 const FROM_EMAIL = "BigCat <hi@cissychen.com>"; // needs cissychen.com verified in Resend
 
 function cors(origin) {
@@ -245,11 +247,27 @@ export default {
         if (!poll || !choice || !voter) {
           return json({ ok: false, error: "missing_fields" }, 400, origin);
         }
-        await env.DB.prepare(
-          "INSERT INTO votes (poll, choice, voter, ts) VALUES (?1, ?2, ?3, ?4) " +
-            "ON CONFLICT(poll, voter) DO UPDATE SET choice = ?2, ts = ?4"
+
+        // Per-IP rate limit — `voter` is client-supplied, so without this an
+        // attacker can stuff any poll (incl. thinker-arena topic ranking) with
+        // unlimited fresh voter ids. 30/min is roomy for a human working down
+        // the ideas list, fatal for a scripted loop.
+        const vIp = request.headers.get("CF-Connecting-IP") || "0.0.0.0";
+        const vIphash = await hashIp(vIp);
+        const vRl = await env.DB.prepare(
+          "SELECT COUNT(*) AS n FROM votes WHERE iphash = ? AND ts > ?"
         )
-          .bind(poll, choice, voter, Date.now())
+          .bind(vIphash, Date.now() - VOTE_RATE_WINDOW_MS)
+          .first();
+        if (vRl && vRl.n >= VOTE_RATE_MAX) {
+          return json({ ok: false, error: "rate_limited" }, 429, origin);
+        }
+
+        await env.DB.prepare(
+          "INSERT INTO votes (poll, choice, voter, ts, iphash) VALUES (?1, ?2, ?3, ?4, ?5) " +
+            "ON CONFLICT(poll, voter) DO UPDATE SET choice = ?2, ts = ?4, iphash = ?5"
+        )
+          .bind(poll, choice, voter, Date.now(), vIphash)
           .run();
         const tally = await tallyPoll(env, poll);
         return json({ ok: true, poll, choice, tally }, 200, origin);
