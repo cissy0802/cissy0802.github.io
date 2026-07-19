@@ -200,18 +200,20 @@ I18N = {
         "tagline": "每日学习 · 跨界思考 · 超级个体",
         "search_prompt": '🔍 按 <kbd>/</kbd> 或点击右下角搜索全站',
         "arrow": "进入 →",
-        "toggle": '<a href="index.html" class="active">中文</a>\n  <a href="index.en.html">EN</a>',
+        "toggle": '<a href="index.zh.html" class="active">中文</a>\n  <a href="index.en.html">EN</a>',
         "blog": '<a href="blog-pipeline.html">🛠 这个 Hub 是怎么搭的</a>',
         "about": '关于作者：BigCat，Staff 技术 / AI 工程师',
+        "copyright": '© 2026 BigCat（Cissy Chen）· 保留所有权利 All Rights Reserved',
     },
     "en": {
         "html_lang": "en",
         "tagline": "Daily learning · Cross-domain thinking · Super-individual",
         "search_prompt": '🔍 Press <kbd>/</kbd> or click the search button (bottom right) to search the whole site',
         "arrow": "enter →",
-        "toggle": '<a href="index.html">中文</a>\n  <a href="index.en.html" class="active">EN</a>',
+        "toggle": '<a href="index.zh.html">中文</a>\n  <a href="index.en.html" class="active">EN</a>',
         "blog": '<a href="blog-pipeline.en.html">🛠 how this hub is built</a>',
         "about": 'About the builder: BigCat, staff tech / AI engineer',
+        "copyright": '© 2026 BigCat (Cissy Chen) · All Rights Reserved',
     },
 }
 
@@ -422,7 +424,8 @@ footer a:hover{{color:#00d4ff}}
 <footer>
   {t['blog']}<br>
   {t['about']}<br>
-  BigCat · refreshed {today} · <a href="https://github.com/cissy0802">GitHub</a> · <a href="mailto:cissy@cissychen.com">cissy@cissychen.com</a>
+  BigCat · refreshed {today} · <a href="https://github.com/cissy0802">GitHub</a> · <a href="mailto:cissy@cissychen.com">cissy@cissychen.com</a><br>
+  {t['copyright']}
 </footer>
 </div>
 <script src="/search.js" defer></script>
@@ -444,7 +447,7 @@ def main():
 
     today = datetime.date.today().strftime("%Y-%m-%d")
 
-    for lang, fname in (("zh", "index.html"), ("en", "index.en.html")):
+    for lang, fname in (("zh", "index.zh.html"), ("en", "index.en.html")):
         def cards_for(sec):
             return [card_html(c, dates[c[6]], lang) for c in CARDS if c[7] == sec]
         thinking_cards = "\n\n".join(thinking_card_html(c, lang) for c in THINKING_CARDS)
@@ -466,6 +469,22 @@ def main():
         html = render_page(lang, grid, today)
         Path(fname).write_text(html, encoding="utf-8")
         print(f"Written {fname} ({len(html)} bytes)")
+
+    # index.html = English-default redirect stub (.com visitors land on English;
+    # the Chinese hub lives at index.zh.html — the toggle and the shared ← Hub
+    # button point there). data-pagefind-ignore keeps the stub out of site search.
+    stub = """<!doctype html>
+<html lang="en" data-pagefind-ignore>
+<meta charset="utf-8">
+<title>BigCat's Learning Hub</title>
+<link rel="canonical" href="index.en.html">
+<meta http-equiv="refresh" content="0;url=index.en.html">
+<script>location.replace('index.en.html'+location.search+location.hash)</script>
+<p>Redirecting to <a href="index.en.html">BigCat's Learning Hub</a>…</p>
+</html>
+"""
+    Path("index.html").write_text(stub, encoding="utf-8")
+    print(f"Written index.html (English-default redirect stub, {len(stub)} bytes)")
 
 
 if __name__ == "__main__":
