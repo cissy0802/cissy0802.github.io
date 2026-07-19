@@ -4,7 +4,12 @@
  */
 (function () {
   if (document.getElementById("search-fab")) return; // idempotent
-  const HUB = "https://cissy0802.github.io";
+  // Pagefind assets/index are loaded SAME-ORIGIN (root-relative). Must not be a
+  // hardcoded absolute host: once the hub serves from hub.cissychen.com, an
+  // absolute cissy0802.github.io URL becomes a cross-origin fetch that 301s and
+  // gets CORS-blocked (GitHub Pages sends no ACAO header) — which silently kills
+  // search. "" keeps every /pagefind/ request on whatever domain serves the page.
+  const HUB = "";
 
   // Detect page language so the search overlay matches it (EN pages must not open in Chinese).
   // Priority: <html lang>, then .en.html filename, then ?lang=en.

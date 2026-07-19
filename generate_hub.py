@@ -146,9 +146,9 @@ CARDS = [
 # (accent_class, emoji, title_zh, subtitle_en, desc_zh, desc_en, href, badge_zh, badge_en)
 THINKING_CARDS = [
     ("thinker", "⚖️", "思想家圆桌辩论", "Thinker Roundtable",
-     "古今中外 100+ 位思想家就一个问题数轮辩论，立场表态、古文白话，最后 Claude / GPT / Gemini 三家 AI 收尾。",
-     "100+ thinkers across eras and traditions debate one question over several rounds — taking sides, classical texts glossed in plain language, closed by a three-way Claude / GPT / Gemini AI panel.",
-     "https://cissy0802.github.io/thinker-arena/", "圆桌", "Roundtable"),
+     "古今中外 150+ 位思想家就一个问题数轮辩论，立场表态、古文白话，最后 Claude / GPT / Gemini 三家 AI 收尾。",
+     "150+ thinkers across eras and traditions debate one question over several rounds — taking sides, classical texts glossed in plain language, closed by a three-way Claude / GPT / Gemini AI panel.",
+     "/thinker-arena/", "圆桌", "Roundtable"),
 ]
 
 # Deep Research —— 多 agent 调研 + 对抗式核查的研究报告站(独立静态站,非每日 routine)。
@@ -157,7 +157,7 @@ RESEARCH_CARDS = [
     ("research", "🔬", "深度研究", "Deep Research",
      "多 agent 调研 + 对抗式事实核查的研究报告——每篇易读版 + 深入版。",
      "Multi-agent research with adversarial fact-checking — plain and deep editions.",
-     "https://cissy0802.github.io/deep-research/", "研究", "Research"),
+     "/deep-research/", "研究", "Research"),
 ]
 
 CSS_VARS = {
@@ -200,18 +200,20 @@ I18N = {
         "tagline": "每日学习 · 跨界思考 · 超级个体",
         "search_prompt": '🔍 按 <kbd>/</kbd> 或点击右下角搜索全站',
         "arrow": "进入 →",
-        "toggle": '<a href="index.html" class="active">中文</a>\n  <a href="index.en.html">EN</a>',
+        "toggle": '<a href="index.zh.html" class="active">中文</a>\n  <a href="index.en.html">EN</a>',
         "blog": '<a href="blog-pipeline.html">🛠 这个 Hub 是怎么搭的</a>',
         "about": '关于作者：BigCat，Staff 技术 / AI 工程师',
+        "copyright": '© 2026 BigCat（Cissy Chen）· 保留所有权利 All Rights Reserved',
     },
     "en": {
         "html_lang": "en",
         "tagline": "Daily learning · Cross-domain thinking · Super-individual",
         "search_prompt": '🔍 Press <kbd>/</kbd> or click the search button (bottom right) to search the whole site',
         "arrow": "enter →",
-        "toggle": '<a href="index.html">中文</a>\n  <a href="index.en.html" class="active">EN</a>',
+        "toggle": '<a href="index.zh.html">中文</a>\n  <a href="index.en.html" class="active">EN</a>',
         "blog": '<a href="blog-pipeline.en.html">🛠 how this hub is built</a>',
         "about": 'About the builder: BigCat, staff tech / AI engineer',
+        "copyright": '© 2026 BigCat (Cissy Chen) · All Rights Reserved',
     },
 }
 
@@ -293,7 +295,7 @@ def _amp(s: str) -> str:
 def card_html(c, meta, lang: str) -> str:
     accent_class, emoji, title_zh, subtitle_en, desc_zh, desc_en, repo, _section = c
     date_str, done = meta
-    base = f"https://cissy0802.github.io/{repo}/"
+    base = f"/{repo}/"
     if lang == "zh":
         href = base
         title_row = f'<span class="title">{title_zh}</span><span class="subtitle-en">{_amp(subtitle_en)}</span>'
@@ -422,7 +424,8 @@ footer a:hover{{color:#00d4ff}}
 <footer>
   {t['blog']}<br>
   {t['about']}<br>
-  BigCat · refreshed {today} · <a href="https://github.com/cissy0802">GitHub</a> · <a href="mailto:cissy@cissychen.com">cissy@cissychen.com</a>
+  BigCat · refreshed {today} · <a href="https://github.com/cissy0802">GitHub</a> · <a href="mailto:cissy@cissychen.com">cissy@cissychen.com</a><br>
+  {t['copyright']}
 </footer>
 </div>
 <script src="/search.js" defer></script>
@@ -444,7 +447,7 @@ def main():
 
     today = datetime.date.today().strftime("%Y-%m-%d")
 
-    for lang, fname in (("zh", "index.html"), ("en", "index.en.html")):
+    for lang, fname in (("zh", "index.zh.html"), ("en", "index.en.html")):
         def cards_for(sec):
             return [card_html(c, dates[c[6]], lang) for c in CARDS if c[7] == sec]
         thinking_cards = "\n\n".join(thinking_card_html(c, lang) for c in THINKING_CARDS)
@@ -466,6 +469,22 @@ def main():
         html = render_page(lang, grid, today)
         Path(fname).write_text(html, encoding="utf-8")
         print(f"Written {fname} ({len(html)} bytes)")
+
+    # index.html = English-default redirect stub (.com visitors land on English;
+    # the Chinese hub lives at index.zh.html — the toggle and the shared ← Hub
+    # button point there). data-pagefind-ignore keeps the stub out of site search.
+    stub = """<!doctype html>
+<html lang="en" data-pagefind-ignore>
+<meta charset="utf-8">
+<title>BigCat's Learning Hub</title>
+<link rel="canonical" href="index.en.html">
+<meta http-equiv="refresh" content="0;url=index.en.html">
+<script>location.replace('index.en.html'+location.search+location.hash)</script>
+<p>Redirecting to <a href="index.en.html">BigCat's Learning Hub</a>…</p>
+</html>
+"""
+    Path("index.html").write_text(stub, encoding="utf-8")
+    print(f"Written index.html (English-default redirect stub, {len(stub)} bytes)")
 
 
 if __name__ == "__main__":

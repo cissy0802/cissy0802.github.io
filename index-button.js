@@ -20,9 +20,10 @@
   // Priority: <html lang> attribute, then URL filename (.en.html).
   const htmlLang = (document.documentElement.lang || "").toLowerCase();
   const isEn = htmlLang.startsWith("en") || /\.en\.html$/i.test(last);
-  const hubHref = isEn
-    ? "https://cissy0802.github.io/index.en.html"
-    : "https://cissy0802.github.io/";
+  // Root-relative so it follows the serving domain (hub.cissychen.com). The zh
+  // hub lives at index.zh.html now that the bare index.html is an English-default
+  // redirect stub; point Chinese readers there so they don't bounce to English.
+  const hubHref = isEn ? "/index.en.html" : "/index.zh.html";
   const indexHref = isEn
     ? "/" + repo + "/index.en.html"
     : "/" + repo + "/";
@@ -83,13 +84,13 @@
   // 1) ← Hub button (left:14px).
   const existingHub = findExistingHubBtn();
   if (existingHub) {
-    // Self-heal: on an EN page, a hardcoded ← Hub pointing at the zh hub root
-    // would send the reader to the Chinese hub. Correct it to the EN hub.
-    if (isEn) {
-      const h = existingHub.getAttribute("href") || "";
-      if (/^https?:\/\/cissy0802\.github\.io\/?$/.test(h) || h === "/") {
-        existingHub.setAttribute("href", hubHref);
-      }
+    // Self-heal: a hardcoded ← Hub pointing at the old bare hub root ("/" or the
+    // github.io root) now lands on the English redirect stub. Repoint it at the
+    // language-correct hub (index.zh.html / index.en.html) in BOTH languages so
+    // readers don't get bounced out of their language.
+    const h = existingHub.getAttribute("href") || "";
+    if (/^https?:\/\/cissy0802\.github\.io\/?$/.test(h) || h === "/") {
+      existingHub.setAttribute("href", hubHref);
     }
   } else {
     root.appendChild(makeBtn("bigcat-hub-btn", hubHref, "← Hub", 14));
