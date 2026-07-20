@@ -208,6 +208,7 @@ I18N = {
         "arrow": "进入 →",
         "toggle": '<a href="index.zh.html" class="active">中文</a>\n  <a href="index.en.html">EN</a>',
         "blog": '<a href="blog-pipeline.html">🛠 这个 Hub 是怎么搭的</a>',
+        "synthesis": '<a href="synthesis-entropy.html">🔗 跨站合成 Syn 1：熵——一个词，五个房间</a>',
         "about": '关于作者：BigCat，Staff 技术 / AI 工程师',
         "copyright": '© 2026 BigCat（Cissy Chen）· 保留所有权利 All Rights Reserved',
     },
@@ -220,6 +221,7 @@ I18N = {
         "arrow": "enter →",
         "toggle": '<a href="index.zh.html">中文</a>\n  <a href="index.en.html" class="active">EN</a>',
         "blog": '<a href="blog-pipeline.en.html">🛠 how this hub is built</a>',
+        "synthesis": '<a href="synthesis-entropy.en.html">🔗 Synthesis Syn 1: Entropy — One Word, Five Rooms</a>',
         "about": 'About the builder: BigCat, staff tech / AI engineer',
         "copyright": '© 2026 BigCat (Cissy Chen) · All Rights Reserved',
     },
@@ -442,6 +444,7 @@ footer a:hover{{color:#00d4ff}}
 
 <footer>
   {t['blog']}<br>
+  {t['synthesis']}<br>
   {t['about']}<br>
   BigCat · refreshed {today} · <a href="https://github.com/cissy0802">GitHub</a> · <a href="mailto:cissy@cissychen.com">cissy@cissychen.com</a><br>
   {t['copyright']}
@@ -513,6 +516,8 @@ def main():
         f"{SITE_ORIGIN}/index.zh.html",
         f"{SITE_ORIGIN}/blog-pipeline.html",
         f"{SITE_ORIGIN}/blog-pipeline.en.html",
+        f"{SITE_ORIGIN}/synthesis-entropy.html",
+        f"{SITE_ORIGIN}/synthesis-entropy.en.html",
     ]
     for c in THINKING_CARDS + RESEARCH_CARDS:
         href = c[6]
