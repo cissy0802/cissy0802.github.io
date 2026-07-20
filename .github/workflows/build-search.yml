@@ -36,8 +36,14 @@ jobs:
             git clone --depth 1 --quiet "https://github.com/cissy0802/$repo" "_src/$repo"
             rm -rf "_src/$repo/.git" "_src/$repo/.github"
           done
-          # Also include hub's own index (for searching hub content)
-          # — skip; hub landing is just nav, not content.
+          # Hub landing pages stay out — they're just nav, not content.
+          # But the hub's own hand-written long-forms (blog-pipeline, the
+          # synthesis-* essays) ARE content and were previously unsearchable.
+          # They're served from the domain root, so they must sit at _src root
+          # for Pagefind to emit correct result URLs (_src/foo.html -> /foo.html;
+          # a subdirectory here would produce URLs that 404).
+          cp blog-pipeline.html blog-pipeline.en.html _src/
+          cp synthesis-*.html _src/
 
       - name: Add Thinking Hub (thinker-arena) debates
         run: |
