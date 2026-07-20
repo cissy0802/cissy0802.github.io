@@ -49,7 +49,7 @@ footer a{color:#7b61ff}
 </header>
 
 <div class="lede">
-BigCat's Learning Hub is a family of static sites I built for my own learning: mental models, AI/ML, system design, CS papers, philosophy, Buddhism, parenting, investing — 20+ subjects, each living in its own GitHub Pages repository. They update themselves daily, ship in both Chinese and English, and come with site-wide search, login-free comments, email subscribe/polls, and text-to-speech — while day-to-day operation requires almost none of my time. This post walks through how the whole pipeline is put together.
+BigCat's Learning Hub is a family of static sites I built for my own learning: mental models, AI/ML, system design, CS papers, philosophy, Buddhism, parenting, investing — thirty-odd subjects, each living in its own GitHub Pages repository. They update themselves daily, ship in both Chinese and English, and come with site-wide search, login-free comments, email subscribe/polls, and text-to-speech — while day-to-day operation requires almost none of my time. This post walks through how the whole pipeline is put together.
 </div>
 
 <h2>0. What it looks like</h2>
@@ -139,12 +139,13 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <p>Besides the HTML pages, each content repo contains exactly four things, each with one job.</p>
 
 <h3>TOPICS.md — the human-curated roadmap (read-only to the bot)</h3>
-<p>The only part of the system that needs my ongoing attention. It lists, in order, every topic the site will cover; several sites also state a hard cap (mental models is capped at issue 68). The key design decision is <strong>one-way authority</strong>: the routine may only read it — <code>publish.sh</code> flatly rejects any commit that modifies TOPICS.md. When topics run out, the routine is not allowed to extend the roadmap itself; it can only send me a push notification asking for a refill.</p>
+<p>The only part of the system that needs my ongoing attention. It lists, in order, every topic the site will cover — <strong>the length of that list is itself the cap</strong>: write it out and the site graduates (see §8). The key design decision is <strong>one-way authority</strong>: the routine may only read it — <code>publish.sh</code> flatly rejects any commit that modifies TOPICS.md. When topics run out, the routine is not allowed to extend the roadmap itself; it can only send me a push notification asking for a refill.</p>
 <p>Drawing the line here is what keeps the whole system on course: <strong>the AI decides how to write; the human decides what gets written.</strong></p>
 
 <h3>CLAUDE.md — the writing spec</h3>
 <p>Sites that need precise control over layout and depth (system design, paper deep-reads, daily book deep-reads) carry a detailed execution spec: target reader (senior engineers), length band, required section structure (the paper site's nine-part skeleton: one-liner → glossary → context → problem &amp; motivation → core idea → key results → impact → limitations &amp; critiques → takeaways), color palette (each site has its own visual signature — system design is dark cyan, papers are amber-copper), and honesty requirements — uncertain quotes must be marked as paraphrase, and limitations and counterarguments must be written.</p>
 <p>The most useful trick in these specs: <strong>anchor on a published page</strong>. The prompt points at a specific article ("match read1 for depth, format, and voice") and says: do it like that. A concrete exemplar is far more stable than any prose description of style.</p>
+<p>It later turned out to have a more important second identity: <strong>CLAUDE.md is the control plane for changing a routine's behavior without touching its prompt</strong>. Every cloud run auto-loads the repo-root CLAUDE.md, and it <strong>layers on top of the prompt</strong> — so to change one rule I don't have to edit that long, self-contained prompt (and editing trigger config carries the wholesale job_config replacement risk, see §8); a line in CLAUDE.md is enough. I verified this channel with a probe: I dropped "at the start of the run, write a probe file and push it" into one repo's CLAUDE.md, pushed only that repo, and fired the trigger manually — the probe file duly appeared on the remote, and the routine still wrote that day's page as usual.</p>
 
 <h3>.maxchars — the length ratchet</h3>
 <p>A one-line file containing a single number (3500/4000/5000). <code>publish.sh</code> counts the CJK characters of every new page and enforces this ceiling. This one was earned the hard way: LLM-generated series exhibit a "length ratchet" — each article comes out slightly longer than the last, because the model anchors on the most recent pages, and a few dozen days later the pages have bloated out of control. The fix clamps from both sides: a target band in the prompt, a hard ceiling at the gate.</p>
@@ -164,7 +165,7 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <p>That last convention is no small thing — <strong>the commit message itself becomes a machine-readable publishing record</strong>; downstream completion detection and hub badges all work by parsing it.</p>
 
 <h2>3. The generation engine: cloud Claude routines</h2>
-<p>Content is produced by scheduled agents ("routines") running on claude.ai — currently 20 triggers. Each trigger's job consists of:</p>
+<p>Content is produced by scheduled agents ("routines") running on claude.ai — currently 24 content triggers. Each trigger's job consists of:</p>
 <ul>
 <li><strong>A cron expression</strong>: all routines are staggered across 10:00–16:00 UTC at roughly 15-minute intervals so they never run at once</li>
 <li><strong>A mounted repository</strong>: the working directory is the corresponding GitHub repo — the agent can ls, read old pages, and git push</li>
@@ -194,8 +195,8 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <p>Comments, search, bilingual TTS, navigation buttons, and the lightbox are all provided by shared scripts hosted in the hub repo (<code>comments.js</code>, <code>search.js</code>, <code>i18n-tts.js</code>, <code>index-button.js</code>, <code>lightbox.js</code>). Content pages are <strong>forbidden</strong> from hard-coding these script tags (publish.sh blocks it); instead, an injection Action scans the HTML after each push, adds whatever is missing, and auto-commits as <code>Auto-inject shared scripts</code>.</p>
 <p>Why injection instead of baking the tags into the generation template? Because <strong>infrastructure must be able to evolve independently of content</strong>. With 20+ repos and hundreds of pages, script tags hard-wired into templates would mean retraining 20 prompts and re-touching hundreds of pages just to upgrade the search script. Under injection, you change the shared script once and the whole fleet picks it up on the next pass — and old pages get retrofitted for free.</p>
 
-<h3>Azure TTS bake (mental-models)</h3>
-<p>Every section of the mental-models site is click-to-listen, and the audio is pre-baked:</p>
+<h3>Azure TTS bake (pre-baked audio)</h3>
+<p>On these sites every section is click-to-listen, with pre-baked audio (it started on mental-models alone and has since spread to a dozen-plus sites):</p>
 <ul>
 <li>A push triggers <code>bake-tts.yml</code> → runs <code>bake-tts.py</code></li>
 <li>Text is extracted per <code>&lt;h2&gt;</code> section → <strong>hashed</strong> → check whether <code>audio/zh/&lt;hash&gt;.mp3</code> already exists → only call the Azure Speech REST API when it doesn't</li>
@@ -212,7 +213,7 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <p>The dynamic parts come from the GitHub REST API:</p>
 <ul>
 <li>For each repo, fetch the last 50 commits and find the most recent one that <strong>actually added a content page</strong> (filename regex matching <code>-dayN/-weekN/-readN.html</code>), and render that date on the card — so the badge reflects "content last updated," not a "last commit" date polluted by the bot's injection commits.</li>
-<li><strong>Completion detection</strong>: the script holds a CAPS table (which site caps at which issue), parses the maximum <code>Add #N</code> from commit messages, and when a site reaches its cap, swaps the date for a "✓ Completed" badge. This is the downstream payoff of the commit-message convention — no one has to mark a site finished; each site announces its own graduation.</li>
+<li><strong>Completion detection</strong>: there is no static cap table — the script reads each repo's <code>TOPICS.md</code> for its highest number (<code>roadmap_max</code>), parses the maximum published <code>Add #N</code> from commit messages, and swaps the date for a "✓ Completed" badge once the two meet. <strong>The cap therefore floats</strong>: append a few new topics to TOPICS and the badge disappears by itself. This is the downstream payoff of the commit-message convention — no one has to mark a site finished; each site announces its own graduation.</li>
 </ul>
 <p>Timing-wise, this Action runs about 45 minutes after all content routines, so the day's new pages always make it to the landing page.</p>
 
@@ -230,7 +231,7 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <li><strong>Voting / polls</strong> <code>POST /vote</code>, <code>GET /poll</code>, <code>GET /votes-net</code>: one vote per person per question (changeable); the front-end <code>engage.js</code> renders live tallies.</li>
 <li><strong>Login-free comments</strong> <code>GET /comments</code>, <code>POST /comment</code>: <code>comments.js</code> provides site-wide login-free comments — visitors don't need a GitHub account to comment.</li>
 </ul>
-<p>Data lands in three D1 tables: <code>subscriptions</code> (email+list as primary key, with a confirmed flag and language), <code>votes</code> (poll+voter as primary key, deduped by construction), and <code>comments</code> (page path, name, body, moderation flag, salted iphash). The front end is just two scripts — <code>engage.js</code> (subscribe box + poll) and <code>comments.js</code> — injected site-wide like the other shared JS; the Worker's CORS is locked to <code>cissy0802.github.io</code>.</p>
+<p>Data lands in three D1 tables: <code>subscriptions</code> (email+list as primary key, with a confirmed flag and language), <code>votes</code> (poll+voter as primary key, deduped by construction), and <code>comments</code> (page path, name, body, moderation flag, salted iphash). The front end is just two scripts — <code>engage.js</code> (subscribe box + poll) and <code>comments.js</code> — injected site-wide like the other shared JS; the Worker's CORS admits only whitelisted origins (now the custom domain <code>hub.cissychen.com</code>, plus the pre-migration <code>cissy0802.github.io</code>).</p>
 
 <h3>The cost of login-free: three anti-spam defenses</h3>
 <p>No login means a low barrier — but it also means <strong>losing the account gate that was the natural anti-spam wall</strong>: anyone can post, bots especially. So the self-hosted version builds in three defenses: a <strong>honeypot field</strong> (a hidden <code>website</code> input a human won't fill and a bot will — filled means silently dropped), <strong>per-IP rate limiting</strong> (max 3 per 60s, keyed on a salted hash of the IP, never the raw address), and optional <strong>Cloudflare Turnstile</strong> (once a secret is bound, the Worker auto-enforces it — turn it on if spam appears). Comment bodies are always rendered with <code>textContent</code>, never as HTML, closing off XSS at the root.</p>
@@ -254,7 +255,7 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <p>On a standard site the human maintains TOPICS.md and the AI writes to it; this site <strong>hands topic selection to the audience</strong>. It's also client-rendered: each debate is a <code>debates/*.json</code> rendered into a chat stream by browser scripts (which is why site-wide search needs the snapshot SSR from §5 to crawl it at all).</p>
 <p>The hard part is <strong>a wall</strong>: the cloud routine runs in a container behind an egress proxy that doesn't allow the self-hosted backend (hitting <code>bigcat-engage…workers.dev</code> returns 403 outright), so <strong>the routine can't read votes or comments itself</strong>. The fix is <strong>a bridge</strong>: a GitHub Action (its runner isn't behind that wall) writes the backend's net votes and comment snapshots back into the repo's <code>ideas.json</code> / <code>audience_inbox.json</code> every 12 hours. The routine then reads repo files only and has the backend data — without ever connecting to the backend.</p>
 <p>That closes into an <strong>audience feedback loop</strong>: audience votes/proposals → Worker + D1 → the Action bridges every 12h → repo JSON → the routine opens a debate on the <strong>highest-net-vote</strong> topic (or a human-pinned queue), and while wrapping up mines audience comments for new candidates. <strong>The audience becomes part of the roadmap</strong> — the very authority the standard sites deliberately withhold from the AI is here handed safely back to a crowd.</p>
-<p>Generation is heavier too: pick 6–10 thinkers from a 100+ persona registry (run <code>diversity_report.py</code> first and cast by the aggregate distribution — explicitly <strong>fighting the overfit of "copy the shape of recent debates"</strong>), then the routine writes three bilingual rounds itself and closes with a three-AI panel. Even the character-encyclopedia entries must be written "blind to this debate," so a profile never gets polluted by the topic it happened to be cast for.</p>
+<p>Generation is heavier too: pick 6–10 thinkers from a 150+ persona registry (run <code>diversity_report.py</code> first and cast by the aggregate distribution — explicitly <strong>fighting the overfit of "copy the shape of recent debates"</strong>), then the routine writes three bilingual rounds itself and closes with a three-AI panel. Even the character-encyclopedia entries must be written "blind to this debate," so a profile never gets polluted by the topic it happened to be cast for.</p>
 
 <h3>Deep Research — multi-agent investigation + adversarial fact-checking</h3>
 <p>A standard site has one routine write one page; this site's content is the output of a <strong>multi-agent research pipeline</strong>. Every <strong>load-bearing claim</strong> is challenged by <strong>3 independent verifier agents</strong> against primary sources (adversarial fact-checking) — a claim that doesn't survive either gets more evidence or gets cut.</p>
@@ -265,15 +266,21 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <p>Getting it running is the easy part; running unattended for the long haul is the hard part. The lines of defense:</p>
 
 <h3>Caps + auto-pause</h3>
-<p>Every site's roadmap is finite — when the material is learned, the site should graduate, not pad itself for the sake of a daily streak. The cap is recorded in three places: TOPICS.md (visible to the routine), the hub's CAPS table (badges), and a <strong>local scheduled inspection task</strong>: weekly, it checks each capped site's highest published issue, and any site that has written to its cap gets its cloud trigger flipped to <code>enabled=false</code> via the API.</p>
+<p>Every site's roadmap is finite — when the material is learned, the site should graduate, not pad itself for the sake of a daily streak. But <strong>the cap is not a hardcoded number — it floats, and equals however many entries remain unwritten in TOPICS.md</strong>. A <strong>daily</strong> inspection task computes two numbers per site — the highest published issue <code>N_pub</code> and TOPICS' highest number <code>N_top</code> — and syncs the cloud trigger's switch <strong>in both directions</strong>: written to the cap (remaining ≤ 0) and it goes <code>enabled=false</code>; <strong>append new topics to TOPICS (remaining &gt; 0) and it switches back on automatically</strong>. So "add a few roadmap lines" is the only revival operation — I never touch a trigger.</p>
 <p>The pause operation has two safety interlocks, both paid for with real mistakes:</p>
 <ol>
 <li>Before pausing, <code>get</code> the trigger and confirm that the repo it mounts really is the one being retired — protection against a trigger ID mapped to the wrong site;</li>
 <li>The update body sends <strong>only <code>{"enabled": false}</code></strong>, because this API's update replaces job_config wholesale rather than merging — sending a partial job_config would wipe out the prompt, the mounted repo, and the model configuration.</li>
 </ol>
 
-<h3>Chinese-leak detection on English pages</h3>
-<p>The most common failure mode of bilingual generation is Chinese leaking into the English page's template slots (subtitles, tags, name fields). The same inspection task runs a set of fingerprint greps (like <code>class="en"&gt;[一-鿿]</code>) over every repo's <code>*.en.html</code> and reports any hit. The fingerprints are chosen carefully — <strong>legitimate</strong> Chinese, like Buddhist scripture alongside its English translation or glossed terms, doesn't use those classes and never false-positives.</p>
+<h3>The deploy watchdog</h3>
+<p>There's one more failure that's easy to overlook: <strong>the page is correct, it was pushed, and then the GitHub Pages deployment itself fails</strong> (intermittent 503s / build flakiness). The content sits in the repo while the live site still serves the old version — the sneakiest failure of all, because every check upstream reported "pass."</p>
+<p>So a launchd watchdog runs locally, sweeping each repo's recent Pages deployments via <code>gh</code> every 20 minutes and <strong>re-running any that failed</strong>. It deliberately runs on my machine rather than in the cloud — the cloud sandbox's egress proxy blocks <code>api.github.com</code>, so my own laptop is the one that can reach it.</p>
+
+<h3>Content-layer autonomy: pushing the checks down into each repo</h3>
+<p>Originally these content-layer checks — stop when the roadmap is done, backfill out-of-band pages into TOPICS, self-check English pages for Chinese leaks — were all done centrally by that external inspection task. They have since been <strong>delegated into each repo's CLAUDE.md</strong>: since every run auto-loads it, letting the site handle all three at generation time is more timely than patching them up afterwards from outside. The external inspection thereby slimmed down to <strong>nothing but the trigger switch</strong>. (The backfill exists to hold one invariant: <strong>TOPICS must be a superset of what's published</strong>. Otherwise a manually published <code>day57</code> that never got recorded would collide with a Day 57 added to TOPICS later — which could then never be written.)</p>
+<p>Of those, the Chinese leak is the most common degradation in bilingual generation: Chinese seeping into the English page's template slots (subtitles, tags, name fields). Each repo's CLAUDE.md hardcodes a set of fingerprint greps (like <code>class="en"&gt;[一-鿿]</code>) to self-check after generation and before publishing. The fingerprints are chosen carefully — <strong>legitimate</strong> Chinese, like Buddhist scripture alongside its English translation or glossed terms, doesn't use those classes and never false-positives.</p>
+<p>But <strong>the switch itself cannot be delegated</strong>, and that's a hard boundary: most routines mount only Google Drive in the cloud, with no meta-tool that can write triggers, so they cannot change their own <code>enabled</code>; worse — <strong>a trigger that has been disabled cannot revive itself</strong>, so re-enabling can only ever come from outside. Hence the final shape: <strong>autonomy in the content layer, the switch stays out.</strong></p>
 
 <h3>The quality ratchets</h3>
 <ul>
@@ -303,7 +310,7 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <p>One person's attention is the most expensive resource in this system. The design goal of the pipeline was never "full automation" for its own sake — it was to free my attention from production and operations and spend all of it on the only thing worth spending it on: <strong>deciding what to learn next.</strong></p>
 
 <footer>
-  <a href="index.en.html">← BigCat's Learning Hub</a>
+  <a href="/index.en.html">← BigCat's Learning Hub</a>
 </footer>
 </div>
 <script src="https://hub.cissychen.com/comments.js" defer></script>

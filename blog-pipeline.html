@@ -49,7 +49,7 @@ footer a{color:#7b61ff}
 </header>
 
 <div class="lede">
-BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模型、AI/ML、System Design、论文精读、哲学、佛学、育儿、投资……20 多个主题，每个是一个独立的 GitHub Pages 仓库。它们每天自动更新、中英双语、带全站搜索、登录-free 评论、邮件订阅/投票和语音朗读——而日常运营几乎不需要我动手。这篇文章讲整条 pipeline 是怎么搭起来的。
+BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模型、AI/ML、System Design、论文精读、哲学、佛学、育儿、投资……三十来个主题，每个是一个独立的 GitHub Pages 仓库。它们每天自动更新、中英双语、带全站搜索、登录-free 评论、邮件订阅/投票和语音朗读——而日常运营几乎不需要我动手。这篇文章讲整条 pipeline 是怎么搭起来的。
 </div>
 
 <h2>0. 先看它长什么样</h2>
@@ -143,12 +143,13 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <p>每个内容 repo 除了 HTML 页面，只有四样东西，各司其职。</p>
 
 <h3>TOPICS.md —— 人类维护的路线图（对 bot 只读）</h3>
-<p>整个系统里唯一持续需要我投入的地方。它按顺序列出这个站要覆盖的全部主题，好几个站还写明了封顶编号（比如思维模型封顶 68 期）。关键设计是<strong>权限单向</strong>：routine 只能读它，<code>publish.sh</code> 会直接拒绝任何修改了 TOPICS.md 的提交。选题耗尽时，routine 不许自己续写路线图，只能给我发一条推送通知请求补充。</p>
+<p>整个系统里唯一持续需要我投入的地方。它按顺序列出这个站要覆盖的全部主题——<strong>这份清单的长度本身就是封顶</strong>：写完即毕业（见 §8）。关键设计是<strong>权限单向</strong>：routine 只能读它，<code>publish.sh</code> 会直接拒绝任何修改了 TOPICS.md 的提交。选题耗尽时，routine 不许自己续写路线图，只能给我发一条推送通知请求补充。</p>
 <p>这条线划在这里，是整个系统「不跑偏」的根本：<strong>AI 决定怎么写，人决定写什么。</strong></p>
 
 <h3>CLAUDE.md —— 写作规范</h3>
 <p>需要精确控制版式和深度的站（system-design、论文精读、每日精读）有一份详细的执行规范：目标读者（资深工程师）、篇幅区间、必备章节结构（比如论文精读的「一句话 → Glossary → 坐标 → 问题动机 → 核心思想 → 关键结果 → 影响 → 局限与批评 → 要点收尾」九段式）、配色（每个站有独立的视觉签名：system-design 是青色暗色系，论文精读是琥珀铜色）、以及诚实性要求——引文拿不准要标「大意」，局限和反方观点必须写。</p>
 <p>规范里最值得一提的是<strong>以已发布页面为基准</strong>：prompt 会指着某一篇（「以 read1 为深度、格式与腔调基准」）说照这个来。比起在规范里描述风格，直接给范例样本要稳定得多。</p>
+<p>后来发现它还有个更重要的身份：<strong>CLAUDE.md 是「不动 prompt 就能改 routine 行为」的控制面</strong>。云端 routine 每次运行会自动加载仓根目录的 CLAUDE.md，而且它<strong>叠加在 prompt 之上</strong>——想改一条规则时，不必去动那份又长又自包含的 prompt（改 trigger 配置还有整体替换 job_config 的风险，见 §8），往 CLAUDE.md 里加一句就行。这条通路是拿探针实测过的：往某个仓的 CLAUDE.md 塞一句「运行开头写一个探针文件并 push」，只推该仓、手动触发一次，远端果然如期出现了那个文件——而且它照常写完了当期内容。</p>
 
 <h3>.maxchars —— 长度 ratchet</h3>
 <p>一个只有一行数字的文件（3500/4000/5000），<code>publish.sh</code> 会统计新页面的 CJK 字符数并卡在这个上限。这是踩过坑之后加的：LLM 生成内容有「长度棘轮」倾向——每篇都比上一篇略长一点，因为模型倾向参考最近的页面，几十天后页面就膨胀失控。解法是双向夹住：prompt 里给目标区间，闸门上给硬上限。</p>
@@ -168,7 +169,7 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <p>最后这个格式约定不是小事——<strong>commit message 本身成了机器可读的发布记录</strong>，下游的完结检测、hub 徽章都靠解析它工作。</p>
 
 <h2>3. 生成引擎：云端 Claude routine</h2>
-<p>内容生产由 claude.ai 的云端定时任务（scheduled agent / routine）完成，目前有 20 个 trigger。每个 trigger 的 job 结构：</p>
+<p>内容生产由 claude.ai 的云端定时任务（scheduled agent / routine）完成，目前有 24 个内容 trigger。每个 trigger 的 job 结构：</p>
 <ul>
 <li><strong>cron 表达式</strong>：所有 routine 在每天 10:00–16:00 UTC 之间以约 15 分钟为间隔错峰排开，避免同时跑</li>
 <li><strong>挂载仓库</strong>：工作目录直接挂载对应的 GitHub repo，agent 可以 ls、读旧页面、git push</li>
@@ -198,8 +199,8 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <p>评论区、搜索、双语 TTS、导航按钮、lightbox 这五个能力由 hub 仓托管的共享脚本提供（<code>comments.js</code>、<code>search.js</code>、<code>i18n-tts.js</code>、<code>index-button.js</code>、<code>lightbox.js</code>）。内容页<strong>不允许</strong>硬编码这些 script 标签（publish.sh 会拦），而是 push 后由注入 Action 扫描 HTML、缺哪个补哪个，再以 <code>Auto-inject shared scripts</code> 自动提交。</p>
 <p>为什么注入而不是让 routine 直接写进模板？因为<strong>基础设施要能独立于内容演进</strong>。20 多个仓、几百个页面，如果 script 标签写死在生成模板里，升级一个搜索脚本就要重训 20 个 prompt、重刷几百页。注入制下，共享脚本改一处，全站下一次注入即生效；旧页面也能追溯补齐。</p>
 
-<h3>Azure TTS bake（mental-models）</h3>
-<p>思维模型站的每一节都能点击朗读，音频是预先「烘焙」好的：</p>
+<h3>Azure TTS bake（预烘焙音频）</h3>
+<p>这些站的每一节都能点击朗读，音频是预先「烘焙」好的（最早只在思维模型站做，现在已铺到十几个站）：</p>
 <ul>
 <li>push 触发 <code>bake-tts.yml</code> → 跑 <code>bake-tts.py</code></li>
 <li>按 <code>&lt;h2&gt;</code> 分节提取正文 → 对文本取 <strong>hash</strong> → 查 <code>audio/zh/&lt;hash&gt;.mp3</code> 是否已存在 → 不存在才调 Azure Speech REST API 合成</li>
@@ -216,7 +217,7 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <p>动态部分靠 GitHub REST API：</p>
 <ul>
 <li>对每个 repo 拉最近 50 条 commit，找到<strong>最近一次真正新增内容页</strong>的提交（按文件名正则匹配 <code>-dayN/-weekN/-readN.html</code>），把日期渲染到卡片上——所以徽章日期反映的是「最近更新了内容」，而不是被 bot 的注入提交污染的「最近有 commit」。</li>
-<li><strong>完结检测</strong>：脚本里有一张 CAPS 表（哪个站封顶多少期），从 commit message 里解析 <code>Add #N</code> 的最大值，达到封顶就把日期换成「✓ 已完结」徽章。这就是前面说的 commit message 格式约定的下游收益——完结状态不需要任何人标记，每个站自己「宣布」毕业。</li>
+<li><strong>完结检测</strong>：不设静态封顶表——脚本直接读每个仓的 <code>TOPICS.md</code> 取最大编号（<code>roadmap_max</code>），再从 commit message 解析已发布 <code>Add #N</code> 的最大值，两者追平就把日期换成「✓ 已完结」徽章。<strong>所以封顶是浮动的</strong>：往 TOPICS 补几行新主题，徽章自动消失。这就是前面说的 commit message 格式约定的下游收益——完结状态不需要任何人标记，每个站自己「宣布」毕业。</li>
 </ul>
 <p>时间上，这个 Action 排在所有内容 routine 之后约 45 分钟跑，保证当天新页面能反映到首页。</p>
 
@@ -234,7 +235,7 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <li><strong>投票 / 民调</strong> <code>POST /vote</code>、<code>GET /poll</code>、<code>GET /votes-net</code>：每人每题一票（可改），前端 <code>engage.js</code> 渲染实时票数条。</li>
 <li><strong>登录-free 评论</strong> <code>GET /comments</code>、<code>POST /comment</code>：<code>comments.js</code> 提供全站登录-free 评论——访客不需要 GitHub 账号就能留言。</li>
 </ul>
-<p>数据落在 D1 的三张表：<code>subscriptions</code>（邮箱+列表为主键，带 confirmed 标志与语言）、<code>votes</code>（题+投票人为主键，天然去重）、<code>comments</code>（页面路径、名字、正文、审核位、加盐 iphash）。前端只有 <code>engage.js</code>（订阅框+投票）和 <code>comments.js</code> 两个脚本，跟其他共享 JS 一样由注入层铺到全站；Worker 的 CORS 锁死只认 <code>cissy0802.github.io</code>。</p>
+<p>数据落在 D1 的三张表：<code>subscriptions</code>（邮箱+列表为主键，带 confirmed 标志与语言）、<code>votes</code>（题+投票人为主键，天然去重）、<code>comments</code>（页面路径、名字、正文、审核位、加盐 iphash）。前端只有 <code>engage.js</code>（订阅框+投票）和 <code>comments.js</code> 两个脚本，跟其他共享 JS 一样由注入层铺到全站；Worker 的 CORS 只放行白名单里的来源（现在是自定义域名 <code>hub.cissychen.com</code>，以及迁移前的 <code>cissy0802.github.io</code>）。</p>
 
 <h3>登录-free 的代价：三道反垃圾防线</h3>
 <p>不要求登录，门槛低了，但<strong>「账号」这道天然的反垃圾墙也没了</strong>——谁都能发，机器人尤其能发。所以自建版内置三道防线：<strong>蜜罐字段</strong>（隐藏的 <code>website</code> 输入，人不填、机器人会填，填了就静默丢弃）、<strong>按 IP 限流</strong>（60 秒最多 3 条，用加盐哈希记 IP、不存原始地址）、以及可选的 <strong>Cloudflare Turnstile</strong>（绑上 secret 后 Worker 自动强制，垃圾真出现再开）。评论正文一律用 <code>textContent</code> 渲染、绝不当 HTML，从根上堵死 XSS。</p>
@@ -258,7 +259,7 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <p>标准站是「人维护 TOPICS.md、AI 照着写」；这个站把<strong>选题权交给了观众</strong>。它还是客户端渲染的：每场辩论是一个 <code>debates/*.json</code>，由浏览器脚本渲染成聊天流（所以全站搜索得靠 §5 的快照 SSR 才爬得到）。</p>
 <p>难点在<strong>一道墙</strong>：云端 routine 跑在带出口代理的容器里，那个代理不放行自建后端（访问 <code>bigcat-engage…workers.dev</code> 直接 403），<strong>routine 自己读不到票、也读不到评论</strong>。解法是<strong>架一座桥</strong>：用一个 GitHub Action（它的 runner 不在墙后）每 12 小时把后端的净票和评论快照写回仓库的 <code>ideas.json</code> / <code>audience_inbox.json</code>。于是 routine 只读仓库文件，就拿到了后端数据——不必连后端。</p>
 <p>这就闭成一个<strong>观众反馈回路</strong>：观众投票/提议 → Worker + D1 → Action 每 12h 桥接 → 仓库 JSON → routine 开辩时选「净票最高」的议题（或人工置顶队列），收尾时再从观众评论里挖出新候选。<strong>观众成了 roadmap 的一部分</strong>——这是标准站刻意不给 AI 的权限，在这里安全地还给了人群。</p>
-<p>生成端也更重：从 100+ 人的人设名册里选 6–10 位思想家（选角前先跑 <code>diversity_report.py</code> 看分布统计、照聚合数字选，专门<strong>反「照抄最近几场形状」的过拟合</strong>），routine 亲自写三轮双语辩论、最后由三家 AI 收尾。连人物图鉴都要求「对本场议题盲」地写，防止介绍被当场话题污染。</p>
+<p>生成端也更重：从 150+ 人的人设名册里选 6–10 位思想家（选角前先跑 <code>diversity_report.py</code> 看分布统计、照聚合数字选，专门<strong>反「照抄最近几场形状」的过拟合</strong>），routine 亲自写三轮双语辩论、最后由三家 AI 收尾。连人物图鉴都要求「对本场议题盲」地写，防止介绍被当场话题污染。</p>
 
 <h3>Deep Research —— 多智能体调研 + 对抗式核查</h3>
 <p>标准站是一个 routine 一次写一页；这个站的内容是一套<strong>多智能体调研管线</strong>的产物。每条<strong>承重论断</strong>都被 <strong>3 个独立的验证 agent</strong> 拿着一手来源反复反驳过（对抗式事实核查）——通不过的要么补证据、要么砍掉。</p>
@@ -269,15 +270,21 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <p>跑起来只是开始，长期无人值守才是难的部分。几道防线：</p>
 
 <h3>封顶 + 自动停机</h3>
-<p>每个站的 roadmap 是有限的——学完就该毕业，而不是为了「日更」注水。封顶编号写进三处：TOPICS.md（routine 可见）、hub 的 CAPS 表（徽章）、以及一个<strong>本地定时巡检任务</strong>：每周核对每个封顶站实际发布的最高期数，写到顶的就通过 API 把对应云端 trigger 直接 <code>enabled=false</code> 停掉。</p>
+<p>每个站的 roadmap 是有限的——学完就该毕业，而不是为了「日更」注水。但<strong>封顶不是一个写死的数字，而是浮动的：它就等于 TOPICS.md 里还剩几条没写</strong>。一个<strong>每天</strong>跑的巡检任务对每个站算两个数——已发布最高期数 <code>N_pub</code> 与 TOPICS 最大编号 <code>N_top</code>——据此<strong>双向</strong>同步云端 trigger 的开关：写到顶（剩余 ≤ 0）就 <code>enabled=false</code> 停掉；<strong>往 TOPICS 补了新主题（剩余 &gt; 0）就自动重新开启</strong>。所以「补几行路线图」就是唯一的复活操作，我不需要碰任何 trigger。</p>
 <p>停机操作有两道防呆，都是踩坑换来的：</p>
 <ol>
 <li>停之前先 <code>get</code> 该 trigger，确认它挂载的仓确实是要停的那个仓——防止 trigger ID 对错位置，把别的站停了；</li>
 <li>update 请求体<strong>只发 <code>{"enabled": false}</code></strong>。因为这个 API 的 update 对 job_config 是整体替换而非合并——带上不完整的 job_config 会把 prompt、挂载仓、模型配置整个洗掉。</li>
 </ol>
 
-<h3>英文页中文泄漏检测</h3>
-<p>双语生成最常见的退化是中文漏进英文页的模板槽（副标题、标签、人名栏）。同一个巡检任务对全部仓的 <code>*.en.html</code> 跑一组指纹 grep（如 <code>class="en"&gt;[一-鿿]</code>），命中即报。指纹是精心挑的——佛经原文配英译、术语括注这类<strong>合法</strong>的中文不用这些 class，不会误报。</p>
+<h3>部署看门狗</h3>
+<p>还有一层容易被忽略的失败：<strong>页面写对了、也 push 了，但 GitHub Pages 的部署本身失败了</strong>（偶发 503 / 构建抖动）。内容躺在仓库里，线上却还是旧版——这种失败最隐蔽，因为前面每一层校验都显示「通过」。</p>
+<p>所以本地还挂了一个 launchd 看门狗，每 20 分钟用 <code>gh</code> 扫一遍各仓最近的 Pages 部署，发现失败的就<strong>自动重跑</strong>。它刻意跑在本地而不是云端——云端 sandbox 的出口代理挡着 <code>api.github.com</code>，反倒是我自己的机器能直连。</p>
+
+<h3>内容层自治：把检查下放进各仓</h3>
+<p>早期这些内容层检查——写到顶就自停、把越界页回填进 TOPICS、英文页中文泄漏自查——都由外部那个巡检任务集中做。后来全部<strong>下放到各仓的 CLAUDE.md</strong>：既然 routine 每次运行都会加载它，那就让站点在生成当下自己把这三件事做掉，比事后由外部补更及时。外部巡检因此瘦成了<strong>纯粹的 trigger 开关</strong>。（回填是为了守住一条不变量：<strong>TOPICS 必须是已发布内容的超集</strong>。否则某天手动发了一篇 <code>day57</code> 却没记进 TOPICS，日后往 TOPICS 补的 Day 57 就会和它撞号、永远写不出来。）</p>
+<p>其中英文页中文泄漏是双语生成最常见的退化：中文漏进英文页的模板槽（副标题、标签、人名栏）。各仓 CLAUDE.md 里写死一组指纹 grep（如 <code>class="en"&gt;[一-鿿]</code>），生成后、publish 前自查。指纹是精心挑的——佛经原文配英译、术语括注这类<strong>合法</strong>的中文不用这些 class，不会误报。</p>
+<p>但<strong>开关本身下放不了</strong>，这是条硬边界：绝大多数 routine 在云端只挂了 Google Drive，没有能写 trigger 的元工具，改不了自己的 <code>enabled</code>；更要命的是——<strong>一个已经被 disable 的 trigger 无法自我复活</strong>，重开天然只能由外部做。所以最终形态是：<strong>内容层自治，开关留在外面</strong>。</p>
 
 <h3>内容质量的 ratchet 们</h3>
 <ul>
@@ -307,7 +314,7 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <p>一个人的注意力是这个系统里最贵的资源。整条 pipeline 的设计目标从来不是「全自动」本身，而是把我的注意力从生产和运维里解放出来，全部花在唯一值得花的地方：<strong>决定接下来学什么。</strong></p>
 
 <footer>
-  <a href="index.html">← BigCat's Learning Hub</a>
+  <a href="/index.zh.html">← BigCat's Learning Hub</a>
 </footer>
 </div>
 <script src="https://hub.cissychen.com/comments.js" defer></script>
