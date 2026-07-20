@@ -5,6 +5,7 @@
  * Skips on the hub root and on category index pages themselves.
  */
 (function () {
+  if (document.documentElement.hasAttribute("data-no-hub-nav")) return;
   // URL shape: /{repo}/{file}.html  OR  /{repo}/  OR  /
   const parts = window.location.pathname.split("/").filter(Boolean);
   if (parts.length === 0) return; // hub root

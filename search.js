@@ -22,6 +22,7 @@
  * a modal that queries the Pagefind index hosted at /pagefind/ on the hub.
  */
 (function () {
+  if (document.documentElement.hasAttribute("data-no-hub-nav")) return;
   if (document.getElementById("search-fab")) return; // idempotent
   // Pagefind assets/index are loaded SAME-ORIGIN (root-relative). Must not be a
   // hardcoded absolute host: once the hub serves from hub.cissychen.com, an
