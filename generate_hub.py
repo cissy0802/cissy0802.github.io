@@ -160,6 +160,15 @@ RESEARCH_CARDS = [
      "/deep-research/", "研究", "Research"),
 ]
 
+# 跨站合成 —— 把已发布的存量连成网络的季度长文(手写,非每日 routine,故用徽章而非日期)。
+# Tuple shape identical to THINKING_CARDS. 整个站一张卡,加新文章不用动这里。
+SYNTHESIS_CARDS = [
+    ("synthesis", "🔗", "跨站合成", "Cross-Site Synthesis",
+     "同一个概念在几个站里分别是什么,以及它们为什么对不上——每一节都深链回源页。",
+     "What one concept actually is across several sites, and why those versions don't line up — every section links back to its source page.",
+     "/synthesis/", "合成", "Synthesis"),
+]
+
 CSS_VARS = {
     "mental":     ("#00d4ff", "#0096c7"),
     "aiml":       ("#ff6ec4", "#7b61ff"),
@@ -191,6 +200,7 @@ CSS_VARS = {
     "family":     ("#ffd166", "#e8743b"),
     "thinker":    ("#a29bfe", "linear-gradient(90deg,#a29bfe,#7b61ff,#ff6ec4)"),
     "research":   ("#4cc9f0", "linear-gradient(90deg,#4cc9f0,#7b61ff)"),
+    "synthesis":  ("#7b61ff", "linear-gradient(90deg,#00d4ff,#7b61ff,#ff6ec4)"),
 }
 
 SITE_ORIGIN = "https://hub.cissychen.com"
@@ -208,7 +218,6 @@ I18N = {
         "arrow": "进入 →",
         "toggle": '<a href="index.zh.html" class="active">中文</a>\n  <a href="index.en.html">EN</a>',
         "blog": '<a href="blog-pipeline.html">🛠 这个 Hub 是怎么搭的</a>',
-        "synthesis": '<a href="synthesis-entropy.html">🔗 跨站合成 Syn 1：熵——一个词，五个房间</a>',
         "about": '关于作者：BigCat，Staff 技术 / AI 工程师',
         "copyright": '© 2026 BigCat（Cissy Chen）· 保留所有权利 All Rights Reserved',
     },
@@ -221,7 +230,6 @@ I18N = {
         "arrow": "enter →",
         "toggle": '<a href="index.zh.html">中文</a>\n  <a href="index.en.html" class="active">EN</a>',
         "blog": '<a href="blog-pipeline.en.html">🛠 how this hub is built</a>',
-        "synthesis": '<a href="synthesis-entropy.en.html">🔗 Synthesis Syn 1: Entropy — One Word, Five Rooms</a>',
         "about": 'About the builder: BigCat, staff tech / AI engineer',
         "copyright": '© 2026 BigCat (Cissy Chen) · All Rights Reserved',
     },
@@ -444,7 +452,6 @@ footer a:hover{{color:#00d4ff}}
 
 <footer>
   {t['blog']}<br>
-  {t['synthesis']}<br>
   {t['about']}<br>
   BigCat · refreshed {today} · <a href="https://github.com/cissy0802">GitHub</a> · <a href="mailto:cissy@cissychen.com">cissy@cissychen.com</a><br>
   {t['copyright']}
@@ -474,6 +481,7 @@ def main():
             return [card_html(c, dates[c[6]], lang) for c in CARDS if c[7] == sec]
         thinking_cards = "\n\n".join(thinking_card_html(c, lang) for c in THINKING_CARDS)
         research_cards = "\n\n".join(thinking_card_html(c, lang) for c in RESEARCH_CARDS)
+        synthesis_cards = "\n\n".join(thinking_card_html(c, lang) for c in SYNTHESIS_CARDS)
         brain = "\n\n".join([
             section("Thinking",   "思维",     cards_for("thinking"), lang),
             section("Tech",       "技术",     cards_for("tech"), lang),
@@ -486,6 +494,7 @@ def main():
         grid = "\n\n".join([
             group_label("思想圆桌", "Thinking Hub", lang) + "\n\n" + thinking_cards,
             group_label("深度研究", "Deep Research", lang) + "\n\n" + research_cards,
+            group_label("跨站合成", "Cross-Site Synthesis", lang) + "\n\n" + synthesis_cards,
             group_label("第二大脑", "Second Brain", lang) + "\n\n" + brain,
         ])
         html = render_page(lang, grid, today)
@@ -516,10 +525,8 @@ def main():
         f"{SITE_ORIGIN}/index.zh.html",
         f"{SITE_ORIGIN}/blog-pipeline.html",
         f"{SITE_ORIGIN}/blog-pipeline.en.html",
-        f"{SITE_ORIGIN}/synthesis-entropy.html",
-        f"{SITE_ORIGIN}/synthesis-entropy.en.html",
     ]
-    for c in THINKING_CARDS + RESEARCH_CARDS:
+    for c in THINKING_CARDS + RESEARCH_CARDS + SYNTHESIS_CARDS:
         href = c[6]
         if href.startswith("/"):
             urls.append(SITE_ORIGIN + href)
