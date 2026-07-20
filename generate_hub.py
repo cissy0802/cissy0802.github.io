@@ -164,8 +164,8 @@ RESEARCH_CARDS = [
 # Tuple shape identical to THINKING_CARDS. 整个站一张卡,加新文章不用动这里。
 SYNTHESIS_CARDS = [
     ("synthesis", "🔗", "跨站合成", "Cross-Site Synthesis",
-     "同一个概念在几个站里分别是什么,以及它们为什么对不上——每一节都深链回源页。",
-     "What one concept actually is across several sites, and why those versions don't line up — every section links back to its source page.",
+     "同一个概念在几个站里为什么是同一件事,以及从哪里开始不是了——每一节都深链回源页。",
+     "Why one concept is the same thing across several sites, and where it stops being the same — every section links back to its source page.",
      "/synthesis/", "合成", "Synthesis"),
 ]
 
