@@ -1,3 +1,22 @@
+/* Cloudflare Web Analytics — cookieless, no personal tracking.
+ * It rides in search.js because this is the ONE shared script present on every
+ * page type: injected content pages, the hub index, thinker-arena, and 404.html
+ * (comments.js is absent from the latter two). One file, whole-site coverage.
+ * Kept in its own IIFE so it never gets skipped by the search widget's
+ * early-return guard below.
+ */
+(function () {
+  if (document.getElementById("cf-beacon")) return; // idempotent
+  var b = document.createElement("script");
+  b.id = "cf-beacon";
+  b.src = "https://static.cloudflareinsights.com/beacon.min.js";
+  b.setAttribute(
+    "data-cf-beacon",
+    '{"token": "1abb700a9196414abe5075adadc38282"}'
+  );
+  (document.head || document.documentElement).appendChild(b);
+})();
+
 /* BigCat Learning Hub — shared Pagefind search loader.
  * Adds a floating 🔍 button on every page. Click (or press "/") to open
  * a modal that queries the Pagefind index hosted at /pagefind/ on the hub.
