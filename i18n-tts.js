@@ -118,8 +118,13 @@
         return;
       }
       const seg = this.segments[this.idx];
-      document.querySelectorAll('.tts-active').forEach((el) => el.classList.remove('tts-active'));
-      seg.classList.add('tts-active');
+      document.querySelectorAll('.tts-active, .tts-active-ring').forEach((el) => {
+        el.classList.remove('tts-active', 'tts-active-ring');
+      });
+      // Gradient-clipped text (background-clip:text + transparent fill) is
+      // painted BY its background, so our highlight background would erase
+      // the glyphs. Those get a ring-only variant.
+      seg.classList.add(usesTextClip(seg) ? 'tts-active-ring' : 'tts-active');
       seg.scrollIntoView({ behavior: 'smooth', block: 'start' });
       updateProgress();
 
@@ -301,7 +306,9 @@
       this.paused = false;
       this.idx = -1;
       this._cancelPlayback();
-      document.querySelectorAll('.tts-active').forEach((el) => el.classList.remove('tts-active'));
+      document.querySelectorAll('.tts-active, .tts-active-ring').forEach((el) => {
+        el.classList.remove('tts-active', 'tts-active-ring');
+      });
       updatePlayButton();
       updateProgress();
       setSeekEnabled(false);
@@ -374,6 +381,21 @@
     }
     flush();
     return out;
+  }
+
+  // True when an element's glyphs are painted by its own background
+  // (gradient headings: background-clip:text + transparent text fill).
+  // Overriding `background` on these makes the text vanish.
+  function usesTextClip(el) {
+    try {
+      const cs = getComputedStyle(el);
+      const clip = cs.webkitBackgroundClip || cs.backgroundClip;
+      if (clip && clip.includes('text')) return true;
+      const fill = cs.webkitTextFillColor;
+      return !!fill && (fill === 'transparent' || fill === 'rgba(0, 0, 0, 0)');
+    } catch (e) {
+      return false;
+    }
   }
 
   function pickVoice(lang) {
@@ -475,6 +497,9 @@ body.mmd-tts-on #search-fab{bottom:78px!important}
 .mmd-controls .seek-bar:hover .seek-knob,.mmd-controls .seek-bar.scrubbing .seek-knob{opacity:1}
 .mmd-controls .seek-time{font-size:11px;color:#8a93a0;font-variant-numeric:tabular-nums;min-width:36px;text-align:right}
 .tts-active{background:rgba(108,92,231,0.10)!important;box-shadow:0 0 0 2px rgba(108,92,231,0.35),0 0 0 6px rgba(108,92,231,0.08);border-radius:6px;transition:background 0.2s,box-shadow 0.2s;scroll-margin-top:80px;scroll-margin-bottom:120px}
+/* Ring-only highlight for gradient-clipped text: no background override,
+   so the glyphs (which the gradient paints) stay visible. */
+.tts-active-ring{box-shadow:0 0 0 2px rgba(108,92,231,0.35),0 0 0 6px rgba(108,92,231,0.08);border-radius:6px;transition:box-shadow 0.2s;scroll-margin-top:80px;scroll-margin-bottom:120px}
 @media(max-width:600px){
   .mmd-controls{bottom:10px;right:10px;left:10px;justify-content:center;border-radius:22px;padding:5px}
   .mmd-controls button{min-width:32px;min-height:32px;padding:6px 8px}
