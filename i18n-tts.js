@@ -517,16 +517,24 @@ body.mmd-tts-on #search-fab{bottom:78px!important}
   }
 
   function injectControls() {
-    // Top-right: language toggle (separated from playback controls)
-    const langBar = document.createElement('div');
-    langBar.className = 'mmd-lang-toggle';
-    langBar.setAttribute('role', 'group');
-    langBar.setAttribute('aria-label', 'Language toggle');
-    langBar.innerHTML = `
-      <button data-action="lang-zh" aria-label="中文">中文</button>
-      <button data-action="lang-en" aria-label="English">EN</button>
-    `;
-    document.body.appendChild(langBar);
+    // Top-right: language toggle (separated from playback controls).
+    // Idempotent, same rule as index-button.js: some pages hard-code their own
+    // toggle in the HTML (blog-pipeline, the synthesis essays). Injecting a
+    // second one stacks two switchers in the same corner — worst on mobile,
+    // where this bar sits at top:10px and a hand-written .lang-toggle at
+    // top:18px, so they overlap by design.
+    let langBar = null;
+    if (!document.querySelector('.lang-toggle, .mmd-lang-toggle')) {
+      langBar = document.createElement('div');
+      langBar.className = 'mmd-lang-toggle';
+      langBar.setAttribute('role', 'group');
+      langBar.setAttribute('aria-label', 'Language toggle');
+      langBar.innerHTML = `
+        <button data-action="lang-zh" aria-label="中文">中文</button>
+        <button data-action="lang-en" aria-label="English">EN</button>
+      `;
+      document.body.appendChild(langBar);
+    }
 
     // Bottom-right: playback controls
     const bar = document.createElement('div');
@@ -557,7 +565,7 @@ body.mmd-tts-on #search-fab{bottom:78px!important}
     // lifts #search-fab above the bar (scoped: only when the bar is present).
     document.body.classList.add('mmd-tts-on');
 
-    langBar.addEventListener('click', (e) => {
+    if (langBar) langBar.addEventListener('click', (e) => {
       const btn = e.target.closest('[data-action]');
       if (!btn) return;
       const targetLang = btn.dataset.action === 'lang-zh' ? 'zh' : 'en';
