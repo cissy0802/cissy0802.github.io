@@ -140,6 +140,10 @@ CARDS = [
      "从经典力学到量子到涌现——物理世界怎么运作的连贯机制主线，直觉优先，每期挂一条 AI/复杂系统对读线。",
      "From classical mechanics to the quantum to emergence — how the physical world works, one deep mechanistic path; intuition first, with an AI / complex-systems cross-read each issue.",
      "physics", "science"),
+    ("complexity", "🌀", "复杂性科学", "Complexity Science",
+     "涌现、混沌、自组织临界、网络、幂律、韧性——局部规则怎么长出整体行为、为什么预测不了、以及能拿它怎么办。每期一条决策线 + 一条跨学科越界线。",
+     "Emergence, chaos, self-organized criticality, networks, power laws, resilience — how local rules grow into global behavior, why it resists prediction, and what to do about it. Each issue lands on a decision line and a cross-disciplinary crossing.",
+     "complexity-science", "science"),
 ]
 
 # BigCat's Thinking Hub —— 互动型思想实验，链到自建静态站(非每日内容仓库，故无 commit 日期)。
@@ -197,6 +201,7 @@ CSS_VARS = {
     "civics":     ("#6ea8d8", "#1f3a5f"),
     "neuro":      ("#a78bfa", "#e879f9"),
     "physics":    ("#5b9bff", "#2f6df6"),
+    "complexity": ("#e0895e", "#a693cd"),
     "family":     ("#ffd166", "#e8743b"),
     "thinker":    ("#a29bfe", "linear-gradient(90deg,#a29bfe,#7b61ff,#ff6ec4)"),
     "research":   ("#4cc9f0", "linear-gradient(90deg,#4cc9f0,#7b61ff)"),
