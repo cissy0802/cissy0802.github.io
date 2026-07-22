@@ -420,6 +420,11 @@
       if (!el.textContent.trim()) return false;
       const cs = getComputedStyle(el);
       if (cs.display === 'none' || cs.visibility === 'hidden') return false;
+      // getComputedStyle only reports the element's own style, so a heading
+      // inside a display:none ancestor still says display:block. Sites with
+      // toggled panels (cs-papers' 科普版/精读版) would otherwise offer both
+      // copies at once. getClientRects() is empty for anything not rendered.
+      if (!el.getClientRects().length) return false;
       return true;
     };
     // Prefer per-group baked audio. Split-mode pages use simple `data-tts`
@@ -777,6 +782,18 @@ body.mmd-tts-on #search-fab{bottom:78px!important}
     }
     updateRateLabel();
     rebuildSegments();
+
+    // Pages with toggled panels (cs-papers' 科普版/精读版) swap the [hidden]
+    // attribute; the segment list must follow or the bar keeps offering the
+    // copy that is no longer on screen.
+    const panels = document.querySelectorAll('[hidden], .mode');
+    if (panels.length) {
+      const obs = new MutationObserver(() => {
+        if (tts.playing) return;
+        rebuildSegments();
+      });
+      panels.forEach((el) => obs.observe(el, { attributes: true, attributeFilter: ['hidden', 'style', 'class'] }));
+    }
     if ('speechSynthesis' in window && speechSynthesis.getVoices().length === 0) {
       speechSynthesis.addEventListener?.('voiceschanged', () => {}, { once: true });
     }
