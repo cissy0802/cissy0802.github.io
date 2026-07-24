@@ -6,11 +6,19 @@
  *   GET  /poll?id=... [&voter=...]                   -> tallies for a poll (+ this voter's choice)
  *   GET  /comments?page=...                          -> approved comments for a page
  *   POST /comment     { page, name, body, website }  -> post a comment (login-free)
- *   POST /notes-add    { token, id, page, title, lang, text, ts } -> upsert a highlight note
- *   POST /notes-list   { token }                     -> all notes, newest first
- *   POST /notes-delete { token, id }                 -> delete one note
- *   Notes are owner-private: every notes endpoint requires the NOTES_TOKEN
- *   secret (wrangler secret put NOTES_TOKEN). POST-only keeps it out of URLs.
+ *   POST /auth-register{ email, password }           -> create account, email a verify link
+ *   POST /auth-verify  { token }                     -> activate an account
+ *   POST /auth-login   { email, password }           -> { session }
+ *   POST /auth-me      { session }                   -> { email }
+ *   POST /auth-logout  { session }                   -> end this session
+ *   POST /auth-forgot  { email }                     -> email a reset link
+ *   POST /auth-reset   { token, password }           -> set a new password
+ *   POST /notes-add    { session, id, page, title, lang, text, ts } -> upsert a note
+ *   POST /notes-list   { session }                   -> that account's notes, newest first
+ *   POST /notes-delete { session, id }               -> delete one of that account's notes
+ *   Notes are private per account: every note is scoped to the session's user,
+ *   so one account can never read or delete another's. POST-only keeps
+ *   passwords and session tokens out of URLs and logs.
  *
  * Storage is a single D1 database bound as `DB` (see wrangler.toml + schema.sql).
  * Comments replace Giscus — no GitHub login required. Spam defenses: honeypot,
@@ -35,6 +43,14 @@ const VOTE_RATE_MAX = 30; // generous for a human on the ideas list, fatal for a
 const BODY_MAX = 2000;
 const NAME_MAX = 40;
 const IP_SALT = "bigcat-comments-v1"; // just so stored hashes aren't raw IPs
+
+// Accounts.
+const PBKDF2_ITER = 100000; // Workers refuses anything above this
+const PW_MIN = 8;
+const SESSION_TTL = 90 * 24 * 3600 * 1000; // 90 days
+const RESET_TTL = 60 * 60 * 1000; // reset links die after an hour
+const LOGIN_WINDOW_MS = 15 * 60 * 1000;
+const LOGIN_MAX = 10; // failed logins per IP per window
 
 // Double opt-in (only active once RESEND_API_KEY is bound as a secret).
 const SITE_BASE = "https://hub.cissychen.com"; // where /confirm.html lives
@@ -400,22 +416,211 @@ export default {
         );
       }
 
-      // ---- Notes (owner-private highlights) ----------------------------
-      // All three are POST so the token never lands in a URL or a log line.
-      if (url.pathname.startsWith("/notes-")) {
-        const body = await request.json().catch(() => ({}));
+      // ---- Accounts ----------------------------------------------------
+      // POST-only throughout, so passwords and session tokens never appear in
+      // a URL, a referrer or an access log.
+      if (url.pathname.startsWith("/auth-")) {
         if (request.method !== "POST") {
           return json({ ok: false, error: "method_not_allowed" }, 405, origin);
         }
-        if (!env.NOTES_TOKEN || String(body.token || "") !== env.NOTES_TOKEN) {
-          return json({ ok: false, error: "unauthorized" }, 401, origin);
+        const body = await request.json().catch(() => ({}));
+        const lang = String(body.lang || "").toLowerCase().startsWith("en") ? "en" : "zh";
+
+        // ---- Register: always answers the same way, so the endpoint can't
+        // be used to enumerate which addresses have accounts.
+        if (url.pathname === "/auth-register") {
+          const email = String(body.email || "").trim().toLowerCase();
+          const password = String(body.password || "");
+          if (!EMAIL_RE.test(email) || email.length > 254) {
+            return json({ ok: false, error: "invalid_email" }, 400, origin);
+          }
+          if (password.length < PW_MIN || password.length > 200) {
+            return json({ ok: false, error: "weak_password", min: PW_MIN }, 400, origin);
+          }
+          if (!env.RESEND_API_KEY) {
+            return json({ ok: false, error: "no_sender" }, 503, origin);
+          }
+
+          const existing = await env.DB.prepare(
+            "SELECT id, verified FROM users WHERE email = ?"
+          )
+            .bind(email)
+            .first();
+
+          if (existing && existing.verified === 1) {
+            // Already a live account: say nothing revealing, but do tell the
+            // real owner (by email) that someone tried to re-register.
+            await sendAuthEmail(env, email, "exists", null, lang);
+          } else {
+            const vtoken = randomToken(24);
+            const pwhash = await hashPassword(env, password);
+            if (existing) {
+              await env.DB.prepare(
+                "UPDATE users SET pwhash = ?2, vtoken = ?3, created = ?4 WHERE id = ?1"
+              )
+                .bind(existing.id, pwhash, vtoken, Date.now())
+                .run();
+            } else {
+              await env.DB.prepare(
+                "INSERT INTO users (id, email, pwhash, verified, vtoken, created) " +
+                  "VALUES (?1, ?2, ?3, 0, ?4, ?5)"
+              )
+                .bind(crypto.randomUUID(), email, pwhash, vtoken, Date.now())
+                .run();
+            }
+            await sendAuthEmail(env, email, "verify", vtoken, lang);
+          }
+          return json({ ok: true, pending: true }, 200, origin);
         }
+
+        // ---- Verify an account (target of the emailed link)
+        if (url.pathname === "/auth-verify") {
+          const t = String(body.token || "").trim();
+          if (!/^[a-f0-9]{16,64}$/.test(t)) {
+            return json({ ok: false, error: "bad_token" }, 400, origin);
+          }
+          const row = await env.DB.prepare("SELECT id FROM users WHERE vtoken = ?")
+            .bind(t)
+            .first();
+          if (!row) return json({ ok: false, error: "bad_token" }, 404, origin);
+          await env.DB.prepare(
+            "UPDATE users SET verified = 1, vtoken = NULL WHERE id = ?"
+          )
+            .bind(row.id)
+            .run();
+          const session = await newSession(env, row.id);
+          return json({ ok: true, session }, 200, origin);
+        }
+
+        // ---- Log in
+        if (url.pathname === "/auth-login") {
+          const email = String(body.email || "").trim().toLowerCase();
+          const password = String(body.password || "");
+          const iphash = await hashIp(request.headers.get("CF-Connecting-IP") || "0.0.0.0");
+
+          const rl = await env.DB.prepare(
+            "SELECT COUNT(*) AS n FROM auth_attempts WHERE iphash = ? AND ts > ?"
+          )
+            .bind(iphash, Date.now() - LOGIN_WINDOW_MS)
+            .first();
+          if (rl && rl.n >= LOGIN_MAX) {
+            return json({ ok: false, error: "rate_limited" }, 429, origin);
+          }
+
+          const user = await env.DB.prepare(
+            "SELECT id, pwhash, verified FROM users WHERE email = ?"
+          )
+            .bind(email)
+            .first();
+          // Hash even when the user doesn't exist, so a missing account and a
+          // wrong password take the same time to answer.
+          const ok = await verifyPassword(
+            env,
+            password,
+            user ? user.pwhash : "pbkdf2$" + PBKDF2_ITER + "$" + b64(new Uint8Array(16)) + "$x"
+          );
+          if (!user || !ok) {
+            await env.DB.prepare("INSERT INTO auth_attempts (iphash, ts) VALUES (?, ?)")
+              .bind(iphash, Date.now())
+              .run();
+            return json({ ok: false, error: "bad_credentials" }, 401, origin);
+          }
+          if (user.verified !== 1) {
+            return json({ ok: false, error: "unverified" }, 403, origin);
+          }
+          const session = await newSession(env, user.id);
+          return json({ ok: true, session, email }, 200, origin);
+        }
+
+        // ---- Who am I
+        if (url.pathname === "/auth-me") {
+          const me = await sessionUser(env, body.session);
+          if (!me) return json({ ok: false, error: "unauthorized" }, 401, origin);
+          return json({ ok: true, email: me.email }, 200, origin);
+        }
+
+        // ---- Log out (this session only)
+        if (url.pathname === "/auth-logout") {
+          const s = String(body.session || "").trim();
+          if (/^[a-f0-9]{16,128}$/.test(s)) {
+            await env.DB.prepare("DELETE FROM sessions WHERE token = ?")
+              .bind(await sha256hex(s))
+              .run();
+          }
+          return json({ ok: true }, 200, origin);
+        }
+
+        // ---- Forgot password: same answer whether or not the account exists.
+        if (url.pathname === "/auth-forgot") {
+          const email = String(body.email || "").trim().toLowerCase();
+          if (EMAIL_RE.test(email) && env.RESEND_API_KEY) {
+            const user = await env.DB.prepare(
+              "SELECT id FROM users WHERE email = ? AND verified = 1"
+            )
+              .bind(email)
+              .first();
+            if (user) {
+              const rtoken = randomToken(24);
+              await env.DB.prepare(
+                "UPDATE users SET rtoken = ?2, rexpires = ?3 WHERE id = ?1"
+              )
+                .bind(user.id, rtoken, Date.now() + RESET_TTL)
+                .run();
+              await sendAuthEmail(env, email, "reset", rtoken, lang);
+            }
+          }
+          return json({ ok: true, sent: true }, 200, origin);
+        }
+
+        // ---- Set a new password from a reset link
+        if (url.pathname === "/auth-reset") {
+          const t = String(body.token || "").trim();
+          const password = String(body.password || "");
+          if (!/^[a-f0-9]{16,64}$/.test(t)) {
+            return json({ ok: false, error: "bad_token" }, 400, origin);
+          }
+          if (password.length < PW_MIN || password.length > 200) {
+            return json({ ok: false, error: "weak_password", min: PW_MIN }, 400, origin);
+          }
+          const row = await env.DB.prepare(
+            "SELECT id, rexpires FROM users WHERE rtoken = ?"
+          )
+            .bind(t)
+            .first();
+          if (!row || !row.rexpires || row.rexpires < Date.now()) {
+            return json({ ok: false, error: "bad_token" }, 404, origin);
+          }
+          const pwhash = await hashPassword(env, password);
+          await env.DB.prepare(
+            "UPDATE users SET pwhash = ?2, rtoken = NULL, rexpires = NULL, verified = 1 WHERE id = ?1"
+          )
+            .bind(row.id, pwhash)
+            .run();
+          // A password change logs every other device out.
+          await env.DB.prepare("DELETE FROM sessions WHERE user_id = ?").bind(row.id).run();
+          const session = await newSession(env, row.id);
+          return json({ ok: true, session }, 200, origin);
+        }
+      }
+
+      // ---- Notes (private per account) ---------------------------------
+      // Every statement filters on the session's user_id, so one account can
+      // never read, overwrite or delete another account's notes.
+      if (url.pathname.startsWith("/notes-")) {
+        if (request.method !== "POST") {
+          return json({ ok: false, error: "method_not_allowed" }, 405, origin);
+        }
+        const body = await request.json().catch(() => ({}));
+        const me = await sessionUser(env, body.session);
+        if (!me) return json({ ok: false, error: "unauthorized" }, 401, origin);
 
         if (url.pathname === "/notes-list") {
           const { results } = await env.DB.prepare(
             "SELECT id, page, title, lang, text, prefix, suffix, comment, ts " +
-              "FROM notes ORDER BY ts DESC LIMIT 2000"
-          ).all();
+              "FROM notes WHERE user_id = ? ORDER BY ts DESC LIMIT 2000"
+          )
+            .bind(me.id)
+            .all();
           return json({ ok: true, notes: results }, 200, origin);
         }
 
@@ -427,17 +632,19 @@ export default {
             return json({ ok: false, error: "missing_fields" }, 400, origin);
           }
           const title = String(body.title || "").trim().slice(0, 300);
-          const lang = String(body.lang || "").toLowerCase().startsWith("en") ? "en" : "zh";
+          const nlang = String(body.lang || "").toLowerCase().startsWith("en") ? "en" : "zh";
           const prefix = String(body.prefix || "").slice(0, 200);
           const suffix = String(body.suffix || "").slice(0, 200);
           const comment = String(body.comment || "").trim().slice(0, 4000);
           const ts = Number(body.ts) || Date.now();
+          // The WHERE on the upsert stops a guessed id from overwriting
+          // someone else's note.
           await env.DB.prepare(
-            "INSERT INTO notes (id, page, title, lang, text, prefix, suffix, comment, ts) " +
-              "VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9) " +
-              "ON CONFLICT(id) DO UPDATE SET comment = ?8, ts = ?9"
+            "INSERT INTO notes (id, user_id, page, title, lang, text, prefix, suffix, comment, ts) " +
+              "VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10) " +
+              "ON CONFLICT(id) DO UPDATE SET comment = ?9, ts = ?10 WHERE notes.user_id = ?2"
           )
-            .bind(id, page, title, lang, text, prefix, suffix, comment, ts)
+            .bind(id, me.id, page, title, nlang, text, prefix, suffix, comment, ts)
             .run();
           return json({ ok: true, id }, 200, origin);
         }
@@ -445,7 +652,11 @@ export default {
         if (url.pathname === "/notes-delete") {
           const id = String(body.id || "").trim().slice(0, 64);
           if (!id) return json({ ok: false, error: "missing_id" }, 400, origin);
-          const res = await env.DB.prepare("DELETE FROM notes WHERE id = ?").bind(id).run();
+          const res = await env.DB.prepare(
+            "DELETE FROM notes WHERE id = ? AND user_id = ?"
+          )
+            .bind(id, me.id)
+            .run();
           return json({ ok: true, deleted: res.meta.changes > 0 }, 200, origin);
         }
       }
@@ -456,6 +667,108 @@ export default {
     }
   },
 };
+
+// ---- accounts: hashing, sessions, helpers --------------------------------
+
+function b64(bytes) {
+  let s = "";
+  for (const b of bytes) s += String.fromCharCode(b);
+  return btoa(s);
+}
+function unb64(str) {
+  const bin = atob(str);
+  const out = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+  return out;
+}
+function randomToken(n) {
+  return [...crypto.getRandomValues(new Uint8Array(n || 32))]
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+}
+async function sha256hex(str) {
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+  return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+// Length-independent compare, so an attacker can't time their way to a token.
+function safeEqual(a, b) {
+  a = String(a);
+  b = String(b);
+  if (a.length !== b.length) return false;
+  let diff = 0;
+  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return diff === 0;
+}
+
+// The pepper is a Worker secret, never in the database — so dumping D1 alone
+// doesn't let anyone mount an offline dictionary attack on these hashes.
+async function pepperPassword(env, password) {
+  const key = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode(env.AUTH_PEPPER || "bigcat-unpeppered"),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"]
+  );
+  const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(password));
+  return new Uint8Array(sig);
+}
+async function derivePw(env, password, salt, iterations) {
+  const peppered = await pepperPassword(env, password);
+  const key = await crypto.subtle.importKey("raw", peppered, { name: "PBKDF2" }, false, [
+    "deriveBits",
+  ]);
+  const bits = await crypto.subtle.deriveBits(
+    { name: "PBKDF2", salt, iterations, hash: "SHA-256" },
+    key,
+    256
+  );
+  return new Uint8Array(bits);
+}
+async function hashPassword(env, password) {
+  const salt = crypto.getRandomValues(new Uint8Array(16));
+  const h = await derivePw(env, password, salt, PBKDF2_ITER);
+  return "pbkdf2$" + PBKDF2_ITER + "$" + b64(salt) + "$" + b64(h);
+}
+async function verifyPassword(env, password, stored) {
+  const p = String(stored || "").split("$");
+  if (p.length !== 4 || p[0] !== "pbkdf2") return false;
+  const iter = parseInt(p[1], 10);
+  if (!(iter > 0 && iter <= PBKDF2_ITER)) return false;
+  let salt;
+  try {
+    salt = unb64(p[2]);
+  } catch (e) {
+    return false;
+  }
+  const h = await derivePw(env, password, salt, iter);
+  return safeEqual(b64(h), p[3]);
+}
+
+async function newSession(env, userId) {
+  const raw = randomToken(32);
+  const now = Date.now();
+  await env.DB.prepare(
+    "INSERT INTO sessions (token, user_id, created, expires) VALUES (?1, ?2, ?3, ?4)"
+  )
+    .bind(await sha256hex(raw), userId, now, now + SESSION_TTL)
+    .run();
+  return raw;
+}
+// Resolves a session secret to its account, or null. Expired rows are treated
+// as absent (a nightly cleanup isn't worth a cron here).
+async function sessionUser(env, raw) {
+  const s = String(raw || "").trim();
+  if (!/^[a-f0-9]{16,128}$/.test(s)) return null;
+  const row = await env.DB.prepare(
+    "SELECT s.user_id AS id, s.expires AS expires, u.email AS email " +
+      "FROM sessions s JOIN users u ON u.id = s.user_id WHERE s.token = ?"
+  )
+    .bind(await sha256hex(s))
+    .first();
+  if (!row || row.expires < Date.now()) return null;
+  return { id: row.id, email: row.email };
+}
 
 async function unsubToken(env, email, list) {
   const key = await crypto.subtle.importKey(
@@ -516,6 +829,65 @@ async function sendConfirmEmail(env, email, list, token, lang) {
           btn +
           '<p style="font-size:12px;color:#888">没订阅过就忽略这封邮件。</p>'
       );
+  try {
+    const r = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + env.RESEND_API_KEY,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ from: FROM_EMAIL, to: email, subject, html }),
+    });
+    return r.ok;
+  } catch (e) {
+    return false;
+  }
+}
+
+// Account emails: verification, password reset, and the "someone tried to
+// register your address" notice that keeps /auth-register non-enumerable.
+async function sendAuthEmail(env, email, kind, token, lang) {
+  if (!env.RESEND_API_KEY) return false;
+  const en = lang === "en";
+  const wrap = (inner) =>
+    '<div style="font-family:-apple-system,sans-serif;max-width:480px;margin:0 auto;color:#222">' +
+    inner +
+    "</div>";
+  const button = (href, label) =>
+    '<p><a href="' + href + '" style="display:inline-block;background:#7b61ff;color:#fff;' +
+    'padding:11px 22px;border-radius:8px;text-decoration:none;font-weight:700">' + label + "</a></p>";
+
+  let subject, html;
+  if (kind === "verify") {
+    const link = SITE_BASE + "/account.html?verify=" + token;
+    subject = en ? "Verify your BigCat Hub account" : "验证你的 BigCat Hub 账号";
+    html = en
+      ? wrap("<h2>Verify your account</h2><p>Click to activate your account and start saving notes.</p>" +
+          button(link, "Verify account") +
+          '<p style="font-size:12px;color:#888">Didn\'t sign up? Ignore this email.</p>')
+      : wrap("<h2>验证你的账号</h2><p>点击激活账号，之后就可以保存划线笔记了。</p>" +
+          button(link, "验证账号") +
+          '<p style="font-size:12px;color:#888">不是你注册的？忽略这封邮件即可。</p>');
+  } else if (kind === "reset") {
+    const link = SITE_BASE + "/account.html?reset=" + token;
+    subject = en ? "Reset your BigCat Hub password" : "重置 BigCat Hub 密码";
+    html = en
+      ? wrap("<h2>Reset your password</h2><p>This link works once and expires in an hour.</p>" +
+          button(link, "Set a new password") +
+          '<p style="font-size:12px;color:#888">Didn\'t ask for this? Ignore this email; your password is unchanged.</p>')
+      : wrap("<h2>重置密码</h2><p>这个链接只能用一次，一小时后失效。</p>" +
+          button(link, "设置新密码") +
+          '<p style="font-size:12px;color:#888">不是你申请的？忽略即可，密码不会改变。</p>');
+  } else {
+    const link = SITE_BASE + "/account.html";
+    subject = en ? "You already have a BigCat Hub account" : "你已经有 BigCat Hub 账号了";
+    html = en
+      ? wrap("<h2>You already have an account</h2><p>Someone tried to register with this address. Just log in — or reset your password if you've forgotten it.</p>" +
+          button(link, "Log in"))
+      : wrap("<h2>你已经有账号了</h2><p>有人用这个邮箱尝试注册。直接登录即可——忘记密码就用「忘记密码」重置。</p>" +
+          button(link, "登录"));
+  }
+
   try {
     const r = await fetch("https://api.resend.com/emails", {
       method: "POST",

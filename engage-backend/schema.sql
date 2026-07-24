@@ -38,12 +38,47 @@ CREATE TABLE IF NOT EXISTS comments (
 CREATE INDEX IF NOT EXISTS idx_comments_page ON comments (page, ts);
 CREATE INDEX IF NOT EXISTS idx_comments_iphash ON comments (iphash, ts);
 
--- Highlight notes (owner-private; every /notes-* endpoint requires NOTES_TOKEN).
--- `id` is minted client-side so a note saved offline keeps its identity when it
--- syncs later. `prefix`/`suffix` are the surrounding characters, used to find
--- the exact occurrence again when jumping back into the article.
+-- Accounts. Anyone may register; an account can only log in once the emailed
+-- verification link has been clicked. Passwords are PBKDF2-SHA256 (100k
+-- iterations — Workers' hard ceiling) over an HMAC of the password with the
+-- AUTH_PEPPER secret, so a database leak alone is not enough to crack them.
+CREATE TABLE IF NOT EXISTS users (
+  id       TEXT    PRIMARY KEY,        -- uuid
+  email    TEXT    NOT NULL UNIQUE,    -- lowercased
+  pwhash   TEXT    NOT NULL,           -- pbkdf2$<iter>$<salt_b64>$<hash_b64>
+  verified INTEGER NOT NULL DEFAULT 0,
+  vtoken   TEXT,                       -- email-verification token, cleared on use
+  rtoken   TEXT,                       -- password-reset token, cleared on use
+  rexpires INTEGER,                    -- reset token expiry (ms epoch)
+  created  INTEGER NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_users_vtoken ON users (vtoken);
+CREATE INDEX IF NOT EXISTS idx_users_rtoken ON users (rtoken);
+
+-- Login sessions. `token` is the SHA-256 of the secret handed to the browser,
+-- so the database never holds anything that can be replayed directly.
+CREATE TABLE IF NOT EXISTS sessions (
+  token   TEXT    PRIMARY KEY,
+  user_id TEXT    NOT NULL,
+  created INTEGER NOT NULL,
+  expires INTEGER NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_sessions_user ON sessions (user_id);
+
+-- Failed-login throttling, per salted IP hash.
+CREATE TABLE IF NOT EXISTS auth_attempts (
+  iphash TEXT    NOT NULL,
+  ts     INTEGER NOT NULL
+);
+CREATE INDEX IF NOT EXISTS idx_auth_attempts ON auth_attempts (iphash, ts);
+
+-- Highlight notes, scoped to the account that made them. `id` is minted
+-- client-side so a note saved offline keeps its identity when it syncs later.
+-- `prefix`/`suffix` are the surrounding characters, used to find the exact
+-- occurrence again when jumping back into the article.
 CREATE TABLE IF NOT EXISTS notes (
   id      TEXT    PRIMARY KEY,        -- client-generated uuid
+  user_id TEXT    NOT NULL DEFAULT '',-- owner; every query filters on this
   page    TEXT    NOT NULL,           -- pathname the highlight lives on
   title   TEXT    NOT NULL DEFAULT '',-- page title, for the notes list
   lang    TEXT    NOT NULL DEFAULT 'zh',
@@ -55,4 +90,4 @@ CREATE TABLE IF NOT EXISTS notes (
 );
 
 CREATE INDEX IF NOT EXISTS idx_notes_ts ON notes (ts);
-CREATE INDEX IF NOT EXISTS idx_notes_page ON notes (page, ts);
+CREATE INDEX IF NOT EXISTS idx_notes_user ON notes (user_id, ts);

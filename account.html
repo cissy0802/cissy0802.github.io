@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-pagefind-ignore data-no-hub-nav>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>账号 · Account</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐱</text></svg>">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#1a1a2e">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Serif SC","Songti SC",sans-serif;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0a0e1a 100%);color:#e4e6eb;line-height:1.7;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.card{width:100%;max-width:400px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:18px;padding:30px 26px 26px}
+h1{font-size:1.5rem;font-weight:800;background:linear-gradient(135deg,#00d4ff 0%,#7b61ff 50%,#ff6ec4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px}
+.sub{color:#a0a8c0;font-size:.86rem;margin-bottom:22px}
+label{display:block;font-size:.78rem;color:#a0a8c0;margin:14px 0 5px}
+input{width:100%;padding:11px 13px;border-radius:11px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:#e4e6eb;font-size:.95rem;font-family:inherit}
+input:focus{outline:none;border-color:#7b61ff}
+button.primary{width:100%;margin-top:20px;padding:12px;border-radius:11px;border:none;background:#7b61ff;color:#fff;font:700 .95rem inherit;cursor:pointer}
+button.primary:hover{background:#6a50ee}
+button.primary:disabled{opacity:.5;cursor:default}
+.links{margin-top:16px;display:flex;justify-content:space-between;font-size:.8rem}
+.links a{color:#7b61ff;text-decoration:none;cursor:pointer}
+.links a:hover{text-decoration:underline}
+.msg{margin-top:16px;padding:11px 13px;border-radius:10px;font-size:.85rem;display:none}
+.msg.err{display:block;background:rgba(255,107,107,.12);border:1px solid rgba(255,107,107,.3);color:#ff9b9b}
+.msg.ok{display:block;background:rgba(126,226,168,.1);border:1px solid rgba(126,226,168,.3);color:#7ee2a8}
+.back{position:fixed;top:16px;left:16px;padding:7px 13px;border-radius:14px;background:rgba(30,30,50,.8);border:1px solid rgba(255,255,255,.12);color:#a0a8c0;text-decoration:none;font-size:.8rem}
+.me{text-align:center}
+.me .email{font-size:1.05rem;color:#e4e6eb;margin:10px 0 4px;word-break:break-all}
+.hint{font-size:.75rem;color:#6b7390;margin-top:14px;line-height:1.6}
+</style>
+</head>
+<body>
+<a class="back" href="/index.zh.html">← Hub</a>
+<div class="card">
+  <h1 id="title">登录</h1>
+  <div class="sub" id="subtitle">登录后就能保存划线笔记，跨设备同步。</div>
+  <form id="form" autocomplete="on">
+    <div id="fields"></div>
+    <button class="primary" id="submit" type="submit">登录</button>
+  </form>
+  <div class="links" id="links"></div>
+  <div class="msg" id="msg"></div>
+  <div class="hint" id="hint"></div>
+</div>
+
+<script defer src="/notes.js"></script>
+<script>
+(function () {
+  var API = 'https://bigcat-engage.cissychen.workers.dev';
+  var SESSION_KEY = 'bigcat-session';
+  var qs = new URLSearchParams(location.search);
+  var titleEl = document.getElementById('title');
+  var subEl = document.getElementById('subtitle');
+  var fieldsEl = document.getElementById('fields');
+  var formEl = document.getElementById('form');
+  var submitEl = document.getElementById('submit');
+  var linksEl = document.getElementById('links');
+  var msgEl = document.getElementById('msg');
+  var hintEl = document.getElementById('hint');
+  var mode = 'login';
+
+  function say(text, kind) {
+    msgEl.textContent = text;
+    msgEl.className = 'msg ' + (kind || 'err');
+  }
+  function clearMsg() { msgEl.className = 'msg'; msgEl.textContent = ''; }
+
+  function post(path, payload) {
+    return fetch(API + path, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload || {}),
+    }).then(function (r) { return r.json(); });
+  }
+
+  var ERRORS = {
+    invalid_email: '邮箱格式不对。',
+    weak_password: '密码至少 8 位。',
+    bad_credentials: '邮箱或密码不对。',
+    unverified: '账号还没验证，请先点邮件里的验证链接。',
+    rate_limited: '尝试太多次了，请 15 分钟后再试。',
+    bad_token: '这个链接已失效或已使用过，请重新申请。',
+    no_sender: '邮件服务未配置，暂时无法注册。',
+    unauthorized: '登录已过期，请重新登录。',
+  };
+  function errText(e) { return ERRORS[e] || ('出错了：' + (e || '未知错误')); }
+
+  function fieldsHtml(kind) {
+    var email = '<label for="email">邮箱</label>' +
+      '<input type="email" id="email" name="email" autocomplete="username" required>';
+    var pw = '<label for="password">密码</label>' +
+      '<input type="password" id="password" name="password" autocomplete="current-password" required>';
+    var newPw = '<label for="password">新密码（至少 8 位）</label>' +
+      '<input type="password" id="password" name="password" autocomplete="new-password" minlength="8" required>';
+    if (kind === 'login') return email + pw;
+    if (kind === 'register') return email + newPw.replace('新密码', '密码');
+    if (kind === 'forgot') return email;
+    if (kind === 'reset') return newPw;
+    return '';
+  }
+
+  function setMode(m) {
+    mode = m;
+    clearMsg();
+    hintEl.textContent = '';
+    var conf = {
+      login:    ['登录', '登录后就能保存划线笔记，跨设备同步。', '登录'],
+      register: ['注册', '任何人都可以注册。注册后会收到一封验证邮件。', '创建账号'],
+      forgot:   ['忘记密码', '输入注册邮箱，我们会发一个重置链接给你。', '发送重置链接'],
+      reset:    ['设置新密码', '设置好之后，其他设备上的登录都会失效。', '保存新密码'],
+    }[m];
+    titleEl.textContent = conf[0];
+    subEl.textContent = conf[1];
+    submitEl.textContent = conf[2];
+    fieldsEl.innerHTML = fieldsHtml(m);
+    linksEl.innerHTML = m === 'login'
+      ? '<a data-go="register">还没有账号？注册</a><a data-go="forgot">忘记密码</a>'
+      : '<a data-go="login">← 回到登录</a>';
+  }
+
+  linksEl.addEventListener('click', function (e) {
+    var go = e.target.getAttribute && e.target.getAttribute('data-go');
+    if (go) { history.replaceState(null, '', '/account.html'); setMode(go); }
+  });
+
+  function showLoggedIn(email) {
+    titleEl.textContent = '已登录';
+    subEl.textContent = '';
+    formEl.style.display = 'none';
+    linksEl.innerHTML = '';
+    clearMsg();
+    document.querySelector('.card').insertAdjacentHTML('beforeend',
+      '<div class="me"><div class="email">' + email.replace(/[<>&]/g, '') + '</div>' +
+      '<div class="hint">划线笔记会同步到这个账号。</div>' +
+      '<button class="primary" id="tonotes">我的笔记 →</button>' +
+      '<button class="primary" id="logout" style="background:rgba(255,255,255,.08);margin-top:10px">退出登录</button></div>');
+    document.getElementById('tonotes').onclick = function () { location.href = '/notes.html'; };
+    document.getElementById('logout').onclick = function () {
+      var s = localStorage.getItem(SESSION_KEY);
+      localStorage.removeItem(SESSION_KEY);
+      post('/auth-logout', { session: s }).catch(function () {});
+      location.href = '/account.html';
+    };
+  }
+
+  function finishLogin(session, email) {
+    localStorage.setItem(SESSION_KEY, session);
+    var back = qs.get('next');
+    if (back && back.charAt(0) === '/' && back.charAt(1) !== '/') {
+      location.href = back;
+      return;
+    }
+    if (email) { showLoggedIn(email); return; }
+    post('/auth-me', { session: session }).then(function (r) {
+      showLoggedIn(r.ok ? r.email : '');
+    });
+  }
+
+  formEl.addEventListener('submit', function (e) {
+    e.preventDefault();
+    clearMsg();
+    var email = (document.getElementById('email') || {}).value;
+    var password = (document.getElementById('password') || {}).value;
+    submitEl.disabled = true;
+    var done = function () { submitEl.disabled = false; };
+
+    if (mode === 'login') {
+      post('/auth-login', { email: email, password: password, lang: 'zh' }).then(function (r) {
+        done();
+        if (r.ok) finishLogin(r.session, r.email);
+        else say(errText(r.error));
+      }).catch(function () { done(); say('网络错误，请重试。'); });
+    } else if (mode === 'register') {
+      post('/auth-register', { email: email, password: password, lang: 'zh' }).then(function (r) {
+        done();
+        if (r.ok) {
+          say('验证邮件已发出，请到邮箱点确认链接。', 'ok');
+          hintEl.textContent = '没收到？检查垃圾邮件，或几分钟后再试一次。';
+        } else say(errText(r.error));
+      }).catch(function () { done(); say('网络错误，请重试。'); });
+    } else if (mode === 'forgot') {
+      post('/auth-forgot', { email: email, lang: 'zh' }).then(function (r) {
+        done();
+        say('如果这个邮箱有账号，重置链接已经发出了。', 'ok');
+      }).catch(function () { done(); say('网络错误，请重试。'); });
+    } else if (mode === 'reset') {
+      post('/auth-reset', { token: qs.get('reset'), password: password }).then(function (r) {
+        done();
+        if (r.ok) { history.replaceState(null, '', '/account.html'); finishLogin(r.session); }
+        else say(errText(r.error));
+      }).catch(function () { done(); say('网络错误，请重试。'); });
+    }
+  });
+
+  // Entry points: emailed verify link, emailed reset link, or a normal visit.
+  if (qs.get('verify')) {
+    setMode('login');
+    titleEl.textContent = '正在验证…';
+    subEl.textContent = '';
+    formEl.style.display = 'none';
+    post('/auth-verify', { token: qs.get('verify') }).then(function (r) {
+      if (r.ok) {
+        history.replaceState(null, '', '/account.html');
+        finishLogin(r.session);
+      } else {
+        formEl.style.display = '';
+        setMode('login');
+        say(errText(r.error));
+      }
+    });
+  } else if (qs.get('reset')) {
+    setMode('reset');
+  } else {
+    setMode('login');
+    var s = localStorage.getItem(SESSION_KEY);
+    if (s) {
+      post('/auth-me', { session: s }).then(function (r) {
+        if (r.ok) showLoggedIn(r.email);
+        else localStorage.removeItem(SESSION_KEY);
+      }).catch(function () {});
+    }
+  }
+})();
+</script>
+</body>
+</html>

@@ -47,6 +47,8 @@ input[type=search]::placeholder{color:#6b7390}
 <div class="bar">
   <input type="search" id="q" placeholder="搜索笔记内容或文章标题…">
   <button class="btn" id="refresh">↻ 同步</button>
+  <span class="btn" id="who" style="display:none;cursor:default;border-style:dashed"></span>
+  <button class="btn" id="logout" style="display:none">退出</button>
 </div>
 <div id="list"></div>
 </div>
@@ -140,18 +142,30 @@ input[type=search]::placeholder{color:#6b7390}
 
   function start() {
     if (!window.BigCatNotes) { setTimeout(start, 100); return; }
-    if (!window.BigCatNotes.hasToken() && !window.BigCatNotes.promptToken()) {
-      countEl.textContent = '需要同步密码';
-      listEl.innerHTML = '<div class="empty">笔记是私有的，需要同步密码才能查看。<br>' +
-        '<button class="btn" onclick="window.BigCatNotes.promptToken()&&location.reload()">输入密码</button></div>';
-      return;
-    }
-    load();
+    if (!window.BigCatNotes.isLoggedIn()) { showLoggedOut(); return; }
+    window.BigCatNotes.me().then(function (email) {
+      if (!email) { showLoggedOut(); return; }
+      var who = document.getElementById('who');
+      who.textContent = email;
+      who.style.display = '';
+      document.getElementById('logout').style.display = '';
+      load();
+    });
+  }
+
+  function showLoggedOut() {
+    countEl.textContent = '';
+    listEl.innerHTML = '<div class="empty">笔记是私有的，登录后才能查看。<br>' +
+      '<a class="btn" style="display:inline-block;margin-top:12px;text-decoration:none" ' +
+      'href="/account.html?next=%2Fnotes.html">登录 / 注册</a></div>';
   }
 
   qEl.addEventListener('input', render);
   document.getElementById('refresh').addEventListener('click', function () {
     window.BigCatNotes.flush().then(load);
+  });
+  document.getElementById('logout').addEventListener('click', function () {
+    window.BigCatNotes.logout().then(function () { location.href = '/account.html'; });
   });
   start();
 })();

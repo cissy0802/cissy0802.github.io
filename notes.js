@@ -1,15 +1,16 @@
-/* BigCat Learning Hub — highlight notes (owner-private).
+/* BigCat Learning Hub — highlight notes.
  *
  * Loaded on every content page by index-button.js, next to offline.js.
- * Only active for the owner (same localStorage flag offline.js uses).
+ * Open to anyone with an account (register at /account.html); each account's
+ * notes are private to it.
  *
  *   • Select text on a page  -> a "＋ 笔记 / Note" bubble appears
  *   • Tap it                 -> the passage is saved with ~40 chars of context
  *                               on each side, queued locally, synced to the
- *                               Worker (POST /notes-add, NOTES_TOKEN required)
- *   • /notes.html            -> every note, newest first; tapping one opens the
- *                               article at #note=<id>, which this script then
- *                               re-locates, scrolls to and flashes
+ *                               Worker (POST /notes-add with the session token)
+ *   • /notes.html            -> that account's notes, newest first; tapping one
+ *                               opens the article at #note=<id>, which this
+ *                               script then re-locates, scrolls to and flashes
  *
  * Offline-first: notes always land in localStorage immediately and flush to the
  * cloud whenever a request succeeds, so highlighting on a plane works fine.
@@ -18,17 +19,16 @@
   'use strict';
 
   var API = 'https://bigcat-engage.cissychen.workers.dev';
-  var OWNER_KEY = 'bigcat-offline-owner';
-  var TOKEN_KEY = 'bigcat-notes-token';
+  var SESSION_KEY = 'bigcat-session';
   var QUEUE_KEY = 'bigcat-notes-queue';   // notes not yet accepted by the server
   var CACHE_KEY = 'bigcat-notes-cache';   // last known server list, for offline reads
   var CTX = 40;
 
-  function isOwner() {
-    try { return localStorage.getItem(OWNER_KEY) === '1'; } catch (e) { return false; }
+  function session() {
+    try { return localStorage.getItem(SESSION_KEY) || ''; } catch (e) { return ''; }
   }
-  function token() {
-    try { return localStorage.getItem(TOKEN_KEY) || ''; } catch (e) { return ''; }
+  function loginUrl() {
+    return '/account.html?next=' + encodeURIComponent(location.pathname + location.search);
   }
   function readJSON(key, dflt) {
     try { return JSON.parse(localStorage.getItem(key)) || dflt; } catch (e) { return dflt; }
@@ -40,8 +40,8 @@
   var isEn = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0
     || /\.en\.html$/i.test(location.pathname);
   var T = isEn
-    ? { add: '＋ Note', saved: '✓ Saved', queued: '✓ Saved (offline)', askToken: 'Notes sync password:' }
-    : { add: '＋ 笔记', saved: '✓ 已保存', queued: '✓ 已保存（离线）', askToken: '笔记同步密码：' };
+    ? { add: '＋ Note', saved: '✓ Saved', queued: '✓ Saved (offline)', login: 'Log in to save notes' }
+    : { add: '＋ 笔记', saved: '✓ 已保存', queued: '✓ 已保存（离线）', login: '登录后即可保存笔记' };
 
   // ---------- sync ---------------------------------------------------------
 
@@ -49,13 +49,13 @@
     return fetch(API + path, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(Object.assign({ token: token() }, payload)),
+      body: JSON.stringify(Object.assign({ session: session() }, payload)),
     }).then(function (r) { return r.json(); });
   }
 
   function flushQueue() {
     var q = readJSON(QUEUE_KEY, []);
-    if (!q.length || !token() || !navigator.onLine) return Promise.resolve();
+    if (!q.length || !session() || !navigator.onLine) return Promise.resolve();
     return q.reduce(function (chain, note) {
       return chain.then(function () {
         return post('/notes-add', note).then(function (res) {
@@ -80,12 +80,21 @@
   // Exposed for notes.html: merged server + not-yet-synced view.
   window.BigCatNotes = {
     api: API,
-    hasToken: function () { return !!token(); },
-    setToken: function (t) { try { localStorage.setItem(TOKEN_KEY, t); } catch (e) {} },
-    promptToken: function () {
-      var t = window.prompt(T.askToken);
-      if (t) { window.BigCatNotes.setToken(t.trim()); return true; }
-      return false;
+    loginUrl: loginUrl,
+    isLoggedIn: function () { return !!session(); },
+    me: function () {
+      if (!session()) return Promise.resolve(null);
+      return post('/auth-me', {}).then(function (r) {
+        if (r && r.ok) return r.email;
+        // Session expired or revoked — drop it so the UI asks for a login.
+        try { localStorage.removeItem(SESSION_KEY); } catch (e) {}
+        return null;
+      }).catch(function () { return null; });
+    },
+    logout: function () {
+      var s = session();
+      try { localStorage.removeItem(SESSION_KEY); } catch (e) {}
+      return post('/auth-logout', { session: s }).catch(function () {});
     },
     flush: flushQueue,
     list: function () {
@@ -205,7 +214,6 @@
   }
 
   ready(function () {
-    if (!isOwner()) return;
     if (document.getElementById('note-bubble')) return;
 
     flushQueue();
@@ -266,7 +274,12 @@
     bubble.addEventListener('mousedown', function (e) { e.preventDefault(); });
     bubble.addEventListener('click', function () {
       if (!pending) return;
-      if (!token() && !window.BigCatNotes.promptToken()) return;
+      // Not logged in: send them to the account page and come straight back.
+      if (!session()) {
+        bubble.textContent = T.login;
+        setTimeout(function () { location.href = loginUrl(); }, 600);
+        return;
+      }
 
       var note = {
         id: (crypto.randomUUID ? crypto.randomUUID() : String(Date.now() + Math.random())).replace(/-/g, ''),
