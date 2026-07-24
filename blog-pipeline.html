@@ -49,7 +49,7 @@ footer a{color:#7b61ff}
 </header>
 
 <div class="lede">
-BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模型、AI/ML、System Design、论文精读、哲学、佛学、育儿、投资……三十来个主题，每个是一个独立的 GitHub Pages 仓库。它们每天自动更新、中英双语、带全站搜索、登录-free 评论、邮件订阅/投票和语音朗读——而日常运营几乎不需要我动手。这篇文章讲整条 pipeline 是怎么搭起来的。
+BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模型、AI/ML、System Design、论文精读、哲学、佛学、育儿、投资……三十来个主题，每个是一个独立的 GitHub Pages 仓库。它们每天自动更新、中英双语、带全站搜索、登录-free 评论、邮件订阅/投票和语音朗读，还能装成手机 App、离线看能离线听、划线做笔记——而日常运营几乎不需要我动手。这篇文章讲整条 pipeline 是怎么搭起来的。
 </div>
 
 <h2>0. 先看它长什么样</h2>
@@ -57,6 +57,7 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <li><strong>一个 Hub 首页</strong>聚合所有站点卡片，自动显示每个站的最近更新日期，写完封顶的站自动打上「✓ 已完结」徽章。</li>
 <li><strong>每个主题站</strong>是一个独立 repo：<code>ai-ml</code>、<code>mental-models</code>、<code>system-design</code>、<code>cs-papers-deepread</code>……每天（或隔天/每周）新增一页深度内容，中文页 + 英文页各一个独立 HTML。</li>
 <li><strong>全站基础设施</strong>：Pagefind 静态搜索（按 <code>/</code> 呼出）、登录-free 评论、邮件订阅与投票、图片 lightbox、双语切换 + TTS 朗读——全部由共享 JS 提供，内容页自己一行都不用写。</li>
+<li><strong>可以装成 App</strong>：整个 Hub 是个 PWA，「添加到主屏幕」后全屏运行；点篇文章「⤓ 离线」，它连同语音就存到本地，飞机上也能看能听；选中任意文字能划线做笔记、写批注，笔记按主题站归类、跨设备同步，人人可注册自己的账号。</li>
 <li><strong>托管成本为零</strong>：全部 GitHub Pages + GitHub Actions 免费额度，唯一的外部服务是 Azure Speech 免费层（TTS）。</li>
 </ul>
 <p>核心思路一句话：<strong>我只维护每个站的路线图（TOPICS.md），内容生产、发布、加工、聚合、巡检全部交给自动化——其中「写内容」这一步交给云端定时运行的 Claude agent。</strong></p>
@@ -143,13 +144,13 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <p>每个内容 repo 除了 HTML 页面，只有四样东西，各司其职。</p>
 
 <h3>TOPICS.md —— 人类维护的路线图（对 bot 只读）</h3>
-<p>整个系统里唯一持续需要我投入的地方。它按顺序列出这个站要覆盖的全部主题——<strong>这份清单的长度本身就是封顶</strong>：写完即毕业（见 §8）。关键设计是<strong>权限单向</strong>：routine 只能读它，<code>publish.sh</code> 会直接拒绝任何修改了 TOPICS.md 的提交。选题耗尽时，routine 不许自己续写路线图，只能给我发一条推送通知请求补充。</p>
+<p>整个系统里唯一持续需要我投入的地方。它按顺序列出这个站要覆盖的全部主题——<strong>这份清单的长度本身就是封顶</strong>：写完即毕业（见 §9）。关键设计是<strong>权限单向</strong>：routine 只能读它，<code>publish.sh</code> 会直接拒绝任何修改了 TOPICS.md 的提交。选题耗尽时，routine 不许自己续写路线图，只能给我发一条推送通知请求补充。</p>
 <p>这条线划在这里，是整个系统「不跑偏」的根本：<strong>AI 决定怎么写，人决定写什么。</strong></p>
 
 <h3>CLAUDE.md —— 写作规范</h3>
 <p>需要精确控制版式和深度的站（system-design、论文精读、每日精读）有一份详细的执行规范：目标读者（资深工程师）、篇幅区间、必备章节结构（比如论文精读的「一句话 → Glossary → 坐标 → 问题动机 → 核心思想 → 关键结果 → 影响 → 局限与批评 → 要点收尾」九段式）、配色（每个站有独立的视觉签名：system-design 是青色暗色系，论文精读是琥珀铜色）、以及诚实性要求——引文拿不准要标「大意」，局限和反方观点必须写。</p>
 <p>规范里最值得一提的是<strong>以已发布页面为基准</strong>：prompt 会指着某一篇（「以 read1 为深度、格式与腔调基准」）说照这个来。比起在规范里描述风格，直接给范例样本要稳定得多。</p>
-<p>后来发现它还有个更重要的身份：<strong>CLAUDE.md 是「不动 prompt 就能改 routine 行为」的控制面</strong>。云端 routine 每次运行会自动加载仓根目录的 CLAUDE.md，而且它<strong>叠加在 prompt 之上</strong>——想改一条规则时，不必去动那份又长又自包含的 prompt（改 trigger 配置还有整体替换 job_config 的风险，见 §8），往 CLAUDE.md 里加一句就行。这条通路是拿探针实测过的：往某个仓的 CLAUDE.md 塞一句「运行开头写一个探针文件并 push」，只推该仓、手动触发一次，远端果然如期出现了那个文件——而且它照常写完了当期内容。</p>
+<p>后来发现它还有个更重要的身份：<strong>CLAUDE.md 是「不动 prompt 就能改 routine 行为」的控制面</strong>。云端 routine 每次运行会自动加载仓根目录的 CLAUDE.md，而且它<strong>叠加在 prompt 之上</strong>——想改一条规则时，不必去动那份又长又自包含的 prompt（改 trigger 配置还有整体替换 job_config 的风险，见 §9），往 CLAUDE.md 里加一句就行。这条通路是拿探针实测过的：往某个仓的 CLAUDE.md 塞一句「运行开头写一个探针文件并 push」，只推该仓、手动触发一次，远端果然如期出现了那个文件——而且它照常写完了当期内容。</p>
 
 <h3>.maxchars —— 长度 ratchet</h3>
 <p>一个只有一行数字的文件（3500/4000/5000），<code>publish.sh</code> 会统计新页面的 CJK 字符数并卡在这个上限。这是踩过坑之后加的：LLM 生成内容有「长度棘轮」倾向——每篇都比上一篇略长一点，因为模型倾向参考最近的页面，几十天后页面就膨胀失控。解法是双向夹住：prompt 里给目标区间，闸门上给硬上限。</p>
@@ -252,7 +253,32 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 </ul>
 <p>投票去重只靠前端一个随机 localStorage token——清掉就能重投。对一个随手玩的 hub 民调，<strong>诚实但不严防</strong>足够了；真要严格，用上面那套登录地基升级即可。这一层的取舍贯穿始终：<strong>能静态就静态；非有状态不可的那一小块，用最小的后端 + 免费额度兜住，并且每处都预留了「以后要更严怎么长上去」。</strong></p>
 
-<h2>7. 两个偏离标准模板的站：Thinking Hub 与 Deep Research</h2>
+<h2>7. 从网站到 App：离线、笔记、账号</h2>
+<p>前六层讲的是「怎么把内容生产出来」。这一层是后来长出来的另一个方向：<strong>怎么让它更像一个 App</strong>——能装到手机主屏、能离线看能离线听、能划线做笔记、还能多人各用各的账号。关键约束没变：<strong>不新增服务器、不给每个内容仓改一行</strong>，全部挂在既有的注入层（§5）和那一个 Worker + D1（§6）上。</p>
+
+<h3>装成 App + 离线：一个 service worker 铺满全站</h3>
+<p>第一步是 PWA 化：加一个 <code>manifest.webmanifest</code> 和一个根作用域的 service worker（<code>sw.js</code>），Safari / Chrome 里「添加到主屏幕」后就是个全屏、带图标的 App。因为 SW 注册在<strong>域名根</strong>，它的作用域天然覆盖底下 30 多个内容仓——一次注册，全站离线，不必每个仓单独装。</p>
+<p>离线策略是分层的：Hub 外壳（首页、共享 JS）自动进缓存；HTML / JS 走<strong>网络优先、断网回退缓存</strong>，保证联网时永远看到最新版；音频（预烘焙的 mp3，可能上百 MB）<strong>绝不自动缓存</strong>，只在用户对某篇文章点了「⤓ 离线」时，才把那一篇的 HTML + 对应 mp3 存进 Cache API。按篇下载，几 MB 到几十 MB，可控。</p>
+<p>这里踩了个 iOS 的坑：装到主屏幕的 PWA <strong>有一个和 Safari 完全隔离的存储空间</strong>，而「添加到主屏幕」又会<strong>丢掉 URL 上的查询串</strong>——所以本来用 <code>?me=1</code> 解锁「离线下载按钮只对我显示」的开关，永远传不进装好的 App。解法是加一个<strong>应用内手势</strong>：连点页面标题 7 次即切换。这类「桌面 App 的存储 / URL 行为和浏览器不一样」的细节，都是实测换来的。</p>
+
+<h3>划线笔记：定位、离线、归类、批注</h3>
+<p>笔记是一个 <code>notes.js</code>，和离线脚本一样由注入层铺到全站（连客户端渲染、刻意不挂 Hub 导航的圆桌辩论页也覆盖到了——这里踩过一个坑：注入原本卡在「不显示导航按钮」的早退之后，等于把笔记也一起禁了，后来把注入提到早退之前才修好）。选中任意一段文字，冒出「＋ 笔记」气泡，点一下就存。</p>
+<p>难点在<strong>怎么把一句话重新定位回原文</strong>：保存时连同划线句、以及<strong>前后各约 40 个字的上下文</strong>一起存；重新打开时按「前文 + 原句 + 后文」在页面里查找，命中就滚动过去、黄色高亮闪一下。带上下文是因为同一句话在一页里可能出现多次，只有前后文能把那一处唯一定位出来。</p>
+<p>笔记是<strong>离线优先</strong>的：写下即进 localStorage 队列、先在本地生效，联网时自动补传到后端——飞机上、地铁里照划不误。列表页（<code>/notes.html</code>）<strong>按仓归类</strong>：每条笔记的 <code>page</code> 路径第一段就是仓名，据此分组成「思维模型 / AI·ML / 圆桌辩论……」，仓名和 Hub 首页的卡片一致。除了划线的原句，每条笔记还能<strong>写一段自己的想法</strong>（批注），行内编辑，和划线一起同步。</p>
+
+<h3>多用户账号：把 §6 埋的地基兑现了</h3>
+<p>笔记一旦要跨设备、还要多人各用各的，就必须有真正的账号。而这正是 §6 结尾埋下的那句预言——「<strong>『邮箱 → 验证』正是免密登录的地基，以后签发一个会话 token 即可，数据库不用重构</strong>」——现在把它兑现了：还是<strong>同一个 Worker、同一个 D1</strong>，只多了 <code>users</code> / <code>sessions</code> 两张表和一组 <code>POST /auth-*</code> 端点。</p>
+<p>安全上没有偷懒，因为这是公开注册：</p>
+<ul>
+<li><strong>密码</strong>用 PBKDF2-SHA256（10 万轮，Workers 平台的硬上限）哈希，并且先叠一层<strong>只存在 Worker 里的 pepper 密钥</strong>——就算整个 D1 被拖走，也没法离线撞库。</li>
+<li><strong>会话</strong>存的是浏览器 token 的 SHA-256，数据库里没有任何能直接重放的东西；90 天过期。</li>
+<li><strong>必须邮箱验证</strong>才能登录（复用 §6 那套 Resend 发信）；注册和「忘记密码」<strong>无论邮箱存不存在都返回一模一样的响应</strong>，别人没法拿它探测谁注册过。</li>
+<li>登录失败按 IP 限流（15 分钟 10 次），重置链接一小时失效、用一次即废，改密码顺带踢掉其它设备的登录。</li>
+<li>每条笔记都<strong>绑定账号 id</strong>，每个查询强制按它过滤——一个账号<strong>读不到、也改不了、删不掉</strong>别人的笔记（这条我用两个账号交叉测过：猜到对方笔记 id 也无从下手）。</li>
+</ul>
+<p>整层加完，后端<strong>依然是那一个 Worker + 一个 D1、依然在免费额度内</strong>。这正好回扣了 §6 的取舍：那时把订阅刻意做成「邮箱 → 验证」，不是多此一举，而是<strong>提前给今天的账号系统埋好了地基</strong>——今天没有重构，只是把地基上的楼接着往上盖了一层。</p>
+
+<h2>8. 两个偏离标准模板的站：Thinking Hub 与 Deep Research</h2>
 <p>前面讲的是「人定题、routine 写一页」的标准内容站。有两个站不走这个模板——它们更复杂，也最能说明这套架构能往哪儿伸。</p>
 
 <h3>Thinking Hub（思想家圆桌辩论）—— 观众投票决定写什么</h3>
@@ -266,7 +292,7 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <p>它还是全系统里<strong>唯一有构建步骤</strong>的站：别的站 routine 直接吐 HTML，这里源文件是 markdown（放在 <code>sources/</code>，每篇分「通俗版 plain」和「深挖版 deep」、中英双语），由 <code>build.py</code> 按注册表渲染成 HTML——一篇 = 通俗 × 深挖 × 中英 = 4 个页面。改内容改 markdown、重跑 <code>build.py</code>。</p>
 <p>为什么单列：它把「生成」从「写一页」升级成「<strong>调研 → 对抗核查 → 带引用合成</strong>」，是这套系统里研究强度最高、也最贴合本文标题「一个人指挥一支 agent 车队」的一支。</p>
 
-<h2>8. 治理层：让系统自己管自己</h2>
+<h2>9. 治理层：让系统自己管自己</h2>
 <p>跑起来只是开始，长期无人值守才是难的部分。几道防线：</p>
 
 <h3>封顶 + 自动停机</h3>
@@ -293,16 +319,18 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <li>新 routine 上线前先小批量试跑人工验收，再放开批量（TTS bake 尤其如此——结构错一次浪费的是整月 Azure 配额）</li>
 </ul>
 
-<h2>9. 沉淀下来的设计原则</h2>
+<h2>10. 沉淀下来的设计原则</h2>
 <div class="principle"><b>静态优先，后端只留一小块。</b>内容侧没有数据库、没有服务器、没有构建框架：HTML 就是产物，git 就是 CMS，GitHub Pages 就是 CDN，搜索（Pagefind）、TTS（预烘焙 mp3）都用静态方案解决了传统上「需要后端」的功能。唯一非有状态不可的订阅 / 评论 / 投票，收敛到一个 Cloudflare Worker + D1、全在免费额度内——静态优先不是教条，是把后端的面积压到最小。</div>
 <div class="principle"><b>文件系统就是状态。</b>选题进度 = <code>ls</code> 的结果；发布记录 = commit message；完结状态 = 从 commit 解析。没有任何一处需要独立维护的状态存储，所以没有任何一处会和现实脱节。</div>
 <div class="principle"><b>每一步都幂等。</b>routine 重复触发不会重写已有页面（文件已存在）；TTS 重跑不会重复计费（hash 命中）；注入重跑不会叠加标签（缺才补）。无人值守系统的重试是常态，幂等不是优化而是前提。</div>
 <div class="principle"><b>生成和校验分离。</b>永远不假设 LLM 输出正确，publish.sh 用最笨的 bash 检查兜底。生成端越智能，校验端越要笨而确定。</div>
 <div class="principle"><b>人类只把守一个入口。</b>我的全部日常投入收敛到 TOPICS.md 和封顶决策上，其余一切推导自它。AI 想扩大自己的工作范围（续写路线图）在机制上被禁止，只能申请。</div>
 <div class="principle"><b>约定优于协议。</b><code>Add #N</code> 的 commit 格式、<code>{slug}-day{N}.html</code> 的命名、<code>.maxchars</code> 单行文件——组件之间靠这些朴素约定通信，没有一处 JSON schema，但每处约定都有至少两个消费者。</div>
+<div class="principle"><b>能力长在注入层，不改内容仓。</b>离线、划线笔记、账号——这些「App 化」的能力全部挂在那一个铺满全站的注入脚本上，30 多个内容仓一行都没改。想给所有站加一个新能力，改的是一处共享 JS，不是 30 个仓。</div>
+<div class="principle"><b>给未来留地基，而不是为未来过度设计。</b>订阅当初刻意做成「邮箱 → 验证」，不是当时就要登录，而是把地基埋好；等真要账号系统时，同一个 Worker + D1 直接往上接，没有重构。预留接口，但不提前盖楼。</div>
 <div class="principle"><b>该毕业就毕业。</b>每个站有封顶，写完自动停机、打完结徽章。这个系统是为我自己学习服务的，学完一个领域就该收口，而不是被「持续产出」绑架。</div>
 
-<h2>10. 成本</h2>
+<h2>11. 成本</h2>
 <ul>
 <li>GitHub Pages / Actions：免费额度内</li>
 <li>内容生成：claude.ai 订阅内的云端 routine，无额外 API 费</li>

@@ -49,7 +49,7 @@ footer a{color:#7b61ff}
 </header>
 
 <div class="lede">
-BigCat's Learning Hub is a family of static sites I built for my own learning: mental models, AI/ML, system design, CS papers, philosophy, Buddhism, parenting, investing — thirty-odd subjects, each living in its own GitHub Pages repository. They update themselves daily, ship in both Chinese and English, and come with site-wide search, login-free comments, email subscribe/polls, and text-to-speech — while day-to-day operation requires almost none of my time. This post walks through how the whole pipeline is put together.
+BigCat's Learning Hub is a family of static sites I built for my own learning: mental models, AI/ML, system design, CS papers, philosophy, Buddhism, parenting, investing — thirty-odd subjects, each living in its own GitHub Pages repository. They update themselves daily, ship in both Chinese and English, and come with site-wide search, login-free comments, email subscribe/polls, and text-to-speech — and they install as a phone app that reads and plays offline and lets you highlight and take notes — while day-to-day operation requires almost none of my time. This post walks through how the whole pipeline is put together.
 </div>
 
 <h2>0. What it looks like</h2>
@@ -57,6 +57,7 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <li><strong>One hub landing page</strong> aggregates every site as a card, automatically shows each site's last-updated date, and stamps a "✓ Completed" badge on any site that has finished its roadmap.</li>
 <li><strong>Each subject site</strong> is an independent repo — <code>ai-ml</code>, <code>mental-models</code>, <code>system-design</code>, <code>cs-papers-deepread</code> — adding one page of in-depth content per day (or every other day / weekly), as a standalone Chinese HTML file plus a standalone English one.</li>
 <li><strong>Site-wide infrastructure</strong>: Pagefind static search (press <code>/</code>), login-free comments, email subscribe &amp; polls, an image lightbox, language toggle + TTS narration — all provided by shared JavaScript; content pages don't carry a single line of it themselves.</li>
+<li><strong>It installs as an app</strong>: the whole hub is a PWA — "Add to Home Screen" runs it full-screen; tap "⤓ Offline" on an article and it, narration included, is saved locally so you can read and listen on a plane; select any text to highlight and annotate it, with notes grouped by subject site and synced across devices, and anyone can register their own account.</li>
 <li><strong>Hosting cost is zero</strong>: everything runs on GitHub Pages and the free GitHub Actions tier; the only external service is Azure Speech's free tier for TTS.</li>
 </ul>
 <p>The core idea in one sentence: <strong>I only maintain each site's roadmap (TOPICS.md); production, publishing, post-processing, aggregation, and inspection are all automated — with the "write the content" step delegated to Claude agents running on a schedule in the cloud.</strong></p>
@@ -139,13 +140,13 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <p>Besides the HTML pages, each content repo contains exactly four things, each with one job.</p>
 
 <h3>TOPICS.md — the human-curated roadmap (read-only to the bot)</h3>
-<p>The only part of the system that needs my ongoing attention. It lists, in order, every topic the site will cover — <strong>the length of that list is itself the cap</strong>: write it out and the site graduates (see §8). The key design decision is <strong>one-way authority</strong>: the routine may only read it — <code>publish.sh</code> flatly rejects any commit that modifies TOPICS.md. When topics run out, the routine is not allowed to extend the roadmap itself; it can only send me a push notification asking for a refill.</p>
+<p>The only part of the system that needs my ongoing attention. It lists, in order, every topic the site will cover — <strong>the length of that list is itself the cap</strong>: write it out and the site graduates (see §9). The key design decision is <strong>one-way authority</strong>: the routine may only read it — <code>publish.sh</code> flatly rejects any commit that modifies TOPICS.md. When topics run out, the routine is not allowed to extend the roadmap itself; it can only send me a push notification asking for a refill.</p>
 <p>Drawing the line here is what keeps the whole system on course: <strong>the AI decides how to write; the human decides what gets written.</strong></p>
 
 <h3>CLAUDE.md — the writing spec</h3>
 <p>Sites that need precise control over layout and depth (system design, paper deep-reads, daily book deep-reads) carry a detailed execution spec: target reader (senior engineers), length band, required section structure (the paper site's nine-part skeleton: one-liner → glossary → context → problem &amp; motivation → core idea → key results → impact → limitations &amp; critiques → takeaways), color palette (each site has its own visual signature — system design is dark cyan, papers are amber-copper), and honesty requirements — uncertain quotes must be marked as paraphrase, and limitations and counterarguments must be written.</p>
 <p>The most useful trick in these specs: <strong>anchor on a published page</strong>. The prompt points at a specific article ("match read1 for depth, format, and voice") and says: do it like that. A concrete exemplar is far more stable than any prose description of style.</p>
-<p>It later turned out to have a more important second identity: <strong>CLAUDE.md is the control plane for changing a routine's behavior without touching its prompt</strong>. Every cloud run auto-loads the repo-root CLAUDE.md, and it <strong>layers on top of the prompt</strong> — so to change one rule I don't have to edit that long, self-contained prompt (and editing trigger config carries the wholesale job_config replacement risk, see §8); a line in CLAUDE.md is enough. I verified this channel with a probe: I dropped "at the start of the run, write a probe file and push it" into one repo's CLAUDE.md, pushed only that repo, and fired the trigger manually — the probe file duly appeared on the remote, and the routine still wrote that day's page as usual.</p>
+<p>It later turned out to have a more important second identity: <strong>CLAUDE.md is the control plane for changing a routine's behavior without touching its prompt</strong>. Every cloud run auto-loads the repo-root CLAUDE.md, and it <strong>layers on top of the prompt</strong> — so to change one rule I don't have to edit that long, self-contained prompt (and editing trigger config carries the wholesale job_config replacement risk, see §9); a line in CLAUDE.md is enough. I verified this channel with a probe: I dropped "at the start of the run, write a probe file and push it" into one repo's CLAUDE.md, pushed only that repo, and fired the trigger manually — the probe file duly appeared on the remote, and the routine still wrote that day's page as usual.</p>
 
 <h3>.maxchars — the length ratchet</h3>
 <p>A one-line file containing a single number (3500/4000/5000). <code>publish.sh</code> counts the CJK characters of every new page and enforces this ceiling. This one was earned the hard way: LLM-generated series exhibit a "length ratchet" — each article comes out slightly longer than the last, because the model anchors on the most recent pages, and a few dozen days later the pages have bloated out of control. The fix clamps from both sides: a target band in the prompt, a hard ceiling at the gate.</p>
@@ -248,7 +249,32 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 </ul>
 <p>Vote dedup relies only on a random front-end localStorage token — clear it and you can vote again. For a casual hub poll, <strong>honest-but-not-airtight</strong> is enough; tighten it by upgrading with the login foundation above. The trade-off runs through the whole layer: <strong>static wherever possible; for the one piece that must be stateful, cover it with the smallest possible backend on a free tier — and design in, at every point, how it could later grow stricter.</strong></p>
 
-<h2>7. Two sites that break the standard template: Thinking Hub and Deep Research</h2>
+<h2>7. From website to app: offline, notes, accounts</h2>
+<p>The first six layers are about <strong>producing the content</strong>. This layer grew later, in a different direction: <strong>making it feel like an app</strong> — installable to a phone's home screen, readable and listenable offline, with highlight notes, and separate accounts per person. The key constraint didn't change: <strong>no new server, and not one line changed in any content repo</strong>. It all hangs off the existing injection layer (§5) and that one Worker + D1 (§6).</p>
+
+<h3>Install as an app + offline: one service worker over the whole site</h3>
+<p>Step one is going PWA: add a <code>manifest.webmanifest</code> and a root-scope service worker (<code>sw.js</code>), and "Add to Home Screen" in Safari/Chrome gives you a full-screen, icon-bearing app. Because the SW registers at the <strong>domain root</strong>, its scope naturally covers all 30-plus content repos beneath it — one registration, whole-site offline, no per-repo install.</p>
+<p>The offline strategy is layered: the hub shell (landing page, shared JS) is cached automatically; HTML/JS are <strong>network-first, falling back to cache offline</strong>, so online you always get the latest; audio (pre-baked mp3, potentially hundreds of MB) is <strong>never cached automatically</strong> — only when you tap "⤓ Offline" on an article does that one article's HTML + its mp3 go into the Cache API. Per-article, a few to tens of MB, controllable.</p>
+<p>An iOS gotcha here: a home-screen PWA gets a <strong>storage jar completely isolated from Safari's</strong>, and "Add to Home Screen" <strong>strips the query string off the URL</strong> — so the <code>?me=1</code> switch that was meant to unlock "show the offline-download button only to me" could never reach the installed app. The fix is an <strong>in-app gesture</strong>: tap the page heading 7 times to toggle it. Details like "a desktop app's storage/URL behavior differs from the browser's" are all paid for in testing.</p>
+
+<h3>Highlight notes: re-locating, offline, grouping, comments</h3>
+<p>Notes are a <code>notes.js</code>, spread across the whole site by the injection layer just like the offline script (even the client-rendered roundtable-debate pages, which deliberately opt out of the hub nav, are covered — one bug lived here: injection used to sit <em>after</em> the "don't show nav buttons" early return, which disabled notes along with it; moving injection <em>before</em> that early return fixed it). Select any passage, a "＋ Note" bubble pops up, one tap saves it.</p>
+<p>The hard part is <strong>re-locating a sentence back in the article</strong>: on save it stores the highlighted passage <strong>plus ~40 characters of context on each side</strong>; on reopen it searches the page for "prefix + passage + suffix," and on a hit scrolls there and flashes a yellow highlight. The context matters because the same sentence can appear more than once on a page — only the surrounding text pins down the exact occurrence.</p>
+<p>Notes are <strong>offline-first</strong>: written straight into a localStorage queue, live locally at once, and flushed to the backend when you're back online — highlight away on a plane or a subway. The list page (<code>/notes.html</code>) <strong>groups by repo</strong>: the first path segment of each note's <code>page</code> is the repo slug, so notes group into "Mental Models / AI·ML / Roundtable…," labels matching the hub landing cards. Beyond the highlighted passage, each note also takes <strong>a paragraph of your own thoughts</strong> (a comment), editable inline, synced alongside the highlight.</p>
+
+<h3>Multi-user accounts: cashing in the foundation §6 buried</h3>
+<p>Once notes need to cross devices — and let different people keep their own — you need real accounts. And this is exactly the prophecy buried at the end of §6: "<strong>'email → verify' is the foundation of passwordless login; issue a session token later and there's no schema redo</strong>." Now it's cashed in: still the <strong>same Worker, same D1</strong>, just two more tables (<code>users</code> / <code>sessions</code>) and a set of <code>POST /auth-*</code> endpoints.</p>
+<p>No shortcuts on security, because registration is public:</p>
+<ul>
+<li><strong>Passwords</strong> are hashed with PBKDF2-SHA256 (100k iterations, the Workers platform's hard ceiling), first layered with a <strong>pepper secret that lives only in the Worker</strong> — so even a full D1 dump can't be brute-forced offline.</li>
+<li><strong>Sessions</strong> store the SHA-256 of the browser's token; the database holds nothing directly replayable; 90-day expiry.</li>
+<li><strong>Email verification is required</strong> before login (reusing §6's Resend sender); register and "forgot password" <strong>return an identical response whether or not the address exists</strong>, so nobody can probe who has an account.</li>
+<li>Failed logins are rate-limited per IP (10 per 15 min); reset links expire in an hour and work once; changing a password logs out every other device.</li>
+<li>Every note is <strong>scoped to an account id</strong>, and every query is forced to filter on it — one account <strong>can't read, alter, or delete</strong> another's notes (I cross-tested this with two accounts: even guessing the other's note id gets you nowhere).</li>
+</ul>
+<p>With the whole layer added, the backend is <strong>still that one Worker + one D1, still within the free tier</strong>. Which loops right back to §6's trade-off: making subscription "email → verify" back then wasn't busywork — it <strong>laid the foundation for today's account system in advance</strong>. Today there was no rewrite, just another floor built on the foundation already there.</p>
+
+<h2>8. Two sites that break the standard template: Thinking Hub and Deep Research</h2>
 <p>Everything above describes the standard content site — "a human sets the topic, the routine writes a page." Two sites don't follow that template; they're more complex, and they best show how far this architecture can stretch.</p>
 
 <h3>Thinking Hub (the Thinker Roundtable) — the audience votes on what gets written</h3>
@@ -262,7 +288,7 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <p>It's also the <strong>only site with a build step</strong>: other sites have the routine emit HTML directly, but here the source is markdown (in <code>sources/</code>, each piece in a "plain" and a "deep" edition, both languages), which <code>build.py</code> renders into HTML via its registries — one piece = plain × deep × zh/en = 4 pages. To change content you edit the markdown and re-run <code>build.py</code>.</p>
 <p>Why it earns its own entry: it upgrades "generation" from "write a page" to "<strong>research → adversarial verify → synthesize with citations</strong>" — the most research-intensive branch of the system, and the one that best fits this post's title, one human directing a fleet of agents.</p>
 
-<h2>8. Governance: making the system police itself</h2>
+<h2>9. Governance: making the system police itself</h2>
 <p>Getting it running is the easy part; running unattended for the long haul is the hard part. The lines of defense:</p>
 
 <h3>Caps + auto-pause</h3>
@@ -289,16 +315,18 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <li>New routines run a small validated batch before scaling up (especially TTS baking — one structural mistake burns a whole month of Azure quota)</li>
 </ul>
 
-<h2>9. Design principles that emerged</h2>
+<h2>10. Design principles that emerged</h2>
 <div class="principle"><b>Static first, with one small backend.</b> On the content side: no database, no server, no build framework — HTML is the artifact, git is the CMS, GitHub Pages is the CDN, and search (Pagefind) and TTS (pre-baked mp3s) solve traditionally "needs a backend" problems with static answers. The only genuinely stateful piece — subscribe / comment / vote — is confined to one Cloudflare Worker + D1, entirely on the free tier. Static-first isn't dogma; it's keeping the backend's footprint as small as possible.</div>
 <div class="principle"><b>The filesystem is the state.</b> Topic progress = the output of <code>ls</code>; the publishing record = commit messages; completion status = parsed from commits. There is no independently maintained state store anywhere — so nothing can drift out of sync with reality.</div>
 <div class="principle"><b>Every step is idempotent.</b> A re-fired routine won't rewrite existing pages (the file already exists); a re-run TTS bake won't double-bill (hash hit); a re-run injection won't stack tags (only adds what's missing). For unattended systems, retries are the norm — idempotency is a precondition, not an optimization.</div>
 <div class="principle"><b>Separate generation from validation.</b> Never assume LLM output is correct; publish.sh backstops it with the dumbest possible bash checks. The smarter the generator, the dumber and more deterministic the validator should be.</div>
 <div class="principle"><b>The human guards exactly one entrance.</b> All my recurring effort converges on TOPICS.md and cap decisions; everything else derives from them. The AI expanding its own mandate (extending the roadmap) is mechanically forbidden — it can only file a request.</div>
 <div class="principle"><b>Convention over protocol.</b> The <code>Add #N</code> commit format, the <code>{slug}-day{N}.html</code> naming, the one-line <code>.maxchars</code> file — components talk through these humble conventions. There isn't a JSON schema anywhere, yet every convention has at least two consumers.</div>
+<div class="principle"><b>Capabilities grow in the injection layer, not the content repos.</b> Offline, highlight notes, accounts — all these "app-ification" capabilities hang off the single script spread over the whole site; not one line changed in any of the 30-plus content repos. To add a new capability to every site you change one shared JS file, not 30 repos.</div>
+<div class="principle"><b>Lay foundations for the future without over-building for it.</b> Subscription was deliberately made "email → verify" — not because login was needed then, but to lay the foundation; when the account system was actually needed, the same Worker + D1 extended straight onto it with no rewrite. Reserve the seams, but don't build the floors early.</div>
 <div class="principle"><b>Graduate when it's time.</b> Every site has a cap; when it's reached, the routine auto-pauses and the badge flips to Completed. This system serves my own learning — a finished field deserves closure, not hostage-taking by "consistent output."</div>
 
-<h2>10. Cost</h2>
+<h2>11. Cost</h2>
 <ul>
 <li>GitHub Pages / Actions: within the free tier</li>
 <li>Content generation: cloud routines included in a claude.ai subscription, no extra API bills</li>
