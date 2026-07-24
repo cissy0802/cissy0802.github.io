@@ -20,46 +20,40 @@
     console.warn('[offline] SW registration failed:', e);
   });
 
-  // The ⤓ download button is owner-only: visit any page once with ?me=1 to
-  // enable it on this device (?me=0 disables). localStorage is per-origin, so
-  // one visit unlocks every content repo on the domain. SW registration and
-  // offline *serving* stay on for everyone — this only gates the download UI.
-  var OWNER_KEY = 'bigcat-offline-owner';
-  var me = /[?&]me=([01])/.exec(location.search);
-  if (me) {
-    try {
-      if (me[1] === '1') localStorage.setItem(OWNER_KEY, '1');
-      else localStorage.removeItem(OWNER_KEY);
-    } catch (e) {}
-  }
-  var isOwner = false;
-  try { isOwner = localStorage.getItem(OWNER_KEY) === '1'; } catch (e) {}
+  // The ⤓ download button is owner-only, tied to the owner's ACCOUNT: it shows
+  // only when the logged-in account is the owner's. That makes it Just Work in
+  // an installed PWA — log in once and it appears — with no ?me=1 (which iOS
+  // strips on "Add to Home Screen") and no unlock gesture. SW registration and
+  // offline *serving* stay on for everyone; this only gates the download UI.
+  // To hand offline downloads to a different account, change OWNER_EMAIL.
+  var OWNER_EMAIL = 'chengchen0802@gmail.com';
+  var EMAIL_KEY = 'bigcat-email';     // cached by notes.js / account pages at login
+  var SESSION_KEY = 'bigcat-session';
+  var AUTH_API = 'https://bigcat-engage.cissychen.workers.dev';
 
-  // iOS gives a home-screen PWA its own storage jar, separate from Safari's —
-  // and "Add to Home Screen" always drops the query string, so ?me=1 can never
-  // reach the installed app. Unlock gesture instead: 7 quick taps on the page
-  // heading toggles owner mode wherever you are, installed app included.
-  function installUnlockGesture() {
-    var h = document.querySelector('h1') || document.querySelector('header') || document.body;
-    var taps = 0, timer = null;
-    h.addEventListener('click', function () {
-      taps++;
-      clearTimeout(timer);
-      timer = setTimeout(function () { taps = 0; }, 2500);
-      if (taps < 7) return;
-      taps = 0;
-      var now = false;
-      try { now = localStorage.getItem(OWNER_KEY) === '1'; } catch (e) {}
-      try {
-        if (now) localStorage.removeItem(OWNER_KEY);
-        else localStorage.setItem(OWNER_KEY, '1');
-      } catch (e) {}
-      alert(now
-        ? (isEn ? 'Offline downloads disabled on this device.' : '已在这台设备上关闭离线下载。')
-        : (isEn ? 'Offline downloads enabled on this device. Reload to see the button.'
-                : '已在这台设备上开启离线下载，刷新后出现按钮。'));
-      location.reload();
-    });
+  function cachedEmail() {
+    try { return (localStorage.getItem(EMAIL_KEY) || '').toLowerCase(); } catch (e) { return ''; }
+  }
+  function isOwnerNow() { return cachedEmail() === OWNER_EMAIL; }
+
+  // If a session exists but the email isn't cached yet (logged in before this
+  // change, or a fresh device where notes.js hasn't resolved it), backfill it
+  // once from the server so the button can appear without a manual reload.
+  function backfillEmail() {
+    var s;
+    try { s = localStorage.getItem(SESSION_KEY); } catch (e) { s = null; }
+    if (!s || cachedEmail()) return Promise.resolve(cachedEmail());
+    return fetch(AUTH_API + '/auth-me', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ session: s })
+    }).then(function (r) { return r.json(); }).then(function (res) {
+      if (res && res.ok && res.email) {
+        try { localStorage.setItem(EMAIL_KEY, res.email); } catch (e) {}
+        return res.email.toLowerCase();
+      }
+      return '';
+    }).catch(function () { return ''; });
   }
 
   var CACHE = 'offline-content-v1';
@@ -101,12 +95,18 @@
   }
 
   ready(function () {
-    installUnlockGesture();
-    // Only the owner's devices get the button (see OWNER_KEY above), and only
-    // on content pages with baked audio.
-    if (!isOwner) return;
+    // Only content pages with baked audio can be taken offline.
     if (!document.querySelector('[data-tts]')) return;
+    if (document.getElementById('offline-btn')) return;
+    // Owner already known (email cached) → mount now; otherwise try a one-time
+    // backfill from an existing session and mount if it turns out to be them.
+    if (isOwnerNow()) { mountButton(); return; }
+    backfillEmail().then(function () {
+      if (isOwnerNow() && !document.getElementById('offline-btn')) mountButton();
+    });
+  });
 
+  function mountButton() {
     var btn = document.createElement('button');
     btn.id = 'offline-btn';
     btn.style.cssText =
@@ -169,5 +169,5 @@
         state = 'failed'; render();
       });
     });
-  });
+  }
 })();

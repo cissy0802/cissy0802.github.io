@@ -57,6 +57,7 @@ button.primary:disabled{opacity:.5;cursor:default}
 (function () {
   var API = 'https://bigcat-engage.cissychen.workers.dev';
   var SESSION_KEY = 'bigcat-session';
+  var EMAIL_KEY = 'bigcat-email'; // cached for offline.js owner check
   var qs = new URLSearchParams(location.search);
   var titleEl = document.getElementById('title');
   var subEl = document.getElementById('subtitle');
@@ -133,6 +134,7 @@ button.primary:disabled{opacity:.5;cursor:default}
   });
 
   function showLoggedIn(email) {
+    if (email) { try { localStorage.setItem(EMAIL_KEY, email); } catch (e) {} }
     titleEl.textContent = '已登录';
     subEl.textContent = '';
     formEl.style.display = 'none';
@@ -147,6 +149,7 @@ button.primary:disabled{opacity:.5;cursor:default}
     document.getElementById('logout').onclick = function () {
       var s = localStorage.getItem(SESSION_KEY);
       localStorage.removeItem(SESSION_KEY);
+      localStorage.removeItem(EMAIL_KEY);
       post('/auth-logout', { session: s }).catch(function () {});
       location.href = '/account.html';
     };
@@ -154,6 +157,7 @@ button.primary:disabled{opacity:.5;cursor:default}
 
   function finishLogin(session, email) {
     localStorage.setItem(SESSION_KEY, session);
+    if (email) { try { localStorage.setItem(EMAIL_KEY, email); } catch (e) {} }
     var back = qs.get('next');
     if (back && back.charAt(0) === '/' && back.charAt(1) !== '/') {
       location.href = back;

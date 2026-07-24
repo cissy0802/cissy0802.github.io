@@ -20,6 +20,7 @@
 
   var API = 'https://bigcat-engage.cissychen.workers.dev';
   var SESSION_KEY = 'bigcat-session';
+  var EMAIL_KEY = 'bigcat-email';         // logged-in email, cached for offline.js owner check
   var QUEUE_KEY = 'bigcat-notes-queue';   // notes not yet accepted by the server
   var CACHE_KEY = 'bigcat-notes-cache';   // last known server list, for offline reads
   var CTX = 40;
@@ -140,15 +141,20 @@
     me: function () {
       if (!session()) return Promise.resolve(null);
       return post('/auth-me', {}).then(function (r) {
-        if (r && r.ok) return r.email;
+        if (r && r.ok) {
+          // Cache the email so offline.js can gate its owner-only button
+          // without its own round-trip.
+          try { localStorage.setItem(EMAIL_KEY, r.email); } catch (e) {}
+          return r.email;
+        }
         // Session expired or revoked — drop it so the UI asks for a login.
-        try { localStorage.removeItem(SESSION_KEY); } catch (e) {}
+        try { localStorage.removeItem(SESSION_KEY); localStorage.removeItem(EMAIL_KEY); } catch (e) {}
         return null;
       }).catch(function () { return null; });
     },
     logout: function () {
       var s = session();
-      try { localStorage.removeItem(SESSION_KEY); } catch (e) {}
+      try { localStorage.removeItem(SESSION_KEY); localStorage.removeItem(EMAIL_KEY); } catch (e) {}
       return post('/auth-logout', { session: s }).catch(function () {});
     },
     repoSlug: repoSlug,
