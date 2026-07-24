@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-pagefind-ignore data-no-hub-nav>
+<html lang="en" data-pagefind-ignore data-no-hub-nav>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>我的笔记 · My Notes</title>
+<title>My Notes · BigCat Hub</title>
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐱</text></svg>">
 <link rel="manifest" href="/manifest.webmanifest">
@@ -31,7 +31,7 @@ input[type=search]::placeholder{color:#6b7390}
 .note .del{margin-left:auto;color:#6b7390;border:none;background:none;cursor:pointer;font-size:.9rem;padding:2px 6px;border-radius:6px}
 .note .del:hover{color:#ff6b6b;background:rgba(255,107,107,.1)}
 .pending{border-left-color:#ffa726}
-.pending .src::after{content:" · 待同步"}
+.pending .src::after{content:" · unsynced"}
 .empty{text-align:center;color:#7b8299;padding:60px 20px;font-size:.95rem;line-height:2}
 .back{position:fixed;top:16px;left:16px;padding:7px 13px;border-radius:14px;background:rgba(30,30,50,.8);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);color:#a0a8c0;text-decoration:none;font-size:.8rem;z-index:100}
 .back:hover{color:#fff}
@@ -40,18 +40,18 @@ input[type=search]::placeholder{color:#6b7390}
 </style>
 </head>
 <body>
-<a class="back" href="/index.zh.html">← Hub</a>
-<a class="lang" href="/notes.en.html">EN</a>
+<a class="back" href="/index.en.html">← Hub</a>
+<a class="lang" href="/notes.html">中文</a>
 <div class="container">
 <header>
-  <h1>我的笔记</h1>
-  <div class="sub" id="count">载入中…</div>
+  <h1>My Notes</h1>
+  <div class="sub" id="count">Loading…</div>
 </header>
 <div class="bar">
-  <input type="search" id="q" placeholder="搜索笔记内容或文章标题…">
-  <button class="btn" id="refresh">↻ 同步</button>
+  <input type="search" id="q" placeholder="Search note text or article title…">
+  <button class="btn" id="refresh">↻ Sync</button>
   <span class="btn" id="who" style="display:none;cursor:default;border-style:dashed"></span>
-  <button class="btn" id="logout" style="display:none">退出</button>
+  <button class="btn" id="logout" style="display:none">Log out</button>
 </div>
 <div id="list"></div>
 </div>
@@ -76,12 +76,13 @@ input[type=search]::placeholder{color:#6b7390}
       return !q || (n.text + ' ' + (n.title || '')).toLowerCase().indexOf(q) >= 0;
     });
     countEl.textContent = all.length
-      ? (rows.length === all.length ? all.length + ' 条笔记' : rows.length + ' / ' + all.length + ' 条')
+      ? (rows.length === all.length ? all.length + (all.length === 1 ? ' note' : ' notes')
+                                    : rows.length + ' / ' + all.length)
       : '';
     if (!rows.length) {
       listEl.innerHTML = '<div class="empty">' +
-        (all.length ? '没有匹配的笔记。'
-                    : '还没有笔记。<br>在任意文章里选中一段文字，点「＋ 笔记」即可保存。') +
+        (all.length ? 'No matching notes.'
+                    : 'No notes yet.<br>Select any text in an article and tap “＋ Note” to save it.') +
         '</div>';
       return;
     }
@@ -107,10 +108,10 @@ input[type=search]::placeholder{color:#6b7390}
       var del = document.createElement('button');
       del.className = 'del';
       del.textContent = '✕';
-      del.title = '删除';
+      del.title = 'Delete';
       del.addEventListener('click', function (e) {
         e.stopPropagation();
-        if (!confirm('删除这条笔记？')) return;
+        if (!confirm('Delete this note?')) return;
         window.BigCatNotes.remove(n.id);
         all = all.filter(function (x) { return x.id !== n.id; });
         render();
@@ -119,7 +120,8 @@ input[type=search]::placeholder{color:#6b7390}
       card.appendChild(meta);
 
       // Tap a note -> open the article at #note=<id>; notes.js re-locates the
-      // passage there, scrolls to it and flashes the highlight.
+      // passage there, scrolls to it and flashes the highlight. English notes
+      // link straight to the .en page; a zh note keeps its own path.
       card.addEventListener('click', function () {
         location.href = n.page + '#note=' + n.id;
       });
@@ -128,7 +130,7 @@ input[type=search]::placeholder{color:#6b7390}
   }
 
   function load() {
-    countEl.textContent = '载入中…';
+    countEl.textContent = 'Loading…';
     var pendingIds = {};
     try {
       (JSON.parse(localStorage.getItem('bigcat-notes-queue')) || []).forEach(function (n) {
@@ -139,7 +141,7 @@ input[type=search]::placeholder{color:#6b7390}
       all = notes.map(function (n) { n._pending = !!pendingIds[n.id]; return n; });
       render();
     }).catch(function () {
-      countEl.textContent = '载入失败';
+      countEl.textContent = 'Failed to load';
     });
   }
 
@@ -158,9 +160,9 @@ input[type=search]::placeholder{color:#6b7390}
 
   function showLoggedOut() {
     countEl.textContent = '';
-    listEl.innerHTML = '<div class="empty">笔记是私有的，登录后才能查看。<br>' +
+    listEl.innerHTML = '<div class="empty">Your notes are private. Log in to see them.<br>' +
       '<a class="btn" style="display:inline-block;margin-top:12px;text-decoration:none" ' +
-      'href="/account.html?next=%2Fnotes.html">登录 / 注册</a></div>';
+      'href="/account.en.html?next=%2Fnotes.en.html">Log in / Sign up</a></div>';
   }
 
   qEl.addEventListener('input', render);
@@ -168,7 +170,7 @@ input[type=search]::placeholder{color:#6b7390}
     window.BigCatNotes.flush().then(load);
   });
   document.getElementById('logout').addEventListener('click', function () {
-    window.BigCatNotes.logout().then(function () { location.href = '/account.html'; });
+    window.BigCatNotes.logout().then(function () { location.href = '/account.en.html'; });
   });
   start();
 })();

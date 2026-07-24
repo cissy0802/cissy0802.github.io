@@ -28,7 +28,10 @@
     try { return localStorage.getItem(SESSION_KEY) || ''; } catch (e) { return ''; }
   }
   function loginUrl() {
-    return '/account.html?next=' + encodeURIComponent(location.pathname + location.search);
+    // Match the account page to the reader's language, and bring them back to
+    // exactly where they were after logging in.
+    var page = isEn ? '/account.en.html' : '/account.html';
+    return page + '?next=' + encodeURIComponent(location.pathname + location.search);
   }
   function readJSON(key, dflt) {
     try { return JSON.parse(localStorage.getItem(key)) || dflt; } catch (e) { return dflt; }

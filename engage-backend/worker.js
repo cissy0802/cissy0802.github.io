@@ -849,6 +849,7 @@ async function sendConfirmEmail(env, email, list, token, lang) {
 async function sendAuthEmail(env, email, kind, token, lang) {
   if (!env.RESEND_API_KEY) return false;
   const en = lang === "en";
+  const acct = SITE_BASE + (en ? "/account.en.html" : "/account.html");
   const wrap = (inner) =>
     '<div style="font-family:-apple-system,sans-serif;max-width:480px;margin:0 auto;color:#222">' +
     inner +
@@ -859,7 +860,7 @@ async function sendAuthEmail(env, email, kind, token, lang) {
 
   let subject, html;
   if (kind === "verify") {
-    const link = SITE_BASE + "/account.html?verify=" + token;
+    const link = acct + "?verify=" + token;
     subject = en ? "Verify your BigCat Hub account" : "验证你的 BigCat Hub 账号";
     html = en
       ? wrap("<h2>Verify your account</h2><p>Click to activate your account and start saving notes.</p>" +
@@ -869,7 +870,7 @@ async function sendAuthEmail(env, email, kind, token, lang) {
           button(link, "验证账号") +
           '<p style="font-size:12px;color:#888">不是你注册的？忽略这封邮件即可。</p>');
   } else if (kind === "reset") {
-    const link = SITE_BASE + "/account.html?reset=" + token;
+    const link = acct + "?reset=" + token;
     subject = en ? "Reset your BigCat Hub password" : "重置 BigCat Hub 密码";
     html = en
       ? wrap("<h2>Reset your password</h2><p>This link works once and expires in an hour.</p>" +
@@ -879,7 +880,7 @@ async function sendAuthEmail(env, email, kind, token, lang) {
           button(link, "设置新密码") +
           '<p style="font-size:12px;color:#888">不是你申请的？忽略即可，密码不会改变。</p>');
   } else {
-    const link = SITE_BASE + "/account.html";
+    const link = acct;
     subject = en ? "You already have a BigCat Hub account" : "你已经有 BigCat Hub 账号了";
     html = en
       ? wrap("<h2>You already have an account</h2><p>Someone tried to register with this address. Just log in — or reset your password if you've forgotten it.</p>" +
