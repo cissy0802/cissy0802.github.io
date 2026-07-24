@@ -40,6 +40,58 @@
     try { localStorage.setItem(key, JSON.stringify(val)); } catch (e) {}
   }
 
+  // Repo (仓) → display name, so /notes can group notes by topic site. Keep in
+  // sync with the CARDS list in generate_hub.py; unknown slugs fall back to a
+  // title-cased slug so a new site still groups sanely before it's added here.
+  var REPOS = {
+    'thinker-arena': { emoji: '⚖️', zh: '思想家圆桌辩论', en: 'Thinker Roundtable' },
+    'deep-research': { emoji: '🔬', zh: '深度研究', en: 'Deep Research' },
+    'synthesis': { emoji: '🔗', zh: '跨站合成', en: 'Cross-Site Synthesis' },
+    'mental-models': { emoji: '📚', zh: '思维模型', en: 'Mental Models' },
+    'meta-knowledge': { emoji: '🧠', zh: '元知识', en: 'Meta Knowledge' },
+    'super-individual': { emoji: '⚡', zh: 'AI 超级个体实战', en: 'Super Individual' },
+    'ai-ml': { emoji: '🤖', zh: 'AI / ML', en: 'AI & ML' },
+    'system-design': { emoji: '🏗️', zh: 'System Design', en: 'System Design' },
+    'cs-papers-deepread': { emoji: '📄', zh: 'IT 论文精读', en: 'CS Papers' },
+    'chapter-deepread': { emoji: '📚', zh: '专业书籍精读', en: 'CS Books' },
+    'leadership': { emoji: '🎯', zh: '领导力实践', en: 'Leadership' },
+    'sales': { emoji: '🤝', zh: '销售实战', en: 'Sales' },
+    'writing': { emoji: '✍️', zh: '写作与表达', en: 'Writing' },
+    'health-longevity': { emoji: '🫀', zh: '健康长寿', en: 'Health & Longevity' },
+    'parenting': { emoji: '👶', zh: '育儿与教育', en: 'Parenting' },
+    'psychology': { emoji: '🧩', zh: '心理学', en: 'Psychology' },
+    'family-craft': { emoji: '🧺', zh: '一起做', en: 'Doing Together' },
+    'personal-finance': { emoji: '💵', zh: '个人理财', en: 'Personal Finance' },
+    'philosophy': { emoji: '📜', zh: '哲学经典', en: 'Philosophy' },
+    'buddhism': { emoji: '🪷', zh: '佛经', en: 'Buddhism' },
+    'world-religions': { emoji: '🕉️', zh: '世界宗教', en: 'World Religions' },
+    'art-aesthetics': { emoji: '🎨', zh: '艺术与审美', en: 'Art & Aesthetics' },
+    'biographies': { emoji: '👩‍💼', zh: '人物传记', en: 'Biographies' },
+    'book-recommendations': { emoji: '📖', zh: '好书推荐', en: 'Book Recommendations' },
+    'deep-reading': { emoji: '📰', zh: '好书精读', en: 'Deep Reading' },
+    'mathematics': { emoji: '📐', zh: '数学之美', en: 'Mathematics' },
+    'history': { emoji: '🏛️', zh: '历史大事件', en: 'History' },
+    'investing': { emoji: '📈', zh: '投资经典', en: 'Investing' },
+    'civics-geopolitics': { emoji: '🌍', zh: '政治·法律·地缘', en: 'Civics & Geopolitics' },
+    'neuroscience': { emoji: '🧠', zh: '神经科学', en: 'Neuroscience' },
+    'physics': { emoji: '⚛️', zh: '物理', en: 'Physics' },
+    'complexity-science': { emoji: '🌀', zh: '复杂性科学', en: 'Complexity Science' }
+  };
+  function repoSlug(page) {
+    var m = /^\/?([^\/]+)\//.exec(String(page || ''));
+    return m ? m[1] : '';
+  }
+  function repoLabel(page, lang) {
+    var slug = repoSlug(page);
+    var info = REPOS[slug];
+    if (info) return (info.emoji ? info.emoji + ' ' : '') + (lang === 'en' ? info.en : info.zh);
+    // Unknown repo: title-case the slug ("world-religions" → "World Religions").
+    if (!slug) return lang === 'en' ? 'Other' : '其他';
+    return slug.replace(/(^|-)([a-z])/g, function (_, d, c) {
+      return (d ? ' ' : '') + c.toUpperCase();
+    });
+  }
+
   var isEn = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0
     || /\.en\.html$/i.test(location.pathname);
   var T = isEn
@@ -99,6 +151,8 @@
       try { localStorage.removeItem(SESSION_KEY); } catch (e) {}
       return post('/auth-logout', { session: s }).catch(function () {});
     },
+    repoSlug: repoSlug,
+    repoLabel: repoLabel,
     flush: flushQueue,
     list: function () {
       var pending = readJSON(QUEUE_KEY, []);
@@ -115,6 +169,29 @@
       writeJSON(QUEUE_KEY, left);
       writeJSON(CACHE_KEY, readJSON(CACHE_KEY, []).filter(function (n) { return n.id !== id; }));
       return post('/notes-delete', { id: id }).catch(function () { return { ok: false }; });
+    },
+    // Set the free-text comment on a note (the reader's own words, separate
+    // from the highlighted passage). Writes through to the cache immediately
+    // and re-queues on failure, so editing works offline like saving does.
+    setComment: function (id, comment) {
+      comment = String(comment || '');
+      var cache = readJSON(CACHE_KEY, []);
+      var note = null;
+      cache.forEach(function (n) { if (n.id === id) { n.comment = comment; note = n; } });
+      writeJSON(CACHE_KEY, cache);
+      var q = readJSON(QUEUE_KEY, []);
+      var inQueue = false;
+      q.forEach(function (n) { if (n.id === id) { n.comment = comment; note = note || n; inQueue = true; } });
+      if (inQueue) writeJSON(QUEUE_KEY, q);
+      if (!note) return Promise.resolve({ ok: false });
+      var requeue = function () {
+        var qq = readJSON(QUEUE_KEY, []);
+        if (!qq.some(function (n) { return n.id === id; })) { qq.push(note); writeJSON(QUEUE_KEY, qq); }
+      };
+      return post('/notes-add', note).then(function (res) {
+        if (!res || !res.ok) requeue();
+        return res || { ok: false };
+      }).catch(function () { requeue(); return { ok: false }; });
     },
   };
 

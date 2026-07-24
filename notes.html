@@ -23,9 +23,19 @@ input[type=search]{flex:1;min-width:180px;padding:9px 13px;border-radius:12px;bo
 input[type=search]::placeholder{color:#6b7390}
 .btn{padding:8px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:#a0a8c0;font-size:.82rem;cursor:pointer;font-family:inherit}
 .btn:hover{background:rgba(255,255,255,.1);color:#fff}
+.group-label{margin:26px 0 12px;font-size:.8rem;font-weight:700;color:#7b61ff;letter-spacing:.5px;font-family:"SF Mono",Menlo,monospace;display:flex;align-items:baseline;gap:8px}
+.group-label .n{color:#6b7390;font-weight:400;font-size:.72rem}
+.group:first-of-type .group-label{margin-top:6px}
 .note{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid #7b61ff;border-radius:12px;padding:14px 16px;margin-bottom:12px;cursor:pointer;transition:background .15s}
 .note:hover{background:rgba(255,255,255,.07)}
 .note .text{font-size:1rem;color:#e4e6eb}
+.note .comment{margin-top:10px;padding:9px 12px;background:rgba(123,97,255,.09);border-radius:8px;font-size:.9rem;color:#cdd2e4;white-space:pre-wrap;cursor:text}
+.note .add-comment{margin-top:9px;background:none;border:1px dashed rgba(255,255,255,.18);color:#7b8299;font-size:.78rem;padding:5px 10px;border-radius:8px;cursor:pointer;font-family:inherit}
+.note .add-comment:hover{color:#a89bff;border-color:rgba(123,97,255,.5)}
+.note .comment-input{width:100%;margin-top:10px;padding:9px 12px;border-radius:8px;border:1px solid rgba(123,97,255,.4);background:rgba(0,0,0,.2);color:#e4e6eb;font:inherit;font-size:.9rem;line-height:1.6;resize:vertical;min-height:60px}
+.note .comment-bar{margin-top:8px;display:flex;gap:8px}
+.note .comment-bar .btn{font-size:.78rem;padding:5px 12px}
+.note .comment-bar .save{background:#7b61ff;color:#fff;border-color:#7b61ff}
 .note .meta{margin-top:9px;font-size:.76rem;color:#7b8299;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .note .src{color:#7b61ff}
 .note .del{margin-left:auto;color:#6b7390;border:none;background:none;cursor:pointer;font-size:.9rem;padding:2px 6px;border-radius:6px}
@@ -70,10 +80,111 @@ input[type=search]::placeholder{color:#6b7390}
            String(d.getDate()).padStart(2, '0');
   }
 
+  // Group notes by repo (仓), newest group first, newest note first within.
+  function groupByRepo(rows) {
+    var map = {};
+    rows.forEach(function (n) {
+      var slug = window.BigCatNotes.repoSlug(n.page) || '_other';
+      if (!map[slug]) {
+        map[slug] = { label: window.BigCatNotes.repoLabel(n.page, 'zh'), items: [], newest: n.ts };
+      }
+      map[slug].items.push(n);
+      if (n.ts > map[slug].newest) map[slug].newest = n.ts;
+    });
+    return Object.keys(map).map(function (k) { return map[k]; })
+      .sort(function (a, b) { return b.newest - a.newest; });
+  }
+
+  function buildCard(n) {
+    var card = document.createElement('div');
+    card.className = 'note' + (n._pending ? ' pending' : '');
+
+    var t = document.createElement('div');
+    t.className = 'text';
+    t.textContent = n.text;
+    card.appendChild(t);
+
+    // Free-text comment (your own words), editable inline.
+    var cWrap = document.createElement('div');
+    function showComment() {
+      cWrap.innerHTML = '';
+      if (n.comment) {
+        var c = document.createElement('div');
+        c.className = 'comment';
+        c.textContent = n.comment;
+        c.title = '点击编辑';
+        c.addEventListener('click', function (e) { e.stopPropagation(); editComment(); });
+        cWrap.appendChild(c);
+      } else {
+        var add = document.createElement('button');
+        add.className = 'add-comment';
+        add.textContent = '＋ 写点想法';
+        add.addEventListener('click', function (e) { e.stopPropagation(); editComment(); });
+        cWrap.appendChild(add);
+      }
+    }
+    function editComment() {
+      cWrap.innerHTML = '';
+      var ta = document.createElement('textarea');
+      ta.className = 'comment-input';
+      ta.value = n.comment || '';
+      ta.placeholder = '写下你的想法、联想或问题…';
+      ta.addEventListener('click', function (e) { e.stopPropagation(); });
+      var bar = document.createElement('div');
+      bar.className = 'comment-bar';
+      var save = document.createElement('button');
+      save.className = 'btn save';
+      save.textContent = '保存';
+      var cancel = document.createElement('button');
+      cancel.className = 'btn';
+      cancel.textContent = '取消';
+      save.addEventListener('click', function (e) {
+        e.stopPropagation();
+        n.comment = ta.value.trim();
+        window.BigCatNotes.setComment(n.id, n.comment);
+        showComment();
+      });
+      cancel.addEventListener('click', function (e) { e.stopPropagation(); showComment(); });
+      bar.appendChild(save);
+      bar.appendChild(cancel);
+      cWrap.appendChild(ta);
+      cWrap.appendChild(bar);
+      ta.focus();
+    }
+    showComment();
+    card.appendChild(cWrap);
+
+    var meta = document.createElement('div');
+    meta.className = 'meta';
+    var when = document.createElement('span');
+    when.textContent = fmtDate(n.ts);
+    meta.appendChild(when);
+    var del = document.createElement('button');
+    del.className = 'del';
+    del.textContent = '✕';
+    del.title = '删除';
+    del.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (!confirm('删除这条笔记？')) return;
+      window.BigCatNotes.remove(n.id);
+      all = all.filter(function (x) { return x.id !== n.id; });
+      render();
+    });
+    meta.appendChild(del);
+    card.appendChild(meta);
+
+    // Tap a note -> open the article at #note=<id>; notes.js re-locates the
+    // passage there, scrolls to it and flashes the highlight.
+    card.addEventListener('click', function () {
+      location.href = n.page + '#note=' + n.id;
+    });
+    return card;
+  }
+
   function render() {
     var q = qEl.value.trim().toLowerCase();
     var rows = all.filter(function (n) {
-      return !q || (n.text + ' ' + (n.title || '')).toLowerCase().indexOf(q) >= 0;
+      return !q || (n.text + ' ' + (n.comment || '') + ' ' + (n.title || '')).toLowerCase().indexOf(q) >= 0;
     });
     countEl.textContent = all.length
       ? (rows.length === all.length ? all.length + ' 条笔记' : rows.length + ' / ' + all.length + ' 条')
@@ -86,44 +197,21 @@ input[type=search]::placeholder{color:#6b7390}
       return;
     }
     listEl.innerHTML = '';
-    rows.forEach(function (n) {
-      var card = document.createElement('div');
-      card.className = 'note' + (n._pending ? ' pending' : '');
-
-      var t = document.createElement('div');
-      t.className = 'text';
-      t.textContent = n.text;
-      card.appendChild(t);
-
-      var meta = document.createElement('div');
-      meta.className = 'meta';
-      var src = document.createElement('span');
-      src.className = 'src';
-      src.textContent = n.title || n.page;
-      meta.appendChild(src);
-      var when = document.createElement('span');
-      when.textContent = fmtDate(n.ts);
-      meta.appendChild(when);
-      var del = document.createElement('button');
-      del.className = 'del';
-      del.textContent = '✕';
-      del.title = '删除';
-      del.addEventListener('click', function (e) {
-        e.stopPropagation();
-        if (!confirm('删除这条笔记？')) return;
-        window.BigCatNotes.remove(n.id);
-        all = all.filter(function (x) { return x.id !== n.id; });
-        render();
-      });
-      meta.appendChild(del);
-      card.appendChild(meta);
-
-      // Tap a note -> open the article at #note=<id>; notes.js re-locates the
-      // passage there, scrolls to it and flashes the highlight.
-      card.addEventListener('click', function () {
-        location.href = n.page + '#note=' + n.id;
-      });
-      listEl.appendChild(card);
+    groupByRepo(rows).forEach(function (g) {
+      var group = document.createElement('div');
+      group.className = 'group';
+      var label = document.createElement('div');
+      label.className = 'group-label';
+      var name = document.createElement('span');
+      name.textContent = g.label;
+      label.appendChild(name);
+      var count = document.createElement('span');
+      count.className = 'n';
+      count.textContent = g.items.length;
+      label.appendChild(count);
+      group.appendChild(label);
+      g.items.forEach(function (n) { group.appendChild(buildCard(n)); });
+      listEl.appendChild(group);
     });
   }
 

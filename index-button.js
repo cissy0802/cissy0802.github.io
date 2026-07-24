@@ -5,6 +5,22 @@
  * Skips on the hub root and on category index pages themselves.
  */
 (function () {
+  // PWA offline support + highlight notes: inject on EVERY content page, before
+  // the data-no-hub-nav early return below. That attribute only suppresses the
+  // ← Hub / ← Index nav buttons (e.g. on thinker-arena debate pages); it must
+  // not also disable offline downloads or notes. One injection here reaches all
+  // 30 repos with no per-repo edits.
+  function injectHubScript(id, src) {
+    if (document.getElementById(id)) return;
+    const s = document.createElement("script");
+    s.id = id;
+    s.defer = true;
+    s.src = "https://hub.cissychen.com/" + src;
+    document.head.appendChild(s);
+  }
+  injectHubScript("bigcat-offline-js", "offline.js");
+  injectHubScript("bigcat-notes-js", "notes.js");
+
   if (document.documentElement.hasAttribute("data-no-hub-nav")) return;
   // URL shape: /{repo}/{file}.html  OR  /{repo}/  OR  /
   const parts = window.location.pathname.split("/").filter(Boolean);
@@ -101,26 +117,5 @@
   //    not on the category index itself (would point to this same page).
   if (!isCategoryIndex && !document.getElementById("bigcat-index-btn")) {
     root.appendChild(makeBtn("bigcat-index-btn", indexHref, "← Index", 108));
-  }
-
-  // 3) PWA offline support — every content page loads this script already, so
-  //    piggybacking here gives all 30 repos the offline feature with no
-  //    per-repo edits. offline.js registers /sw.js and injects the ⤓ button.
-  if (!document.getElementById("bigcat-offline-js")) {
-    const s = document.createElement("script");
-    s.id = "bigcat-offline-js";
-    s.defer = true;
-    s.src = "https://hub.cissychen.com/offline.js";
-    document.head.appendChild(s);
-  }
-
-  // 4) Highlight notes — select text, tap "＋ 笔记" to save it. Owner-only,
-  //    same as the offline button; notes.js no-ops for everyone else.
-  if (!document.getElementById("bigcat-notes-js")) {
-    const s = document.createElement("script");
-    s.id = "bigcat-notes-js";
-    s.defer = true;
-    s.src = "https://hub.cissychen.com/notes.js";
-    document.head.appendChild(s);
   }
 })();
