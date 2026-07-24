@@ -35,6 +35,33 @@
   var isOwner = false;
   try { isOwner = localStorage.getItem(OWNER_KEY) === '1'; } catch (e) {}
 
+  // iOS gives a home-screen PWA its own storage jar, separate from Safari's —
+  // and "Add to Home Screen" always drops the query string, so ?me=1 can never
+  // reach the installed app. Unlock gesture instead: 7 quick taps on the page
+  // heading toggles owner mode wherever you are, installed app included.
+  function installUnlockGesture() {
+    var h = document.querySelector('h1') || document.querySelector('header') || document.body;
+    var taps = 0, timer = null;
+    h.addEventListener('click', function () {
+      taps++;
+      clearTimeout(timer);
+      timer = setTimeout(function () { taps = 0; }, 2500);
+      if (taps < 7) return;
+      taps = 0;
+      var now = false;
+      try { now = localStorage.getItem(OWNER_KEY) === '1'; } catch (e) {}
+      try {
+        if (now) localStorage.removeItem(OWNER_KEY);
+        else localStorage.setItem(OWNER_KEY, '1');
+      } catch (e) {}
+      alert(now
+        ? (isEn ? 'Offline downloads disabled on this device.' : '已在这台设备上关闭离线下载。')
+        : (isEn ? 'Offline downloads enabled on this device. Reload to see the button.'
+                : '已在这台设备上开启离线下载，刷新后出现按钮。'));
+      location.reload();
+    });
+  }
+
   var CACHE = 'offline-content-v1';
   var isEn = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0
     || /\.en\.html$/i.test(location.pathname);
@@ -74,6 +101,7 @@
   }
 
   ready(function () {
+    installUnlockGesture();
     // Only the owner's devices get the button (see OWNER_KEY above), and only
     // on content pages with baked audio.
     if (!isOwner) return;

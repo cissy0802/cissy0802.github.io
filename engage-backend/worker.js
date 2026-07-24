@@ -6,6 +6,11 @@
  *   GET  /poll?id=... [&voter=...]                   -> tallies for a poll (+ this voter's choice)
  *   GET  /comments?page=...                          -> approved comments for a page
  *   POST /comment     { page, name, body, website }  -> post a comment (login-free)
+ *   POST /notes-add    { token, id, page, title, lang, text, ts } -> upsert a highlight note
+ *   POST /notes-list   { token }                     -> all notes, newest first
+ *   POST /notes-delete { token, id }                 -> delete one note
+ *   Notes are owner-private: every notes endpoint requires the NOTES_TOKEN
+ *   secret (wrangler secret put NOTES_TOKEN). POST-only keeps it out of URLs.
  *
  * Storage is a single D1 database bound as `DB` (see wrangler.toml + schema.sql).
  * Comments replace Giscus — no GitHub login required. Spam defenses: honeypot,
@@ -393,6 +398,56 @@ export default {
           200,
           origin
         );
+      }
+
+      // ---- Notes (owner-private highlights) ----------------------------
+      // All three are POST so the token never lands in a URL or a log line.
+      if (url.pathname.startsWith("/notes-")) {
+        const body = await request.json().catch(() => ({}));
+        if (request.method !== "POST") {
+          return json({ ok: false, error: "method_not_allowed" }, 405, origin);
+        }
+        if (!env.NOTES_TOKEN || String(body.token || "") !== env.NOTES_TOKEN) {
+          return json({ ok: false, error: "unauthorized" }, 401, origin);
+        }
+
+        if (url.pathname === "/notes-list") {
+          const { results } = await env.DB.prepare(
+            "SELECT id, page, title, lang, text, prefix, suffix, comment, ts " +
+              "FROM notes ORDER BY ts DESC LIMIT 2000"
+          ).all();
+          return json({ ok: true, notes: results }, 200, origin);
+        }
+
+        if (url.pathname === "/notes-add") {
+          const id = String(body.id || "").trim().slice(0, 64);
+          const page = String(body.page || "").trim().slice(0, 200);
+          const text = String(body.text || "").trim().slice(0, 4000);
+          if (!id || !page || !text) {
+            return json({ ok: false, error: "missing_fields" }, 400, origin);
+          }
+          const title = String(body.title || "").trim().slice(0, 300);
+          const lang = String(body.lang || "").toLowerCase().startsWith("en") ? "en" : "zh";
+          const prefix = String(body.prefix || "").slice(0, 200);
+          const suffix = String(body.suffix || "").slice(0, 200);
+          const comment = String(body.comment || "").trim().slice(0, 4000);
+          const ts = Number(body.ts) || Date.now();
+          await env.DB.prepare(
+            "INSERT INTO notes (id, page, title, lang, text, prefix, suffix, comment, ts) " +
+              "VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9) " +
+              "ON CONFLICT(id) DO UPDATE SET comment = ?8, ts = ?9"
+          )
+            .bind(id, page, title, lang, text, prefix, suffix, comment, ts)
+            .run();
+          return json({ ok: true, id }, 200, origin);
+        }
+
+        if (url.pathname === "/notes-delete") {
+          const id = String(body.id || "").trim().slice(0, 64);
+          if (!id) return json({ ok: false, error: "missing_id" }, 400, origin);
+          const res = await env.DB.prepare("DELETE FROM notes WHERE id = ?").bind(id).run();
+          return json({ ok: true, deleted: res.meta.changes > 0 }, 200, origin);
+        }
       }
 
       return json({ ok: false, error: "not_found" }, 404, origin);

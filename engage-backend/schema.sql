@@ -37,3 +37,22 @@ CREATE TABLE IF NOT EXISTS comments (
 
 CREATE INDEX IF NOT EXISTS idx_comments_page ON comments (page, ts);
 CREATE INDEX IF NOT EXISTS idx_comments_iphash ON comments (iphash, ts);
+
+-- Highlight notes (owner-private; every /notes-* endpoint requires NOTES_TOKEN).
+-- `id` is minted client-side so a note saved offline keeps its identity when it
+-- syncs later. `prefix`/`suffix` are the surrounding characters, used to find
+-- the exact occurrence again when jumping back into the article.
+CREATE TABLE IF NOT EXISTS notes (
+  id      TEXT    PRIMARY KEY,        -- client-generated uuid
+  page    TEXT    NOT NULL,           -- pathname the highlight lives on
+  title   TEXT    NOT NULL DEFAULT '',-- page title, for the notes list
+  lang    TEXT    NOT NULL DEFAULT 'zh',
+  text    TEXT    NOT NULL,           -- the highlighted passage
+  prefix  TEXT    NOT NULL DEFAULT '',-- ~40 chars before, for re-locating
+  suffix  TEXT    NOT NULL DEFAULT '',-- ~40 chars after
+  comment TEXT    NOT NULL DEFAULT '',-- optional own words
+  ts      INTEGER NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_notes_ts ON notes (ts);
+CREATE INDEX IF NOT EXISTS idx_notes_page ON notes (page, ts);

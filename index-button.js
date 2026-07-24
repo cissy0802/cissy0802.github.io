@@ -113,4 +113,14 @@
     s.src = "https://hub.cissychen.com/offline.js";
     document.head.appendChild(s);
   }
+
+  // 4) Highlight notes — select text, tap "＋ 笔记" to save it. Owner-only,
+  //    same as the offline button; notes.js no-ops for everyone else.
+  if (!document.getElementById("bigcat-notes-js")) {
+    const s = document.createElement("script");
+    s.id = "bigcat-notes-js";
+    s.defer = true;
+    s.src = "https://hub.cissychen.com/notes.js";
+    document.head.appendChild(s);
+  }
 })();
