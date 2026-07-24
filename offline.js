@@ -94,17 +94,157 @@
     return urls;
   }
 
+  function isLanding() {
+    var p = location.pathname;
+    return p === '/' || p === '/index.html' || p === '/index.en.html' || p === '/index.zh.html';
+  }
+  function landingLang() {
+    return (/\/index\.en\.html$/.test(location.pathname) ||
+            (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0) ? 'en' : 'zh';
+  }
+
   ready(function () {
-    // Only content pages with baked audio can be taken offline.
-    if (!document.querySelector('[data-tts]')) return;
-    if (document.getElementById('offline-btn')) return;
-    // Owner already known (email cached) → mount now; otherwise try a one-time
-    // backfill from an existing session and mount if it turns out to be them.
-    if (isOwnerNow()) { mountButton(); return; }
-    backfillEmail().then(function () {
-      if (isOwnerNow() && !document.getElementById('offline-btn')) mountButton();
-    });
+    var onArticle = !!document.querySelector('[data-tts]');
+    var onLanding = isLanding();
+    if (!onArticle && !onLanding) return;
+    // Both the per-article button and the per-repo (landing) buttons are
+    // owner-only. Resolve owner first (email cached, or backfilled once from a
+    // session), then mount whichever this page is.
+    function go() {
+      if (!isOwnerNow()) return;
+      if (onArticle) mountButton();
+      if (onLanding) mountRepoButtons();
+    }
+    if (isOwnerNow()) { go(); return; }
+    backfillEmail().then(go);
   });
+
+  // ---- Whole-repo offline download (owner only, on the hub landing) --------
+
+  // Collect every URL a fetched article needs offline (page + its baked audio +
+  // same-origin images). Mirrors pageAssets() but reads a parsed document.
+  function assetsFromDoc(doc, pagePath) {
+    var base = new URL(pagePath, location.origin);
+    var lang = /\.en\.html$/.test(base.pathname) ? 'en' : 'zh';
+    var urls = [base.pathname];
+    var seen = {};
+    doc.querySelectorAll('[data-tts]').forEach(function (el) {
+      var h = el.getAttribute('data-tts');
+      if (h && !seen[h]) { seen[h] = 1; urls.push(new URL('audio/' + lang + '/' + h + '.mp3', base).pathname); }
+    });
+    doc.querySelectorAll('img[src]').forEach(function (img) {
+      var u = new URL(img.getAttribute('src'), base);
+      if (u.origin === location.origin) urls.push(u.pathname);
+    });
+    return urls;
+  }
+
+  // A repo's category index is the authoritative list of its articles. Pull the
+  // article pages in the landing's language (skip index/nav pages).
+  function repoArticlePages(repo, lang) {
+    var idxPath = repo + (lang === 'en' ? 'index.en.html' : 'index.html');
+    return fetch(idxPath, { cache: 'no-cache' }).then(function (r) {
+      if (!r.ok) throw new Error('index ' + r.status);
+      return r.text();
+    }).then(function (html) {
+      var doc = new DOMParser().parseFromString(html, 'text/html');
+      var pages = {};
+      doc.querySelectorAll('a[href]').forEach(function (a) {
+        var u;
+        try { u = new URL(a.getAttribute('href'), location.origin + idxPath); } catch (e) { return; }
+        if (u.origin !== location.origin) return;
+        if (u.pathname.indexOf(repo) !== 0) return;          // stay inside this repo
+        if (!/\.html$/.test(u.pathname)) return;
+        if (/\/index(\.\w+)?\.html$/.test(u.pathname)) return; // skip index/nav
+        var isEnPage = /\.en\.html$/.test(u.pathname);
+        if (lang === 'en' ? !isEnPage : isEnPage) return;    // match landing language
+        pages[u.pathname] = 1;
+      });
+      return Object.keys(pages);
+    });
+  }
+
+  // Download every article in a repo, one at a time (assets within an article
+  // fetched in parallel). onProgress(done, total) drives the button label.
+  function downloadRepo(repo, lang, onProgress) {
+    return repoArticlePages(repo, lang).then(function (pages) {
+      var total = pages.length, done = 0, failed = 0;
+      if (!total) return { total: 0, done: 0, failed: 0 };
+      return caches.open(CACHE).then(function (c) {
+        return pages.reduce(function (chain, page) {
+          return chain.then(function () {
+            return fetch(page, { cache: 'no-cache' }).then(function (r) {
+              if (!r.ok) throw new Error(page + ' ' + r.status);
+              return r.text();
+            }).then(function (html) {
+              var doc = new DOMParser().parseFromString(html, 'text/html');
+              return Promise.all(assetsFromDoc(doc, page).map(function (u) {
+                return fetch(u, { cache: 'no-cache' }).then(function (res) {
+                  if (res.ok) return c.put(u, res);
+                }).catch(function () {});
+              }));
+            }).catch(function () { failed++; }).then(function () {
+              done++; if (onProgress) onProgress(done, total);
+            });
+          });
+        }, Promise.resolve()).then(function () { return { total: total, done: done, failed: failed }; });
+      });
+    });
+  }
+
+  function mountRepoButtons() {
+    if (document.querySelector('.repo-dl')) return;
+    var lang = landingLang();
+    var confirmMsg = lang === 'en'
+      ? 'Download this whole site (all articles + audio) for offline? It may be large.'
+      : '整仓离线下载（全部文章 + 语音）？可能有几百 MB。';
+    document.querySelectorAll('a.card[href]').forEach(function (card) {
+      var m;
+      try { m = /^\/([^\/]+)\//.exec(new URL(card.getAttribute('href'), location.origin).pathname); }
+      catch (e) { return; }
+      if (!m) return;
+      var repo = '/' + m[1] + '/';
+
+      var btn = document.createElement('button');
+      btn.className = 'repo-dl';
+      btn.type = 'button';
+      btn.title = lang === 'en' ? 'Download whole site offline' : '整仓离线下载';
+      btn.textContent = '⤓';
+      btn.style.cssText =
+        'position:absolute;right:8px;bottom:6px;z-index:5;min-width:26px;height:26px;' +
+        'padding:0 7px;border-radius:13px;border:1px solid rgba(255,255,255,.2);' +
+        'background:rgba(20,20,40,.72);color:#a0a8c0;font:600 13px -apple-system,sans-serif;' +
+        'cursor:pointer;line-height:24px;';
+      if (getComputedStyle(card).position === 'static') card.style.position = 'relative';
+
+      var state = 'idle';
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (state === 'running' || state === 'done') return;
+        if (!window.confirm(confirmMsg)) return;
+        state = 'running';
+        btn.style.fontSize = '10px';
+        btn.textContent = '…';
+        if (navigator.storage && navigator.storage.persist) navigator.storage.persist();
+        downloadRepo(repo, lang, function (d, t) { btn.textContent = d + '/' + t; })
+          .then(function (res) {
+            state = 'done';
+            btn.style.fontSize = '13px';
+            btn.textContent = res.total ? '✓' : '∅';
+            btn.style.color = res.total ? '#7ee2a8' : '#a0a8c0';
+          })
+          .catch(function (err) {
+            console.warn('[offline] repo download failed:', err);
+            state = 'idle';
+            btn.style.fontSize = '13px';
+            btn.textContent = '⚠';
+            btn.style.color = '#ff9b9b';
+          });
+      });
+      card.appendChild(btn);
+    });
+  }
 
   function mountButton() {
     var btn = document.createElement('button');
