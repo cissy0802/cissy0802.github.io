@@ -394,6 +394,12 @@ def render_page(lang: str, grid: str, today: str) -> str:
 <meta property="og:description" content="{t['desc']}">
 <meta property="og:url" content="{SITE_ORIGIN}/{t['fname']}">
 <link rel="icon" href="{FAVICON}">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#1a1a2e">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<script defer src="/offline.js"></script>
 <style>
 *{{margin:0;padding:0;box-sizing:border-box}}
 body{{font-family:-apple-system,"SF Pro Display","Noto Serif SC","Songti SC",sans-serif;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0a0e1a 100%);color:#e4e6eb;line-height:1.7;min-height:100vh}}

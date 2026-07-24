@@ -102,4 +102,15 @@
   if (!isCategoryIndex && !document.getElementById("bigcat-index-btn")) {
     root.appendChild(makeBtn("bigcat-index-btn", indexHref, "← Index", 108));
   }
+
+  // 3) PWA offline support — every content page loads this script already, so
+  //    piggybacking here gives all 30 repos the offline feature with no
+  //    per-repo edits. offline.js registers /sw.js and injects the ⤓ button.
+  if (!document.getElementById("bigcat-offline-js")) {
+    const s = document.createElement("script");
+    s.id = "bigcat-offline-js";
+    s.defer = true;
+    s.src = "https://hub.cissychen.com/offline.js";
+    document.head.appendChild(s);
+  }
 })();
