@@ -64,11 +64,15 @@
         votes: "票",
       };
 
-  // Stable anonymous voter id (localStorage).
-  var voter = localStorage.getItem("bigcat_voter");
-  if (!voter) {
-    voter = "v_" + Math.random().toString(36).slice(2) + Date.now().toString(36);
-    localStorage.setItem("bigcat_voter", voter);
+  // Voting is tied to an account now (one vote per person, server-side), so
+  // the old random localStorage voter id is gone. Tallies stay public.
+  var SESSION_KEY = "bigcat-session";
+  function session() {
+    try { return localStorage.getItem(SESSION_KEY) || ""; } catch (e) { return ""; }
+  }
+  function loginUrl() {
+    return (isEn ? "/account.en.html" : "/account.html") +
+      "?next=" + encodeURIComponent(location.pathname + location.search);
   }
 
   // ---------- styles ----------
@@ -204,7 +208,16 @@
   }
 
   function loadTally() {
-    fetch(API + "/poll?id=" + encodeURIComponent(POLL.id) + "&voter=" + encodeURIComponent(voter))
+    // POST when logged in (session must not ride in a URL) so we learn this
+    // account's own pick; plain GET otherwise, which still shows the tally.
+    var req = session()
+      ? fetch(API + "/poll", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id: POLL.id, session: session() }),
+        })
+      : fetch(API + "/poll?id=" + encodeURIComponent(POLL.id));
+    req
       .then(function (r) {
         return r.json();
       })
@@ -215,16 +228,24 @@
   }
 
   function castVote(choice) {
+    if (!session()) {
+      window.location.href = loginUrl();
+      return;
+    }
     fetch(API + "/vote", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ poll: POLL.id, choice: choice, voter: voter }),
+      body: JSON.stringify({ poll: POLL.id, choice: choice, session: session() }),
     })
       .then(function (r) {
         return r.json();
       })
       .then(function (d) {
         if (d.ok) renderTally(d.tally || {}, choice);
+        else if (d.error === "login_required") {
+          try { localStorage.removeItem(SESSION_KEY); } catch (e) {}
+          window.location.href = loginUrl();
+        }
       })
       .catch(function () {});
   }

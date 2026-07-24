@@ -2,11 +2,14 @@
  *
  * Endpoints (all JSON, CORS-restricted to the hub origin):
  *   POST /subscribe   { email }                     -> capture an email (dedup by PK)
- *   POST /vote        { poll, choice, voter }        -> record/replace one vote per voter
- *   GET  /poll?id=... [&voter=...]                   -> tallies for a poll (+ this voter's choice)
- *   GET  /comments?page=...                          -> approved comments for a page
- *   POST /comment     { page, name, body, website }  -> post a comment (login-free)
- *   POST /auth-register{ email, password }           -> create account, email a verify link
+ *   POST /vote        { poll, choice, session }      -> one vote per ACCOUNT (login required)
+ *   GET  /poll?id=... [&voter=...]                   -> tallies for a poll (public)
+ *   POST /poll        { id, session }                -> tallies + this account's own choice
+ *   GET  /comments?page=...                          -> approved comments for a page (public)
+ *   POST /comment     { page, body, session, website } -> post a comment (login required;
+ *                                                       the name shown is the account's)
+ *   POST /auth-register{ email, password, name }     -> create account, email a verify link
+ *   POST /auth-name   { session, name }              -> change public display name
  *   POST /auth-verify  { token }                     -> activate an account
  *   POST /auth-login   { email, password }           -> { session }
  *   POST /auth-me      { session }                   -> { email }
@@ -45,6 +48,16 @@ const NAME_MAX = 40;
 const IP_SALT = "bigcat-comments-v1"; // just so stored hashes aren't raw IPs
 
 // Accounts.
+const DISPLAY_NAME_MAX = 40;
+// Public display name for an account. Never expose the email: fall back to its
+// local part only when the account has no name set yet.
+function publicName(user) {
+  var n = String((user && user.display_name) || "").trim();
+  if (n) return n.slice(0, DISPLAY_NAME_MAX);
+  var e = String((user && user.email) || "");
+  var local = e.split("@")[0] || "";
+  return local ? local.slice(0, DISPLAY_NAME_MAX) : "匿名 · Anonymous";
+}
 const PBKDF2_ITER = 100000; // Workers refuses anything above this
 const PW_MIN = 8;
 const SESSION_TTL = 90 * 24 * 3600 * 1000; // 90 days
@@ -264,15 +277,21 @@ export default {
         const body = await request.json().catch(() => ({}));
         const poll = String(body.poll || "").trim().slice(0, 64);
         const choice = String(body.choice || "").trim().slice(0, 128);
-        const voter = String(body.voter || "").trim().slice(0, 64);
-        if (!poll || !choice || !voter) {
+        // Voting requires an account, and the voter id IS the account id — so
+        // it's genuinely one vote per person (clearing localStorage no longer
+        // buys another). Votes cast before accounts existed keep their old
+        // random ids and still count.
+        const votingUser = await sessionUser(env, body.session);
+        if (!votingUser) {
+          return json({ ok: false, error: "login_required" }, 401, origin);
+        }
+        const voter = votingUser.id;
+        if (!poll || !choice) {
           return json({ ok: false, error: "missing_fields" }, 400, origin);
         }
 
-        // Per-IP rate limit — `voter` is client-supplied, so without this an
-        // attacker can stuff any poll (incl. thinker-arena topic ranking) with
-        // unlimited fresh voter ids. 30/min is roomy for a human working down
-        // the ideas list, fatal for a scripted loop.
+        // Per-IP rate limit: still a cheap backstop against a scripted loop
+        // driving one account down the whole ideas list.
         const vIp = request.headers.get("CF-Connecting-IP") || "0.0.0.0";
         const vIphash = await hashIp(vIp);
         const vRl = await env.DB.prepare(
@@ -295,9 +314,21 @@ export default {
       }
 
       // ---- Poll tallies ------------------------------------------------
-      if (url.pathname === "/poll" && request.method === "GET") {
-        const poll = String(url.searchParams.get("id") || "").trim().slice(0, 64);
-        const voter = String(url.searchParams.get("voter") || "").trim().slice(0, 64);
+      // GET  /poll?id=…[&voter=…]  tallies, readable by anyone (voter kept for
+      //                            pre-account clients that still hold one).
+      // POST /poll {id, session}   tallies + this ACCOUNT's own choice; POST so
+      //                            the session token never lands in a URL/log.
+      if (url.pathname === "/poll" && (request.method === "GET" || request.method === "POST")) {
+        let poll, voter;
+        if (request.method === "POST") {
+          const body = await request.json().catch(() => ({}));
+          poll = String(body.id || "").trim().slice(0, 64);
+          const me = await sessionUser(env, body.session);
+          voter = me ? me.id : "";
+        } else {
+          poll = String(url.searchParams.get("id") || "").trim().slice(0, 64);
+          voter = String(url.searchParams.get("voter") || "").trim().slice(0, 64);
+        }
         if (!poll) return json({ ok: false, error: "missing_id" }, 400, origin);
         const tally = await tallyPoll(env, poll);
         let mine = null;
@@ -355,13 +386,19 @@ export default {
           return json({ ok: true, dropped: true }, 200, origin);
         }
 
+        // Commenting requires an account. The displayed name comes from that
+        // account, never from the request body — so nobody can post under
+        // someone else's name, and the email is never exposed.
+        const commenter = await sessionUser(env, body.session);
+        if (!commenter) {
+          return json({ ok: false, error: "login_required" }, 401, origin);
+        }
         const page = String(body.page || "").trim().slice(0, 200);
-        let name = String(body.name || "").trim().slice(0, NAME_MAX);
+        const name = commenter.name.slice(0, NAME_MAX);
         const text = String(body.body || "").trim().slice(0, BODY_MAX);
         if (!page || !text) {
           return json({ ok: false, error: "missing_fields" }, 400, origin);
         }
-        if (!name) name = "匿名 · Anonymous";
 
         // Optional Turnstile verification (only if the secret is bound).
         if (env.TURNSTILE_SECRET) {
@@ -437,6 +474,12 @@ export default {
           if (password.length < PW_MIN || password.length > 200) {
             return json({ ok: false, error: "weak_password", min: PW_MIN }, 400, origin);
           }
+          // Public display name for comments (optional; blank falls back to the
+          // email's local part). Strip control chars so it can't fake markup.
+          const dispName = String(body.name || "")
+            .replace(/[\x00-\x1f<>]/g, "")
+            .trim()
+            .slice(0, DISPLAY_NAME_MAX);
           if (!env.RESEND_API_KEY) {
             return json({ ok: false, error: "no_sender" }, 503, origin);
           }
@@ -456,16 +499,18 @@ export default {
             const pwhash = await hashPassword(env, password);
             if (existing) {
               await env.DB.prepare(
-                "UPDATE users SET pwhash = ?2, vtoken = ?3, created = ?4 WHERE id = ?1"
+                "UPDATE users SET pwhash = ?2, vtoken = ?3, created = ?4, " +
+                  "display_name = CASE WHEN ?5 <> '' THEN ?5 ELSE display_name END " +
+                  "WHERE id = ?1"
               )
-                .bind(existing.id, pwhash, vtoken, Date.now())
+                .bind(existing.id, pwhash, vtoken, Date.now(), dispName)
                 .run();
             } else {
               await env.DB.prepare(
-                "INSERT INTO users (id, email, pwhash, verified, vtoken, created) " +
-                  "VALUES (?1, ?2, ?3, 0, ?4, ?5)"
+                "INSERT INTO users (id, email, pwhash, verified, vtoken, created, display_name) " +
+                  "VALUES (?1, ?2, ?3, 0, ?4, ?5, ?6)"
               )
-                .bind(crypto.randomUUID(), email, pwhash, vtoken, Date.now())
+                .bind(crypto.randomUUID(), email, pwhash, vtoken, Date.now(), dispName)
                 .run();
             }
             await sendAuthEmail(env, email, "verify", vtoken, lang);
@@ -536,7 +581,22 @@ export default {
         if (url.pathname === "/auth-me") {
           const me = await sessionUser(env, body.session);
           if (!me) return json({ ok: false, error: "unauthorized" }, 401, origin);
-          return json({ ok: true, email: me.email }, 200, origin);
+          return json({ ok: true, email: me.email, name: me.name }, 200, origin);
+        }
+
+        // ---- Change the public display name used on comments
+        if (url.pathname === "/auth-name") {
+          const me = await sessionUser(env, body.session);
+          if (!me) return json({ ok: false, error: "unauthorized" }, 401, origin);
+          const name = String(body.name || "")
+            .replace(/[\x00-\x1f<>]/g, "")
+            .trim()
+            .slice(0, DISPLAY_NAME_MAX);
+          if (!name) return json({ ok: false, error: "missing_fields" }, 400, origin);
+          await env.DB.prepare("UPDATE users SET display_name = ?2 WHERE id = ?1")
+            .bind(me.id, name)
+            .run();
+          return json({ ok: true, name }, 200, origin);
         }
 
         // ---- Log out (this session only)
@@ -761,13 +821,14 @@ async function sessionUser(env, raw) {
   const s = String(raw || "").trim();
   if (!/^[a-f0-9]{16,128}$/.test(s)) return null;
   const row = await env.DB.prepare(
-    "SELECT s.user_id AS id, s.expires AS expires, u.email AS email " +
+    "SELECT s.user_id AS id, s.expires AS expires, u.email AS email, " +
+      "u.display_name AS display_name " +
       "FROM sessions s JOIN users u ON u.id = s.user_id WHERE s.token = ?"
   )
     .bind(await sha256hex(s))
     .first();
   if (!row || row.expires < Date.now()) return null;
-  return { id: row.id, email: row.email };
+  return { id: row.id, email: row.email, name: publicName(row) };
 }
 
 async function unsubToken(env, email, list) {

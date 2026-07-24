@@ -101,8 +101,11 @@ button.primary:disabled{opacity:.5;cursor:default}
       '<input type="password" id="password" name="password" autocomplete="current-password" required>';
     var newPw = '<label for="password">Password (at least 8 characters)</label>' +
       '<input type="password" id="password" name="password" autocomplete="new-password" minlength="8" required>';
+    // Public display name — shown on comments; the email is never published.
+    var nick = '<label for="nickname">Display name (public on comments)</label>' +
+      '<input type="text" id="nickname" name="nickname" maxlength="40" autocomplete="nickname" required>';
     if (kind === 'login') return email + pw;
-    if (kind === 'register') return email + newPw;
+    if (kind === 'register') return email + newPw + nick;
     if (kind === 'forgot') return email;
     if (kind === 'reset') return newPw;
     return '';
@@ -141,9 +144,27 @@ button.primary:disabled{opacity:.5;cursor:default}
     clearMsg();
     document.querySelector('.card').insertAdjacentHTML('beforeend',
       '<div class="me"><div class="email">' + email.replace(/[<>&]/g, '') + '</div>' +
-      '<div class="hint">Highlight notes sync to this account.</div>' +
+      '<div class="hint">Highlight notes sync to this account. Comments show the display name below — never your email.</div>' +
+      '<label for="nick2" style="text-align:left">Display name</label>' +
+      '<input type="text" id="nick2" maxlength="40" placeholder="Name shown on your comments">' +
+      '<button class="primary" id="savenick" style="background:rgba(255,255,255,.08)">Save name</button>' +
+      '<div class="hint" id="nickmsg"></div>' +
       '<button class="primary" id="tonotes">My Notes →</button>' +
       '<button class="primary" id="logout" style="background:rgba(255,255,255,.08);margin-top:10px">Log out</button></div>');
+    // Prefill the current display name and let them change it.
+    var nick2 = document.getElementById('nick2');
+    var nickmsg = document.getElementById('nickmsg');
+    post('/auth-me', { session: localStorage.getItem(SESSION_KEY) }).then(function (r) {
+      if (r && r.ok && r.name) nick2.value = r.name;
+    }).catch(function () {});
+    document.getElementById('savenick').onclick = function () {
+      var v = nick2.value.trim();
+      if (!v) { nickmsg.textContent = 'Display name cannot be empty.'; return; }
+      nickmsg.textContent = 'Saving…';
+      post('/auth-name', { session: localStorage.getItem(SESSION_KEY), name: v }).then(function (r) {
+        nickmsg.textContent = (r && r.ok) ? 'Saved. Comments will show: ' + r.name : 'Could not save — try again.';
+      }).catch(function () { nickmsg.textContent = 'Network error — try again.'; });
+    };
     document.getElementById('tonotes').onclick = function () { location.href = '/notes.en.html'; };
     document.getElementById('logout').onclick = function () {
       var s = localStorage.getItem(SESSION_KEY);
@@ -183,7 +204,9 @@ button.primary:disabled{opacity:.5;cursor:default}
         else say(errText(r.error));
       }).catch(function () { done(); say('Network error, please retry.'); });
     } else if (mode === 'register') {
-      post('/auth-register', { email: email, password: password, lang: 'en' }).then(function (r) {
+      var nickEl = document.getElementById('nickname');
+      var nick = nickEl ? nickEl.value.trim() : '';
+      post('/auth-register', { email: email, password: password, name: nick, lang: 'en' }).then(function (r) {
         done();
         if (r.ok) {
           say('Verification email sent — click the link in your inbox.', 'ok');

@@ -143,8 +143,9 @@
   var t = isEn
     ? {
         head: "💬 Comments",
-        sub: "No account needed — just leave a name (optional) and your comment.",
-        namePh: "Name (optional)",
+        sub: "Log in to comment — your display name is shown, never your email.",
+        subIn: "Commenting as ",
+        login: "Log in / Sign up",
         bodyPh: "Write a comment…",
         send: "Post",
         empty: "Be the first to comment.",
@@ -152,13 +153,15 @@
         held: "Thanks! Your comment will show after review.",
         err: "Couldn't post — check your comment and try again.",
         rate: "You're posting too fast — wait a moment.",
+        needLogin: "Please log in to comment.",
         net: "Network error — try again.",
         loading: "Loading comments…",
       }
     : {
         head: "💬 留言 · Comments",
-        sub: "无需登录 —— 填个名字（可选）就能留言。",
-        namePh: "名字（可选）",
+        sub: "登录后即可留言 —— 只显示你的昵称，不会公开邮箱。",
+        subIn: "以此身份留言：",
+        login: "登录 / 注册",
         bodyPh: "写下你的留言…",
         send: "发表",
         empty: "还没有留言，来做第一个吧。",
@@ -166,6 +169,7 @@
         held: "谢谢！留言将在审核后显示。",
         err: "发表失败 —— 检查一下内容再试。",
         rate: "发得太快啦，稍等一下。",
+        needLogin: "请先登录再留言。",
         net: "网络出错，请重试。",
         loading: "正在加载留言…",
       };
@@ -208,11 +212,22 @@
   // form
   var form = document.createElement("form");
   form.style.position = "relative";
-  var nameInput = document.createElement("input");
-  nameInput.type = "text";
-  nameInput.className = "bc-name";
-  nameInput.placeholder = t.namePh;
-  nameInput.maxLength = 40;
+  // Login gate: posting needs an account, and the name shown comes from that
+  // account (the server ignores any client-supplied name), so there's no name
+  // field here any more. Reading comments stays open to everyone.
+  var SESSION_KEY = "bigcat-session";
+  function session() {
+    try { return localStorage.getItem(SESSION_KEY) || ""; } catch (e) { return ""; }
+  }
+  function loginUrl() {
+    return (isEn ? "/account.en.html" : "/account.html") +
+      "?next=" + encodeURIComponent(location.pathname + location.search);
+  }
+  var loginBtn = document.createElement("a");
+  loginBtn.className = "bc-send";
+  loginBtn.style.cssText = "display:inline-block;text-decoration:none;margin-bottom:9px";
+  loginBtn.textContent = t.login;
+  loginBtn.href = loginUrl();
   var ta = document.createElement("textarea");
   ta.placeholder = t.bodyPh;
   ta.maxLength = 2000;
@@ -235,11 +250,42 @@
   msg.className = "bc-msg";
   row.appendChild(send);
   row.appendChild(msg);
-  form.appendChild(nameInput);
   form.appendChild(ta);
   form.appendChild(hp);
   form.appendChild(row);
   box.appendChild(form);
+
+  // Resolve the logged-in account: show "commenting as <name>" and enable the
+  // form, or swap in a login button. Comments below stay visible either way.
+  function applyAuthState(name) {
+    if (name) {
+      sub.textContent = t.subIn + name;
+      if (loginBtn.parentNode) loginBtn.remove();
+      ta.disabled = false;
+      send.disabled = false;
+      form.style.display = "";
+    } else {
+      sub.textContent = t.sub;
+      ta.disabled = true;
+      send.disabled = true;
+      if (!loginBtn.parentNode) box.insertBefore(loginBtn, form);
+      form.style.display = "none";
+    }
+  }
+  applyAuthState(null); // default to locked until /auth-me answers
+  if (session()) {
+    fetch(API + "/auth-me", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ session: session() }),
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d && d.ok) applyAuthState(d.name || d.email);
+        else { try { localStorage.removeItem(SESSION_KEY); } catch (e) {} }
+      })
+      .catch(function () {});
+  }
 
   // optional Turnstile widget
   var tsToken = "";
@@ -346,8 +392,8 @@
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         page: pageKey,
-        name: nameInput.value.trim(),
         body: text,
+        session: session(), // server derives the displayed name from this
         website: hp.value, // honeypot
         token: tsToken,
       }),
@@ -373,6 +419,12 @@
         } else if (res.status === 429) {
           msg.className = "bc-msg err";
           msg.textContent = t.rate;
+        } else if (res.status === 401 || d.error === "login_required") {
+          // Session expired or revoked mid-visit — fall back to the login gate.
+          try { localStorage.removeItem(SESSION_KEY); } catch (e) {}
+          applyAuthState(null);
+          msg.className = "bc-msg err";
+          msg.textContent = t.needLogin;
         } else {
           msg.className = "bc-msg err";
           msg.textContent = t.err;

@@ -102,8 +102,11 @@ button.primary:disabled{opacity:.5;cursor:default}
       '<input type="password" id="password" name="password" autocomplete="current-password" required>';
     var newPw = '<label for="password">新密码（至少 8 位）</label>' +
       '<input type="password" id="password" name="password" autocomplete="new-password" minlength="8" required>';
+    // Public display name — shown on comments; the email is never published.
+    var nick = '<label for="nickname">昵称（留言时公开显示）</label>' +
+      '<input type="text" id="nickname" name="nickname" maxlength="40" autocomplete="nickname" required>';
     if (kind === 'login') return email + pw;
-    if (kind === 'register') return email + newPw.replace('新密码', '密码');
+    if (kind === 'register') return email + newPw.replace('新密码', '密码') + nick;
     if (kind === 'forgot') return email;
     if (kind === 'reset') return newPw;
     return '';
@@ -142,9 +145,27 @@ button.primary:disabled{opacity:.5;cursor:default}
     clearMsg();
     document.querySelector('.card').insertAdjacentHTML('beforeend',
       '<div class="me"><div class="email">' + email.replace(/[<>&]/g, '') + '</div>' +
-      '<div class="hint">划线笔记会同步到这个账号。</div>' +
+      '<div class="hint">划线笔记会同步到这个账号。留言时公开显示的是下面的昵称，不是邮箱。</div>' +
+      '<label for="nick2" style="text-align:left">昵称</label>' +
+      '<input type="text" id="nick2" maxlength="40" placeholder="留言时显示的名字">' +
+      '<button class="primary" id="savenick" style="background:rgba(255,255,255,.08)">保存昵称</button>' +
+      '<div class="hint" id="nickmsg"></div>' +
       '<button class="primary" id="tonotes">我的笔记 →</button>' +
       '<button class="primary" id="logout" style="background:rgba(255,255,255,.08);margin-top:10px">退出登录</button></div>');
+    // Prefill the current display name and let them change it.
+    var nick2 = document.getElementById('nick2');
+    var nickmsg = document.getElementById('nickmsg');
+    post('/auth-me', { session: localStorage.getItem(SESSION_KEY) }).then(function (r) {
+      if (r && r.ok && r.name) nick2.value = r.name;
+    }).catch(function () {});
+    document.getElementById('savenick').onclick = function () {
+      var v = nick2.value.trim();
+      if (!v) { nickmsg.textContent = '昵称不能为空。'; return; }
+      nickmsg.textContent = '保存中…';
+      post('/auth-name', { session: localStorage.getItem(SESSION_KEY), name: v }).then(function (r) {
+        nickmsg.textContent = (r && r.ok) ? '已保存，以后留言显示：' + r.name : '保存失败，请重试。';
+      }).catch(function () { nickmsg.textContent = '网络错误，请重试。'; });
+    };
     document.getElementById('tonotes').onclick = function () { location.href = '/notes.html'; };
     document.getElementById('logout').onclick = function () {
       var s = localStorage.getItem(SESSION_KEY);
@@ -184,7 +205,9 @@ button.primary:disabled{opacity:.5;cursor:default}
         else say(errText(r.error));
       }).catch(function () { done(); say('网络错误，请重试。'); });
     } else if (mode === 'register') {
-      post('/auth-register', { email: email, password: password, lang: 'zh' }).then(function (r) {
+      var nickEl = document.getElementById('nickname');
+      var nick = nickEl ? nickEl.value.trim() : '';
+      post('/auth-register', { email: email, password: password, name: nick, lang: 'zh' }).then(function (r) {
         done();
         if (r.ok) {
           say('验证邮件已发出，请到邮箱点确认链接。', 'ok');

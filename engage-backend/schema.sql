@@ -46,6 +46,10 @@ CREATE TABLE IF NOT EXISTS users (
   id       TEXT    PRIMARY KEY,        -- uuid
   email    TEXT    NOT NULL UNIQUE,    -- lowercased
   pwhash   TEXT    NOT NULL,           -- pbkdf2$<iter>$<salt_b64>$<hash_b64>
+  -- Public display name shown on comments. The email is NEVER exposed
+  -- publicly; when this is blank the worker falls back to the email's local
+  -- part so a pre-existing account still has something to show.
+  display_name TEXT NOT NULL DEFAULT '',
   verified INTEGER NOT NULL DEFAULT 0,
   vtoken   TEXT,                       -- email-verification token, cleared on use
   rtoken   TEXT,                       -- password-reset token, cleared on use
