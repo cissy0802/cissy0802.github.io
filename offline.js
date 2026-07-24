@@ -242,33 +242,53 @@
     });
   }
 
+  // The article page(s) an entry links to. Handles both shapes: the entry is
+  // itself an <a> (e.g. mental-models), or a container holding article links
+  // (e.g. deep-research, where one card links a plain + a deep version).
+  function entryPages(entry) {
+    var links = [];
+    if (entry.tagName === 'A' && entry.getAttribute('href')) links.push(entry);
+    entry.querySelectorAll('a[href]').forEach(function (a) { links.push(a); });
+    var pages = [], seen = {};
+    links.forEach(function (a) {
+      var u;
+      try { u = new URL(a.getAttribute('href'), location.href); } catch (e) { return; }
+      if (u.origin !== location.origin || !/\.html$/.test(u.pathname)) return;
+      if (/\/index(\.\w+)?\.html$/.test(u.pathname)) return;
+      if (!seen[u.pathname]) { seen[u.pathname] = 1; pages.push(u.pathname); }
+    });
+    return pages;
+  }
+
   function mountEntryButtons() {
     if (document.querySelector('.entry-dl')) return;
     caches.open(CACHE).then(function (c) {
-      document.querySelectorAll('a.entry[href]').forEach(function (entry) {
-        var u;
-        try { u = new URL(entry.getAttribute('href'), location.href); } catch (e) { return; }
-        if (u.origin !== location.origin || !/\.html$/.test(u.pathname)) return;
-        if (/\/index(\.\w+)?\.html$/.test(u.pathname)) return;
-        var page = u.pathname;
+      document.querySelectorAll('.entry').forEach(function (entry) {
+        var pages = entryPages(entry);
+        if (!pages.length) return;
 
+        var isRow = entry.tagName === 'A'; // flat link row vs block card
         var btn = document.createElement('button');
         btn.className = 'entry-dl';
         btn.type = 'button';
         btn.title = isEn ? 'Save offline' : '离线下载';
         btn.textContent = '⤓';
         btn.style.cssText =
-          'position:absolute;right:12px;top:50%;transform:translateY(-50%);z-index:5;' +
-          'min-width:28px;height:28px;padding:0 8px;border-radius:14px;' +
-          'border:1px solid rgba(123,97,255,.4);background:rgba(123,97,255,.12);' +
-          'color:#7b61ff;font:600 14px -apple-system,sans-serif;cursor:pointer;line-height:26px;';
+          'position:absolute;z-index:5;min-width:28px;height:28px;padding:0 8px;' +
+          'border-radius:14px;border:1px solid rgba(123,97,255,.4);' +
+          'background:rgba(123,97,255,.12);color:#7b61ff;' +
+          'font:600 14px -apple-system,sans-serif;cursor:pointer;line-height:26px;' +
+          (isRow ? 'right:12px;top:50%;transform:translateY(-50%);'
+                 : 'right:14px;top:14px;');
         if (getComputedStyle(entry).position === 'static') entry.style.position = 'relative';
-        // Reserve room on the right so the button never overlaps the entry text
-        // (models are right-aligned on desktop, stacked on mobile).
-        entry.style.paddingRight = '56px';
+        // Reserve room so the button never overlaps entry text (row entries put
+        // right-aligned/stacked text where the button sits).
+        if (isRow) entry.style.paddingRight = '56px';
 
-        // Show ✓ if this article is already cached.
-        c.match(page).then(function (hit) { if (hit) { btn.textContent = '✓'; btn.dataset.done = '1'; } });
+        // ✓ only once every page in the entry is already cached.
+        Promise.all(pages.map(function (p) { return c.match(p); })).then(function (hits) {
+          if (hits.every(Boolean)) { btn.textContent = '✓'; btn.dataset.done = '1'; }
+        });
 
         var busy = false;
         btn.addEventListener('click', function (e) {
@@ -279,14 +299,14 @@
           btn.style.fontSize = '10px';
           btn.textContent = '…';
           if (navigator.storage && navigator.storage.persist) navigator.storage.persist();
-          downloadArticle(page).then(function () {
+          Promise.all(pages.map(downloadArticle)).then(function () {
             btn.dataset.done = '1';
             btn.style.fontSize = '14px';
             btn.textContent = '✓';
             btn.style.color = '#7ee2a8';
             btn.style.borderColor = 'rgba(126,226,168,.5)';
           }).catch(function (err) {
-            console.warn('[offline] article download failed:', err);
+            console.warn('[offline] entry download failed:', err);
             btn.style.fontSize = '14px';
             btn.textContent = '⚠';
             btn.style.color = '#ff9b9b';
