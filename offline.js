@@ -59,39 +59,10 @@
   var CACHE = 'offline-content-v1';
   var isEn = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0
     || /\.en\.html$/i.test(location.pathname);
-  var T = isEn
-    ? { down: 'Offline', saved: 'Saved', saving: 'Saving', failed: 'Retry',
-        confirm: 'Remove this page from offline storage?' }
-    : { down: '离线', saved: '已离线', saving: '下载中', failed: '重试',
-        confirm: '从离线存储中删除这一页？' };
-
   function ready(fn) {
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', fn);
     } else { fn(); }
-  }
-
-  // Everything this page needs to work offline.
-  function pageAssets() {
-    var urls = [location.pathname];
-    var lang = isEn ? 'en' : 'zh';
-    var seen = {};
-    document.querySelectorAll('[data-tts]').forEach(function (el) {
-      var hash = el.getAttribute('data-tts');
-      if (hash && !seen[hash]) {
-        seen[hash] = 1;
-        urls.push(new URL('audio/' + lang + '/' + hash + '.mp3', location.href).pathname);
-      }
-    });
-    document.querySelectorAll('img[src]').forEach(function (img) {
-      var u = new URL(img.getAttribute('src'), location.href);
-      if (u.origin === location.origin) urls.push(u.pathname);
-    });
-    document.querySelectorAll('script[src]').forEach(function (s) {
-      var u = new URL(s.getAttribute('src'), location.href);
-      if (u.origin === location.origin) urls.push(u.pathname);
-    });
-    return urls;
   }
 
   function isLanding() {
@@ -102,18 +73,24 @@
     return (/\/index\.en\.html$/.test(location.pathname) ||
             (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0) ? 'en' : 'zh';
   }
+  // A repo's category index: /{repo}/ or /{repo}/index(.en|.zh).html — one path
+  // segment, and not the hub root (which isLanding handles).
+  function isRepoIndex() {
+    if (isLanding()) return false;
+    return /^\/[^\/]+\/(index(\.en|\.zh)?\.html)?$/.test(location.pathname);
+  }
 
+  // Download buttons live on the *listing* pages, never floating over an
+  // article (where they used to overlap the TTS bar): per-repo buttons on the
+  // hub landing, per-article buttons on each repo's index. All owner-only.
   ready(function () {
-    var onArticle = !!document.querySelector('[data-tts]');
     var onLanding = isLanding();
-    if (!onArticle && !onLanding) return;
-    // Both the per-article button and the per-repo (landing) buttons are
-    // owner-only. Resolve owner first (email cached, or backfilled once from a
-    // session), then mount whichever this page is.
+    var onRepoIndex = !onLanding && isRepoIndex();
+    if (!onLanding && !onRepoIndex) return;
     function go() {
       if (!isOwnerNow()) return;
-      if (onArticle) mountButton();
       if (onLanding) mountRepoButtons();
+      if (onRepoIndex) mountEntryButtons();
     }
     if (isOwnerNow()) { go(); return; }
     backfillEmail().then(go);
@@ -122,7 +99,7 @@
   // ---- Whole-repo offline download (owner only, on the hub landing) --------
 
   // Collect every URL a fetched article needs offline (page + its baked audio +
-  // same-origin images). Mirrors pageAssets() but reads a parsed document.
+  // same-origin images), read from a parsed document.
   function assetsFromDoc(doc, pagePath) {
     var base = new URL(pagePath, location.origin);
     var lang = /\.en\.html$/.test(base.pathname) ? 'en' : 'zh';
@@ -246,67 +223,76 @@
     });
   }
 
-  function mountButton() {
-    var btn = document.createElement('button');
-    btn.id = 'offline-btn';
-    btn.style.cssText =
-      'position:fixed;bottom:18px;right:18px;z-index:9999;' +
-      'padding:9px 14px;border-radius:20px;border:1px solid rgba(255,255,255,.15);' +
-      'background:rgba(30,30,50,.85);backdrop-filter:blur(10px);color:#e4e6eb;' +
-      'font:600 13px -apple-system,sans-serif;cursor:pointer;';
-    document.body.appendChild(btn);
+  // ---- Per-article download on a repo's index (owner only) ----------------
 
-    var state = 'idle';
-    function render(extra) {
-      btn.textContent =
-        state === 'saved' ? '✓ ' + T.saved :
-        state === 'saving' ? '⧖ ' + T.saving + (extra || '') :
-        state === 'failed' ? '⚠ ' + T.failed :
-        '⤓ ' + T.down;
-      btn.style.color = state === 'saved' ? '#7ee2a8' : '#e4e6eb';
-    }
-
-    caches.open(CACHE).then(function (c) {
-      return c.match(location.pathname);
-    }).then(function (hit) {
-      state = hit ? 'saved' : 'idle';
-      render();
-    });
-
-    btn.addEventListener('click', function () {
-      if (state === 'saving') return;
-
-      if (state === 'saved') {
-        if (!window.confirm(T.confirm)) return;
-        caches.open(CACHE).then(function (c) {
-          return Promise.all(pageAssets().map(function (u) { return c.delete(u); }));
-        }).then(function () { state = 'idle'; render(); });
-        return;
-      }
-
-      // Ask the browser not to evict our downloads under storage pressure.
-      if (navigator.storage && navigator.storage.persist) navigator.storage.persist();
-
-      var urls = pageAssets();
-      var done = 0;
-      state = 'saving';
-      render(' 0/' + urls.length);
-
-      caches.open(CACHE).then(function (c) {
-        return Promise.all(urls.map(function (u) {
+  // Fetch one article and cache it + its baked audio + images.
+  function downloadArticle(path) {
+    return caches.open(CACHE).then(function (c) {
+      return fetch(path, { cache: 'no-cache' }).then(function (r) {
+        if (!r.ok) throw new Error(path + ' ' + r.status);
+        return r.text();
+      }).then(function (html) {
+        var doc = new DOMParser().parseFromString(html, 'text/html');
+        return Promise.all(assetsFromDoc(doc, path).map(function (u) {
           return fetch(u, { cache: 'no-cache' }).then(function (res) {
-            if (!res.ok) throw new Error(res.status + ' ' + u);
-            return c.put(u, res);
-          }).then(function () {
-            done++;
-            render(' ' + done + '/' + urls.length);
-          });
+            if (res.ok) return c.put(u, res);
+          }).catch(function () {});
         }));
-      }).then(function () {
-        state = 'saved'; render();
-      }).catch(function (e) {
-        console.warn('[offline] download failed:', e);
-        state = 'failed'; render();
+      });
+    });
+  }
+
+  function mountEntryButtons() {
+    if (document.querySelector('.entry-dl')) return;
+    caches.open(CACHE).then(function (c) {
+      document.querySelectorAll('a.entry[href]').forEach(function (entry) {
+        var u;
+        try { u = new URL(entry.getAttribute('href'), location.href); } catch (e) { return; }
+        if (u.origin !== location.origin || !/\.html$/.test(u.pathname)) return;
+        if (/\/index(\.\w+)?\.html$/.test(u.pathname)) return;
+        var page = u.pathname;
+
+        var btn = document.createElement('button');
+        btn.className = 'entry-dl';
+        btn.type = 'button';
+        btn.title = isEn ? 'Save offline' : '离线下载';
+        btn.textContent = '⤓';
+        btn.style.cssText =
+          'position:absolute;right:12px;top:50%;transform:translateY(-50%);z-index:5;' +
+          'min-width:28px;height:28px;padding:0 8px;border-radius:14px;' +
+          'border:1px solid rgba(123,97,255,.4);background:rgba(123,97,255,.12);' +
+          'color:#7b61ff;font:600 14px -apple-system,sans-serif;cursor:pointer;line-height:26px;';
+        if (getComputedStyle(entry).position === 'static') entry.style.position = 'relative';
+        // Reserve room on the right so the button never overlaps the entry text
+        // (models are right-aligned on desktop, stacked on mobile).
+        entry.style.paddingRight = '56px';
+
+        // Show ✓ if this article is already cached.
+        c.match(page).then(function (hit) { if (hit) { btn.textContent = '✓'; btn.dataset.done = '1'; } });
+
+        var busy = false;
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (busy || btn.dataset.done) return;
+          busy = true;
+          btn.style.fontSize = '10px';
+          btn.textContent = '…';
+          if (navigator.storage && navigator.storage.persist) navigator.storage.persist();
+          downloadArticle(page).then(function () {
+            btn.dataset.done = '1';
+            btn.style.fontSize = '14px';
+            btn.textContent = '✓';
+            btn.style.color = '#7ee2a8';
+            btn.style.borderColor = 'rgba(126,226,168,.5)';
+          }).catch(function (err) {
+            console.warn('[offline] article download failed:', err);
+            btn.style.fontSize = '14px';
+            btn.textContent = '⚠';
+            btn.style.color = '#ff9b9b';
+          }).then(function () { busy = false; });
+        });
+        entry.appendChild(btn);
       });
     });
   }
