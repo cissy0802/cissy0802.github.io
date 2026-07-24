@@ -15,32 +15,47 @@ Times are shown in your local timezone.
 
 import argparse
 import json
+import os
 import subprocess
 import sys
+import time
 from datetime import datetime, timezone
 
 DB = "bigcat-engage"
 
+# A pinned wrangler binary avoids `npx` re-downloading the package on every run
+# (that download failed outright on the scheduled job several times). Set
+# WRANGLER_BIN to override; falls back to `npx wrangler`.
+WRANGLER = os.environ.get("WRANGLER_BIN")
+WRANGLER_CMD = [WRANGLER] if WRANGLER else ["npx", "wrangler"]
+
+# The OAuth access token expires and the refresh occasionally loses a race,
+# surfacing as Cloudflare API error 10000. The retry re-runs after the failed
+# attempt has refreshed the token, which is enough to recover.
+RETRIES = 3
+
 
 def q(sql):
     """Run a SQL query against the remote D1 and return the list of rows."""
-    try:
-        out = subprocess.run(
-            ["npx", "wrangler", "d1", "execute", DB, "--remote", "--json", "--command", sql],
-            capture_output=True,
-            text=True,
-            check=True,
-        ).stdout
-    except FileNotFoundError:
-        sys.exit("✗ npx/wrangler not found. Run this from a shell where `npx wrangler` works.")
-    except subprocess.CalledProcessError as e:
-        sys.exit(f"✗ wrangler failed:\n{e.stderr or e.stdout}")
-    # wrangler prints a leading banner before the JSON; grab from the first '['.
-    i = out.find("[")
-    if i < 0:
-        sys.exit(f"✗ Unexpected wrangler output:\n{out}")
-    data = json.loads(out[i:])
-    return data[0].get("results", [])
+    cmd = WRANGLER_CMD + ["d1", "execute", DB, "--remote", "--json", "--command", sql]
+    last = ""
+    for attempt in range(RETRIES):
+        try:
+            out = subprocess.run(cmd, capture_output=True, text=True, check=True).stdout
+        except FileNotFoundError:
+            sys.exit(f"✗ wrangler not found ({' '.join(WRANGLER_CMD)}).")
+        except subprocess.CalledProcessError as e:
+            last = e.stderr or e.stdout
+            if attempt < RETRIES - 1:
+                time.sleep(3 * (attempt + 1))
+                continue
+            sys.exit(f"✗ wrangler failed:\n{last}")
+        # wrangler prints a leading banner before the JSON; grab from the first '['.
+        i = out.find("[")
+        if i < 0:
+            sys.exit(f"✗ Unexpected wrangler output:\n{out}")
+        data = json.loads(out[i:])
+        return data[0].get("results", [])
 
 
 def fmt_ts(ms):

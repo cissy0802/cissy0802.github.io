@@ -177,6 +177,14 @@ with a one-line summary; the full report is appended to a log.
 
 - **Job:** `~/Library/LaunchAgents/com.bigcat.hub-digest.plist`
   (reference copy: `hub-digest.plist` in this folder).
+- **wrangler:** pinned at `~/.bigcat-hub/node_modules/.bin/wrangler` (the runner exports it as
+  `WRANGLER_BIN`). Without it `npx` re-downloads wrangler on every run and sometimes fails.
+  Refresh occasionally: `npm install --prefix ~/.bigcat-hub wrangler`.
+- **Auth:** the digest uses your `wrangler login` OAuth token, whose refresh occasionally
+  loses a race (Cloudflare error 10000) — `report.py` now retries 3× to ride that out.
+  For a permanent fix, create a scoped API token (D1:Read) in the Cloudflare dashboard and
+  put it in `~/.bigcat-hub/.env` as `export CLOUDFLARE_API_TOKEN=…` +
+  `export CLOUDFLARE_ACCOUNT_ID=39194675faa2ca1a1a30009dc5aa09e9`; the runner sources it.
 - **Runner + log:** `~/.bigcat-hub/` (a copy of `report.py` + `daily-digest.sh`).
   Read the history any time with `cat ~/.bigcat-hub/digest.log`.
 
