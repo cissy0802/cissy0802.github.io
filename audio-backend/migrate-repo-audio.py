@@ -158,11 +158,27 @@ def verify(repo: Path, sample: int) -> int:
     return 1 if fails else 0
 
 
+def git(repo: Path, *args, check=False):
+    return subprocess.run(["git", "-C", str(repo), *args],
+                          capture_output=True, text=True, check=check)
+
+
 def untrack(repo: Path) -> int:
     if not (repo / ".gitignore").exists():
         sys.exit(f"ERROR: {repo}/.gitignore missing — add 'audio/' to it first")
     if "audio/" not in (repo / ".gitignore").read_text():
         sys.exit(f"ERROR: {repo}/.gitignore does not ignore audio/")
+
+    # A bake that landed upstream while this repo was being migrated has MP3s
+    # this clone has never seen. Untracking from a stale checkout removes only
+    # the locally-known files and silently leaves the newer ones in git — which
+    # is exactly what happened to personal-finance's Day 8.
+    git(repo, "fetch", "--quiet", "origin")
+    behind = git(repo, "rev-list", "--count", "HEAD..@{u}").stdout.strip()
+    if behind and behind != "0":
+        sys.exit(f"ERROR: {repo.name} is {behind} commit(s) behind origin. "
+                 f"Run `git -C {repo} pull --rebase`, re-run the upload so any "
+                 f"newly baked MP3s reach R2, then untrack.")
     n = subprocess.run(["git", "-C", str(repo), "ls-files", "audio"],
                        capture_output=True, text=True).stdout.count("\n")
     if not n:
