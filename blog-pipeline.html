@@ -242,7 +242,7 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <p>不要求登录，门槛低了，但<strong>「账号」这道天然的反垃圾墙也没了</strong>——谁都能发，机器人尤其能发。所以自建版内置三道防线：<strong>蜜罐字段</strong>（隐藏的 <code>website</code> 输入，人不填、机器人会填，填了就静默丢弃）、<strong>按 IP 限流</strong>（60 秒最多 3 条，用加盐哈希记 IP、不存原始地址）、以及可选的 <strong>Cloudflare Turnstile</strong>（绑上 secret 后 Worker 自动强制，垃圾真出现再开）。评论正文一律用 <code>textContent</code> 渲染、绝不当 HTML，从根上堵死 XSS。</p>
 
 <h3>双重确认订阅 = 以后免密登录的地基</h3>
-<p>订阅走 double opt-in：<code>/subscribe</code> 先存一条<strong>未确认</strong>行、发一封带确认链接的邮件（用 Resend 免费层，每月 3000 封），点了链接触发 <code>/confirm</code> 才翻成 <code>confirmed=1</code>，只有确认过的才算真订户。这一步不只是防拼错的邮箱——<strong>「邮箱 → 验证」正是免密登录的地基</strong>：以后想给评论/投票加登录，只要在 <code>/confirm</code> 签发一个会话 token、在 <code>/comment</code> 和 <code>/vote</code> 校验它即可，数据库不用重构。</p>
+<p>订阅走 double opt-in：<code>/subscribe</code> 先存一条<strong>未确认</strong>行、发一封带确认链接的邮件（用 Resend 免费层，每月 3000 封），点了链接触发 <code>/confirm</code> 才翻成 <code>confirmed=1</code>，只有确认过的才算真订户。这一步不只是防拼错的邮箱——<strong>「邮箱 → 验证」正是免密登录的地基</strong>：以后想给评论/投票加登录，只要签发一个会话 token、在 <code>/comment</code> 和 <code>/vote</code> 校验它即可，数据库不用重构。（<strong>这句话后来真的兑现了</strong>——评论和投票现在都要登录，用的正是这套地基，见 §7。）</p>
 
 <h3>周报：把静态内容变成推送</h3>
 <p>收了邮箱就得能发。这条链路刻意不碰我的机器：</p>
@@ -251,7 +251,7 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <li>发信密钥（Resend key）只存在 Worker 里，<code>send.py</code> / <code>weekly_digest.py</code> 只是调管理端点，<strong>密钥从不落到我本地</strong>。每封信自动带退订页脚和 <code>List-Unsubscribe</code> 头，退订链接用 <code>ADMIN_TOKEN</code> 做 HMAC 签名。</li>
 <li>本地还有一个 launchd 任务每天 09:00 跑 <code>report.py</code>、弹一条「订阅数 / 新评论 / 投票」摘要通知（完整报告进日志）。它住在 <code>~/.bigcat-hub</code> 而非 Desktop——因为 macOS 的 TCC 权限不让 launchd 碰 <code>~/Desktop</code>，也是踩坑换来的。</li>
 </ul>
-<p>投票去重只靠前端一个随机 localStorage token——清掉就能重投。对一个随手玩的 hub 民调，<strong>诚实但不严防</strong>足够了；真要严格，用上面那套登录地基升级即可。这一层的取舍贯穿始终：<strong>能静态就静态；非有状态不可的那一小块，用最小的后端 + 免费额度兜住，并且每处都预留了「以后要更严怎么长上去」。</strong></p>
+<p>投票去重最初只靠前端一个随机 localStorage token——清掉就能重投。对一个随手玩的 hub 民调，<strong>诚实但不严防</strong>当时够用；<strong>后来真要严格时，也确实是照上面那句话升级的</strong>（投票改成绑账号、一人一票，见 §7）。这一层的取舍贯穿始终：<strong>能静态就静态；非有状态不可的那一小块，用最小的后端 + 免费额度兜住，并且每处都预留了「以后要更严怎么长上去」。</strong></p>
 
 <h2>7. 从网站到 App：离线、笔记、账号</h2>
 <p>前六层讲的是「怎么把内容生产出来」。这一层是后来长出来的另一个方向：<strong>怎么让它更像一个 App</strong>——能装到手机主屏、能离线看能离线听、能划线做笔记、还能多人各用各的账号。关键约束没变：<strong>不新增服务器、不给每个内容仓改一行</strong>，全部挂在既有的注入层（§5）和那一个 Worker + D1（§6）上。</p>
@@ -277,6 +277,15 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <li>每条笔记都<strong>绑定账号 id</strong>，每个查询强制按它过滤——一个账号<strong>读不到、也改不了、删不掉</strong>别人的笔记（这条我用两个账号交叉测过：猜到对方笔记 id 也无从下手）。</li>
 </ul>
 <p>整层加完，后端<strong>依然是那一个 Worker + 一个 D1、依然在免费额度内</strong>。这正好回扣了 §6 的取舍：那时把订阅刻意做成「邮箱 → 验证」，不是多此一举，而是<strong>提前给今天的账号系统埋好了地基</strong>——今天没有重构，只是把地基上的楼接着往上盖了一层。</p>
+
+<h3>顺手把 §6 那两处「诚实但不严防」补严了</h3>
+<p>账号系统一到位，§6 里那两处刻意留松的地方就顺理成章地收紧了——<strong>评论和投票现在都要登录</strong>：</p>
+<ul>
+<li><strong>评论</strong>：不再是「填个名字就能发」。留言区显示「以此身份留言：某某」，未登录只看得到评论、发不了。关键在于<strong>显示的名字由服务端从账号取，请求体里的 name 一律忽略</strong>——所以没人能冒用别人的身份留言（这条我特意用一个测试账号、在请求里塞假名字实测过：存下来的仍是账号自己的昵称）。为此给 <code>users</code> 加了一个 <code>display_name</code>：<strong>公开的只有昵称，邮箱从不外露</strong>。</li>
+<li><strong>投票</strong>：voter 从「浏览器里的随机串」换成<strong>账号 id</strong>，于是变成真正的一人一票——清 localStorage 不再能重投，这正是 §6 结尾自嘲的那个漏洞。圆桌辩论的观众议题投票走同一个端点，因此那条「观众决定选题」的反馈回路也跟着变准了。</li>
+<li>两处都只<strong>收紧写入、不动读取</strong>：评论列表和票数对所有人照常公开——门槛加在参与上，不加在阅读上。</li>
+</ul>
+<p>代价也如实记一笔：<strong>参与门槛确实抬高了</strong>，路过的读者想留一句话得先注册。对一个「给自己学习、顺便公开」的站，我认为可追溯的少量真实留言，胜过匿名但真假难辨的多。而这一步之所以能这么轻——<strong>加一个字段、两个端点，没碰任何一张已有表</strong>——完全是因为当初那个 double opt-in 决定。<strong>预留接口的价值，要到用上的那天才结算。</strong></p>
 
 <h2>8. 两个偏离标准模板的站：Thinking Hub 与 Deep Research</h2>
 <p>前面讲的是「人定题、routine 写一页」的标准内容站。有两个站不走这个模板——它们更复杂，也最能说明这套架构能往哪儿伸。</p>
