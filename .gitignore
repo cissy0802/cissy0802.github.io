@@ -3,3 +3,6 @@
 # and `wrangler deploy` must always be run from engage-backend/ or
 # audio-backend/, never the root, or wrangler invents a config there.
 .wrangler/
+
+# prune-orphans.py writes its key list next to itself before deleting.
+audio-backend/prune-*.txt

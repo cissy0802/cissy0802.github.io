@@ -73,6 +73,18 @@ def page_hashes(repo: Path) -> dict[str, set[str]]:
     return out
 
 
+def blob_from_history(repo: Path, path: str) -> bytes | None:
+    """The last version of `path` that ever existed in git, or None."""
+    commits = git(repo, "rev-list", "--all", "--", path).split()
+    for c in commits[:4]:                  # newest first; the tip may be the deletion
+        for rev in (c, f"{c}^"):
+            r = subprocess.run(["git", "-C", str(repo), "show", f"{rev}:{path}"],
+                               capture_output=True)
+            if r.returncode == 0 and r.stdout:
+                return r.stdout
+    return None
+
+
 def check_serves(repo: Path, refs: dict[str, set[str]], full: bool) -> None:
     items = [(lg, h) for lg in ("zh", "en") for h in sorted(refs[lg])]
     if not items:
@@ -92,24 +104,33 @@ def check_serves(repo: Path, refs: dict[str, set[str]], full: bool) -> None:
 
     with ThreadPoolExecutor(max_workers=12) as pool:
         got = list(pool.map(one, probe))
-    bad = [g for g in got if not g[2]]
-    for lg, h, _, why in bad[:5]:
-        print(f"        {lg}/{h}: {why}")
-    record("SERVES", not bad,
-           f"{len(got)-len(bad)}/{len(got)} referenced segments play "
+
+    # A segment that fails is only this migration's fault if it ever existed.
+    # Pages carry data-tts for audio that was never baked — leadership has 41
+    # such English hashes (one of them the literal placeholder
+    # 1122334455667788), and they 404'd against Pages exactly the same way
+    # before the move. Calling that a regression trains you to ignore the
+    # check; it has to be separated from a segment we actually lost.
+    lost, never = [], []
+    for lg, h, ok, why in got:
+        if ok:
+            continue
+        (never if blob_from_history(repo, f"audio/{lg}/{h}.mp3") is None else lost).append(
+            (lg, h, why))
+    for lg, h, why in lost[:5]:
+        print(f"        LOST {lg}/{h}: {why}")
+    record("SERVES", not lost,
+           f"{len(got)-len(lost)-len(never)}/{len(got)} referenced segments play, "
+           f"{len(lost)} lost in migration "
            f"({len(items)} total referenced{'' if full else ', sampled'})")
-
-
-def blob_from_history(repo: Path, path: str) -> bytes | None:
-    """The last version of `path` that ever existed in git, or None."""
-    commits = git(repo, "rev-list", "--all", "--", path).split()
-    for c in commits[:4]:                  # newest first; the tip may be the deletion
-        for rev in (c, f"{c}^"):
-            r = subprocess.run(["git", "-C", str(repo), "show", f"{rev}:{path}"],
-                               capture_output=True)
-            if r.returncode == 0 and r.stdout:
-                return r.stdout
-    return None
+    if never:
+        by_lang = {}
+        for lg, h, _ in never:
+            by_lang[lg] = by_lang.get(lg, 0) + 1
+        record("SERVES/pre-existing", True,
+               f"{len(never)} referenced segments were never baked at all "
+               f"({', '.join(f'{n} {lg}' for lg, n in sorted(by_lang.items()))}) — "
+               f"they 404'd before the migration too, player falls back to Web Speech")
 
 
 def check_lossless(repo: Path, refs: dict[str, set[str]], full: bool) -> None:
