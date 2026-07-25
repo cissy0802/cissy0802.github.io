@@ -23,6 +23,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import re
 import subprocess
 import time
 import sys
@@ -51,14 +52,35 @@ def client():
     )
 
 
-def local_mp3s(repo: Path) -> list[tuple[str, Path]]:
-    """[(bucket key, file), ...] for every MP3 under the repo's audio/."""
+def referenced_hashes(repo: Path) -> set[str]:
+    """Every segment hash the repo's pages actually ask for.
+
+    Split-mode pages carry data-tts; legacy full-mode pages carry
+    data-tts-zh / data-tts-en on the same page.
+    """
+    refs = set()
+    for p in repo.glob("*.html"):
+        html = p.read_text(encoding="utf-8", errors="replace")
+        refs |= set(re.findall(r'data-tts(?:-(?:zh|en))?="([0-9a-f]{16})"', html))
+    return refs
+
+
+def local_mp3s(repo: Path, referenced_only: bool = False) -> list[tuple[str, Path]]:
+    """[(bucket key, file), ...] for every MP3 under the repo's audio/.
+
+    A repo accumulates dead segments: when a page's text changes the hash
+    changes, and the old MP3 is left behind. mental-models was 56% dead by
+    size. referenced_only skips those instead of paying to store them.
+    """
+    refs = referenced_hashes(repo) if referenced_only else None
     out = []
     for lang in ("zh", "en"):
         d = repo / "audio" / lang
         if not d.is_dir():
             continue
         for f in sorted(d.glob("*.mp3")):
+            if refs is not None and f.stem not in refs:
+                continue
             out.append((f"{repo.name}/{lang}/{f.name}", f))
     return out
 
@@ -77,11 +99,31 @@ def existing_sizes(s3, prefix: str) -> dict[str, int]:
         token = resp["NextContinuationToken"]
 
 
-def upload(repo: Path) -> int:
+def upload(repo: Path, referenced_only: bool = False) -> int:
     s3 = client()
-    items = local_mp3s(repo)
-    if not items:
+    all_items = local_mp3s(repo)
+    if not all_items:
         sys.exit(f"ERROR: no MP3s under {repo}/audio — nothing to migrate")
+    items = local_mp3s(repo, referenced_only)
+    if referenced_only:
+        # Check the ratio BEFORE the empty check, so a repo whose pages lost
+        # their data-tts attributes gets told what's actually wrong instead of
+        # a misleading "no MP3s here".
+        #
+        # Refuse the pathological case rather than "helpfully" uploading almost
+        # nothing: deep-research has 350 baked MP3s and zero data-tts
+        # attributes left on its pages, which is a broken repo, not a tidy one.
+        if len(items) < len(all_items) * 0.1:
+            sys.exit(f"ERROR: only {len(items)} of {len(all_items)} MP3s are referenced by any "
+                     f"page in {repo.name}. That looks like the pages lost their data-tts "
+                     f"attributes, not like dead segments. Investigate before using "
+                     f"--referenced-only here.")
+        skipped = len(all_items) - len(items)
+        saved = sum(f.stat().st_size for k, f in all_items
+                    if k not in {i[0] for i in items}) / 1048576
+        print(f"  --referenced-only: skipping {skipped} unreferenced MP3s ({saved:.0f}MB)")
+    if not items:
+        sys.exit(f"ERROR: nothing to upload for {repo.name}")
     have = existing_sizes(s3, repo.name)
     todo = [(k, f) for k, f in items if have.get(k) != f.stat().st_size]
     total_mb = sum(f.stat().st_size for _, f in items) / 1048576
@@ -113,12 +155,12 @@ def upload(repo: Path) -> int:
     return 0
 
 
-def verify(repo: Path, sample: int) -> int:
+def verify(repo: Path, sample: int, referenced_only: bool = False) -> int:
     """Fetch through the Worker — proves routing, CORS and the bytes, which a
     bucket listing does not."""
     import requests
 
-    items = local_mp3s(repo)
+    items = local_mp3s(repo, referenced_only)
     if not items:
         sys.exit(f"ERROR: no local MP3s under {repo}/audio to check against")
     step = max(1, len(items) // sample)
@@ -198,6 +240,8 @@ def main():
     ap.add_argument("--verify", action="store_true", help="fetch a sample through the Worker")
     ap.add_argument("--sample", type=int, default=20)
     ap.add_argument("--untrack", action="store_true", help="git rm -r --cached audio")
+    ap.add_argument("--referenced-only", action="store_true",
+                    help="upload only segments the pages still reference")
     args = ap.parse_args()
 
     repo = args.repo.expanduser().resolve()
@@ -205,10 +249,10 @@ def main():
         sys.exit(f"ERROR: {repo} is not a git repo")
 
     if args.verify:
-        return verify(repo, args.sample)
+        return verify(repo, args.sample, args.referenced_only)
     if args.untrack:
         return untrack(repo)
-    return upload(repo)
+    return upload(repo, args.referenced_only)
 
 
 if __name__ == "__main__":
