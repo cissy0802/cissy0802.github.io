@@ -214,7 +214,13 @@
           // one that doesn't, the bigram tier is actively harmful: it matches a
           // few stray word tokens and short-circuits the raw tier that would
           // have answered properly (海德格尔 went 15 results → 6 that way).
-          hasBigrams = (await pf.search("pfbigramv1")).results.length > 0;
+          //
+          // Quoted, and more than one hit required: unquoted, Pagefind partial-
+          // matches the marker's "pf" prefix against a Mermaid diagram in an
+          // LLM-serving article, and that single stray hit is enough to turn the
+          // tier on. The real marker sits on every CJK page, so it lands in the
+          // hundreds.
+          hasBigrams = (await pf.search('"pfbigramv1"')).results.length > 1;
         } catch (e) {}
         return pf;
       });
@@ -371,6 +377,17 @@
           // live interactive debate page. The generator stores that live URL in
           // meta.url; fall back to parsing the snapshot slug if meta is missing.
           processResult: (result) => {
+            // Pagefind stores result paths relative to the bundle and resolves
+            // them against wherever the bundle is served from — which is now the
+            // R2 Worker, not the site. Left alone, every result links to
+            // bigcat-search.cissychen.workers.dev/<page>.html and 404s. Strip the
+            // bundle origin back off to get the site-root path the page lives at.
+            const unbundle = (u) =>
+              u && u.startsWith(HUB) ? u.slice(HUB.length) : u;
+            result.url = unbundle(result.url);
+            (result.sub_results || []).forEach((s) => {
+              s.url = unbundle(s.url);
+            });
             const live =
               (result.meta && result.meta.url) ||
               (() => {
