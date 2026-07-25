@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-pagefind-ignore data-no-hub-nav>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>离线可读 · Offline Library</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐱</text></svg>">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#1a1a2e">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Serif SC","Songti SC",sans-serif;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0a0e1a 100%);color:#e4e6eb;line-height:1.7;min-height:100vh}
+.container{max-width:820px;margin:0 auto;padding:44px 20px 80px}
+header{text-align:center;padding:20px 0 10px}
+h1{font-size:1.7rem;font-weight:800;background:linear-gradient(135deg,#00d4ff 0%,#7b61ff 50%,#ff6ec4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sub{color:#a0a8c0;font-size:.88rem;margin-top:8px}
+.state{display:inline-block;margin-top:10px;padding:4px 12px;border-radius:12px;font:600 .74rem "SF Mono",Menlo,monospace}
+.on{background:rgba(58,161,126,.14);color:#7ee2a8;border:1px solid rgba(58,161,126,.4)}
+.off{background:rgba(255,167,38,.14);color:#ffc46b;border:1px solid rgba(255,167,38,.4)}
+.group{margin-top:22px}
+.group h2{font:700 .8rem "SF Mono",Menlo,monospace;color:#7b61ff;letter-spacing:.5px;margin-bottom:10px;display:flex;gap:8px;align-items:baseline}
+.group h2 .n{color:#6b7390;font-weight:400;font-size:.72rem}
+a.item{display:block;padding:13px 16px;margin-bottom:9px;border-radius:11px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid #7b61ff;color:#e4e6eb;text-decoration:none}
+a.item:hover{background:rgba(255,255,255,.07)}
+a.item .t{font-size:.98rem}
+a.item .p{font-size:.72rem;color:#6b7390;font-family:"SF Mono",Menlo,monospace;margin-top:3px;word-break:break-all}
+a.item .au{font-size:.7rem;color:#7ee2a8;margin-top:4px}
+.empty{text-align:center;color:#7b8299;padding:50px 16px;line-height:2}
+.nav{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.nav a{padding:7px 13px;border-radius:13px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:#a0a8c0;text-decoration:none;font-size:.8rem}
+.nav a:hover{color:#fff}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1 id="h1">离线可读</h1>
+  <div class="sub" id="sub">这台设备上已下载、断网也能打开的内容。</div>
+  <div id="state"></div>
+  <div class="nav">
+    <a href="/index.zh.html" id="navHubZh">← Hub 中文</a>
+    <a href="/index.en.html" id="navHubEn">← Hub EN</a>
+    <a href="/notes.html" id="navNotes">📝 我的笔记</a>
+  </div>
+</header>
+<div id="list"><div class="empty" id="loading">正在读取已下载内容…</div></div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var CACHE = 'offline-content-v1';
+  var zh = (navigator.language || 'zh').toLowerCase().indexOf('zh') === 0;
+  var T = zh
+    ? { h1: '离线可读', sub: '这台设备上已下载、断网也能打开的内容。',
+        loading: '正在读取已下载内容…',
+        empty: '还没有下载任何内容。<br>联网时在文章列表点每篇右侧的 ⤓，或在 Hub 首页点卡片上的 ⤓ 整仓下载。',
+        online: '● 在线', offline: '● 离线', audio: '含语音', other: '其他' }
+    : { h1: 'Offline Library', sub: 'Everything downloaded to this device — readable with no connection.',
+        loading: 'Reading downloaded content…',
+        empty: 'Nothing downloaded yet.<br>While online, tap ⤓ next to an article in a site index, or ⤓ on a card on the hub landing to take a whole site.',
+        online: '● Online', offline: '● Offline', audio: 'with audio', other: 'Other' };
+
+  var REPOS = {
+    'thinker-arena': ['⚖️','思想家圆桌辩论','Thinker Roundtable'],
+    'deep-research': ['🔬','深度研究','Deep Research'],
+    'synthesis': ['🔗','跨站合成','Cross-Site Synthesis'],
+    'mental-models': ['📚','思维模型','Mental Models'],
+    'meta-knowledge': ['🧠','元知识','Meta Knowledge'],
+    'super-individual': ['⚡','AI 超级个体实战','Super Individual'],
+    'ai-ml': ['🤖','AI / ML','AI & ML'],
+    'system-design': ['🏗️','System Design','System Design'],
+    'cs-papers-deepread': ['📄','IT 论文精读','CS Papers'],
+    'chapter-deepread': ['📚','专业书籍精读','CS Books'],
+    'leadership': ['🎯','领导力实践','Leadership'],
+    'sales': ['🤝','销售实战','Sales'],
+    'writing': ['✍️','写作与表达','Writing'],
+    'health-longevity': ['🫀','健康长寿','Health & Longevity'],
+    'parenting': ['👶','育儿与教育','Parenting'],
+    'psychology': ['🧩','心理学','Psychology'],
+    'family-craft': ['🧺','一起做','Doing Together'],
+    'personal-finance': ['💵','个人理财','Personal Finance'],
+    'philosophy': ['📜','哲学经典','Philosophy'],
+    'buddhism': ['🪷','佛经','Buddhism'],
+    'world-religions': ['🕉️','世界宗教','World Religions'],
+    'art-aesthetics': ['🎨','艺术与审美','Art & Aesthetics'],
+    'biographies': ['👩‍💼','人物传记','Biographies'],
+    'book-recommendations': ['📖','好书推荐','Book Recommendations'],
+    'deep-reading': ['📰','好书精读','Deep Reading'],
+    'mathematics': ['📐','数学之美','Mathematics'],
+    'history': ['🏛️','历史大事件','History'],
+    'investing': ['📈','投资经典','Investing'],
+    'civics-geopolitics': ['🌍','政治·法律·地缘','Civics & Geopolitics'],
+    'neuroscience': ['🧠','神经科学','Neuroscience'],
+    'physics': ['⚛️','物理','Physics'],
+    'complexity-science': ['🌀','复杂性科学','Complexity Science']
+  };
+  function repoLabel(slug) {
+    var r = REPOS[slug];
+    if (r) return r[0] + ' ' + (zh ? r[1] : r[2]);
+    return slug ? slug.replace(/(^|-)([a-z])/g, function (_, d, c) { return (d ? ' ' : '') + c.toUpperCase(); })
+                : T.other;
+  }
+
+  document.getElementById('h1').textContent = T.h1;
+  document.getElementById('sub').textContent = T.sub;
+  document.getElementById('loading').textContent = T.loading;
+  document.getElementById('navNotes').textContent = zh ? '📝 我的笔记' : '📝 My Notes';
+  document.getElementById('navNotes').href = zh ? '/notes.html' : '/notes.en.html';
+
+  function paintState() {
+    var el = document.getElementById('state');
+    el.className = 'state ' + (navigator.onLine ? 'on' : 'off');
+    el.textContent = navigator.onLine ? T.online : T.offline;
+  }
+  paintState();
+  window.addEventListener('online', paintState);
+  window.addEventListener('offline', paintState);
+
+  var listEl = document.getElementById('list');
+
+  if (!window.caches) {
+    listEl.innerHTML = '<div class="empty">' + T.empty + '</div>';
+    return;
+  }
+
+  caches.open(CACHE).then(function (c) {
+    return c.keys().then(function (reqs) {
+      var pages = [], audio = {};
+      reqs.forEach(function (r) {
+        var p;
+        try { p = new URL(r.url).pathname; } catch (e) { return; }
+        if (/\.mp3$/i.test(p)) {
+          var m = /^\/([^\/]+)\//.exec(p);
+          if (m) audio[m[1]] = (audio[m[1]] || 0) + 1;
+          return;
+        }
+        if (!/\.html$/i.test(p)) return;
+        // Skip the app's own utility pages — they're shell, not reading material.
+        if (/^\/(index|notes|account|offline|confirm|unsubscribe|404|blog-)/.test(p)) return;
+        pages.push({ path: p, req: r });
+      });
+
+      if (!pages.length) {
+        listEl.innerHTML = '<div class="empty">' + T.empty + '</div>';
+        return;
+      }
+
+      // Titles come from the cached HTML itself — no network needed.
+      return Promise.all(pages.map(function (item) {
+        return c.match(item.req).then(function (res) {
+          if (!res) return item;
+          return res.text().then(function (html) {
+            var t = /<title[^>]*>([\s\S]*?)<\/title>/i.exec(html);
+            item.title = t ? t[1].replace(/\s+/g, ' ').trim() : item.path;
+            var h1 = /<h1[^>]*>([\s\S]*?)<\/h1>/i.exec(html);
+            if (h1) {
+              var plain = h1[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+              if (plain) item.title = plain;
+            }
+            item.hasAudio = /data-tts=/.test(html);
+            return item;
+          }).catch(function () { return item; });
+        });
+      })).then(function (items) {
+        var byRepo = {};
+        items.forEach(function (it) {
+          var m = /^\/([^\/]+)\//.exec(it.path);
+          var slug = m ? m[1] : '';
+          (byRepo[slug] = byRepo[slug] || []).push(it);
+        });
+        listEl.innerHTML = '';
+        Object.keys(byRepo).sort().forEach(function (slug) {
+          var rows = byRepo[slug].sort(function (a, b) { return a.path.localeCompare(b.path); });
+          var g = document.createElement('div');
+          g.className = 'group';
+          var h = document.createElement('h2');
+          h.appendChild(document.createTextNode(repoLabel(slug)));
+          var n = document.createElement('span');
+          n.className = 'n';
+          n.textContent = rows.length + (audio[slug] ? ' · ' + audio[slug] + ' ' + T.audio : '');
+          h.appendChild(n);
+          g.appendChild(h);
+          rows.forEach(function (it) {
+            var a = document.createElement('a');
+            a.className = 'item';
+            a.href = it.path;
+            var t = document.createElement('div');
+            t.className = 't';
+            t.textContent = it.title || it.path;
+            a.appendChild(t);
+            var p = document.createElement('div');
+            p.className = 'p';
+            p.textContent = it.path;
+            a.appendChild(p);
+            if (it.hasAudio) {
+              var au = document.createElement('div');
+              au.className = 'au';
+              au.textContent = '♪ ' + T.audio;
+              a.appendChild(au);
+            }
+            g.appendChild(a);
+          });
+          listEl.appendChild(g);
+        });
+      });
+    });
+  }).catch(function () {
+    listEl.innerHTML = '<div class="empty">' + T.empty + '</div>';
+  });
+})();
+</script>
+</body>
+</html>

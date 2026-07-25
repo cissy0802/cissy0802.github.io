@@ -29,6 +29,7 @@ const SHELL_URLS = [
   '/index.en.html',
   '/index.zh.html',
   '/offline.js',
+  '/offline.html',   // the offline library, shown when a page isn't cached
   '/i18n-tts.js',
   '/manifest.webmanifest',
   '/icons/icon-192.png',
@@ -96,7 +97,7 @@ self.addEventListener('fetch', (e) => {
           return res;
         })
         .catch(() =>
-          caches.match(req).then((hit) => hit || caches.match('/index.en.html').then((idx) =>
+          caches.match(req).then((hit) => hit || caches.match('/offline.html').then((idx) =>
             idx || new Response('<h1>Offline</h1><p>This page has not been downloaded.</p>',
               { status: 503, headers: { 'Content-Type': 'text/html' } })
           ))

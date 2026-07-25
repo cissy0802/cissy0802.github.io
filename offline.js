@@ -163,6 +163,14 @@
   // fetched in parallel). onProgress(done, total) drives the button label.
   function downloadRepo(repo, lang, onProgress) {
     return repoArticlePages(repo, lang).then(function (pages) {
+      // Cache the index itself too — offline it's the way back into the site,
+      // and without it a downloaded repo has no navigable entry point.
+      var idxPath = repo + (lang === 'en' ? 'index.en.html' : 'index.html');
+      caches.open(CACHE).then(function (c) {
+        fetch(idxPath, { cache: 'no-cache' }).then(function (r) {
+          if (r.ok) c.put(idxPath, r);
+        }).catch(function () {});
+      });
       var total = pages.length, done = 0, failed = 0;
       if (!total) return { total: 0, done: 0, failed: 0 };
       return caches.open(CACHE).then(function (c) {
