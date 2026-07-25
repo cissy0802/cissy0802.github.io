@@ -1,7 +1,8 @@
 name: Build Search Index
 
-# Aggregate HTML from all routine repos, run Pagefind, publish index.
-# Output lives at /pagefind/ on cissy0802.github.io.
+# Aggregate HTML from all routine repos, run Pagefind, publish the index.
+# Output goes to the bigcat-search R2 bucket, served by search-backend/'s Worker
+# at https://bigcat-search.cissychen.workers.dev/pagefind/ — nothing lands in git.
 
 on:
   schedule:
@@ -9,8 +10,9 @@ on:
     - cron: '0 13 * * *'
   workflow_dispatch:
 
+# Nothing is committed any more — the index goes to R2.
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   build:
@@ -61,15 +63,49 @@ jobs:
           find _src/thinker-arena -maxdepth 1 -type f -delete
           rm -rf _src/thinker-arena/debates
 
-      # NOTE: no CJK pre-segmentation step here, deliberately.
-      # An earlier version inserted zero-width spaces between adjacent Chinese
-      # chars to force per-character tokens, so that "拓扑" would match inside
-      # "拓扑直觉". It broke search far worse than the problem it fixed: the QUERY
-      # side still ran Pagefind's word segmenter, so multi-char queries looked for
-      # word tokens the index no longer contained. Pagefind silently DROPS terms
-      # it can't find rather than returning zero results, so "现象学" collapsed to
-      # the single char "学" and matched 1172 pages. Precision is now handled on
-      # the query side in search.js (exact-phrase first, unquoted fallback).
+      # CJK sub-word recall: an ordered bigram shadow block per page.
+      #
+      # Pagefind's segmenter stores Chinese compounds whole, so "拓扑" finds
+      # nothing — it only ever occurs inside 拓扑学 / 拓扑指纹 / 拓扑不变 (61 pages
+      # containing the string, 1 result). Overlapping bigrams give every 2-char
+      # window its own token, which is the standard dictionary-free CJK indexing
+      # scheme (Lucene's CJKAnalyzer, Elasticsearch's `cjk` analyzer).
+      #
+      # Two properties this MUST keep, both learned the hard way:
+      #   ORDER PRESERVED, NOT DEDUPED — adjacent bigrams have to stay adjacent
+      #     or exact-phrase queries over them match nothing ("贝叶 叶斯" → 0).
+      #   VISIBLE TEXT UNTOUCHED — the shadow goes in a hidden block, so result
+      #     excerpts still come from real prose. (Pagefind parses HTML without
+      #     CSS, so display:none is indexed.)
+      #
+      # Do NOT "simplify" this into per-character tokens. That was the 2026-07-18
+      # version, and because Pagefind DROPS query terms it can't find rather than
+      # returning zero, "现象学" collapsed to the single char "学" and matched 1172
+      # pages. search.js queries this index phrase-first, bigrams second.
+      - name: Add CJK bigram shadow text
+        run: |
+          python3 - <<'PY'
+          import glob, re
+          RUN = re.compile(r'[\u4e00-\u9fff]{2,}')
+          VISIBLE = re.compile(r'>([^<]+)<')
+          n = 0
+          for f in glob.glob('_src/**/*.html', recursive=True):
+              try:
+                  s = open(f, encoding='utf-8').read()
+              except Exception:
+                  continue
+              grams = []
+              for m in VISIBLE.finditer(s):
+                  for run in RUN.findall(m.group(1)):
+                      grams.append(' '.join(run[i:i + 2] for i in range(len(run) - 1)))
+              if not grams:
+                  continue
+              shadow = '<div style="display:none">' + '  '.join(grams) + '</div>'
+              s2 = s.replace('</body>', shadow + '</body>', 1) if '</body>' in s else s + shadow
+              open(f, 'w', encoding='utf-8').write(s2)
+              n += 1
+          print(f"Added bigram shadow to {n} files")
+          PY
 
       - uses: actions/setup-node@v4
         with:
@@ -77,8 +113,8 @@ jobs:
 
       - name: Run Pagefind
         run: |
-          # Pagefind doesn't clean its output dir; wipe it so fragments from
-          # previous builds (stale URLs) don't accumulate in the repo.
+          # Pagefind doesn't clean its output dir; wipe it so a stale fragment
+          # from a previous run can't be re-uploaded as if it were current.
           rm -rf pagefind
           npx -y pagefind@latest \
             --site _src \
@@ -88,14 +124,15 @@ jobs:
       - name: Cleanup _src (only ship index)
         run: rm -rf _src
 
-      - name: Commit and push index if changed
+      # The index lives in R2, not in this repo: ~3100 files / 46MB rebuilt
+      # nightly had pushed .git past 700MB when it was committed. search-backend/
+      # holds the Worker that serves it; sync-index.py is shared with local runs
+      # so the two paths can't drift.
+      - name: Upload index to R2
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
         run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add pagefind
-          if git diff --cached --quiet; then
-            echo "No search-index changes."
-            exit 0
-          fi
-          git commit -m "Refresh Pagefind search index"
-          git push
+          pip install --quiet boto3
+          python3 search-backend/sync-index.py pagefind

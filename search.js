@@ -24,12 +24,13 @@
 (function () {
   if (document.documentElement.hasAttribute("data-no-hub-nav")) return;
   if (document.getElementById("search-fab")) return; // idempotent
-  // Pagefind assets/index are loaded SAME-ORIGIN (root-relative). Must not be a
-  // hardcoded absolute host: once the hub serves from hub.cissychen.com, an
-  // absolute cissy0802.github.io URL becomes a cross-origin fetch that 301s and
-  // gets CORS-blocked (GitHub Pages sends no ACAO header) — which silently kills
-  // search. "" keeps every /pagefind/ request on whatever domain serves the page.
-  const HUB = "";
+  // The Pagefind bundle is served by the bigcat-search Worker out of R2, not by
+  // whatever host serves this page. It used to be same-origin and committed to
+  // the site repo, but ~3100 files / 46MB rebuilt nightly had pushed .git past
+  // 700MB. Cross-origin is safe here in a way a bare github.io URL never was:
+  // the Worker sets Access-Control-Allow-Origin for the hub's origins and never
+  // redirects (a 301 is what silently kills CORS on GitHub Pages).
+  const HUB = "https://bigcat-search.cissychen.workers.dev";
 
   // Detect page language so the search overlay matches it (EN pages must not open in Chinese).
   // Priority: <html lang>, then .en.html filename, then ?lang=en.
@@ -158,25 +159,39 @@
     }
   });
 
-  /* CJK queries: exact phrase first, unquoted fallback.
+  /* CJK queries: exact phrase, then bigrams, then raw.
    *
    * Pagefind drops query terms that aren't in the index instead of returning
    * zero results, so an unquoted Chinese phrase degrades into whatever fragment
-   * IS indexed — "现象学" was matching 1172 pages by collapsing to "现象".
-   * Wrapping the term in quotes forces an exact-phrase match (10 pages, exactly
-   * the ones that contain the string).
+   * IS indexed — "现象学" once matched 1172 pages by collapsing to "现象".
+   * Quoting forces an exact-phrase match: 27 pages, exactly the ones containing
+   * the string. That's tier one, and it's right for most queries.
    *
-   * But quoting can't be unconditional: for some terms — proper names especially
-   * — the query-side segmenter disagrees with the index-side one and the phrase
-   * matches nothing ("海德格尔" → 0 quoted, 7 unquoted). So the first time we see
-   * a term we probe it against our own Pagefind instance; if the quoted form is
-   * empty we remember to send it unquoted and re-run the UI's search.
+   * It can't be the only tier, for two different reasons:
+   *   - For some terms, proper names especially, the query-side segmenter
+   *     disagrees with the index-side one and the phrase matches nothing
+   *     ("海德格尔" → 0 quoted, 15 unquoted).
+   *   - A word that only ever appears inside a compound is in no token at all
+   *     ("拓扑" lives in 拓扑学 / 拓扑指纹 / 拓扑不变). That's what the bigram
+   *     shadow text in the build exists for: querying its overlapping 2-char
+   *     windows finds the compound.
    *
+   * So each term is probed once, in that order, and the winning mode is cached.
    * Latin queries are left alone — quoting them would silently turn every
    * multi-word search into a phrase search.
    */
   const HAS_CJK = /[㐀-鿿぀-ヿ]/;
-  const termMode = new Map(); // term -> "quoted" | "raw"
+  const termMode = new Map(); // term -> "quoted" | "bigram" | "raw"
+
+  // Overlapping 2-char windows over each CJK run: 现象学 -> "现象 象学".
+  // Mirrors the build's shadow text; the two must stay in step.
+  function bigrams(term) {
+    const out = [];
+    (term.match(/[㐀-鿿]{2,}/g) || []).forEach((run) => {
+      for (let i = 0; i < run.length - 1; i++) out.push(run.slice(i, i + 2));
+    });
+    return out.length ? out.join(" ") : term;
+  }
   let pfModule = null;
   let ui = null;
 
@@ -213,6 +228,7 @@
     termMode.set(term, "quoted"); // optimistic; corrected below if empty
     warmProbeIndex();
     markProbing(1);
+    const bg = bigrams(term);
     // Never leave the message hidden if a probe hangs, or if the fallback
     // search that follows one takes longer than this to render.
     const safety = setTimeout(() => markProbing(-1), 3500);
@@ -224,13 +240,17 @@
       markProbing(-1);
     };
     pfModule
-      .then((pf) => pf.search('"' + term + '"'))
-      .then((res) => {
+      .then(async (pf) => {
+        if ((await pf.search('"' + term + '"')).results.length) return "quoted";
+        if (bg !== term && (await pf.search(bg)).results.length) return "bigram";
+        return "raw";
+      })
+      .then((mode) => {
         // On the quoted-is-fine path the UI's own render is already correct, so
-        // stop hiding immediately. On the fallback path keep it hidden until the
-        // re-run renders — that gap is exactly the "未找到" flash we're avoiding.
-        if (res.results.length) return done();
-        termMode.set(term, "raw");
+        // stop hiding immediately. On the fallback paths keep it hidden until
+        // the re-run renders — that gap is the "未找到" flash we're avoiding.
+        if (mode === "quoted") return done();
+        termMode.set(term, mode);
         // Re-run the search now that processTerm will hand over the raw term.
         // triggerSearch() writes a Svelte prop, so handing it the string the UI
         // already holds is a no-op — it has to differ. A zero-width space does
@@ -269,6 +289,27 @@
       });
   }
 
+  /* A bigram-mode hit matches inside the build's hidden shadow block, and
+   * Pagefind builds excerpts from wherever the match is — so the snippet comes
+   * back as "续地 地捏 捏成 成一 一个 个甜 甜甜 甜圈". Detect that shape and show
+   * the head of the real prose instead. Costs the <mark> highlighting on those
+   * results, which is a fair trade against unreadable output.
+   */
+  const SOUP = /(?:[㐀-鿿]{2}[ \t]+){3,}/;
+  function deSoup(result) {
+    const strip = (s) => (s || "").replace(/<[^>]+>/g, "");
+    const fix = (obj) => {
+      if (!obj || !SOUP.test(strip(obj.excerpt))) return;
+      const prose = strip(result.content)
+        .replace(/(?:[㐀-鿿]{2}[ \t]+){3,}[㐀-鿿]{0,2}/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+      if (prose) obj.excerpt = prose.slice(0, 180) + (prose.length > 180 ? "…" : "");
+    };
+    fix(result);
+    (result.sub_results || []).forEach(fix);
+  }
+
   function cleanTerm(term) {
     return (term || "").replace(/​/g, "").trim();
   }
@@ -278,6 +319,7 @@
     if (!t || !HAS_CJK.test(t)) return term;
     const mode = termMode.get(t);
     if (mode === "raw") return t;
+    if (mode === "bigram") return bigrams(t);
     if (!mode) probeTerm(t);
     return '"' + t + '"';
   }
@@ -335,6 +377,7 @@
                 s.url = live;
               });
             }
+            deSoup(result);
             return result;
           },
           translations: {

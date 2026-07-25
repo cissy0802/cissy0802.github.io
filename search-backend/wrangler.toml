@@ -1,0 +1,10 @@
+name = "bigcat-search"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+# R2 bucket holding the whole Pagefind bundle, keyed by its URL path
+# (pagefind/fragment/<hash>.pf_fragment, ...). Create it once:
+#   npx wrangler r2 bucket create bigcat-search
+[[r2_buckets]]
+binding = "SEARCH"
+bucket_name = "bigcat-search"
