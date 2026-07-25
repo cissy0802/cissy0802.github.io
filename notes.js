@@ -118,6 +118,15 @@
           if (res && res.ok) {
             var left = readJSON(QUEUE_KEY, []).filter(function (n) { return n.id !== note.id; });
             writeJSON(QUEUE_KEY, left);
+            // Accepted notes must land in the local cache too. Without this a
+            // just-saved note exists only on the server until the next full
+            // /notes-list, so anything reading local state — the underlines on
+            // the article, the offline list — can't see it yet.
+            var cache = readJSON(CACHE_KEY, []);
+            if (!cache.some(function (n) { return n.id === note.id; })) {
+              cache.unshift(note);
+              writeJSON(CACHE_KEY, cache);
+            }
           }
         }).catch(function () {});
       });
