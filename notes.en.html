@@ -23,9 +23,22 @@ input[type=search]{flex:1;min-width:180px;padding:9px 13px;border-radius:12px;bo
 input[type=search]::placeholder{color:#6b7390}
 .btn{padding:8px 13px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:#a0a8c0;font-size:.82rem;cursor:pointer;font-family:inherit}
 .btn:hover{background:rgba(255,255,255,.1);color:#fff}
-.group-label{margin:26px 0 12px;font-size:.8rem;font-weight:700;color:#7b61ff;letter-spacing:.5px;font-family:"SF Mono",Menlo,monospace;display:flex;align-items:baseline;gap:8px}
+.group-label{margin:20px 0 8px;font-size:.8rem;font-weight:700;color:#7b61ff;letter-spacing:.5px;font-family:"SF Mono",Menlo,monospace;display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none;padding:6px 4px;border-radius:8px}
+.group-label:hover{background:rgba(123,97,255,.08)}
 .group-label .n{color:#6b7390;font-weight:400;font-size:.72rem}
+.group-label .caret{display:inline-block;width:10px;color:#6b7390;font-size:.7rem;transition:transform .15s}
+.group.open > .group-label .caret{transform:rotate(90deg)}
 .group:first-of-type .group-label{margin-top:6px}
+.group > .group-body{display:none;padding-left:6px}
+.group.open > .group-body{display:block}
+.art{margin:6px 0 6px 8px;border-left:2px solid rgba(255,255,255,.08);padding-left:10px}
+.art-label{display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none;padding:6px 4px;border-radius:8px;font-size:.86rem;color:#c9cede}
+.art-label:hover{background:rgba(255,255,255,.05)}
+.art-label .n{color:#6b7390;font-size:.72rem;font-family:"SF Mono",Menlo,monospace}
+.art-label .caret{display:inline-block;width:10px;color:#6b7390;font-size:.7rem;transition:transform .15s}
+.art.open > .art-label .caret{transform:rotate(90deg)}
+.art > .art-body{display:none;padding-top:4px}
+.art.open > .art-body{display:block}
 .note{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid #7b61ff;border-radius:12px;padding:14px 16px;margin-bottom:12px;cursor:pointer;transition:background .15s}
 .note:hover{background:rgba(255,255,255,.07)}
 .note .text{font-size:1rem;color:#e4e6eb}
@@ -86,13 +99,28 @@ input[type=search]::placeholder{color:#6b7390}
     rows.forEach(function (n) {
       var slug = window.BigCatNotes.repoSlug(n.page) || '_other';
       if (!map[slug]) {
-        map[slug] = { label: window.BigCatNotes.repoLabel(n.page, 'en'), items: [], newest: n.ts };
+        map[slug] = {
+          label: window.BigCatNotes.repoLabel(n.page, 'en'),
+          items: [], newest: n.ts, arts: {},
+        };
       }
-      map[slug].items.push(n);
-      if (n.ts > map[slug].newest) map[slug].newest = n.ts;
+      var g = map[slug];
+      g.items.push(n);
+      if (n.ts > g.newest) g.newest = n.ts;
+      // Second level: one bucket per article within the repo.
+      if (!g.arts[n.page]) {
+        g.arts[n.page] = { page: n.page, label: n.title || n.page, items: [], newest: n.ts };
+      }
+      var a = g.arts[n.page];
+      a.items.push(n);
+      if (n.ts > a.newest) a.newest = n.ts;
     });
-    return Object.keys(map).map(function (k) { return map[k]; })
-      .sort(function (a, b) { return b.newest - a.newest; });
+    return Object.keys(map).map(function (k) {
+      var g = map[k];
+      g.articles = Object.keys(g.arts).map(function (p) { return g.arts[p]; })
+        .sort(function (a, b) { return b.newest - a.newest; });
+      return g;
+    }).sort(function (a, b) { return b.newest - a.newest; });
   }
 
   function buildCard(n) {
@@ -198,11 +226,19 @@ input[type=search]::placeholder{color:#6b7390}
       return;
     }
     listEl.innerHTML = '';
+    // Two collapsible levels: repo → article → note. Both start collapsed so the
+    // page opens as a short overview; searching auto-opens whatever matched.
+    var expand = !!q;
     groupByRepo(rows).forEach(function (g) {
       var group = document.createElement('div');
-      group.className = 'group';
+      group.className = 'group' + (expand ? ' open' : '');
+
       var label = document.createElement('div');
       label.className = 'group-label';
+      var caret = document.createElement('span');
+      caret.className = 'caret';
+      caret.textContent = '▸';
+      label.appendChild(caret);
       var name = document.createElement('span');
       name.textContent = g.label;
       label.appendChild(name);
@@ -210,8 +246,38 @@ input[type=search]::placeholder{color:#6b7390}
       count.className = 'n';
       count.textContent = g.items.length;
       label.appendChild(count);
+      label.addEventListener('click', function () { group.classList.toggle('open'); });
       group.appendChild(label);
-      g.items.forEach(function (n) { group.appendChild(buildCard(n)); });
+
+      var body = document.createElement('div');
+      body.className = 'group-body';
+      g.articles.forEach(function (a) {
+        var art = document.createElement('div');
+        art.className = 'art' + (expand ? ' open' : '');
+
+        var aLabel = document.createElement('div');
+        aLabel.className = 'art-label';
+        var aCaret = document.createElement('span');
+        aCaret.className = 'caret';
+        aCaret.textContent = '▸';
+        aLabel.appendChild(aCaret);
+        var aName = document.createElement('span');
+        aName.textContent = a.label;
+        aLabel.appendChild(aName);
+        var aCount = document.createElement('span');
+        aCount.className = 'n';
+        aCount.textContent = a.items.length;
+        aLabel.appendChild(aCount);
+        aLabel.addEventListener('click', function () { art.classList.toggle('open'); });
+        art.appendChild(aLabel);
+
+        var aBody = document.createElement('div');
+        aBody.className = 'art-body';
+        a.items.forEach(function (n) { aBody.appendChild(buildCard(n)); });
+        art.appendChild(aBody);
+        body.appendChild(art);
+      });
+      group.appendChild(body);
       listEl.appendChild(group);
     });
   }
