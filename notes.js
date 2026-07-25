@@ -93,6 +93,35 @@
     });
   }
 
+
+  // Some pages render several distinct pieces from one file, picked by a query
+  // param — thinker-arena's debate.html?d=<slug> is the case here. Keying a
+  // note on the pathname alone collapsed every debate into one entry and made
+  // "jump back" land on the default one. Keep params that choose content; drop
+  // the ones that are only tracking or UI state.
+  var NOISE_PARAMS = /^(me|ref|fbclid|gclid|utm_[a-z]+)$/i;
+  function pageKey() {
+    var params = new URLSearchParams(location.search);
+    var keep = new URLSearchParams();
+    var names = [];
+    params.forEach(function (v, k) { names.push(k); });
+    names.sort().forEach(function (k) {
+      if (!NOISE_PARAMS.test(k)) keep.append(k, params.get(k));
+    });
+    var q = keep.toString();
+    return location.pathname + (q ? '?' + q : '');
+  }
+
+  // The most specific title this page offers. Client-rendered pages often keep
+  // a generic <title> and put the real subject in the header, so prefer that.
+  function pageTitle() {
+    var sub = document.getElementById('chan-sub');
+    if (sub && sub.textContent.trim()) return sub.textContent.trim().slice(0, 300);
+    var h1 = document.querySelector('h1');
+    if (h1 && h1.textContent.trim()) return h1.textContent.trim().slice(0, 300);
+    return (document.title || '').replace(/\s*·\s*\d{4}-\d{2}-\d{2}\s*$/, '').trim().slice(0, 300);
+  }
+
   var isEn = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0
     || /\.en\.html$/i.test(location.pathname);
   var T = isEn
@@ -301,7 +330,7 @@
   // prefix+text+suffix re-location as jumping to a note, and skips passages
   // that can't be wrapped cleanly (a selection spanning element boundaries).
   function paintUnderlines() {
-    var here = location.pathname;
+    var here = pageKey();
     var all = readJSON(QUEUE_KEY, []).concat(readJSON(CACHE_KEY, []));
     var seen = {};
     all.forEach(function (n) {
@@ -466,6 +495,16 @@
     handleHash();
     window.addEventListener('hashchange', handleHash);
 
+    // Client-rendered pages (thinker-arena debates) build their text after this
+    // runs, so the first pass has nothing to underline or scroll to. Retry a
+    // few times, stopping as soon as the page stops growing.
+    var lastLen = -1, tries = 0;
+    var settle = setInterval(function () {
+      var len = document.body.textContent.length;
+      if (len !== lastLen) { lastLen = len; paintUnderlines(); handleHash(); }
+      if (++tries >= 8) clearInterval(settle);
+    }, 500);
+
     var bubble = document.createElement('button');
     bubble.id = 'note-bubble';
     bubble.textContent = T.add;
@@ -540,8 +579,8 @@
 
       var note = {
         id: (crypto.randomUUID ? crypto.randomUUID() : String(Date.now() + Math.random())).replace(/-/g, ''),
-        page: location.pathname,
-        title: (document.title || '').replace(/\s*·\s*\d{4}-\d{2}-\d{2}\s*$/, '').trim(),
+        page: pageKey(),
+        title: pageTitle(),
         lang: isEn ? 'en' : 'zh',
         text: pending.text,
         prefix: pending.prefix,
