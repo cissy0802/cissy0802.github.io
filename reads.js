@@ -28,10 +28,10 @@
   var T = isEn
     ? { mark: 'Mark as read', done: '✓ Read', undo: 'Mark unread', count: 'read',
         addThought: '＋ A thought on this piece', thoughtPh: 'What did this piece leave you with?',
-        save: 'Save', cancel: 'Cancel', edit: 'Click to edit' }
+        save: 'Save', cancel: 'Cancel', edit: 'Click to edit', myNotes: '📝 My Notes' }
     : { mark: '标记已读', done: '✓ 已读', undo: '标为未读', count: '已读',
         addThought: '＋ 写下对这篇的想法', thoughtPh: '这篇给你留下了什么？',
-        save: '保存', cancel: '取消', edit: '点击编辑' };
+        save: '保存', cancel: '取消', edit: '点击编辑', myNotes: '📝 我的笔记' };
 
   function session() {
     try { return localStorage.getItem(SESSION_KEY) || ''; } catch (e) { return ''; }
@@ -330,6 +330,23 @@
   function mountRepoIndex() {
     var entries = [].slice.call(document.querySelectorAll('.entry'));
     if (!entries.length) return;
+
+    // The hub landing has a "My Notes" link; every repo index should have one
+    // too, so notes are reachable without going back to the hub first.
+    if (!document.querySelector('.notes-link')) {
+      var nl = document.createElement('a');
+      nl.className = 'notes-link';
+      nl.href = isEn ? '/notes.en.html' : '/notes.html';
+      nl.textContent = T.myNotes;
+      // Top-right is the language toggle and far-left is "← Hub" (injected by
+      // index-button.js at left:14), so sit beside it in the same row.
+      nl.style.cssText =
+        'position:fixed;top:16px;left:108px;z-index:100;padding:7px 13px;border-radius:14px;' +
+        'background:rgba(123,97,255,.14);border:1px solid rgba(123,97,255,.4);' +
+        'color:#7b61ff;text-decoration:none;font:600 .78rem -apple-system,sans-serif;' +
+        'backdrop-filter:blur(10px);';
+      document.body.appendChild(nl);
+    }
 
     var counter = document.createElement('div');
     counter.id = 'read-counter';
