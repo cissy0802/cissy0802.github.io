@@ -14,9 +14,11 @@ prune-<repo>-<n>.txt before anything is deleted.
 
 It refuses when the orphan set looks like a bug rather than dead weight:
 
+  * the clone is behind origin           → its pages may reference segments
+                                           this checkout has never seen, which
+                                           would look orphaned
   * no page references anything          → the pages lost their data-tts
-                                           attributes (deep-research is in
-                                           exactly this state)
+                                           attributes
   * a referenced hash is missing from R2 → the reference scan or the upload is
                                            wrong, so the orphan set can't be
                                            trusted either
@@ -31,6 +33,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import subprocess
 import re
 import sys
 from concurrent.futures import ThreadPoolExecutor
@@ -57,6 +60,24 @@ def client():
         region_name="auto",
         config=Config(signature_version="s3v4", retries={"max_attempts": 5}),
     )
+
+
+def require_current(repo: Path) -> None:
+    """Refuse to act on a stale checkout.
+
+    "Orphaned" is derived from the HTML in this working copy, so a clone that
+    is behind origin sees freshly baked segments as unreferenced and would
+    delete audio that is live on the site. This is not hypothetical: a bake
+    landed in deep-research mid-session and its stale clone reported 350 of 350
+    objects orphaned — a repo whose narration works perfectly.
+    """
+    subprocess.run(["git", "-C", str(repo), "fetch", "--quiet", "origin"], check=False)
+    behind = subprocess.run(["git", "-C", str(repo), "rev-list", "--count", "HEAD..@{u}"],
+                            capture_output=True, text=True).stdout.strip()
+    if behind and behind != "0":
+        sys.exit(f"ERROR: {repo.name} is {behind} commit(s) behind origin. Its pages may "
+                 f"reference segments this checkout has never seen, which would look orphaned. "
+                 f"Run `git -C {repo} pull --rebase` first.")
 
 
 def referenced_hashes(repo: Path) -> set[str]:
@@ -91,6 +112,7 @@ def main():
 
     import requests
 
+    require_current(repo)
     s3 = client()
     refs = referenced_hashes(repo)
     if not refs:

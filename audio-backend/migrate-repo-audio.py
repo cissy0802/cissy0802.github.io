@@ -104,6 +104,16 @@ def upload(repo: Path, referenced_only: bool = False) -> int:
     all_items = local_mp3s(repo)
     if not all_items:
         sys.exit(f"ERROR: no MP3s under {repo}/audio — nothing to migrate")
+    if referenced_only:
+        # Same reason --untrack checks: "referenced" comes from the HTML in this
+        # working copy, so a stale clone would skip uploading segments that are
+        # already live on the site.
+        subprocess.run(["git", "-C", str(repo), "fetch", "--quiet", "origin"], check=False)
+        behind = subprocess.run(["git", "-C", str(repo), "rev-list", "--count", "HEAD..@{u}"],
+                                capture_output=True, text=True).stdout.strip()
+        if behind and behind != "0":
+            sys.exit(f"ERROR: {repo.name} is {behind} commit(s) behind origin; its pages may "
+                     f"reference segments this checkout has not seen. Pull first.")
     items = local_mp3s(repo, referenced_only)
     if referenced_only:
         # Check the ratio BEFORE the empty check, so a repo whose pages lost
@@ -111,8 +121,9 @@ def upload(repo: Path, referenced_only: bool = False) -> int:
         # a misleading "no MP3s here".
         #
         # Refuse the pathological case rather than "helpfully" uploading almost
-        # nothing: deep-research has 350 baked MP3s and zero data-tts
-        # attributes left on its pages, which is a broken repo, not a tidy one.
+        # nothing. A repo whose pages genuinely lost their data-tts attributes
+        # is broken, not tidy, and skipping "unreferenced" audio would bake the
+        # breakage in.
         if len(items) < len(all_items) * 0.1:
             sys.exit(f"ERROR: only {len(items)} of {len(all_items)} MP3s are referenced by any "
                      f"page in {repo.name}. That looks like the pages lost their data-tts "
