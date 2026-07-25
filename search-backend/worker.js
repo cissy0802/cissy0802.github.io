@@ -77,6 +77,10 @@ function corsHeaders(req) {
 function deny(req, status, msg) {
   const h = corsHeaders(req);
   h.set('Content-Type', 'text/plain; charset=utf-8');
+  // Never let a failure be cached. An earlier version answered 412 while still
+  // carrying the success path's max-age=300, so browsers held onto the error for
+  // five minutes after the bug behind it was fixed.
+  h.set('Cache-Control', 'no-store');
   return new Response(msg + '\n', { status, headers: h });
 }
 
@@ -107,7 +111,14 @@ export default {
       }
     }
 
-    const obj = await env.SEARCH.get(key, { onlyIf: req.headers });
+    // Deliberately NOT `get(key, { onlyIf: req.headers })`. That hands R2 every
+    // conditional header the browser sent, and a browser revalidating a cached
+    // module sends If-Modified-Since, not If-None-Match — R2 then answers "not
+    // modified" by returning the object with a null body, which is impossible to
+    // tell apart from a real precondition failure. Answering 412 to that made
+    // `import()` fail outright ("Failed to fetch dynamically imported module")
+    // while plain curl, which sends no validators, worked fine.
+    const obj = await env.SEARCH.get(key);
     if (!obj) return deny(req, 404, 'Not found');
 
     const h = corsHeaders(req);
@@ -116,11 +127,12 @@ export default {
     h.set('Content-Type', contentType(url.pathname));
     h.set('Cache-Control', cacheControl(url.pathname));
 
-    // onlyIf failed → R2 returns metadata with no body.
-    if (!obj.body) {
-      const inm = req.headers.get('If-None-Match');
-      const fresh = inm && (inm === '*' || inm.split(',').some((t) => t.trim() === obj.httpEtag));
-      return new Response(null, { status: fresh ? 304 : 412, headers: h });
+    // Revalidation, handled here rather than by R2 so only ETag can ever cause a
+    // bodyless answer. Anything else (If-Modified-Since and friends) just gets
+    // the object — these files are small, and a wasted read beats a wrong 412.
+    const inm = req.headers.get('If-None-Match');
+    if (inm && (inm === '*' || inm.split(',').some((t) => t.trim() === obj.httpEtag))) {
+      return new Response(null, { status: 304, headers: h });
     }
 
     const res = new Response(req.method === 'HEAD' ? null : obj.body, { status: 200, headers: h });

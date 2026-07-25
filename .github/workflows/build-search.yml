@@ -100,7 +100,12 @@ jobs:
                       grams.append(' '.join(run[i:i + 2] for i in range(len(run) - 1)))
               if not grams:
                   continue
-              shadow = '<div style="display:none">' + '  '.join(grams) + '</div>'
+              # Marker so the client can tell whether the index it's talking to
+              # actually has shadow text — the bigram query tier is wrong against
+              # an index built without it (it matches stray word tokens and
+              # short-circuits the raw tier). Bump the version if the scheme changes.
+              shadow = ('<div style="display:none">pfbigramv1 '
+                        + '  '.join(grams) + '</div>')
               s2 = s.replace('</body>', shadow + '</body>', 1) if '</body>' in s else s + shadow
               open(f, 'w', encoding='utf-8').write(s2)
               n += 1

@@ -194,6 +194,7 @@
   }
   let pfModule = null;
   let ui = null;
+  let hasBigrams = false; // set by the warm-up probe, see warmProbeIndex
 
   // A second Pagefind instance, used only to test whether the quoted form of a
   // term matches anything. Warmed at modal-open time: cold, its first query
@@ -209,6 +210,11 @@
         // Probing against that state would cache a bogus verdict for the term.
         try {
           await pf.search("的");
+          // Does this index actually carry the build's bigram shadow text? On
+          // one that doesn't, the bigram tier is actively harmful: it matches a
+          // few stray word tokens and short-circuits the raw tier that would
+          // have answered properly (海德格尔 went 15 results → 6 that way).
+          hasBigrams = (await pf.search("pfbigramv1")).results.length > 0;
         } catch (e) {}
         return pf;
       });
@@ -242,7 +248,9 @@
     pfModule
       .then(async (pf) => {
         if ((await pf.search('"' + term + '"')).results.length) return "quoted";
-        if (bg !== term && (await pf.search(bg)).results.length) return "bigram";
+        if (hasBigrams && bg !== term && (await pf.search(bg)).results.length) {
+          return "bigram";
+        }
         return "raw";
       })
       .then((mode) => {
