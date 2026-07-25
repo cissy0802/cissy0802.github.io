@@ -344,11 +344,22 @@
         suffix: after.slice(0, CTX),
       };
 
+      // Sit BELOW the selection: iOS pins its own copy/lookup callout above it,
+      // and the two used to overlap. Flip back above only when there isn't room
+      // below (selection near the bottom of the viewport).
       var r = range.getBoundingClientRect();
       bubble.textContent = T.add;
       bubble.style.display = 'block';
-      bubble.style.top = (window.scrollY + r.top - 44) + 'px';
-      bubble.style.left = (window.scrollX + r.left + r.width / 2 - bubble.offsetWidth / 2) + 'px';
+      var GAP = 12;
+      var h = bubble.offsetHeight || 34;
+      var below = r.bottom + GAP;
+      var top = (below + h <= window.innerHeight) ? below : (r.top - h - GAP);
+      bubble.style.top = (window.scrollY + top) + 'px';
+      // Keep it fully on screen horizontally too.
+      var w = bubble.offsetWidth;
+      var left = r.left + r.width / 2 - w / 2;
+      left = Math.max(8, Math.min(left, window.innerWidth - w - 8));
+      bubble.style.left = (window.scrollX + left) + 'px';
     }
 
     document.addEventListener('selectionchange', function () {
