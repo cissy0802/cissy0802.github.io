@@ -19,6 +19,8 @@
  *   POST /notes-add    { session, id, page, title, lang, text, ts } -> upsert a note
  *   POST /notes-list   { session }                   -> that account's notes, newest first
  *   POST /notes-delete { session, id }               -> delete one of that account's notes
+ *   POST /reads-list   { session }                   -> pages this account has finished
+ *   POST /reads-set    { session, page, read }       -> mark / unmark one page as read
  *   Notes are private per account: every note is scoped to the session's user,
  *   so one account can never read or delete another's. POST-only keeps
  *   passwords and session tokens out of URLs and logs.
@@ -660,6 +662,45 @@ export default {
           await env.DB.prepare("DELETE FROM sessions WHERE user_id = ?").bind(row.id).run();
           const session = await newSession(env, row.id);
           return json({ ok: true, session }, 200, origin);
+        }
+      }
+
+      // ---- Read markers (private per account) --------------------------
+      // POST /reads-list {session}              -> { pages: [path, ...] }
+      // POST /reads-set  {session, page, read}  -> mark / unmark one page
+      if (url.pathname.startsWith("/reads-")) {
+        if (request.method !== "POST") {
+          return json({ ok: false, error: "method_not_allowed" }, 405, origin);
+        }
+        const body = await request.json().catch(() => ({}));
+        const me = await sessionUser(env, body.session);
+        if (!me) return json({ ok: false, error: "unauthorized" }, 401, origin);
+
+        if (url.pathname === "/reads-list") {
+          const { results } = await env.DB.prepare(
+            "SELECT page, ts FROM reads WHERE user_id = ? ORDER BY ts DESC LIMIT 5000"
+          )
+            .bind(me.id)
+            .all();
+          return json({ ok: true, reads: results }, 200, origin);
+        }
+
+        if (url.pathname === "/reads-set") {
+          const page = String(body.page || "").trim().slice(0, 200);
+          if (!page) return json({ ok: false, error: "missing_fields" }, 400, origin);
+          if (body.read === false) {
+            await env.DB.prepare("DELETE FROM reads WHERE user_id = ? AND page = ?")
+              .bind(me.id, page)
+              .run();
+            return json({ ok: true, page, read: false }, 200, origin);
+          }
+          await env.DB.prepare(
+            "INSERT INTO reads (user_id, page, ts) VALUES (?1, ?2, ?3) " +
+              "ON CONFLICT(user_id, page) DO UPDATE SET ts = ?3"
+          )
+            .bind(me.id, page, Number(body.ts) || Date.now())
+            .run();
+          return json({ ok: true, page, read: true }, 200, origin);
         }
       }
 

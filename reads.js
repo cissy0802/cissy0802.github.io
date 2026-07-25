@@ -1,0 +1,285 @@
+/* BigCat Learning Hub — "已读 / read" markers.
+ *
+ * Loaded on every page by index-button.js (and directly by the hub landing).
+ * Three behaviours, picked by page type:
+ *
+ *   • article page   -> a "标记已读" button at the very bottom, plus automatic
+ *                       marking when you reach the end: either by scrolling to
+ *                       the bottom, or by listening through to the last TTS
+ *                       segment ("听完也算读完").
+ *   • repo index     -> ✓ + dimmed styling on finished entries, and an
+ *                       "已读 12 / 68" counter in the header.
+ *   • hub landing    -> per-repo read count on each site card.
+ *
+ * Local-first: state lives in localStorage so it works offline and renders
+ * instantly; when logged in it syncs to the account (POST /reads-list,
+ * /reads-set) so phone and laptop agree. Changes made offline queue up and
+ * flush on the next load.
+ */
+(function () {
+  'use strict';
+
+  var API = 'https://bigcat-engage.cissychen.workers.dev';
+  var SESSION_KEY = 'bigcat-session';
+  var STORE_KEY = 'bigcat-reads';      // { pages: {path: ts}, pending: {path: {read, ts}} }
+
+  var isEn = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0
+    || /\.en\.html$/i.test(location.pathname);
+  var T = isEn
+    ? { mark: 'Mark as read', done: '✓ Read', undo: 'Mark unread', count: 'read' }
+    : { mark: '标记已读', done: '✓ 已读', undo: '标为未读', count: '已读' };
+
+  function session() {
+    try { return localStorage.getItem(SESSION_KEY) || ''; } catch (e) { return ''; }
+  }
+  function store() {
+    try {
+      var s = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
+      if (!s.pages) s.pages = {};
+      if (!s.pending) s.pending = {};
+      return s;
+    } catch (e) { return { pages: {}, pending: {} }; }
+  }
+  function save(s) {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(s)); } catch (e) {}
+  }
+  function isRead(path) { return !!store().pages[path]; }
+
+  function post(path, payload) {
+    return fetch(API + path, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(Object.assign({ session: session() }, payload)),
+    }).then(function (r) { return r.json(); });
+  }
+
+  // Set locally at once, then try the server; keep it queued until accepted.
+  function setRead(path, read) {
+    var s = store();
+    if (read) s.pages[path] = Date.now(); else delete s.pages[path];
+    s.pending[path] = { read: !!read, ts: Date.now() };
+    save(s);
+    if (!session()) return Promise.resolve();
+    return post('/reads-set', { page: path, read: !!read, ts: Date.now() })
+      .then(function (res) {
+        if (res && res.ok) { var s2 = store(); delete s2.pending[path]; save(s2); }
+      })
+      .catch(function () {});
+  }
+
+  // Push anything queued, then pull the account's list and merge it in.
+  function sync() {
+    if (!session()) return Promise.resolve();
+    var s = store();
+    var queued = Object.keys(s.pending);
+    var pushes = queued.map(function (p) {
+      var it = s.pending[p];
+      return post('/reads-set', { page: p, read: it.read, ts: it.ts })
+        .then(function (res) {
+          if (res && res.ok) { var s2 = store(); delete s2.pending[p]; save(s2); }
+        })
+        .catch(function () {});
+    });
+    return Promise.all(pushes)
+      .then(function () { return post('/reads-list', {}); })
+      .then(function (res) {
+        if (!res || !res.ok) return;
+        var s2 = store();
+        var merged = {};
+        (res.reads || []).forEach(function (r) { merged[r.page] = r.ts; });
+        // Anything still queued locally wins over the server snapshot.
+        Object.keys(s2.pending).forEach(function (p) {
+          if (s2.pending[p].read) merged[p] = s2.pending[p].ts; else delete merged[p];
+        });
+        s2.pages = merged;
+        save(s2);
+      })
+      .catch(function () {});
+  }
+
+  function ready(fn) {
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
+    else fn();
+  }
+
+  // ---- page-type detection ------------------------------------------------
+
+  function isLanding() {
+    var p = location.pathname;
+    return p === '/' || p === '/index.html' || p === '/index.en.html' || p === '/index.zh.html';
+  }
+  function isRepoIndex() {
+    if (isLanding()) return false;
+    return /^\/[^\/]+\/(index(\.en|\.zh)?\.html)?$/.test(location.pathname);
+  }
+  function repoSlug(path) {
+    var m = /^\/?([^\/]+)\//.exec(String(path || ''));
+    return m ? m[1] : '';
+  }
+
+  // ---- article page: bottom button + auto-mark ----------------------------
+
+  function mountArticle() {
+    var path = location.pathname;
+    var btn = document.createElement('button');
+    btn.id = 'read-btn';
+    btn.type = 'button';
+    btn.style.cssText =
+      'display:block;margin:34px auto 8px;padding:11px 26px;border-radius:22px;' +
+      'border:1px solid rgba(123,97,255,.45);background:rgba(123,97,255,.12);' +
+      'color:#7b61ff;font:600 .95rem -apple-system,sans-serif;cursor:pointer;';
+
+    function render() {
+      var read = isRead(path);
+      btn.textContent = read ? T.done : T.mark;
+      btn.style.color = read ? '#3aa17e' : '#7b61ff';
+      btn.style.borderColor = read ? 'rgba(58,161,126,.5)' : 'rgba(123,97,255,.45)';
+      btn.style.background = read ? 'rgba(58,161,126,.10)' : 'rgba(123,97,255,.12)';
+      btn.title = read ? T.undo : T.mark;
+    }
+    render();
+    btn.addEventListener('click', function () {
+      setRead(path, !isRead(path)).then(render);
+      render();
+    });
+
+    // Sit at the very end of the article, before the footer / comments.
+    var footer = document.querySelector('footer');
+    var comments = document.getElementById('bigcat-comments');
+    var anchor = comments || footer;
+    if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(btn, anchor);
+    else document.body.appendChild(btn);
+
+    function autoMark() {
+      if (isRead(path)) return;
+      setRead(path, true).then(render);
+      render();
+    }
+
+    // (1) reaching the bottom of the page
+    var sentinel = document.createElement('div');
+    sentinel.style.cssText = 'height:1px';
+    btn.parentNode.insertBefore(sentinel, btn);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        if (entries.some(function (e) { return e.isIntersecting; })) autoMark();
+      }, { rootMargin: '0px 0px -10% 0px' }).observe(sentinel);
+    }
+
+    // (2) listening through to the last TTS segment. i18n-tts.js is a per-repo
+    // copy (versions differ), so rather than patching it we watch the progress
+    // readout it already maintains: "cur/total" hitting the final segment.
+    var prog = document.querySelector('.mmd-controls .progress');
+    if (prog && 'MutationObserver' in window) {
+      new MutationObserver(function () {
+        var m = /^(\d+)\s*\/\s*(\d+)$/.exec((prog.textContent || '').trim());
+        if (m && +m[2] > 0 && +m[1] === +m[2]) autoMark();
+      }).observe(prog, { childList: true, characterData: true, subtree: true });
+    }
+
+    // The account may resolve after first paint; re-render once synced.
+    sync().then(render);
+  }
+
+  // ---- repo index: per-entry ticks + header counter -----------------------
+
+  function entryPages(entry) {
+    var links = [];
+    if (entry.tagName === 'A' && entry.getAttribute('href')) links.push(entry);
+    entry.querySelectorAll('a[href]').forEach(function (a) { links.push(a); });
+    var out = [], seen = {};
+    links.forEach(function (a) {
+      var u;
+      try { u = new URL(a.getAttribute('href'), location.href); } catch (e) { return; }
+      if (u.origin !== location.origin || !/\.html$/.test(u.pathname)) return;
+      if (/\/index(\.\w+)?\.html$/.test(u.pathname)) return;
+      if (!seen[u.pathname]) { seen[u.pathname] = 1; out.push(u.pathname); }
+    });
+    return out;
+  }
+
+  function mountRepoIndex() {
+    var entries = [].slice.call(document.querySelectorAll('.entry'));
+    if (!entries.length) return;
+
+    var counter = document.createElement('div');
+    counter.id = 'read-counter';
+    counter.style.cssText =
+      'text-align:center;margin:10px auto 0;font:600 .8rem "SF Mono",Menlo,monospace;' +
+      'color:#7b61ff;opacity:.85';
+    var header = document.querySelector('header');
+    if (header) header.appendChild(counter);
+
+    function paint() {
+      var done = 0;
+      entries.forEach(function (entry) {
+        var pages = entryPages(entry);
+        if (!pages.length) return;
+        var read = pages.every(isRead);
+        if (read) done++;
+        entry.style.opacity = read ? '0.55' : '';
+        var tick = entry.querySelector('.read-tick');
+        if (read && !tick) {
+          tick = document.createElement('span');
+          tick.className = 'read-tick';
+          tick.textContent = '✓';
+          tick.title = T.done;
+          tick.style.cssText =
+            'position:absolute;left:6px;top:8px;color:#3aa17e;font:700 .8rem -apple-system,sans-serif;';
+          if (getComputedStyle(entry).position === 'static') entry.style.position = 'relative';
+          entry.appendChild(tick);
+        } else if (!read && tick) {
+          tick.remove();
+        }
+      });
+      counter.textContent = T.count + ' ' + done + ' / ' + entries.length;
+    }
+    paint();
+    sync().then(paint);
+  }
+
+  // ---- hub landing: per-repo read count ----------------------------------
+
+  function mountLanding() {
+    var cards = [].slice.call(document.querySelectorAll('a.card[href]'));
+    if (!cards.length) return;
+
+    function paint() {
+      var pages = store().pages;
+      var byRepo = {};
+      Object.keys(pages).forEach(function (p) {
+        var slug = repoSlug(p);
+        if (slug) byRepo[slug] = (byRepo[slug] || 0) + 1;
+      });
+      cards.forEach(function (card) {
+        var slug;
+        try { slug = repoSlug(new URL(card.getAttribute('href'), location.origin).pathname); }
+        catch (e) { return; }
+        var n = byRepo[slug] || 0;
+        var el = card.querySelector('.read-count');
+        if (!n) { if (el) el.remove(); return; }
+        if (!el) {
+          el = document.createElement('div');
+          el.className = 'read-count';
+          el.style.cssText =
+            'font-size:0.7rem;color:#3aa17e;font-family:"SF Mono",Menlo,monospace;' +
+            'letter-spacing:0.3px;margin-top:2px';
+          var meta = card.querySelector('.meta');
+          (meta || card).appendChild(el);
+        }
+        el.textContent = '✓ ' + n;
+      });
+    }
+    paint();
+    sync().then(paint);
+  }
+
+  ready(function () {
+    if (document.getElementById('read-btn') || document.getElementById('read-counter')) return;
+    if (isLanding()) { mountLanding(); return; }
+    if (isRepoIndex()) { mountRepoIndex(); return; }
+    // Article pages: anything with real prose. Skip helper pages (notes,
+    // account, confirm…), which live at the site root and aren't content.
+    if (repoSlug(location.pathname) && document.querySelector('h1, h2')) mountArticle();
+  });
+})();

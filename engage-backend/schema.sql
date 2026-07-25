@@ -95,3 +95,14 @@ CREATE TABLE IF NOT EXISTS notes (
 
 CREATE INDEX IF NOT EXISTS idx_notes_ts ON notes (ts);
 CREATE INDEX IF NOT EXISTS idx_notes_user ON notes (user_id, ts);
+
+-- Read/finished markers, one row per (account, page). Marked automatically on
+-- reaching the end of an article — by scrolling or by listening to the last TTS
+-- segment — and toggleable by hand.
+CREATE TABLE IF NOT EXISTS reads (
+  user_id TEXT    NOT NULL,
+  page    TEXT    NOT NULL,
+  ts      INTEGER NOT NULL,
+  PRIMARY KEY (user_id, page)
+);
+CREATE INDEX IF NOT EXISTS idx_reads_user ON reads (user_id, ts);
