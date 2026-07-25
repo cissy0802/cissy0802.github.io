@@ -32,7 +32,7 @@
   //   offline.js   R2_AUDIO_*  offline download
   //   sw.js        AUDIO_ORIGIN  lets the cross-origin MP3 reach the cache
   const R2_AUDIO_ORIGIN = 'https://bigcat-audio.cissychen.workers.dev';
-  const R2_AUDIO_REPOS = { 'personal-finance': 1 };
+  const R2_AUDIO_REPOS = { 'personal-finance': 1, 'mental-models': 1 };
 
   // First path segment = repo slug ("/personal-finance/foo.html" → "personal-finance").
   function repoSlugOf(pathname) {
