@@ -21,6 +21,7 @@
  *   POST /notes-delete { session, id }               -> delete one of that account's notes
  *   POST /reads-list   { session }                   -> pages this account has finished
  *   POST /reads-set    { session, page, read }       -> mark / unmark one page as read
+ *   POST /reads-thought{ session, page, thought }    -> article-level thought
  *   Notes are private per account: every note is scoped to the session's user,
  *   so one account can never read or delete another's. POST-only keeps
  *   passwords and session tokens out of URLs and logs.
@@ -678,29 +679,53 @@ export default {
 
         if (url.pathname === "/reads-list") {
           const { results } = await env.DB.prepare(
-            "SELECT page, ts FROM reads WHERE user_id = ? ORDER BY ts DESC LIMIT 5000"
+            "SELECT page, ts, is_read, thought FROM reads WHERE user_id = ? " +
+              "ORDER BY ts DESC LIMIT 5000"
           )
             .bind(me.id)
             .all();
           return json({ ok: true, reads: results }, 200, origin);
         }
 
+        // A row holds this account's state for one page: the read flag and an
+        // article-level thought. Drop the row once neither is set.
+        const cleanupRead = async (page) => {
+          await env.DB.prepare(
+            "DELETE FROM reads WHERE user_id = ? AND page = ? AND is_read = 0 AND thought = ''"
+          )
+            .bind(me.id, page)
+            .run();
+        };
+
         if (url.pathname === "/reads-set") {
           const page = String(body.page || "").trim().slice(0, 200);
           if (!page) return json({ ok: false, error: "missing_fields" }, 400, origin);
-          if (body.read === false) {
-            await env.DB.prepare("DELETE FROM reads WHERE user_id = ? AND page = ?")
-              .bind(me.id, page)
-              .run();
-            return json({ ok: true, page, read: false }, 200, origin);
-          }
+          const flag = body.read === false ? 0 : 1;
           await env.DB.prepare(
-            "INSERT INTO reads (user_id, page, ts) VALUES (?1, ?2, ?3) " +
-              "ON CONFLICT(user_id, page) DO UPDATE SET ts = ?3"
+            "INSERT INTO reads (user_id, page, ts, is_read) VALUES (?1, ?2, ?3, ?4) " +
+              "ON CONFLICT(user_id, page) DO UPDATE SET ts = ?3, is_read = ?4"
           )
-            .bind(me.id, page, Number(body.ts) || Date.now())
+            .bind(me.id, page, Number(body.ts) || Date.now(), flag)
             .run();
-          return json({ ok: true, page, read: true }, 200, origin);
+          if (!flag) await cleanupRead(page);
+          return json({ ok: true, page, read: !!flag }, 200, origin);
+        }
+
+        // Article-level thought — your take on the piece as a whole, separate
+        // from the per-highlight comments stored on notes.
+        if (url.pathname === "/reads-thought") {
+          const page = String(body.page || "").trim().slice(0, 200);
+          if (!page) return json({ ok: false, error: "missing_fields" }, 400, origin);
+          const thought = String(body.thought || "").slice(0, 4000);
+          await env.DB.prepare(
+            "INSERT INTO reads (user_id, page, ts, is_read, thought) " +
+              "VALUES (?1, ?2, ?3, 0, ?4) " +
+              "ON CONFLICT(user_id, page) DO UPDATE SET thought = ?4, ts = ?3"
+          )
+            .bind(me.id, page, Number(body.ts) || Date.now(), thought)
+            .run();
+          if (!thought) await cleanupRead(page);
+          return json({ ok: true, page, thought }, 200, origin);
         }
       }
 

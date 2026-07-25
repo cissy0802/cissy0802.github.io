@@ -103,6 +103,10 @@ CREATE TABLE IF NOT EXISTS reads (
   user_id TEXT    NOT NULL,
   page    TEXT    NOT NULL,
   ts      INTEGER NOT NULL,
+  is_read INTEGER NOT NULL DEFAULT 1,
+  -- Article-level thought: your take on the piece as a whole, as opposed to
+  -- the per-highlight comments that live on notes.
+  thought TEXT    NOT NULL DEFAULT '',
   PRIMARY KEY (user_id, page)
 );
 CREATE INDEX IF NOT EXISTS idx_reads_user ON reads (user_id, ts);

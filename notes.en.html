@@ -80,6 +80,7 @@ input[type=search]::placeholder{color:#6b7390}
 </div>
 
 <script defer src="/notes.js"></script>
+<script defer src="/reads.js"></script>
 <script>
 (function () {
   var listEl = document.getElementById('list');
@@ -91,6 +92,14 @@ input[type=search]::placeholder{color:#6b7390}
     var d = new Date(ts);
     return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' +
            String(d.getDate()).padStart(2, '0');
+  }
+
+  // Articles list in the same order as the repo's index page, which runs in
+  // ascending day/week/book/topic number. Unnumbered pages (e.g. deep-research
+  // plain/deep pairs) sort last, by title.
+  function artOrder(page) {
+    var m = /-(?:day|week|book|topic)0*(\d+)(?:\.[a-z]{2})?\.html$/i.exec(page || '');
+    return m ? parseInt(m[1], 10) : Number.MAX_SAFE_INTEGER;
   }
 
   // Group notes by repo (topic site), newest group first, newest note first.
@@ -118,7 +127,7 @@ input[type=search]::placeholder{color:#6b7390}
     return Object.keys(map).map(function (k) {
       var g = map[k];
       g.articles = Object.keys(g.arts).map(function (p) { return g.arts[p]; })
-        .sort(function (a, b) { return b.newest - a.newest; });
+        .sort(function (a, b) { return artOrder(a.page) - artOrder(b.page) || a.label.localeCompare(b.label); });
       return g;
     }).sort(function (a, b) { return b.newest - a.newest; });
   }
@@ -273,6 +282,12 @@ input[type=search]::placeholder{color:#6b7390}
 
         var aBody = document.createElement('div');
         aBody.className = 'art-body';
+        // Article-level thought (shared with the article page's own box).
+        if (window.BigCatReads) {
+          var th = window.BigCatReads.thoughtEditor(a.page, function () {});
+          th.style.margin = '2px 0 10px';
+          aBody.appendChild(th);
+        }
         a.items.forEach(function (n) { aBody.appendChild(buildCard(n)); });
         art.appendChild(aBody);
         body.appendChild(art);
@@ -299,8 +314,9 @@ input[type=search]::placeholder{color:#6b7390}
   }
 
   function start() {
-    if (!window.BigCatNotes) { setTimeout(start, 100); return; }
+    if (!window.BigCatNotes || !window.BigCatReads) { setTimeout(start, 100); return; }
     if (!window.BigCatNotes.isLoggedIn()) { showLoggedOut(); return; }
+    window.BigCatReads.sync().then(function () { if (all.length) render(); });
     window.BigCatNotes.me().then(function (email) {
       if (!email) { showLoggedOut(); return; }
       var who = document.getElementById('who');
