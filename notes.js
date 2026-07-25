@@ -98,10 +98,12 @@
   var T = isEn
     ? { add: '＋ Note', saved: '✓ Saved', queued: '✓ Saved (offline)', login: 'Log in to save notes',
         thoughtPh: 'Your thought on this passage…', save: 'Save', cancel: 'Cancel',
-        del: 'Delete', delConfirm: 'Delete this highlight?', tapToWrite: 'Tap to write a thought' }
+        del: 'Delete', delConfirm: 'Delete this highlight?', tapToWrite: 'Tap to write a thought',
+        myNote: 'My note' }
     : { add: '＋ 笔记', saved: '✓ 已保存', queued: '✓ 已保存（离线）', login: '登录后即可保存笔记',
         thoughtPh: '写下你对这段的感想…', save: '保存', cancel: '取消',
-        del: '删除', delConfirm: '删除这条划线？', tapToWrite: '点击写感想' };
+        del: '删除', delConfirm: '删除这条划线？', tapToWrite: '点击写感想',
+        myNote: '我的笔记' };
 
   // ---------- sync ---------------------------------------------------------
 
@@ -334,7 +336,7 @@
     mark.style.cssText =
       'background:none;color:inherit;padding:0;cursor:pointer;' +
       'border-bottom:2px ' + (comment ? 'solid' : 'dotted') + ' rgba(255,214,102,.85);';
-    mark.title = comment || T.tapToWrite;
+    mark.title = T.myNote + (comment ? '：' + comment : '（' + T.tapToWrite + '）');
   }
 
   // ---------- inline thought editor on a highlight -------------------------
@@ -359,6 +361,12 @@
       'border:1px solid rgba(255,255,255,.14);box-shadow:0 8px 28px rgba(0,0,0,.45);' +
       'font:400 14px -apple-system,sans-serif;';
     box.addEventListener('click', function (e) { e.stopPropagation(); });
+
+    var head = document.createElement('div');
+    head.textContent = T.myNote;
+    head.style.cssText =
+      'font:700 11px "SF Mono",Menlo,monospace;letter-spacing:.5px;color:#ffd666;margin-bottom:7px;';
+    box.appendChild(head);
 
     var quote = document.createElement('div');
     quote.textContent = note.text;
