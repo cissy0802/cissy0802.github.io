@@ -18,6 +18,12 @@ const SHELL = 'shell-v1';
 const CONTENT = 'offline-content-v1';
 const RUNTIME = 'runtime-v1';
 
+// Repos whose audio/ moved to R2 serve MP3s from here instead of same-origin.
+// Without this exemption the fetch handler bails out on the cross-origin
+// request and a downloaded article plays nothing offline.
+// Mirrors R2_AUDIO_ORIGIN in i18n-tts.js and offline.js.
+const AUDIO_ORIGIN = 'https://bigcat-audio.cissychen.workers.dev';
+
 const SHELL_URLS = [
   '/',
   '/index.en.html',
@@ -62,13 +68,20 @@ self.addEventListener('fetch', (e) => {
   const req = e.request;
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
-  if (url.origin !== self.location.origin) return;
+  const sameOrigin = url.origin === self.location.origin;
+  if (!sameOrigin && url.origin !== AUDIO_ORIGIN) return;
 
   // Audio: downloaded copy first, network otherwise. No implicit caching.
+  // Match ignoring Range/Vary so a seek inside a segment still hits the
+  // downloaded copy instead of falling through to the network.
   if (url.pathname.endsWith('.mp3')) {
-    e.respondWith(caches.match(req).then((hit) => hit || fetch(req)));
+    e.respondWith(
+      caches.match(req, { ignoreSearch: true, ignoreVary: true })
+        .then((hit) => hit || fetch(req))
+    );
     return;
   }
+  if (!sameOrigin) return;   // the audio origin serves nothing else
 
   // Page navigations: freshest wins, cached copy when offline.
   if (req.mode === 'navigate' || url.pathname.endsWith('.html')) {

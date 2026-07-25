@@ -22,6 +22,32 @@
   const RATE_KEY = 'mmd-tts-rate';
   const RATES = [0.75, 1, 1.25, 1.5, 1.75, 2];
 
+  // ---------- Where baked MP3s live ----------------------------------------
+  // Most repos still ship audio/ inside the repo (relative URL). Migrated repos
+  // serve it from R2 through the bigcat-audio Worker instead, to keep the repo
+  // and its GitHub Pages site under the 1GB limit.
+  //
+  // THREE PLACES MUST AGREE — update all of them when migrating a repo:
+  //   i18n-tts.js  (here)      playback
+  //   offline.js   R2_AUDIO_*  offline download
+  //   sw.js        AUDIO_ORIGIN  lets the cross-origin MP3 reach the cache
+  const R2_AUDIO_ORIGIN = 'https://bigcat-audio.cissychen.workers.dev';
+  const R2_AUDIO_REPOS = { 'personal-finance': 1 };
+
+  // First path segment = repo slug ("/personal-finance/foo.html" → "personal-finance").
+  function repoSlugOf(pathname) {
+    const m = /^\/([^/]+)\//.exec(pathname);
+    return m ? m[1] : '';
+  }
+
+  function audioUrl(lang, hash) {
+    const repo = repoSlugOf(location.pathname);
+    if (R2_AUDIO_REPOS[repo]) {
+      return R2_AUDIO_ORIGIN + '/' + repo + '/' + lang + '/' + hash + '.mp3';
+    }
+    return 'audio/' + lang + '/' + hash + '.mp3';
+  }
+
   const fullMode = document.documentElement.getAttribute('data-i18n-mode') === 'full';
   const hasDataZh = document.querySelector('[data-zh][data-en]') !== null;
   const splitMode = !fullMode && !hasDataZh;
@@ -135,7 +161,7 @@
         ? seg.getAttribute('data-tts')
         : seg.getAttribute('data-tts-' + currentLang);
       if (hash) {
-        const url = `audio/${currentLang}/${hash}.mp3`;
+        const url = audioUrl(currentLang, hash);
         const audio = new Audio(url);
         audio.playbackRate = this.rate;
         audio.preload = 'auto';

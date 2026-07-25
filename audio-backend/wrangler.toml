@@ -1,0 +1,10 @@
+name = "bigcat-audio"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+# R2 bucket holding every repo's baked TTS MP3s, keyed <repo>/<lang>/<hash>.mp3.
+# Create it once (needs R2 enabled on the account first):
+#   npx wrangler r2 bucket create bigcat-audio
+[[r2_buckets]]
+binding = "AUDIO"
+bucket_name = "bigcat-audio"

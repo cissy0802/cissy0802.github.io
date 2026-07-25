@@ -1,0 +1,5 @@
+# Wrangler's local state (miniflare's simulated R2/D1, account cache).
+# It appears wherever wrangler is run, including the repo root — `wrangler dev`
+# and `wrangler deploy` must always be run from engage-backend/ or
+# audio-backend/, never the root, or wrangler invents a config there.
+.wrangler/

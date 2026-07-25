@@ -31,6 +31,17 @@
   var SESSION_KEY = 'bigcat-session';
   var AUTH_API = 'https://bigcat-engage.cissychen.workers.dev';
 
+  // Baked MP3s: relative to the page for most repos, R2 (via the bigcat-audio
+  // Worker) for migrated ones. Mirror of the block in i18n-tts.js — keep the
+  // two lists and sw.js's AUDIO_ORIGIN in sync when migrating a repo.
+  var R2_AUDIO_ORIGIN = 'https://bigcat-audio.cissychen.workers.dev';
+  var R2_AUDIO_REPOS = { 'personal-finance': 1 };
+
+  function repoSlugOf(pathname) {
+    var m = /^\/([^/]+)\//.exec(pathname);
+    return m ? m[1] : '';
+  }
+
   function cachedEmail() {
     try { return (localStorage.getItem(EMAIL_KEY) || '').toLowerCase(); } catch (e) { return ''; }
   }
@@ -105,9 +116,16 @@
     var lang = /\.en\.html$/.test(base.pathname) ? 'en' : 'zh';
     var urls = [base.pathname];
     var seen = {};
+    // Migrated repos yield an absolute cross-origin URL here. fetch() and
+    // cache.put() take either shape, and sw.js matches on the full URL.
+    var repo = repoSlugOf(base.pathname);
     doc.querySelectorAll('[data-tts]').forEach(function (el) {
       var h = el.getAttribute('data-tts');
-      if (h && !seen[h]) { seen[h] = 1; urls.push(new URL('audio/' + lang + '/' + h + '.mp3', base).pathname); }
+      if (!h || seen[h]) return;
+      seen[h] = 1;
+      urls.push(R2_AUDIO_REPOS[repo]
+        ? R2_AUDIO_ORIGIN + '/' + repo + '/' + lang + '/' + h + '.mp3'
+        : new URL('audio/' + lang + '/' + h + '.mp3', base).pathname);
     });
     doc.querySelectorAll('img[src]').forEach(function (img) {
       var u = new URL(img.getAttribute('src'), base);
