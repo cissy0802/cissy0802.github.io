@@ -139,5 +139,7 @@ jobs:
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
         run: |
-          pip install --quiet boto3
+          # --upgrade matters: the runner ships a system boto3 old enough that
+          # pip would call the requirement satisfied and leave it in place.
+          pip install --quiet --upgrade boto3
           python3 search-backend/sync-index.py pagefind

@@ -37,6 +37,23 @@ def md5(path):
     return h.hexdigest()
 
 
+def r2_config():
+    """Turn off the integrity checksums R2 rejects — where that's even a thing.
+
+    botocore only grew these knobs in 1.36, which is also the release that
+    started sending the checksums by default. The GitHub runner's system
+    botocore predates both, and passing the kwargs there is a TypeError, so ask
+    for them and accept a plain Config when they don't exist.
+    """
+    try:
+        return Config(
+            request_checksum_calculation="when_required",
+            response_checksum_validation="when_required",
+        )
+    except TypeError:
+        return Config()
+
+
 def content_type(name):
     ext = os.path.splitext(name)[1].lower()
     if ext in TYPES:
@@ -67,11 +84,7 @@ def main():
         aws_access_key_id=key_id,
         aws_secret_access_key=secret,
         region_name="auto",
-        # R2 rejects the integrity headers newer botocore adds by default.
-        config=Config(
-            request_checksum_calculation="when_required",
-            response_checksum_validation="when_required",
-        ),
+        config=r2_config(),
     )
     bucket = "bigcat-search"
 
