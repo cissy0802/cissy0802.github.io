@@ -279,6 +279,44 @@
     }, 2600);
   }
 
+  // ---------- persistent underlines on the article -------------------------
+
+  // Draw every note saved on THIS page as an underline in the text, so a page
+  // you've highlighted before still shows what you marked. Uses the same
+  // prefix+text+suffix re-location as jumping to a note, and skips passages
+  // that can't be wrapped cleanly (a selection spanning element boundaries).
+  function paintUnderlines() {
+    var here = location.pathname;
+    var all = readJSON(QUEUE_KEY, []).concat(readJSON(CACHE_KEY, []));
+    var seen = {};
+    all.forEach(function (n) {
+      if (!n || n.page !== here || seen[n.id]) return;
+      seen[n.id] = 1;
+      if (document.querySelector('[data-note-id="' + n.id + '"]')) return;
+      var range = locate(n);
+      if (!range) return;
+      var mark = document.createElement('mark');
+      mark.className = 'bigcat-note-mark';
+      mark.setAttribute('data-note-id', n.id);
+      mark.style.cssText =
+        'background:none;color:inherit;padding:0;' +
+        'border-bottom:2px solid rgba(255,214,102,.75);cursor:pointer;';
+      mark.title = n.comment ? n.comment : (isEn ? 'Saved note' : '已保存的笔记');
+      try {
+        range.surroundContents(mark);
+      } catch (e) {
+        return; // crosses element boundaries — leave the text untouched
+      }
+    });
+  }
+
+  // Re-locating walks every text node, so coalesce bursts (e.g. save + sync).
+  var repaintTimer = null;
+  function schedulePaint() {
+    clearTimeout(repaintTimer);
+    repaintTimer = setTimeout(paintUnderlines, 150);
+  }
+
   // #note=<id> — arriving from the notes list. Works from the local queue or
   // the cached server list, so it also resolves offline.
   function handleHash() {
@@ -302,7 +340,13 @@
   ready(function () {
     if (document.getElementById('note-bubble')) return;
 
-    flushQueue();
+    // Underline what's already saved for this page (from the local cache, so
+    // it shows instantly and offline), then again once the server list lands.
+    paintUnderlines();
+    flushQueue().then(function () {
+      if (!session()) return;
+      return window.BigCatNotes.list().then(schedulePaint);
+    });
     handleHash();
     window.addEventListener('hashchange', handleHash);
 
@@ -392,6 +436,7 @@
       bubble.textContent = navigator.onLine ? T.saved : T.queued;
       saveNote(note);
       window.getSelection().removeAllRanges();
+      schedulePaint(); // underline it straight away
       setTimeout(hide, 1100);
     });
 
