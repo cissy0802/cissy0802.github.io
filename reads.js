@@ -217,7 +217,6 @@
         if (!pages.length) return;
         var read = pages.every(isRead);
         if (read) done++;
-        entry.style.opacity = read ? '0.55' : '';
         var tick = entry.querySelector('.read-tick');
         if (read && !tick) {
           tick = document.createElement('span');
