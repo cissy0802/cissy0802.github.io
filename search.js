@@ -158,8 +158,133 @@
     }
   });
 
+  /* CJK queries: exact phrase first, unquoted fallback.
+   *
+   * Pagefind drops query terms that aren't in the index instead of returning
+   * zero results, so an unquoted Chinese phrase degrades into whatever fragment
+   * IS indexed — "现象学" was matching 1172 pages by collapsing to "现象".
+   * Wrapping the term in quotes forces an exact-phrase match (10 pages, exactly
+   * the ones that contain the string).
+   *
+   * But quoting can't be unconditional: for some terms — proper names especially
+   * — the query-side segmenter disagrees with the index-side one and the phrase
+   * matches nothing ("海德格尔" → 0 quoted, 7 unquoted). So the first time we see
+   * a term we probe it against our own Pagefind instance; if the quoted form is
+   * empty we remember to send it unquoted and re-run the UI's search.
+   *
+   * Latin queries are left alone — quoting them would silently turn every
+   * multi-word search into a phrase search.
+   */
+  const HAS_CJK = /[㐀-鿿぀-ヿ]/;
+  const termMode = new Map(); // term -> "quoted" | "raw"
+  let pfModule = null;
+  let ui = null;
+
+  // A second Pagefind instance, used only to test whether the quoted form of a
+  // term matches anything. Warmed at modal-open time: cold, its first query
+  // costs seconds (module + wasm + index chunks) and the correction lands long
+  // after the user has seen the wrong result count. Warm, probes run in ~15ms —
+  // inside PagefindUI's own debounce window, so the retry is invisible.
+  function warmProbeIndex() {
+    pfModule =
+      pfModule ||
+      import(`${HUB}/pagefind/pagefind.js`).then(async (pf) => {
+        // Must be a real query, and we must wait for it: on an instance whose
+        // index chunks haven't loaded, search() answers "0 results" in ~1ms.
+        // Probing against that state would cache a bogus verdict for the term.
+        try {
+          await pf.search("的");
+        } catch (e) {}
+        return pf;
+      });
+  }
+
+  // While a term is being probed, the UI may be showing the quoted search's
+  // "no results" — a verdict we're about to overturn. Hide that message until
+  // the probe lands so the fallback doesn't read as a flash of "未找到".
+  let probing = 0;
+  function markProbing(delta) {
+    probing = Math.max(0, probing + delta);
+    const el = modal.querySelector("#pagefind-search");
+    if (el) el.toggleAttribute("data-probing", probing > 0);
+  }
+
+  function probeTerm(term) {
+    termMode.set(term, "quoted"); // optimistic; corrected below if empty
+    warmProbeIndex();
+    markProbing(1);
+    // Never leave the message hidden if a probe hangs, or if the fallback
+    // search that follows one takes longer than this to render.
+    const safety = setTimeout(() => markProbing(-1), 3500);
+    let released = false;
+    const done = () => {
+      if (released) return;
+      released = true;
+      clearTimeout(safety);
+      markProbing(-1);
+    };
+    pfModule
+      .then((pf) => pf.search('"' + term + '"'))
+      .then((res) => {
+        // On the quoted-is-fine path the UI's own render is already correct, so
+        // stop hiding immediately. On the fallback path keep it hidden until the
+        // re-run renders — that gap is exactly the "未找到" flash we're avoiding.
+        if (res.results.length) return done();
+        termMode.set(term, "raw");
+        // Re-run the search now that processTerm will hand over the raw term.
+        // triggerSearch() writes a Svelte prop, so handing it the string the UI
+        // already holds is a no-op — it has to differ. A zero-width space does
+        // the job: invisible in the box, and processTerm strips it back out, so
+        // both the query and anything the user types next are unaffected.
+        const input = modal.querySelector('input[type="text"]');
+        const current = input ? cleanTerm(input.value) : term;
+        if (!ui || current !== term) return done();
+        ui.triggerSearch(term + "​");
+        // Take the sentinel back out of the box once the re-run has picked it
+        // up (no event — that would search again). Left in, the user's next
+        // backspace would delete an invisible char and appear to do nothing.
+        setTimeout(() => {
+          if (input && input.value !== cleanTerm(input.value)) {
+            input.value = cleanTerm(input.value);
+          }
+        }, 400);
+        // Reveal the count again the moment the re-run has replaced the zero
+        // message, rather than waiting out the safety timeout.
+        const root = modal.querySelector("#pagefind-search");
+        if (!root || !window.MutationObserver) return;
+        const obs = new MutationObserver(() => {
+          const m = root.querySelector(".pagefind-ui__message");
+          const txt = m ? m.textContent.trim() : "";
+          if (txt && txt !== T.zero) {
+            obs.disconnect();
+            done();
+          }
+        });
+        obs.observe(root, { childList: true, subtree: true, characterData: true });
+        setTimeout(() => obs.disconnect(), 3500);
+      })
+      .catch(() => {
+        done();
+        termMode.set(term, "raw");
+      });
+  }
+
+  function cleanTerm(term) {
+    return (term || "").replace(/​/g, "").trim();
+  }
+
+  function processTerm(term) {
+    const t = cleanTerm(term);
+    if (!t || !HAS_CJK.test(t)) return term;
+    const mode = termMode.get(t);
+    if (mode === "raw") return t;
+    if (!mode) probeTerm(t);
+    return '"' + t + '"';
+  }
+
   function initPagefind() {
     uiInitialized = true;
+    warmProbeIndex();
     const css = document.createElement("link");
     css.rel = "stylesheet";
     css.href = `${HUB}/pagefind/pagefind-ui.css`;
@@ -175,6 +300,7 @@
         --pagefind-ui-tag: ${dark ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.04)"};
       }
       #pagefind-search .pagefind-ui__result-link { color: ${dark ? "#00d4ff" : "#7b61ff"} !important; }
+      #pagefind-search[data-probing] .pagefind-ui__message { visibility: hidden; }
     `;
     document.head.appendChild(style);
 
@@ -182,11 +308,12 @@
     script.src = `${HUB}/pagefind/pagefind-ui.js`;
     script.onload = () => {
       try {
-        new PagefindUI({
+        ui = new PagefindUI({
           element: "#pagefind-search",
           showSubResults: true,
           pageSize: 5,
           bundlePath: `${HUB}/pagefind/`,
+          processTerm,
           // Thinking Hub debates are indexed via static snapshots under
           // /thinker-arena/search/<slug>.html (the live page renders client-side,
           // so Pagefind can't crawl it directly). Those snapshot files aren't
