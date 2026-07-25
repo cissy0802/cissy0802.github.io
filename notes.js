@@ -339,24 +339,60 @@
       if (document.querySelector('[data-note-id="' + n.id + '"]')) return;
       var range = locate(n);
       if (!range) return;
-      var mark = document.createElement('mark');
-      mark.className = 'bigcat-note-mark';
-      mark.setAttribute('data-note-id', n.id);
-      styleMark(mark, n.comment);
-      try {
-        range.surroundContents(mark);
-      } catch (e) {
-        return; // crosses element boundaries — leave the text untouched
-      }
-      mark.addEventListener('click', function (ev) {
-        // Only a plain tap opens the editor; dragging out a fresh selection
-        // that happens to start here should still make a new note.
-        if (String(window.getSelection())) return;
-        ev.preventDefault();
-        ev.stopPropagation();
-        openThought(mark, n.id);
+      var marks = wrapRange(range, n);
+      if (!marks.length) return;
+      marks.forEach(function (mark) {
+        mark.addEventListener('click', function (ev) {
+          // Only a plain tap opens the editor; dragging out a fresh selection
+          // that happens to start here should still make a new note.
+          if (String(window.getSelection())) return;
+          ev.preventDefault();
+          ev.stopPropagation();
+          openThought(mark, n.id);
+        });
       });
     });
+  }
+
+
+  // Underline a range that may cross element boundaries. surroundContents()
+  // throws on those, and most prose here has inline <strong>/<em> inside the
+  // sentence — so wrap each intersecting text node separately instead. One
+  // logical note can therefore own several <mark>s.
+  function wrapRange(range, note) {
+    var out = [];
+    var root = range.commonAncestorContainer;
+    if (root.nodeType === 3) root = root.parentNode;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (t) {
+        if (!t.nodeValue) return NodeFilter.FILTER_REJECT;
+        var p = t.parentNode.nodeName;
+        if (p === 'SCRIPT' || p === 'STYLE' || p === 'NOSCRIPT') return NodeFilter.FILTER_REJECT;
+        return range.intersectsNode(t) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      },
+    });
+    var nodes = [], t;
+    while ((t = walker.nextNode())) nodes.push(t);
+    nodes.forEach(function (node) {
+      var from = (node === range.startContainer) ? range.startOffset : 0;
+      var to = (node === range.endContainer) ? range.endOffset : node.nodeValue.length;
+      if (to <= from) return;
+      var r = document.createRange();
+      try {
+        r.setStart(node, from);
+        r.setEnd(node, to);
+      } catch (e) { return; }
+      if (!r.toString().trim()) return;
+      var mark = document.createElement('mark');
+      mark.className = 'bigcat-note-mark';
+      mark.setAttribute('data-note-id', note.id);
+      styleMark(mark, note.comment);
+      try {
+        r.surroundContents(mark); // single text node — always safe
+        out.push(mark);
+      } catch (e) {}
+    });
+    return out;
   }
 
   // A passage that carries a thought gets a solid underline; a bare highlight
@@ -369,6 +405,10 @@
   }
 
   // ---------- inline thought editor on a highlight -------------------------
+
+  function marksOf(id) {
+    return [].slice.call(document.querySelectorAll('mark.bigcat-note-mark[data-note-id="' + id + '"]'));
+  }
 
   var openEditor = null;
   function closeThought() {
@@ -430,14 +470,14 @@
       var v = ta.value.trim();
       note.comment = v;
       window.BigCatNotes.setComment(id, v);
-      styleMark(mark, v);
+      marksOf(id).forEach(function (m) { styleMark(m, v); });
       closeThought();
     });
     cancel.addEventListener('click', closeThought);
     del.addEventListener('click', function () {
       if (!window.confirm(T.delConfirm)) return;
       window.BigCatNotes.remove(id);
-      mark.replaceWith.apply(mark, mark.childNodes); // unwrap, leaving the text
+      marksOf(id).forEach(function (m) { m.replaceWith.apply(m, m.childNodes); });
       closeThought();
     });
     bar.appendChild(save); bar.appendChild(cancel); bar.appendChild(del);
