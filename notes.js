@@ -96,8 +96,12 @@
   var isEn = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0
     || /\.en\.html$/i.test(location.pathname);
   var T = isEn
-    ? { add: '＋ Note', saved: '✓ Saved', queued: '✓ Saved (offline)', login: 'Log in to save notes' }
-    : { add: '＋ 笔记', saved: '✓ 已保存', queued: '✓ 已保存（离线）', login: '登录后即可保存笔记' };
+    ? { add: '＋ Note', saved: '✓ Saved', queued: '✓ Saved (offline)', login: 'Log in to save notes',
+        thoughtPh: 'Your thought on this passage…', save: 'Save', cancel: 'Cancel',
+        del: 'Delete', delConfirm: 'Delete this highlight?', tapToWrite: 'Tap to write a thought' }
+    : { add: '＋ 笔记', saved: '✓ 已保存', queued: '✓ 已保存（离线）', login: '登录后即可保存笔记',
+        thoughtPh: '写下你对这段的感想…', save: '保存', cancel: '取消',
+        del: '删除', delConfirm: '删除这条划线？', tapToWrite: '点击写感想' };
 
   // ---------- sync ---------------------------------------------------------
 
@@ -307,16 +311,111 @@
       var mark = document.createElement('mark');
       mark.className = 'bigcat-note-mark';
       mark.setAttribute('data-note-id', n.id);
-      mark.style.cssText =
-        'background:none;color:inherit;padding:0;' +
-        'border-bottom:2px solid rgba(255,214,102,.75);cursor:pointer;';
-      mark.title = n.comment ? n.comment : (isEn ? 'Saved note' : '已保存的笔记');
+      styleMark(mark, n.comment);
       try {
         range.surroundContents(mark);
       } catch (e) {
         return; // crosses element boundaries — leave the text untouched
       }
+      mark.addEventListener('click', function (ev) {
+        // Only a plain tap opens the editor; dragging out a fresh selection
+        // that happens to start here should still make a new note.
+        if (String(window.getSelection())) return;
+        ev.preventDefault();
+        ev.stopPropagation();
+        openThought(mark, n.id);
+      });
     });
+  }
+
+  // A passage that carries a thought gets a solid underline; a bare highlight
+  // a dotted one — so you can see at a glance where you've written something.
+  function styleMark(mark, comment) {
+    mark.style.cssText =
+      'background:none;color:inherit;padding:0;cursor:pointer;' +
+      'border-bottom:2px ' + (comment ? 'solid' : 'dotted') + ' rgba(255,214,102,.85);';
+    mark.title = comment || T.tapToWrite;
+  }
+
+  // ---------- inline thought editor on a highlight -------------------------
+
+  var openEditor = null;
+  function closeThought() {
+    if (openEditor) { openEditor.remove(); openEditor = null; }
+  }
+  document.addEventListener('click', function () { closeThought(); });
+
+  function openThought(mark, id) {
+    closeThought();
+    var all = readJSON(QUEUE_KEY, []).concat(readJSON(CACHE_KEY, []));
+    var note = all.filter(function (n) { return n.id === id; })[0];
+    if (!note) return;
+
+    var box = document.createElement('div');
+    box.id = 'note-thought-editor';
+    box.style.cssText =
+      'position:absolute;z-index:10001;width:min(320px,calc(100vw - 24px));' +
+      'padding:12px;border-radius:12px;background:#1e1e32;color:#e4e6eb;' +
+      'border:1px solid rgba(255,255,255,.14);box-shadow:0 8px 28px rgba(0,0,0,.45);' +
+      'font:400 14px -apple-system,sans-serif;';
+    box.addEventListener('click', function (e) { e.stopPropagation(); });
+
+    var quote = document.createElement('div');
+    quote.textContent = note.text;
+    quote.style.cssText =
+      'font-size:12px;color:#a0a8c0;border-left:2px solid rgba(255,214,102,.7);' +
+      'padding-left:8px;margin-bottom:9px;max-height:56px;overflow:hidden;';
+    box.appendChild(quote);
+
+    var ta = document.createElement('textarea');
+    ta.value = note.comment || '';
+    ta.placeholder = T.thoughtPh;
+    ta.style.cssText =
+      'width:100%;min-height:76px;padding:8px 10px;border-radius:8px;' +
+      'border:1px solid rgba(123,97,255,.45);background:rgba(0,0,0,.25);color:#e4e6eb;' +
+      'font:inherit;line-height:1.6;resize:vertical;';
+    box.appendChild(ta);
+
+    var bar = document.createElement('div');
+    bar.style.cssText = 'margin-top:9px;display:flex;gap:8px;align-items:center';
+    function mk(label, css) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = label;
+      b.style.cssText = 'padding:5px 12px;border-radius:8px;font:inherit;font-size:13px;cursor:pointer;' + css;
+      return b;
+    }
+    var save = mk(T.save, 'background:#7b61ff;color:#fff;border:1px solid #7b61ff;');
+    var cancel = mk(T.cancel, 'background:rgba(255,255,255,.06);color:#a0a8c0;border:1px solid rgba(255,255,255,.14);');
+    var del = mk(T.del, 'margin-left:auto;background:none;color:#ff8a8a;border:1px solid rgba(255,107,107,.35);');
+
+    save.addEventListener('click', function () {
+      var v = ta.value.trim();
+      note.comment = v;
+      window.BigCatNotes.setComment(id, v);
+      styleMark(mark, v);
+      closeThought();
+    });
+    cancel.addEventListener('click', closeThought);
+    del.addEventListener('click', function () {
+      if (!window.confirm(T.delConfirm)) return;
+      window.BigCatNotes.remove(id);
+      mark.replaceWith.apply(mark, mark.childNodes); // unwrap, leaving the text
+      closeThought();
+    });
+    bar.appendChild(save); bar.appendChild(cancel); bar.appendChild(del);
+    box.appendChild(bar);
+
+    document.body.appendChild(box);
+    // Below the passage when there's room, above it otherwise.
+    var r = mark.getBoundingClientRect();
+    var h = box.offsetHeight, w = box.offsetWidth;
+    var top = (r.bottom + 8 + h <= window.innerHeight) ? r.bottom + 8 : r.top - h - 8;
+    var left = Math.max(10, Math.min(r.left, window.innerWidth - w - 10));
+    box.style.top = (window.scrollY + top) + 'px';
+    box.style.left = (window.scrollX + left) + 'px';
+    openEditor = box;
+    ta.focus();
   }
 
   // Re-locating walks every text node, so coalesce bursts (e.g. save + sync).

@@ -39,6 +39,21 @@ self.addEventListener('activate', (e) => {
   e.waitUntil(
     caches.keys()
       .then((keys) => Promise.all(keys.filter((k) => !keep.has(k)).map((k) => caches.delete(k))))
+      // Downloading a page for offline also stored its <script> tags, so an old
+      // copy of a shared script can sit in the content cache long after the
+      // origin has a newer one. Scripts are re-fetched from the network anyway
+      // (see the JS/CSS rule below), so drop them here — otherwise a device
+      // that had downloaded articles keeps running yesterday's code offline.
+      .then(() => caches.open(CONTENT))
+      .then((c) =>
+        c.keys().then((reqs) =>
+          Promise.all(
+            reqs
+              .filter((r) => /\.(js|css)$/.test(new URL(r.url).pathname))
+              .map((r) => c.delete(r))
+          )
+        )
+      )
       .then(() => self.clients.claim())
   );
 });
