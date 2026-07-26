@@ -22,6 +22,7 @@ Needs: pip install boto3 requests
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import re
 import subprocess
@@ -53,35 +54,48 @@ def client():
 
 
 def referenced_hashes(repo: Path) -> set[str]:
-    """Every segment hash the repo's pages actually ask for.
+    """Every segment hash the repo actually asks for.
 
-    Split-mode pages carry data-tts; legacy full-mode pages carry
-    data-tts-zh / data-tts-en on the same page.
+    Two reference models exist. Most repos put the hash on the element:
+    split-mode pages carry data-tts, legacy full-mode pages carry
+    data-tts-zh / data-tts-en on the same page. thinker-arena instead renders
+    its debates client-side from JSON and reads audio/debate/<slug>/manifest.json
+    at runtime, so its hashes are only ever named there.
     """
     refs = set()
     for p in repo.glob("*.html"):
         html = p.read_text(encoding="utf-8", errors="replace")
         refs |= set(re.findall(r'data-tts(?:-(?:zh|en))?="([0-9a-f]{16})"', html))
+    for m in (repo / "audio").rglob("manifest.json"):
+        try:
+            data = json.loads(m.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        for v in data.values() if isinstance(data, dict) else []:
+            path = (v or {}).get("audio") if isinstance(v, dict) else None
+            if path:
+                refs.add(Path(path).stem)
     return refs
 
 
 def local_mp3s(repo: Path, referenced_only: bool = False) -> list[tuple[str, Path]]:
     """[(bucket key, file), ...] for every MP3 under the repo's audio/.
 
+    The key keeps the repo's own layout under audio/ verbatim, at whatever
+    depth: audio/zh/x.mp3 for most repos, audio/debate/<slug>/x.mp3 for
+    thinker-arena, which bakes a different voice per speaker per debate.
+
     A repo accumulates dead segments: when a page's text changes the hash
     changes, and the old MP3 is left behind. mental-models was 56% dead by
     size. referenced_only skips those instead of paying to store them.
     """
     refs = referenced_hashes(repo) if referenced_only else None
+    root = repo / "audio"
     out = []
-    for lang in ("zh", "en"):
-        d = repo / "audio" / lang
-        if not d.is_dir():
+    for f in sorted(root.rglob("*.mp3")):
+        if refs is not None and f.stem not in refs:
             continue
-        for f in sorted(d.glob("*.mp3")):
-            if refs is not None and f.stem not in refs:
-                continue
-            out.append((f"{repo.name}/{lang}/{f.name}", f))
+        out.append((f"{repo.name}/{f.relative_to(root).as_posix()}", f))
     return out
 
 

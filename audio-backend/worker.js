@@ -6,11 +6,17 @@
  * workers.dev needs no DNS change and lets us set CORS + cache headers, which
  * the PWA requires (an opaque cross-origin response cannot be cache.put()).
  *
- * URL shape:  /<repo>/<lang>/<sha1-16>.mp3
+ * URL shape:  /<repo>/<one to three slug segments>/<sha1-16>.mp3
  * e.g.        /personal-finance/zh/6b1e3a0f9c2d4e77.mp3
+ *             /thinker-arena/debate/acceptable-inequality/2ede2d003c11e8ce.mp3
  *
- * Keys are content-addressed (sha1 of the narration text), so a given URL's
- * bytes never change — everything is immutable and cached hard.
+ * The middle is the repo's own path under audio/, kept verbatim. Most repos
+ * split by language; thinker-arena splits per debate because each one bakes a
+ * different voice per speaker.
+ *
+ * Keys are content-addressed (sha1 of the narration text, plus voice and pitch
+ * where those vary), so a given URL's bytes never change — everything is
+ * immutable and cached hard.
  *
  * Deploy from THIS directory, never the repo root:
  *   cd audio-backend && npx wrangler deploy
@@ -27,9 +33,10 @@ const ALLOWED_ORIGINS = new Set([
   'http://127.0.0.1:8001',
 ]);
 
-// /<repo>/<lang>/<hash>.mp3 — anchored so a request can't walk out of the
-// bucket layout or probe for other objects.
-const KEY_RE = /^\/([a-z0-9][a-z0-9-]{0,48})\/(zh|en)\/([0-9a-f]{16})\.mp3$/;
+// /<repo>/<segment>[/<segment>[/<segment>]]/<hash>.mp3 — anchored, and each
+// segment is a bare slug, so a dot (and therefore "..") can never appear in a
+// key and a request can't walk out of the bucket layout or probe other objects.
+const KEY_RE = /^\/([a-z0-9][a-z0-9-]{0,48})\/((?:[a-z0-9][a-z0-9-]{0,63}\/){1,3})([0-9a-f]{16})\.mp3$/;
 
 function corsHeaders(req) {
   const origin = req.headers.get('Origin');
@@ -45,6 +52,10 @@ function corsHeaders(req) {
 function deny(req, status, msg) {
   const h = corsHeaders(req);
   h.set('Content-Type', 'text/plain; charset=utf-8');
+  // Never let a failure be cached. An earlier version answered 412 while still
+  // carrying the success path's immutable max-age, so a browser could hold onto
+  // the error for a year after the bug behind it was fixed.
+  h.set('Cache-Control', 'no-store');
   return new Response(msg + '\n', { status, headers: h });
 }
 
@@ -63,7 +74,8 @@ export default {
     const url = new URL(req.url);
     const m = KEY_RE.exec(url.pathname);
     if (!m) return deny(req, 404, 'Not found');
-    const key = `${m[1]}/${m[2]}/${m[3]}.mp3`;
+    // m[2] already carries its trailing slash, however many segments deep.
+    const key = `${m[1]}/${m[2]}${m[3]}.mp3`;
 
     const range = req.headers.get('Range');
     const cache = caches.default;
@@ -80,9 +92,16 @@ export default {
       }
     }
 
+    // Deliberately no `onlyIf: req.headers`. That hands R2 every conditional
+    // header the browser sent, and a browser revalidating a cached MP3 sends
+    // If-Modified-Since, not If-None-Match — R2 then answers "not modified" by
+    // returning the object with a null body, which is impossible to tell apart
+    // from a real precondition failure. Answering 412 to that broke playback for
+    // exactly the clients that had heard the file before, while plain curl,
+    // which sends no validators, worked fine. Range still goes to R2: that is a
+    // byte selector, not a precondition, and it is what makes seeking work.
     const obj = await env.AUDIO.get(key, {
       range: range ? req.headers : undefined,
-      onlyIf: req.headers,
     });
     if (!obj) return deny(req, 404, 'Not found');
 
@@ -94,13 +113,12 @@ export default {
     // Content-addressed: the bytes behind a URL never change.
     h.set('Cache-Control', 'public, max-age=31536000, immutable');
 
-    // onlyIf failed → R2 hands back metadata with no body. A stale-validator
-    // miss on If-None-Match is a 304; anything else (If-Match, If-Unmodified-
-    // Since) is a precondition failure.
-    if (!obj.body) {
-      const inm = req.headers.get('If-None-Match');
-      const fresh = inm && (inm === '*' || inm.split(',').some((t) => t.trim() === obj.httpEtag));
-      return new Response(null, { status: fresh ? 304 : 412, headers: h });
+    // Revalidation, handled here rather than by R2 so only ETag can ever cause a
+    // bodyless answer. Anything else (If-Modified-Since, If-Match and friends)
+    // just gets the audio — a wasted read beats a wrong 412.
+    const inm = req.headers.get('If-None-Match');
+    if (inm && (inm === '*' || inm.split(',').some((t) => t.trim() === obj.httpEtag))) {
+      return new Response(null, { status: 304, headers: h });
     }
 
     // Base the status on what the CLIENT asked for: R2 reports a range on the
