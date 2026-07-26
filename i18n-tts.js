@@ -34,14 +34,17 @@
   const R2_AUDIO_ORIGIN = 'https://bigcat-audio.cissychen.workers.dev';
   const R2_AUDIO_REPOS = {
     'ai-ml': 1,
+    'art-aesthetics': 1,
     'biographies': 1,
     'book-recommendations': 1,
     'buddhism': 1,
     'chapter-deepread': 1,
+    'civics-geopolitics': 1,
     'complexity-science': 1,
     'cs-papers-deepread': 1,
     'deep-reading': 1,
     'deep-research': 1,
+    'family-craft': 1,
     'health-longevity': 1,
     'history': 1,
     'investing': 1,
