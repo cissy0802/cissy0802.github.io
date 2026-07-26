@@ -32,7 +32,37 @@
   //   offline.js   R2_AUDIO_*  offline download
   //   sw.js        AUDIO_ORIGIN  lets the cross-origin MP3 reach the cache
   const R2_AUDIO_ORIGIN = 'https://bigcat-audio.cissychen.workers.dev';
-  const R2_AUDIO_REPOS = { 'personal-finance': 1, 'mental-models': 1, 'leadership': 1, 'ai-ml': 1, 'philosophy': 1, 'novel-deepread': 1 };
+  const R2_AUDIO_REPOS = {
+    'ai-ml': 1,
+    'biographies': 1,
+    'book-recommendations': 1,
+    'buddhism': 1,
+    'chapter-deepread': 1,
+    'complexity-science': 1,
+    'cs-papers-deepread': 1,
+    'deep-reading': 1,
+    'deep-research': 1,
+    'health-longevity': 1,
+    'history': 1,
+    'investing': 1,
+    'leadership': 1,
+    'mathematics': 1,
+    'mental-models': 1,
+    'meta-knowledge': 1,
+    'neuroscience': 1,
+    'novel-deepread': 1,
+    'parenting': 1,
+    'personal-finance': 1,
+    'philosophy': 1,
+    'physics': 1,
+    'psychology': 1,
+    'sales': 1,
+    'super-individual': 1,
+    'synthesis': 1,
+    'system-design': 1,
+    'world-religions': 1,
+    'writing': 1,
+  };
 
   // First path segment = repo slug ("/personal-finance/foo.html" → "personal-finance").
   function repoSlugOf(pathname) {
