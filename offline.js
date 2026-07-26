@@ -35,7 +35,7 @@
   // Worker) for migrated ones. Mirror of the block in i18n-tts.js — keep the
   // two lists and sw.js's AUDIO_ORIGIN in sync when migrating a repo.
   var R2_AUDIO_ORIGIN = 'https://bigcat-audio.cissychen.workers.dev';
-  var R2_AUDIO_REPOS = { 'personal-finance': 1, 'mental-models': 1, 'leadership': 1, 'ai-ml': 1, 'philosophy': 1 };
+  var R2_AUDIO_REPOS = { 'personal-finance': 1, 'mental-models': 1, 'leadership': 1, 'ai-ml': 1, 'philosophy': 1, 'novel-deepread': 1 };
 
   function repoSlugOf(pathname) {
     var m = /^\/([^/]+)\//.exec(pathname);
