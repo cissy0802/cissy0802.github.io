@@ -26,7 +26,7 @@ jobs:
           mkdir -p _src
           for repo in \
             mental-models meta-knowledge \
-            super-individual ai-ml system-design cs-papers-deepread chapter-deepread \
+            super-individual ai-ml system-design cs-papers-deepread chapter-deepread novel-deepread \
             leadership writing sales \
             health-longevity parenting psychology family-craft \
             philosophy buddhism art-aesthetics biographies \

@@ -55,6 +55,7 @@
     'system-design': { emoji: '🏗️', zh: 'System Design', en: 'System Design' },
     'cs-papers-deepread': { emoji: '📄', zh: 'IT 论文精读', en: 'CS Papers' },
     'chapter-deepread': { emoji: '📚', zh: '专业书籍精读', en: 'CS Books' },
+    'novel-deepread': { emoji: '📕', zh: '小说精读', en: 'Novels' },
     'leadership': { emoji: '🎯', zh: '领导力实践', en: 'Leadership' },
     'sales': { emoji: '🤝', zh: '销售实战', en: 'Sales' },
     'writing': { emoji: '✍️', zh: '写作与表达', en: 'Writing' },

@@ -115,6 +115,10 @@ CARDS = [
      "每天精读一本好书——把它反复在讲的几个核心概念彻底讲透，读完这页≈读完原书。",
      "One book a day, read closely — the few core concepts it keeps circling, made clear; read this page instead of the whole book.",
      "deep-reading", "humanities"),
+    ("novel", "📕", "小说精读", "Novels",
+     "把故事讲成故事，然后一起想——一部小说一页，全剧透复述、伏笔在行文里回收，再摊开它逼你想的两难。选题是三家 AI 合出的必读小说 Top 100。",
+     "The story told whole, then the hard questions — one novel per page: a full-spoiler retelling with its foreshadowing paid off in the prose, then the dilemmas it forces on you. Reading list merged from three AI top-100s.",
+     "novel-deepread", "humanities"),
     # 探索 · Explore
     ("math", "📐", "数学之美", "Mathematics",
      "概率、微积分、线代、拓扑、信息论——数学之美与跨学科的优雅工具。",
@@ -179,6 +183,7 @@ CSS_VARS = {
     "meta":       ("#52b788", "linear-gradient(90deg,#e85a4f,#f7a072,#52b788,#3a86ff)"),
     "book":       ("#a87a3e", "#6b4423"),
     "deepread":   ("#3f8b7f", "#2f5d57"),
+    "novel":      ("#c88cf0", "#f0a868"),
     "csbooks":    ("#4a90b0", "#2f6480"),
     "sysd":       ("#64c8ff", "#5eead4"),
     "papers":     ("#f0b429", "#e8794b"),
