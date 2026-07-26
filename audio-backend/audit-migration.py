@@ -28,8 +28,10 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 import re
 import subprocess
+import time
 import sys
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -55,21 +57,33 @@ def git(repo: Path, *args) -> str:
                           capture_output=True, text=True).stdout
 
 
-def page_hashes(repo: Path) -> dict[str, set[str]]:
-    """{lang: {hash}} for every segment any page references.
+def referenced_paths(repo: Path) -> set[str]:
+    """Every segment this repo asks for, as its path under audio/.
 
-    Split-mode pages carry data-tts and take their language from the filename;
-    legacy full-mode pages carry data-tts-zh / data-tts-en on one page.
+    Returned as paths rather than hashes so all three layouts share one code
+    path: "zh/<hash>.mp3" for split-mode pages (language from the filename),
+    the same for legacy full-mode pages carrying data-tts-zh/-en, and
+    "debate/<slug>/<hash>.mp3" for thinker-arena, whose debates render
+    client-side and name their audio only in a per-debate manifest.
     """
-    out = {"zh": set(), "en": set()}
+    out = set()
     for p in sorted(repo.glob("*.html")):
         html = p.read_text(encoding="utf-8", errors="replace")
         lang = "en" if p.name.endswith(".en.html") else "zh"
         for h in re.findall(r'data-tts="([0-9a-f]{16})"', html):
-            out[lang].add(h)
+            out.add(f"{lang}/{h}.mp3")
         for lg in ("zh", "en"):
             for h in re.findall(rf'data-tts-{lg}="([0-9a-f]{{16}})"', html):
-                out[lg].add(h)
+                out.add(f"{lg}/{h}.mp3")
+    for m in sorted((repo / "audio").rglob("manifest.json")):
+        try:
+            data = json.loads(m.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        for v in (data.values() if isinstance(data, dict) else []):
+            a = (v or {}).get("audio") if isinstance(v, dict) else None
+            if a and a.startswith("audio/"):
+                out.add(a[len("audio/"):])
     return out
 
 
@@ -85,22 +99,29 @@ def blob_from_history(repo: Path, path: str) -> bytes | None:
     return None
 
 
-def check_serves(repo: Path, refs: dict[str, set[str]], full: bool) -> None:
-    items = [(lg, h) for lg in ("zh", "en") for h in sorted(refs[lg])]
+def check_serves(repo: Path, refs: set[str], full: bool) -> None:
+    items = sorted(refs)
     if not items:
-        record("SERVES", False, "no data-tts hashes found in any page — suspicious")
+        record("SERVES", False, "nothing references any audio — suspicious")
         return
     probe = items if full else items[:: max(1, len(items) // 60)][:60]
 
-    def one(it):
-        lg, h = it
-        try:
-            r = requests.get(f"{WORKER}/{repo.name}/{lg}/{h}.mp3", timeout=45)
+    def one(rel):
+        last = ""
+        for attempt in range(3):
+            try:
+                r = requests.get(f"{WORKER}/{repo.name}/{rel}", timeout=45)
+            except Exception as e:
+                last = f"transport: {str(e)[:60]}"
+                time.sleep(1 + attempt)
+                continue
             ok = (r.status_code == 200 and "audio" in r.headers.get("Content-Type", "")
                   and len(r.content) > 1000)
-            return (lg, h, ok, f"status={r.status_code} bytes={len(r.content)}")
-        except Exception as e:
-            return (lg, h, False, str(e)[:60])
+            if ok:
+                return (rel, True, "")
+            last = f"status={r.status_code} bytes={len(r.content)}"
+            time.sleep(1 + attempt)
+        return (rel, False, last)
 
     with ThreadPoolExecutor(max_workers=12) as pool:
         got = list(pool.map(one, probe))
@@ -112,20 +133,20 @@ def check_serves(repo: Path, refs: dict[str, set[str]], full: bool) -> None:
     # before the move. Calling that a regression trains you to ignore the
     # check; it has to be separated from a segment we actually lost.
     lost, never = [], []
-    for lg, h, ok, why in got:
+    for rel, ok, why in got:
         if ok:
             continue
-        (never if blob_from_history(repo, f"audio/{lg}/{h}.mp3") is None else lost).append(
-            (lg, h, why))
-    for lg, h, why in lost[:5]:
-        print(f"        LOST {lg}/{h}: {why}")
+        (never if blob_from_history(repo, f"audio/{rel}") is None else lost).append((rel, why))
+    for rel, why in lost[:5]:
+        print(f"        LOST {rel}: {why}")
     record("SERVES", not lost,
            f"{len(got)-len(lost)-len(never)}/{len(got)} referenced segments play, "
            f"{len(lost)} lost in migration "
            f"({len(items)} total referenced{'' if full else ', sampled'})")
     if never:
         by_lang = {}
-        for lg, h, _ in never:
+        for rel, _ in never:
+            lg = rel.split("/")[0]
             by_lang[lg] = by_lang.get(lg, 0) + 1
         record("SERVES/pre-existing", True,
                f"{len(never)} referenced segments were never baked at all "
@@ -133,7 +154,7 @@ def check_serves(repo: Path, refs: dict[str, set[str]], full: bool) -> None:
                f"they 404'd before the migration too, player falls back to Web Speech")
 
 
-def check_lossless(repo: Path, refs: dict[str, set[str]], full: bool) -> None:
+def check_lossless(repo: Path, refs: set[str], full: bool) -> None:
     """Compare R2 against the original blobs in git history.
 
     Scoped to hashes the pages actually reference. Auditing every MP3 ever
@@ -141,28 +162,39 @@ def check_lossless(repo: Path, refs: dict[str, set[str]], full: bool) -> None:
     deletes the old hash, and that file SHOULD be absent from R2 — it is dead
     weight no page can reach. Only what a reader can request has to match.
     """
-    items = [(lg, h) for lg in ("zh", "en") for h in sorted(refs[lg])]
+    items = sorted(refs)
     if not items:
         record("LOSSLESS", False, "no referenced hashes to compare")
         return
     probe = items if full else items[:: max(1, len(items) // 40)][:40]
 
-    def one(it):
-        lg, h = it
-        path = f"audio/{lg}/{h}.mp3"
+    def one(rel):
+        path = f"audio/{rel}"
         blob = blob_from_history(repo, path)
         if blob is None:
             # Baked straight into R2 after the migration, so it was never in
             # git. Nothing to compare against — SERVES already covers it.
             return path, None, "never in git (baked post-migration)"
-        try:
-            r = requests.get(f"{WORKER}/{repo.name}/{lg}/{h}.mp3", timeout=45)
-        except Exception as e:
-            return path, False, str(e)[:50]
-        if r.status_code != 200:
-            return path, False, f"worker status={r.status_code}"
-        same = hashlib.sha256(blob).hexdigest() == hashlib.sha256(r.content).hexdigest()
-        return path, same, f"git={len(blob)}B r2={len(r.content)}B"
+        # Retry transport failures only. Over ~12k objects a dropped connection
+        # is close to certain, and reporting one as a hash mismatch turns this
+        # check — the whole reason to audit before erasing history — into
+        # something you learn to wave away. A response that arrives and differs
+        # is never retried.
+        last = ""
+        for attempt in range(3):
+            try:
+                r = requests.get(f"{WORKER}/{repo.name}/{rel}", timeout=45)
+            except Exception as e:
+                last = f"transport: {str(e)[:60]}"
+                time.sleep(1 + attempt)
+                continue
+            if r.status_code != 200:
+                last = f"worker status={r.status_code}"
+                time.sleep(1 + attempt)
+                continue
+            same = hashlib.sha256(blob).hexdigest() == hashlib.sha256(r.content).hexdigest()
+            return path, same, f"git={len(blob)}B r2={len(r.content)}B"
+        return path, False, last
 
     with ThreadPoolExecutor(max_workers=10) as pool:
         got = list(pool.map(one, probe))
@@ -177,19 +209,29 @@ def check_lossless(repo: Path, refs: dict[str, set[str]], full: bool) -> None:
            + (f" ({len(skipped)} baked after the migration, never in git)" if skipped else ""))
 
 
-def check_untracked(repo: Path, refs: dict[str, set[str]]) -> None:
+def check_untracked(repo: Path, refs: set[str]) -> None:
     tracked = [f for f in git(repo, "ls-files", "audio").split() if f.endswith(".mp3")]
     record("UNTRACKED/git", not tracked, f"{len(tracked)} MP3s still tracked by git")
-    sample = next(iter(sorted(refs["zh"]) or sorted(refs["en"])), None)
+    sample = next(iter(sorted(refs)), None)
     if not sample:
         return
-    lang = "zh" if sample in refs["zh"] else "en"
-    r = requests.get(f"{HUB}/{repo.name}/audio/{lang}/{sample}.mp3", headers=UA, timeout=30)
+    r = requests.get(f"{HUB}/{repo.name}/audio/{sample}", headers=UA, timeout=30)
     record("UNTRACKED/pages", r.status_code == 404,
-           f"Pages returns {r.status_code} for audio/{lang}/{sample}.mp3 (want 404)")
+           f"Pages returns {r.status_code} for audio/{sample} (want 404)")
 
 
 def check_routed(repo: Path) -> None:
+    # thinker-arena carries no data-tts and is deliberately absent from the
+    # shared tables — its app.js rewrites manifest paths instead.
+    if (repo / "app.js").exists() and not list(repo.glob("*.html"))[:1] or repo.name == "thinker-arena":
+        js = requests.get(f"{HUB}/{repo.name}/app.js", headers={**UA, "Cache-Control": "no-cache"},
+                          timeout=30).text
+        record("ROUTED/app.js", WORKER in js,
+               "app.js rewrites manifest paths to the Worker" if WORKER in js
+               else "app.js does NOT point at the Worker")
+        sw = requests.get(f"{HUB}/sw.js", headers={**UA, "Cache-Control": "no-cache"}, timeout=30).text
+        record("ROUTED/sw.js", WORKER in sw, "audio origin exempted in sw.js")
+        return
     for name in ("i18n-tts.js", "offline.js"):
         try:
             js = requests.get(f"{HUB}/{name}", headers={**UA, "Cache-Control": "no-cache"},
@@ -229,7 +271,7 @@ def main():
         sys.exit(f"ERROR: {repo} is not a git repo")
 
     print(f"\nAuditing {repo.name}{' (full)' if args.full else ''}\n")
-    refs = page_hashes(repo)
+    refs = referenced_paths(repo)
     check_serves(repo, refs, args.full)
     check_lossless(repo, refs, args.full)
     check_untracked(repo, refs)
