@@ -183,12 +183,19 @@
   const HAS_CJK = /[㐀-鿿぀-ヿ]/;
   const termMode = new Map(); // term -> "quoted" | "bigram" | "raw"
 
-  // Overlapping 2-char windows over each CJK run: 现象学 -> "现象 象学".
-  // Mirrors the build's shadow text; the two must stay in step.
+  // Overlapping 2-char windows over each CJK run, encoded exactly as the build
+  // encodes them: 现象学 -> "bg73b0象... " i.e. one opaque ASCII word per pair.
+  // They are NOT sent as Chinese: Pagefind's segmenter re-segments CJK shadow
+  // text and dissolves the pairs into mostly single-char tokens, which put
+  // 贝叶斯 at 75 results against the 24 pages that contain it. Hex codepoints
+  // are a single Latin term to the tokenizer. Keep in step with the build.
+  const hex = (c) => c.charCodeAt(0).toString(16).padStart(4, "0");
   function bigrams(term) {
     const out = [];
     (term.match(/[㐀-鿿]{2,}/g) || []).forEach((run) => {
-      for (let i = 0; i < run.length - 1; i++) out.push(run.slice(i, i + 2));
+      for (let i = 0; i < run.length - 1; i++) {
+        out.push("bg" + hex(run[i]) + hex(run[i + 1]));
+      }
     });
     return out.length ? out.join(" ") : term;
   }
@@ -220,7 +227,7 @@
           // LLM-serving article, and that single stray hit is enough to turn the
           // tier on. The real marker sits on every CJK page, so it lands in the
           // hundreds.
-          hasBigrams = (await pf.search('"pfbigramv1"')).results.length > 1;
+          hasBigrams = (await pf.search('"pfbigramv2"')).results.length > 1;
         } catch (e) {}
         return pf;
       });
@@ -305,17 +312,17 @@
 
   /* A bigram-mode hit matches inside the build's hidden shadow block, and
    * Pagefind builds excerpts from wherever the match is — so the snippet comes
-   * back as "续地 地捏 捏成 成一 一个 个甜 甜甜 甜圈". Detect that shape and show
-   * the head of the real prose instead. Costs the <mark> highlighting on those
-   * results, which is a fair trade against unreadable output.
+   * back as a run of "bg8d1d53f6" tokens. Detect that shape and show the head
+   * of the real prose instead. Costs the <mark> highlighting on those results,
+   * which is a fair trade against unreadable output.
    */
-  const SOUP = /(?:[㐀-鿿]{2}[ \t]+){3,}/;
+  const SOUP = /(?:bg[0-9a-f]{8}\s+){3,}/;
   function deSoup(result) {
     const strip = (s) => (s || "").replace(/<[^>]+>/g, "");
     const fix = (obj) => {
       if (!obj || !SOUP.test(strip(obj.excerpt))) return;
       const prose = strip(result.content)
-        .replace(/(?:[㐀-鿿]{2}[ \t]+){3,}[㐀-鿿]{0,2}/g, " ")
+        .replace(/(?:\bbg[0-9a-f]{8}\s*)+/g, " ")
         .replace(/\s+/g, " ")
         .trim();
       if (prose) obj.excerpt = prose.slice(0, 180) + (prose.length > 180 ? "…" : "");

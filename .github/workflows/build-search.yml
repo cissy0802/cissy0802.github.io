@@ -88,6 +88,17 @@ jobs:
           import glob, re
           RUN = re.compile(r'[\u4e00-\u9fff]{2,}')
           VISIBLE = re.compile(r'>([^<]+)<')
+
+          def enc(a, b):
+              # Bigrams are emitted as opaque ASCII, NOT as the CJK pair itself.
+              # Written as Chinese, Pagefind's segmenter re-segments the shadow
+              # text and dissolves the pairs back into (mostly single-char)
+              # tokens: "贝叶斯" then matched 75 pages against 24 that contain it,
+              # and '"叶斯"' matched 50 — incoherent for a supposedly atomic
+              # token. Hex codepoints are one Latin word to the tokenizer, so a
+              # bigram stays exactly one term. search.js encodes queries the same.
+              return 'bg%04x%04x' % (ord(a), ord(b))
+
           n = 0
           for f in glob.glob('_src/**/*.html', recursive=True):
               try:
@@ -97,14 +108,16 @@ jobs:
               grams = []
               for m in VISIBLE.finditer(s):
                   for run in RUN.findall(m.group(1)):
-                      grams.append(' '.join(run[i:i + 2] for i in range(len(run) - 1)))
+                      grams.append(' '.join(enc(run[i], run[i + 1])
+                                            for i in range(len(run) - 1)))
               if not grams:
                   continue
               # Marker so the client can tell whether the index it's talking to
-              # actually has shadow text — the bigram query tier is wrong against
-              # an index built without it (it matches stray word tokens and
-              # short-circuits the raw tier). Bump the version if the scheme changes.
-              shadow = ('<div style="display:none">pfbigramv1 '
+              # carries shadow text in the scheme it speaks — the bigram tier is
+              # wrong against an index without it. Bump the version whenever the
+              # encoding changes, so a cached client and a new index can't
+              # half-agree.
+              shadow = ('<div style="display:none">pfbigramv2 '
                         + '  '.join(grams) + '</div>')
               s2 = s.replace('</body>', shadow + '</body>', 1) if '</body>' in s else s + shadow
               open(f, 'w', encoding='utf-8').write(s2)
