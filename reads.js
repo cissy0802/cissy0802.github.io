@@ -338,13 +338,18 @@
       nl.className = 'notes-link';
       nl.href = isEn ? '/notes.en.html' : '/notes.html';
       nl.textContent = T.myNotes;
-      // Top-right is the language toggle and far-left is "← Hub" (injected by
-      // index-button.js at left:14), so sit beside it in the same row.
-      nl.style.cssText =
-        'position:fixed;top:16px;left:108px;z-index:100;padding:7px 13px;border-radius:14px;' +
-        'background:rgba(123,97,255,.14);border:1px solid rgba(123,97,255,.4);' +
-        'color:#7b61ff;text-decoration:none;font:600 .78rem -apple-system,sans-serif;' +
-        'backdrop-filter:blur(10px);';
+      // Match the "← Hub" button injected by index-button.js right next to it:
+      // same outline-on-current-colour treatment, same dimensions, same hover.
+      // A filled purple pill here read as a foreign element on the page.
+      nl.style.cssText = [
+        'position:fixed', 'top:14px', 'left:108px', 'z-index:100',
+        'font-size:0.82rem', 'color:inherit', 'opacity:0.55',
+        'text-decoration:none', 'padding:6px 12px',
+        'border:1px solid currentColor', 'border-radius:20px',
+        'backdrop-filter:blur(6px)', 'transition:opacity 0.2s',
+      ].join(';');
+      nl.addEventListener('mouseover', function () { nl.style.opacity = 1; });
+      nl.addEventListener('mouseout', function () { nl.style.opacity = 0.55; });
       document.body.appendChild(nl);
     }
 
