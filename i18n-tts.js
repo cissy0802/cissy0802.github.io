@@ -154,6 +154,7 @@
     rate: parseFloat(localStorage.getItem(RATE_KEY)) || 1,
     utter: null,
     audio: null,
+    _prefetched: new Map(),
 
     play() {
       if (this.paused) {
@@ -195,7 +196,8 @@
         : seg.getAttribute('data-tts-' + currentLang);
       if (hash) {
         const url = audioUrl(currentLang, hash);
-        const audio = new Audio(url);
+        const audio = this._prefetched.get(url) || new Audio(url);
+        this._prefetched.delete(url);
         audio.playbackRate = this.rate;
         audio.preload = 'auto';
         const myToken = ++this._token;
@@ -233,12 +235,21 @@
           if (isStale() || isScrubbing || audio._priming) return;
           updateSeek(audio.currentTime, durationOf(audio));
         };
+        if (audio.readyState >= 1 && !isStale()) {
+          setSeekEnabled(true);
+          if (isFinite(audio.duration) && audio.duration > 0) {
+            updateSeek(0, audio.duration);
+          } else {
+            primeDuration(audio, isStale);
+          }
+        }
         this.audio = audio;
         audio.play().catch((e) => {
           if (isStale()) return;
           console.warn(`[mmd-tts] audio.play() rejected (${e?.message || e}); falling back`);
           this.speakWebSpeech(seg, isStale);
         });
+        this._prefetch(2);
         return;
       }
       // No baked audio for this segment → Web Speech (no seek support)
@@ -349,6 +360,38 @@
       if ('speechSynthesis' in window) speechSynthesis.cancel();
     },
 
+    // Warm the next few segments while the current one plays. Without this the
+    // MP3 only starts downloading once the previous segment ends, which reads
+    // as a gap between sections now that audio comes from R2 rather than the
+    // same origin as the page. Keyed by URL, not index: rebuildSegments() can
+    // renumber segments mid-session, and a stale index would hand back the
+    // wrong section's audio.
+    _prefetch(count) {
+      for (let i = 1; i <= count; i++) {
+        const nextIdx = this.idx + i;
+        if (nextIdx >= this.segments.length) break;
+        const seg = this.segments[nextIdx];
+        const hash = splitMode
+          ? seg.getAttribute('data-tts')
+          : seg.getAttribute('data-tts-' + currentLang);
+        if (!hash) continue;
+        const url = audioUrl(currentLang, hash);
+        if (this._prefetched.has(url)) continue;
+        const a = new Audio(url);
+        a.preload = 'auto';
+        this._prefetched.set(url, a);
+      }
+    },
+
+    _clearPrefetch() {
+      for (const [, a] of this._prefetched) {
+        try { a.pause(); } catch (e) {}
+        a.removeAttribute('src');
+        a.load?.();
+      }
+      this._prefetched.clear();
+    },
+
     pause() {
       if (!this.playing || this.paused) return;
       if (this.audio) {
@@ -365,6 +408,7 @@
       this.paused = false;
       this.idx = -1;
       this._cancelPlayback();
+      this._clearPrefetch();
       document.querySelectorAll('.tts-active, .tts-active-ring').forEach((el) => {
         el.classList.remove('tts-active', 'tts-active-ring');
       });
