@@ -557,10 +557,12 @@
         }
         return false;
       };
-      const nodes = document.querySelectorAll('h1, h2, h3, h4, p, li, summary, div, span');
+      const nodes = document.querySelectorAll('h1, h2, h3, h4, p, li, summary, div, span, blockquote');
       tts.segments = Array.from(nodes).filter((el) => {
         if (!visible(el)) return false;
-        if (el.tagName === 'DIV' && !isLeafDiv(el) && !hasDirectText(el)) return false;
+        // Same wrapper rule as DIV: a blockquote holding <p> children is
+        // narrated through those children; one holding bare text is a leaf.
+        if ((el.tagName === 'DIV' || el.tagName === 'BLOCKQUOTE') && !isLeafDiv(el) && !hasDirectText(el)) return false;
         // Spans are only useful when they're direct children of a non-leaf
         // div (e.g. <div class="sec"><span class="label">[Header]</span>
         // <p>...</p></div>) — the label text isn't inside the <p> so nothing
