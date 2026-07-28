@@ -63,6 +63,15 @@ jobs:
           find _src/thinker-arena -maxdepth 1 -type f -delete
           rm -rf _src/thinker-arena/debates
 
+      # Clean-prose corpus for AI Search (the 问一句 / RAG side of search).
+      #
+      # MUST run before the bigram step below. That step rewrites these same
+      # files, and its shadow blocks would otherwise land in the corpus as pages
+      # of "bg8d1d53f6" — unreadable to a human and worse than useless to an
+      # embedding model.
+      - name: Export clean corpus for AI Search
+        run: python3 search-backend/export-corpus.py _src corpus
+
       # CJK sub-word recall: an ordered bigram shadow block per page.
       #
       # Pagefind's segmenter stores Chinese compounds whole, so "拓扑" finds
@@ -139,14 +148,14 @@ jobs:
             --output-path pagefind \
             --exclude-selectors "footer,nav,.section-label,#bigcat-comments,a[href*='cissy0802.github.io/']"
 
-      - name: Cleanup _src (only ship index)
+      - name: Cleanup _src (nothing local ships)
         run: rm -rf _src
 
       # The index lives in R2, not in this repo: ~3100 files / 46MB rebuilt
       # nightly had pushed .git past 700MB when it was committed. search-backend/
       # holds the Worker that serves it; sync-index.py is shared with local runs
       # so the two paths can't drift.
-      - name: Upload index to R2
+      - name: Upload index and corpus to R2
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -155,4 +164,5 @@ jobs:
           # --upgrade matters: the runner ships a system boto3 old enough that
           # pip would call the requirement satisfied and leave it in place.
           pip install --quiet --upgrade boto3
-          python3 search-backend/sync-index.py pagefind
+          python3 search-backend/sync-index.py pagefind pagefind/
+          python3 search-backend/sync-index.py corpus corpus/

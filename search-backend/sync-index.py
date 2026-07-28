@@ -1,12 +1,18 @@
 #!/usr/bin/env python3
-"""Sync a built Pagefind bundle into the bigcat-search R2 bucket.
+"""Sync a local directory into the bigcat-search R2 bucket under a key prefix.
+
+Two callers, one bucket: the Pagefind bundle lives under pagefind/, and the
+clean Markdown corpus AI Search indexes lives under corpus/. Keeping them in one
+bucket is deliberate — the R2 API token is scoped per bucket, and a second
+bucket would mean a second credential to create, scope and rotate for no gain.
+AI Search is pointed at corpus/**/*.md, so it never sees the index blobs.
 
 Keys mirror the URL path exactly ("pagefind/fragment/<hash>.pf_fragment"), which
 is what lets the Worker map a request to an object without any rewriting.
 
 Used in two places, deliberately the same code so they can't drift:
   CI       .github/workflows/build-search.yml, after Pagefind runs
-  locally   ../audio-backend/r2-creds.sh exec -- ./sync-index.py ../pagefind
+  locally   ../audio-backend/r2-creds.sh exec -- ./sync-index.py ../pagefind pagefind/
 
 Credentials come from the environment (R2_ACCOUNT_ID / R2_ACCESS_KEY_ID /
 R2_SECRET_ACCESS_KEY) — never arguments, so they stay out of `ps` and history.
@@ -24,9 +30,13 @@ import sys
 import boto3
 from botocore.config import Config
 
-PREFIX = "pagefind/"
 WORKERS = 16
-TYPES = {".js": "text/javascript", ".css": "text/css", ".json": "application/json"}
+TYPES = {
+    ".js": "text/javascript",
+    ".css": "text/css",
+    ".json": "application/json",
+    ".md": "text/markdown",
+}
 
 
 def md5(path):
@@ -63,11 +73,14 @@ def content_type(name):
 
 
 def main():
-    if len(sys.argv) != 2:
-        sys.exit("usage: sync-index.py <pagefind-bundle-dir>")
+    if len(sys.argv) != 3:
+        sys.exit("usage: sync-index.py <local-dir> <key-prefix>")
     root = os.path.abspath(sys.argv[1])
+    prefix = sys.argv[2]
     if not os.path.isdir(root):
         sys.exit(f"not a directory: {root}")
+    if not prefix.endswith("/"):
+        sys.exit("key prefix must end in / — it scopes both upload and deletion")
 
     try:
         account, key_id, secret = (
@@ -92,10 +105,10 @@ def main():
     for dirpath, _, names in os.walk(root):
         for n in names:
             p = os.path.join(dirpath, n)
-            local[PREFIX + os.path.relpath(p, root).replace(os.sep, "/")] = p
+            local[prefix + os.path.relpath(p, root).replace(os.sep, "/")] = p
 
     remote = {}
-    for page in s3.get_paginator("list_objects_v2").paginate(Bucket=bucket, Prefix=PREFIX):
+    for page in s3.get_paginator("list_objects_v2").paginate(Bucket=bucket, Prefix=prefix):
         for o in page.get("Contents", []):
             remote[o["Key"]] = o["ETag"].strip('"')
 
@@ -117,7 +130,7 @@ def main():
             Delete={"Objects": [{"Key": k} for k in stale[i : i + 1000]]},
         )
 
-    print(f"{len(local)} files: {len(todo)} uploaded, {len(stale)} deleted, "
+    print(f"{prefix} {len(local)} files: {len(todo)} uploaded, {len(stale)} deleted, "
           f"{len(local) - len(todo)} unchanged")
 
 
