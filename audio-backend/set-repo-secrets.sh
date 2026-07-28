@@ -1,18 +1,25 @@
 #!/usr/bin/env bash
-# Push the three R2 credentials into every content repo's GitHub Actions secrets.
+# Push a set of secrets into every content repo's GitHub Actions secrets.
 #
 # GitHub only supports Actions secrets at the repository or ORGANISATION level,
 # and these repos live under a personal account — so there is no single place to
 # put them. This loop is the substitute: run it once, not 32 dashboard visits.
+#
+# It defaults to the R2 trio. --names sets any others: the Azure keys were
+# originally rolled out by a one-off script that no longer exists, and
+# thinker-arena was missed by it — every new debate went out with no audio for
+# days. Anything spread across 33 repos by hand drifts; use --check to find it.
 #
 # Values are read from the terminal (never echoed, never written to disk) and
 # piped to `gh` on stdin rather than passed as arguments, so they don't show up
 # in `ps` or in shell history.
 #
 # Usage:
-#   ./set-r2-secrets.sh                 # every repo in REPOS below
-#   ./set-r2-secrets.sh personal-finance  # just the pilot
-#   ./set-r2-secrets.sh --check         # list which repos already have them
+#   ./set-repo-secrets.sh                              # R2 trio, every repo below
+#   ./set-repo-secrets.sh personal-finance             # one repo
+#   ./set-repo-secrets.sh --check                      # who already has them
+#   ./set-repo-secrets.sh --names AZURE_SPEECH_KEY,AZURE_SPEECH_REGION thinker-arena
+#   ./set-repo-secrets.sh --names AZURE_SPEECH_KEY,AZURE_SPEECH_REGION --check
 set -euo pipefail
 
 OWNER=cissy0802
@@ -30,14 +37,26 @@ REPOS=(
 
 NAMES=(R2_ACCOUNT_ID R2_ACCESS_KEY_ID R2_SECRET_ACCESS_KEY)
 
+# --names A,B replaces the default set. Parsed before anything else so --check
+# reports on the secrets actually asked about.
+if [[ "${1:-}" == "--names" ]]; then
+  [[ -n "${2:-}" ]] || { echo "ERROR: --names needs a comma-separated list"; exit 1; }
+  IFS=',' read -r -a NAMES <<< "$2"
+  shift 2
+fi
+
 command -v gh >/dev/null || { echo "ERROR: gh CLI not found"; exit 1; }
 gh auth status >/dev/null 2>&1 || { echo "ERROR: run 'gh auth login' first"; exit 1; }
 
 if [[ "${1:-}" == "--check" ]]; then
   for r in "${REPOS[@]}"; do
-    have=$(gh secret list --repo "$OWNER/$r" --json name --jq '.[].name' 2>/dev/null \
-           | grep -c '^R2_' || true)
-    printf '%-24s %s/3\n' "$r" "$have"
+    listed=$(gh secret list --repo "$OWNER/$r" --json name --jq '.[].name' 2>/dev/null || true)
+    have=0
+    for n in "${NAMES[@]}"; do
+      grep -qx "$n" <<< "$listed" && have=$((have+1))
+    done
+    flag=""; [[ $have -lt ${#NAMES[@]} ]] && flag="  <-- incomplete"
+    printf '%-24s %s/%s%s\n' "$r" "$have" "${#NAMES[@]}" "$flag"
   done
   exit 0
 fi
@@ -45,7 +64,7 @@ fi
 # An explicit repo list overrides the default (handy for the pilot).
 if [[ $# -gt 0 ]]; then REPOS=("$@"); fi
 
-echo "Setting ${#NAMES[@]} secrets on ${#REPOS[@]} repo(s) under $OWNER."
+echo "Setting ${#NAMES[@]} secret(s) [${NAMES[*]}] on ${#REPOS[@]} repo(s) under $OWNER."
 
 # Take the values from the environment when they're already there — that's what
 # `r2-creds.sh exec -- ./set-r2-secrets.sh newrepo` does, so onboarding a repo
@@ -55,7 +74,7 @@ if [[ -n "${R2_ACCOUNT_ID:-}" && -n "${R2_ACCESS_KEY_ID:-}" && -n "${R2_SECRET_A
   echo "Using R2_* from the environment."
   for n in "${NAMES[@]}"; do VALUES+=("${!n}"); done
 else
-  echo "Paste each value; nothing is echoed. (Store them once with ./r2-creds.sh save)"
+  echo "Paste each value; nothing is echoed. (R2 values can be stored once with ./r2-creds.sh save)"
   for n in "${NAMES[@]}"; do
     read -rs -p "  $n: " v; echo
     [[ -n "$v" ]] || { echo "ERROR: $n was empty"; exit 1; }
@@ -76,7 +95,7 @@ done
 
 echo
 if [[ $fail == 0 ]]; then
-  echo "Done — all ${#REPOS[@]} repo(s) set. Verify with: $0 --check"
+  echo "Done — all ${#REPOS[@]} repo(s) set. Verify with: $0 --check (add --names if you used it)"
 else
   echo "$fail repo(s) failed. Check you have admin rights on them, then re-run."
   exit 1
