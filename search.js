@@ -52,6 +52,16 @@
         searching: "Searching…",
         errBuilt: "Search index isn't built yet, or it failed to load. Please wait for the GitHub Action's first build.",
         errPending: "Search index isn't built yet. Please wait for the GitHub Action's first build (auto-refreshes daily at 6am PDT).",
+        tabFind: "Keywords",
+        tabAsk: "Ask",
+        askPlaceholder: "Ask a question about these essays…",
+        askHint: "Answered only from what's written here, with the pages it drew on.",
+        askSubmit: "Ask",
+        askThinking: "Reading…",
+        askSources: "Sources",
+        askEmpty: "Nothing here covers that.",
+        askError: "Couldn't reach the answering service. Try again in a moment.",
+        askQuota: "Today's answering allowance is used up. Keyword search still works.",
       }
     : {
         aria: "搜索全站",
@@ -65,6 +75,16 @@
         searching: "搜索中...",
         errBuilt: "搜索索引尚未生成或加载失败。请等待 GitHub Action 完成首次构建。",
         errPending: "搜索索引尚未生成。请等待 GitHub Action 完成首次构建（每天 6am PDT 自动刷新）。",
+        tabFind: "关键词",
+        tabAsk: "问一句",
+        askPlaceholder: "就站内文章提个问题…",
+        askHint: "只根据站内已有内容作答，并附上依据的文章。",
+        askSubmit: "提问",
+        askThinking: "正在读…",
+        askSources: "依据",
+        askEmpty: "站内没有讲到这个。",
+        askError: "问答服务连不上，稍后再试。",
+        askQuota: "今天的问答额度用完了，关键词搜索不受影响。",
       };
 
   // Detect dark mode like comments.js
@@ -117,17 +137,148 @@
     `background:${dark ? "#16213e" : "#ffffff"};color:${dark ? "#e4e6eb" : "#1f1f1f"};` +
     "border-radius:14px;width:100%;max-width:680px;max-height:80vh;overflow:auto;" +
     "padding:20px 22px;box-shadow:0 20px 60px rgba(0,0,0,0.5);position:relative";
+  // Two ways to look, because they fail in opposite directions: keywords find
+  // the pages containing a term and are useless for "哪几篇讲过决策疲劳";
+  // asking handles the question but can't be trusted to enumerate exhaustively.
+  const tabStyle = (on) =>
+    "flex:1;padding:7px 10px;border:none;border-radius:7px;cursor:pointer;font:inherit;font-size:0.85rem;" +
+    "transition:background 0.15s ease,color 0.15s ease;" +
+    (on
+      ? "background:rgba(123,97,255,0.9);color:#fff;"
+      : `background:transparent;color:${dark ? "#9aa0b5" : "#5b6070"};`);
+
   modal.innerHTML =
     '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px">' +
       '<h3 style="margin:0;font-size:1.1rem;font-weight:600">' + T.header + '</h3>' +
       '<span style="font-size:0.75rem;opacity:0.55">' + T.esc + '</span>' +
     '</div>' +
-    '<div id="pagefind-search"></div>';
+    '<div id="mode-tabs" style="display:flex;gap:4px;padding:4px;margin-bottom:14px;border-radius:9px;' +
+      `background:${dark ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.04)"}">` +
+      '<button id="tab-find" type="button"></button>' +
+      '<button id="tab-ask" type="button"></button>' +
+    '</div>' +
+    '<div id="pagefind-search"></div>' +
+    '<div id="ask-panel" style="display:none">' +
+      '<textarea id="ask-input" rows="2" style="width:100%;box-sizing:border-box;resize:vertical;' +
+        'padding:10px 12px;border-radius:8px;font:inherit;font-size:0.92rem;' +
+        `background:${dark ? "rgba(255,255,255,0.06)" : "#fff"};color:inherit;` +
+        `border:1px solid ${dark ? "rgba(255,255,255,0.15)" : "rgba(0,0,0,0.15)"}"></textarea>` +
+      '<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:8px">' +
+        '<span id="ask-hint" style="font-size:0.72rem;opacity:0.55;line-height:1.4"></span>' +
+        '<button id="ask-submit" type="button" style="flex:none;padding:7px 16px;border:none;border-radius:7px;' +
+          'background:rgba(123,97,255,0.92);color:#fff;font:inherit;font-size:0.85rem;cursor:pointer"></button>' +
+      '</div>' +
+      '<div id="ask-status" style="margin-top:14px;font-size:0.85rem;opacity:0.7"></div>' +
+      '<div id="ask-answer" style="margin-top:12px;font-size:0.94rem;line-height:1.75;white-space:pre-wrap"></div>' +
+      '<div id="ask-sources" style="margin-top:16px"></div>' +
+    '</div>';
   overlay.appendChild(modal);
 
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay) overlay.style.display = "none";
   });
+
+  /* ---- 问一句 / Ask -------------------------------------------------------
+   * Semantic retrieval + a grounded answer, from the bigcat-ask-api Worker.
+   * Everything the model produces is inserted as text, never as HTML: it is
+   * generated from page content, which makes it exactly the kind of string that
+   * should never reach innerHTML. Links are built from the Worker's own URL
+   * mapping rather than from anything the model wrote.
+   */
+  const ASK_API = "https://bigcat-ask-api.cissychen.workers.dev";
+  const tabFind = modal.querySelector("#tab-find");
+  const tabAsk = modal.querySelector("#tab-ask");
+  const askPanel = modal.querySelector("#ask-panel");
+  const findPanel = modal.querySelector("#pagefind-search");
+  const askInput = modal.querySelector("#ask-input");
+  const askSubmit = modal.querySelector("#ask-submit");
+  const askStatus = modal.querySelector("#ask-status");
+  const askAnswer = modal.querySelector("#ask-answer");
+  const askSources = modal.querySelector("#ask-sources");
+
+  tabFind.textContent = T.tabFind;
+  tabAsk.textContent = T.tabAsk;
+  askInput.placeholder = T.askPlaceholder;
+  askSubmit.textContent = T.askSubmit;
+  modal.querySelector("#ask-hint").textContent = T.askHint;
+
+  let mode = "find";
+  function setMode(next) {
+    mode = next;
+    const asking = next === "ask";
+    tabFind.style.cssText = tabStyle(!asking);
+    tabAsk.style.cssText = tabStyle(asking);
+    findPanel.style.display = asking ? "none" : "";
+    askPanel.style.display = asking ? "" : "none";
+    const focusTarget = asking ? askInput : modal.querySelector('input[type="text"]');
+    if (focusTarget) setTimeout(() => focusTarget.focus(), 40);
+  }
+  tabFind.addEventListener("click", () => setMode("find"));
+  tabAsk.addEventListener("click", () => setMode("ask"));
+
+  let asking = false;
+  async function ask() {
+    const q = askInput.value.trim();
+    if (!q || asking) return;
+    asking = true;
+    askSubmit.disabled = true;
+    askSubmit.style.opacity = "0.5";
+    askStatus.textContent = T.askThinking;
+    askAnswer.textContent = "";
+    askSources.textContent = "";
+    try {
+      const res = await fetch(ASK_API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ q }),
+      });
+      const data = await res.json();
+      if (res.status === 429) {
+        askStatus.textContent = T.askQuota;
+        return;
+      }
+      if (!res.ok) throw new Error(data && data.error);
+      askStatus.textContent = "";
+      askAnswer.textContent = data.answer || T.askEmpty;
+      renderSources(data.sources || []);
+    } catch (e) {
+      askStatus.textContent = T.askError;
+    } finally {
+      asking = false;
+      askSubmit.disabled = false;
+      askSubmit.style.opacity = "";
+    }
+  }
+
+  function renderSources(sources) {
+    askSources.textContent = "";
+    if (!sources.length) return;
+    const label = document.createElement("div");
+    label.textContent = T.askSources;
+    label.style.cssText =
+      "font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;opacity:0.5;margin-bottom:8px";
+    askSources.appendChild(label);
+    sources.slice(0, 5).forEach((s) => {
+      const a = document.createElement("a");
+      a.href = s.url;
+      a.rel = "noopener";
+      a.textContent = s.title || s.url;
+      a.style.cssText =
+        `display:block;padding:7px 10px;margin-bottom:5px;border-radius:7px;text-decoration:none;font-size:0.86rem;` +
+        `color:${dark ? "#00d4ff" : "#7b61ff"};background:${dark ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.035)"}`;
+      askSources.appendChild(a);
+    });
+  }
+
+  askSubmit.addEventListener("click", ask);
+  askInput.addEventListener("keydown", (e) => {
+    // Enter asks; Shift+Enter is a newline, since questions can run long.
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      ask();
+    }
+  });
+  setMode("find");
 
   let uiInitialized = false;
   function openSearch() {

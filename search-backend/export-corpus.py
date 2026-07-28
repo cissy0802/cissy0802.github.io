@@ -16,6 +16,7 @@ render client-side; their crawlable snapshots carry the live URL in a meta tag).
     ./export-corpus.py _src corpus/
 """
 import html
+import json
 import os
 import re
 import sys
@@ -85,6 +86,7 @@ def main():
         sys.exit("usage: export-corpus.py <src-html-dir> <out-dir>")
     src, out = os.path.abspath(sys.argv[1]), os.path.abspath(sys.argv[2])
     written = skipped = 0
+    titles = {}
     for dirpath, _, names in os.walk(src):
         for n in names:
             if not n.endswith(".html"):
@@ -109,7 +111,16 @@ def main():
             with open(dest, "w", encoding="utf-8") as f:
                 f.write(f"---\ntitle: {title}\nurl: {url}\nlang: {lang}\n---\n\n")
                 f.write(f"# {title}\n\n{text}\n")
+            titles[rel[: -len(".html")]] = {"title": title, "url": url}
             written += 1
+
+    # Chunks are slices out of the middle of a page, so a retrieved chunk rarely
+    # carries the page's own title — the front matter is only in chunk one. This
+    # manifest is how the ask Worker labels a source with the article's name
+    # instead of a slug. It is .json, so the corpus/**/*.md include rule keeps it
+    # out of the index itself.
+    with open(os.path.join(out, "_titles.json"), "w", encoding="utf-8") as f:
+        json.dump(titles, f, ensure_ascii=False, separators=(",", ":"))
     print(f"corpus: {written} pages written, {skipped} skipped (too short / unreadable)")
 
 

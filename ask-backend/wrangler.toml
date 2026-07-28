@@ -1,0 +1,14 @@
+name = "bigcat-ask-api"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+# Workers AI binding — also how the AI Search (AutoRAG) instance is reached,
+# via env.AI.autorag("bigcat-ask"). No API token needed at runtime.
+[ai]
+binding = "AI"
+
+# Read-only access to the corpus, for the title manifest the export writes
+# beside it. Same bucket the Pagefind index lives in.
+[[r2_buckets]]
+binding = "CORPUS"
+bucket_name = "bigcat-search"
