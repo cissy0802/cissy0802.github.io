@@ -71,7 +71,30 @@ def target(key: str, dest: Path | None) -> Path:
     return (REPOS / repo / "audio" / rel) if dest is None else (dest / repo / rel)
 
 
+def warn_if_scheduled_copy_is_stale() -> None:
+    """The LaunchAgent runs a COPY of this script from ~/.bigcat-hub/bin.
+
+    It has to: macOS TCC blocks background jobs from ~/Desktop, so the agent
+    cannot read the version in the repo. That makes the copy exactly the kind
+    of silent fork this whole migration kept tripping over — so say something
+    when the two diverge, on every interactive run.
+    """
+    import hashlib
+
+    installed = Path.home() / ".bigcat-hub" / "bin" / Path(__file__).name
+    if not installed.exists():
+        return
+    here = Path(__file__).resolve()
+    if here == installed.resolve():
+        return
+    if hashlib.sha256(installed.read_bytes()).digest() != hashlib.sha256(here.read_bytes()).digest():
+        print(f"WARNING: {installed} differs from this script — the scheduled mirror is "
+              f"running an old copy.\n         Refresh it with: cp {here} {installed}",
+              file=sys.stderr)
+
+
 def main():
+    warn_if_scheduled_copy_is_stale()
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("dest", nargs="?", type=Path)
     ap.add_argument("--into-repos", action="store_true")
