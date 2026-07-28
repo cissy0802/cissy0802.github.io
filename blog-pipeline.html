@@ -95,7 +95,7 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 
 <rect x="36" y="298" width="336" height="62" rx="10" fill="rgba(255,255,255,0.04)" stroke="#34d0ba" stroke-width="1.6"/>
 <text x="204" y="322" text-anchor="middle" fill="#fff" font-size="14.5" font-weight="700">加工层 · 每仓 GitHub Actions</text>
-<text x="204" y="343" text-anchor="middle" fill="#9aa2b8" font-size="11">注入共享 JS · (mental-models) Azure TTS bake</text>
+<text x="204" y="343" text-anchor="middle" fill="#9aa2b8" font-size="11">注入共享 JS · Azure TTS bake（音频存 R2）</text>
 
 <line x1="204" y1="360" x2="204" y2="386" stroke="#6a7080" stroke-width="1.4" marker-end="url(#ah)"/>
 <text x="212" y="377" fill="#7b61ff" font-size="10.5" font-style="italic">每日定时</text>
@@ -201,14 +201,16 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <p>为什么注入而不是让 routine 直接写进模板？因为<strong>基础设施要能独立于内容演进</strong>。20 多个仓、几百个页面，如果 script 标签写死在生成模板里，升级一个搜索脚本就要重训 20 个 prompt、重刷几百页。注入制下，共享脚本改一处，全站下一次注入即生效；旧页面也能追溯补齐。</p>
 
 <h3>Azure TTS bake（预烘焙音频）</h3>
-<p>这些站的每一节都能点击朗读，音频是预先「烘焙」好的（最早只在思维模型站做，现在已铺到十几个站）：</p>
+<p>中文页的每一节都能点击朗读，音频是预先「烘焙」好的：</p>
 <ul>
 <li>push 触发 <code>bake-tts.yml</code> → 跑 <code>bake-tts.py</code></li>
-<li>按 <code>&lt;h2&gt;</code> 分节提取正文 → 对文本取 <strong>hash</strong> → 查 <code>audio/zh/&lt;hash&gt;.mp3</code> 是否已存在 → 不存在才调 Azure Speech REST API 合成</li>
-<li>生成后把 <code>data-tts-zh="&lt;hash&gt;"</code> 写回 HTML 元素，前端 <code>i18n-tts.js</code> 按属性找音频播放；没有预烘焙音频的站自动降级到浏览器 Web Speech API</li>
+<li>按 <code>&lt;h2&gt;</code> 分节提取正文 → 对文本取 <strong>hash</strong> → 查该 hash 的 mp3 是否已存在 → 不存在才调 Azure Speech REST API 合成</li>
+<li>生成后把 <code>data-tts="&lt;hash&gt;"</code> 写回 HTML 元素，前端 <code>i18n-tts.js</code> 按属性找音频播放</li>
 <li>bake 的自动提交带 <code>[skip bake]</code> 标记，防止「提交触发 bake、bake 又产生提交」的死循环</li>
 </ul>
-<p>hash 寻址让整条链路幂等：内容没变就不花一分钱 API 配额，改了一节只重烘那一节。这个站目前积累了 500 多个 mp3、约 1.2 GB——全部躺在 git 仓库里由 Pages 直接伺服，零额外存储成本。</p>
+<p>hash 寻址让整条链路幂等：内容没变就不花一分钱 API 配额，改了一节只重烘那一节。<strong>hash 算在原文上，不是算在送给 Azure 之前的规范化结果上</strong>——朗读规则（符号替换、公式处理、emoji 剥离）一直在演进，若 hash 跟着规则走，任何一次微调都会让全站音频「失配」而被静默重烘几千段。旧音频里的小瑕疵，远比全站重烘划算。</p>
+<p>音频不进 git，而是存在 <strong>Cloudflare R2</strong>（bucket 内按 <code>&lt;仓名&gt;/&lt;语言&gt;/&lt;hash&gt;.mp3</code> 组织），由一个 Worker 伺服。早先音频是提交进仓库、由 Pages 直接伺服的，代价是几 GB 二进制进了 git history，最大的几个站开始逼近 Pages 的 1 GB 限制。迁走之后 <code>audio/</code> 在所有仓里都被 gitignore。</p>
+<p>只有中文烘焙。英文页的朗读走浏览器自带的 Web Speech API——机器音质地不如 Azure，但英文的合成质量差距远比中文小，不值得为它花掉配额和存储。</p>
 
 <h2>5. 聚合层：Hub 怎么知道下面 20 个仓的动静</h2>
 <p>Hub 仓自己也是全自动的，两个每日 Action。</p>
@@ -323,6 +325,11 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <p>还有一层容易被忽略的失败：<strong>页面写对了、也 push 了，但 GitHub Pages 的部署本身失败了</strong>（偶发 503 / 构建抖动）。内容躺在仓库里，线上却还是旧版——这种失败最隐蔽，因为前面每一层校验都显示「通过」。</p>
 <p>所以本地还挂了一个 launchd 看门狗，每 20 分钟用 <code>gh</code> 扫一遍各仓最近的 Pages 部署，发现失败的就<strong>自动重跑</strong>。它刻意跑在本地而不是云端——云端 sandbox 的出口代理挡着 <code>api.github.com</code>，反倒是我自己的机器能直连。</p>
 
+<h3>音频灾备：唯一一份 git 管不到的资产</h3>
+<p>整套系统里，几乎所有东西都能从 git 复原：文本、模板、脚本、workflow。唯独音频不能——它存在 R2，而 <code>audio/</code> 在每个仓里都被 gitignore，所以<strong><code>git pull</code> 永远拉不到音频</strong>。它又恰恰是唯一花过真金白银配额、且无法凭内容瞬间重建的资产。</p>
+<p>所以另有一个 launchd job 每天把 R2 增量拉回本地，作为第二份副本。配套的一个小服务器能把本地仓库直接跑成可访问的站点：它在响应里把页面中指向 hub 的绝对 URL 改写成本地路径，<strong>磁盘上一个字节都不改</strong>——因为这些本地克隆是只读镜像，封顶守卫会用 <code>git reset --hard</code> 抹平任何偏离，真去改 HTML 只会被无声回滚。于是 R2 和 hub 同时消失时，本地的 clone 加音频仍能把整个站点原样跑起来。</p>
+<p>这里埋着一个反直觉的坑：守卫脚本里<strong>绝不能出现 <code>git clean -x</code></strong>。<code>-x</code> 会连 gitignore 的文件一起删——也就是把整份音频备份静默清空，而其中有些片段连 R2 都没有。一个用来「保证工作树干净」的动作，会顺手毁掉唯一一份不可重建的资产。</p>
+
 <h3>内容层自治：把检查下放进各仓</h3>
 <p>早期这些内容层检查——写到顶就自停、把越界页回填进 TOPICS、英文页中文泄漏自查——都由外部那个巡检任务集中做。后来全部<strong>下放到各仓的 CLAUDE.md</strong>：既然 routine 每次运行都会加载它，那就让站点在生成当下自己把这三件事做掉，比事后由外部补更及时。外部巡检因此瘦成了<strong>纯粹的 trigger 开关</strong>。（回填是为了守住一条不变量：<strong>TOPICS 必须是已发布内容的超集</strong>。否则某天手动发了一篇 <code>day57</code> 却没记进 TOPICS，日后往 TOPICS 补的 Day 57 就会和它撞号、永远写不出来。）</p>
 <p>其中英文页中文泄漏是双语生成最常见的退化：中文漏进英文页的模板槽（副标题、标签、人名栏）。各仓 CLAUDE.md 里写死一组指纹 grep（如 <code>class="en"&gt;[一-鿿]</code>），生成后、publish 前自查。指纹是精心挑的——佛经原文配英译、术语括注这类<strong>合法</strong>的中文不用这些 class，不会误报。</p>
@@ -351,6 +358,7 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <li>GitHub Pages / Actions：免费额度内</li>
 <li>内容生成：claude.ai 订阅内的云端 routine，无额外 API 费</li>
 <li>Azure Speech：免费层（F0）</li>
+<li>音频存储：Cloudflare R2，免费额度 10 GB——目前用掉约 8.4 GB，是整个系统里唯一一项肉眼可见在逼近上限的资源</li>
 <li>互动后端：Cloudflare Worker + D1，免费额度内</li>
 <li>邮件发送：Resend 免费层（每月 3000 封）</li>
 <li>我的时间：维护 20 多份 TOPICS.md，加上偶尔审一眼月度建议和巡检报告</li>

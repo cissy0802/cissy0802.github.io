@@ -94,7 +94,7 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 
 <rect x="36" y="298" width="336" height="62" rx="10" fill="rgba(255,255,255,0.04)" stroke="#34d0ba" stroke-width="1.6"/>
 <text x="204" y="322" text-anchor="middle" fill="#fff" font-size="14.5" font-weight="700">Post-processing · per-repo Actions</text>
-<text x="204" y="343" text-anchor="middle" fill="#9aa2b8" font-size="11">inject shared JS · (mental-models) Azure TTS bake</text>
+<text x="204" y="343" text-anchor="middle" fill="#9aa2b8" font-size="11">inject shared JS · Azure TTS bake (audio → R2)</text>
 
 <line x1="204" y1="360" x2="204" y2="386" stroke="#6a7080" stroke-width="1.4" marker-end="url(#ah)"/>
 <text x="212" y="377" fill="#7b61ff" font-size="10.5" font-style="italic">daily cron</text>
@@ -197,14 +197,16 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <p>Why injection instead of baking the tags into the generation template? Because <strong>infrastructure must be able to evolve independently of content</strong>. With 20+ repos and hundreds of pages, script tags hard-wired into templates would mean retraining 20 prompts and re-touching hundreds of pages just to upgrade the search script. Under injection, you change the shared script once and the whole fleet picks it up on the next pass — and old pages get retrofitted for free.</p>
 
 <h3>Azure TTS bake (pre-baked audio)</h3>
-<p>On these sites every section is click-to-listen, with pre-baked audio (it started on mental-models alone and has since spread to a dozen-plus sites):</p>
+<p>Every section of the Chinese pages is click-to-listen, with pre-baked audio:</p>
 <ul>
 <li>A push triggers <code>bake-tts.yml</code> → runs <code>bake-tts.py</code></li>
-<li>Text is extracted per <code>&lt;h2&gt;</code> section → <strong>hashed</strong> → check whether <code>audio/zh/&lt;hash&gt;.mp3</code> already exists → only call the Azure Speech REST API when it doesn't</li>
-<li>The script then writes <code>data-tts-zh="&lt;hash&gt;"</code> back onto the HTML element; the front-end <code>i18n-tts.js</code> resolves audio by that attribute. Sites without pre-baked audio degrade gracefully to the browser's Web Speech API</li>
+<li>Text is extracted per <code>&lt;h2&gt;</code> section → <strong>hashed</strong> → check whether an mp3 for that hash already exists → only call the Azure Speech REST API when it doesn't</li>
+<li>The script then writes <code>data-tts="&lt;hash&gt;"</code> back onto the HTML element; the front-end <code>i18n-tts.js</code> resolves audio by that attribute</li>
 <li>The bake's auto-commit is tagged <code>[skip bake]</code>, breaking the "commit triggers bake, bake makes a commit" loop</li>
 </ul>
-<p>Hash addressing makes the whole chain idempotent: unchanged content costs zero API quota, and editing one section re-bakes only that section. The site has accumulated 500+ mp3 files, about 1.2 GB — all sitting in the git repo, served directly by Pages, at zero extra storage cost.</p>
+<p>Hash addressing makes the whole chain idempotent: unchanged content costs zero API quota, and editing one section re-bakes only that section. <strong>The hash is taken over the raw text, not over the normalised string that gets sent to Azure</strong> — the reading rules (symbol substitution, formula handling, emoji stripping) keep evolving, and if the hash tracked those rules, any small tweak would put the entire site's audio "out of match" and silently re-bake thousands of segments. A small blemish in old audio is far cheaper than re-baking everything.</p>
+<p>The audio does not live in git. It sits in <strong>Cloudflare R2</strong> (keyed as <code>&lt;repo&gt;/&lt;lang&gt;/&lt;hash&gt;.mp3</code>) and is served by a Worker. It used to be committed into the repos and served straight from Pages; the price was several GB of binaries in git history, with the largest sites closing in on the 1 GB Pages limit. Since the move, <code>audio/</code> is gitignored everywhere.</p>
+<p>Only Chinese is baked. English pages fall back to the browser's built-in Web Speech API — noticeably more robotic than Azure, but the quality gap is far smaller for English than for Chinese, and not worth the quota and storage.</p>
 
 <h2>5. Aggregation: how the hub tracks 20 repos beneath it</h2>
 <p>The hub repo is fully automated too, via two daily Actions.</p>
@@ -319,6 +321,11 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <p>There's one more failure that's easy to overlook: <strong>the page is correct, it was pushed, and then the GitHub Pages deployment itself fails</strong> (intermittent 503s / build flakiness). The content sits in the repo while the live site still serves the old version — the sneakiest failure of all, because every check upstream reported "pass."</p>
 <p>So a launchd watchdog runs locally, sweeping each repo's recent Pages deployments via <code>gh</code> every 20 minutes and <strong>re-running any that failed</strong>. It deliberately runs on my machine rather than in the cloud — the cloud sandbox's egress proxy blocks <code>api.github.com</code>, so my own laptop is the one that can reach it.</p>
 
+<h3>Audio backup: the one asset git cannot reach</h3>
+<p>Almost everything in this system can be restored from git: text, templates, scripts, workflows. Audio is the exception. It lives in R2, and <code>audio/</code> is gitignored in every repo — so <strong><code>git pull</code> can never bring audio down</strong>. It is also the only asset that cost real quota and cannot be rebuilt instantly from content.</p>
+<p>So a second launchd job pulls R2 down incrementally every day as a second copy. A companion server can then run the local repos as a browsable site: it rewrites the pages' absolute hub URLs to local paths <em>in the response</em>, <strong>without changing a single byte on disk</strong> — these local clones are read-only mirrors, and the cap guard flattens any drift with <code>git reset --hard</code>, so editing the HTML would just be silently reverted. If R2 and the hub both vanished, the local clones plus audio would still serve the whole site.</p>
+<p>There's a counter-intuitive trap here: the guard script <strong>must never use <code>git clean -x</code></strong>. The <code>-x</code> flag deletes ignored files too — i.e. it silently wipes the entire audio backup, parts of which R2 itself no longer has. An action meant to "keep the working tree clean" would destroy the one asset that cannot be rebuilt.</p>
+
 <h3>Content-layer autonomy: pushing the checks down into each repo</h3>
 <p>Originally these content-layer checks — stop when the roadmap is done, backfill out-of-band pages into TOPICS, self-check English pages for Chinese leaks — were all done centrally by that external inspection task. They have since been <strong>delegated into each repo's CLAUDE.md</strong>: since every run auto-loads it, letting the site handle all three at generation time is more timely than patching them up afterwards from outside. The external inspection thereby slimmed down to <strong>nothing but the trigger switch</strong>. (The backfill exists to hold one invariant: <strong>TOPICS must be a superset of what's published</strong>. Otherwise a manually published <code>day57</code> that never got recorded would collide with a Day 57 added to TOPICS later — which could then never be written.)</p>
 <p>Of those, the Chinese leak is the most common degradation in bilingual generation: Chinese seeping into the English page's template slots (subtitles, tags, name fields). Each repo's CLAUDE.md hardcodes a set of fingerprint greps (like <code>class="en"&gt;[一-鿿]</code>) to self-check after generation and before publishing. The fingerprints are chosen carefully — <strong>legitimate</strong> Chinese, like Buddhist scripture alongside its English translation or glossed terms, doesn't use those classes and never false-positives.</p>
@@ -347,6 +354,7 @@ BigCat's Learning Hub is a family of static sites I built for my own learning: m
 <li>GitHub Pages / Actions: within the free tier</li>
 <li>Content generation: cloud routines included in a claude.ai subscription, no extra API bills</li>
 <li>Azure Speech: free tier (F0)</li>
+<li>Audio storage: Cloudflare R2, 10 GB free tier — about 8.4 GB used, the one resource in this system visibly approaching its ceiling</li>
 <li>Interaction backend: Cloudflare Worker + D1, within the free tier</li>
 <li>Email sending: Resend free tier (3,000/month)</li>
 <li>My time: curating 20+ TOPICS.md files, plus the occasional glance at monthly suggestions and inspection reports</li>
