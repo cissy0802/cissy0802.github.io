@@ -52,11 +52,11 @@ FALLBACK_TABS = [
 ]
 
 # content pages, by tab naming scheme:
-#   *-day1 / *-week1 / *-book1 / *-read1 (opt. letter, e.g. read3b) numbered,
-#   *-YYYY-MM-DD dated, and deep-research's *-deep pages (its *-plain twin is
-#   intentionally not matched, so each piece is listed once).
+#   *-day1 / *-week1 / *-book1 / *-read1 / *-paper1 (opt. letter, e.g. read3b)
+#   numbered, *-YYYY-MM-DD dated, and deep-research's *-deep pages (its *-plain
+#   twin is intentionally not matched, so each piece is listed once).
 CONTENT_RE = re.compile(
-    r"-(day|week|book|read)\d+[a-z]?\.html$|-\d{4}-\d{2}-\d{2}\.html$|-deep\.html$"
+    r"-(day|week|book|read|paper)\d+[a-z]?\.html$|-\d{4}-\d{2}-\d{2}\.html$|-deep\.html$"
 )
 
 # git's well-known empty tree — diffing against it lists every file as "added",
