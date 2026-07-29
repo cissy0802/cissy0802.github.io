@@ -11,6 +11,12 @@
  *                       "已读 12 / 68" counter in the header.
  *   • hub landing    -> per-repo read count on each site card.
  *
+ * Two page shapes need care and are easy to miss: pages whose content is chosen
+ * by a query param (thinker-arena's debate.html?d=<slug> — one file, 100+
+ * pieces, so the read key must include the param), and pages rendered client
+ * side after a fetch (the same debate view, and the topic list built by
+ * topics.js), which are empty when this script first runs.
+ *
  * Local-first: state lives in localStorage so it works offline and renders
  * instantly; when logged in it syncs to the account (POST /reads-list,
  * /reads-set) so phone and laptop agree. Changes made offline queue up and
@@ -36,6 +42,25 @@
   function session() {
     try { return localStorage.getItem(SESSION_KEY) || ''; } catch (e) { return ''; }
   }
+
+  // Some pages render several distinct pieces from one file, picked by a query
+  // param — thinker-arena's debate.html?d=<slug> is the case here. Keying on
+  // the pathname alone collapsed all 100+ debates into a single read flag, so
+  // finishing any one of them marked the lot. Keep params that choose content;
+  // drop the ones that are only tracking or UI state. Same rule as notes.js.
+  var NOISE_PARAMS = /^(me|ref|fbclid|gclid|utm_[a-z]+)$/i;
+  function keyOf(pathname, search) {
+    var params = new URLSearchParams(search || '');
+    var keep = new URLSearchParams();
+    var names = [];
+    params.forEach(function (v, k) { names.push(k); });
+    names.sort().forEach(function (k) {
+      if (!NOISE_PARAMS.test(k)) keep.append(k, params.get(k));
+    });
+    var q = keep.toString();
+    return pathname + (q ? '?' + q : '');
+  }
+  function pageKey() { return keyOf(location.pathname, location.search); }
   // pages[path] = { ts, read: bool, thought: string }. Earlier versions stored
   // a bare timestamp meaning "read"; upgrade those in place.
   function store() {
@@ -146,6 +171,34 @@
     else fn();
   }
 
+  // Client-rendered pages (thinker-arena's debate view and its topic list) hand
+  // us an empty shell at DOMContentLoaded and fill it after a fetch. Mounting
+  // against that shell found nothing and gave up silently — which is why debate
+  // pages had no read marker at all. Wait for the content instead of bailing.
+  function whenPresent(test, cb, timeout) {
+    if (test()) { cb(); return; }
+    if (!('MutationObserver' in window) || !document.body) return;
+    var done = false;
+    function finish(ok) {
+      if (done) return;
+      done = true;
+      mo.disconnect();
+      clearTimeout(timer);
+      if (ok) cb();
+    }
+    var mo = new MutationObserver(function () { if (test()) finish(true); });
+    var timer = setTimeout(function () { finish(false); }, timeout || 15000);
+    mo.observe(document.body, { childList: true, subtree: true });
+  }
+
+  function hasText(sel) {
+    var el = document.querySelector(sel);
+    return !!(el && el.textContent.trim());
+  }
+  // Real prose is here. `#chan-sub` is the debate view's question line — it is
+  // the page's title in everything but tag name.
+  function articleRendered() { return hasText('h1') || hasText('h2') || hasText('#chan-sub'); }
+
   // ---- page-type detection ------------------------------------------------
 
   function isLanding() {
@@ -164,7 +217,7 @@
   // ---- article page: bottom button + auto-mark ----------------------------
 
   function mountArticle() {
-    var path = location.pathname;
+    var path = pageKey();
     var btn = document.createElement('button');
     btn.id = 'read-btn';
     btn.type = 'button';
@@ -188,8 +241,10 @@
     });
 
     // Sit at the very end of the article, before the footer / comments.
+    // `.dcomments` is the debate view's own comment section (it predates the
+    // shared one and is keyed per debate id, so it isn't #bigcat-comments).
     var footer = document.querySelector('footer');
-    var comments = document.getElementById('bigcat-comments');
+    var comments = document.getElementById('bigcat-comments') || document.querySelector('.dcomments');
     var anchor = comments || footer;
     if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(btn, anchor);
     else document.body.appendChild(btn);
@@ -213,7 +268,8 @@
     // (2) listening through to the last TTS segment. i18n-tts.js is a per-repo
     // copy (versions differ), so rather than patching it we watch the progress
     // readout it already maintains: "cur/total" hitting the final segment.
-    var prog = document.querySelector('.mmd-controls .progress');
+    // `#ta-tts .ta-prog` is the debate player's readout, same "cur/total" shape.
+    var prog = document.querySelector('.mmd-controls .progress, #ta-tts .ta-prog');
     if (prog && 'MutationObserver' in window) {
       new MutationObserver(function () {
         var m = /^(\d+)\s*\/\s*(\d+)$/.exec((prog.textContent || '').trim());
@@ -312,6 +368,10 @@
 
   // ---- repo index: per-entry ticks + header counter -----------------------
 
+  // `.entry` is the shared repo-index card; `.topic-card` is thinker-arena's,
+  // which is built client-side from topics.js and never used the shared class.
+  var ENTRY_SEL = '.entry, .topic-card';
+
   function entryPages(entry) {
     var links = [];
     if (entry.tagName === 'A' && entry.getAttribute('href')) links.push(entry);
@@ -322,13 +382,16 @@
       try { u = new URL(a.getAttribute('href'), location.href); } catch (e) { return; }
       if (u.origin !== location.origin || !/\.html$/.test(u.pathname)) return;
       if (/\/index(\.\w+)?\.html$/.test(u.pathname)) return;
-      if (!seen[u.pathname]) { seen[u.pathname] = 1; out.push(u.pathname); }
+      // Keyed the same way as the page itself, so debate.html?d=<slug> rows
+      // each track their own debate rather than all sharing one flag.
+      var k = keyOf(u.pathname, u.search);
+      if (!seen[k]) { seen[k] = 1; out.push(k); }
     });
     return out;
   }
 
   function mountRepoIndex() {
-    var entries = [].slice.call(document.querySelectorAll('.entry'));
+    var entries = [].slice.call(document.querySelectorAll(ENTRY_SEL));
     if (!entries.length) return;
 
     // The hub landing has a "My Notes" link; every repo index should have one
@@ -374,8 +437,11 @@
           tick.className = 'read-tick';
           tick.textContent = '✓';
           tick.title = T.done;
-          tick.style.cssText =
-            'position:absolute;left:6px;top:8px;color:#3aa17e;font:700 .8rem -apple-system,sans-serif;';
+          // Topic cards carry a gradient rail plus an index label on the left,
+          // so their tick goes in the free top-right corner instead.
+          tick.style.cssText = entry.classList.contains('topic-card')
+            ? 'position:absolute;right:14px;top:14px;color:#3aa17e;font:700 .8rem -apple-system,sans-serif;'
+            : 'position:absolute;left:6px;top:8px;color:#3aa17e;font:700 .8rem -apple-system,sans-serif;';
           if (getComputedStyle(entry).position === 'static') entry.style.position = 'relative';
           entry.appendChild(tick);
         } else if (!read && tick) {
@@ -430,9 +496,12 @@
     // from it and mounts no UI of its own here.
     if (!isLanding() && !isRepoIndex() && !repoSlug(location.pathname)) { sync(); return; }
     if (isLanding()) { mountLanding(); return; }
-    if (isRepoIndex()) { mountRepoIndex(); return; }
+    if (isRepoIndex()) {
+      whenPresent(function () { return !!document.querySelector(ENTRY_SEL); }, mountRepoIndex);
+      return;
+    }
     // Article pages: anything with real prose. Skip helper pages (notes,
     // account, confirm…), which live at the site root and aren't content.
-    if (repoSlug(location.pathname) && document.querySelector('h1, h2')) mountArticle();
+    if (repoSlug(location.pathname)) whenPresent(articleRendered, mountArticle);
   });
 })();
