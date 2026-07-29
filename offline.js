@@ -103,6 +103,10 @@
   var CACHE = 'offline-content-v1';
   // Synthetic cache keys recording "this whole repo was downloaded".
   var REPO_MARK = '/__bigcat-downloaded/';
+  // Written while a whole-repo download is running. Leaving the page unloads
+  // the script mid-flight, so this is what tells a later visit that a download
+  // was interrupted and should pick up where it stopped.
+  var REPO_BUSY = '/__bigcat-downloading/';
   var isEn = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0
     || /\.en\.html$/i.test(location.pathname);
   function ready(fn) {
@@ -209,6 +213,7 @@
   // Download every article in a repo, one at a time (assets within an article
   // fetched in parallel). onProgress(done, total) drives the button label.
   function downloadRepo(repo, lang, onProgress) {
+    var slug = repo.replace(/\//g, '');
     return repoArticlePages(repo, lang).then(function (pages) {
       // Cache the index itself too — offline it's the way back into the site,
       // and without it a downloaded repo has no navigable entry point.
@@ -221,8 +226,21 @@
       var total = pages.length, done = 0, failed = 0;
       if (!total) return { total: 0, done: 0, failed: 0 };
       return caches.open(CACHE).then(function (c) {
+        // Mark the run so an interrupted download can be resumed later.
+        c.put(REPO_BUSY + slug, new Response(JSON.stringify({ lang: lang, ts: Date.now() }),
+          { headers: { 'Content-Type': 'application/json' } })).catch(function () {});
         return pages.reduce(function (chain, page) {
           return chain.then(function () {
+            // Already downloaded (an earlier, interrupted run) — count it and
+            // move on, so resuming costs nothing for what's already there.
+            return c.match(page).then(function (hit) {
+              if (!hit) return null;
+              done++;
+              if (onProgress) onProgress(done, total);
+              return 'skip';
+            });
+          }).then(function (skip) {
+            if (skip === 'skip') return;
             return fetch(page, { cache: 'no-cache' }).then(function (r) {
               if (!r.ok) throw new Error(page + ' ' + r.status);
               return r.text();
@@ -238,9 +256,10 @@
             });
           });
         }, Promise.resolve()).then(function () {
+          c.delete(REPO_BUSY + slug).catch(function () {});
           // Leave a marker in the cache so a later page load knows this repo
           // was taken whole — without it the button always came back as ⤓.
-          return c.put(REPO_MARK + repo.replace(/\//g, ''),
+          return c.put(REPO_MARK + slug,
             new Response(JSON.stringify({ total: total, done: done, failed: failed, ts: Date.now() }),
               { headers: { 'Content-Type': 'application/json' } }))
             .catch(function () {})
@@ -262,6 +281,11 @@
           if (p.indexOf(REPO_MARK) === 0) {
             var slug = p.slice(REPO_MARK.length);
             (state[slug] = state[slug] || { pages: 0 }).whole = true;
+            return;
+          }
+          if (p.indexOf(REPO_BUSY) === 0) {
+            var bslug = p.slice(REPO_BUSY.length);
+            (state[bslug] = state[bslug] || { pages: 0 }).interrupted = true;
             return;
           }
           if (!/\.html$/.test(p)) return;
@@ -323,6 +347,10 @@
           return;
         }
         if (!window.confirm(confirmMsg)) return;
+        startDownload();
+      });
+
+      function startDownload() {
         state = 'running';
         btn.style.fontSize = '10px';
         btn.textContent = '…';
@@ -341,13 +369,19 @@
             btn.textContent = '⚠';
             btn.style.color = '#ff9b9b';
           });
-      });
+      }
       // Already downloaded on this device? Show that instead of a fresh ⤓.
       stateReady.then(function (cached) {
         var st = cached[slug];
         if (!st) return;
         if (st.whole) {
           state_done();
+        } else if (st.interrupted) {
+          // A download that was cut off by navigating away. Picking it up needs
+          // no confirmation — it was already agreed to — and costs nothing for
+          // the pages already stored.
+          btn.title = lang === 'en' ? 'Resuming…' : '继续下载…';
+          startDownload();
         } else if (st.pages) {
           btn.textContent = String(st.pages);
           btn.style.fontSize = '11px';
