@@ -299,13 +299,23 @@
     }).catch(function () { return {}; });
   }
 
+  // Two separate controls per site, never one button that changes meaning:
+  // ⤓ downloads (or resumes, showing how many pages are in), 🗑 removes what's
+  // stored. The bin only appears once there is something to remove.
   function mountRepoButtons() {
     if (document.querySelector('.repo-dl')) return;
     var lang = landingLang();
-    var confirmMsg = lang === 'en'
-      ? 'Download this whole site (all articles + audio) for offline? It may be large.'
-      : '整仓离线下载（全部文章 + 语音）？可能有几百 MB。';
+    var T = lang === 'en'
+      ? { ask: 'Download this whole site (all articles + audio) for offline? It may be large.',
+          dl: 'Download whole site offline', up: 'Download the rest',
+          done: 'Downloaded — tap to fetch anything new',
+          rm: 'Delete downloaded content', rmAsk: 'Remove everything downloaded from this site?' }
+      : { ask: '整仓离线下载（全部文章 + 语音）？可能有几百 MB。',
+          dl: '整仓离线下载', up: '继续下载剩余部分',
+          done: '已下载 — 点击可补下新增内容',
+          rm: '删除已下载内容', rmAsk: '删除这个站已下载的全部内容？' };
     var stateReady = cachedRepoState();
+
     document.querySelectorAll('a.card[href]').forEach(function (card) {
       var m;
       try { m = /^\/([^\/]+)\//.exec(new URL(card.getAttribute('href'), location.origin).pathname); }
@@ -314,134 +324,99 @@
       var slug = m[1];
       var repo = '/' + slug + '/';
 
-      var btn = document.createElement('button');
-      btn.className = 'repo-dl';
-      btn.type = 'button';
-      var confirmMsgTitle = lang === 'en' ? 'Download whole site offline' : '整仓离线下载';
-      btn.title = confirmMsgTitle;
-      btn.textContent = '⤓';
-      btn.style.cssText =
-        'position:absolute;right:8px;bottom:6px;z-index:5;min-width:26px;height:26px;' +
-        'padding:0 7px;border-radius:13px;border:1px solid rgba(255,255,255,.2);' +
-        'background:rgba(20,20,40,.72);color:#a0a8c0;font:600 13px -apple-system,sans-serif;' +
-        'cursor:pointer;line-height:24px;';
+      var bar = document.createElement('span');
+      bar.className = 'repo-dl';
+      bar.style.cssText =
+        'position:absolute;right:8px;bottom:6px;z-index:5;display:flex;gap:5px;align-items:center;';
       if (getComputedStyle(card).position === 'static') card.style.position = 'relative';
 
-      var state = 'idle';
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        if (state === 'running') return;
-        if (state === 'done') {
-          if (!window.confirm(isEn ? 'Remove everything downloaded from this site?'
-                                   : '删除这个站已下载的全部内容？')) return;
-          state = 'running';
-          btn.textContent = '…';
-          removeRepo(slug).then(function () {
-            state = 'idle';
-            btn.style.fontSize = '13px';
-            btn.textContent = '⤓';
-            btn.style.color = '#a0a8c0';
-            btn.title = confirmMsgTitle;
-          });
-          return;
-        }
-        if (!window.confirm(confirmMsg)) return;
-        startDownload();
-      });
+      function mk(text, title) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.textContent = text;
+        b.title = title;
+        b.style.cssText =
+          'min-width:26px;height:26px;padding:0 7px;border-radius:13px;' +
+          'border:1px solid rgba(255,255,255,.2);background:rgba(20,20,40,.72);' +
+          'color:#a0a8c0;font:600 13px -apple-system,sans-serif;cursor:pointer;line-height:24px;';
+        b.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); });
+        return b;
+      }
+      var dl = mk('⤓', T.dl);
+      var rm = mk('🗑', T.rm);
+      rm.style.display = 'none';          // nothing stored yet
+      rm.style.fontSize = '11px';
+      bar.appendChild(dl);
+      bar.appendChild(rm);
+      card.appendChild(bar);
 
-      function startDownload() {
+      var state = 'idle';
+
+      function showIdle() {
+        state = 'idle';
+        dl.style.fontSize = '13px';
+        dl.textContent = '⤓';
+        dl.style.color = '#a0a8c0';
+        dl.title = T.dl;
+        rm.style.display = 'none';
+      }
+      function showPartial(n) {
+        state = 'idle';
+        dl.style.fontSize = '11px';
+        dl.textContent = String(n);
+        dl.style.color = '#a0a8c0';
+        dl.title = T.up;
+        rm.style.display = '';
+      }
+      function showDone() {
+        state = 'done';
+        dl.style.fontSize = '13px';
+        dl.textContent = '✓';
+        dl.style.color = '#7ee2a8';
+        dl.title = T.done;
+        rm.style.display = '';
+      }
+
+      function startDownload(skipConfirm) {
+        if (state === 'running') return;
+        if (!skipConfirm && !window.confirm(T.ask)) return;
         state = 'running';
-        btn.style.fontSize = '10px';
-        btn.textContent = '…';
+        dl.style.fontSize = '10px';
+        dl.textContent = '…';
         if (navigator.storage && navigator.storage.persist) navigator.storage.persist();
-        downloadRepo(repo, lang, function (d, t) { btn.textContent = d + '/' + t; })
+        downloadRepo(repo, lang, function (d, t) { dl.textContent = d + '/' + t; })
           .then(function (res) {
-            state = 'done';
-            btn.style.fontSize = '13px';
-            btn.textContent = res.total ? '✓' : '∅';
-            btn.style.color = res.total ? '#7ee2a8' : '#a0a8c0';
+            if (res.total) showDone();
+            else { showIdle(); dl.textContent = '∅'; }
           })
           .catch(function (err) {
             console.warn('[offline] repo download failed:', err);
             state = 'idle';
-            btn.style.fontSize = '13px';
-            btn.textContent = '⚠';
-            btn.style.color = '#ff9b9b';
+            dl.style.fontSize = '13px';
+            dl.textContent = '⚠';
+            dl.style.color = '#ff9b9b';
           });
       }
-      // Already downloaded on this device? Show that instead of a fresh ⤓.
+
+      dl.addEventListener('click', function () { startDownload(state === 'done'); });
+      rm.addEventListener('click', function () {
+        if (state === 'running') return;
+        if (!window.confirm(T.rmAsk)) return;
+        state = 'running';
+        dl.textContent = '…';
+        removeRepo(slug).then(showIdle);
+      });
+
+      // Restore what this device already holds.
       stateReady.then(function (cached) {
         var st = cached[slug];
         if (!st) return;
-        if (st.whole) {
-          state_done();
-        } else if (st.interrupted) {
-          // A download that was cut off by navigating away. Picking it up needs
-          // no confirmation — it was already agreed to — and costs nothing for
-          // the pages already stored.
-          btn.title = lang === 'en' ? 'Resuming…' : '继续下载…';
-          startDownload();
-        } else if (st.pages) {
-          btn.textContent = String(st.pages);
-          btn.style.fontSize = '11px';
-          btn.title = (lang === 'en' ? 'Partly downloaded: ' : '已下载部分：') + st.pages;
-        }
-      });
-      function state_done() {
-        state = 'done';
-        btn.style.fontSize = '13px';
-        btn.textContent = '✓';
-        btn.style.color = '#7ee2a8';
-        btn.title = lang === 'en' ? 'Downloaded' : '已整仓下载';
-      }
-
-      card.appendChild(btn);
-    });
-  }
-
-
-  // Remove downloaded pages and the audio segments they reference. Segment
-  // hashes come from the cached HTML, matched by filename so both the
-  // same-origin layout and the R2 worker URLs are covered.
-  function removePages(pages) {
-    return caches.open(CACHE).then(function (c) {
-      return Promise.all(pages.map(function (p) {
-        return c.match(p).then(function (res) { return res || c.match(p, { ignoreSearch: true }); })
-          .then(function (res) { return res ? res.text() : ''; })
-          .then(function (html) {
-            var hashes = [], re = /data-tts="([a-f0-9]+)"/gi, m;
-            while ((m = re.exec(html))) hashes.push(m[1]);
-            return c.keys().then(function (reqs) {
-              var doomed = reqs.filter(function (r) {
-                var u = new URL(r.url);
-                return /\.mp3$/i.test(u.pathname) &&
-                  hashes.some(function (h) { return u.pathname.indexOf('/' + h + '.mp3') >= 0; });
-              });
-              return Promise.all(doomed.map(function (r) { return c.delete(r); }));
-            });
-          })
-          .then(function () {
-            // A debate's text lives in JSON beside the shell — drop it too, or
-            // the space stays used and a stale copy lingers.
-            var extras = debateExtras(p).filter(function (u) { return !/thinkers\.json$/.test(u); });
-            return Promise.all(extras.map(function (u) { return c.delete(u); }));
-          })
-          .then(function () { return c.delete(p); });
-      }));
-    });
-  }
-
-  // Everything under one repo, marker included.
-  function removeRepo(slug) {
-    return caches.open(CACHE).then(function (c) {
-      return c.keys().then(function (reqs) {
-        var doomed = reqs.filter(function (r) {
-          var u = new URL(r.url);
-          return u.pathname.indexOf('/' + slug + '/') === 0 ||
-                 u.pathname.indexOf(REPO_MARK + slug) === 0;
-        });
-        return Promise.all(doomed.map(function (r) { return c.delete(r); }));
+        if (st.whole) showDone();
+        else if (st.interrupted) {
+          // Cut off by navigating away — pick it up without asking again.
+          if (st.pages) showPartial(st.pages);
+          startDownload(true);
+        } else if (st.pages) showPartial(st.pages);
       });
     });
   }
@@ -505,7 +480,60 @@
 
   var ENTRY_SEL = '.entry, a.topic-card';
 
+  // Remove downloaded pages and the audio segments they reference. Segment
+  // hashes come from the cached HTML, matched by filename so both the
+  // same-origin layout and the R2 worker URLs are covered.
+  function removePages(pages) {
+    return caches.open(CACHE).then(function (c) {
+      return Promise.all(pages.map(function (p) {
+        return c.match(p).then(function (res) { return res || c.match(p, { ignoreSearch: true }); })
+          .then(function (res) { return res ? res.text() : ''; })
+          .then(function (html) {
+            var hashes = [], re = /data-tts="([a-f0-9]+)"/gi, m;
+            while ((m = re.exec(html))) hashes.push(m[1]);
+            return c.keys().then(function (reqs) {
+              var doomed = reqs.filter(function (r) {
+                var u = new URL(r.url);
+                return /\.mp3$/i.test(u.pathname) &&
+                  hashes.some(function (h) { return u.pathname.indexOf('/' + h + '.mp3') >= 0; });
+              });
+              return Promise.all(doomed.map(function (r) { return c.delete(r); }));
+            });
+          })
+          .then(function () {
+            // A debate's text lives in JSON beside the shell — drop it too.
+            var extras = debateExtras(p).filter(function (u) { return !/thinkers\.json$/.test(u); });
+            return Promise.all(extras.map(function (u) { return c.delete(u); }));
+          })
+          .then(function () { return c.delete(p); });
+      }));
+    });
+  }
+
+  // Everything under one repo, marker included. Audio for migrated repos lives
+  // on the R2 worker origin but keeps the same /<repo>/… pathname, so one
+  // pathname test covers both.
+  function removeRepo(slug) {
+    return caches.open(CACHE).then(function (c) {
+      return c.keys().then(function (reqs) {
+        var doomed = reqs.filter(function (r) {
+          var u = new URL(r.url);
+          return u.pathname.indexOf('/' + slug + '/') === 0 ||
+                 u.pathname.indexOf(REPO_MARK + slug) === 0 ||
+                 u.pathname.indexOf(REPO_BUSY + slug) === 0;
+        });
+        return Promise.all(doomed.map(function (r) { return c.delete(r); }));
+      });
+    });
+  }
+
   function mountEntryButtons() {
+    var T = isEn
+      ? { dl: 'Save offline', done: 'Saved offline', rm: 'Delete downloaded copy',
+          rmAsk: 'Remove this from offline storage?' }
+      : { dl: '离线下载', done: '已离线保存', rm: '删除已下载内容',
+          rmAsk: '从离线存储中删除？' };
+
     caches.open(CACHE).then(function (c) {
       document.querySelectorAll(ENTRY_SEL).forEach(function (entry) {
         if (entry.querySelector('.entry-dl')) return;   // already mounted
@@ -513,64 +541,84 @@
         if (!pages.length) return;
 
         var isRow = entry.tagName === 'A'; // flat link row vs block card
-        var btn = document.createElement('button');
-        btn.className = 'entry-dl';
-        btn.type = 'button';
-        btn.title = isEn ? 'Save offline' : '离线下载';
-        btn.textContent = '⤓';
-        btn.style.cssText =
-          'position:absolute;z-index:5;min-width:28px;height:28px;padding:0 8px;' +
-          'border-radius:14px;border:1px solid rgba(123,97,255,.4);' +
-          'background:rgba(123,97,255,.12);color:#7b61ff;' +
-          'font:600 14px -apple-system,sans-serif;cursor:pointer;line-height:26px;' +
-          (isRow ? 'right:12px;top:50%;transform:translateY(-50%);'
-                 : 'right:14px;top:14px;');
+        var bar = document.createElement('span');
+        bar.className = 'entry-dl';
+        bar.style.cssText =
+          'position:absolute;z-index:5;display:flex;gap:5px;align-items:center;' +
+          (isRow ? 'right:12px;top:50%;transform:translateY(-50%);' : 'right:14px;top:14px;');
         if (getComputedStyle(entry).position === 'static') entry.style.position = 'relative';
-        // Reserve room so the button never overlaps entry text (row entries put
-        // right-aligned/stacked text where the button sits).
-        if (isRow) entry.style.paddingRight = '56px';
+        // Reserve room so the buttons never overlap entry text.
+        if (isRow) entry.style.paddingRight = '92px';
 
-        // ✓ only once every page in the entry is already cached.
+        function mk(text, title) {
+          var b = document.createElement('button');
+          b.type = 'button';
+          b.textContent = text;
+          b.title = title;
+          b.style.cssText =
+            'min-width:28px;height:28px;padding:0 8px;border-radius:14px;' +
+            'border:1px solid rgba(123,97,255,.4);background:rgba(123,97,255,.12);' +
+            'color:#7b61ff;font:600 14px -apple-system,sans-serif;cursor:pointer;line-height:26px;';
+          b.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); });
+          return b;
+        }
+        // Two controls, each with one meaning: ⤓ downloads, 🗑 removes.
+        var dl = mk('⤓', T.dl);
+        var rm = mk('🗑', T.rm);
+        rm.style.fontSize = '12px';
+        rm.style.borderColor = 'rgba(255,255,255,.18)';
+        rm.style.background = 'rgba(255,255,255,.05)';
+        rm.style.color = '#7b8299';
+        rm.style.display = 'none';
+        bar.appendChild(dl);
+        bar.appendChild(rm);
+
+        function showSaved() {
+          dl.dataset.done = '1';
+          dl.style.fontSize = '14px';
+          dl.textContent = '✓';
+          dl.style.color = '#7ee2a8';
+          dl.style.borderColor = 'rgba(126,226,168,.5)';
+          dl.title = T.done;
+          rm.style.display = '';
+        }
+        function showIdle() {
+          delete dl.dataset.done;
+          dl.style.fontSize = '14px';
+          dl.textContent = '⤓';
+          dl.style.color = '#7b61ff';
+          dl.style.borderColor = 'rgba(123,97,255,.4)';
+          dl.title = T.dl;
+          rm.style.display = 'none';
+        }
+
         Promise.all(pages.map(function (p) { return c.match(p); })).then(function (hits) {
-          if (hits.every(Boolean)) { btn.textContent = '✓'; btn.dataset.done = '1'; }
+          if (hits.every(Boolean)) showSaved();
         });
 
         var busy = false;
-        btn.addEventListener('click', function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          if (busy) return;
-          // Already downloaded -> tap again to remove it (page + its audio).
-          if (btn.dataset.done) {
-            if (!window.confirm(isEn ? 'Remove this from offline storage?' : '从离线存储中删除？')) return;
-            busy = true;
-            removePages(pages).then(function () {
-              delete btn.dataset.done;
-              btn.style.fontSize = '14px';
-              btn.textContent = '⤓';
-              btn.style.color = '#7b61ff';
-              btn.style.borderColor = 'rgba(123,97,255,.4)';
-            }).then(function () { busy = false; });
-            return;
-          }
+        dl.addEventListener('click', function () {
+          if (busy || dl.dataset.done) return;
           busy = true;
-          btn.style.fontSize = '10px';
-          btn.textContent = '…';
+          dl.style.fontSize = '10px';
+          dl.textContent = '…';
           if (navigator.storage && navigator.storage.persist) navigator.storage.persist();
-          Promise.all(pages.map(downloadArticle)).then(function () {
-            btn.dataset.done = '1';
-            btn.style.fontSize = '14px';
-            btn.textContent = '✓';
-            btn.style.color = '#7ee2a8';
-            btn.style.borderColor = 'rgba(126,226,168,.5)';
-          }).catch(function (err) {
+          Promise.all(pages.map(downloadArticle)).then(showSaved).catch(function (err) {
             console.warn('[offline] entry download failed:', err);
-            btn.style.fontSize = '14px';
-            btn.textContent = '⚠';
-            btn.style.color = '#ff9b9b';
+            dl.style.fontSize = '14px';
+            dl.textContent = '⚠';
+            dl.style.color = '#ff9b9b';
           }).then(function () { busy = false; });
         });
-        entry.appendChild(btn);
+        rm.addEventListener('click', function () {
+          if (busy) return;
+          if (!window.confirm(T.rmAsk)) return;
+          busy = true;
+          dl.textContent = '…';
+          removePages(pages).then(showIdle).then(function () { busy = false; });
+        });
+
+        entry.appendChild(bar);
       });
     });
   }
