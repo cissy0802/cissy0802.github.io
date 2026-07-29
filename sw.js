@@ -97,7 +97,12 @@ self.addEventListener('fetch', (e) => {
           return res;
         })
         .catch(() =>
-          caches.match(req).then((hit) => hit || caches.match('/offline.html').then((idx) =>
+          // Exact URL first; then ignoring the query, because pages that pick
+          // their content from a param (thinker-arena's debate.html?d=<slug>)
+          // are cached once as a shell while navigation asks for the full URL.
+          caches.match(req)
+            .then((hit) => hit || caches.match(req, { ignoreSearch: true }))
+            .then((hit) => hit || caches.match('/offline.html').then((idx) =>
             idx || new Response('<h1>Offline</h1><p>This page has not been downloaded.</p>',
               { status: 503, headers: { 'Content-Type': 'text/html' } })
           ))

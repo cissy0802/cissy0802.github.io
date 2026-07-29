@@ -101,6 +101,8 @@
   }
 
   var CACHE = 'offline-content-v1';
+  // Synthetic cache keys recording "this whole repo was downloaded".
+  var REPO_MARK = '/__bigcat-downloaded/';
   var isEn = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0
     || /\.en\.html$/i.test(location.pathname);
   function ready(fn) {
@@ -134,7 +136,17 @@
     function go() {
       if (!isOwnerNow()) return;
       if (onLanding) mountRepoButtons();
-      if (onRepoIndex) mountEntryButtons();
+      if (onRepoIndex) {
+        mountEntryButtons();
+        // thinker-arena builds its debate list from JSON after this runs, so
+        // the first pass finds nothing. Retry while the list is still growing.
+        var seen = -1, tries = 0;
+        var settle = setInterval(function () {
+          var n = document.querySelectorAll(ENTRY_SEL).length;
+          if (n !== seen) { seen = n; mountEntryButtons(); }
+          if (++tries >= 8) clearInterval(settle);
+        }, 500);
+      }
     }
     if (isOwnerNow()) { go(); return; }
     backfillEmail().then(go);
@@ -223,9 +235,42 @@
               done++; if (onProgress) onProgress(done, total);
             });
           });
-        }, Promise.resolve()).then(function () { return { total: total, done: done, failed: failed }; });
+        }, Promise.resolve()).then(function () {
+          // Leave a marker in the cache so a later page load knows this repo
+          // was taken whole — without it the button always came back as ⤓.
+          return c.put(REPO_MARK + repo.replace(/\//g, ''),
+            new Response(JSON.stringify({ total: total, done: done, failed: failed, ts: Date.now() }),
+              { headers: { 'Content-Type': 'application/json' } }))
+            .catch(function () {})
+            .then(function () { return { total: total, done: done, failed: failed }; });
+        });
       });
     });
+  }
+
+  // What the cache already holds, per repo: whether it was taken whole, and
+  // how many of its pages are present. One scan for the whole landing.
+  function cachedRepoState() {
+    return caches.open(CACHE).then(function (c) {
+      return c.keys().then(function (reqs) {
+        var state = {};
+        reqs.forEach(function (r) {
+          var p;
+          try { p = new URL(r.url).pathname; } catch (e) { return; }
+          if (p.indexOf(REPO_MARK) === 0) {
+            var slug = p.slice(REPO_MARK.length);
+            (state[slug] = state[slug] || { pages: 0 }).whole = true;
+            return;
+          }
+          if (!/\.html$/.test(p)) return;
+          if (/\/index(\.\w+)?\.html$/.test(p)) return;
+          var m = /^\/([^\/]+)\//.exec(p);
+          if (!m) return;
+          (state[m[1]] = state[m[1]] || { pages: 0 }).pages++;
+        });
+        return state;
+      });
+    }).catch(function () { return {}; });
   }
 
   function mountRepoButtons() {
@@ -234,12 +279,14 @@
     var confirmMsg = lang === 'en'
       ? 'Download this whole site (all articles + audio) for offline? It may be large.'
       : '整仓离线下载（全部文章 + 语音）？可能有几百 MB。';
+    var stateReady = cachedRepoState();
     document.querySelectorAll('a.card[href]').forEach(function (card) {
       var m;
       try { m = /^\/([^\/]+)\//.exec(new URL(card.getAttribute('href'), location.origin).pathname); }
       catch (e) { return; }
       if (!m) return;
-      var repo = '/' + m[1] + '/';
+      var slug = m[1];
+      var repo = '/' + slug + '/';
 
       var btn = document.createElement('button');
       btn.className = 'repo-dl';
@@ -278,11 +325,46 @@
             btn.style.color = '#ff9b9b';
           });
       });
+      // Already downloaded on this device? Show that instead of a fresh ⤓.
+      stateReady.then(function (cached) {
+        var st = cached[slug];
+        if (!st) return;
+        if (st.whole) {
+          state_done();
+        } else if (st.pages) {
+          btn.textContent = String(st.pages);
+          btn.style.fontSize = '11px';
+          btn.title = (lang === 'en' ? 'Partly downloaded: ' : '已下载部分：') + st.pages;
+        }
+      });
+      function state_done() {
+        state = 'done';
+        btn.style.fontSize = '13px';
+        btn.textContent = '✓';
+        btn.style.color = '#7ee2a8';
+        btn.title = lang === 'en' ? 'Downloaded' : '已整仓下载';
+      }
+
       card.appendChild(btn);
     });
   }
 
   // ---- Per-article download on a repo's index (owner only) ----------------
+
+  // A debate page is a shell: its text lives in JSON fetched at runtime, so
+  // caching the HTML alone leaves it blank offline.
+  function debateExtras(path) {
+    var u;
+    try { u = new URL(path, location.origin); } catch (e) { return []; }
+    if (!/\/thinker-arena\/debate(\.en)?\.html$/.test(u.pathname)) return [];
+    var id = new URLSearchParams(u.search).get('d') || 'happiness';
+    var base = '/thinker-arena/';
+    var extras = [base + 'thinkers.json', base + 'debates/' + id + '.json'];
+    if (!/\.en\.html$/.test(u.pathname)) {
+      extras.push(base + 'audio/debate/' + id + '/manifest.json'); // may 404; tolerated
+    }
+    return extras;
+  }
 
   // Fetch one article and cache it + its baked audio + images.
   function downloadArticle(path) {
@@ -292,7 +374,8 @@
         return r.text();
       }).then(function (html) {
         var doc = new DOMParser().parseFromString(html, 'text/html');
-        return Promise.all(assetsFromDoc(doc, path).map(function (u) {
+        var urls = assetsFromDoc(doc, path).concat(debateExtras(path));
+        return Promise.all(urls.map(function (u) {
           return fetch(u, { cache: 'no-cache' }).then(function (res) {
             if (res.ok) return c.put(u, res);
           }).catch(function () {});
@@ -314,15 +397,21 @@
       try { u = new URL(a.getAttribute('href'), location.href); } catch (e) { return; }
       if (u.origin !== location.origin || !/\.html$/.test(u.pathname)) return;
       if (/\/index(\.\w+)?\.html$/.test(u.pathname)) return;
-      if (!seen[u.pathname]) { seen[u.pathname] = 1; pages.push(u.pathname); }
+      // Keep the query when it selects the content (debate.html?d=<slug>);
+      // without it every debate collapses onto the same shell URL and only the
+      // default one ever gets cached.
+      var key = u.pathname + (u.search || '');
+      if (!seen[key]) { seen[key] = 1; pages.push(key); }
     });
     return pages;
   }
 
+  var ENTRY_SEL = '.entry, a.topic-card';
+
   function mountEntryButtons() {
-    if (document.querySelector('.entry-dl')) return;
     caches.open(CACHE).then(function (c) {
-      document.querySelectorAll('.entry').forEach(function (entry) {
+      document.querySelectorAll(ENTRY_SEL).forEach(function (entry) {
+        if (entry.querySelector('.entry-dl')) return;   // already mounted
         var pages = entryPages(entry);
         if (!pages.length) return;
 
