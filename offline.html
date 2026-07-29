@@ -12,42 +12,141 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <style>
+
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,"SF Pro Display","Noto Serif SC","Songti SC",sans-serif;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0a0e1a 100%);color:#e4e6eb;line-height:1.7;min-height:100vh}
-.container{max-width:820px;margin:0 auto;padding:44px 20px 80px}
-header{text-align:center;padding:20px 0 10px}
-h1{font-size:1.7rem;font-weight:800;background:linear-gradient(135deg,#00d4ff 0%,#7b61ff 50%,#ff6ec4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.sub{color:#a0a8c0;font-size:.88rem;margin-top:8px}
-.state{display:inline-block;margin-top:10px;padding:4px 12px;border-radius:12px;font:600 .74rem "SF Mono",Menlo,monospace}
-.on{background:rgba(58,161,126,.14);color:#7ee2a8;border:1px solid rgba(58,161,126,.4)}
-.off{background:rgba(255,167,38,.14);color:#ffc46b;border:1px solid rgba(255,167,38,.4)}
-.group{margin-top:22px}
-.group h2{font:700 .8rem "SF Mono",Menlo,monospace;color:#7b61ff;letter-spacing:.5px;margin-bottom:10px;display:flex;gap:8px;align-items:baseline}
-.group h2 .n{color:#6b7390;font-weight:400;font-size:.72rem}
-a.item{display:block;padding:13px 16px;margin-bottom:9px;border-radius:11px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid #7b61ff;color:#e4e6eb;text-decoration:none}
-a.item:hover{background:rgba(255,255,255,.07)}
-a.item .t{font-size:.98rem}
-a.item .p{font-size:.72rem;color:#6b7390;font-family:"SF Mono",Menlo,monospace;margin-top:3px;word-break:break-all}
-a.item .au{font-size:.7rem;color:#7ee2a8;margin-top:4px}
-.empty{text-align:center;color:#7b8299;padding:50px 16px;line-height:2}
-.nav{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:8px}
-.nav a{padding:7px 13px;border-radius:13px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:#a0a8c0;text-decoration:none;font-size:.8rem}
-.nav a:hover{color:#fff}
+.container{max-width:980px;margin:0 auto;padding:48px 24px 80px}
+header{text-align:center;padding:48px 0 48px}
+header h1{font-size:2.6rem;font-weight:800;background:linear-gradient(135deg,#00d4ff 0%,#7b61ff 50%,#ff6ec4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:2px;margin-bottom:12px}
+header .tagline{font-size:1.1rem;color:#a0a8c0;font-weight:300;letter-spacing:1px}
+header .subtitle{font-size:0.85rem;color:#7b61ff;margin-top:8px;font-family:"SF Mono",Menlo,monospace}
+.lang-toggle{position:fixed;top:18px;right:18px;background:rgba(255,255,255,0.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:5px;display:flex;gap:0;z-index:100;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem}
+.lang-toggle a{padding:5px 12px;border-radius:14px;color:#a0a8c0;text-decoration:none;transition:all 0.15s}
+.lang-toggle a.active{background:#7b61ff;color:#fff;font-weight:700}
+.lang-toggle a:not(.active):hover{background:rgba(255,255,255,0.08);color:#fff}
+.notes-link{position:fixed;top:18px;left:18px;background:rgba(255,255,255,0.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:8px 14px;z-index:100;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#a0a8c0;text-decoration:none;transition:all 0.15s}
+.notes-link:hover{background:#7b61ff;color:#fff}
+.list{display:flex;flex-direction:column;gap:10px;margin-top:24px}
+.card{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:16px 22px;background:rgba(255,255,255,0.04);backdrop-filter:blur(10px);border-radius:12px;border:1px solid rgba(255,255,255,0.08);text-decoration:none;color:inherit;transition:all 0.2s ease;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;top:0;left:0;bottom:0;width:4px;background:var(--accent);opacity:0.85}
+.card:hover{transform:translateX(3px);background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.15);box-shadow:0 4px 16px rgba(0,0,0,0.3)}
+.card .emoji{font-size:1.7rem;flex-shrink:0;padding-left:6px}
+.card .body{min-width:0;overflow:hidden}
+.card .title-row{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:3px}
+.card .title{font-size:1.1rem;font-weight:700;color:#fff}
+.card .subtitle-en{font-size:0.74rem;color:#7b61ff;font-family:"SF Mono",Menlo,monospace;letter-spacing:0.3px;opacity:0.85}
+.card .desc{font-size:0.88rem;color:#a8b0c0;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .meta{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;font-family:"SF Mono",Menlo,monospace}
+.card .updated{font-size:0.72rem;color:#6a7080;letter-spacing:0.3px}
+.card .arrow{font-size:0.78rem;color:var(--accent);font-weight:600;transition:transform 0.2s}
+.card:hover .arrow{transform:translateX(3px)}
+.card.mental{--accent:#00d4ff}
+.card.mental::before{background:linear-gradient(90deg,#00d4ff,#0096c7)}
+.card.aiml{--accent:#ff6ec4}
+.card.aiml::before{background:linear-gradient(90deg,#ff6ec4,#7b61ff)}
+.card.meta{--accent:#52b788}
+.card.meta::before{background:linear-gradient(90deg,#e85a4f,#f7a072,#52b788,#3a86ff)}
+.card.book{--accent:#a87a3e}
+.card.book::before{background:linear-gradient(90deg,#a87a3e,#6b4423)}
+.card.deepread{--accent:#3f8b7f}
+.card.deepread::before{background:linear-gradient(90deg,#3f8b7f,#2f5d57)}
+.card.novel{--accent:#c88cf0}
+.card.novel::before{background:linear-gradient(90deg,#c88cf0,#f0a868)}
+.card.csbooks{--accent:#4a90b0}
+.card.csbooks::before{background:linear-gradient(90deg,#4a90b0,#2f6480)}
+.card.sysd{--accent:#64c8ff}
+.card.sysd::before{background:linear-gradient(90deg,#64c8ff,#5eead4)}
+.card.papers{--accent:#f0b429}
+.card.papers::before{background:linear-gradient(90deg,#f0b429,#e8794b)}
+.card.health{--accent:#3aa17e}
+.card.health::before{background:linear-gradient(90deg,#3aa17e,#0d6e6e)}
+.card.history{--accent:#a35d2b}
+.card.history::before{background:linear-gradient(90deg,#a35d2b,#5a3a1e)}
+.card.parenting{--accent:#e07a9b}
+.card.parenting::before{background:linear-gradient(90deg,#e07a9b,#c45a8e)}
+.card.writing{--accent:#e8e4d8}
+.card.writing::before{background:linear-gradient(90deg,#e8e4d8,#a8a294)}
+.card.bio{--accent:#d4af37}
+.card.bio::before{background:linear-gradient(90deg,#d4af37,#f4e3a1)}
+.card.philosophy{--accent:#a29bfe}
+.card.philosophy::before{background:linear-gradient(90deg,#a29bfe,#6c5ce7)}
+.card.buddhism{--accent:#b8956a}
+.card.buddhism::before{background:linear-gradient(90deg,#b8956a,#8a6d3b)}
+.card.religions{--accent:#8a93c8}
+.card.religions::before{background:linear-gradient(90deg,#8a93c8,#565f9c)}
+.card.investing{--accent:#b8893a}
+.card.investing::before{background:linear-gradient(90deg,#b8893a,#7a5c1f)}
+.card.finance{--accent:#0f766e}
+.card.finance::before{background:linear-gradient(90deg,#0f766e,#0b5850)}
+.card.super{--accent:#ff6ec4}
+.card.super::before{background:linear-gradient(90deg,#ff6ec4,#7b61ff,#00d4ff)}
+.card.leadership{--accent:#a8702d}
+.card.leadership::before{background:linear-gradient(90deg,#a8702d,#5c3a18)}
+.card.sales{--accent:#1f7a5c}
+.card.sales::before{background:linear-gradient(90deg,#1f7a5c,#123f30)}
+.card.psych{--accent:#a85aa8}
+.card.psych::before{background:linear-gradient(90deg,#a85aa8,#7a3e8c)}
+.card.math{--accent:#3a6088}
+.card.math::before{background:linear-gradient(90deg,#3a6088,#1e3a5f)}
+.card.art{--accent:#e76f51}
+.card.art::before{background:linear-gradient(90deg,#e76f51,#9b2d30)}
+.card.civics{--accent:#6ea8d8}
+.card.civics::before{background:linear-gradient(90deg,#6ea8d8,#1f3a5f)}
+.card.neuro{--accent:#a78bfa}
+.card.neuro::before{background:linear-gradient(90deg,#a78bfa,#e879f9)}
+.card.physics{--accent:#5b9bff}
+.card.physics::before{background:linear-gradient(90deg,#5b9bff,#2f6df6)}
+.card.complexity{--accent:#e0895e}
+.card.complexity::before{background:linear-gradient(90deg,#e0895e,#a693cd)}
+.card.family{--accent:#ffd166}
+.card.family::before{background:linear-gradient(90deg,#ffd166,#e8743b)}
+.card.thinker{--accent:#a29bfe}
+.card.thinker::before{background:linear-gradient(90deg,#a29bfe,#7b61ff,#ff6ec4)}
+.card.research{--accent:#4cc9f0}
+.card.research::before{background:linear-gradient(90deg,#4cc9f0,#7b61ff)}
+.card.synthesis{--accent:#7b61ff}
+.card.synthesis::before{background:linear-gradient(90deg,#00d4ff,#7b61ff,#ff6ec4)}
+.group-label{font-size:1.02rem;font-weight:700;color:#b9a8ff;letter-spacing:2.5px;text-transform:uppercase;margin-top:42px;margin-bottom:6px;font-family:"SF Mono",Menlo,monospace}
+.group-label:first-of-type{margin-top:12px}
+.section-label{font-size:0.78rem;color:#7b61ff;letter-spacing:2px;text-transform:uppercase;margin-top:24px;margin-bottom:2px;font-family:"SF Mono",Menlo,monospace;opacity:0.75}
+.section-label:first-of-type{margin-top:6px}
+.search-prompt{margin:24px auto 0;max-width:520px;text-align:center;padding:14px 18px;background:rgba(255,255,255,0.04);border:1px solid rgba(123,97,255,0.25);border-radius:10px;font-size:0.88rem;color:#a0a8c0;font-family:"SF Mono",Menlo,monospace}
+.search-prompt kbd{background:rgba(123,97,255,0.25);color:#fff;padding:2px 8px;border-radius:5px;font-family:inherit;font-size:0.85rem}
+footer{text-align:center;padding:48px 0 12px;font-size:0.78rem;color:#5a6378}
+footer a{color:#7b61ff;text-decoration:none}
+footer a:hover{color:#00d4ff}
+@media(max-width:700px){
+  header h1{font-size:1.8rem}
+  .container{padding:32px 16px 60px}
+  .card{grid-template-columns:auto 1fr;gap:14px;padding:14px 18px}
+  .card .meta{display:none}
+  .card .desc{white-space:normal;font-size:0.85rem}
+  .lang-toggle{top:10px;right:10px}
+  .notes-link{top:10px;left:10px;padding:6px 11px}
+  header{padding-top:60px}
+}
+
+/* Offline-library additions, on top of the landing's own styles. */
+.state{display:inline-block;margin-top:12px;padding:4px 12px;border-radius:12px;font:600 .74rem "SF Mono",Menlo,monospace}
+.state.on{background:rgba(58,161,126,.14);color:#7ee2a8;border:1px solid rgba(58,161,126,.4)}
+.state.off{background:rgba(255,167,38,.14);color:#ffc46b;border:1px solid rgba(255,167,38,.4)}
+.empty{text-align:center;color:#7b8299;padding:60px 20px;font-size:.95rem;line-height:2}
+.card .path{font-size:0.7rem;color:#6a7080;font-family:"SF Mono",Menlo,monospace;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 </style>
 </head>
 <body>
+<a class="notes-link" id="navNotes" href="/notes.html">📝 我的笔记</a>
+<div class="lang-toggle">
+  <a href="/index.zh.html">中文</a>
+  <a href="/index.en.html">EN</a>
+</div>
 <div class="container">
 <header>
   <h1 id="h1">离线可读</h1>
-  <div class="sub" id="sub">这台设备上已下载、断网也能打开的内容。</div>
+  <div class="tagline" id="sub">这台设备上已下载、断网也能打开的内容</div>
   <div id="state"></div>
-  <div class="nav">
-    <a href="/index.zh.html" id="navHubZh">← Hub 中文</a>
-    <a href="/index.en.html" id="navHubEn">← Hub EN</a>
-    <a href="/notes.html" id="navNotes">📝 我的笔记</a>
-  </div>
 </header>
-<div id="list"><div class="empty" id="loading">正在读取已下载内容…</div></div>
+<div class="list" id="list"><div class="empty" id="loading">正在读取已下载内容…</div></div>
 </div>
 
 <script>
@@ -56,62 +155,34 @@ a.item .au{font-size:.7rem;color:#7ee2a8;margin-top:4px}
   var CACHE = 'offline-content-v1';
   var zh = (navigator.language || 'zh').toLowerCase().indexOf('zh') === 0;
   var T = zh
-    ? { h1: '离线可读', sub: '这台设备上已下载、断网也能打开的内容。',
+    ? { h1: '离线可读', sub: '这台设备上已下载、断网也能打开的内容',
         loading: '正在读取已下载内容…',
         empty: '还没有下载任何内容。<br>联网时在文章列表点每篇右侧的 ⤓，或在 Hub 首页点卡片上的 ⤓ 整仓下载。',
-        online: '● 在线', offline: '● 离线', audio: '含语音', other: '其他' }
-    : { h1: 'Offline Library', sub: 'Everything downloaded to this device — readable with no connection.',
+        online: '● 在线', offline: '● 离线', audio: '含语音', other: '其他',
+        enter: '打开 →', notes: '📝 我的笔记' }
+    : { h1: 'Offline Library', sub: 'Everything downloaded to this device — readable with no connection',
         loading: 'Reading downloaded content…',
         empty: 'Nothing downloaded yet.<br>While online, tap ⤓ next to an article in a site index, or ⤓ on a card on the hub landing to take a whole site.',
-        online: '● Online', offline: '● Offline', audio: 'with audio', other: 'Other' };
+        online: '● Online', offline: '● Offline', audio: 'with audio', other: 'Other',
+        enter: 'open →', notes: '📝 My Notes' };
 
-  var REPOS = {
-    'thinker-arena': ['⚖️','思想家圆桌辩论','Thinker Roundtable'],
-    'deep-research': ['🔬','深度研究','Deep Research'],
-    'synthesis': ['🔗','跨站合成','Cross-Site Synthesis'],
-    'mental-models': ['📚','思维模型','Mental Models'],
-    'meta-knowledge': ['🧠','元知识','Meta Knowledge'],
-    'super-individual': ['⚡','AI 超级个体实战','Super Individual'],
-    'ai-ml': ['🤖','AI / ML','AI & ML'],
-    'system-design': ['🏗️','System Design','System Design'],
-    'cs-papers-deepread': ['📄','IT 论文精读','CS Papers'],
-    'chapter-deepread': ['📚','专业书籍精读','CS Books'],
-    'novel-deepread': ['📕','小说精读','Novels'],
-    'leadership': ['🎯','领导力实践','Leadership'],
-    'sales': ['🤝','销售实战','Sales'],
-    'writing': ['✍️','写作与表达','Writing'],
-    'health-longevity': ['🫀','健康长寿','Health & Longevity'],
-    'parenting': ['👶','育儿与教育','Parenting'],
-    'psychology': ['🧩','心理学','Psychology'],
-    'family-craft': ['🧺','一起做','Doing Together'],
-    'personal-finance': ['💵','个人理财','Personal Finance'],
-    'philosophy': ['📜','哲学经典','Philosophy'],
-    'buddhism': ['🪷','佛经','Buddhism'],
-    'world-religions': ['🕉️','世界宗教','World Religions'],
-    'art-aesthetics': ['🎨','艺术与审美','Art & Aesthetics'],
-    'biographies': ['👩‍💼','人物传记','Biographies'],
-    'book-recommendations': ['📖','好书推荐','Book Recommendations'],
-    'deep-reading': ['📰','好书精读','Deep Reading'],
-    'mathematics': ['📐','数学之美','Mathematics'],
-    'history': ['🏛️','历史大事件','History'],
-    'investing': ['📈','投资经典','Investing'],
-    'civics-geopolitics': ['🌍','政治·法律·地缘','Civics & Geopolitics'],
-    'neuroscience': ['🧠','神经科学','Neuroscience'],
-    'physics': ['⚛️','物理','Physics'],
-    'complexity-science': ['🌀','复杂性科学','Complexity Science']
-  };
-  function repoLabel(slug) {
+  // [emoji, zh name, en name, accent class] — accent classes are the landing's
+  // own, so a site keeps the same colour here as on the hub.
+  var REPOS = {"thinker-arena": ["⚖️","思想家圆桌辩论","Thinker Roundtable","thinker"],"deep-research": ["🔬","深度研究","Deep Research","research"],"synthesis": ["🔗","跨站合成","Cross-Site Synthesis","synthesis"],"mental-models": ["📚","思维模型","Mental Models","mental"],"meta-knowledge": ["🧠","元知识","Meta Knowledge","meta"],"super-individual": ["⚡","AI 超级个体实战","Super Individual","super"],"ai-ml": ["🤖","AI / ML","AI & ML","aiml"],"system-design": ["🏗️","System Design","System Design","sysd"],"cs-papers-deepread": ["📄","IT 论文精读","CS Papers","papers"],"chapter-deepread": ["📚","专业书籍精读","CS Books","csbooks"],"novel-deepread": ["📕","小说精读","Novels","novel"],"leadership": ["🎯","领导力实践","Leadership","leadership"],"sales": ["🤝","销售实战","Sales","sales"],"writing": ["✍️","写作与表达","Writing","writing"],"health-longevity": ["🫀","健康长寿","Health & Longevity","health"],"parenting": ["👶","育儿与教育","Parenting","parenting"],"psychology": ["🧩","心理学","Psychology","psych"],"family-craft": ["🧺","一起做","Doing Together","family"],"personal-finance": ["💵","个人理财","Personal Finance","finance"],"philosophy": ["📜","哲学经典","Philosophy","philosophy"],"buddhism": ["🪷","佛经","Buddhism","buddhism"],"world-religions": ["🕉️","世界宗教","World Religions","religions"],"art-aesthetics": ["🎨","艺术与审美","Art & Aesthetics","art"],"biographies": ["👩‍💼","人物传记","Biographies","bio"],"book-recommendations": ["📖","好书推荐","Book Recommendations","book"],"deep-reading": ["📰","好书精读","Deep Reading","deepread"],"mathematics": ["📐","数学之美","Mathematics","math"],"history": ["🏛️","历史大事件","History","history"],"investing": ["📈","投资经典","Investing","investing"],"civics-geopolitics": ["🌍","政治·法律·地缘","Civics & Geopolitics","civics"],"neuroscience": ["🧠","神经科学","Neuroscience","neuro"],"physics": ["⚛️","物理","Physics","physics"],"complexity-science": ["🌀","复杂性科学","Complexity Science","complexity"]};
+
+  function repoInfo(slug) {
     var r = REPOS[slug];
-    if (r) return r[0] + ' ' + (zh ? r[1] : r[2]);
-    return slug ? slug.replace(/(^|-)([a-z])/g, function (_, d, c) { return (d ? ' ' : '') + c.toUpperCase(); })
-                : T.other;
+    if (r) return { label: r[0] + ' ' + (zh ? r[1] : r[2]), emoji: r[0], name: zh ? r[1] : r[2], cls: r[3] };
+    var name = slug ? slug.replace(/(^|-)([a-z])/g, function (_, d, c) { return (d ? ' ' : '') + c.toUpperCase(); }) : T.other;
+    return { label: name, emoji: '📄', name: name, cls: '' };
   }
 
   document.getElementById('h1').textContent = T.h1;
   document.getElementById('sub').textContent = T.sub;
   document.getElementById('loading').textContent = T.loading;
-  document.getElementById('navNotes').textContent = zh ? '📝 我的笔记' : '📝 My Notes';
-  document.getElementById('navNotes').href = zh ? '/notes.html' : '/notes.en.html';
+  var nav = document.getElementById('navNotes');
+  nav.textContent = T.notes;
+  nav.href = zh ? '/notes.html' : '/notes.en.html';
 
   function paintState() {
     var el = document.getElementById('state');
@@ -123,35 +194,25 @@ a.item .au{font-size:.7rem;color:#7ee2a8;margin-top:4px}
   window.addEventListener('offline', paintState);
 
   var listEl = document.getElementById('list');
-
-  if (!window.caches) {
-    listEl.innerHTML = '<div class="empty">' + T.empty + '</div>';
-    return;
-  }
+  if (!window.caches) { listEl.innerHTML = '<div class="empty">' + T.empty + '</div>'; return; }
 
   caches.open(CACHE).then(function (c) {
     return c.keys().then(function (reqs) {
       var pages = [], audio = {};
       reqs.forEach(function (r) {
-        var p;
-        try { p = new URL(r.url).pathname; } catch (e) { return; }
+        var u, p;
+        try { u = new URL(r.url); p = u.pathname; } catch (e) { return; }
         if (/\.mp3$/i.test(p)) {
           var m = /^\/([^\/]+)\//.exec(p);
           if (m) audio[m[1]] = (audio[m[1]] || 0) + 1;
           return;
         }
         if (!/\.html$/i.test(p)) return;
-        // Skip the app's own utility pages — they're shell, not reading material.
         if (/^\/(index|notes|account|offline|confirm|unsubscribe|404|blog-)/.test(p)) return;
-        pages.push({ path: p, req: r });
+        pages.push({ path: p + (u.search || ''), req: r });
       });
+      if (!pages.length) { listEl.innerHTML = '<div class="empty">' + T.empty + '</div>'; return; }
 
-      if (!pages.length) {
-        listEl.innerHTML = '<div class="empty">' + T.empty + '</div>';
-        return;
-      }
-
-      // Titles come from the cached HTML itself — no network needed.
       return Promise.all(pages.map(function (item) {
         return c.match(item.req).then(function (res) {
           if (!res) return item;
@@ -171,42 +232,59 @@ a.item .au{font-size:.7rem;color:#7ee2a8;margin-top:4px}
         var byRepo = {};
         items.forEach(function (it) {
           var m = /^\/([^\/]+)\//.exec(it.path);
-          var slug = m ? m[1] : '';
-          (byRepo[slug] = byRepo[slug] || []).push(it);
+          (byRepo[m ? m[1] : ''] = byRepo[m ? m[1] : ''] || []).push(it);
         });
         listEl.innerHTML = '';
         Object.keys(byRepo).sort().forEach(function (slug) {
+          var info = repoInfo(slug);
           var rows = byRepo[slug].sort(function (a, b) { return a.path.localeCompare(b.path); });
-          var g = document.createElement('div');
-          g.className = 'group';
-          var h = document.createElement('h2');
-          h.appendChild(document.createTextNode(repoLabel(slug)));
-          var n = document.createElement('span');
-          n.className = 'n';
-          n.textContent = rows.length + (audio[slug] ? ' · ' + audio[slug] + ' ' + T.audio : '');
-          h.appendChild(n);
-          g.appendChild(h);
+
+          var label = document.createElement('div');
+          label.className = 'group-label';
+          label.textContent = info.name + (audio[slug] ? ' · ' + audio[slug] + ' ' + T.audio : '');
+          listEl.appendChild(label);
+
           rows.forEach(function (it) {
             var a = document.createElement('a');
-            a.className = 'item';
+            a.className = 'card' + (info.cls ? ' ' + info.cls : '');
             a.href = it.path;
-            var t = document.createElement('div');
-            t.className = 't';
+
+            var em = document.createElement('span');
+            em.className = 'emoji';
+            em.textContent = info.emoji;
+            a.appendChild(em);
+
+            var body = document.createElement('div');
+            body.className = 'body';
+            var row = document.createElement('div');
+            row.className = 'title-row';
+            var t = document.createElement('span');
+            t.className = 'title';
             t.textContent = it.title || it.path;
-            a.appendChild(t);
-            var p = document.createElement('div');
-            p.className = 'p';
-            p.textContent = it.path;
-            a.appendChild(p);
+            row.appendChild(t);
             if (it.hasAudio) {
-              var au = document.createElement('div');
-              au.className = 'au';
+              var au = document.createElement('span');
+              au.className = 'subtitle-en';
               au.textContent = '♪ ' + T.audio;
-              a.appendChild(au);
+              row.appendChild(au);
             }
-            g.appendChild(a);
+            body.appendChild(row);
+            var pth = document.createElement('div');
+            pth.className = 'path';
+            pth.textContent = it.path;
+            body.appendChild(pth);
+            a.appendChild(body);
+
+            var meta = document.createElement('div');
+            meta.className = 'meta';
+            var arrow = document.createElement('span');
+            arrow.className = 'arrow';
+            arrow.textContent = T.enter;
+            meta.appendChild(arrow);
+            a.appendChild(meta);
+
+            listEl.appendChild(a);
           });
-          listEl.appendChild(g);
         });
       });
     });
