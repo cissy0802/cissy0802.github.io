@@ -159,7 +159,9 @@
   function assetsFromDoc(doc, pagePath) {
     var base = new URL(pagePath, location.origin);
     var lang = /\.en\.html$/.test(base.pathname) ? 'en' : 'zh';
-    var urls = [base.pathname];
+    // Key the page by the URL that selects its content, so debate.html?d=a
+    // and ?d=b are separate entries rather than one shared shell.
+    var urls = [base.pathname + (base.search || '')];
     var seen = {};
     // Migrated repos yield an absolute cross-origin URL here. fetch() and
     // cache.put() take either shape, and sw.js matches on the full URL.
@@ -291,7 +293,8 @@
       var btn = document.createElement('button');
       btn.className = 'repo-dl';
       btn.type = 'button';
-      btn.title = lang === 'en' ? 'Download whole site offline' : '整仓离线下载';
+      var confirmMsgTitle = lang === 'en' ? 'Download whole site offline' : '整仓离线下载';
+      btn.title = confirmMsgTitle;
       btn.textContent = '⤓';
       btn.style.cssText =
         'position:absolute;right:8px;bottom:6px;z-index:5;min-width:26px;height:26px;' +
@@ -304,7 +307,21 @@
       btn.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
-        if (state === 'running' || state === 'done') return;
+        if (state === 'running') return;
+        if (state === 'done') {
+          if (!window.confirm(isEn ? 'Remove everything downloaded from this site?'
+                                   : '删除这个站已下载的全部内容？')) return;
+          state = 'running';
+          btn.textContent = '…';
+          removeRepo(slug).then(function () {
+            state = 'idle';
+            btn.style.fontSize = '13px';
+            btn.textContent = '⤓';
+            btn.style.color = '#a0a8c0';
+            btn.title = confirmMsgTitle;
+          });
+          return;
+        }
         if (!window.confirm(confirmMsg)) return;
         state = 'running';
         btn.style.fontSize = '10px';
@@ -346,6 +363,52 @@
       }
 
       card.appendChild(btn);
+    });
+  }
+
+
+  // Remove downloaded pages and the audio segments they reference. Segment
+  // hashes come from the cached HTML, matched by filename so both the
+  // same-origin layout and the R2 worker URLs are covered.
+  function removePages(pages) {
+    return caches.open(CACHE).then(function (c) {
+      return Promise.all(pages.map(function (p) {
+        return c.match(p).then(function (res) { return res || c.match(p, { ignoreSearch: true }); })
+          .then(function (res) { return res ? res.text() : ''; })
+          .then(function (html) {
+            var hashes = [], re = /data-tts="([a-f0-9]+)"/gi, m;
+            while ((m = re.exec(html))) hashes.push(m[1]);
+            return c.keys().then(function (reqs) {
+              var doomed = reqs.filter(function (r) {
+                var u = new URL(r.url);
+                return /\.mp3$/i.test(u.pathname) &&
+                  hashes.some(function (h) { return u.pathname.indexOf('/' + h + '.mp3') >= 0; });
+              });
+              return Promise.all(doomed.map(function (r) { return c.delete(r); }));
+            });
+          })
+          .then(function () {
+            // A debate's text lives in JSON beside the shell — drop it too, or
+            // the space stays used and a stale copy lingers.
+            var extras = debateExtras(p).filter(function (u) { return !/thinkers\.json$/.test(u); });
+            return Promise.all(extras.map(function (u) { return c.delete(u); }));
+          })
+          .then(function () { return c.delete(p); });
+      }));
+    });
+  }
+
+  // Everything under one repo, marker included.
+  function removeRepo(slug) {
+    return caches.open(CACHE).then(function (c) {
+      return c.keys().then(function (reqs) {
+        var doomed = reqs.filter(function (r) {
+          var u = new URL(r.url);
+          return u.pathname.indexOf('/' + slug + '/') === 0 ||
+                 u.pathname.indexOf(REPO_MARK + slug) === 0;
+        });
+        return Promise.all(doomed.map(function (r) { return c.delete(r); }));
+      });
     });
   }
 
@@ -442,7 +505,20 @@
         btn.addEventListener('click', function (e) {
           e.preventDefault();
           e.stopPropagation();
-          if (busy || btn.dataset.done) return;
+          if (busy) return;
+          // Already downloaded -> tap again to remove it (page + its audio).
+          if (btn.dataset.done) {
+            if (!window.confirm(isEn ? 'Remove this from offline storage?' : '从离线存储中删除？')) return;
+            busy = true;
+            removePages(pages).then(function () {
+              delete btn.dataset.done;
+              btn.style.fontSize = '14px';
+              btn.textContent = '⤓';
+              btn.style.color = '#7b61ff';
+              btn.style.borderColor = 'rgba(123,97,255,.4)';
+            }).then(function () { busy = false; });
+            return;
+          }
           busy = true;
           btn.style.fontSize = '10px';
           btn.textContent = '…';

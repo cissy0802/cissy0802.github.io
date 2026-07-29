@@ -131,6 +131,11 @@ footer a:hover{color:#00d4ff}
 .state.on{background:rgba(58,161,126,.14);color:#7ee2a8;border:1px solid rgba(58,161,126,.4)}
 .state.off{background:rgba(255,167,38,.14);color:#ffc46b;border:1px solid rgba(255,167,38,.4)}
 .empty{text-align:center;color:#7b8299;padding:60px 20px;font-size:.95rem;line-height:2}
+.card .del{margin-top:2px;background:none;border:none;color:#5a6378;font-size:.95rem;cursor:pointer;padding:2px 4px;border-radius:6px;line-height:1}
+.card .del:hover{color:#ff6b6b;background:rgba(255,107,107,.12)}
+.group-label{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.clear-site{background:none;border:1px solid rgba(255,255,255,.16);color:#6a7080;font:400 .68rem "SF Mono",Menlo,monospace;letter-spacing:0;text-transform:none;padding:3px 10px;border-radius:12px;cursor:pointer}
+.clear-site:hover{color:#ff9b9b;border-color:rgba(255,107,107,.4)}
 .card .path{font-size:0.7rem;color:#6a7080;font-family:"SF Mono",Menlo,monospace;margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 </style>
 </head>
@@ -145,6 +150,7 @@ footer a:hover{color:#00d4ff}
   <h1 id="h1">离线可读</h1>
   <div class="tagline" id="sub">这台设备上已下载、断网也能打开的内容</div>
   <div id="state"></div>
+  <div class="subtitle" id="usage"></div>
 </header>
 <div class="list" id="list"><div class="empty" id="loading">正在读取已下载内容…</div></div>
 </div>
@@ -159,12 +165,16 @@ footer a:hover{color:#00d4ff}
         loading: '正在读取已下载内容…',
         empty: '还没有下载任何内容。<br>联网时在文章列表点每篇右侧的 ⤓，或在 Hub 首页点卡片上的 ⤓ 整仓下载。',
         online: '● 在线', offline: '● 离线', audio: '含语音', other: '其他',
-        enter: '打开 →', notes: '📝 我的笔记' }
+        enter: '打开 →', notes: '📝 我的笔记',
+        del: '删除', delOne: '从离线存储中删除这一篇？', delRepo: '删除这个站已下载的全部内容？',
+        clearSite: '清空本站', used: '已占用' }
     : { h1: 'Offline Library', sub: 'Everything downloaded to this device — readable with no connection',
         loading: 'Reading downloaded content…',
         empty: 'Nothing downloaded yet.<br>While online, tap ⤓ next to an article in a site index, or ⤓ on a card on the hub landing to take a whole site.',
         online: '● Online', offline: '● Offline', audio: 'with audio', other: 'Other',
-        enter: 'open →', notes: '📝 My Notes' };
+        enter: 'open →', notes: '📝 My Notes',
+        del: 'Delete', delOne: 'Remove this piece from offline storage?', delRepo: 'Remove everything downloaded from this site?',
+        clearSite: 'Clear site', used: 'used' };
 
   // [emoji, zh name, en name, accent class] — accent classes are the landing's
   // own, so a site keeps the same colour here as on the hub.
@@ -190,8 +200,82 @@ footer a:hover{color:#00d4ff}
     el.textContent = navigator.onLine ? T.online : T.offline;
   }
   paintState();
+  showUsage();
   window.addEventListener('online', paintState);
   window.addEventListener('offline', paintState);
+
+
+  // Deleting has to clear the audio too, or the space stays used. The cached
+  // HTML tells us which segments belong to a piece, and it's readable offline —
+  // segment hashes are matched by filename so both the same-origin layout and
+  // the R2 worker URLs are covered.
+  function deletePage(c, item) {
+    return c.match(item.req).then(function (res) {
+      return res ? res.text() : '';
+    }).then(function (html) {
+      var hashes = [];
+      var re = /data-tts="([a-f0-9]+)"/gi, m;
+      while ((m = re.exec(html))) hashes.push(m[1]);
+      // A debate's text and audio manifest sit beside the shell as JSON —
+      // deleting only the HTML would leave them (and their space) behind.
+      // thinkers.json is shared by every debate, so it goes with the site, not
+      // with one piece.
+      var extras = [];
+      var deb = /\/thinker-arena\/debate(?:\.en)?\.html\?d=([\w-]+)/.exec(item.path);
+      if (deb) {
+        extras.push('/thinker-arena/debates/' + deb[1] + '.json');
+        extras.push('/thinker-arena/audio/debate/' + deb[1] + '/manifest.json');
+      }
+      return c.keys().then(function (reqs) {
+        var doomed = [item.req];
+        reqs.forEach(function (r) {
+          var u = new URL(r.url);
+          if (/\.mp3$/i.test(u.pathname) &&
+              hashes.some(function (h) { return u.pathname.indexOf('/' + h + '.mp3') >= 0; })) {
+            doomed.push(r);
+          }
+        });
+        return Promise.all(
+          doomed.map(function (r) { return c.delete(r); })
+            .concat(extras.map(function (u) { return c.delete(u); }))
+        );
+      });
+    });
+  }
+
+  // Everything under one site, including its whole-repo marker and its audio
+  // (which for migrated repos lives on another origin).
+  function deleteRepo(c, slug) {
+    return c.keys().then(function (reqs) {
+      var doomed = reqs.filter(function (r) {
+        var u = new URL(r.url);
+        return u.pathname.indexOf('/' + slug + '/') === 0 ||
+               u.pathname.indexOf('/__bigcat-downloaded/' + slug) === 0;
+      });
+      return Promise.all(doomed.map(function (r) { return c.delete(r); }));
+    });
+  }
+
+  function showUsage() {
+    if (!navigator.storage || !navigator.storage.estimate) return;
+    navigator.storage.estimate().then(function (e) {
+      if (!e || !e.usage) return;
+      var mb = e.usage / 1048576;
+      var el = document.getElementById('usage');
+      if (el) el.textContent = T.used + ' ' + (mb >= 1024 ? (mb/1024).toFixed(1) + ' GB' : mb.toFixed(0) + ' MB');
+    }).catch(function () {});
+  }
+
+  function tidyEmptyGroups() {
+    var labels = [].slice.call(document.querySelectorAll('.group-label'));
+    labels.forEach(function (l) {
+      var n = l.nextElementSibling;
+      if (!n || n.classList.contains('group-label')) l.remove();
+    });
+    if (!document.querySelector('.card')) {
+      document.getElementById('list').innerHTML = '<div class="empty">' + T.empty + '</div>';
+    }
+  }
 
   var listEl = document.getElementById('list');
   if (!window.caches) { listEl.innerHTML = '<div class="empty">' + T.empty + '</div>'; return; }
@@ -225,7 +309,16 @@ footer a:hover{color:#00d4ff}
               if (plain) item.title = plain;
             }
             item.hasAudio = /data-tts=/.test(html);
-            return item;
+            // A debate's shell has a generic <title>; its real subject sits in
+            // the JSON cached alongside it.
+            var deb = /\/thinker-arena\/debate(?:\.en)?\.html\?d=([\w-]+)/.exec(item.path);
+            if (!deb) return item;
+            return c.match('/thinker-arena/debates/' + deb[1] + '.json')
+              .then(function (jr) { return jr ? jr.json() : null; })
+              .then(function (j) {
+                if (j) item.title = (zh ? (j.question || j.question_zh) : (j.question_en || j.question)) || item.title;
+                return item;
+              }).catch(function () { return item; });
           }).catch(function () { return item; });
         });
       })).then(function (items) {
@@ -241,13 +334,33 @@ footer a:hover{color:#00d4ff}
 
           var label = document.createElement('div');
           label.className = 'group-label';
-          label.textContent = info.name + (audio[slug] ? ' · ' + audio[slug] + ' ' + T.audio : '');
+          label.dataset.slug = slug;
+          var lname = document.createElement('span');
+          lname.textContent = info.name + (audio[slug] ? ' · ' + audio[slug] + ' ' + T.audio : '');
+          label.appendChild(lname);
+          var clear = document.createElement('button');
+          clear.className = 'clear-site';
+          clear.type = 'button';
+          clear.textContent = T.clearSite;
+          clear.addEventListener('click', function () {
+            if (!window.confirm(T.delRepo)) return;
+            caches.open(CACHE).then(function (cc) {
+              return deleteRepo(cc, slug);
+            }).then(function () {
+              listEl.querySelectorAll('[data-repo="' + slug + '"]').forEach(function (n) { n.remove(); });
+              label.remove();
+              showUsage();
+              tidyEmptyGroups();
+            });
+          });
+          label.appendChild(clear);
           listEl.appendChild(label);
 
           rows.forEach(function (it) {
             var a = document.createElement('a');
             a.className = 'card' + (info.cls ? ' ' + info.cls : '');
             a.href = it.path;
+            a.setAttribute('data-repo', slug);
 
             var em = document.createElement('span');
             em.className = 'emoji';
@@ -281,11 +394,26 @@ footer a:hover{color:#00d4ff}
             arrow.className = 'arrow';
             arrow.textContent = T.enter;
             meta.appendChild(arrow);
+            var del = document.createElement('button');
+            del.className = 'del';
+            del.type = 'button';
+            del.textContent = '✕';
+            del.title = T.del;
+            del.addEventListener('click', function (ev) {
+              ev.preventDefault();
+              ev.stopPropagation();
+              if (!window.confirm(T.delOne)) return;
+              caches.open(CACHE).then(function (cc) {
+                return deletePage(cc, it);
+              }).then(function () { a.remove(); showUsage(); tidyEmptyGroups(); });
+            });
+            meta.appendChild(del);
             a.appendChild(meta);
 
             listEl.appendChild(a);
           });
         });
+        showUsage();
       });
     });
   }).catch(function () {
