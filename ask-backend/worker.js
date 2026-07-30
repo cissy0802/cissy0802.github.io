@@ -38,7 +38,8 @@ Rules:
 - Reply in the language the question is asked in. A Chinese question gets a Chinese answer, even when the sources are in English.
 - Be concise: a short paragraph, or a few bullets when the question genuinely has several parts.
 - Name the specific ideas and thinkers the essays discuss rather than speaking in generalities.
-- Do not invent article titles or URLs. The interface shows sources separately; you do not need to list them.`;
+- Never mention file names, paths or the word "corpus". The reader sees articles, not storage. The interface lists the sources separately, so you do not need to enumerate them.
+- Do not invent article titles or URLs.`;
 
 function corsHeaders(req) {
   const origin = req.headers.get('Origin');
@@ -115,6 +116,26 @@ function collapse(results, titles) {
   return [...byPage.values()].sort((a, b) => b.score - a.score);
 }
 
+/* The model is told not to name files, and mostly obeys — but it can see the
+ * filenames in its context and will sometimes cite one, e.g.
+ * "《决策疲劳》（corpus/mental-models/energy-attention-day27.md）". Storage layout
+ * is not something a reader should ever be shown, and a prompt is a request
+ * rather than a guarantee, so strip it as well.
+ */
+function cleanAnswer(text) {
+  return String(text || '')
+    // Qwen3 is a hybrid reasoning model and can emit a think block, leaving
+    // blank lines where one was.
+    .replace(/<think>[\s\S]*?<\/think>/gi, '')
+    .replace(/^\s*<\/think>/i, '')
+    // A path in brackets, with the brackets: （corpus/a/b.md） or (corpus/a/b.md)
+    .replace(/\s*[（(]\s*corpus\/[^)）]*?\.md\s*[)）]/gi, '')
+    // ...or bare, mid-sentence.
+    .replace(/\s*\bcorpus\/[^\s，。、）)]*\.md/gi, '')
+    .replace(/[ \t]+$/gm, '')
+    .trim();
+}
+
 export default {
   async fetch(req, env) {
     if (req.method === 'OPTIONS') {
@@ -124,6 +145,16 @@ export default {
       h.set('Access-Control-Max-Age', '86400');
       return new Response(null, { status: 204, headers: h });
     }
+    // Every request past here costs an embedding call, and answers cost
+    // generation on top, so both are origin-gated. Not a security boundary —
+    // Origin is trivially forged — but it keeps the bill tied to the site
+    // rather than to whoever finds the URL. /debug is included deliberately: it
+    // embeds the query too, so leaving it open would be an open tab on the bill.
+    const origin = req.headers.get('Origin');
+    if (!origin || !ALLOWED_ORIGINS.has(origin)) {
+      return json(req, 403, { error: 'Not an allowed origin' });
+    }
+
     // Retrieval without generation, for telling "the index has nothing" apart
     // from "the model had nothing to say". ?q= is required; threshold defaults
     // to 0 so it reports what the index actually holds.
@@ -156,14 +187,6 @@ export default {
 
     if (req.method !== 'POST') return json(req, 405, { error: 'Use POST' });
 
-    // Every answer costs an embedding call plus generation, so the endpoint is
-    // origin-gated. Not a security boundary — Origin is trivially forged — but
-    // it keeps the bill tied to the site rather than to whoever finds the URL.
-    const origin = req.headers.get('Origin');
-    if (!origin || !ALLOWED_ORIGINS.has(origin)) {
-      return json(req, 403, { error: 'Not an allowed origin' });
-    }
-
     let body;
     try {
       body = await req.json();
@@ -187,10 +210,7 @@ export default {
         // Qwen3 is a hybrid reasoning model: it can emit a <think> block, and
         // leaves leading blank lines behind where one was. Neither belongs in
         // front of the reader.
-        answer: String(res.response || "")
-          .replace(/<think>[\s\S]*?<\/think>/gi, "")
-          .replace(/^\s*<\/think>/i, "")
-          .trim(),
+        answer: cleanAnswer(res.response),
         sources,
         // Surfaced so a thin answer can be told apart from a thin retrieval.
         retrieved: (res.data || []).length,

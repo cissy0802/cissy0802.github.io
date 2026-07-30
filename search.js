@@ -62,6 +62,10 @@
         askEmpty: "Nothing here covers that.",
         askError: "Couldn't reach the answering service. Try again in a moment.",
         askQuota: "Today's answering allowance is used up. Keyword search still works.",
+        askRecent: "Recent questions",
+        askClear: "clear",
+        askFromHistory: "saved answer",
+        askAgain: "ask again",
       }
     : {
         aria: "搜索全站",
@@ -85,6 +89,10 @@
         askEmpty: "站内没有讲到这个。",
         askError: "问答服务连不上，稍后再试。",
         askQuota: "今天的问答额度用完了，关键词搜索不受影响。",
+        askRecent: "问过的",
+        askClear: "清空",
+        askFromHistory: "已保存的回答",
+        askAgain: "重新问",
       };
 
   // Detect dark mode like comments.js
@@ -171,6 +179,7 @@
       '<div id="ask-status" style="margin-top:14px;font-size:0.85rem;opacity:0.7"></div>' +
       '<div id="ask-answer" style="margin-top:12px;font-size:0.94rem;line-height:1.75;white-space:pre-wrap"></div>' +
       '<div id="ask-sources" style="margin-top:16px"></div>' +
+      '<div id="ask-history" style="margin-top:18px"></div>' +
     '</div>';
   overlay.appendChild(modal);
 
@@ -195,6 +204,7 @@
   const askStatus = modal.querySelector("#ask-status");
   const askAnswer = modal.querySelector("#ask-answer");
   const askSources = modal.querySelector("#ask-sources");
+  const askHistory = modal.querySelector("#ask-history");
 
   tabFind.textContent = T.tabFind;
   tabAsk.textContent = T.tabAsk;
@@ -241,6 +251,7 @@
       askStatus.textContent = "";
       askAnswer.textContent = data.answer || T.askEmpty;
       renderSources(data.sources || []);
+      if (data.answer) remember(q, data.answer, data.sources || []);
     } catch (e) {
       askStatus.textContent = T.askError;
     } finally {
@@ -270,6 +281,97 @@
     });
   }
 
+  /* Asked questions are kept in this browser, newest first, with their answers.
+   * Two reasons it's local rather than server-side: revisiting an answer then
+   * costs nothing — no neurons, no network, instant — and a public site logging
+   * what visitors ask centrally is a privacy decision nobody asked for.
+   */
+  const HISTORY_KEY = "bigcat-ask-history";
+  const HISTORY_MAX = 12;
+
+  function readHistory() {
+    try {
+      const raw = JSON.parse(localStorage.getItem(HISTORY_KEY) || "[]");
+      return Array.isArray(raw) ? raw : [];
+    } catch (e) {
+      return [];
+    }
+  }
+  function writeHistory(items) {
+    try {
+      localStorage.setItem(HISTORY_KEY, JSON.stringify(items.slice(0, HISTORY_MAX)));
+    } catch (e) {
+      // Private mode, or the quota is full. History is a convenience; losing it
+      // must never break asking.
+    }
+  }
+  function remember(q, answer, sources) {
+    const rest = readHistory().filter((h) => h.q !== q);
+    writeHistory([{ q, answer, sources, ts: Date.now() }, ...rest]);
+    renderHistory();
+  }
+
+  function renderHistory() {
+    const items = readHistory();
+    askHistory.textContent = "";
+    if (!items.length) return;
+
+    const head = document.createElement("div");
+    head.style.cssText =
+      "display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px";
+    const label = document.createElement("span");
+    label.textContent = T.askRecent;
+    label.style.cssText =
+      "font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;opacity:0.5";
+    const clear = document.createElement("button");
+    clear.type = "button";
+    clear.textContent = T.askClear;
+    clear.style.cssText =
+      "border:none;background:none;padding:0;cursor:pointer;font:inherit;font-size:0.72rem;opacity:0.5;color:inherit";
+    clear.addEventListener("click", () => {
+      writeHistory([]);
+      renderHistory();
+    });
+    head.appendChild(label);
+    head.appendChild(clear);
+    askHistory.appendChild(head);
+
+    items.forEach((h) => {
+      const chip = document.createElement("button");
+      chip.type = "button";
+      chip.textContent = h.q;
+      chip.title = h.q;
+      chip.style.cssText =
+        "display:block;width:100%;text-align:left;padding:6px 10px;margin-bottom:4px;border:none;" +
+        "border-radius:6px;cursor:pointer;font:inherit;font-size:0.82rem;white-space:nowrap;" +
+        "overflow:hidden;text-overflow:ellipsis;color:inherit;" +
+        `background:${dark ? "rgba(255,255,255,0.04)" : "rgba(0,0,0,0.03)"}`;
+      chip.addEventListener("click", () => restore(h));
+      askHistory.appendChild(chip);
+    });
+  }
+
+  // Replaying a saved answer is deliberately free: it does not call the API.
+  // The "ask again" link is there for when the corpus has moved on.
+  function restore(h) {
+    askInput.value = h.q;
+    askStatus.textContent = "";
+    askAnswer.textContent = h.answer || "";
+    renderSources(h.sources || []);
+    const again = document.createElement("button");
+    again.type = "button";
+    again.textContent = T.askAgain;
+    again.style.cssText =
+      "margin-top:10px;border:none;background:none;padding:0;cursor:pointer;font:inherit;" +
+      `font-size:0.78rem;color:${dark ? "#00d4ff" : "#7b61ff"}`;
+    again.addEventListener("click", ask);
+    const note = document.createElement("div");
+    note.textContent = T.askFromHistory + " · ";
+    note.style.cssText = "margin-top:12px;font-size:0.78rem;opacity:0.5;display:flex;align-items:baseline;gap:4px";
+    note.appendChild(again);
+    askSources.appendChild(note);
+  }
+
   askSubmit.addEventListener("click", ask);
   askInput.addEventListener("keydown", (e) => {
     // Enter asks; Shift+Enter is a newline, since questions can run long.
@@ -278,6 +380,7 @@
       ask();
     }
   });
+  renderHistory();
   setMode("find");
 
   let uiInitialized = false;
