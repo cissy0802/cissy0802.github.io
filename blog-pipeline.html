@@ -102,7 +102,7 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 
 <rect x="36" y="386" width="336" height="62" rx="10" fill="rgba(255,255,255,0.04)" stroke="#7b61ff" stroke-width="1.6"/>
 <text x="204" y="410" text-anchor="middle" fill="#fff" font-size="14.5" font-weight="700">聚合层 · hub GitHub Actions</text>
-<text x="204" y="431" text-anchor="middle" fill="#9aa2b8" font-size="11">refresh-hub 首页 · build-search Pagefind 索引</text>
+<text x="204" y="431" text-anchor="middle" fill="#9aa2b8" font-size="11">refresh-hub 首页 · build-search 索引与语料（存 R2）</text>
 
 <line x1="204" y1="448" x2="204" y2="476" stroke="#6a7080" stroke-width="1.4" marker-end="url(#ah)"/>
 <text x="212" y="466" fill="#7b61ff" font-size="10.5" font-style="italic">GitHub Pages 发布</text>
@@ -225,8 +225,27 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <p>时间上，这个 Action 排在所有内容 routine 之后约 45 分钟跑，保证当天新页面能反映到首页。</p>
 
 <h3>build-search.yml —— 全站搜索</h3>
-<p>静态站没有后端，全站搜索用 <a href="https://pagefind.app/">Pagefind</a>：每天把所有内容仓 clone 到 <code>_src/</code> 聚合成一棵树，跑 Pagefind 生成分片索引（中英文分开索引），发布到 hub 仓的 <code>/pagefind/</code>。前端 <code>search.js</code> 提供一个悬浮搜索按钮，按页面语言弹相应语言的搜索层。索引时排除页脚、导航、评论容器这些噪音区块。</p>
+<p>静态站没有后端，全站搜索用 <a href="https://pagefind.app/">Pagefind</a>：每天把所有内容仓 clone 到 <code>_src/</code> 聚合成一棵树，跑 Pagefind 生成分片索引（中英文分开索引）。前端 <code>search.js</code> 提供一个悬浮搜索按钮，按页面语言弹相应语言的搜索层。索引时排除页脚、导航、评论容器这些噪音区块。</p>
+<p><strong>索引不进 git</strong>——跟音频是同一笔账。它有 3100 个文件、46 MB，每晚重建一次全量提交，<code>.git</code> 一路涨到 713 MB，而工作区本身只有 5 MB：这个仓库 99% 是历史包袱。现在索引传到 R2，由一个 Worker 按 <code>/pagefind/*</code> 伺服，URL 形状跟同源时代一模一样，前端只换掉一个 origin。</p>
+<p>跨域这一步有个坑值得单独记：<strong>Pagefind 把结果路径按 bundle 所在的 origin 解析</strong>。索引搬走之后，每一条搜索结果都指向 Worker 域名，而那个 Worker 只伺服 <code>/pagefind/*</code>——全站搜索结果一度<strong>全是 404 死链</strong>，得在客户端把 bundle origin 剥回站点路径才修好。（同一批改动还有一次学费：Worker 把浏览器发来的条件请求头整个转给了 R2 的 <code>onlyIf</code>。浏览器重验缓存模块时发的是 <code>If-Modified-Since</code>，R2 用「没改」的空 body 对象回应，我的代码把它误判成前置条件失败、返回 412——于是 <code>import()</code> 整个失败，而我用 curl 怎么试都正常，因为 curl 不发校验头。<strong>能在 curl 里复现的 bug 是幸运的，只在浏览器里发生的才折磨人。</strong>）</p>
 <p>有一个特殊处理：思想家圆桌辩论站（thinker-arena）是客户端渲染的（内容在 JSON 里），爬不到文本。解法是 <code>render_search_snapshots.py</code> 在建索引前把 JSON 辩论渲染成纯 HTML 快照专供 Pagefind 消费——<strong>给爬虫做一份 SSR</strong>，只不过是每日批处理版。</p>
+
+<h3>中文搜索：同一个错误，我犯了三次</h3>
+<p>搜「现象学」，出来 <strong>1172 条</strong>——几乎是全站。而实际写到这个词的只有 27 篇。</p>
+<p>根子不在排序，在<strong>索引端和查询端对「什么算一个词」的理解不一致</strong>。为了让「拓扑」能命中「拓扑直觉」，建索引时我在相邻汉字之间插了零宽空格，把中文强行切成单字；查询端却没动，仍然走 Pagefind 自己的分词器。于是「现象学」被切成词去查一个只有单字的索引——而 Pagefind 对<strong>查不到的词是静默丢弃</strong>，不是返回零结果。查询就这么退化成了单字「学」，把每一篇带「学」的文章都捞了上来。</p>
+<p>修了两层。查询端改成<strong>精确短语优先、空了再退回</strong>：给中文词加引号强制短语匹配，「现象学」立刻从 1172 条收敛到 27 条，正好等于真实篇数。但引号不能无脑加——专名尤其容易踩，「海德格尔」加引号是 0 条、不加是 15 条，因为查询端和索引端对同一个字符串的分词结果不一致。所以每个词第一次出现时先探一次，空了就记下来走无引号。</p>
+<p>索引端补子词召回：「拓扑」在正文里从不单独出现，全是「拓扑学」「拓扑指纹」「拓扑不变」，词典分词把它粘死了，全站 61 篇含这个词而搜索只给 1 条。加了一层隐藏的<strong>二元组影子文本</strong>（Lucene 那套无词典 CJK 索引的老办法）。</p>
+<p>然后我在同一个坑里摔了第三次：影子文本我是直接写中文的「贝叶 叶斯」，以为空格分开就是两个 token。<strong>Pagefind 的分词器照样会再切一遍</strong>，把它们重新溶回单字——「贝叶斯」于是给出 75 条，而真实是 24 篇。这次骗过我的是「拓扑」恰好用字生僻、看起来一切正常；换个常用字组成的词才露馅。最后把每个二元组编码成 ASCII（<code>bg8d1d53f6</code>，两个码点的十六进制），分词器切不开，才真正成立：贝叶斯 24/24、拓扑 18/18、康德 12/12，跟 grep 数出来的真值一条不差。</p>
+<div class="note"><strong>教训</strong>：这三次是同一个错误换了三身衣服——<strong>索引端和查询端必须对「什么是一个 token」达成一致</strong>。任何一边单独「优化」，坏掉的方式都不会是报错，而是搜出一堆看起来煞有介事的结果。所以现在建索引时会往影子块里打一个版本标记，客户端探到标记才启用对应的查询策略：缓存的旧前端和新索引不可能「半同意」。</div>
+
+<h3>问一句：让站内内容回答问题</h3>
+<p>关键词搜索有个结构性的天花板：它只能找出<strong>含有某个词</strong>的页面。「哪几篇讲过决策疲劳」这种问题它答不了——讨论这件事的文章不一定用这个词。</p>
+<p>所以在搜索框里加了第二个标签页「问一句」。检索用 <strong>Cloudflare AI Search</strong>（原 AutoRAG）：切块、嵌入、向量库、生成、引用整条托管，嵌入模型 <code>qwen3-embedding-0.6b</code>，生成 <code>qwen3-30b</code>。</p>
+<p>它要的输入是干净文本，所以 <code>build-search.yml</code> 里多了一步：把聚合好的 HTML 剥成正文 Markdown 写进 R2。<strong>没有直接把 HTML 喂给它</strong>（它其实收 .html）——这些页面是一百多个 div 的排版裹着十来段正文，原样索引的话每个 chunk 里相当一部分是家具，切块边界还会落在标记里而不是意思之间。文件名镜像站点路径，于是它引用哪个文件，就能直接换算回哪篇文章的链接。</p>
+<p>效果值得贴一下。问「哪几篇讲过决策疲劳」，回来的五篇分别来自思维模型、好书推荐、神经科学、思维模型索引、投资经典——<strong>五个不同的内容仓</strong>，其中几篇并不含这个词。问「意志力是有限的吗」，它会答「存在争议」，并且点出 2016 年 23 个实验室的预注册重复实验让自我损耗效应几乎归零——这是站内那篇文章的核心论点，不是模型自己的常识。</p>
+<p>成本我实测了一遍，因为这是唯一一处按用量计费的东西：<strong>全量重建索引约 13,000 neurons（约 $0.14），一次提问约 28（约 $0.0003）</strong>。免费额度每天 10,000，所以大约是<strong>每天 350 次提问</strong>。两层都是增量的——语料同步只上传 MD5 变了的文件，AI Search 也只嵌入变更文件（实测某次同步只处理了 22 个、另一次 64 个，而不是全量 2690），所以稳态开销是每天新增的那几十篇，不是每 6 小时重来一遍。</p>
+<p>问过的问题连同答案存在浏览器本地，点一下就能回看。<strong>回放完全不走网络</strong>——不消耗额度、不占那 350 次，也顺带避开了「一个公开站点把访客问了什么集中记下来」这个没人要求过的隐私决定。</p>
+<div class="note">这一层的学费集中在「文档说的和实际返回的不一样」：检索结果里 <code>filename</code> 是顶层字段而不是文档写的 <code>metadata.filename</code>，<code>content</code> 是分片数组而不是字符串——照文档写，每条出处链接都会是 undefined 拼出来的。另外，我把 Worker 起了跟 AI Search 实例一样的名字，请求还没进到我的代码就 404（Cloudflare 1042）。以及模型会把内部路径写进答案里给读者看（<code>（corpus/mental-models/energy-attention-day27.md）</code>）——提示词里禁止了，但提示词是请求不是保证，所以服务端还会再剥一遍。</div>
 
 <h2>6. 互动层：订阅、评论、投票——唯一的一块后端</h2>
 <p>前面五层没有一行服务器代码。但「订阅邮件、留言、投票」这三件事天然要写状态，纯静态做不到。这是整个系统里<strong>唯一一处后端</strong>，我把它压到最小：一个 Cloudflare Worker（<code>worker.js</code>）+ 一个 D1（SQLite）库，全在免费额度内（Worker 每天 10 万请求、D1 每天 500 万行读）。</p>
@@ -362,6 +381,8 @@ BigCat's Learning Hub 是我为自己学习而建的一组静态站：思维模�
 <li>Azure Speech：免费层（F0）</li>
 <li>音频存储：Cloudflare R2，免费额度 10 GB——目前用掉约 8.4 GB，是整个系统里唯一一项肉眼可见在逼近上限的资源</li>
 <li>互动后端：Cloudflare Worker + D1，免费额度内</li>
+<li>搜索索引存储与伺服：Cloudflare R2 + Worker，免费额度内（也让 hub 仓不再每晚长 46 MB）</li>
+<li>站内问答：AI Search 公测期免费，推理走 Workers AI 免费额度（每天 10,000 neurons ≈ 350 次提问）</li>
 <li>邮件发送：Resend 免费层（每月 3000 封）</li>
 <li>我的时间：维护 20 多份 TOPICS.md，加上偶尔审一眼月度建议和巡检报告</li>
 </ul>
