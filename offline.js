@@ -280,7 +280,9 @@
           try { p = new URL(r.url).pathname; } catch (e) { return; }
           if (p.indexOf(REPO_MARK) === 0) {
             var slug = p.slice(REPO_MARK.length);
-            (state[slug] = state[slug] || { pages: 0 }).whole = true;
+            var st = (state[slug] = state[slug] || { pages: 0 });
+            st.whole = true;
+            st.markReq = r;   // body carries the page count of that run
             return;
           }
           if (p.indexOf(REPO_BUSY) === 0) {
@@ -294,7 +296,19 @@
           if (!m) return;
           (state[m[1]] = state[m[1]] || { pages: 0 }).pages++;
         });
-        return state;
+        // A completion marker only says "a full run finished once". If pages
+        // have been deleted since — or the run is being compared against a
+        // site that has grown — the tick would be a lie, so check the count
+        // the run recorded against what is actually still cached.
+        var slugs = Object.keys(state).filter(function (k) { return state[k].markReq; });
+        return Promise.all(slugs.map(function (k) {
+          return c.match(state[k].markReq).then(function (res) {
+            return res ? res.json() : null;
+          }).then(function (j) {
+            state[k].total = (j && j.total) || 0;
+            delete state[k].markReq;
+          }).catch(function () { delete state[k].markReq; });
+        })).then(function () { return state; });
       });
     }).catch(function () { return {}; });
   }
@@ -307,12 +321,14 @@
     var lang = landingLang();
     var T = lang === 'en'
       ? { ask: 'Download this whole site (all articles + audio) for offline? It may be large.',
-          dl: 'Download whole site offline', up: 'Download the rest',
-          done: 'Downloaded — tap to fetch anything new',
+          dl: 'Download whole site offline',
+          up: function (n) { return n + ' saved (not the whole site) — tap to download it all'; },
+          done: function (n) { return 'Whole site downloaded (' + n + ') — tap to fetch anything new'; },
           rm: 'Delete downloaded content', rmAsk: 'Remove everything downloaded from this site?' }
       : { ask: '整仓离线下载（全部文章 + 语音）？可能有几百 MB。',
-          dl: '整仓离线下载', up: '继续下载剩余部分',
-          done: '已下载 — 点击可补下新增内容',
+          dl: '整仓离线下载',
+          up: function (n) { return '已存 ' + n + ' 篇（未整仓）— 点击下载整仓'; },
+          done: function (n) { return '整仓已下载（' + n + ' 篇）— 点击可补下新增内容'; },
           rm: '删除已下载内容', rmAsk: '删除这个站已下载的全部内容？' };
     var stateReady = cachedRepoState();
 
@@ -365,15 +381,15 @@
         dl.style.fontSize = '11px';
         dl.textContent = String(n);
         dl.style.color = '#a0a8c0';
-        dl.title = T.up;
+        dl.title = T.up(n);
         rm.style.display = '';
       }
-      function showDone() {
+      function showDone(n) {
         state = 'done';
         dl.style.fontSize = '13px';
         dl.textContent = '✓';
         dl.style.color = '#7ee2a8';
-        dl.title = T.done;
+        dl.title = T.done(n || '');
         rm.style.display = '';
       }
 
@@ -386,7 +402,7 @@
         if (navigator.storage && navigator.storage.persist) navigator.storage.persist();
         downloadRepo(repo, lang, function (d, t) { dl.textContent = d + '/' + t; })
           .then(function (res) {
-            if (res.total) showDone();
+            if (res.total) showDone(res.total);
             else { showIdle(); dl.textContent = '∅'; }
           })
           .catch(function (err) {
@@ -411,7 +427,9 @@
       stateReady.then(function (cached) {
         var st = cached[slug];
         if (!st) return;
-        if (st.whole) showDone();
+        // Tick only if the pages that run stored are still present; otherwise
+        // it's no longer a whole copy and the count is the honest signal.
+        if (st.whole && st.pages >= (st.total || 0)) showDone(st.pages);
         else if (st.interrupted) {
           // Cut off by navigating away — pick it up without asking again.
           if (st.pages) showPartial(st.pages);
