@@ -449,8 +449,12 @@ footer a:hover{{color:#00d4ff}}
 @media(max-width:700px){{
   header h1{{font-size:1.8rem}}
   .container{{padding:32px 16px 60px}}
-  .card{{grid-template-columns:auto 1fr;gap:14px;padding:14px 18px}}
-  .card .meta{{display:none}}
+  .card{{grid-template-columns:auto 1fr;gap:6px 14px;padding:14px 18px}}
+  .card .emoji{{grid-row:1/3;align-self:center}}
+  .card .body{{grid-column:2}}
+  /* meta wraps to its own row under the desc instead of being hidden —
+     otherwise 已完结 / last-updated never show on phones. */
+  .card .meta{{grid-column:2;flex-direction:row;align-items:center;justify-content:space-between;gap:10px}}
   .card .desc{{white-space:normal;font-size:0.85rem}}
   .lang-toggle{{top:10px;right:10px}}
   .notes-link{{top:10px;left:10px;padding:6px 11px}}
