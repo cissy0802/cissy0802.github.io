@@ -48,8 +48,6 @@ header .subtitle{font-size:0.85rem;color:#7b61ff;margin-top:8px;font-family:"SF 
 .card .desc{font-size:0.88rem;color:#a8b0c0;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .card .meta{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;font-family:"SF Mono",Menlo,monospace}
 .card .updated{font-size:0.72rem;color:#6a7080;letter-spacing:0.3px}
-.card .arrow{font-size:0.78rem;color:var(--accent);font-weight:600;transition:transform 0.2s}
-.card:hover .arrow{transform:translateX(3px)}
 .card.mental{--accent:#00d4ff}
 .card.mental::before{background:linear-gradient(90deg,#00d4ff,#0096c7)}
 .card.aiml{--accent:#ff6ec4}
@@ -133,7 +131,7 @@ footer a:hover{color:#00d4ff}
   .card .body{grid-column:2}
   /* meta wraps to its own row under the desc instead of being hidden —
      otherwise 已完结 / last-updated never show on phones. */
-  .card .meta{grid-column:2;flex-direction:row;align-items:center;justify-content:space-between;gap:10px}
+  .card .meta{grid-column:2;flex-direction:row;align-items:center;gap:10px}
   .card .desc{white-space:normal;font-size:0.85rem}
   .lang-toggle{top:10px;right:10px}
   .notes-link{top:10px;left:10px;padding:6px 11px}
@@ -165,7 +163,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated">圆桌</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -179,7 +176,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated">研究</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -193,7 +189,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated">合成</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -209,7 +204,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated" style="color:#3fb955;font-weight:600" title="收口完结">✓ 已完结</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -221,7 +215,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated" style="color:#3fb955;font-weight:600" title="收口完结">✓ 已完结</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -235,7 +228,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated" style="color:#3fb955;font-weight:600" title="收口完结">✓ 已完结</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -247,7 +239,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated" style="color:#3fb955;font-weight:600" title="收口完结">✓ 已完结</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -259,7 +250,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated" style="color:#3fb955;font-weight:600" title="收口完结">✓ 已完结</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -271,7 +261,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated">2026-07-30</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -283,7 +272,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated">2026-07-30</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -297,7 +285,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated">2026-07-30</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -309,7 +296,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated">2026-07-30</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -321,7 +307,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated" style="color:#3fb955;font-weight:600" title="收口完结">✓ 已完结</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -335,7 +320,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated" style="color:#3fb955;font-weight:600" title="收口完结">✓ 已完结</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -347,7 +331,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated" style="color:#3fb955;font-weight:600" title="收口完结">✓ 已完结</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -359,7 +342,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated">2026-07-30</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -371,7 +353,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated" style="color:#3fb955;font-weight:600" title="收口完结">✓ 已完结</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -383,7 +364,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated">2026-07-30</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -397,7 +377,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated" style="color:#3fb955;font-weight:600" title="收口完结">✓ 已完结</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -409,7 +388,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated" style="color:#3fb955;font-weight:600" title="收口完结">✓ 已完结</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -421,7 +399,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated">2026-07-30</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -433,7 +410,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated" style="color:#3fb955;font-weight:600" title="收口完结">✓ 已完结</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -445,7 +421,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated">2026-07-30</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -457,7 +432,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated" style="color:#3fb955;font-weight:600" title="收口完结">✓ 已完结</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -469,7 +443,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated">2026-07-30</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -481,7 +454,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated">2026-07-30</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -495,7 +467,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated">2026-07-30</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -507,7 +478,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated">2026-07-30</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -519,7 +489,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated">2026-07-30</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -531,7 +500,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated">2026-07-30</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -545,7 +513,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated">2026-07-30</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -557,7 +524,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated">2026-07-30</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 
@@ -569,7 +535,6 @@ footer a:hover{color:#00d4ff}
     </div>
     <div class="meta">
       <span class="updated">2026-07-30</span>
-      <span class="arrow">进入 →</span>
     </div>
   </a>
 </div>

@@ -225,7 +225,6 @@ I18N = {
         "desc": "30 个主题站的 AI 驱动第二大脑：思维模型、哲学、神经科学、AI 与系统设计、健康长寿、育儿、投资、艺术、历史——每日自动更新，中英双语 + TTS 朗读。",
         "tagline": "每日学习 · 跨界思考 · 超级个体",
         "search_prompt": '🔍 按 <kbd>/</kbd> 或点击右下角搜索全站',
-        "arrow": "进入 →",
         "toggle": '<a href="index.zh.html" class="active">中文</a>\n  <a href="index.en.html">EN</a>',
         "notes_link": '<a class="notes-link" href="notes.html">📝 我的笔记</a>',
         "blog": '<a href="blog-pipeline.html">🛠 这个 Hub 是怎么搭的</a>',
@@ -238,7 +237,6 @@ I18N = {
         "desc": "An AI-driven second brain of 30 topic sites — mental models, philosophy, neuroscience, AI & system design, health, parenting, investing, art, history — updated daily, bilingual with TTS.",
         "tagline": "Daily learning · Cross-domain thinking · Super-individual",
         "search_prompt": '🔍 Press <kbd>/</kbd> or click the search button (bottom right) to search the whole site',
-        "arrow": "enter →",
         "toggle": '<a href="index.zh.html">中文</a>\n  <a href="index.en.html" class="active">EN</a>',
         "notes_link": '<a class="notes-link" href="notes.en.html">📝 My Notes</a>',
         "blog": '<a href="blog-pipeline.en.html">🛠 how this hub is built</a>',
@@ -342,7 +340,6 @@ def card_html(c, meta, lang: str) -> str:
     </div>
     <div class="meta">
       {'<span class="updated" style="color:#3fb955;font-weight:600" title="收口完结">✓ ' + ('已完结' if lang == 'zh' else 'Completed') + '</span>' if done else f'<span class="updated">{date_str or "—"}</span>'}
-      <span class="arrow">{I18N[lang]["arrow"]}</span>
     </div>
   </a>"""
 
@@ -366,7 +363,6 @@ def thinking_card_html(c, lang: str) -> str:
     </div>
     <div class="meta">
       <span class="updated">{badge}</span>
-      <span class="arrow">{I18N[lang]["arrow"]}</span>
     </div>
   </a>"""
 
@@ -434,8 +430,6 @@ header .subtitle{{font-size:0.85rem;color:#7b61ff;margin-top:8px;font-family:"SF
 .card .desc{{font-size:0.88rem;color:#a8b0c0;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
 .card .meta{{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;font-family:"SF Mono",Menlo,monospace}}
 .card .updated{{font-size:0.72rem;color:#6a7080;letter-spacing:0.3px}}
-.card .arrow{{font-size:0.78rem;color:var(--accent);font-weight:600;transition:transform 0.2s}}
-.card:hover .arrow{{transform:translateX(3px)}}
 {card_css()}
 .group-label{{font-size:1.02rem;font-weight:700;color:#b9a8ff;letter-spacing:2.5px;text-transform:uppercase;margin-top:42px;margin-bottom:6px;font-family:"SF Mono",Menlo,monospace}}
 .group-label:first-of-type{{margin-top:12px}}
@@ -454,7 +448,7 @@ footer a:hover{{color:#00d4ff}}
   .card .body{{grid-column:2}}
   /* meta wraps to its own row under the desc instead of being hidden —
      otherwise 已完结 / last-updated never show on phones. */
-  .card .meta{{grid-column:2;flex-direction:row;align-items:center;justify-content:space-between;gap:10px}}
+  .card .meta{{grid-column:2;flex-direction:row;align-items:center;gap:10px}}
   .card .desc{{white-space:normal;font-size:0.85rem}}
   .lang-toggle{{top:10px;right:10px}}
   .notes-link{{top:10px;left:10px;padding:6px 11px}}
