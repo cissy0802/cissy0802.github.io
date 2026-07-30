@@ -249,7 +249,7 @@
       }
       if (!res.ok) throw new Error(data && data.error);
       askStatus.textContent = "";
-      askAnswer.textContent = data.answer || T.askEmpty;
+      renderAnswer(data.answer || T.askEmpty);
       renderSources(data.sources || []);
       if (data.answer) remember(q, data.answer, data.sources || []);
     } catch (e) {
@@ -259,6 +259,36 @@
       askSubmit.disabled = false;
       askSubmit.style.opacity = "";
     }
+  }
+
+  /* The model answers in Markdown. It is rendered by building nodes, never by
+   * assigning innerHTML: this is generated text derived from page content, i.e.
+   * exactly the input that must not be able to inject markup. Only **bold** and
+   * line structure are honoured — everything else stays literal, which is the
+   * safe direction to fail in.
+   */
+  function renderAnswer(text) {
+    askAnswer.textContent = "";
+    String(text || "")
+      .split(/\n/)
+      .forEach((line, i) => {
+        const row = document.createElement("div");
+        if (!line.trim()) {
+          row.style.height = "0.55em";
+          askAnswer.appendChild(row);
+          return;
+        }
+        // Indent the model's list items rather than leaving them flush.
+        if (/^\s*([-*•]|\d+[.)])\s+/.test(line)) row.style.paddingLeft = "0.4em";
+        line.split(/(\*\*[^*]+\*\*)/).forEach((part) => {
+          if (!part) return;
+          const bold = /^\*\*[^*]+\*\*$/.test(part);
+          const node = document.createElement(bold ? "strong" : "span");
+          node.textContent = bold ? part.slice(2, -2) : part;
+          row.appendChild(node);
+        });
+        askAnswer.appendChild(row);
+      });
   }
 
   function renderSources(sources) {
@@ -356,7 +386,7 @@
   function restore(h) {
     askInput.value = h.q;
     askStatus.textContent = "";
-    askAnswer.textContent = h.answer || "";
+    renderAnswer(h.answer || "");
     renderSources(h.sources || []);
     const again = document.createElement("button");
     again.type = "button";
