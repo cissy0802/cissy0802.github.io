@@ -333,6 +333,7 @@
     var stateReady = cachedRepoState();
 
     document.querySelectorAll('a.card[href]').forEach(function (card) {
+      if (card.querySelector('.repo-dl')) return;   // already mounted
       var m;
       try { m = /^\/([^\/]+)\//.exec(new URL(card.getAttribute('href'), location.origin).pathname); }
       catch (e) { return; }
@@ -340,11 +341,21 @@
       var slug = m[1];
       var repo = '/' + slug + '/';
 
+      // Sit inside the card's .meta column (date / 已完结 badge, plus the read
+      // count reads.js appends) instead of floating over the card's corner —
+      // that corner is exactly where .meta grows to, so an absolute bar buried
+      // the read count. In flow it works in both layouts: .meta is a column on
+      // desktop and a row on phones. Absolute is kept as the fallback for a
+      // card with no .meta.
+      var host = card.querySelector('.meta');
       var bar = document.createElement('span');
       bar.className = 'repo-dl';
-      bar.style.cssText =
-        'position:absolute;right:8px;bottom:6px;z-index:5;display:flex;gap:5px;align-items:center;';
-      if (getComputedStyle(card).position === 'static') card.style.position = 'relative';
+      // order:2 keeps the buttons last in .meta whichever of us and reads.js
+      // appends first — otherwise the read count lands under them at random.
+      bar.style.cssText = 'display:flex;gap:5px;align-items:center;' +
+        (host ? 'order:2;margin-top:2px;'
+              : 'position:absolute;right:8px;bottom:6px;z-index:5;');
+      if (!host && getComputedStyle(card).position === 'static') card.style.position = 'relative';
 
       function mk(text, title) {
         var b = document.createElement('button');
@@ -364,7 +375,7 @@
       rm.style.fontSize = '11px';
       bar.appendChild(dl);
       bar.appendChild(rm);
-      card.appendChild(bar);
+      (host || card).appendChild(bar);
 
       var state = 'idle';
 
