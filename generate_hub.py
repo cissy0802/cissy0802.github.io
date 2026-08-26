@@ -14,6 +14,7 @@ import os
 import re
 import urllib.error
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 # Matches content files: *-day1.html, *-week1.html, *-book1.html,
@@ -305,8 +306,16 @@ def latest_commit_date(repo: str):
     pub = max(pub_nums) if pub_nums else 0
     tmax = roadmap_max(repo)
     done = tmax is not None and pub >= tmax
-    # date: latest commit that ADDED a content file (fallback: newest commit)
+    # date: latest commit that ADDED a content file.
+    # Fast path (0 extra calls): publish.sh stamps every content commit as "Add #N: …",
+    # so the newest message matching that IS the newest content-add commit. The old
+    # per-commit detail loop (1 API call per commit, worst case 50/repo) made a full
+    # regeneration take 10+ minutes; it survives below only as a capped fallback for
+    # repos that never used the "Add #N" message format (legacy date-based repos).
     for c in commits:
+        if re.match(r"Add #\d+", c["commit"]["message"]):
+            return c["commit"]["committer"]["date"][:10], done
+    for c in commits[:15]:  # fallback, capped: don't re-create the 50-call worst case
         try:
             detail = gh_get(f"https://api.github.com/repos/cissy0802/{repo}/commits/{c['sha']}")
         except (urllib.error.URLError, urllib.error.HTTPError):
@@ -499,10 +508,13 @@ footer a:hover{{color:#00d4ff}}
 
 def main():
     print("Fetching last commit dates...")
-    dates = {}
-    for c in CARDS:
-        repo = c[6]
-        dates[repo] = latest_commit_date(repo)
+    repos = [c[6] for c in CARDS]
+    # Repos are independent — fetch them concurrently (each is now ~2-3 small
+    # requests thanks to the "Add #N" fast path). 8 workers keeps us politely
+    # under GitHub's secondary rate limits while cutting wall-clock to seconds.
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        dates = dict(zip(repos, pool.map(latest_commit_date, repos)))
+    for repo in repos:
         _d, _done = dates[repo]
         print(f"  {repo}: {_d or 'N/A'}{' [已完结]' if _done else ''}")
 
