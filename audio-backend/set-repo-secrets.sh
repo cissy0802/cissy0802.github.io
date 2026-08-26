@@ -31,7 +31,7 @@ REPOS=(
   chapter-deepread civics-geopolitics complexity-science cs-papers-deepread
   deep-reading deep-research family-craft health-longevity history investing
   leadership mathematics mental-models meta-knowledge neuroscience parenting
-  personal-finance philosophy physics psychology sales super-individual
+  evolutionary-biology personal-finance philosophy physics psychology sales sociology-anthropology super-individual
   synthesis system-design thinker-arena world-religions writing
 )
 
