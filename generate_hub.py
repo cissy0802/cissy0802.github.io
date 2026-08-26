@@ -148,6 +148,14 @@ CARDS = [
      "涌现、混沌、自组织临界、网络、幂律、韧性——局部规则怎么长出整体行为、为什么预测不了、以及能拿它怎么办。每期一条决策线 + 一条跨学科越界线。",
      "Emergence, chaos, self-organized criticality, networks, power laws, resilience — how local rules grow into global behavior, why it resists prediction, and what to do about it. Each issue lands on a decision line and a cross-disciplinary crossing.",
      "complexity-science", "science"),
+    ("evolution", "🧬", "进化生物学", "Evolutionary Biology",
+     "自然选择的逻辑、演化博弈、生命史、行为与心智的演化——机制与证据，从分子到心智，破除「进化=进步」迷思。",
+     "The logic of natural selection, evolutionary games, the history of life, the evolution of behavior and mind — mechanism and evidence from molecules to minds, minus the “evolution = progress” myth.",
+     "evolutionary-biology", "science"),
+    ("socanthro", "🏺", "社会学与人类学", "Sociology & Anthropology",
+     "分层、网络、仪式、亲属、消费、运动——群体与文化如何塑造人，经典理论 + 田野民族志 + 当代映照，学理化多视角。",
+     "Stratification, networks, ritual, kinship, consumption, movements — how groups and culture shape us; classic theory, ethnography and contemporary echoes, scholarly and multi-perspective.",
+     "sociology-anthropology", "explore"),
 ]
 
 # BigCat's Thinking Hub —— 互动型思想实验，链到自建静态站(非每日内容仓库，故无 commit 日期)。
@@ -207,6 +215,8 @@ CSS_VARS = {
     "neuro":      ("#a78bfa", "#e879f9"),
     "physics":    ("#5b9bff", "#2f6df6"),
     "complexity": ("#e0895e", "#a693cd"),
+    "evolution":  ("#4a9d5f", "#1e5a34"),
+    "socanthro":  ("#b06a4a", "#7c3a2d"),
     "family":     ("#ffd166", "#e8743b"),
     "thinker":    ("#a29bfe", "linear-gradient(90deg,#a29bfe,#7b61ff,#ff6ec4)"),
     "research":   ("#4cc9f0", "linear-gradient(90deg,#4cc9f0,#7b61ff)"),
