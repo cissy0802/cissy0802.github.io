@@ -147,7 +147,7 @@ CARDS = [
      "physics", "science"),
     ("complexity", "🌀", "复杂性科学", "Complexity Science",
      "涌现、混沌、自组织临界、网络、幂律、韧性——局部规则怎么长出整体行为、为什么预测不了、以及能拿它怎么办。每期一条决策线 + 一条跨学科越界线。",
-     "Emergence, chaos, self-organized criticality, networks, power laws, resilience — how local rules grow into global behavior, why it resists prediction, and what to do about it. Each issue lands on a decision line and a cross-disciplinary crossing.",
+     "Emergence, chaos, self-organized criticality, networks, power laws — how local rules grow into global behavior, why it resists prediction, and what to do about it.",
      "complexity-science", "science"),
     ("evolution", "🧬", "进化生物学", "Evolutionary Biology",
      "自然选择的逻辑、演化博弈、生命史、行为与心智的演化——机制与证据，从分子到心智，破除「进化=进步」迷思。",
@@ -446,7 +446,7 @@ header .subtitle{{font-size:0.85rem;color:#7b61ff;margin-top:8px;font-family:"SF
 .card .title-row{{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:3px}}
 .card .title{{font-size:1.1rem;font-weight:700;color:#fff}}
 .card .subtitle-en{{font-size:0.74rem;color:#7b61ff;font-family:"SF Mono",Menlo,monospace;letter-spacing:0.3px;opacity:0.85}}
-.card .desc{{font-size:0.88rem;color:#a8b0c0;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+.card .desc{{font-size:0.88rem;color:#a8b0c0;line-height:1.5;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}}
 .card .meta{{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;font-family:"SF Mono",Menlo,monospace}}
 .card .updated{{font-size:0.72rem;color:#6a7080;letter-spacing:0.3px}}
 {card_css()}
@@ -468,7 +468,7 @@ footer a:hover{{color:#00d4ff}}
   /* meta wraps to its own row under the desc instead of being hidden —
      otherwise 已完结 / last-updated never show on phones. */
   .card .meta{{grid-column:2;flex-direction:row;align-items:center;gap:10px}}
-  .card .desc{{white-space:normal;font-size:0.85rem}}
+  .card .desc{{-webkit-line-clamp:unset;font-size:0.85rem}}
   .lang-toggle{{top:10px;right:10px}}
   .notes-link{{top:10px;left:10px;padding:6px 11px}}
   header{{padding-top:60px}}

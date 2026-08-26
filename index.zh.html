@@ -45,7 +45,7 @@ header .subtitle{font-size:0.85rem;color:#7b61ff;margin-top:8px;font-family:"SF 
 .card .title-row{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:3px}
 .card .title{font-size:1.1rem;font-weight:700;color:#fff}
 .card .subtitle-en{font-size:0.74rem;color:#7b61ff;font-family:"SF Mono",Menlo,monospace;letter-spacing:0.3px;opacity:0.85}
-.card .desc{font-size:0.88rem;color:#a8b0c0;line-height:1.5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .desc{font-size:0.88rem;color:#a8b0c0;line-height:1.5;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
 .card .meta{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;font-family:"SF Mono",Menlo,monospace}
 .card .updated{font-size:0.72rem;color:#6a7080;letter-spacing:0.3px}
 .card.mental{--accent:#00d4ff}
@@ -136,7 +136,7 @@ footer a:hover{color:#00d4ff}
   /* meta wraps to its own row under the desc instead of being hidden —
      otherwise 已完结 / last-updated never show on phones. */
   .card .meta{grid-column:2;flex-direction:row;align-items:center;gap:10px}
-  .card .desc{white-space:normal;font-size:0.85rem}
+  .card .desc{-webkit-line-clamp:unset;font-size:0.85rem}
   .lang-toggle{top:10px;right:10px}
   .notes-link{top:10px;left:10px;padding:6px 11px}
   header{padding-top:60px}
