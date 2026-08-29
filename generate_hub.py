@@ -157,6 +157,10 @@ CARDS = [
      "分层、网络、仪式、亲属、消费、运动——群体与文化如何塑造人，经典理论 + 田野民族志 + 当代映照，学理化多视角。",
      "Stratification, networks, ritual, kinship, consumption, movements — how groups and culture shape us; classic theory, ethnography and contemporary echoes, scholarly and multi-perspective.",
      "sociology-anthropology", "explore"),
+    ("linguistics", "🔤", "语言学", "Linguistics",
+     "声音、结构、意义、习得、变化——语言这台机器怎么运转、孩子怎么从零破解它，以及人和机器处理语言到底像不像。",
+     "Sound, structure, meaning, acquisition, change — how the machinery of language runs, how a child cracks it from scratch, and how far machine language processing really resembles ours.",
+     "linguistics", "explore"),
 ]
 
 # BigCat's Thinking Hub —— 互动型思想实验，链到自建静态站(非每日内容仓库，故无 commit 日期)。

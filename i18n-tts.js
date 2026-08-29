@@ -50,6 +50,7 @@
     'history': 1,
     'investing': 1,
     'leadership': 1,
+    'linguistics': 1,
     'mathematics': 1,
     'mental-models': 1,
     'meta-knowledge': 1,

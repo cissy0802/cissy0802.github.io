@@ -30,7 +30,7 @@ REPOS=(
   ai-ml art-aesthetics biographies book-recommendations buddhism
   chapter-deepread civics-geopolitics complexity-science cs-papers-deepread
   deep-reading deep-research family-craft health-longevity history investing
-  leadership mathematics mental-models meta-knowledge neuroscience parenting
+  leadership linguistics mathematics mental-models meta-knowledge neuroscience parenting
   evolutionary-biology personal-finance philosophy physics psychology sales sociology-anthropology super-individual
   synthesis system-design thinker-arena world-religions writing
 )

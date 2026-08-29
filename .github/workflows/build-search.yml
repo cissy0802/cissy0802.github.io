@@ -34,6 +34,7 @@ jobs:
             mathematics history investing civics-geopolitics \
             neuroscience physics world-religions personal-finance \
             evolutionary-biology sociology-anthropology complexity-science \
+            linguistics \
             deep-research synthesis; do
             echo "Cloning $repo..."
             git clone --depth 1 --quiet "https://github.com/cissy0802/$repo" "_src/$repo"
