@@ -222,6 +222,7 @@ CSS_VARS = {
     "complexity": ("#e0895e", "#a693cd"),
     "evolution":  ("#4a9d5f", "#1e5a34"),
     "socanthro":  ("#b06a4a", "#7c3a2d"),
+    "linguistics":("#9dbf46", "#5a7526"),
     "family":     ("#ffd166", "#e8743b"),
     "thinker":    ("#a29bfe", "linear-gradient(90deg,#a29bfe,#7b61ff,#ff6ec4)"),
     "research":   ("#4cc9f0", "linear-gradient(90deg,#4cc9f0,#7b61ff)"),
@@ -328,6 +329,22 @@ def latest_commit_date(repo: str):
             if f.get("status") == "added" and CONTENT_RE.search(f.get("filename", "")):
                 return c["commit"]["committer"]["date"][:10], done
     return commits[0]["commit"]["committer"]["date"][:10], done
+
+
+# A card whose accent_class has no CSS_VARS entry renders with NO coloured left
+# stripe: the base rule is `background:var(--accent)`, and with --accent never
+# defined that declaration is invalid at computed-value time, so the 4px bar is
+# simply invisible. Nothing errors, nothing warns — the card just looks slightly
+# plain, which is why it has now been missed twice (mental-models early on, then
+# linguistics). Fail the build instead.
+def check_accents() -> None:
+    used = [c[0] for c in CARDS + THINKING_CARDS + RESEARCH_CARDS + SYNTHESIS_CARDS]
+    missing = sorted({k for k in used if k not in CSS_VARS})
+    if missing:
+        raise SystemExit(
+            "generate_hub: CSS_VARS has no colour pair for accent class "
+            + ", ".join(repr(k) for k in missing)
+            + " — add one, or that card ships with no coloured left stripe.")
 
 
 def card_css() -> str:
@@ -511,6 +528,7 @@ footer a:hover{{color:#00d4ff}}
 
 
 def main():
+    check_accents()
     print("Fetching last commit dates...")
     repos = [c[6] for c in CARDS]
     # Repos are independent — fetch them concurrently (each is now ~2-3 small
