@@ -20,6 +20,14 @@
 #   ./set-repo-secrets.sh --check                      # who already has them
 #   ./set-repo-secrets.sh --names AZURE_SPEECH_KEY,AZURE_SPEECH_REGION thinker-arena
 #   ./set-repo-secrets.sh --names AZURE_SPEECH_KEY,AZURE_SPEECH_REGION --check
+#   ./set-repo-secrets.sh --all linguistics            # R2 trio + Azure pair, one shot
+#
+# Values resolve per-name, first hit wins: environment -> macOS Keychain
+# (service "bigcat-r2", where r2-creds.sh keeps the R2 trio) -> an `export NAME=`
+# line in ~/.zshrc (where the Azure pair lives) -> prompt. Nothing is echoed and
+# nothing is written to disk. --all exists because a new content repo needs all
+# five: miss the Azure pair and every publish turns "Bake TTS Audio" red with
+# `ERROR: missing env vars` — the page still ships, just with no audio.
 set -euo pipefail
 
 OWNER=cissy0802
@@ -43,6 +51,12 @@ if [[ "${1:-}" == "--names" ]]; then
   [[ -n "${2:-}" ]] || { echo "ERROR: --names needs a comma-separated list"; exit 1; }
   IFS=',' read -r -a NAMES <<< "$2"
   shift 2
+fi
+
+# --all = everything a content repo needs to bake and store audio.
+if [[ "${1:-}" == "--all" ]]; then
+  NAMES=(R2_ACCOUNT_ID R2_ACCESS_KEY_ID R2_SECRET_ACCESS_KEY AZURE_SPEECH_KEY AZURE_SPEECH_REGION)
+  shift
 fi
 
 command -v gh >/dev/null || { echo "ERROR: gh CLI not found"; exit 1; }
@@ -70,35 +84,54 @@ echo "Setting ${#NAMES[@]} secret(s) [${NAMES[*]}] on ${#REPOS[@]} repo(s) under
 # `r2-creds.sh exec -- ./set-r2-secrets.sh newrepo` does, so onboarding a repo
 # months from now needs no retyping and no second token. Otherwise prompt.
 VALUES=()
-# Take the values from the environment when they are all already there. That is
-# what `r2-creds.sh exec -- ./set-repo-secrets.sh newrepo` does, so onboarding a
-# repo months from now needs no retyping and no second token.
-from_env=1
-for n in "${NAMES[@]}"; do [[ -n "${!n:-}" ]] || from_env=0; done
 
-if [[ $from_env == 1 ]]; then
-  echo "Using ${NAMES[*]} from the environment."
-  for n in "${NAMES[@]}"; do VALUES+=("${!n}"); done
-else
+# Resolve one secret without ever echoing it: environment, then Keychain, then
+# an `export NAME=value` line in ~/.zshrc. Prints only where it came from.
+keychain_value() { security find-generic-password -s bigcat-r2 -a "$1" -w 2>/dev/null || true; }
+zshrc_value() {
+  [[ -r "$HOME/.zshrc" ]] || return 0
+  sed -n "s/^[[:space:]]*export[[:space:]]*$1=[\"']\{0,1\}\([^\"']*\)[\"']\{0,1\}[[:space:]]*\$/\1/p" \
+      "$HOME/.zshrc" | tail -1
+}
+
+need_prompt=()
+for n in "${NAMES[@]}"; do
+  v="${!n:-}";                         src="environment"
+  [[ -n "$v" ]] || { v=$(keychain_value "$n"); src="Keychain(bigcat-r2)"; }
+  [[ -n "$v" ]] || { v=$(zshrc_value    "$n"); src="~/.zshrc"; }
+  if [[ -n "$v" ]]; then
+    echo "  $n <- $src"
+    VALUES+=("$v")
+  else
+    VALUES+=("")
+    need_prompt+=("$n")
+  fi
+  unset v
+done
+
+if [[ ${#need_prompt[@]} -gt 0 ]]; then
   # `read` needs a real terminal. Run from a button or a pipe it sees EOF at
   # once and every value comes back empty — which used to be reported as "you
   # typed nothing", sending you to look in the wrong place.
   if [[ ! -t 0 ]]; then
-    echo "ERROR: no terminal on stdin, so the values cannot be typed."
+    echo "ERROR: not found anywhere and no terminal to type them: ${need_prompt[*]}"
     echo
     echo "Run this in Terminal.app or iTerm:"
     echo "  cd $(pwd)"
     echo "  $0 --names $(IFS=,; echo "${NAMES[*]}") ${REPOS[*]}"
     echo
-    echo "Or, if the values are already exported in your shell, they are used"
-    echo "as-is: ${NAMES[*]}"
+    echo "Or export them / store them where this script looks:"
+    echo "  R2 trio        ./r2-creds.sh save        (macOS Keychain)"
+    echo "  Azure pair     an 'export NAME=...' line in ~/.zshrc"
     exit 1
   fi
-  echo "Paste each value; nothing is echoed. (R2 values can be stored once with ./r2-creds.sh save)"
-  for n in "${NAMES[@]}"; do
-    read -rs -p "  $n: " v; echo
-    [[ -n "$v" ]] || { echo "ERROR: $n was empty — nothing was changed."; exit 1; }
-    VALUES+=("$v")
+  echo "Paste the ones that were not found; nothing is echoed."
+  for i in "${!NAMES[@]}"; do
+    [[ -n "${VALUES[$i]}" ]] && continue
+    read -rs -p "  ${NAMES[$i]}: " v; echo
+    [[ -n "$v" ]] || { echo "ERROR: ${NAMES[$i]} was empty — nothing was changed."; exit 1; }
+    VALUES[$i]="$v"
+    unset v
   done
 fi
 
