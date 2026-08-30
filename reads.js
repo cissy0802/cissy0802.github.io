@@ -34,10 +34,32 @@
   var T = isEn
     ? { mark: 'Mark as read', done: '✓ Read', undo: 'Mark unread', count: 'read',
         addThought: '＋ A thought on this piece', thoughtPh: 'What did this piece leave you with?',
-        save: 'Save', cancel: 'Cancel', edit: 'Click to edit', myNotes: '📝 My Notes' }
+        save: 'Save', cancel: 'Cancel', edit: 'Click to edit', myNotes: '📝 My Notes',
+        fresh: '↻ Updated since you read it', freshHint: 'Click to catch up' }
     : { mark: '标记已读', done: '✓ 已读', undo: '标为未读', count: '已读',
         addThought: '＋ 写下对这篇的想法', thoughtPh: '这篇给你留下了什么？',
-        save: '保存', cancel: '取消', edit: '点击编辑', myNotes: '📝 我的笔记' };
+        save: '保存', cancel: '取消', edit: '点击编辑', myNotes: '📝 我的笔记',
+        fresh: '↻ 读后有更新', freshHint: '点击确认已看过更新' };
+
+  // Some sites revisit and update pages after publishing (blog-deepread's
+  // monthly pass re-aligns each page to what its author has written since).
+  // A page that changed after you read it should not keep showing a plain ✓.
+  // Both shapes below are opt-in: a page or index row that carries no date
+  // behaves exactly as before, so the other repos are untouched.
+  //   • article page -> <section class="updates" data-last-reviewed="YYYY-MM-DD">
+  //   • index row    -> <a class="entry" data-updated="YYYY-MM-DD">
+  function parseDay(s) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(s || '').trim());
+    if (!m) return 0;
+    // End of that local day: a same-day read shouldn't count as stale.
+    return new Date(+m[1], +m[2] - 1, +m[3], 23, 59, 59).getTime();
+  }
+  function staleAgainst(path, dayStr) {
+    var upd = parseDay(dayStr);
+    if (!upd) return false;
+    var e = entryOf(path);
+    return !!(e && e.read && e.ts && e.ts < upd);
+  }
 
   function session() {
     try { return localStorage.getItem(SESSION_KEY) || ''; } catch (e) { return ''; }
@@ -226,17 +248,29 @@
       'border:1px solid rgba(123,97,255,.45);background:rgba(123,97,255,.12);' +
       'color:#7b61ff;font:600 .95rem -apple-system,sans-serif;cursor:pointer;';
 
+    // Set by sites that revisit pages after publishing; absent everywhere else.
+    var revEl = document.querySelector('.updates[data-last-reviewed]');
+    var revDay = revEl ? revEl.getAttribute('data-last-reviewed') : '';
+
     function render() {
       var read = isRead(path);
-      btn.textContent = read ? T.done : T.mark;
-      btn.style.color = read ? '#3aa17e' : '#7b61ff';
-      btn.style.borderColor = read ? 'rgba(58,161,126,.5)' : 'rgba(123,97,255,.45)';
-      btn.style.background = read ? 'rgba(58,161,126,.10)' : 'rgba(123,97,255,.12)';
-      btn.title = read ? T.undo : T.mark;
+      var stale = read && staleAgainst(path, revDay);
+      btn.textContent = stale ? T.fresh : (read ? T.done : T.mark);
+      var tone = stale ? ['#e8994b', 'rgba(232,153,75,.5)', 'rgba(232,153,75,.12)']
+               : read  ? ['#3aa17e', 'rgba(58,161,126,.5)', 'rgba(58,161,126,.10)']
+                       : ['#7b61ff', 'rgba(123,97,255,.45)', 'rgba(123,97,255,.12)'];
+      btn.style.color = tone[0];
+      btn.style.borderColor = tone[1];
+      btn.style.background = tone[2];
+      btn.title = stale ? T.freshHint : (read ? T.undo : T.mark);
     }
     render();
     btn.addEventListener('click', function () {
-      setRead(path, !isRead(path)).then(render);
+      // While the page is flagged as changed, the button means "I've caught up"
+      // — re-marking bumps the read timestamp past the update and clears it,
+      // rather than toggling the page back to unread.
+      var next = staleAgainst(path, revDay) ? true : !isRead(path);
+      setRead(path, next).then(render);
       render();
     });
 
@@ -250,7 +284,9 @@
     else document.body.appendChild(btn);
 
     function autoMark() {
-      if (isRead(path)) return;
+      // Reaching the end of a page that changed since you read it counts as
+      // catching up, same as it counts as reading an unread one.
+      if (isRead(path) && !staleAgainst(path, revDay)) return;
       setRead(path, true).then(render);
       render();
     }
@@ -431,17 +467,25 @@
         if (!pages.length) return;
         var read = pages.every(isRead);
         if (read) done++;
+        // Rows on sites that revisit their pages carry the page's current
+        // date; a row read before that date shows ↻ instead of ✓. Rows
+        // without the attribute keep the plain ✓ they always had.
+        var day = entry.getAttribute('data-updated') || '';
+        var stale = read && pages.some(function (p) { return staleAgainst(p, day); });
         var tick = entry.querySelector('.read-tick');
+        if (tick && tick.dataset.stale !== String(stale)) { tick.remove(); tick = null; }
         if (read && !tick) {
           tick = document.createElement('span');
           tick.className = 'read-tick';
-          tick.textContent = '✓';
-          tick.title = T.done;
+          tick.dataset.stale = String(stale);
+          tick.textContent = stale ? '↻' : '✓';
+          tick.title = stale ? T.fresh : T.done;
           // Topic cards carry a gradient rail plus an index label on the left,
           // so their tick goes in the free top-right corner instead.
+          var hue = stale ? '#e8994b' : '#3aa17e';
           tick.style.cssText = entry.classList.contains('topic-card')
-            ? 'position:absolute;right:14px;top:14px;color:#3aa17e;font:700 .8rem -apple-system,sans-serif;'
-            : 'position:absolute;left:6px;top:8px;color:#3aa17e;font:700 .8rem -apple-system,sans-serif;';
+            ? 'position:absolute;right:14px;top:14px;color:' + hue + ';font:700 .8rem -apple-system,sans-serif;'
+            : 'position:absolute;left:6px;top:8px;color:' + hue + ';font:700 .8rem -apple-system,sans-serif;';
           if (getComputedStyle(entry).position === 'static') entry.style.position = 'relative';
           entry.appendChild(tick);
         } else if (!read && tick) {
