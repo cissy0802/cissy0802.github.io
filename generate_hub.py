@@ -161,6 +161,10 @@ CARDS = [
      "声音、结构、意义、习得、变化——语言这台机器怎么运转、孩子怎么从零破解它，以及人和机器处理语言到底像不像。",
      "Sound, structure, meaning, acquisition, change — how the machinery of language runs, how a child cracks it from scratch, and how far machine language processing really resembles ours.",
      "linguistics", "explore"),
+    ("blogs", "🖋️", "博客精读", "Blog Deep-Read",
+     "一期提纯一个头脑——他十年没放下的那个问题、只有他给得出的几个答案、他怎么想问题、他哪里可能是错的。必读博客由四家旗舰模型独立选片取共识，另含专门用来破信息茧房的一档，每月回访对齐作者近况。",
+     "One mind per issue, distilled — the question a blogger hasn't let go of in ten years, the answers only they give, how they think, and where they may be wrong. The reading list is the consensus of four flagship models picking independently, plus a tier chosen to break the filter bubble, revisited monthly.",
+     "blog-deepread", "explore"),
 ]
 
 # BigCat's Thinking Hub —— 互动型思想实验，链到自建静态站(非每日内容仓库，故无 commit 日期)。
@@ -197,6 +201,7 @@ CSS_VARS = {
     "book":       ("#a87a3e", "#6b4423"),
     "deepread":   ("#3f8b7f", "#2f5d57"),
     "novel":      ("#c88cf0", "#f0a868"),
+    "blogs":      ("#6ea8fe", "#5eead4"),
     "csbooks":    ("#4a90b0", "#2f6480"),
     "sysd":       ("#64c8ff", "#5eead4"),
     "papers":     ("#f0b429", "#e8794b"),
