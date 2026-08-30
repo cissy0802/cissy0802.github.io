@@ -48,17 +48,24 @@
   // behaves exactly as before, so the other repos are untouched.
   //   • article page -> <section class="updates" data-last-reviewed="YYYY-MM-DD">
   //   • index row    -> <a class="entry" data-updated="YYYY-MM-DD">
+  // Compare whole days, not instants. The page carries a date; the read record
+  // carries a timestamp. Marking a page read at 17:57 on the same day it was
+  // reviewed must clear the flag — comparing the raw timestamp against any
+  // point later in that day (end-of-day, say) leaves it permanently stale and
+  // the "caught up" click does nothing.
+  function dayStart(ms) {
+    var d = new Date(ms);
+    return new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
+  }
   function parseDay(s) {
     var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(s || '').trim());
-    if (!m) return 0;
-    // End of that local day: a same-day read shouldn't count as stale.
-    return new Date(+m[1], +m[2] - 1, +m[3], 23, 59, 59).getTime();
+    return m ? new Date(+m[1], +m[2] - 1, +m[3]).getTime() : 0;
   }
   function staleAgainst(path, dayStr) {
     var upd = parseDay(dayStr);
     if (!upd) return false;
     var e = entryOf(path);
-    return !!(e && e.read && e.ts && e.ts < upd);
+    return !!(e && e.read && e.ts && dayStart(e.ts) < upd);
   }
 
   function session() {
