@@ -36,6 +36,7 @@
     'ai-ml': 1,
     'art-aesthetics': 1,
     'biographies': 1,
+    'blog-deepread': 1,
     'book-recommendations': 1,
     'buddhism': 1,
     'chapter-deepread': 1,

@@ -53,17 +53,27 @@
   // reviewed must clear the flag — comparing the raw timestamp against any
   // point later in that day (end-of-day, say) leaves it permanently stale and
   // the "caught up" click does nothing.
+  //
+  // Both sides are read in UTC, because that is the clock that wrote the date:
+  // the routine stamps "today" from a GitHub runner. Using the reader's local
+  // day instead made every page permanently stale west of UTC — a page stamped
+  // 2026-08-31 by a runner is still 2026-08-30 in Los Angeles, so the read
+  // timestamp could never catch up to it, ↻ never cleared, and clicking
+  // "caught up" did nothing at all. The guard below covers the same skew from
+  // the other side: if the stamped day has not arrived yet in UTC either, the
+  // page was published before it, so whoever read it read the current text.
   function dayStart(ms) {
     var d = new Date(ms);
-    return new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
+    return Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
   }
   function parseDay(s) {
     var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(s || '').trim());
-    return m ? new Date(+m[1], +m[2] - 1, +m[3]).getTime() : 0;
+    return m ? Date.UTC(+m[1], +m[2] - 1, +m[3]) : 0;
   }
   function staleAgainst(path, dayStr) {
     var upd = parseDay(dayStr);
     if (!upd) return false;
+    if (upd > dayStart(Date.now())) return false;
     var e = entryOf(path);
     return !!(e && e.read && e.ts && dayStart(e.ts) < upd);
   }

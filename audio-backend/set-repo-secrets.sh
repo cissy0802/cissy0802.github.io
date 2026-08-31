@@ -35,7 +35,7 @@ OWNER=cissy0802
 # Every repo that ships baked TTS audio. Regenerate with:
 #   for d in */; do [ -d "$d/.git" ] && [ -n "$(git -C "$d" ls-files audio)" ] && echo "${d%/}"; done
 REPOS=(
-  ai-ml art-aesthetics biographies book-recommendations buddhism
+  ai-ml art-aesthetics biographies blog-deepread book-recommendations buddhism
   chapter-deepread civics-geopolitics complexity-science cs-papers-deepread
   deep-reading deep-research family-craft health-longevity history investing
   leadership linguistics mathematics mental-models meta-knowledge neuroscience parenting
