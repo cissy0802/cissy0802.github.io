@@ -397,12 +397,39 @@
     return out;
   }
 
+
+  // Underline colour has to contrast with the page, and the pages differ: the
+  // hub and thinker-arena are dark, most content repos are light. Decide from
+  // the *text* colour rather than the background — dark pages here paint their
+  // background with a gradient, which leaves backgroundColor transparent and
+  // would read as "light".
+  var _dark = null;
+  function pageIsDark() {
+    if (_dark !== null) return _dark;
+    function lum(c) {
+      var m = String(c || '').match(/\d+(?:\.\d+)?/g);
+      if (!m || m.length < 3) return null;
+      return m[0] * 0.299 + m[1] * 0.587 + m[2] * 0.114;
+    }
+    // A paragraph's colour is the most representative; fall back to body.
+    var probe = document.querySelector('p, li, article, main') || document.body;
+    var l = lum(getComputedStyle(probe).color);
+    if (l === null) l = lum(getComputedStyle(document.body).color);
+    _dark = l !== null ? l > 140 : false;   // light text => dark page
+    return _dark;
+  }
+  function underlineColor() {
+    // Amber either way, but light enough to read on dark and deep enough to
+    // read on white.
+    return pageIsDark() ? 'rgba(255,214,102,.85)' : 'rgba(176,106,0,.95)';
+  }
+
   // A passage that carries a thought gets a solid underline; a bare highlight
   // a dotted one — so you can see at a glance where you've written something.
   function styleMark(mark, comment) {
     mark.style.cssText =
       'background:none;color:inherit;padding:0;cursor:pointer;' +
-      'border-bottom:2px ' + (comment ? 'solid' : 'dotted') + ' rgba(255,214,102,.85);';
+      'border-bottom:2px ' + (comment ? 'solid' : 'dotted') + ' ' + underlineColor() + ';';
     mark.title = T.myNote + (comment ? '：' + comment : '（' + T.tapToWrite + '）');
   }
 
