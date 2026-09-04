@@ -3,6 +3,8 @@
 > 生成日期：2026-09-01　｜　覆盖周期：2026 年 8 月
 > 本文件仅为**建议**，不修改任何仓库的 TOPICS.md / 页面 / 封顶。是否采纳由人工决定。
 > 纪律：宁缺勿滥；每条来源均已 WebSearch/WebFetch 验证真实存在。
+>
+> **2026-09-03 修订**：① 修正 super-individual 的 Day 号引用错误——skills 库治理是 **Day 36**（大型组织的 Skills Library 治理），不是 Day 38（Day 38 是结构化输出工程）。② Agent Plugins 一条**改判为 `SKILLS.md` 候选**，理由见该条。③ 本报告生成时**未查 super-individual 的 `SKILLS.md`**（Skill 1–34，该仓第二套独立编号系列），落点判断因此偏移；已在 `topics-refill` 任务书第 2 步补上「双系列仓一并去重」，堵住同类问题。
 
 > ✅ **2026-09-01 决定：本文件的 3 条 + 遗留 5 条，共 8 条全部采纳。**
 > 可直接粘贴的 TOPICS.md 补丁文本见 [`ROADMAP-ADOPTIONS.md`](./ROADMAP-ADOPTIONS.md)（本文件每月被巡检覆盖，故采纳记录另存）。
@@ -37,9 +39,9 @@ super-individual 59 → **59**（未动）；investing 58 → **58**（未动）
 
 **建议 1：Agent Plugins 1.0.0 — Skills 与 MCP server 终于有了统一的打包格式**
 
-- 为什么值得加：这是本月对「超级个体」最直接可动手的一条，且正好补在 roadmap 两格之间——Day 18 讲 MCP server 怎么写、Day 38 讲 skills 库怎么建，但**「写完之后怎么打成一个包、在不同客户端之间搬」一直没有标准答案**，换个 IDE 就得重配一遍。8 月 6 日，Amazon、Anysphere（Cursor）、Microsoft、OpenAI、Vercel 五方联合发布 **Agent Plugins 1.0.0**：一个厂商中立的开放打包规范，plugin 就是一个文件夹——必需的 `plugin.json` 清单 + 可选的 `skills/`（每个 skill 一份 `SKILL.md`，沿用 Agent Skills 规范）+ 可选的 `mcp.json`（声明 MCP servers）。规范刻意只定义**包格式**，不管安装、权限、安全、分发与用户体验，把信任边界留给客户端各自定。GitHub 于 8 月 12 日宣布 VS Code、Copilot CLI、Copilot SDK 与 Copilot app 全面可用，ChatGPT / Codex / Cursor / Kiro 亦为首发客户端。对个人开发者的现实意义很直白：**自己的工具集写一次，跨客户端复用**，不必再为每个 agent 客户端各维护一份。
+- 为什么值得加：这是本月对「超级个体」最直接可动手的一条，且正好补在 roadmap 两格之间——Day 18 讲 MCP server 怎么写、Day 36 讲 Skills Library 治理，但**「写完之后怎么打成一个包、在不同客户端之间搬」一直没有标准答案**，换个 IDE 就得重配一遍。8 月 6 日，Amazon、Anysphere（Cursor）、Microsoft、OpenAI、Vercel 五方联合发布 **Agent Plugins 1.0.0**：一个厂商中立的开放打包规范，plugin 就是一个文件夹——必需的 `plugin.json` 清单 + 可选的 `skills/`（每个 skill 一份 `SKILL.md`，沿用 Agent Skills 规范）+ 可选的 `mcp.json`（声明 MCP servers）。规范刻意只定义**包格式**，不管安装、权限、安全、分发与用户体验，把信任边界留给客户端各自定。GitHub 于 8 月 12 日宣布 VS Code、Copilot CLI、Copilot SDK 与 Copilot app 全面可用，ChatGPT / Codex / Cursor / Kiro 亦为首发客户端。对个人开发者的现实意义很直白：**自己的工具集写一次，跨客户端复用**，不必再为每个 agent 客户端各维护一份。
 - 来源：[Agent Plugins 规范仓库（agentplugins/agent-plugins-spec）](https://github.com/agentplugins/agent-plugins-spec)　｜　[规范正文 spec/1.0.0.md](https://github.com/agentplugins/agent-plugins-spec/blob/main/spec/1.0.0.md)　｜　[GitHub Changelog — Agent Plugins 1.0 in VS Code, Copilot CLI, and the Copilot app (2026-08-12)](https://github.blog/changelog/2026-08-12-agent-plugins-1-0-in-vs-code-copilot-cli-and-the-copilot-app/)　｜　[TNW — OpenAI and four rivals just agreed on one standard for AI agents](https://thenextweb.com/news/openai-agent-plugins-open-standard-skills-mcp)
-- 建议位置：Day 59 之后（紧接 Day 18 MCP 与 Day 38 skills 库；若采纳上月的 MCP 无状态化建议，两条宜相邻成组）
+- 建议位置：**改判（2026-09-03 复核）——很可能不该进 `TOPICS.md` 当一天，而该进 `SKILLS.md` 当一条 Skill。** 本条讲的是「`skills/` + `mcp.json` 怎么打成一个包、跨客户端搬」，地盘紧邻 Skill 6 skill-authoring、Skill 8 agents-md、Skill 12 mcp-security，与 Day 系列（工程主题）不在同一层。若确认进 SKILLS，编号接 **Skill 34 之后**；若仍要留在 Day 系列，须先与 Skill 8 划清分工，且落点应为 **Day 65 之后**（TOPICS 补给若合并，Day 60–64 已被占）。
 
 **建议 2：模型能力变化 — 专用网安模型落地，漏洞发现的成本正在坍塌**
 
