@@ -273,8 +273,31 @@
     return nodes;
   }
 
+  // Whitespace is where re-location kept breaking, silently. A note's text is
+  // captured with Selection.toString(), which serialises what's *rendered* —
+  // one "\n" for a <br> or a block boundary — while the DOM carries the source
+  // newline *and* its indentation, and the whitespace-only nodes between two
+  // tags never reach `full` at all (textNodes() drops them). So any passage
+  // that crossed a line break in the HTML — "…这叫耐受\n——从前一份剂量…", the
+  // em dash starting its own source line — was never found again: indexOf()
+  // returned -1, no underline, no error. Match on the non-whitespace
+  // characters only, keeping a map back to the real offsets so the range still
+  // lands exactly on the passage.
+  var WS = /[\s\u200b-\u200d\ufeff]/;
+  function squeeze(s) {
+    var text = '', map = [];
+    for (var i = 0; i < s.length; i++) {
+      var c = s.charAt(i);
+      if (WS.test(c)) continue;
+      text += c;
+      map.push(i);
+    }
+    return { text: text, map: map };
+  }
+
   // Rebuild the page's visible text with an index back to (node, offset), then
   // find the note by its prefix+text+suffix; fall back to the text alone.
+  var missed = {};
   function locate(note) {
     var nodes = textNodes(document.body);
     var full = '', map = [];
@@ -282,11 +305,27 @@
       map.push({ node: node, start: full.length });
       full += node.nodeValue;
     });
-    var idx = -1;
-    if (note.prefix || note.suffix) idx = full.indexOf(note.prefix + note.text + note.suffix);
-    if (idx >= 0) idx += note.prefix.length;
-    else idx = full.indexOf(note.text);
-    if (idx < 0) return null;
+
+    var hay = squeeze(full);
+    var text = squeeze(note.text || '').text;
+    if (!text) return null;
+    var prefix = squeeze(note.prefix || '').text;
+    var suffix = squeeze(note.suffix || '').text;
+
+    var at = -1;
+    if (prefix || suffix) at = hay.text.indexOf(prefix + text + suffix);
+    if (at >= 0) at += prefix.length;
+    else at = hay.text.indexOf(text);
+    if (at < 0) {
+      // Say so once: a passage that can't be found used to fail without a word.
+      if (!missed[note.id] && window.console && console.warn) {
+        missed[note.id] = 1;
+        console.warn('[notes] 页面上找不到这段划线，跳过：' + String(note.text || '').slice(0, 40));
+      }
+      return null;
+    }
+    var idx = hay.map[at];                             // first character of the passage
+    var end = hay.map[at + text.length - 1] + 1;       // just past its last character
 
     function pos(offset) {
       for (var i = map.length - 1; i >= 0; i--) {
@@ -296,7 +335,7 @@
       }
       return null;
     }
-    var a = pos(idx), b = pos(idx + note.text.length);
+    var a = pos(idx), b = pos(end);
     if (!a || !b) return null;
     var range = document.createRange();
     try {
