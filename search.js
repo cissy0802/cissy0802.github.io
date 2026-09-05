@@ -679,14 +679,20 @@
             (result.sub_results || []).forEach((s) => {
               s.url = unbundle(s.url);
             });
-            const live =
+            // debate.html selects its debate with ?d=<slug>; anything else falls
+            // back to the default debate. Older snapshots baked ?id= into the
+            // index, so normalise it here rather than waiting for a rebuild.
+            const fixParam = (u) =>
+              u ? u.replace("/debate.html?id=", "/debate.html?d=") : u;
+            const live = fixParam(
               (result.meta && result.meta.url) ||
-              (() => {
-                const m = /\/thinker-arena\/search\/(.+?)(?:\.en)?\.html$/.exec(
-                  result.url || ""
-                );
-                return m ? `/thinker-arena/debate.html?id=${m[1]}` : null;
-              })();
+                (() => {
+                  const m = /\/thinker-arena\/search\/(.+?)(?:\.en)?\.html$/.exec(
+                    result.url || ""
+                  );
+                  return m ? `/thinker-arena/debate.html?d=${m[1]}` : null;
+                })()
+            );
             if (live) {
               result.url = live;
               (result.sub_results || []).forEach((s) => {

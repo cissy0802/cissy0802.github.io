@@ -60,14 +60,14 @@ function json(req, status, body) {
 
 /* corpus/philosophy/foo-day40.md      -> /philosophy/foo-day40.html
  * corpus/philosophy/foo-day40.en.md   -> /philosophy/foo-day40.en.html
- * corpus/thinker-arena/search/x.md    -> /thinker-arena/debate.html?id=x
+ * corpus/thinker-arena/search/x.md    -> /thinker-arena/debate.html?d=x
  *   (debates render client-side; the corpus holds a crawlable snapshot, so the
  *    snapshot's own path would 404 — same rewrite search.js does for Pagefind.)
  */
 function sourceUrl(key) {
   const path = String(key || '').replace(/^corpus\//, '').replace(/\.md$/, '');
   const debate = /^thinker-arena\/search\/(.+?)(\.en)?$/.exec(path);
-  if (debate) return `${SITE}/thinker-arena/debate.html?id=${debate[1]}`;
+  if (debate) return `${SITE}/thinker-arena/debate.html?d=${debate[1]}`;
   return `${SITE}/${path}.html`;
 }
 

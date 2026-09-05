@@ -29,7 +29,7 @@ from pathlib import Path
 
 ARENA = Path(sys.argv[1] if len(sys.argv) > 1 else "_src/thinker-arena")
 OUT = ARENA / "search"
-LIVE = "/thinker-arena/debate.html?id={id}"  # root-relative -> resolves on hub origin
+LIVE = "/thinker-arena/debate.html?d={id}"  # root-relative -> resolves on hub origin
 
 
 def esc(s):

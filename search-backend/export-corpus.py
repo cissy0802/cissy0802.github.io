@@ -35,7 +35,7 @@ HTML_COMMENT = re.compile(r"<!--.*?-->", re.S)
 TITLE = re.compile(r"<title>(.*?)</title>", re.S | re.I)
 CANONICAL = re.compile(r'<link[^>]+rel="canonical"[^>]+href="([^"]+)"', re.I)
 # The debate snapshots' Pagefind URL override, e.g.
-# <span data-pagefind-meta="url[content]" content="/thinker-arena/debate.html?id=x" hidden>
+# <span data-pagefind-meta="url[content]" content="/thinker-arena/debate.html?d=x" hidden>
 META_URL = re.compile(
     r'<span[^>]+data-pagefind-meta="url\[content\]"[^>]+content="([^"]+)"', re.I
 )
