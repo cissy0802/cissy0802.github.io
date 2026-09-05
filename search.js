@@ -695,6 +695,10 @@
             );
             if (live) {
               result.url = live;
+              // Pagefind UI renders the result title link from meta.url when the
+              // page has one, so rewriting result.url alone leaves the main link
+              // pointing at the stale ?id= form.
+              if (result.meta) result.meta.url = live;
               (result.sub_results || []).forEach((s) => {
                 s.url = live;
               });
