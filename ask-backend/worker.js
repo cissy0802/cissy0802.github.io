@@ -99,7 +99,13 @@ function collapse(results, titles) {
     if (!key) continue;
     const path = key.replace(/^corpus\//, '').replace(/\.md$/, '');
     const known = titles[path];
-    const url = (known && known.url) || sourceUrl(key);
+    // The title manifest is rebuilt nightly from the debate snapshots, so it
+    // can still carry the old ?id= form that debate.html ignores (it selects
+    // the debate with ?d=, and silently shows another one otherwise).
+    const url = ((known && known.url) || sourceUrl(key)).replace(
+      '/debate.html?id=',
+      '/debate.html?d='
+    );
     const prev = byPage.get(url);
     if (prev) {
       prev.chunks++;
