@@ -345,23 +345,37 @@
     return range;
   }
 
+  // Arriving from /notes.html: light the passage up for a few seconds, then
+  // hand it back to the DOM untouched. Same node-by-node wrapping as the
+  // underlines — surroundContents() alone gave up (scroll, no highlight) on
+  // any passage crossing an element boundary, which is most of the long ones.
+  // The persistent underline is what marks the passage afterwards, so the
+  // flash removes itself instead of leaving a second, fainter highlight.
+  var FLASH_MS = 2600, FADE_MS = 1200;
   function flash(range) {
-    var mark = document.createElement('mark');
-    mark.style.cssText =
-      'background:linear-gradient(transparent 55%,rgba(255,214,102,.85) 55%);' +
-      'color:inherit;padding:0;transition:background 1.2s;';
-    try {
-      range.surroundContents(mark);
-    } catch (e) {
-      // Selection spans element boundaries — fall back to scrolling to its start.
+    var marks = wrapEach(range, function () {
+      var mark = document.createElement('mark');
+      mark.className = 'bigcat-note-flash';
+      mark.style.cssText =
+        'background:linear-gradient(transparent 55%,rgba(255,214,102,.85) 55%);' +
+        'color:inherit;padding:0;transition:background ' + (FADE_MS / 1000) + 's;';
+      return mark;
+    });
+    if (!marks.length) {
+      // Nothing wrappable — at least land the reader on the right spot.
       var el = range.startContainer.parentElement;
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
-    mark.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    marks[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
     setTimeout(function () {
-      mark.style.background = 'linear-gradient(transparent 55%,rgba(255,214,102,.28) 55%)';
-    }, 2600);
+      marks.forEach(function (mark) { mark.style.background = 'none'; });
+      setTimeout(function () {
+        marks.forEach(function (mark) {
+          if (mark.parentNode) mark.replaceWith.apply(mark, mark.childNodes);
+        });
+      }, FADE_MS + 100);
+    }, FLASH_MS);
   }
 
   // ---------- persistent underlines on the article -------------------------
@@ -401,6 +415,18 @@
   // sentence — so wrap each intersecting text node separately instead. One
   // logical note can therefore own several <mark>s.
   function wrapRange(range, note) {
+    return wrapEach(range, function () {
+      var mark = document.createElement('mark');
+      mark.className = 'bigcat-note-mark';
+      mark.setAttribute('data-note-id', note.id);
+      styleMark(mark, note.comment);
+      return mark;
+    });
+  }
+
+  // The wrapping itself, shared with flash(): one fresh element from make()
+  // per text node the range touches.
+  function wrapEach(range, make) {
     var out = [];
     var root = range.commonAncestorContainer;
     if (root.nodeType === 3) root = root.parentNode;
@@ -424,10 +450,7 @@
         r.setEnd(node, to);
       } catch (e) { return; }
       if (!r.toString().trim()) return;
-      var mark = document.createElement('mark');
-      mark.className = 'bigcat-note-mark';
-      mark.setAttribute('data-note-id', note.id);
-      styleMark(mark, note.comment);
+      var mark = make();
       try {
         r.surroundContents(mark); // single text node — always safe
         out.push(mark);
@@ -572,15 +595,19 @@
 
   // #note=<id> — arriving from the notes list. Works from the local queue or
   // the cached server list, so it also resolves offline.
+  var flashed = null;
   function handleHash() {
     var m = /[#&]note=([\w-]+)/.exec(location.hash);
     if (!m) return;
     var id = m[1];
+    if (id === flashed) return;   // client-rendered pages call this on a timer
     var all = readJSON(QUEUE_KEY, []).concat(readJSON(CACHE_KEY, []));
     var note = all.filter(function (n) { return n.id === id; })[0];
     if (!note) return;
     var range = locate(note);
-    if (range) flash(range);
+    if (!range) return;
+    flashed = id;
+    flash(range);
   }
 
   // ---------- the "＋ 笔记" bubble ------------------------------------------
