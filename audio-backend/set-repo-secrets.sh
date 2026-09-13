@@ -40,7 +40,7 @@ REPOS=(
   deep-reading deep-research family-craft health-longevity history investing
   leadership linguistics mathematics mental-models meta-knowledge neuroscience parenting
   evolutionary-biology personal-finance philosophy physics psychology sales sociology-anthropology super-individual
-  synthesis system-design thinker-arena world-religions writing
+  synthesis system-design talk-deepread thinker-arena world-religions writing
 )
 
 NAMES=(R2_ACCOUNT_ID R2_ACCESS_KEY_ID R2_SECRET_ACCESS_KEY)

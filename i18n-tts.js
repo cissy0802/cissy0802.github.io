@@ -67,6 +67,7 @@
     'super-individual': 1,
     'synthesis': 1,
     'system-design': 1,
+    'talk-deepread': 1,
     'world-religions': 1,
     'writing': 1,
   };

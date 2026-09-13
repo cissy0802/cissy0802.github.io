@@ -165,6 +165,10 @@ CARDS = [
      "一期提纯一个头脑——他十年没放下的那个问题、只有他给得出的几个答案、他怎么想问题、他哪里可能是错的。必读博客由四家旗舰模型独立选片取共识，另含专门用来破信息茧房的一档，每月回访对齐作者近况。",
      "One mind per issue, distilled — the question a blogger hasn't let go of in ten years, the answers only they give, how they think, and where they may be wrong. The reading list is the consensus of four flagship models picking independently, plus a tier chosen to break the filter bubble, revisited monthly.",
      "blog-deepread", "explore"),
+    ("talks", "🎤", "演讲精读", "Talk Deep-Read",
+     "一场演讲是一个想法的入口：把演讲讲透，挖出台上 18 分钟没装下的研究，再追到这个想法后来的命运——站住了、被推翻，还是被传歪了。清单由三家旗舰模型独立选片取共识，逐场实测逐字稿可读。",
+     "A talk is a doorway to one idea: explain the talk fully, dig up the research its 18 minutes left out, then follow what became of the idea — held up, overturned, or garbled in the retelling. The list is the consensus of three flagship models picking independently, every transcript checked readable.",
+     "talk-deepread", "explore"),
 ]
 
 # BigCat's Thinking Hub —— 互动型思想实验，链到自建静态站(非每日内容仓库，故无 commit 日期)。
@@ -202,6 +206,7 @@ CSS_VARS = {
     "deepread":   ("#3f8b7f", "#2f5d57"),
     "novel":      ("#c88cf0", "#f0a868"),
     "blogs":      ("#6ea8fe", "#5eead4"),
+    "talks":      ("#5ee6a8", "#e8d46b"),
     "csbooks":    ("#4a90b0", "#2f6480"),
     "sysd":       ("#64c8ff", "#5eead4"),
     "papers":     ("#f0b429", "#e8794b"),
