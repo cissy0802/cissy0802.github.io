@@ -1,5 +1,7 @@
 # Roadmap 采纳清单（待落地到各仓 TOPICS.md）
 
+> ✅ **2026-10-01 已全部落地。** 实际编号与本文件草拟的略有不同：Agent Plugins 按 9 月 3 日的改判进了 `SKILLS.md`（Skill 35），因此 super-individual 的 ACS 落在 Day 61、专用网安模型落在 Day 62。连同 10 月巡检的 7 条，最终编号见 [`ROADMAP-SUGGESTIONS.md`](./ROADMAP-SUGGESTIONS.md) 顶部的落地表。下文保留为历史记录。
+
 > 决定日期：2026-09-01　｜　决定：**8 条建议全部采纳**（2026-09 巡检 3 条 + 2026-08 巡检遗留 5 条）
 > 本文件是**可直接粘贴的补丁文本**，不是建议。`ROADMAP-SUGGESTIONS.md` 每月会被巡检覆盖，故采纳记录单独存于此。
 >

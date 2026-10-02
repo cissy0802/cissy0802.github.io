@@ -7,6 +7,21 @@
 > **本月覆盖面变了**：上一版只查了 5 个仓（ai-ml / super-individual / investing / meta-knowledge / health-longevity）。本版按新任务书查满 A 档 4 仓 + B 档 6 仓，并首次把 super-individual 的 **Skill 系列**（`SKILLS.md`）单列。
 > neuroscience / system-design / physics / evolutionary-biology / civics-geopolitics 是**首次巡检**，没有「上次巡检」基线，对这 5 个仓把窗口放宽到 2026 年 Q2–Q3；凡触发事件早于 9 月的，条目内都标了真实日期。
 
+> ✅ **2026-10-01 决定并已落地：上月采纳的 8 条 + 本月 7 条，共 15 条全部写入各仓并推送。** 最终编号如下（下文各条的「建议位置」是落地前写的，以本表为准）：
+>
+> | 仓 | 落地条目 | 新封顶 |
+> |---|---|---|
+> | ai-ml | Day 57 扩散语言模型 · Day 58 J-lens · Day 59 自动化对齐研究员 · Day 60 真实事故的对齐尸检 · Day 61 机器证明的规模跃迁 | Day 61 |
+> | super-individual（Day） | Day 60 MCP 无状态化 · Day 61 ACS · Day 62 专用网安模型 · Day 63 托管 agent harness；Day 18 行加了新旧协议交叉标注 | Day 63 |
+> | super-individual（Skill） | Skill 35 Agent Plugins 1.0.0（按 9 月 3 日的改判进 `SKILLS.md`，不占 Day 号） | Skill 35 |
+> | neuroscience | Topic 44 麻醉的共同终点（Phase B）· Topic 45 语义的群体编码（Phase A） | Topic 45 |
+> | system-design | Day 55 对象存储当真相源 | Day 55 |
+> | evolutionary-biology | Day 39 直接看见自然选择 | Day 39 |
+> | investing | Day 59 私募信贷的零售化（已并入 SEC 9 月 30 日提案） | Day 59 |
+>
+> topics-refill 的三份未合并草稿已同步顺延重编号（ai-ml → Day 62–69，super-individual → Day 64–68，system-design → Day 56–63），`merge.sh --dry-run` 均通过。
+> **仍未处理**：Skill 8（agents-md）已发布页的过期论断，见下文 Skill 系列一节。
+
 ## 本月一览
 
 | 仓 | 现封顶 | 新增建议 |
