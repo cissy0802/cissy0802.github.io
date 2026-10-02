@@ -20,7 +20,7 @@
 > | investing | Day 59 私募信贷的零售化（已并入 SEC 9 月 30 日提案） | Day 59 |
 >
 > topics-refill 的三份未合并草稿已同步顺延重编号（ai-ml → Day 62–69，super-individual → Day 64–68，system-design → Day 56–63），`merge.sh --dry-run` 均通过。
-> **仍未处理**：Skill 8（agents-md）已发布页的过期论断，见下文 Skill 系列一节。
+> ✅ **Skill 8（agents-md）已修**（2026-10-01）：中英两页按现行官方文档改写——v2.1.277 起没有 CLAUDE.md 时原生读 AGENTS.md，页首加了更新注记。下文 Skill 系列一节里的时效提示保留为历史记录。
 
 ## 本月一览
 
