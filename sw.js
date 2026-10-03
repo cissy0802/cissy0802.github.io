@@ -65,6 +65,37 @@ self.addEventListener('activate', (e) => {
   );
 });
 
+// A downloaded MP3 is stored whole. Safari's media loader never asks for a
+// whole file: it opens with `Range: bytes=0-1` and reads the rest in pieces,
+// and it refuses to play unless each answer is a 206 holding exactly those
+// bytes. Handing it the cached 200 made every downloaded article silent on
+// iPhone (Chrome accepts the 200, so desktop never showed it).
+function rangeOf(res, range) {
+  if (!range) return res;
+  const m = /^bytes=(\d*)-(\d*)$/.exec(range.trim());
+  if (!m || (m[1] === '' && m[2] === '')) return res;
+  return res.arrayBuffer().then((buf) => {
+    const size = buf.byteLength;
+    let start, end;
+    if (m[1] === '') {            // suffix: the last N bytes
+      start = Math.max(0, size - parseInt(m[2], 10));
+      end = size - 1;
+    } else {
+      start = parseInt(m[1], 10);
+      end = m[2] === '' ? size - 1 : Math.min(parseInt(m[2], 10), size - 1);
+    }
+    if (start >= size || start > end) {
+      return new Response(null, { status: 416, headers: { 'Content-Range': `bytes */${size}` } });
+    }
+    const h = new Headers(res.headers);
+    h.set('Content-Range', `bytes ${start}-${end}/${size}`);
+    h.set('Content-Length', String(end - start + 1));
+    h.set('Accept-Ranges', 'bytes');
+    if (!h.get('Content-Type')) h.set('Content-Type', 'audio/mpeg');
+    return new Response(buf.slice(start, end + 1), { status: 206, statusText: 'Partial Content', headers: h });
+  });
+}
+
 self.addEventListener('fetch', (e) => {
   const req = e.request;
   if (req.method !== 'GET') return;
@@ -78,7 +109,7 @@ self.addEventListener('fetch', (e) => {
   if (url.pathname.endsWith('.mp3')) {
     e.respondWith(
       caches.match(req, { ignoreSearch: true, ignoreVary: true })
-        .then((hit) => hit || fetch(req))
+        .then((hit) => (hit ? rangeOf(hit, req.headers.get('Range')) : fetch(req)))
     );
     return;
   }

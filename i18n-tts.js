@@ -158,8 +158,12 @@
     paused: false,
     rate: parseFloat(localStorage.getItem(RATE_KEY)) || 1,
     utter: null,
-    audio: null,
-    _prefetched: new Map(),
+    audio: null,      // = player while the current segment is baked audio, else null
+    _warmed: new Set(),
+    // Set while playing an article AFTER this page (auto-continue): its
+    // segments are plain {hash, text} objects, not elements of this page.
+    remote: null,     // { url, title }
+    _next: null,      // Promise<{url,title,segs}|null> for the article after the current one
 
     play() {
       if (this.paused) {
@@ -173,38 +177,50 @@
       if (!this.segments.length) return;
       if (this.idx < 0 || this.idx >= this.segments.length) this.idx = 0;
       this.playing = true;
+      // Start resolving the next article now, while the screen is on: once the
+      // phone is locked, a fetch started at the very end of the article may
+      // never get to run.
+      if (!this._next) this._next = nextArticle(this.remote ? this.remote.url : location.href);
       this.speakCurrent();
       updatePlayButton();
     },
 
     speakCurrent() {
       if (this.idx >= this.segments.length) {
-        this.stop();
+        this._continueToNextArticle();
         return;
       }
       const seg = this.segments[this.idx];
       document.querySelectorAll('.tts-active, .tts-active-ring').forEach((el) => {
         el.classList.remove('tts-active', 'tts-active-ring');
       });
-      // Gradient-clipped text (background-clip:text + transparent fill) is
-      // painted BY its background, so our highlight background would erase
-      // the glyphs. Those get a ring-only variant.
-      seg.classList.add(usesTextClip(seg) ? 'tts-active-ring' : 'tts-active');
-      seg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (isEl(seg)) {
+        // Gradient-clipped text (background-clip:text + transparent fill) is
+        // painted BY its background, so our highlight background would erase
+        // the glyphs. Those get a ring-only variant.
+        seg.classList.add(usesTextClip(seg) ? 'tts-active-ring' : 'tts-active');
+        seg.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
       updateProgress();
+      updateMediaSession();
+      updateNowPlaying();
 
       // Tear down any in-flight audio/utterance from the previous segment
       this._cancelPlayback();
 
-      const hash = splitMode
-        ? seg.getAttribute('data-tts')
-        : seg.getAttribute('data-tts-' + currentLang);
+      const hash = segHash(seg);
       if (hash) {
         const url = audioUrl(currentLang, hash);
-        const audio = this._prefetched.get(url) || new Audio(url);
-        this._prefetched.delete(url);
+        // ONE element for the whole session, src swapped per segment. iOS only
+        // lets an element start with sound from a tap; an element that is
+        // already playing may move on to a new src from `ended`, but a fresh
+        // `new Audio()` may not. With a new element per segment, playback died
+        // at the first segment boundary after the screen locked.
+        const audio = player();
+        audio._priming = false;
+        if (audio.src !== new URL(url, location.href).href) audio.src = url;
+        else { try { audio.currentTime = 0; } catch (e) {} }
         audio.playbackRate = this.rate;
-        audio.preload = 'auto';
         const myToken = ++this._token;
         const isStale = () => myToken !== this._token;
         audio.onended = () => {
@@ -239,6 +255,7 @@
         audio.ontimeupdate = () => {
           if (isStale() || isScrubbing || audio._priming) return;
           updateSeek(audio.currentTime, durationOf(audio));
+          updatePositionState(audio);
         };
         if (audio.readyState >= 1 && !isStale()) {
           setSeekEnabled(true);
@@ -255,6 +272,14 @@
           this.speakWebSpeech(seg, isStale);
         });
         this._prefetch(2);
+        return;
+      }
+      // Web Speech cannot run with the screen locked, and nobody is watching
+      // the highlight of an article that is not on screen: skip unbaked
+      // segments of a continued article instead of stalling on them.
+      if (!isEl(seg)) {
+        this.idx++;
+        this.speakCurrent();
         return;
       }
       // No baked audio for this segment → Web Speech (no seek support)
@@ -286,7 +311,7 @@
 
     speakWebSpeech(seg, isStale) {
       if (!('speechSynthesis' in window)) return;
-      const text = seg.textContent.trim();
+      const text = segText(seg);
       if (!text) {
         if (isStale && isStale()) return;
         this.idx++;
@@ -356,13 +381,31 @@
     _cancelPlayback() {
       // Invalidate any pending callbacks from the previous segment
       this._token++;
+      // Pause only: the element is reused for the next segment (see player()).
       if (this.audio) {
         try { this.audio.pause(); } catch (e) {}
-        this.audio.removeAttribute('src');
-        this.audio.load?.();
         this.audio = null;
       }
       if ('speechSynthesis' in window) speechSynthesis.cancel();
+    },
+
+    // End of the current article: keep going with the next one from the
+    // repo's index, inside this page, so it also works with the screen locked
+    // (navigating away would stop the audio, and the new page could not start
+    // sound without a tap).
+    _continueToNextArticle() {
+      const p = this._next;
+      if (!p) { this.stop(); return; }
+      const myToken = ++this._token;
+      p.then((next) => {
+        if (myToken !== this._token || !this.playing) return;
+        if (!next || !next.segs.length) { this.stop(); return; }
+        this.remote = { url: next.url, title: next.title };
+        this.segments = next.segs;
+        this.idx = 0;
+        this._next = nextArticle(next.url);
+        this.speakCurrent();
+      }, () => this.stop());
     },
 
     // Warm the next few segments while the current one plays. Without this the
@@ -371,30 +414,22 @@
     // same origin as the page. Keyed by URL, not index: rebuildSegments() can
     // renumber segments mid-session, and a stale index would hand back the
     // wrong section's audio.
+    // Warmed with fetch() into the HTTP cache (the Worker marks MP3s immutable)
+    // rather than with extra Audio elements, which only ever exist to be
+    // thrown away and, on iOS, can't be played from the background anyway.
     _prefetch(count) {
       for (let i = 1; i <= count; i++) {
         const nextIdx = this.idx + i;
         if (nextIdx >= this.segments.length) break;
-        const seg = this.segments[nextIdx];
-        const hash = splitMode
-          ? seg.getAttribute('data-tts')
-          : seg.getAttribute('data-tts-' + currentLang);
+        const hash = segHash(this.segments[nextIdx]);
         if (!hash) continue;
         const url = audioUrl(currentLang, hash);
-        if (this._prefetched.has(url)) continue;
-        const a = new Audio(url);
-        a.preload = 'auto';
-        this._prefetched.set(url, a);
+        if (this._warmed.has(url)) continue;
+        this._warmed.add(url);
+        fetch(url, { mode: 'cors', credentials: 'omit' })
+          .then((r) => (r.ok ? r.arrayBuffer() : null))
+          .catch(() => this._warmed.delete(url));
       }
-    },
-
-    _clearPrefetch() {
-      for (const [, a] of this._prefetched) {
-        try { a.pause(); } catch (e) {}
-        a.removeAttribute('src');
-        a.load?.();
-      }
-      this._prefetched.clear();
     },
 
     pause() {
@@ -413,7 +448,15 @@
       this.paused = false;
       this.idx = -1;
       this._cancelPlayback();
-      this._clearPrefetch();
+      if (_player) { _player.removeAttribute('src'); _player.load?.(); }
+      this._next = null;
+      if (this.remote) {
+        // Back to this page's own segments.
+        this.remote = null;
+        rebuildSegments();
+      }
+      updateNowPlaying();
+      updateMediaSession();
       document.querySelectorAll('.tts-active, .tts-active-ring').forEach((el) => {
         el.classList.remove('tts-active', 'tts-active-ring');
       });
@@ -425,6 +468,15 @@
 
     next() {
       if (!this.segments.length) return;
+      if (this.idx >= this.segments.length - 1 && this._next) {
+        this.playing = true;
+        this.paused = false;
+        this.idx = this.segments.length;
+        this._cancelPlayback();
+        this._continueToNextArticle();
+        updatePlayButton();
+        return;
+      }
       this.idx = Math.min(this.idx + 1, this.segments.length - 1);
       this.playing = true;
       this.paused = false;
@@ -453,6 +505,166 @@
       }
     },
   };
+
+  // ---------- One audio element for the whole session ----------
+  let _player = null;
+  function player() {
+    if (!_player) {
+      _player = new Audio();
+      _player.preload = 'auto';
+      // Keep the button / lock-screen state honest when the OS pauses or
+      // resumes us (headphones unplugged, a call, the lock-screen control).
+      _player.addEventListener('pause', () => {
+        // _player.paused re-checked: the pause() that _cancelPlayback issues
+        // between segments dispatches its event after the next src is
+        // already playing, and must not read as the user pausing.
+        if (_player.paused && tts.audio === _player && tts.playing && !tts.paused && !_player.ended && !_player._priming) {
+          tts.paused = true; updatePlayButton();
+        }
+      });
+      _player.addEventListener('play', () => {
+        if (tts.audio === _player && tts.paused) { tts.paused = false; updatePlayButton(); }
+      });
+    }
+    return _player;
+  }
+
+  // A segment is an element of this page, or {hash, text, label} for an
+  // article that auto-play continued into.
+  function isEl(seg) { return !!seg && seg.nodeType === 1; }
+  function segHash(seg) {
+    if (!isEl(seg)) return seg.hash;
+    return splitMode ? seg.getAttribute('data-tts') : seg.getAttribute('data-tts-' + currentLang);
+  }
+  function segText(seg) { return isEl(seg) ? seg.textContent.trim() : seg.text; }
+  function segLabel(seg) {
+    const t = isEl(seg) ? seg.textContent : seg.label;
+    return (t || '').replace(/\s+/g, ' ').trim().slice(0, 60);
+  }
+
+  // ---------- Auto-continue: the next article in this repo's index ----------
+  let _indexP = null;
+  function indexList() {
+    if (_indexP) return _indexP;
+    const lang = splitMode && currentLang === 'en' ? 'en' : 'zh';
+    const indexUrl = new URL(lang === 'en' ? 'index.en.html' : 'index.html', location.href).href;
+    _indexP = fetch(indexUrl, { credentials: 'same-origin' })
+      .then((r) => (r.ok ? r.text() : ''))
+      .then((html) => {
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        // Index entries are .entry cards in reading order (day1 → dayN);
+        // unpublished ones have no link. Fall back to any same-folder page.
+        let links = Array.from(doc.querySelectorAll('.entry a[href]'));
+        if (!links.length) links = Array.from(doc.querySelectorAll('a[href]'));
+        const dir = new URL('./', indexUrl).pathname;
+        const out = [];
+        for (const a of links) {
+          let u;
+          try { u = new URL(a.getAttribute('href'), indexUrl); } catch (e) { continue; }
+          if (u.origin !== location.origin || !u.pathname.startsWith(dir)) continue;
+          if (!/\.html$/.test(u.pathname) || /\/index(\.en)?\.html$/.test(u.pathname)) continue;
+          if ((lang === 'en') !== /\.en\.html$/.test(u.pathname)) continue;
+          if (!out.includes(u.pathname)) out.push(u.pathname);
+        }
+        return out;
+      })
+      .catch(() => []);
+    return _indexP;
+  }
+
+  function nextArticle(fromUrl) {
+    const from = new URL(fromUrl, location.href).pathname;
+    return indexList().then((list) => {
+      const i = list.indexOf(from);
+      if (i < 0 || i + 1 >= list.length) return null;
+      const url = new URL(list[i + 1], location.href).href;
+      return fetch(url, { credentials: 'same-origin' })
+        .then((r) => (r.ok ? r.text() : ''))
+        .then((html) => {
+          const doc = new DOMParser().parseFromString(html, 'text/html');
+          const attr = splitMode ? 'data-tts' : 'data-tts-' + currentLang;
+          // No CSS in a parsed document, so visibility can't be measured the
+          // way rebuildSegments() does; drop what is hidden by markup instead
+          // (cs-papers' inactive 科普版/精读版 panel carries [hidden]).
+          const segs = Array.from(doc.querySelectorAll('[' + attr + ']'))
+            .filter((el) => !el.closest('nav, [hidden], .mmd-controls'))
+            .map((el) => ({ hash: el.getAttribute(attr), text: el.textContent.trim(), label: el.textContent }))
+            .filter((s) => s.hash);
+          const h1 = doc.querySelector('h1');
+          const title = ((h1 && h1.textContent) || doc.title || '').replace(/\s+/g, ' ').trim();
+          return { url, title, segs };
+        });
+    }).catch(() => null);
+  }
+
+  // ---------- Lock screen / notification controls ----------
+  function articleTitle() {
+    if (tts.remote) return tts.remote.title;
+    const h1 = document.querySelector('h1');
+    return ((h1 && h1.textContent) || document.title || '').replace(/\s+/g, ' ').trim();
+  }
+
+  let _msWired = false;
+  function updateMediaSession() {
+    if (!('mediaSession' in navigator)) return;
+    const ms = navigator.mediaSession;
+    if (!_msWired) {
+      _msWired = true;
+      const on = (action, fn) => { try { ms.setActionHandler(action, fn); } catch (e) {} };
+      on('play', () => tts.play());
+      on('pause', () => tts.pause());
+      on('stop', () => tts.stop());
+      on('previoustrack', () => tts.prev());
+      on('nexttrack', () => tts.next());
+      on('seekbackward', (d) => tts.skip(-((d && d.seekOffset) || 10)));
+      on('seekforward', (d) => tts.skip((d && d.seekOffset) || 10));
+      on('seekto', (d) => {
+        const dur = durationOf(tts.audio);
+        if (dur && d && isFinite(d.seekTime)) tts.seekTo(d.seekTime / dur);
+      });
+    }
+    if (!tts.playing) {
+      ms.metadata = null;
+      ms.playbackState = 'none';
+      return;
+    }
+    const seg = tts.segments[tts.idx];
+    try {
+      ms.metadata = new MediaMetadata({
+        title: articleTitle(),
+        artist: seg ? segLabel(seg) : '',
+        album: 'BigCat · ' + (repoSlugOf(location.pathname) || 'hub'),
+      });
+    } catch (e) {}
+    ms.playbackState = tts.paused ? 'paused' : 'playing';
+  }
+
+  function updatePositionState(audio) {
+    if (!('mediaSession' in navigator) || !navigator.mediaSession.setPositionState) return;
+    const dur = durationOf(audio);
+    if (!dur) return;
+    try {
+      navigator.mediaSession.setPositionState({
+        duration: dur,
+        playbackRate: audio.playbackRate || 1,
+        position: Math.max(0, Math.min(dur, audio.currentTime || 0)),
+      });
+    } catch (e) {}
+  }
+
+  // While playing a continued article, the page on screen is still the old
+  // one: say so, and offer a link that opens the right page at the right spot.
+  function updateNowPlaying() {
+    let el = document.querySelector('.mmd-nowplaying');
+    if (!tts.remote || !tts.playing) { if (el) el.remove(); return; }
+    if (!el) {
+      el = document.createElement('a');
+      el.className = 'mmd-nowplaying';
+      document.body.appendChild(el);
+    }
+    el.href = tts.remote.url.split('#')[0] + '#tts-seg=' + Math.max(0, tts.idx);
+    el.textContent = (currentLang === 'en' ? 'Now playing: ' : '正在播放下一篇：') + tts.remote.title + ' →';
+  }
 
   // Chunk text at natural boundaries (sentence, then clause) so no piece
   // exceeds `max` chars. Works around iOS Safari's ~200-char utterance
@@ -615,7 +827,9 @@ body.mmd-tts-on #search-fab{bottom:78px!important}
 /* Ring-only highlight for gradient-clipped text: no background override,
    so the glyphs (which the gradient paints) stay visible. */
 .tts-active-ring{box-shadow:0 0 0 2px rgba(108,92,231,0.35),0 0 0 6px rgba(108,92,231,0.08);border-radius:6px;transition:box-shadow 0.2s;scroll-margin-top:80px;scroll-margin-bottom:120px}
+.mmd-nowplaying{position:fixed;bottom:76px;right:18px;max-width:min(420px,calc(100vw - 36px));z-index:9999;background:#6c5ce7;color:#fff!important;text-decoration:none!important;font:600 13px/1.4 -apple-system,"Noto Sans SC","Segoe UI",Roboto,sans-serif;padding:8px 14px;border-radius:16px;box-shadow:0 4px 16px rgba(0,0,0,0.18);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media(max-width:600px){
+  .mmd-nowplaying{bottom:62px;right:10px;left:10px;max-width:none;text-align:center}
   .mmd-controls{bottom:10px;right:10px;left:10px;justify-content:center;border-radius:22px;padding:5px}
   .mmd-controls button{min-width:32px;min-height:32px;padding:6px 8px}
   .mmd-controls .progress{display:none}
@@ -716,6 +930,9 @@ body.mmd-tts-on #search-fab{bottom:78px!important}
     if (!btn) return;
     btn.textContent = (tts.playing && !tts.paused) ? '⏸' : '▶';
     btn.classList.toggle('active', tts.playing && !tts.paused);
+    if ('mediaSession' in navigator && tts.playing) {
+      navigator.mediaSession.playbackState = tts.paused ? 'paused' : 'playing';
+    }
   }
 
   function updateProgress() {
@@ -892,6 +1109,19 @@ body.mmd-tts-on #search-fab{bottom:78px!important}
     }
     updateRateLabel();
     rebuildSegments();
+
+    // Opened from the "now playing" link of an auto-continued article: put the
+    // cursor on the segment that was playing, so ▶ carries on from there.
+    // (Starting sound needs a tap, so it can't resume by itself.)
+    const m = /(?:^#|&)tts-seg=(\d+)/.exec(location.hash);
+    if (m && tts.segments.length) {
+      const i = Math.min(parseInt(m[1], 10), tts.segments.length - 1);
+      const seg = tts.segments[i];
+      tts.idx = i;
+      seg.classList.add(usesTextClip(seg) ? 'tts-active-ring' : 'tts-active');
+      seg.scrollIntoView({ block: 'start' });
+      updateProgress();
+    }
 
     // Pages with toggled panels (cs-papers' 科普版/精读版) swap the [hidden]
     // attribute; the segment list must follow or the bar keeps offering the
