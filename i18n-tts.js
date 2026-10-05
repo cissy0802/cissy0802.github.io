@@ -18,6 +18,10 @@
 (function () {
   'use strict';
 
+  // The article's own stylesheets, as they stand before anything is injected:
+  // swapped out together with the article when playback moves to the next one.
+  let pageStyles = Array.from(document.head.querySelectorAll('style, link[rel="stylesheet"]'));
+
   const LANG_KEY = 'mmd-lang';
   const RATE_KEY = 'mmd-tts-rate';
   const RATES = [0.75, 1, 1.25, 1.5, 1.75, 2];
@@ -400,8 +404,20 @@
       p.then((next) => {
         if (myToken !== this._token || !this.playing) return;
         if (!next || !next.segs.length) { this.stop(); return; }
-        this.remote = { url: next.url, title: next.title };
-        this.segments = next.segs;
+        // Put the next article on screen, in this page, and read it from its
+        // own elements. If that fails for any reason, keep playing it anyway
+        // from the parsed copy, with the "now playing" link as before.
+        let swapped = false;
+        try { swapped = swapArticle(next); } catch (e) { console.warn('[mmd-tts] page swap failed', e); }
+        if (swapped) {
+          this.remote = null;
+          this.softNav = true;
+          rebuildSegments();
+          if (!this.segments.some(segHash)) this.segments = next.segs;
+        } else {
+          this.remote = { url: next.url, title: next.title };
+          this.segments = next.segs;
+        }
         this.idx = 0;
         this._next = nextArticle(next.url);
         this.speakCurrent();
@@ -454,6 +470,14 @@
         // Back to this page's own segments.
         this.remote = null;
         rebuildSegments();
+      }
+      if (this.softNav) {
+        // The page now shows a later article, but comments, notes, reads and
+        // the download bar were removed when it was swapped in (they were bound
+        // to the first one). Playback is over: load it properly.
+        this.softNav = false;
+        location.reload();
+        return;
       }
       updateNowPlaying();
       updateMediaSession();
@@ -592,9 +616,51 @@
             .filter((s) => s.hash);
           const h1 = doc.querySelector('h1');
           const title = ((h1 && h1.textContent) || doc.title || '').replace(/\s+/g, ' ').trim();
-          return { url, title, segs };
+          return { url, title, segs, doc };
         });
     }).catch(() => null);
+  }
+
+  // Site-wide UI that survives an article swap; everything else in <body> is
+  // either the article itself or a widget bound to it.
+  const KEEP_ON_SWAP = [
+    'script', 'style', 'link', 'template', 'noscript',
+    '.mmd-controls', '.mmd-lang-toggle', '.mmd-nowplaying',
+    '#search-fab', '#search-overlay', '#bigcat-hub-btn', '#bigcat-index-btn', '.lb-overlay',
+  ].join(',');
+
+  // Show the next article in place of this one, without navigating: a real
+  // navigation would stop the audio, and the new page could not start sound
+  // again without a tap (iOS), least of all with the screen locked.
+  function swapArticle(next) {
+    const doc = next.doc;
+    if (!doc || !doc.body) return false;
+    const body = document.body;
+    // Out: the current article and the widgets bound to it (comments,
+    // subscribe, engage, read/notes buttons, download bar).
+    Array.from(body.children).forEach((el) => { if (!el.matches(KEEP_ON_SWAP)) el.remove(); });
+    // In: the next article's body, minus its scripts — the shared ones are
+    // already running here and must not start a second time.
+    const frag = document.createDocumentFragment();
+    Array.from(doc.body.childNodes).forEach((n) => {
+      if (n.nodeType === 1 && n.tagName === 'SCRIPT') return;
+      frag.appendChild(document.importNode(n, true));
+    });
+    body.insertBefore(frag, body.firstChild);
+    body.className = (doc.body.className + ' mmd-tts-on').trim();
+    const bs = doc.body.getAttribute('style');
+    if (bs) body.setAttribute('style', bs); else body.removeAttribute('style');
+    // Its stylesheets replace the previous article's.
+    pageStyles.forEach((el) => el.remove());
+    pageStyles = Array.from(doc.head.querySelectorAll('style, link[rel="stylesheet"]')).map((el) => {
+      const c = document.importNode(el, true);
+      document.head.appendChild(c);
+      return c;
+    });
+    document.title = doc.title;
+    try { history.replaceState(null, '', next.url); } catch (e) {}
+    window.scrollTo(0, 0);
+    return true;
   }
 
   // ---------- Lock screen / notification controls ----------
