@@ -163,7 +163,6 @@
     rate: parseFloat(localStorage.getItem(RATE_KEY)) || 1,
     utter: null,
     audio: null,      // = player while the current segment is baked audio, else null
-    _warmed: new Set(),
     // Set while playing an article AFTER this page (auto-continue): its
     // segments are plain {hash, text} objects, not elements of this page.
     remote: null,     // { url, title }
@@ -222,9 +221,7 @@
         // at the first segment boundary after the screen locked.
         const audio = player();
         audio._priming = false;
-        if (audio.src !== new URL(url, location.href).href) audio.src = url;
-        else { try { audio.currentTime = 0; } catch (e) {} }
-        audio.playbackRate = this.rate;
+        try { audio.pause(); } catch (e) {}
         const myToken = ++this._token;
         const isStale = () => myToken !== this._token;
         audio.onended = () => {
@@ -261,21 +258,34 @@
           updateSeek(audio.currentTime, durationOf(audio));
           updatePositionState(audio);
         };
-        if (audio.readyState >= 1 && !isStale()) {
-          setSeekEnabled(true);
-          if (isFinite(audio.duration) && audio.duration > 0) {
-            updateSeek(0, audio.duration);
-          } else {
-            primeDuration(audio, isStale);
-          }
-        }
         this.audio = audio;
-        audio.play().catch((e) => {
+        const start = (src) => {
           if (isStale()) return;
-          console.warn(`[mmd-tts] audio.play() rejected (${e?.message || e}); falling back`);
-          this.speakWebSpeech(seg, isStale);
-        });
-        this._prefetch(2);
+          if (audio.src !== new URL(src, location.href).href) audio.src = src;
+          else { try { audio.currentTime = 0; } catch (e) {} }
+          audio.playbackRate = this.rate;
+          if (audio.readyState >= 1) {
+            setSeekEnabled(true);
+            if (isFinite(audio.duration) && audio.duration > 0) updateSeek(0, audio.duration);
+            else primeDuration(audio, isStale);
+          }
+          audio.play().then(() => { audio._unlocked = true; }, (e) => {
+            if (isStale()) return;
+            console.warn(`[mmd-tts] audio.play() rejected (${e?.message || e}); falling back`);
+            this.speakWebSpeech(seg, isStale);
+          });
+        };
+        // Downloaded already → play from memory, no network in the gap.
+        // Still downloading → wait a little, but only when that is safe: the
+        // first play must start inside the tap that asked for it (iOS), and
+        // with the screen locked a pause between segments can end the audio
+        // session, so in those cases stream instead.
+        const ready = loader.ready(url);
+        if (ready) start(ready);
+        else if (audio._unlocked && !document.hidden && loader.pending(url)) {
+          loader.wait(url, 3000).then((b) => start(b || url));
+        } else start(url);
+        this._prefetch(3);
         return;
       }
       // Web Speech cannot run with the screen locked, and nobody is watching
@@ -430,21 +440,23 @@
     // same origin as the page. Keyed by URL, not index: rebuildSegments() can
     // renumber segments mid-session, and a stale index would hand back the
     // wrong section's audio.
-    // Warmed with fetch() into the HTTP cache (the Worker marks MP3s immutable)
-    // rather than with extra Audio elements, which only ever exist to be
-    // thrown away and, on iOS, can't be played from the background anyway.
+    // Download the next `count` segments into memory while this one plays,
+    // and — near the end of the article — the opening of the next article.
     _prefetch(count) {
+      const urls = [];
       for (let i = 1; i <= count; i++) {
-        const nextIdx = this.idx + i;
-        if (nextIdx >= this.segments.length) break;
-        const hash = segHash(this.segments[nextIdx]);
-        if (!hash) continue;
-        const url = audioUrl(currentLang, hash);
-        if (this._warmed.has(url)) continue;
-        this._warmed.add(url);
-        fetch(url, { mode: 'cors', credentials: 'omit' })
-          .then((r) => (r.ok ? r.arrayBuffer() : null))
-          .catch(() => this._warmed.delete(url));
+        const seg = this.segments[this.idx + i];
+        if (!seg) break;
+        const hash = segHash(seg);
+        if (hash) urls.push(audioUrl(currentLang, hash));
+      }
+      loader.want(urls);
+      if (urls.length < count && this._next) {
+        const more = count - urls.length;
+        this._next.then((n) => {
+          if (!n || !this.playing) return;
+          loader.want(urls.concat(n.segs.slice(0, more).map((x) => audioUrl(currentLang, x.hash))));
+        });
       }
     },
 
@@ -526,6 +538,82 @@
         this.audio.playbackRate = r;
       } else if (this.playing && !this.paused && !this.audio) {
         this.speakCurrent();
+      }
+    },
+  };
+
+  // ---------- Segment downloader ----------
+  // MP3s are fetched whole into memory and played from blob: URLs, so moving
+  // to the next segment never waits on the network. (Warming the HTTP cache
+  // was not enough: Safari's media loader reads in ranges through its own
+  // path and does not reliably reuse what fetch() put there.) One download at
+  // a time, in the order wanted, so on a weak connection the segment needed
+  // next gets all of the bandwidth.
+  const loader = {
+    entries: new Map(),   // url -> { state: 'queued'|'loading'|'done', blobUrl, size, waiters }
+    queue: [],
+    busy: false,
+    bytes: 0,
+    LIMIT: 80 * 1024 * 1024,
+    ready(url) { const e = this.entries.get(url); return e && e.state === 'done' ? e.blobUrl : null; },
+    pending(url) { const e = this.entries.get(url); return !!e && e.state !== 'done'; },
+    // Resolves with the blob URL, or null after `ms` (caller then streams).
+    wait(url, ms) {
+      const e = this.entries.get(url);
+      if (!e) return Promise.resolve(null);
+      if (e.state === 'done') return Promise.resolve(e.blobUrl);
+      return new Promise((res) => {
+        const t = setTimeout(() => res(null), ms);
+        e.waiters.push((b) => { clearTimeout(t); res(b); });
+      });
+    },
+    // Replace the queue with these URLs, in this order (already loaded or
+    // loading ones are skipped; the one in flight is never aborted).
+    want(urls) {
+      if (navigator.connection && navigator.connection.saveData) return;
+      this.queue = [];
+      for (const u of urls) {
+        if (!this.entries.has(u)) this.entries.set(u, { state: 'queued', waiters: [] });
+        if (this.entries.get(u).state === 'queued') this.queue.push(u);
+      }
+      this._pump();
+    },
+    _pump() {
+      if (this.busy) return;
+      const url = this.queue.shift();
+      if (!url) return;
+      const e = this.entries.get(url);
+      if (!e || e.state !== 'queued') { this._pump(); return; }
+      this.busy = true;
+      e.state = 'loading';
+      // Retried once past the HTTP cache: an MP3 an <audio> element fetched
+      // earlier (no Origin, so no CORS headers, and no Vary: Origin) sits in
+      // the browser cache in a form a CORS fetch rejects.
+      const get = (opts) => fetch(url, Object.assign({ mode: 'cors', credentials: 'omit' }, opts));
+      get({}).catch(() => get({ cache: 'reload' }))
+        .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.blob(); })
+        .then((b) => {
+          e.blobUrl = URL.createObjectURL(b.type ? b : new Blob([b], { type: 'audio/mpeg' }));
+          e.size = b.size;
+          e.state = 'done';
+          this.bytes += b.size;
+          e.waiters.splice(0).forEach((f) => f(e.blobUrl));
+          this._evict();
+        })
+        .catch(() => {
+          e.waiters.splice(0).forEach((f) => f(null));
+          this.entries.delete(url);   // let a later want() retry it
+        })
+        .finally(() => { this.busy = false; this._pump(); });
+    },
+    // Oldest first, never the one on the player right now.
+    _evict() {
+      for (const [u, e] of this.entries) {
+        if (this.bytes <= this.LIMIT) break;
+        if (e.state !== 'done' || (_player && _player.src === e.blobUrl)) continue;
+        URL.revokeObjectURL(e.blobUrl);
+        this.bytes -= e.size;
+        this.entries.delete(u);
       }
     },
   };
@@ -1188,6 +1276,11 @@ body.mmd-tts-on #search-fab{bottom:78px!important}
       seg.scrollIntoView({ block: 'start' });
       updateProgress();
     }
+    // Start downloading the first segments (or the resume point's) as soon as
+    // the page opens, so ▶ plays at once.
+    const from = Math.max(0, tts.idx);
+    loader.want(tts.segments.slice(from, from + 2).map(segHash).filter(Boolean)
+      .map((h) => audioUrl(currentLang, h)));
 
     // Pages with toggled panels (cs-papers' 科普版/精读版) swap the [hidden]
     // attribute; the segment list must follow or the bar keeps offering the
