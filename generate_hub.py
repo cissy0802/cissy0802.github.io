@@ -170,8 +170,8 @@ CARDS = [
      "A talk is a doorway to one idea: explain the talk fully, dig up the research its 18 minutes left out, then follow what became of the idea — held up, overturned, or garbled in the retelling. The list is the consensus of three flagship models picking independently, every transcript checked readable.",
      "talk-deepread", "explore"),
     ("nobel", "🏅", "诺奖精读", "Nobel Prizes, Explained",
-     "一期讲透一个诺贝尔奖：发现了什么、为什么是突破、对普通人意味着什么，再越界连到 AI、复杂性、意识和哲学。2021–2026 年物理、化学、医学、经济学、文学五奖，每年 10 月续一届。",
-     "One Nobel Prize per issue: what was found, why it was a breakthrough, what it means for the rest of us — then across the border into AI, complexity, mind and philosophy. Physics, chemistry, medicine, economics and literature, 2021–2026, extended every October.",
+     "一期讲透一个诺贝尔奖：发现了什么、为什么是突破、对普通人意味着什么，再越界连到 AI、复杂性、意识和哲学。2020–2026 年物理、化学、医学、经济学、文学五奖，每年 10 月续一届。",
+     "One Nobel Prize per issue: what was found, why it was a breakthrough, what it means for the rest of us — then across the border into AI, complexity, mind and philosophy. Physics, chemistry, medicine, economics and literature, 2020–2026, extended every October.",
      "nobel-prizes", "science"),
 ]
 
