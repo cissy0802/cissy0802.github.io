@@ -169,6 +169,10 @@ CARDS = [
      "一场演讲是一个想法的入口：把演讲讲透，挖出台上 18 分钟没装下的研究，再追到这个想法后来的命运——站住了、被推翻，还是被传歪了。清单由三家旗舰模型独立选片取共识，逐场实测逐字稿可读。",
      "A talk is a doorway to one idea: explain the talk fully, dig up the research its 18 minutes left out, then follow what became of the idea — held up, overturned, or garbled in the retelling. The list is the consensus of three flagship models picking independently, every transcript checked readable.",
      "talk-deepread", "explore"),
+    ("nobel", "🏅", "诺奖精读", "Nobel Prizes, Explained",
+     "一期讲透一个诺贝尔奖：发现了什么、为什么是突破、对普通人意味着什么，再越界连到 AI、复杂性、意识和哲学。2021–2026 年物理、化学、医学、经济学、文学五奖，每年 10 月续一届。",
+     "One Nobel Prize per issue: what was found, why it was a breakthrough, what it means for the rest of us — then across the border into AI, complexity, mind and philosophy. Physics, chemistry, medicine, economics and literature, 2021–2026, extended every October.",
+     "nobel-prizes", "science"),
 ]
 
 # BigCat's Thinking Hub —— 互动型思想实验，链到自建静态站(非每日内容仓库，故无 commit 日期)。
@@ -207,6 +211,7 @@ CSS_VARS = {
     "novel":      ("#c88cf0", "#f0a868"),
     "blogs":      ("#6ea8fe", "#5eead4"),
     "talks":      ("#5ee6a8", "#e8d46b"),
+    "nobel":      ("#e8c26a", "#d9825b"),
     "csbooks":    ("#4a90b0", "#2f6480"),
     "sysd":       ("#64c8ff", "#5eead4"),
     "papers":     ("#f0b429", "#e8794b"),

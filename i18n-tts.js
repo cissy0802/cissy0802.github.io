@@ -60,6 +60,7 @@
     'mental-models': 1,
     'meta-knowledge': 1,
     'neuroscience': 1,
+    'nobel-prizes': 1,
     'novel-deepread': 1,
     'parenting': 1,
     'personal-finance': 1,
