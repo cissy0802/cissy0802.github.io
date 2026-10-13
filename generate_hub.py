@@ -173,6 +173,10 @@ CARDS = [
      "一期讲透一个诺贝尔奖：发现了什么、为什么是突破、对普通人意味着什么，再越界连到 AI、复杂性、意识和哲学。2020–2026 年物理、化学、医学、经济学、文学五奖，另有三届图灵奖客串，每年 10 月续一届。",
      "One Nobel Prize per issue: what was found, why it was a breakthrough, what it means for the rest of us — then across the border into AI, complexity, mind and philosophy. Physics, chemistry, medicine, economics and literature, 2020–2026, plus three Turing Award guest entries, extended every October.",
      "nobel-prizes", "science"),
+    ("podcasts", "🎧", "播客精读", "Podcast Deep-Read",
+     "一期把一场长播客聊透：从两三个小时的对话里挑出真正有论证的两三条主线讲完，拿证据核对嘉宾说法后果最大的几句，再越界连到 AI、复杂性、意识和哲学。Huberman、Lex、Dwarkesh、Acquired、Mindscape 等九档英文节目，清单逐期人工勾定。",
+     "One long podcast episode per issue: pull the two or three threads that actually carry an argument out of hours of conversation, check the guests' most consequential claims against the evidence, then cross into AI, complexity, mind and philosophy. Nine English-language shows including Huberman, Lex, Dwarkesh, Acquired and Mindscape, every episode hand-picked.",
+     "podcast-deepread", "explore"),
 ]
 
 # BigCat's Thinking Hub —— 互动型思想实验，链到自建静态站(非每日内容仓库，故无 commit 日期)。
@@ -212,6 +216,7 @@ CSS_VARS = {
     "blogs":      ("#6ea8fe", "#5eead4"),
     "talks":      ("#5ee6a8", "#e8d46b"),
     "nobel":      ("#e8c26a", "#d9825b"),
+    "podcasts":   ("#ff8a65", "#d96ba8"),
     "csbooks":    ("#4a90b0", "#2f6480"),
     "sysd":       ("#64c8ff", "#5eead4"),
     "papers":     ("#f0b429", "#e8794b"),

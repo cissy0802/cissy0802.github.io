@@ -38,7 +38,7 @@ REPOS=(
   ai-ml art-aesthetics biographies blog-deepread book-recommendations buddhism
   chapter-deepread civics-geopolitics complexity-science cs-papers-deepread
   deep-reading deep-research family-craft health-longevity history investing
-  leadership linguistics mathematics mental-models meta-knowledge neuroscience nobel-prizes parenting
+  leadership linguistics mathematics mental-models meta-knowledge neuroscience nobel-prizes parenting podcast-deepread
   evolutionary-biology personal-finance philosophy physics psychology sales sociology-anthropology super-individual
   synthesis system-design talk-deepread thinker-arena world-religions writing
 )
