@@ -231,11 +231,18 @@
           this.idx++;
           this.speakCurrent();
         };
-        audio.onerror = () => {
+        // A blob: source that fails (to load, or to start with the screen
+        // locked) is retried from the network before giving up: the Web
+        // Speech fallback cannot make a sound while the phone is locked, so
+        // falling straight to it stalled auto-play at the segment boundary.
+        const fail = (why) => {
           if (isStale()) return;
-          console.warn(`[mmd-tts] ${url} unavailable, falling back to Web Speech`);
+          noteFailure(why, audio.src);
+          if (audio.src.startsWith('blob:')) { start(url); return; }
+          console.warn(`[mmd-tts] ${url} unavailable (${why}), falling back to Web Speech`);
           this.speakWebSpeech(seg, isStale);
         };
+        audio.onerror = () => fail('error ' + (audio.error ? audio.error.code : '?'));
         audio.onloadedmetadata = () => {
           if (isStale()) return;
           setSeekEnabled(true);
@@ -271,11 +278,8 @@
             if (isFinite(audio.duration) && audio.duration > 0) updateSeek(0, audio.duration);
             else primeDuration(audio, isStale);
           }
-          audio.play().then(() => { audio._unlocked = true; }, (e) => {
-            if (isStale()) return;
-            console.warn(`[mmd-tts] audio.play() rejected (${e?.message || e}); falling back`);
-            this.speakWebSpeech(seg, isStale);
-          });
+          audio.play().then(() => { audio._unlocked = true; },
+            (e) => fail('play() ' + (e?.name || e?.message || e)));
         };
         // Downloaded already → play from memory, no network in the gap.
         // Still downloading → wait a little, but only when that is safe: the
@@ -1134,6 +1138,26 @@ body.mmd-tts-on #search-fab{bottom:78px!important}
   // Force the browser to compute a real duration for streamed/header-less mp3s
   // by seeking far past the end; it clamps and fires durationchange with the
   // true length, after which we restore playback to the start.
+  // Playback failures can only be seen on the phone, usually locked, so keep
+  // the last few where they can be read back later: open any article with
+  // #tts-log in the URL.
+  const FAIL_KEY = 'mmd-tts-fails';
+  function noteFailure(why, src) {
+    try {
+      const log = JSON.parse(localStorage.getItem(FAIL_KEY) || '[]');
+      log.push({ t: new Date().toISOString(), why, hidden: document.hidden,
+        src: src.startsWith('blob:') ? 'blob' : src.split('/').slice(-3).join('/') });
+      localStorage.setItem(FAIL_KEY, JSON.stringify(log.slice(-20)));
+    } catch (e) {}
+  }
+  if (location.hash === '#tts-log') {
+    let log = '[]';
+    try { log = localStorage.getItem(FAIL_KEY) || '[]'; } catch (e) {}
+    const lines = JSON.parse(log)
+      .map((x) => `${x.t.slice(5, 19)} ${x.hidden ? 'locked' : 'screen on'} ${x.src}: ${x.why}`);
+    setTimeout(() => alert('TTS failures:\n' + (lines.join('\n') || '(none)')), 500);
+  }
+
   function primeDuration(audio, isStale) {
     if (audio._priming || (isFinite(audio.duration) && audio.duration > 0)) return;
     audio._priming = true;
