@@ -174,8 +174,8 @@ CARDS = [
      "One Nobel Prize per issue: what was found, why it was a breakthrough, what it means for the rest of us — then across the border into AI, complexity, mind and philosophy. Physics, chemistry, medicine, economics and literature, 2020–2026, plus three Turing Award guest entries, extended every October.",
      "nobel-prizes", "science"),
     ("podcasts", "🎧", "播客精读", "Podcast Deep-Read",
-     "一期把一场长播客聊透：从两三个小时的对话里挑出真正有论证的两三条主线讲完，拿证据核对嘉宾说法后果最大的几句，再越界连到 AI、复杂性、意识和哲学。Huberman、Lex、Dwarkesh、Acquired、Mindscape 等九档英文节目，清单逐期人工勾定。",
-     "One long podcast episode per issue: pull the two or three threads that actually carry an argument out of hours of conversation, check the guests' most consequential claims against the evidence, then cross into AI, complexity, mind and philosophy. Nine English-language shows including Huberman, Lex, Dwarkesh, Acquired and Mindscape, every episode hand-picked.",
+     "一期把一场长播客聊透：从两三个小时的对话里挑出真正有论证的两三条主线讲完，拿证据核对嘉宾说法后果最大的几句，再越界连到 AI、复杂性、意识和哲学。Huberman、Lex、Dwarkesh、Acquired、The Pragmatic Engineer 等十二档英文节目，清单逐期人工勾定；另有 Ethan Evans 专题。",
+     "One long podcast episode per issue: pull the two or three threads that actually carry an argument out of hours of conversation, check the guests' most consequential claims against the evidence, then cross into AI, complexity, mind and philosophy. Twelve English-language shows including Huberman, Lex, Dwarkesh, Acquired and The Pragmatic Engineer, every episode hand-picked, plus an Ethan Evans topic series.",
      "podcast-deepread", "explore"),
 ]
 
