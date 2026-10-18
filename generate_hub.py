@@ -295,30 +295,55 @@ def gh_get(url: str):
 
 
 # Dynamic cap: TOPICS.md is the single source of truth. A routine is "已完结 / Completed"
-# once it has published up to the highest Day in its TOPICS.md — no static cap numbers
-# to keep in sync. Add new TOPICS (e.g. back-fed from deep-research) and the badge
-# automatically un-marks; the routine reopens. Mirrors the verify-routine-caps task.
-def roadmap_max(repo: str):
-    """Highest planned Day/Week/Issue number in the repo's TOPICS.md list items, or None
-    (no TOPICS.md, or a non-numbered curated list like the paper/book roadmaps)."""
+# once its published pages cover its TOPICS.md roadmap — no static cap numbers to keep
+# in sync. Add new TOPICS (e.g. back-fed from deep-research) and the badge automatically
+# un-marks; the routine reopens. Mirrors the verify-routine-caps task.
+#
+# "Published" is read from the repo's file listing, NOT from "Add #N" commit messages:
+# a hand-made commit (leadership Day 73) or a burst of backfill commits pushing the last
+# "Add #N" out of the 50-commit window both silently dropped the badge before.
+PAGE_RE = re.compile(r"^(.+)-[a-z]+(\d+)\.html$")  # {slug}-{kind}{N}.html, zh pages only
+
+
+def _raw_topics(repo: str):
     try:
         req = urllib.request.Request(
             f"https://raw.githubusercontent.com/cissy0802/{repo}/main/TOPICS.md",
             headers={"User-Agent": "bigcat-hub-generator"})
         with urllib.request.urlopen(req, timeout=20) as r:
-            text = r.read().decode("utf-8", "replace")
+            return r.read().decode("utf-8", "replace")
     except (urllib.error.URLError, urllib.error.HTTPError):
         return None
+
+
+def roadmap_done(repo: str) -> bool:
+    """True when every planned item in TOPICS.md has a published page. Two roadmap shapes:
+    numbered ("- Day 51: …" → highest published N must reach the highest planned N) and
+    curated slug lists ("(slug: `x`)" → every slug must have an x-<kind>N.html page).
+    A repo with neither (or no TOPICS.md) is never marked done."""
+    text = _raw_topics(repo)
+    if not text:
+        return False
+    try:
+        tree = gh_get(f"https://api.github.com/repos/cissy0802/{repo}/git/trees/main")
+    except (urllib.error.URLError, urllib.error.HTTPError) as e:
+        print(f"  WARN {repo}: file listing failed ({e}) — 已完结 badge dropped this run")
+        return False
+    pages = [m.groups() for t in tree.get("tree", [])
+             if not t["path"].endswith(".en.html") and (m := PAGE_RE.match(t["path"]))]
     # only line-leading list items (matches the verify-caps regex) — avoids inline
     # prose mentions like "已在 Day 4/22 覆盖" inflating the max.
     nums = [int(m) for m in re.findall(r"(?im)^[-*#]*\s*(?:day|week|issue|topic)\s*(\d+)", text)]
-    return max(nums) if nums else None
+    if nums:
+        return max((int(n) for _, n in pages), default=0) >= max(nums)
+    slugs = re.findall(r"slug: `([^`]+)`", text)
+    published = {slug for slug, _ in pages}
+    return bool(slugs) and all(s in published for s in slugs)
 
 
 def latest_commit_date(repo: str):
     """Return (date, is_done). date = YYYY-MM-DD of the latest commit that added a
-    content file (matches CONTENT_RE). is_done = True when the highest published 'Add #N'
-    has caught up to the repo's TOPICS.md roadmap (roadmap_max). Falls back to newest commit date."""
+    content file (matches CONTENT_RE). is_done = roadmap_done(repo). Falls back to newest commit date."""
     try:
         commits = gh_get(f"https://api.github.com/repos/cissy0802/{repo}/commits?per_page=50")
     except (urllib.error.URLError, urllib.error.HTTPError) as e:
@@ -326,11 +351,7 @@ def latest_commit_date(repo: str):
         return "", False
     if not commits:
         return "", False
-    # done: published caught up to the dynamic cap = highest Day in TOPICS.md.
-    pub_nums = [int(n) for c in commits for n in re.findall(r"Add #(\d+)", c["commit"]["message"])]
-    pub = max(pub_nums) if pub_nums else 0
-    tmax = roadmap_max(repo)
-    done = tmax is not None and pub >= tmax
+    done = roadmap_done(repo)
     # date: latest commit that ADDED a content file.
     # Fast path (0 extra calls): publish.sh stamps every content commit as "Add #N: …",
     # so the newest message matching that IS the newest content-add commit. The old
