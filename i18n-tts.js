@@ -661,57 +661,113 @@
   }
 
   // ---------- Auto-continue: the next article in this repo's index ----------
+  // Every reading order the repo's index offers, main series first. The
+  // .entry cards are the main series (day1 → dayN; unpublished ones have no
+  // link). Other pages ride in their own rows of the same index — reference
+  // cards (a.refcard), specials, Nobel's grid cells — so links outside the
+  // cards are grouped by their class (or their parent's) into further series.
+  // A sub-series with an index of its own (super-individual's skills.html) is
+  // only reached through a link on the main index; those pages are read
+  // later, and only when the playing article is in none of these lists.
   let _indexP = null;
   function indexList() {
     if (_indexP) return _indexP;
     const lang = splitMode && currentLang === 'en' ? 'en' : 'zh';
     const indexUrl = new URL(lang === 'en' ? 'index.en.html' : 'index.html', location.href).href;
-    _indexP = fetch(indexUrl, { credentials: 'same-origin' })
+    const dir = new URL('./', indexUrl).pathname;
+    const article = (href, base) => {
+      let u;
+      try { u = new URL(href, base); } catch (e) { return null; }
+      if (u.origin !== location.origin || !u.pathname.startsWith(dir)) return null;
+      if (!/\.html$/.test(u.pathname) || /\/index(\.en)?\.html$/.test(u.pathname)) return null;
+      if ((lang === 'en') !== /\.en\.html$/.test(u.pathname)) return null;
+      return u.pathname;
+    };
+    const parse = (url) => fetch(url, { credentials: 'same-origin' })
       .then((r) => (r.ok ? r.text() : ''))
-      .then((html) => {
-        const doc = new DOMParser().parseFromString(html, 'text/html');
-        // Index entries are .entry cards in reading order (day1 → dayN);
-        // unpublished ones have no link. Fall back to any same-folder page.
-        let links = Array.from(doc.querySelectorAll('.entry a[href]'));
-        if (!links.length) links = Array.from(doc.querySelectorAll('a[href]'));
-        const dir = new URL('./', indexUrl).pathname;
-        const out = [];
-        for (const a of links) {
-          let u;
-          try { u = new URL(a.getAttribute('href'), indexUrl); } catch (e) { continue; }
-          if (u.origin !== location.origin || !u.pathname.startsWith(dir)) continue;
-          if (!/\.html$/.test(u.pathname) || /\/index(\.en)?\.html$/.test(u.pathname)) continue;
-          if ((lang === 'en') !== /\.en\.html$/.test(u.pathname)) continue;
-          if (!out.includes(u.pathname)) out.push(u.pathname);
+      .then((html) => new DOMParser().parseFromString(html, 'text/html'));
+    const series = (doc, base) => {
+      const ENTRY = '.entry a[href], a.entry[href]';
+      const main = [];
+      for (const a of doc.querySelectorAll(ENTRY)) {
+        const p = article(a.getAttribute('href'), base);
+        if (p && !main.includes(p)) main.push(p);
+      }
+      const groups = new Map();
+      for (const a of doc.querySelectorAll('a[href]')) {
+        if (a.matches(ENTRY)) continue;
+        const p = article(a.getAttribute('href'), base);
+        if (!p || main.includes(p)) continue;
+        const key = a.classList[0] || (a.parentElement && a.parentElement.classList[0]) || '';
+        if (!groups.has(key)) groups.set(key, []);
+        if (!groups.get(key).includes(p)) groups.get(key).push(p);
+      }
+      return [main, ...groups.values()].filter((l) => l.length);
+    };
+    _indexP = parse(indexUrl)
+      .then((doc) => {
+        const lists = series(doc, indexUrl);
+        // Candidates for a sub-index: every same-folder page the index links
+        // to, unnumbered names (skills.html) before numbered articles.
+        const subs = [];
+        for (const a of doc.querySelectorAll('a[href]')) {
+          const p = article(a.getAttribute('href'), indexUrl);
+          if (p && !subs.includes(p)) subs.push(p);
         }
-        return out;
+        const numbered = (p) => /\d/.test(p.slice(dir.length));
+        subs.sort((a, b) => numbered(a) - numbered(b));
+        return { lists, subs, series, parse };
       })
-      .catch(() => []);
+      .catch(() => ({ lists: [], subs: [], series, parse }));
     return _indexP;
+  }
+
+  // The list `from` is in, reading a sub-index only if no list on the main
+  // index has it (one fetch per candidate, at most a handful).
+  function seriesOf(from) {
+    return indexList().then(async (ix) => {
+      const hit = ix.lists.find((l) => l.includes(from));
+      if (hit) return hit;
+      for (const sub of ix.subs.slice(0, 8)) {
+        if (sub === from) continue;
+        const url = new URL(sub, location.href).href;
+        const doc = await ix.parse(url).catch(() => null);
+        if (!doc) continue;
+        const l = ix.series(doc, url).find((x) => x.includes(from));
+        if (l) { ix.lists.push(l); return l; }
+      }
+      return [];
+    });
   }
 
   function nextArticle(fromUrl) {
     const from = new URL(fromUrl, location.href).pathname;
-    return indexList().then((list) => {
+    const load = (url) => fetch(url, { credentials: 'same-origin' })
+      .then((r) => (r.ok ? r.text() : ''))
+      .then((html) => {
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        const attr = splitMode ? 'data-tts' : 'data-tts-' + currentLang;
+        // No CSS in a parsed document, so visibility can't be measured the
+        // way rebuildSegments() does; drop what is hidden by markup instead
+        // (cs-papers' inactive 科普版/精读版 panel carries [hidden]).
+        const segs = Array.from(doc.querySelectorAll('[' + attr + ']'))
+          .filter((el) => !el.closest('nav, [hidden], .mmd-controls'))
+          .map((el) => ({ hash: el.getAttribute(attr), text: el.textContent.trim(), label: el.textContent }))
+          .filter((s) => s.hash);
+        const h1 = doc.querySelector('h1');
+        const title = ((h1 && h1.textContent) || doc.title || '').replace(/\s+/g, ' ').trim();
+        return { url, title, segs, doc };
+      });
+    return seriesOf(from).then(async (list) => {
       const i = list.indexOf(from);
-      if (i < 0 || i + 1 >= list.length) return null;
-      const url = new URL(list[i + 1], location.href).href;
-      return fetch(url, { credentials: 'same-origin' })
-        .then((r) => (r.ok ? r.text() : ''))
-        .then((html) => {
-          const doc = new DOMParser().parseFromString(html, 'text/html');
-          const attr = splitMode ? 'data-tts' : 'data-tts-' + currentLang;
-          // No CSS in a parsed document, so visibility can't be measured the
-          // way rebuildSegments() does; drop what is hidden by markup instead
-          // (cs-papers' inactive 科普版/精读版 panel carries [hidden]).
-          const segs = Array.from(doc.querySelectorAll('[' + attr + ']'))
-            .filter((el) => !el.closest('nav, [hidden], .mmd-controls'))
-            .map((el) => ({ hash: el.getAttribute(attr), text: el.textContent.trim(), label: el.textContent }))
-            .filter((s) => s.hash);
-          const h1 = doc.querySelector('h1');
-          const title = ((h1 && h1.textContent) || doc.title || '').replace(/\s+/g, ' ').trim();
-          return { url, title, segs, doc };
-        });
+      if (i < 0) return null;
+      // A page with no baked audio (a series' own index, an unbaked draft)
+      // would end the session; step over a few of those.
+      for (let j = i + 1; j < list.length && j <= i + 3; j++) {
+        const next = await load(new URL(list[j], location.href).href).catch(() => null);
+        if (next && next.segs.length) return next;
+      }
+      return null;
     }).catch(() => null);
   }
 
