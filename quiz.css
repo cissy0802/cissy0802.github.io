@@ -1,0 +1,37 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Serif SC","Songti SC",sans-serif;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0a0e1a 100%);background-attachment:fixed;color:#e4e6eb;line-height:1.7;min-height:100vh}
+.container{max-width:760px;margin:0 auto;padding:40px 16px 80px}
+header{text-align:center;padding:28px 0 12px}
+h1{font-size:2rem;font-weight:800;background:linear-gradient(135deg,#00d4ff 0%,#7b61ff 50%,#ff6ec4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:1px}
+.sub{color:#a0a8c0;font-size:.9rem;margin-top:6px}
+.back{position:fixed;top:16px;left:16px;padding:7px 13px;border-radius:14px;background:rgba(30,30,50,.8);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);color:#a0a8c0;text-decoration:none;font-size:.8rem;z-index:100}
+.back:hover{color:#fff}
+.score{position:sticky;top:0;z-index:5;display:none;gap:12px;align-items:center;padding:12px 2px;margin:10px 0 14px;font-size:.85rem;color:#a0a8c0;background:rgba(19,27,48,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+.score.on{display:flex}
+.score b{color:#fff;font-size:1.05rem}
+.track{flex:1;height:6px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}
+.track i{display:block;height:100%;width:0;background:#7b61ff;transition:width .25s}
+.q{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;margin-bottom:14px}
+.meta{font-size:.76rem;color:#7b8299;margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap}
+.meta .again{color:#ff8a7a}
+.stem{font-weight:600;font-size:1rem;margin-bottom:12px}
+.opt{display:flex;gap:10px;width:100%;text-align:left;font:inherit;font-size:.95rem;color:inherit;line-height:1.55;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.12);border-radius:9px;padding:10px 12px;margin-bottom:8px;cursor:pointer}
+.opt:hover:not(:disabled){border-color:#7b61ff}
+.opt:disabled{cursor:default}
+.opt .k{color:#7b8299;font-weight:700;flex:none}
+.opt.right{border-color:#4cc38a;background:rgba(76,195,138,.13)}
+.opt.wrong{border-color:#ff6b6b;background:rgba(255,107,107,.12)}
+.explain{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed rgba(255,255,255,.14);font-size:.9rem;color:#cdd2e4}
+.q.done .explain{display:block}
+.explain b.ok{color:#4cc38a}.explain b.bad{color:#ff8a7a}
+.explain a{color:#a89bff}
+.done-box{display:none;text-align:center;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:22px 16px}
+.done-box.on{display:block}
+.big{font-size:2.2rem;font-weight:800}
+.stat{color:#a0a8c0;font-size:.85rem;margin:6px 0 14px}
+.btn{padding:10px 22px;border-radius:12px;border:1px solid #7b61ff;background:#7b61ff;color:#fff;font:inherit;font-size:.95rem;cursor:pointer;text-decoration:none;display:inline-block}
+.btn:hover{background:#6a50ee}
+.empty{text-align:center;color:#a0a8c0;padding:50px 16px;line-height:2}
+.warn{color:#ffa726;font-size:.8rem;margin-top:8px}
+.lang{position:fixed;top:16px;right:16px;padding:7px 13px;border-radius:14px;background:rgba(30,30,50,.8);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);color:#a0a8c0;text-decoration:none;font-size:.8rem;z-index:100}
+.lang:hover{color:#fff}

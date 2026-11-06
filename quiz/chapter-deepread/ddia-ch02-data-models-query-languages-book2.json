@@ -13,7 +13,15 @@
     "用外键和规范化消除了数据冗余，修改一处就能做到全局生效"
    ],
    "answer": 0,
-   "explanation": "层次和网状时代要程序员沿访问路径一步步爬，改个查询就得重写一片代码；Codd 之后，你只描述要什么，怎么走由数据库自己决定，这也是声明式能持续优化、能并行的根。规范化确实是关系模型的好处，但它不是终结「指针丛林」的那一刀。"
+   "explanation": "层次和网状时代要程序员沿访问路径一步步爬，改个查询就得重写一片代码；Codd 之后，你只描述要什么，怎么走由数据库自己决定，这也是声明式能持续优化、能并行的根。规范化确实是关系模型的好处，但它不是终结「指针丛林」的那一刀。",
+   "question_en": "When the relational model beat the hierarchical and network models, where did its real victory lie?",
+   "options_en": [
+    "It let a query optimizer choose access paths automatically, so programmers no longer hard-coded them",
+    "It enforced structure through schema-on-write, fundamentally guaranteeing field quality and consistency",
+    "Flat rows and columns packed more compactly on disk than pointers, greatly improving access efficiency",
+    "Foreign keys and normalization eliminated redundancy, so a change in one place took effect everywhere"
+   ],
+   "explanation_en": "In the hierarchical and network era, programmers had to crawl along access paths step by step, and changing a query meant rewriting swaths of code. After Codd, you describe only what you want and the database decides how to get there, which is also the root of why declarative queries can keep getting optimized and run in parallel. Normalization is indeed a benefit of the relational model, but it isn't the blow that ended the \"jungle of pointers.\""
   },
   {
    "id": "6d79a6362c",
@@ -25,7 +33,17 @@
     "它们都靠手工维护的指针连接记录，查询要沿预设路径一步步爬"
    ],
    "answer": 0,
-   "explanation": "IMS 的层次模型就是一棵大树，和 JSON 文档惊人地像，同样处理不好多对多，历史是螺旋而不是直线。手工指针和沿路径爬取说的是它的对手、网状模型 CODASYL，这是最容易混淆的一项。"
+   "explanation": "IMS 的层次模型就是一棵大树，和 JSON 文档惊人地像，同样处理不好多对多，历史是螺旋而不是直线。手工指针和沿路径爬取说的是它的对手、网状模型 CODASYL，这是最容易混淆的一项。",
+   "question_en": "Why can today's document databases be described as a \"reincarnation\" of IBM's IMS from the 1970s?",
+   "options_en": [
+    "Both organize data as one nested tree, and both are helpless with many-to-many relationships",
+    "Both leave declarative queries to an optimizer, differing only in how mature that optimizer is",
+    "Both interpret data with schema-on-read, so mismatched fields only surface at read time",
+    "Both link records with hand-maintained pointers, so queries crawl step by step along preset paths"
+   ],
+   "explanation_en": "IMS's hierarchical model was one big tree, uncannily like a JSON document, and it handled many-to-many just as poorly: history is a spiral, not a straight line. Hand-maintained pointers and crawling along paths describe its rival, the CODASYL network model, which makes this the easiest option to confuse."
   }
- ]
+ ],
+ "page_en": "/chapter-deepread/ddia-ch02-data-models-query-languages-book2.en.html",
+ "title_en": "DDIA Ch2 · Data Models and Query Languages — Books Deep-Read Book 2"
 }

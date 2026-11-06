@@ -13,7 +13,15 @@
     "后续实验已翻转早期结论，证明 AI 实际上帮资深更多，新手因此失去了竞争力"
    ],
    "answer": 1,
-   "explanation": "实验从不测企业因此多雇还是少雇，同一组证据支持两个相反的雇佣分支：多雇新手，或用「资深 + AI」替代「资深带新手」。「反转文献」错在目前并没有已发表的 agentic 时代 RCT 支撑，曾被广泛引用的那篇 MIT 论文还被校方否认。"
+   "explanation": "实验从不测企业因此多雇还是少雇，同一组证据支持两个相反的雇佣分支：多雇新手，或用「资深 + AI」替代「资深带新手」。「反转文献」错在目前并没有已发表的 agentic 时代 RCT 支撑，曾被广泛引用的那篇 MIT 论文还被校方否认。",
+   "question_en": "RCTs show AI boosts novices' output the most, while entry-level jobs are shrinking the hardest in the market. How can both be true at once?",
+   "options_en": [
+    "As novices' output rises, their pay expectations rise too, and firms hire less because labor has become more expensive",
+    "Experiments measure only existing hires' output; hiring is a separate organizational decision, possibly to take fewer novices",
+    "The entry-level contraction comes entirely from rate hikes and tax changes, not AI, so the two facts are simply unrelated",
+    "Later experiments have overturned the early findings, proving AI actually helps seniors more, so novices have lost their edge"
+   ],
+   "explanation_en": "Experiments never measure whether firms respond by hiring more or fewer people, and the same evidence supports two opposite hiring branches: hire more novices, or replace \"seniors mentoring novices\" with \"seniors plus AI.\" The \"reversal literature\" option fails because no published RCT from the agentic era currently backs it, and the once widely cited MIT paper was disavowed by the university."
   },
   {
    "id": "d2a575512c",
@@ -25,7 +33,17 @@
     "空值研究样本更大也更具代表性，工资单的结果多半来自数据提供商客户构成上的偏差"
    ],
    "answer": 0,
-   "explanation": "招聘广告里带 junior 标题的只占约 2%，住户调查切到「年轻 × 单一职业」后格子太小，从未入职的毕业生也不算软件开发者失业，所以空值可以是测量分辨率的自然结果，不一定是矛盾。「相互抵消」最诱人，但两个阵营的分界线是数据类型，不是立场。"
+   "explanation": "招聘广告里带 junior 标题的只占约 2%，住户调查切到「年轻 × 单一职业」后格子太小，从未入职的毕业生也不算软件开发者失业，所以空值可以是测量分辨率的自然结果，不一定是矛盾。「相互抵消」最诱人，但两个阵营的分界线是数据类型，不是立场。",
+   "question_en": "Payroll and resume data show AI hitting young developers, but job postings and household surveys don't. What is the most reasonable interpretation?",
+   "options_en": [
+    "They measure different things: if the phenomenon is shrinking hiring flow in the youngest bracket, only data that slice headcount by age can see it",
+    "The evidence roughly cancels out, with half the studies saying yes and half saying no, so the phenomenon itself can only be treated as unconfirmed",
+    "Payroll studies don't control for macro shocks; once firm-level fixed effects are added, the age differences simply go away",
+    "The null studies have larger, more representative samples, so the payroll results probably stem from bias in the data vendor's client mix"
+   ],
+   "explanation_en": "Postings with \"junior\" in the title are only about 2% of the total, household surveys leave cells too small once sliced to \"young x single occupation,\" and graduates who were never hired don't count as unemployed software developers either, so the nulls can be a natural product of limited measurement resolution, not necessarily a contradiction. \"Cancels out\" is the most tempting option, but the line between the two camps is data type, not position."
   }
- ]
+ ],
+ "page_en": "/deep-research/junior-engineers-deep.en.html",
+ "title_en": "Are Junior Engineers Really Disappearing? An Evidence Audit of the Entry-Level Software Job Market — BigCat Deep Research"
 }

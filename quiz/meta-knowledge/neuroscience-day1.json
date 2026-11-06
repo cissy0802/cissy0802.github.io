@@ -13,7 +13,15 @@
     "触觉信号绕开了感觉皮层，因此占用了空闲的视觉通路传输"
    ],
    "answer": 1,
-   "explanation": "盲人的视觉皮层被听觉、触觉「征用」，说明皮层的功能不是出厂定型的，而是随经验改写。「只在关键期发生」最诱人，但神经可塑性是终身的，关键期真实存在却被高估了。"
+   "explanation": "盲人的视觉皮层被听觉、触觉「征用」，说明皮层的功能不是出厂定型的，而是随经验改写。「只在关键期发生」最诱人，但神经可塑性是终身的，关键期真实存在却被高估了。",
+   "question_en": "When blind people read Braille, their visual cortex activates. Which understanding does this best support?",
+   "options_en": [
+    "This cross-modal remapping occurs only in the childhood critical period and is no longer possible in adulthood",
+    "Cortical roles aren't fixed; this region can be repurposed by experience",
+    "Blind readers retain residual vision, and their brains translate touch into images as they read Braille",
+    "Touch signals bypass the sensory cortex and therefore take over the idle visual pathway for transmission"
+   ],
+   "explanation_en": "Blind people's visual cortex gets repurposed by hearing and touch, showing that cortical function isn't fixed at the factory but rewritten by experience. \"Only in the critical period\" is the most tempting option, but neuroplasticity is lifelong; critical periods are real, but they have been overrated."
   },
   {
    "id": "1de9f17068",
@@ -25,7 +33,17 @@
     "重复实验失败后现象已被证伪，人脑中并不存在这类机制"
    ],
    "answer": 0,
-   "explanation": "镜像神经元的放电是真实发现，被夸大的是「塑造文明的细胞」这类解释力，共情更可能是多系统协作。证伪说把新生儿模仿实验的重复失败扩大成了对整个现象的否定；而且它的激活依赖动作的目标性，并非只编码姿势。"
+   "explanation": "镜像神经元的放电是真实发现，被夸大的是「塑造文明的细胞」这类解释力，共情更可能是多系统协作。证伪说把新生儿模仿实验的重复失败扩大成了对整个现象的否定；而且它的激活依赖动作的目标性，并非只编码姿势。",
+   "question_en": "How is the claim that \"mirror neurons are the neural basis of empathy\" best assessed today?",
+   "options_en": [
+    "The phenomenon is real but oversold as an explanation; empathy more likely relies on several systems working together",
+    "The phenomenon is confirmed, but the neurons encode only the posture of an action, not goals or intentions",
+    "The evidence is thin in monkeys, whereas in humans they have actually been shown to be the main basis of empathy",
+    "Failed replications have disproved the phenomenon altogether, and no such mechanism exists in the human brain"
+   ],
+   "explanation_en": "The firing of mirror neurons is a real finding; what's been inflated is the explanatory power, as in \"the cells that shaped civilization,\" and empathy is more likely a multi-system collaboration. The debunking option stretches failed replications of newborn imitation experiments into a rejection of the whole phenomenon; moreover, their activation depends on the action's goal-directedness, so they don't encode posture alone."
   }
- ]
+ ],
+ "page_en": "/meta-knowledge/neuroscience-day1.en.html",
+ "title_en": "Meta-Knowledge Deep Dive: Foundations of Neuroscience — Day 1"
 }

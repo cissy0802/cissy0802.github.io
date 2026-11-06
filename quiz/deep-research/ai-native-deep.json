@@ -13,7 +13,15 @@
     "Coase 的逻辑已告失效，科层和市场的边界不再由交易成本来决定"
    ],
    "answer": 1,
-   "explanation": "这是全篇的枢轴：写的成本趋零，确认写得对的成本被推到瓶颈位置。「协调摩擦人类特有」已被实证反驳，多 agent 协调轮次随数量超线性增长；碎片化的沙漏模型作为事实陈述也未通过验证，且作者有利益冲突。"
+   "explanation": "这是全篇的枢轴：写的成本趋零，确认写得对的成本被推到瓶颈位置。「协调摩擦人类特有」已被实证反驳，多 agent 协调轮次随数量超线性增长；碎片化的沙漏模型作为事实陈述也未通过验证，且作者有利益冲突。",
+   "question_en": "Once AI agents lower transaction costs, which of these inferences holds up?",
+   "options_en": [
+    "Firms will fragment into tiny specialist units, with integration costs growing roughly linearly as executing parties multiply",
+    "Costs haven't vanished but moved from production and human coordination to integration, verification and platform ties",
+    "Coordination friction was uniquely human to begin with, so agent-run firms can break through the upper limit on scale",
+    "Coase's logic has now failed, and the boundary between hierarchy and market is no longer set by transaction costs"
+   ],
+   "explanation_en": "This is the pivot of the whole essay: as the cost of writing goes to zero, the cost of confirming it was written correctly gets pushed into the bottleneck position. \"Coordination friction is uniquely human\" has been refuted empirically, since coordination rounds among multiple agents grow superlinearly with their number; the hourglass model of fragmentation also failed verification as a statement of fact, and its authors have a conflict of interest."
   },
   {
    "id": "2b59205175",
@@ -25,7 +33,15 @@
     "大规模代码迁移：单元粒度小，编译器和测试能自动判定结果对错"
    ],
    "answer": 3,
-   "explanation": "迁移任务自带 oracle，劳动密集且无人愿做，Google、Airbnb 等都有一手成功记录，同时还能用确定性夹层约束 AI。绿地模块听着安全，却不解决这类组织的痛点，也没有同等证据；大重写则是 TSB 式的反面案例，会丢掉沉淀在代码里的制度性知识。"
+   "explanation": "迁移任务自带 oracle，劳动密集且无人愿做，Google、Airbnb 等都有一手成功记录，同时还能用确定性夹层约束 AI。绿地模块听着安全，却不解决这类组织的痛点，也没有同等证据；大重写则是 TSB 式的反面案例，会丢掉沉淀在代码里的制度性知识。",
+   "question_en": "An organization maintaining ten million lines of legacy code, with stringent reliability requirements, is looking for its first AI workload. Based on first-hand evidence from multiple organizations, which entry point is most suitable?",
+   "options_en": [
+    "Rewriting the old system wholesale: generation costs have fallen sharply, so the legacy baggage can be cleared in one go",
+    "A greenfield module at the edge: the blast radius of changes is small, and errors won't spread to the core systems",
+    "Root-cause analysis of production incidents: AI reads logs faster than people and never changes production code itself",
+    "Large-scale code migration: units are small, and compilers and tests can automatically judge if results are right"
+   ],
+   "explanation_en": "Migration tasks come with a built-in oracle and are labor-intensive work nobody wants to do; Google, Airbnb and others have first-hand records of success, and a deterministic sandwich can constrain the AI at the same time. A greenfield module sounds safe, but it doesn't address this kind of organization's pain point and lacks comparable evidence; a big rewrite is the TSB-style cautionary tale, discarding the institutional knowledge sedimented in the code."
   },
   {
    "id": "ead982c7c5",
@@ -37,7 +53,17 @@
     "把验证也交给 AI 以消除人工评审瓶颈，再由人抽查结果来守住可靠性的底线"
    ],
    "answer": 0,
-   "explanation": "AI 让行动生成更便宜多变，认知过程就必须相应地更稳定，这是「先建护栏、再上规模」的理论内核。固化流程正是追求效率的组织常犯的相反拆分：活动稳定、认知可变。"
+   "explanation": "AI 让行动生成更便宜多变，认知过程就必须相应地更稳定，这是「先建护栏、再上规模」的理论内核。固化流程正是追求效率的组织常犯的相反拆分：活动稳定、认知可变。",
+   "question_en": "Weick and colleagues argue that high reliability comes from \"stable processes of cognition\" applied to variable patterns of action. In an era when AI makes code generation cheap, what does this imply?",
+   "options_en": [
+    "Make detection, evaluation and correction more stable and capitalize them, and don't let AI take over both generation and verification",
+    "Delegate acceptance decisions to teams and individuals, letting those who know the code best decide flexibly what counts as reliable",
+    "Lock down the development process and limit the kinds of change, using stable patterns of activity to hedge AI's uncertainty",
+    "Hand verification to AI too, removing the human review bottleneck, then have people spot-check results to hold the reliability floor"
+   ],
+   "explanation_en": "AI makes generating action cheaper and more varied, so the cognitive processes must become correspondingly more stable; this is the theoretical core of \"build the guardrails first, then scale.\" Locking down process is exactly the opposite split that efficiency-seeking organizations often make: stable activity, variable cognition."
   }
- ]
+ ],
+ "page_en": "/deep-research/ai-native-deep.en.html",
+ "title_en": "When Code Becomes Cheap: Theory and Evidence for the AI-Native Transformation of Software Organizations — BigCat Deep Research"
 }

@@ -13,7 +13,15 @@
     "大众并不相信这个数字，认为这是敌人为了影响选举而放出的假评估"
    ],
    "answer": 1,
-   "explanation": "数字是公开的，人类不是没看见，而是因为看见了才选她，这个选择本身就是对威慑的厌倦。所以真正的失职发生在投票那一天，事后骂她的人其实是在骂当年想要的那个自己；「信息不知情」一项恰好把这层抹掉了。"
+   "explanation": "数字是公开的，人类不是没看见，而是因为看见了才选她，这个选择本身就是对威慑的厌倦。所以真正的失职发生在投票那一天，事后骂她的人其实是在骂当年想要的那个自己；「信息不知情」一项恰好把这层抹掉了。",
+   "question_en": "In Death's End, Trisolaris publicly rates Cheng Xin's deterrence at only 10%, yet humanity still chooses her as Swordholder. Why?",
+   "options_en": [
+    "The rating was published only after the election, so voters didn't know how shockingly low her deterrence was",
+    "They chose her because they saw it: a declaration of being fed up with living in the hands of someone ready to destroy everything",
+    "They believed she would prove firmer than rated when it counted, since good people are all the more willing to take responsibility",
+    "The public didn't believe the number, taking it for a fake assessment released by the enemy to sway the election"
+   ],
+   "explanation_en": "The number was public; humanity didn't miss it but chose her precisely because it saw it, and that choice is itself a weariness with deterrence. So the real dereliction happened on election day, and those who later curse her are really cursing the self who wanted her back then; the \"uninformed voters\" option erases exactly this layer."
   },
   {
    "id": "5b52a06ea5",
@@ -25,7 +33,15 @@
     "五公斤相对宇宙约等于零，说明归还已经完成，文明得以延续而没有损失"
    ],
    "answer": 1,
-   "explanation": "挑两个最干净的人来演这一幕，是把公地悲剧搬到宇宙尺度：灾难不需要反派，由理性又善意的个体选择加总而成。「五公斤约等于零」正是那句人人都会说的辩护，可如果每个小宇宙都留五公斤，宇宙就永远不够。"
+   "explanation": "挑两个最干净的人来演这一幕，是把公地悲剧搬到宇宙尺度：灾难不需要反派，由理性又善意的个体选择加总而成。「五公斤约等于零」正是那句人人都会说的辩护，可如果每个小宇宙都留五公斤，宇宙就永远不够。",
+   "question_en": "At the end of Death's End, why is it specifically Cheng Xin and Guan Yifan, the people in the book least willing to take anything for themselves, who keep five kilograms?",
+   "options_en": [
+    "They are deliberately defying the Returners' broadcast, showing that human feeling outranks the plan for cosmic rebirth",
+    "If even the cleanest people keep a little, the universe's failure to come back isn't a moral problem but a structural one",
+    "It reveals they are selfish at bottom, and that their so-called kindness is a pose struck only when it costs nothing",
+    "Five kilograms is about zero relative to the universe, showing the return is complete and civilization continues at no loss"
+   ],
+   "explanation_en": "Casting the two cleanest people in this scene moves the tragedy of the commons to cosmic scale: catastrophe needs no villain, only the sum of rational, well-meaning individual choices. \"Five kilograms is about zero\" is exactly the defense anyone would offer, but if every mini-universe keeps five kilograms, the universe will never have enough."
   },
   {
    "id": "d9bea883d5",
@@ -37,7 +53,17 @@
     "外部威慑：三体世界明令禁止，人类怕违约招致再次打击"
    ],
    "answer": 2,
-   "explanation": "明面理由是航迹会暴露坐标，真正的驱动力是「谁上船」这个人类回答不了的问题，所以禁掉它的不是三体人，而是人类自己的公平感。掩体计划也没有被证明足够：它防的是光粒，挡不住二向箔。"
+   "explanation": "明面理由是航迹会暴露坐标，真正的驱动力是「谁上船」这个人类回答不了的问题，所以禁掉它的不是三体人，而是人类自己的公平感。掩体计划也没有被证明足够：它防的是光粒，挡不住二向箔。",
+   "question_en": "In Death's End, lightspeed ships were the only real way out, yet humanity itself banned them. What is the deeper driving force behind this?",
+   "options_en": [
+    "Technical judgment: curvature propulsion was still immature, and lightspeed ships couldn't be built at the time",
+    "Risk assessment: the Bunker Project had been proven able to withstand every known form of attack, so no further risk was needed",
+    "An instinct for fairness: tickets are limited, and if only some people can get to leave, then nobody should go",
+    "External deterrence: Trisolaris had expressly forbidden them, and humanity feared a breach would invite another strike"
+   ],
+   "explanation_en": "The stated reason was that the ships' trails would expose humanity's coordinates; the real driver was \"who gets on board,\" a question humanity can't answer, so what banned them wasn't the Trisolarans but humanity's own sense of fairness. Nor had the Bunker Project been proven sufficient: it guarded against photoids but couldn't stop the dual-vector foil."
   }
- ]
+ ],
+ "page_en": "/novel-deepread/deaths-end-novel3.en.html",
+ "title_en": "Death's End — Novels, Deep-Read No.3"
 }

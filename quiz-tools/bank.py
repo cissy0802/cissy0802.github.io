@@ -8,6 +8,7 @@ decides which articles are next and is the only thing that writes to /quiz/.
     python3 bank.py build            # work/draft.json -> validate -> work/blind.json
     python3 bank.py check            # work/blind_answers.json -> publish what agrees
     python3 bank.py status
+    python3 bank.py backfill-en      # work/en.json -> add English to questions already published
 
 Nothing reaches /quiz/ until an independent blind answer matches the author's.
 A question the second reader gets wrong is dropped, not argued with.
@@ -43,6 +44,46 @@ def dump(obj, path):
 
 def canonical(page):
     return page.replace(".en.html", ".html")
+
+
+CJK = re.compile(r"[\u3400-\u9fff\u3000-\u303f\uff00-\uffef]")
+
+
+def en_problems(question, options, explanation):
+    """What is wrong with one question's English, as a list."""
+    out = []
+    question, explanation = str(question or "").strip(), str(explanation or "").strip()
+    options = [str(o).strip() for o in (options or [])]
+    if not question or not explanation:
+        out.append("question_en/explanation_en empty")
+    if len(options) != 4 or len(set(options)) != 4 or not all(options):
+        out.append("need 4 distinct non-empty options_en, in the same order as options")
+    if CJK.search(question + explanation + "".join(options)):
+        out.append("English fields contain Chinese")
+    return out
+
+
+def en_page(page):
+    """The English twin of a page, or None if there isn't one."""
+    repo, rest = page.lstrip("/").split("/", 1)
+    if rest.startswith("debate.html?d="):
+        return f"/{repo}/debate.en.html?d=" + rest.split("=", 1)[1]
+    en = rest.replace(".html", ".en.html")
+    return f"/{repo}/{en}" if os.path.exists(os.path.join(REPOS, repo, en)) else None
+
+
+def en_title(page):
+    target = en_page(page)
+    if not target:
+        return None
+    repo, rest = target.lstrip("/").split("/", 1)
+    if rest.startswith("debate.en.html?d="):
+        f = os.path.join(REPOS, repo, "debates", rest.split("=", 1)[1] + ".json")
+        return json.load(open(f)).get("question_en") if os.path.exists(f) else None
+    raw = open(os.path.join(REPOS, repo, rest), encoding="utf-8", errors="ignore").read()
+    m = re.search(r"(?is)<title>(.*?)</title>", raw)
+    t = html.unescape(m.group(1)).strip() if m else None
+    return t if t and not CJK.search(t) else None
 
 
 def bank_file(page):
@@ -185,6 +226,7 @@ def cmd_build():
             others = max(len(o) for o in opts[1:])
             if len(opts[0]) > 1.8 * others:
                 errs.append(f"q{i}: correct option is by far the longest — a giveaway")
+        errs += [f"q{i}: {e}" for e in en_problems(q.get("question_en"), q.get("options_en"), q.get("explanation_en"))]
         if re.search(r"第[一二三四1-4]项|选项\s*[A-Da-d1-4]|[A-D]\s*项|前者|后者", str(q.get("explanation", ""))):
             errs.append(f"q{i}: explanation refers to an option by position; options get shuffled")
         per[q["slot"]] = per.get(q["slot"], 0) + 1
@@ -195,9 +237,13 @@ def cmd_build():
         qid = hashlib.sha1((a["page"] + q["question"]).encode()).hexdigest()[:10]
         order = list(range(4))
         random.Random(qid).shuffle(order)
+        en_opts = [str(o).strip() for o in q["options_en"]]
         qs.append({"id": qid, "slot": q["slot"], "question": q["question"].strip(),
                    "options": [opts[j] for j in order], "answer": order.index(0),
-                   "explanation": q["explanation"].strip()})
+                   "explanation": q["explanation"].strip(),
+                   "question_en": q["question_en"].strip(),
+                   "options_en": [en_opts[j] for j in order],
+                   "explanation_en": q["explanation_en"].strip()})
     missing = sorted(set(batch) - set(per))
     if missing:
         print("note: no questions for slots", missing, "(allowed if the article cannot support a good one)")
@@ -248,8 +294,10 @@ def cmd_check():
         rel = bank_file(a["page"])
         path = os.path.join(BANK, rel)
         os.makedirs(os.path.dirname(path), exist_ok=True)
-        dump({"page": a["page"], "title": a["title"], "src_hash": a["src_hash"],
-              "questions": [{k: q[k] for k in ("id", "question", "options", "answer", "explanation")} for q in qs]},
+        dump({"page": a["page"], "title": a["title"], "page_en": en_page(a["page"]),
+              "title_en": en_title(a["page"]), "src_hash": a["src_hash"],
+              "questions": [{k: q[k] for k in ("id", "question", "options", "answer", "explanation",
+                                               "question_en", "options_en", "explanation_en")} for q in qs]},
              path)
         manifest["pages"][a["page"]] = {"t": a["title"], "f": rel, "q": [q["id"] for q in qs]}
         if a["page"].endswith("-deep.html"):
@@ -266,6 +314,32 @@ def cmd_check():
     print(f"bank: {len(manifest['pages'])} articles, {sum(len(p['q']) for p in manifest['pages'].values())} questions")
 
 
+def cmd_backfill_en():
+    """work/en.json: {id: {question_en, options_en, explanation_en}}; options_en follow the stored order."""
+    en = load(os.path.join(WORK, "en.json"), {})
+    errs, files = [], []
+    for f in glob.glob(os.path.join(BANK, "*", "*.json")):
+        d = json.load(open(f))
+        for q in d["questions"]:
+            e = en.get(q["id"])
+            if not e:
+                if "question_en" not in q:
+                    errs.append(f"{q['id']}: no translation")
+                continue
+            errs += [f"{q['id']}: {p}" for p in en_problems(e.get("question_en"), e.get("options_en"), e.get("explanation_en"))]
+            q.update({k: e[k] for k in ("question_en", "options_en", "explanation_en") if k in e})
+        d["page_en"], d["title_en"] = en_page(d["page"]), en_title(d["page"])
+        files.append((f, d))
+    if errs:
+        print("REJECTED — nothing written:")
+        for e in errs:
+            print("  -", e)
+        sys.exit(1)
+    for f, d in files:
+        dump(d, f)
+    print(f"OK {len(en)} questions translated across {len(files)} articles")
+
+
 def cmd_status():
     m = load(MANIFEST, {"pages": {}})
     print(f"{len(m['pages'])} articles, {sum(len(p['q']) for p in m['pages'].values())} questions; "
@@ -276,6 +350,6 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("todo").add_argument("--n", type=int, default=15)
-    sub.add_parser("build"); sub.add_parser("check"); sub.add_parser("status")
+    sub.add_parser("build"); sub.add_parser("check"); sub.add_parser("status"); sub.add_parser("backfill-en")
     a = ap.parse_args()
-    {"todo": lambda: cmd_todo(a.n), "build": cmd_build, "check": cmd_check, "status": cmd_status}[a.cmd]()
+    {"todo": lambda: cmd_todo(a.n), "build": cmd_build, "check": cmd_check, "status": cmd_status, "backfill-en": cmd_backfill_en}[a.cmd]()

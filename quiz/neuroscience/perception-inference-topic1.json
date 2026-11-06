@@ -13,7 +13,15 @@
     "压低某处的预测误差，让那里的信号不再往上层报告"
    ],
    "answer": 1,
-   "explanation": "在「预期 + 证据，按可靠度加权」的模型里，注意调的是证据的权重（精度）。最诱人的错项把方向说反了：多发预测、压过证据，更接近昏暗中把衣架看成人的那种情形，而不是注意。"
+   "explanation": "在「预期 + 证据，按可靠度加权」的模型里，注意调的是证据的权重（精度）。最诱人的错项把方向说反了：多发预测、压过证据，更接近昏暗中把衣架看成人的那种情形，而不是注意。",
+   "question_en": "In the predictive processing framework, what is \"attention\" really doing?",
+   "options_en": [
+    "Shutting down the other sensory channels and letting through only raw signals from the selected location",
+    "Briefly raising the trustworthiness of sensory evidence from one place so it can better revise what you see",
+    "Sending more predictions to one place so that the brain's guesses override the sensory evidence there",
+    "Suppressing prediction error in one place so that signals from there are no longer reported upward"
+   ],
+   "explanation_en": "In the model of \"expectation + evidence, weighted by reliability,\" attention adjusts the weight (precision) of the evidence. The most tempting wrong option has the direction backwards: sending more predictions to override evidence is closer to mistaking a coat hanger for a person in the dark than to attention."
   },
   {
    "id": "da77ea9120",
@@ -25,7 +33,15 @@
     "大脑先向肌肉发出运动指令，再用预测去校对手的实际位置是否符合计划"
    ],
    "answer": 0,
-   "explanation": "预测误差有两种消法：改信念贴合世界，或用动作改世界贴合预测，所以动作是「被身体实现出来的预测」。最诱人的是「先发指令、再校对」，它仍把行动当成感知之外的另一套系统，而主动推理认为两者是同一台机器的两个出口。"
+   "explanation": "预测误差有两种消法：改信念贴合世界，或用动作改世界贴合预测，所以动作是「被身体实现出来的预测」。最诱人的是「先发指令、再校对」，它仍把行动当成感知之外的另一套系统，而主动推理认为两者是同一台机器的两个出口。",
+   "question_en": "You reach for a cup. From the perspective of active inference, how does the action come about?",
+   "options_en": [
+    "The brain first predicts the hand already holds the cup; this unfulfilled prediction creates an error that drives the muscles to make it true",
+    "Perception first confirms where the cup is, and only when it finishes is the result handed to the downstream motor system to execute",
+    "The brain first revises its belief, admitting the hand hasn't reached the cup, then plans a movement path based on the new belief",
+    "The brain first sends motor commands to the muscles, then uses predictions to check whether the hand's actual position fits the plan"
+   ],
+   "explanation_en": "Prediction error can be cancelled in two ways: change beliefs to fit the world, or use action to change the world to fit the prediction; so action is \"a prediction fulfilled by the body.\" The most tempting option is \"send commands first, check afterward,\" which still treats action as a system separate from perception, whereas active inference sees the two as two outlets of the same machine."
   },
   {
    "id": "1568837862",
@@ -37,7 +53,17 @@
     "声音早被猜中并扣掉，差错为零不上报；它一停预测落空，差错才往上走"
    ],
    "answer": 3,
-   "explanation": "每层只上报没猜中的部分，熟悉的东西被提前扣掉，「不是耳朵变钝」；反常的是没有声音本身也能引发差错。感官钝化是最诱人的常识解释，但它说不通为什么「没声音」反而让人警觉。"
+   "explanation": "每层只上报没猜中的部分，熟悉的东西被提前扣掉，「不是耳朵变钝」；反常的是没有声音本身也能引发差错。感官钝化是最诱人的常识解释，但它说不通为什么「没声音」反而让人警觉。",
+   "question_en": "You normally can't hear the hum of your fridge, yet the moment it stops you're instantly alert. How does predictive processing explain both?",
+   "options_en": [
+    "The brain judges the noise irrelevant and actively filters it out; the stop is an environmental change that triggers an instinctive danger response",
+    "Ears gradually dull to a constant stimulus, so you can't hear it; once the sound stops, sensitivity recovers and you notice something's off",
+    "While the sound continues it is reported but ignored by higher levels; when it vanishes, those levels turn attention back to hearing",
+    "The sound was already predicted and subtracted, so zero error gets reported; when it stops, the prediction fails and error travels upward"
+   ],
+   "explanation_en": "Each level reports only what it failed to predict, and familiar things are subtracted in advance: \"it's not that your ears got duller.\" Something out of the ordinary, even the absence of a sound, can itself trigger an error. Sensory dulling is the most tempting common-sense explanation, but it can't explain why \"no sound\" makes you more alert."
   }
- ]
+ ],
+ "page_en": "/neuroscience/perception-inference-topic1.en.html",
+ "title_en": "Topic 1 · Perception as Inference — Neuroscience"
 }

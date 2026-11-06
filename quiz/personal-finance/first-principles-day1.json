@@ -13,7 +13,15 @@
     "储蓄越多风险承受力越强，能配置更多股票，从而拿到更高的长期回报"
    ],
    "answer": 2,
-   "explanation": "储蓄率同时动两个变量：攒得多让资产增长更快，花得少让目标线更低，这个双重作用使它比回报强大。「可控」确实是它的优点，但这说的是能不能掌握，并不解释它为什么威力这么大。"
+   "explanation": "储蓄率同时动两个变量：攒得多让资产增长更快，花得少让目标线更低，这个双重作用使它比回报强大。「可控」确实是它的优点，但这说的是能不能掌握，并不解释它为什么威力这么大。",
+   "question_en": "Why is the savings rate said to determine the financial-independence timeline more than investment returns do?",
+   "options_en": [
+    "It determines how much principal goes in, and long-term compounding comes almost entirely from principal",
+    "Returns revert to the market average over the long run, and only the savings rate is in your own control",
+    "It works at both ends: assets grow faster, and the target amount you need also gets smaller",
+    "Saving more means greater risk tolerance, allowing more stocks and thereby higher long-term returns"
+   ],
+   "explanation_en": "The savings rate moves two variables at once: saving more makes assets grow faster, and spending less lowers the finish line, and this dual action makes it more powerful than returns. Being \"controllable\" is indeed one of its merits, but that speaks to whether you can control it, and doesn't explain why it's so powerful."
   },
   {
    "id": "12fc3b6f02",
@@ -25,7 +33,15 @@
     "公式本身没问题，只要把未归属股权计入净值就会基本达标"
    ],
    "answer": 2,
-   "explanation": "公式用税前收入高估了可支配的钱，又默认这人一辈子都拿现在的收入，而高薪往往是三十几岁才爬上来，所以不该当目标。把未归属股权算进净值反而是另一个错误：它应当单列，不算真实可动用的净值。"
+   "explanation": "公式用税前收入高估了可支配的钱，又默认这人一辈子都拿现在的收入，而高薪往往是三十几岁才爬上来，所以不该当目标。把未归属股权算进净值反而是另一个错误：它应当单列，不算真实可动用的净值。",
+   "question_en": "A 35-year-old high earner, paid mostly in equity, uses \"age × pre-tax annual income ÷ 10\" and finds their net worth is only half the expected figure. How should they view this result?",
+   "options_en": [
+    "Plug after-tax income into the same formula instead, and the result will accurately reflect their accumulation",
+    "It marks them as an under-accumulator, so the top priority is catching net worth up to the formula's line fast",
+    "The formula systematically overestimates for people like this; switch to net worth ÷ annual spending",
+    "The formula itself is fine; just count unvested equity in net worth and they'll roughly hit the target"
+   ],
+   "explanation_en": "Using pre-tax income, the formula overstates the money actually available, and it assumes this person has earned today's income all their life, when high pay is often reached only in the thirties, so it shouldn't serve as a goal. Counting unvested equity in net worth is a separate mistake: it should be listed on its own and doesn't count as truly accessible net worth."
   },
   {
    "id": "2319095110",
@@ -37,7 +53,17 @@
     "主线是清点订阅和小额支出，把经常性开销压到最低"
    ],
    "answer": 1,
-   "explanation": "储蓄率是中高收入者的主变量，不是所有人的：收入贴近生存线时，提高储蓄率是错的主线，增收才是。只记住「储蓄率决定一切」的人最容易选「仍是提高储蓄率」，那恰恰越过了这个框架的适用边界。"
+   "explanation": "储蓄率是中高收入者的主变量，不是所有人的：收入贴近生存线时，提高储蓄率是错的主线，增收才是。只记住「储蓄率决定一切」的人最容易选「仍是提高储蓄率」，那恰恰越过了这个框架的适用边界。",
+   "question_en": "For someone whose income barely covers rent and food, what should be the main focus of their personal finances?",
+   "options_en": [
+    "Still raising the savings rate: compounding will magnify the results of even a tiny percentage",
+    "Raising income, building skills or relocating, because essential expenses can hardly be squeezed",
+    "Learning to invest first, using higher returns to make up for not having enough principal",
+    "Auditing subscriptions and small purchases, pushing recurring spending down as low as possible"
+   ],
+   "explanation_en": "The savings rate is the main variable for middle and high earners, not for everyone: when income is close to subsistence, raising the savings rate is the wrong focus, and raising income is the right one. People who remember only \"the savings rate decides everything\" are the most likely to pick \"still raising the savings rate,\" which oversteps the boundary where this framework applies."
   }
- ]
+ ],
+ "page_en": "/personal-finance/first-principles-day1.en.html",
+ "title_en": "Personal Finance · Day 1 · First Principles"
 }

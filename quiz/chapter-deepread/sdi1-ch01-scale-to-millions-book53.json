@@ -13,7 +13,15 @@
     "单机不划算：高配硬件的单位算力价格比普通机器高得太多"
    ],
    "answer": 0,
-   "explanation": "纵向扩展能走得比多数人想的远，硬天花板往往不是最先到的；真正逼团队转向的是没有故障转移、没有冗余。「不够快」是最常见的自我解释，也正是这里要纠正的直觉。"
+   "explanation": "纵向扩展能走得比多数人想的远，硬天花板往往不是最先到的；真正逼团队转向的是没有故障转移、没有冗余。「不够快」是最常见的自我解释，也正是这里要纠正的直觉。",
+   "question_en": "When a team moves from \"buy a stronger single machine\" to \"add more ordinary machines,\" what is usually the decisive reason?",
+   "options_en": [
+    "Fear of having just one: if that single point fails, everything is gone, and there is no spare",
+    "Code needs reworking: the app has been split into several services and won't fit on one box",
+    "One machine isn't fast enough: performance has hit a hard ceiling and can't be upgraded further",
+    "One machine isn't economical: high-end hardware costs far more per unit of compute than ordinary machines"
+   ],
+   "explanation_en": "Vertical scaling goes further than most people think, and the hard ceiling often isn't what arrives first; what really forces teams to switch is having no failover and no redundancy. \"Not fast enough\" is the most common explanation teams give themselves, and it is exactly the intuition being corrected here."
   },
   {
    "id": "1f7f4b93ba",
@@ -25,7 +33,15 @@
     "拆成微服务，让各业务独立扩容，把负载从单体上分散到多处"
    ],
    "answer": 1,
-   "explanation": "这个量级下一台像样的服务器加数据库其实还撑得住，先出问题的是某一类请求和没有替补，所以先上负载均衡和从库。过早分片最诱人也最危险：它是唯一近乎不可逆的一步，要留到便宜的招数都榨干之后。"
+   "explanation": "这个量级下一台像样的服务器加数据库其实还撑得住，先出问题的是某一类请求和没有替补，所以先上负载均衡和从库。过早分片最诱人也最危险：它是唯一近乎不可逆的一步，要留到便宜的招数都榨干之后。",
+   "question_en": "A content community with 1 million daily active users and a peak of about 600 QPS is starting to strain. Judging by \"what gives out next,\" what should the first step usually be?",
+   "options_en": [
+    "Move the whole web tier and database to stronger machines, while also planning for multiple data centers",
+    "Target heavy queries and single points with load balancing and read replicas; volume isn't the issue here",
+    "Shard by user_id: with users in the millions, one database will eventually run out of room, so split early",
+    "Break into microservices so each business area scales independently, spreading load away from the monolith"
+   ],
+   "explanation_en": "At this scale, one decent server plus a database can actually still cope; what breaks first is a particular class of requests and the lack of a spare, so load balancing and read replicas come first. Sharding too early is the most tempting move and the most dangerous: it is the one nearly irreversible step, and it should wait until the cheap tricks have been wrung dry."
   },
   {
    "id": "b22fa6e4b6",
@@ -37,7 +53,17 @@
     "它早期完成了分片，所以才能把服务器数量控制在这么少的规模之内"
    ],
    "answer": 0,
-   "explanation": "这是对「七步都得做」的反证：纵向扩展加认真优化能走很远，绝大多数产品永远走不到分片。公布这些数字的工程师还写过，他们已降到只需 1 台 Web 服务器，所以说它已撞到纵向扩展的尽头，正好把结论读反了。"
+   "explanation": "这是对「七步都得做」的反证：纵向扩展加认真优化能走很远，绝大多数产品永远走不到分片。公布这些数字的工程师还写过，他们已降到只需 1 台 Web 服务器，所以说它已撞到纵向扩展的尽头，正好把结论读反了。",
+   "question_en": "In 2016, Stack Overflow handled over 200 million requests a day on 9 web servers and 4 SQL Servers. What does this case best illustrate?",
+   "options_en": [
+    "The scaling route tells you what to do next; it isn't a checklist, and many products never need sharding",
+    "At 200 million requests you must go horizontal; the road of vertical scaling has run out by that point",
+    "Its load was mostly static content, and this result came only from offloading most traffic to a CDN",
+    "It finished sharding early on, which is what let it keep the server count down to such a small scale"
+   ],
+   "explanation_en": "This is the counterexample to \"you have to do all seven steps\": vertical scaling plus serious optimization goes a long way, and the vast majority of products never reach sharding. The engineer who published these numbers also wrote that they had gotten down to needing just 1 web server, so saying it had hit the limit of vertical scaling reads the conclusion exactly backwards."
   }
- ]
+ ],
+ "page_en": "/chapter-deepread/sdi1-ch01-scale-to-millions-book53.en.html",
+ "title_en": "System Design Interview Vol 1 · Ch 1 · Scale From Zero To Millions Of Users — Book Deep Read 53"
 }

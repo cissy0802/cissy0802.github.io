@@ -13,7 +13,15 @@
     "专家的优势在于组块库，而不是更大的工作记忆容量"
    ],
    "answer": 3,
-   "explanation": "如果大师真的容量更大，随机局面也该占优；优势一消失，说明强记忆来自模式组块，是 chunking 库的差异而不是硬件升级。「训练扩大了容量」最贴近日常想象，却解释不了随机局面下这个优势为什么整个不见了。"
+   "explanation": "如果大师真的容量更大，随机局面也该占优；优势一消失，说明强记忆来自模式组块，是 chunking 库的差异而不是硬件升级。「训练扩大了容量」最贴近日常想象，却解释不了随机局面下这个优势为什么整个不见了。",
+   "question_en": "Chess masters can reconstruct a real game position within 5 seconds, but when the pieces are placed at random they perform about the same as novices. What does this result show?",
+   "options_en": [
+    "Experts rely on System 1 intuition, and random positions are what bring System 2 online",
+    "Experts' long training expanded their capacity; random positions just give no motive to memorize",
+    "Experts have a larger working memory, but can draw on it only under intense concentration",
+    "The experts' advantage lies in a library of chunks, not in a larger working memory capacity"
+   ],
+   "explanation_en": "If masters truly had more capacity, they should still have an edge on random positions; the disappearance of that edge shows their strong memory comes from pattern chunks, a difference in chunking library rather than a hardware upgrade. \"Training expanded capacity\" fits everyday imagination best, but it can't explain why the advantage vanishes altogether on random positions."
   },
   {
    "id": "6024226f38",
@@ -25,7 +33,15 @@
     "训练工作记忆和一般智力，这才是自我判断准确的硬件基础"
    ],
    "answer": 1,
-   "explanation": "估分和实际总对不上，本身就是校准问题：置信度要和正确率对得上，而知识涨了也不保证自我判断跟着准。一律压低也不是校准，那只是单向地不自信。"
+   "explanation": "估分和实际总对不上，本身就是校准问题：置信度要和正确率对得上，而知识涨了也不保证自我判断跟着准。一律压低也不是校准，那只是单向地不自信。",
+   "question_en": "Before every exam, a student predicts a score well above what they actually get. In metacognitive terms, what do they most need to work on?",
+   "options_en": [
+    "A habit of always lowballing their predictions, offsetting overconfidence with conservatism",
+    "Calibration between confidence and actual accuracy, that is, the ability to monitor whether they understand",
+    "Doing more practice problems to build knowledge; once it improves, predictions will naturally get more accurate",
+    "Training working memory and general intelligence, the hardware that accurate self-judgment rests on"
+   ],
+   "explanation_en": "Predictions that never match results are a calibration problem in themselves: confidence has to line up with accuracy, and more knowledge doesn't guarantee that self-judgment will follow. Always marking yourself down isn't calibration either; it's just one-directional underconfidence."
   },
   {
    "id": "7e1223f737",
@@ -37,7 +53,17 @@
     "白板本身就是认知系统的一部分，心智由大脑、身体和环境耦合而成"
    ],
    "answer": 3,
-   "explanation": "具身认知主张纸笔、白板不是辅助，而是认知本身的一部分，这直接挑战了「大脑才是信息处理器」的观点。「腾出工作记忆的外部辅助」最诱人，但它恰恰仍把思考关在颅腔之内。"
+   "explanation": "具身认知主张纸笔、白板不是辅助，而是认知本身的一部分，这直接挑战了「大脑才是信息处理器」的观点。「腾出工作记忆的外部辅助」最诱人，但它恰恰仍把思考关在颅腔之内。",
+   "question_en": "When drafting a proposal, laying out your thinking on a whiteboard makes you more productive. How would embodied cognition explain the whiteboard's role?",
+   "options_en": [
+    "It turns ideas into images and engages the visual pathway, which is still multichannel encoding inside the brain",
+    "It gets you up and moving, raising the body's arousal level so that the brain can then run a little faster",
+    "It is an external aid that frees up working memory, so thinking can focus better inside the brain",
+    "It is itself part of the cognitive system; the mind arises from the coupling of brain, body and environment"
+   ],
+   "explanation_en": "Embodied cognition holds that pen, paper and whiteboards aren't aids but part of cognition itself, directly challenging the view that \"the brain is the information processor.\" \"An external aid that frees up working memory\" is the most tempting option, but it still keeps thinking locked inside the skull."
   }
- ]
+ ],
+ "page_en": "/meta-knowledge/cognitive-psychology-day2.en.html",
+ "title_en": "Meta-Knowledge Deep Dive: Cognitive Psychology — Day 2"
 }

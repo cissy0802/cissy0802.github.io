@@ -13,7 +13,15 @@
     "专业层：自下而上第一个答「否」的层，人缘好不等于在信任层"
    ],
    "answer": 3,
-   "explanation": "诊断是自下而上问，第一个答「否」的就是要练的层；而第 3 层看的是有冲突时大家还信不信他，不是人缘。选信任层最诱人，却既跳过了第 2 层，又把一个常见假象当成了真能力。"
+   "explanation": "诊断是自下而上问，第一个答「否」的就是要练的层；而第 3 层看的是有冲突时大家还信不信他，不是人缘。选信任层最诱人，却既跳过了第 2 层，又把一个常见假象当成了真能力。",
+   "question_en": "A report delivers reliably with no rework; given only a problem, he can't come up with multiple options and explain the trade-offs; but he's very well liked, and other teams love chatting with him. By the \"four capabilities people pay for,\" which layer should he work on?",
+   "options_en": [
+    "Judgment: execution and likability are in place, so approve a sum of trial-and-error capital for him right away",
+    "Trust: his popularity is already a foundation, so build on it by adding the ability to drive multi-party decisions",
+    "Execution: not being able to explain options means his basics are shaky, so send him back to relearn the standards",
+    "Expertise: it's the first layer from the bottom to get a \"no,\" and being well liked doesn't put him on the trust layer"
+   ],
+   "explanation_en": "Diagnosis asks from the bottom up, and the first \"no\" marks the layer to work on; layer 3 is about whether people still trust him when there's a conflict, not about likability. Trust is the most tempting choice, but it both skips layer 2 and mistakes a common illusion for real capability."
   },
   {
    "id": "3b05da3b8a",
@@ -25,7 +33,15 @@
     "排期太慢会错过窗口，这类机会应当立刻投入团队资源去做"
    ],
    "answer": 2,
-   "explanation": "判断只能在真实的输赢里练出来，「我来排」看似支持，却把这件事变成了上级的决定。正确做法是批一笔输得起的小额资源，一页纸写清赌什么、何时停，项目写 TA 的名字；问题不在速度，也不在证据是否完整。"
+   "explanation": "判断只能在真实的输赢里练出来，「我来排」看似支持，却把这件事变成了上级的决定。正确做法是批一笔输得起的小额资源，一页纸写清赌什么、何时停，项目写 TA 的名字；问题不在速度，也不在证据是否完整。",
+   "question_en": "A report notices customers manually exporting data and wants to try building a tool that isn't in the plan. The manager replies: \"Great idea, I'll put it in next quarter's plan.\" What is the biggest problem with this reply?",
+   "options_en": [
+    "It didn't have the report finish current work first, which could easily disrupt the planned delivery rhythm",
+    "It endorsed the idea before there was enough evidence; a complete business case should have been required first",
+    "It takes away the report's ownership of the judgment and the outcome, so they get no practice answering for results",
+    "Scheduling this slowly will miss the window; an opportunity like this should get team resources immediately"
+   ],
+   "explanation_en": "Judgment can only be built through real wins and losses; \"I'll schedule it\" looks supportive but turns this into the manager's decision. The right move is to approve a small stake you can afford to lose, have a one-pager spell out what's being bet on and when to stop, and put the report's name on the project; the problem is neither speed nor whether the evidence is complete."
   },
   {
    "id": "215c32a033",
@@ -37,7 +53,17 @@
     "这项任务上按较低层带：给标准、做示范，带法按任务定"
    ],
    "answer": 3,
-   "explanation": "同一个人在不同任务上可能处在不同的层，所以带法按任务定，不按人定。「用教练方式带专家」确实是常见错误，但那是在 TA 已成熟的任务上；到了陌生任务，只问不教反而是放任。"
+   "explanation": "同一个人在不同任务上可能处在不同的层，所以带法按任务定，不按人定。「用教练方式带专家」确实是常见错误，但那是在 TA 已成熟的任务上；到了陌生任务，只问不教反而是放任。",
+   "question_en": "A backend engineer who can already come up with solutions independently takes on a completely unfamiliar data pipeline task for the first time. By Grove's task-relevant maturity, how should you manage them?",
+   "options_en": [
+    "Move them up to the trust layer: give them a stage and a safety net, and let them grow in the thick of it",
+    "Keep asking only about their thinking and give no answers, or you'll dampen this expert's motivation",
+    "Wait until they reach a higher layer in their original domain before assigning an unfamiliar task like this",
+    "Manage them at a lower layer on this task: set standards and demonstrate; the approach follows the task"
+   ],
+   "explanation_en": "The same person can sit on different layers for different tasks, so the approach depends on the task, not the person. \"Coaching an expert like a beginner\" is indeed a common mistake, but that applies to tasks where they're already mature; on an unfamiliar task, asking without teaching just leaves them to fend for themselves."
   }
- ]
+ ],
+ "page_en": "/leadership/four-paid-capabilities-day73.en.html",
+ "title_en": "Leadership Day 73: Developing People Through the Four Capabilities People Pay For"
 }

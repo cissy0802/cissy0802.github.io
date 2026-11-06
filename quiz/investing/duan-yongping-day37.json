@@ -13,7 +13,15 @@
     "不算：平常心要求在股价下跌时逐步加仓，只拿不动还是不够坚定"
    ],
    "answer": 0,
-   "explanation": "平常心不是心如止水，也不是麻木，它把定价的锚从别人的报价换回生意基本面，所以基本面真的变了就该动。「长期持有本身就是纪律」最诱人，却把一种行为当成了原则；逆向也不等于越跌越买。"
+   "explanation": "平常心不是心如止水，也不是麻木，它把定价的锚从别人的报价换回生意基本面，所以基本面真的变了就该动。「长期持有本身就是纪律」最诱人，却把一种行为当成了原则；逆向也不等于越跌越买。",
+   "question_en": "Someone holding a company whose fundamentals have clearly deteriorated says: \"I'm cultivating an ordinary mind; I don't move whether the price rises or falls.\" By Duan Yongping's idea of the \"ordinary mind\" (pingchangxin), does this count?",
+   "options_en": [
+    "No: the ordinary mind moves your anchor back to fundamentals, and holding through their decline is a value trap",
+    "Yes: the ordinary mind means not being moved by market swings, and long-term holding is itself the discipline",
+    "Yes: as long as you understood the business when you bought, later changes shouldn't affect the position",
+    "No: the ordinary mind requires adding gradually as the price falls, and merely holding isn't resolute enough"
+   ],
+   "explanation_en": "The ordinary mind isn't stillness or numbness; it moves the anchor for pricing from other people's quotes back to the business's fundamentals, so when the fundamentals truly change, you should act. \"Long-term holding is itself the discipline\" is the most tempting option, but it mistakes a behavior for a principle; being contrarian also doesn't mean buying more the further it falls."
   },
   {
    "id": "be87200a06",
@@ -25,7 +33,15 @@
     "学逆向操作的胆量：众人踩踏时越跌越买，下跌本身就是在送上礼物"
    ],
    "answer": 0,
-   "explanation": "他敢重仓的前提是真看懂生意、现金又能等，同样的打法押错一次就是本金归零，而我们记住的是幸存下来的那一笔。低于每股现金是当时的具体情形，不是通用规则；下跌也可能正是基本面恶化的信号。"
+   "explanation": "他敢重仓的前提是真看懂生意、现金又能等，同样的打法押错一次就是本金归零，而我们记住的是幸存下来的那一笔。低于每股现金是当时的具体情形，不是通用规则；下跌也可能正是基本面恶化的信号。",
+   "question_en": "Duan Yongping took a large position in NetEase when it was close to delisting and trading below cash per share, and it later rose more than 50-fold. What should an ordinary investor learn from this?",
+   "options_en": [
+    "The depth of understanding behind it, not the concentration: concentration follows from understanding and can't be copied up front",
+    "A buy-the-dip rule: once a stock falls below cash per share, that's a safe signal that you can take a large position in it",
+    "The extreme-concentration playbook: diversification only dilutes returns, so bet heavily on the opportunities you like",
+    "Contrarian nerve: buy more as it falls while the crowd stampedes out, because the drop itself is a gift being handed to you"
+   ],
+   "explanation_en": "He dared to go big because he truly understood the business and had cash that could wait; the same play, wrong once, means losing all your principal, and what we remember is the one bet that survived. Trading below cash per share was the specific situation at the time, not a general rule; a drop may also be the very signal that fundamentals are deteriorating."
   },
   {
    "id": "6bf749fdae",
@@ -37,7 +53,17 @@
     "看它能否生成可勾选、可违反的具体禁令，比如「遇到 X 就退出」"
    ],
    "answer": 3,
-   "explanation": "分水岭在能否证伪：生成不了具体动作的多半是情绪安慰。「能解释所有盈亏」恰恰是鸡汤的特征，事后无论赚赔都能自圆其说；大师传承也不算标准，那正是要警惕的导师光环和幸存者偏差。"
+   "explanation": "分水岭在能否证伪：生成不了具体动作的多半是情绪安慰。「能解释所有盈亏」恰恰是鸡汤的特征，事后无论赚赔都能自圆其说；大师传承也不算标准，那正是要警惕的导师光环和幸存者偏差。",
+   "question_en": "How can you tell whether an investing creed (such as \"benfen,\" staying within your proper role) is real discipline and not just feel-good fluff?",
+   "options_en": [
+    "Whether it has had decades of practice by a master and been passed down by several successful companies",
+    "Whether it keeps your emotions steady during market swings, so that you no longer feel anxious holding positions",
+    "Whether it can explain each of your past gains and losses; the neater the explanation, the deeper your understanding",
+    "Whether it can generate specific prohibitions you can check off or violate, such as \"if X happens, exit\""
+   ],
+   "explanation_en": "The dividing line is falsifiability: what can't generate a concrete action is mostly emotional comfort. \"Can explain every gain and loss\" is precisely the mark of fluff, since it justifies itself after the fact whether you win or lose; being handed down by a master isn't a criterion either, because that is exactly the mentor halo and survivorship bias to watch out for."
   }
- ]
+ ],
+ "page_en": "/investing/duan-yongping-day37.en.html",
+ "title_en": "Investing Classics: Duan Yongping's Philosophy — Day 37"
 }

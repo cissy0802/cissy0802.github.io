@@ -35,8 +35,13 @@
   {"slot": 1,
    "question": "题干",
    "options": ["正确答案", "干扰项", "干扰项", "干扰项"],
-   "explanation": "两三句：为什么对，以及最诱人的那个错项错在哪。"}
+   "explanation": "两三句：为什么对，以及最诱人的那个错项错在哪。",
+   "question_en": "The same question in English",
+   "options_en": ["Correct answer", "Distractor", "Distractor", "Distractor"],
+   "explanation_en": "The same explanation in English"}
 ]}
 ```
 
-**正确答案永远写在 options 第一个**，脚本会打乱顺序。
+**正确答案永远写在 options 第一个**，脚本会打乱顺序。`options_en` 必须和 `options` 一一对应、顺序相同。
+
+英文要写得像英文母语者出的题，不要逐字翻译；术语用英文学界和原书的通行说法。

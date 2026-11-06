@@ -13,7 +13,15 @@
     "主要是在职者离开后要补的流量，其中过半是转行，该职业甚至可能净萎缩"
    ],
    "answer": 3,
-   "explanation": "全职业年均 openings 里 97.2% 来自分离，只有 2.8% 来自净增长，而分离的 55.5% 是转去别的职业；前 15 名里有 6 个十年净就业在萎缩。最诱人的「退休腾位」错在把替补当机会：多数分离并不是退休。"
+   "explanation": "全职业年均 openings 里 97.2% 来自分离，只有 2.8% 来自净增长，而分离的 55.5% 是转去别的职业；前 15 名里有 6 个十年净就业在萎缩。最诱人的「退休腾位」错在把替补当机会：多数分离并不是退休。",
+   "question_en": "A college-application guide says \"this occupation has a shortfall of 300,000 jobs every year.\" Under the US Bureau of Labor Statistics (BLS) definition of occupational openings, how should you read this number?",
+   "options_en": [
+    "Mostly positions vacated by retirement: not a sign of expansion, but a guaranteed entry point for newcomers",
+    "The stock of vacancies unfilled in the occupation right now, directly comparable with job-board vacancy counts",
+    "Ten-year net job growth spread across the years, reflecting the true pace at which demand is expanding",
+    "Mostly a flow replacing people who leave, over half changing fields; the occupation may even be shrinking on net"
+   ],
+   "explanation_en": "Across all occupations, 97.2% of average annual openings come from separations and only 2.8% from net growth, and 55.5% of separations are moves into other occupations; 6 of the top 15 occupations are shrinking in net employment over the decade. The most tempting option, \"retirements freeing up slots,\" goes wrong by treating replacement as opportunity: most separations aren't retirements."
   },
   {
    "id": "8fb0da60c9",
@@ -25,7 +33,15 @@
     "它连职业增减方向都判断不准，和瞎猜差不多，因此任何层面都不值得参考"
    ],
    "answer": 1,
-   "explanation": "这条「聚合层级梯度」是越粗越可信、越细越不可信：判断某职业是否快于整体只有 57%，基线 50%。但也不能写成瞎猜，判断增减方向有 78%，最快五分位命中率约是随机的 2.4 倍，所以结论是粗信号，而不是废纸。"
+   "explanation": "这条「聚合层级梯度」是越粗越可信、越细越不可信：判断某职业是否快于整体只有 57%，基线 50%。但也不能写成瞎猜，判断增减方向有 78%，最快五分位命中率约是随机的 2.4 倍，所以结论是粗信号，而不是废纸。",
+   "question_en": "What do the BLS's own published evaluations of its ten-year projections imply for \"choosing a major off the growth rankings\"?",
+   "options_en": [
+    "Detailed occupations beat broad groups because the data are more specific; errors come mainly from misjudging macro totals",
+    "Coarse levels do carry information, but detailed occupations barely beat \"nothing changes,\" and majors are chosen at the detailed level",
+    "The projections are reliable overall, with misses concentrated in tech shocks like AI; exclude those occupations and the rankings still work",
+    "They can't even get an occupation's direction of growth or decline right, no better than guessing, so they're worthless at any level"
+   ],
+   "explanation_en": "This \"aggregation-level gradient\" says the coarser the level, the more credible, and the finer, the less credible: judging whether an occupation grows faster than average is right only 57% of the time, against a 50% baseline. But you can't call it blind guessing either: the direction of growth or decline is right 78% of the time, and the fastest quintile's hit rate is about 2.4 times random, so the conclusion is a coarse signal, not waste paper."
   },
   {
    "id": "9412d15013",
@@ -37,7 +53,17 @@
     "这些数字都由官方发布，跨版本波动反映的是真实需求变化，应当按字面解读"
    ],
    "answer": 2,
-   "explanation": "用噪声解释艺术史翻车，就得用同样的标准看 CS/CE：计算机工程的 95% 区间是 4%–11%，连续两次落在同一区间内，「复现」并不提供额外信息。最诱人的错项把「变动小」当成「精确」，但数据发布方根本没有公布专业级样本量。"
+   "explanation": "用噪声解释艺术史翻车，就得用同样的标准看 CS/CE：计算机工程的 95% 区间是 4%–11%，连续两次落在同一区间内，「复现」并不提供额外信息。最诱人的错项把「变动小」当成「精确」，但数据发布方根本没有公布专业级样本量。",
+   "question_en": "In unemployment data by major, computer science (CS) and computer engineering (CE) read high two years running, while majors such as art history jump sharply within a single year. How do you read this without applying a double standard?",
+   "options_en": [
+    "Art history's small sample makes it noise; CS/CE have large samples, so two high years are already a reliable structural signal",
+    "CS/CE vary far less year to year than the median major, which shows the readings are precise and can be used to rank majors",
+    "Apply the same noise yardstick: single-year intervals are wide, and two high CS/CE readings don't yet amount to a stable trend",
+    "These figures are all officially published, so swings between releases reflect real shifts in demand and should be taken at face value"
+   ],
+   "explanation_en": "If you invoke noise to explain art history's blowup, you have to hold CS/CE to the same standard: computer engineering's 95% interval is 4% to 11%, and two consecutive readings fall inside the same interval, so the \"replication\" adds no information. The most tempting wrong option treats \"low variation\" as \"precision,\" but the data publisher never released sample sizes at the major level."
   }
- ]
+ ],
+ "page_en": "/deep-research/choosing-a-major-deep.en.html",
+ "title_en": "What Should You Major In? An Evidence Check for Students Choosing a Degree (Deep Dive) — BigCat Deep Research"
 }

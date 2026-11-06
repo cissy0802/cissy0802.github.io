@@ -262,7 +262,7 @@ I18N = {
         "tagline": "每日学习 · 跨界思考 · 超级个体",
         "search_prompt": '🔍 按 <kbd>/</kbd> 或点击右下角搜索全站',
         "toggle": '<a href="index.zh.html" class="active">中文</a>\n  <a href="index.en.html">EN</a>',
-        "notes_link": '<a class="notes-link" href="notes.html">📝 我的笔记</a>\n<a class="notes-link quiz-link" href="quiz.html">🧠 随机 10 题</a>',
+        "notes_link": '<div class="top-links"><a class="notes-link" href="notes.html">📝 我的笔记</a><a class="notes-link quiz-link" href="quiz.html">🧠 随机 10 题</a></div>',
         "blog": '<a href="blog-pipeline.html">🛠 这个 Hub 是怎么搭的</a>',
         "about": '关于作者：BigCat，Staff 技术 / AI 工程师',
         "copyright": '© 2026 BigCat（Cissy Chen）· 保留所有权利 All Rights Reserved',
@@ -274,7 +274,7 @@ I18N = {
         "tagline": "Daily learning · Cross-domain thinking · Super-individual",
         "search_prompt": '🔍 Press <kbd>/</kbd> or click the search button (bottom right) to search the whole site',
         "toggle": '<a href="index.zh.html">中文</a>\n  <a href="index.en.html" class="active">EN</a>',
-        "notes_link": '<a class="notes-link" href="notes.en.html">📝 My Notes</a>\n<a class="notes-link quiz-link" href="quiz.html">🧠 Quiz (中文)</a>',
+        "notes_link": '<div class="top-links"><a class="notes-link" href="notes.en.html">📝 My Notes</a><a class="notes-link quiz-link" href="quiz.en.html">🧠 Random 10</a></div>',
         "blog": '<a href="blog-pipeline.en.html">🛠 how this hub is built</a>',
         "about": 'About the builder: BigCat, staff tech / AI engineer',
         "copyright": '© 2026 BigCat (Cissy Chen) · All Rights Reserved',
@@ -500,7 +500,8 @@ header .subtitle{{font-size:0.85rem;color:#7b61ff;margin-top:8px;font-family:"SF
 .lang-toggle a:not(.active):hover{{background:rgba(255,255,255,0.08);color:#fff}}
 .notes-link{{position:fixed;top:18px;left:18px;background:rgba(255,255,255,0.06);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);border-radius:18px;padding:8px 14px;z-index:100;font-family:"SF Mono",Menlo,monospace;font-size:0.78rem;color:#a0a8c0;text-decoration:none;transition:all 0.15s}}
 .notes-link:hover{{background:#7b61ff;color:#fff}}
-.quiz-link{{top:60px}}
+.top-links{{position:fixed;top:18px;left:18px;display:flex;flex-wrap:wrap;gap:8px;max-width:calc(100vw - 140px);z-index:100}}
+.top-links .notes-link{{position:static}}
 .list{{display:flex;flex-direction:column;gap:10px;margin-top:24px}}
 .card{{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:16px 22px;background:rgba(255,255,255,0.04);backdrop-filter:blur(10px);border-radius:12px;border:1px solid rgba(255,255,255,0.08);text-decoration:none;color:inherit;transition:all 0.2s ease;position:relative;overflow:hidden}}
 .card::before{{content:"";position:absolute;top:0;left:0;bottom:0;width:4px;background:var(--accent);opacity:0.85}}
@@ -535,7 +536,7 @@ footer a:hover{{color:#00d4ff}}
   .card .desc{{-webkit-line-clamp:unset;font-size:0.85rem}}
   .lang-toggle{{top:10px;right:10px}}
   .notes-link{{top:10px;left:10px;padding:6px 11px}}
-  .quiz-link{{top:48px}}
+  .top-links{{top:10px;left:10px;gap:6px}}
   header{{padding-top:60px}}
 }}
 </style>
