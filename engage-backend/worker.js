@@ -22,6 +22,8 @@
  *   POST /reads-list   { session }                   -> pages this account has finished
  *   POST /reads-set    { session, page, read }       -> mark / unmark one page as read
  *   POST /reads-thought{ session, page, thought }    -> article-level thought
+ *   POST /quiz-history { session }                   -> this account's quiz record, per question
+ *   POST /quiz-answer  { session, qid, page, correct } -> record one answer
  *   Notes are private per account: every note is scoped to the session's user,
  *   so one account can never read or delete another's. POST-only keeps
  *   passwords and session tokens out of URLs and logs.
@@ -726,6 +728,46 @@ export default {
             .run();
           if (!thought) await cleanupRead(page);
           return json({ ok: true, page, thought }, 200, origin);
+        }
+      }
+
+      // ---- Quiz record (private per account) ----------------------------
+      // The questions themselves are static files under /quiz/; this only keeps
+      // what each account has answered, so "random 10" can prefer unseen ones.
+      if (url.pathname.startsWith("/quiz-")) {
+        if (request.method !== "POST") {
+          return json({ ok: false, error: "method_not_allowed" }, 405, origin);
+        }
+        const body = await request.json().catch(() => ({}));
+        const me = await sessionUser(env, body.session);
+        if (!me) return json({ ok: false, error: "unauthorized" }, 401, origin);
+
+        if (url.pathname === "/quiz-history") {
+          const { results } = await env.DB.prepare(
+            "SELECT qid, page, right_n, wrong_n, last_correct, ts FROM quiz_answers " +
+              "WHERE user_id = ? ORDER BY ts DESC LIMIT 20000"
+          )
+            .bind(me.id)
+            .all();
+          return json({ ok: true, answers: results }, 200, origin);
+        }
+
+        if (url.pathname === "/quiz-answer") {
+          const qid = String(body.qid || "");
+          const page = String(body.page || "").trim().slice(0, 200);
+          if (!/^[a-f0-9]{10}$/.test(qid) || !page || typeof body.correct !== "boolean") {
+            return json({ ok: false, error: "missing_fields" }, 400, origin);
+          }
+          const ok = body.correct ? 1 : 0;
+          await env.DB.prepare(
+            "INSERT INTO quiz_answers (user_id, qid, page, right_n, wrong_n, last_correct, ts) " +
+              "VALUES (?1, ?2, ?3, ?4, ?5, ?4, ?6) " +
+              "ON CONFLICT(user_id, qid) DO UPDATE SET right_n = right_n + ?4, " +
+              "wrong_n = wrong_n + ?5, last_correct = ?4, ts = ?6"
+          )
+            .bind(me.id, qid, page, ok, 1 - ok, Date.now())
+            .run();
+          return json({ ok: true }, 200, origin);
         }
       }
 

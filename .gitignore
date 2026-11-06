@@ -6,3 +6,6 @@
 
 # prune-orphans.py writes its key list next to itself before deleting.
 audio-backend/prune-*.txt
+
+# Question-bank working files (article text, drafts before the blind check).
+quiz-tools/work/

@@ -1,0 +1,114 @@
+{
+ "pages": {
+  "/neuroscience/perception-inference-topic1.html": {
+   "t": "Topic 1 · 感知即推断 — 神经科学",
+   "f": "neuroscience/perception-inference-topic1.json",
+   "q": [
+    "47261a0ba2",
+    "da77ea9120",
+    "1568837862"
+   ]
+  },
+  "/deep-research/choosing-a-major-deep.html": {
+   "t": "未来十年选什么专业?给准大学生的就业证据体检(深入版) — BigCat Deep Research",
+   "f": "deep-research/choosing-a-major-deep.json",
+   "q": [
+    "8d5fb15ad2",
+    "8fb0da60c9",
+    "9412d15013"
+   ]
+  },
+  "/meta-knowledge/neuroscience-day1.html": {
+   "t": "元知识详解：神经科学基础 — Day 1",
+   "f": "meta-knowledge/neuroscience-day1.json",
+   "q": [
+    "ec6b1a1edd",
+    "1de9f17068"
+   ]
+  },
+  "/deep-research/junior-engineers-deep.html": {
+   "t": "「初级工程师正在消失」是真的吗:入门岗位的证据体检(深入版) — BigCat Deep Research",
+   "f": "deep-research/junior-engineers-deep.json",
+   "q": [
+    "099c1cd7ee",
+    "d2a575512c"
+   ]
+  },
+  "/chapter-deepread/ddia-ch02-data-models-query-languages-book2.html": {
+   "t": "DDIA 第 2 章 · 数据模型与查询语言 — 专业书籍精读 Book 2",
+   "f": "chapter-deepread/ddia-ch02-data-models-query-languages-book2.json",
+   "q": [
+    "3225030384",
+    "6d79a6362c"
+   ]
+  },
+  "/meta-knowledge/cognitive-psychology-day2.html": {
+   "t": "元知识详解：认知心理学 — Day 2",
+   "f": "meta-knowledge/cognitive-psychology-day2.json",
+   "q": [
+    "4091b4cdd7",
+    "6024226f38",
+    "7e1223f737"
+   ]
+  },
+  "/deep-research/ai-native-deep.html": {
+   "t": "当代码变得便宜:传统软件组织向 AI-native 转型的理论与证据(深入版) — BigCat Deep Research",
+   "f": "deep-research/ai-native-deep.json",
+   "q": [
+    "634f4a1097",
+    "2b59205175",
+    "ead982c7c5"
+   ]
+  },
+  "/personal-finance/first-principles-day1.html": {
+   "t": "个人理财 · Day 1 · 理财第一性原理",
+   "f": "personal-finance/first-principles-day1.json",
+   "q": [
+    "84a281c754",
+    "12fc3b6f02",
+    "2319095110"
+   ]
+  },
+  "/novel-deepread/deaths-end-novel3.html": {
+   "t": "三体III · 死神永生 — 小说精读 No.3",
+   "f": "novel-deepread/deaths-end-novel3.json",
+   "q": [
+    "4728e69f74",
+    "5b52a06ea5",
+    "d9bea883d5"
+   ]
+  },
+  "/leadership/four-paid-capabilities-day73.html": {
+   "t": "领导力 Day 73：用「四种付费能力」培养下属",
+   "f": "leadership/four-paid-capabilities-day73.json",
+   "q": [
+    "fa1954a210",
+    "3b05da3b8a",
+    "215c32a033"
+   ]
+  },
+  "/chapter-deepread/sdi1-ch01-scale-to-millions-book53.html": {
+   "t": "System Design Interview 卷一 第 1 章 · 从零到百万用户 — 专业书籍精读 Book 53",
+   "f": "chapter-deepread/sdi1-ch01-scale-to-millions-book53.json",
+   "q": [
+    "c26139ef69",
+    "1f7f4b93ba",
+    "b22fa6e4b6"
+   ]
+  },
+  "/investing/duan-yongping-day37.html": {
+   "t": "投资经典：段永平的投资哲学 — Day 37",
+   "f": "investing/duan-yongping-day37.json",
+   "q": [
+    "138a623b3e",
+    "be87200a06",
+    "6bf749fdae"
+   ]
+  }
+ },
+ "aliases": {
+  "/deep-research/choosing-a-major-plain.html": "/deep-research/choosing-a-major-deep.html",
+  "/deep-research/junior-engineers-plain.html": "/deep-research/junior-engineers-deep.html",
+  "/deep-research/ai-native-plain.html": "/deep-research/ai-native-deep.html"
+ }
+}

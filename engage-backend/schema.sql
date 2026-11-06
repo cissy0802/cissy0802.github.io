@@ -110,3 +110,16 @@ CREATE TABLE IF NOT EXISTS reads (
   PRIMARY KEY (user_id, page)
 );
 CREATE INDEX IF NOT EXISTS idx_reads_user ON reads (user_id, ts);
+
+-- Quiz record, one row per (account, question). The questions are static files
+-- under /quiz/ on the hub; this only remembers what each account has answered.
+CREATE TABLE IF NOT EXISTS quiz_answers (
+  user_id      TEXT    NOT NULL,
+  qid          TEXT    NOT NULL,
+  page         TEXT    NOT NULL,
+  right_n      INTEGER NOT NULL DEFAULT 0,
+  wrong_n      INTEGER NOT NULL DEFAULT 0,
+  last_correct INTEGER NOT NULL DEFAULT 0,
+  ts           INTEGER NOT NULL,
+  PRIMARY KEY (user_id, qid)
+);
