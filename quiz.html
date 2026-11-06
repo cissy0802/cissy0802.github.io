@@ -27,7 +27,7 @@ h1{font-size:2rem;font-weight:800;background:linear-gradient(135deg,#00d4ff 0%,#
 .track i{display:block;height:100%;width:0;background:#7b61ff;transition:width .25s}
 .q{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;margin-bottom:14px}
 .meta{font-size:.76rem;color:#7b8299;margin-bottom:8px;display:flex;gap:8px;flex-wrap:wrap}
-.meta .unread{color:#ffa726}.meta .again{color:#ff8a7a}
+.meta .again{color:#ff8a7a}
 .stem{font-weight:600;font-size:1rem;margin-bottom:12px}
 .opt{display:flex;gap:10px;width:100%;text-align:left;font:inherit;font-size:.95rem;color:inherit;line-height:1.55;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.12);border-radius:9px;padding:10px 12px;margin-bottom:8px;cursor:pointer}
 .opt:hover:not(:disabled){border-color:#7b61ff}
@@ -54,9 +54,10 @@ h1{font-size:2rem;font-weight:800;background:linear-gradient(135deg,#00d4ff 0%,#
 <div class="container">
   <header>
     <h1>随机 10 题</h1>
-    <div class="sub">优先从你读过的文章里抽，做完可以再来一轮</div>
+    <div class="sub">从你读过的文章里抽，做完可以再来一轮</div>
   </header>
   <div class="score" id="score"><span>得分 <b id="sc">0</b> / <span id="tot">0</span></span><div class="track"><i id="bar"></i></div><span id="left"></span></div>
+  <div class="sub" id="short" style="text-align:center;margin-bottom:14px"></div>
   <div id="list"><div class="empty">加载中…</div></div>
   <div class="done-box" id="done">
     <div class="big" id="big"></div>
@@ -100,27 +101,24 @@ h1{font-size:2rem;font-weight:800;background:linear-gradient(135deg,#00d4ff 0%,#
     return (manifest.aliases && manifest.aliases[p]) || p;
   }
 
-  // Read articles before unread; within those, a few earlier mistakes, then
-  // never-seen questions, then the ones answered right longest ago. One question
-  // per article while the pool allows it.
+  // Only articles this reader has read: a few earlier mistakes, then never-seen
+  // questions, then the ones answered right longest ago. One question per article
+  // first; a second from the same article only if that leaves the round short.
   function pick() {
     var pool = [];
     Object.keys(manifest.pages).forEach(function (page) {
+      if (!readSet[page]) return;
       manifest.pages[page].q.forEach(function (id) {
-        pool.push({ id: id, page: page, read: !!readSet[page], h: history[id], rnd: Math.random() });
+        pool.push({ id: id, page: page, h: history[id] });
       });
     });
     var fresh = pool.filter(function (x) { return !lastRound[x.id]; });
     if (fresh.length >= ROUND) pool = fresh;
-    function bucket(read) {
-      var mine = pool.filter(function (x) { return x.read === read; });
-      var wrong = shuffled(mine.filter(function (x) { return x.h && !x.h.last_correct; }));
-      var unseen = shuffled(mine.filter(function (x) { return !x.h; }));
-      var right = mine.filter(function (x) { return x.h && x.h.last_correct; })
-        .sort(function (a, b) { return a.h.ts - b.h.ts; });
-      return wrong.slice(0, MAX_RETRY).concat(unseen, right, wrong.slice(MAX_RETRY));
-    }
-    var order = bucket(true).concat(bucket(false));
+    var wrong = shuffled(pool.filter(function (x) { return x.h && !x.h.last_correct; }));
+    var unseen = shuffled(pool.filter(function (x) { return !x.h; }));
+    var right = pool.filter(function (x) { return x.h && x.h.last_correct; })
+      .sort(function (a, b) { return a.h.ts - b.h.ts; });
+    var order = wrong.slice(0, MAX_RETRY).concat(unseen, right, wrong.slice(MAX_RETRY));
     var out = [], pages = {};
     order.forEach(function (x) {
       if (out.length < ROUND && !pages[x.page]) { pages[x.page] = 1; out.push(x); }
@@ -133,7 +131,14 @@ h1{font-size:2rem;font-weight:800;background:linear-gradient(135deg,#00d4ff 0%,#
 
   function loadRound() {
     var picks = pick();
-    if (!picks.length) { message('题库还是空的，过两天再来。'); return; }
+    if (!picks.length) {
+      message(Object.keys(readSet).length
+        ? '你读过的文章还没有题，题库每天都在补，过几天再来。'
+        : '题目只从你读过的文章里出。先去读几篇，读到文章末尾就会自动记为已读。<br><br><a class="btn" href="/">去读文章</a>');
+      return;
+    }
+    $('short').textContent = picks.length < ROUND
+      ? '你读过的文章目前只有 ' + picks.length + ' 题，题库每天都在补。' : '';
     $('done').classList.remove('on');
     message('抽题中…');
     var files = {};
@@ -150,7 +155,7 @@ h1{font-size:2rem;font-weight:800;background:linear-gradient(135deg,#00d4ff 0%,#
         var q = d.questions.filter(function (y) { return y.id === x.id; })[0];
         if (!q) return;
         var order = shuffled([0, 1, 2, 3]);   // a new order each time, so nobody memorises "it was C"
-        round.push({ id: q.id, page: x.page, title: d.title, read: x.read, again: !!(x.h && !x.h.last_correct),
+        round.push({ id: q.id, page: x.page, title: d.title, again: !!(x.h && !x.h.last_correct),
           question: q.question, explanation: q.explanation,
           options: order.map(function (j) { return q.options[j]; }), answer: order.indexOf(q.answer), picked: null });
       });
@@ -166,7 +171,6 @@ h1{font-size:2rem;font-weight:800;background:linear-gradient(135deg,#00d4ff 0%,#
     $('score').classList.add('on');
     $('list').innerHTML = round.map(function (q, i) {
       var tags = '<span>' + (i + 1) + ' / ' + round.length + '</span><span>' + esc(q.title) + '</span>' +
-        (q.read ? '' : '<span class="unread">你还没读过这篇</span>') +
         (q.again ? '<span class="again">↺ 上次答错</span>' : '');
       var opts = q.options.map(function (o, j) {
         return '<button class="opt" data-i="' + i + '" data-j="' + j + '"><span class="k">' + KEYS[j] + '</span><span>' + esc(o) + '</span></button>';

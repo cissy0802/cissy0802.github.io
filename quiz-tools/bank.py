@@ -58,24 +58,32 @@ def twin_of(page):
 
 
 def reader_counts():
+    """Returns (readers per article, articles the priority account has read)."""
     env = dict(os.environ)
     for line in open(os.path.join(CREDS, ".env")):
         line = line.strip()
         if "=" in line and not line.startswith("#"):
             k, v = line.split("=", 1)
             env[k.replace("export ", "").strip()] = v.strip().strip("\"'")
-    sql = "SELECT page, count(*) n FROM reads WHERE is_read = 1 GROUP BY page"
+    owner = env.get("QUIZ_PRIORITY_USER", "")
+    if not re.fullmatch(r"[0-9a-f-]{36}", owner):
+        sys.exit("QUIZ_PRIORITY_USER missing from ~/.bigcat-hub/.env")
+    sql = f"SELECT page, count(*) n, max(user_id = '{owner}') mine FROM reads WHERE is_read = 1 GROUP BY page"
     cmd = [os.path.join(CREDS, "node_modules/.bin/wrangler"), "d1", "execute", "bigcat-engage",
            "--remote", "--json", "--command", sql]
     err = ""
     for _ in range(3):
         p = subprocess.run(cmd, capture_output=True, text=True, env=env, cwd=CREDS)
         if p.returncode == 0:
-            out = {}
+            out, mine = {}, set()
             for r in json.loads(p.stdout)[0]["results"]:
                 k = twin_of(canonical(r["page"]))
                 out[k] = out.get(k, 0) + r["n"]
-            return out
+                if r["mine"]:
+                    mine.add(k)
+            if not mine:
+                sys.exit("priority account has no read articles; check QUIZ_PRIORITY_USER")
+            return out, mine
         err = (p.stderr + p.stdout)[-400:]
     sys.exit("wrangler failed: " + err)
 
@@ -132,11 +140,11 @@ def cmd_todo(n):
         os.remove(f)
     done = load(MANIFEST, {"pages": {}})["pages"]
     tried = load(ATTEMPTS, {})
-    counts = reader_counts()
+    counts, mine = reader_counts()
     rnd = random.Random(0)
     pages = list(set(all_pages()) | set(p for p in counts if not SKIP.search(p.split("?")[0])))
-    # Articles people have actually read come first, most-read first.
-    pages.sort(key=lambda p: (-counts.get(p, 0), rnd.random()))
+    # The priority account's reads first, then other readers' most-read, then the rest.
+    pages.sort(key=lambda p: (p not in mine, -counts.get(p, 0), rnd.random()))
     batch = []
     for page in pages:
         if page in done or tried.get(page, 0) >= MAX_ATTEMPTS:
@@ -155,7 +163,7 @@ def cmd_todo(n):
     dump({"articles": batch}, os.path.join(WORK, "batch.json"))
     print(f"{len(done)} articles in bank; next {len(batch)} -> work/batch.json")
     for b in batch:
-        print(f"  {b['slot']:2d}. readers={counts.get(b['page'], 0)}  {b['page']}")
+        print(f"  {b['slot']:2d}. {'mine ' if b['page'] in mine else '     '}readers={counts.get(b['page'], 0)}  {b['page']}")
 
 
 def cmd_build():

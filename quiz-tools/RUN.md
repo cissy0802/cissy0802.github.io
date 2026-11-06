@@ -2,7 +2,7 @@
 
 目录：`~/Desktop/repos/cissy0802.github.io/quiz-tools`，命令都在这里跑。先 `git -C .. pull --ff-only`。
 
-1. `python3 bank.py todo --n 15`。它决定今天出哪些文章（有人读过的优先），`wrangler` 失败就停下汇报，不要自己挑文章。
+1. `python3 bank.py todo --n 15`。它决定今天出哪些文章（先补 `QUIZ_PRIORITY_USER` 读过的，再补别人读过的，最后是其余文章），`wrangler` 失败就停下汇报，不要自己挑文章。
 2. 按 `WRITE-QUESTIONS.md` 写 `work/draft.json`，跑 `python3 bank.py build` 直到 OK。
 3. 派一个**全新的 subagent** 按 `BLIND-CHECK.md` 盲答。只给它这份文件的路径，不要告诉它答案，也不要自己代答。
 4. `python3 bank.py check`。只有这一步会写进 `../quiz/`，被丢弃的题不要手工加回去。
