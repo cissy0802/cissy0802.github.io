@@ -22,6 +22,7 @@
   injectHubScript("bigcat-notes-js", "notes.js");
   injectHubScript("bigcat-reads-js", "reads.js");
   injectHubScript("bigcat-scroll-js", "scroll-memory.js");
+  injectHubScript("bigcat-next-js", "next-article.js");
 
   if (document.documentElement.hasAttribute("data-no-hub-nav")) return;
   // URL shape: /{repo}/{file}.html  OR  /{repo}/  OR  /
