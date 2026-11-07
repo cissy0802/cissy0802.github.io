@@ -656,6 +656,18 @@
 
     function hide() { bubble.style.display = 'none'; pending = null; }
 
+    // Audio auto-continue (i18n-tts.js) swaps the next article into this page
+    // without navigating and updates the URL. Re-key to it: drop any pending
+    // selection and underline the new page's saved notes.
+    window.addEventListener('bigcat:article-swap', function () {
+      hide();
+      closeThought();
+      flashed = null;
+      paintUnderlines();
+      handleHash();
+      if (session()) window.BigCatNotes.list().then(schedulePaint).catch(function () {});
+    });
+
     function onSelect() {
       var sel = window.getSelection();
       if (!sel || sel.isCollapsed) { hide(); return; }

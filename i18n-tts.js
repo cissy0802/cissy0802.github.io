@@ -777,6 +777,9 @@
     'script', 'style', 'link', 'template', 'noscript',
     '.mmd-controls', '.mmd-lang-toggle', '.mmd-nowplaying',
     '#search-fab', '#search-overlay', '#bigcat-hub-btn', '#bigcat-index-btn', '.lb-overlay',
+    // notes.js's selection bubble is page-independent; it re-binds to the new
+    // article on the 'bigcat:article-swap' event below.
+    '#note-bubble',
   ].join(',');
 
   // Show the next article in place of this one, without navigating: a real
@@ -810,6 +813,8 @@
     document.title = doc.title;
     try { history.replaceState(null, '', next.url); } catch (e) {}
     window.scrollTo(0, 0);
+    // Let page-independent widgets (notes.js) re-attach to the new article.
+    try { window.dispatchEvent(new CustomEvent('bigcat:article-swap', { detail: { url: next.url } })); } catch (e) {}
     return true;
   }
 
