@@ -7,7 +7,8 @@
     notReady: "The articles you have read don't have questions yet. The bank grows daily, so check back soon.",
     readFirst: 'Questions only come from articles you have read. Read a few first: reaching the end of an article marks it as read.',
     goRead: 'Find something to read', home: '/index.en.html',
-    short: function (n) { return 'The articles you have read have only ' + n + ' questions so far. The bank grows daily.'; },
+    short: function (n) { return n + ' question(s) left from the articles you have read. The bank grows daily.'; },
+    allDone: "You've got every question right for the articles you have read. New ones appear as the bank grows and as you read more.",
     drawing: 'Drawing questions…', loadBank: "Couldn't load the questions. Please refresh.", loadAll: "Couldn't load the page. Please refresh.",
     again: '↺ Missed last time', source: 'Back to the article →', right: '✓ Correct.',
     wrong: function (k) { return '✗ The answer is ' + k + '.'; },
@@ -20,7 +21,8 @@
     notReady: '你读过的文章还没有题，题库每天都在补，过几天再来。',
     readFirst: '题目只从你读过的文章里出。先去读几篇，读到文章末尾就会自动记为已读。',
     goRead: '去读文章', home: '/index.zh.html',
-    short: function (n) { return '你读过的文章目前只有 ' + n + ' 题，题库每天都在补。'; },
+    short: function (n) { return '你读过的文章里还剩 ' + n + ' 道题，题库每天都在补。'; },
+    allDone: '你读过的文章，现有的题都做对了。题库补上新题或你读了新文章，这里就会有新题。',
     drawing: '抽题中…', loadBank: '题目加载失败，刷新页面再试一次。', loadAll: '加载失败，刷新页面再试一次。',
     again: '↺ 上次答错', source: '回原文 →', right: '✓ 对了。',
     wrong: function (k) { return '✗ 答案是 ' + k + '。'; },
@@ -60,24 +62,24 @@
     return (manifest.aliases && manifest.aliases[p]) || p;
   }
 
-  // Only articles this reader has read: a few earlier mistakes, then never-seen
-  // questions, then the ones answered right longest ago. One question per article
-  // first; a second from the same article only if that leaves the round short.
+  // Only articles this reader has read, and never a question whose latest answer
+  // was right: a few earlier mistakes, then never-seen questions, then any other
+  // mistakes. One question per article first; a second from the same article only
+  // if that leaves the round short.
   function pick() {
     var pool = [];
     Object.keys(manifest.pages).forEach(function (page) {
       if (!readSet[page]) return;
       manifest.pages[page].q.forEach(function (id) {
-        pool.push({ id: id, page: page, h: history[id] });
+        var h = history[id];
+        if (!h || !h.last_correct) pool.push({ id: id, page: page, h: h });
       });
     });
     var fresh = pool.filter(function (x) { return !lastRound[x.id]; });
     if (fresh.length >= ROUND) pool = fresh;
-    var wrong = shuffled(pool.filter(function (x) { return x.h && !x.h.last_correct; }));
+    var wrong = shuffled(pool.filter(function (x) { return x.h; }));
     var unseen = shuffled(pool.filter(function (x) { return !x.h; }));
-    var right = pool.filter(function (x) { return x.h && x.h.last_correct; })
-      .sort(function (a, b) { return a.h.ts - b.h.ts; });
-    var order = wrong.slice(0, MAX_RETRY).concat(unseen, right, wrong.slice(MAX_RETRY));
+    var order = wrong.slice(0, MAX_RETRY).concat(unseen, wrong.slice(MAX_RETRY));
     var out = [], pages = {};
     order.forEach(function (x) {
       if (out.length < ROUND && !pages[x.page]) { pages[x.page] = 1; out.push(x); }
@@ -91,7 +93,11 @@
   function loadRound() {
     var picks = pick();
     if (!picks.length) {
-      message(Object.keys(readSet).length ? esc(T.notReady)
+      $('short').textContent = '';
+      $('score').classList.remove('on');
+      $('done').classList.remove('on');
+      var hasBank = Object.keys(manifest.pages).some(function (page) { return readSet[page]; });
+      message(hasBank ? esc(T.allDone) : Object.keys(readSet).length ? esc(T.notReady)
         : esc(T.readFirst) + '<br><br><a class="btn" href="' + T.home + '">' + esc(T.goRead) + '</a>');
       return;
     }
@@ -176,7 +182,9 @@
       $('big').textContent = right + ' / ' + n;
       var R = 0, W = 0;
       Object.keys(history).forEach(function (k) { R += history[k].right_n; W += history[k].wrong_n; });
-      $('stat').textContent = T.stat(R + W, Math.round(R / (R + W) * 100));
+      var more = pick().length > 0;
+      $('stat').textContent = T.stat(R + W, Math.round(R / (R + W) * 100)) + (more ? '' : ' · ' + T.allDone);
+      $('again').style.display = more ? '' : 'none';
       $('done').classList.add('on');
     }
   }
