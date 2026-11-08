@@ -1,0 +1,69 @@
+{
+ "page": "/thinker-arena/debate.html?d=by-product-goods",
+ "title": "辩论：越想要越得不到的东西，该怎么要？",
+ "page_en": "/thinker-arena/debate.en.html?d=by-product-goods",
+ "title_en": "How do you pursue what pursuit drives away?",
+ "src_hash": "46d7ef25f089",
+ "questions": [
+  {
+   "id": "9b7d183fc6",
+   "question": "在「越想要越得不到的东西该怎么要」这场辩论里，全场最大的共识是什么？",
+   "options": [
+    "能直接做的是动作和条件，不能直接做的是检查结果",
+    "睡眠、幸福这类东西完全无法练习，只能等它自己到来",
+    "只要用力的方向找对了，直接把幸福本身当成目标去追求同样可以奏效",
+    "关键是放下期待，对结果不再抱有任何具体的目标"
+   ],
+   "answer": 0,
+   "explanation": "总结写明共识是「能直接做的是动作和条件，不能直接做的是对结果的检查」。塞利格曼最后也收回一半：练习要直接，打分要放下。「完全无法练习」是被塞利格曼和契克森米哈伊明确反驳的立场。",
+   "question_en": "In the debate on how to pursue things that recede the harder you chase them, what was the strongest consensus?",
+   "options_en": [
+    "You can directly do the actions and set the conditions, but not directly check or score the outcome",
+    "Things like sleep and happiness can't be practiced at all; you can only wait for them",
+    "As long as the effort points the right way, aiming straight at happiness itself works just as well",
+    "The key is to drop expectations and stop holding any specific goal for the outcome"
+   ],
+   "explanation_en": "The summary states the consensus: actions and conditions can be done directly; checking the result cannot. Seligman himself conceded half — practice directly, drop the scoring. \"Can't be practiced at all\" is the position Seligman and Csikszentmihalyi explicitly rejected."
+  },
+  {
+   "id": "fcd740f412",
+   "question": "韦格纳用什么机制解释「越想睡着越睡不着」？",
+   "options": [
+    "用力会持续消耗有限的意志力储备，等意志力耗尽之后人就会出现明显反弹",
+    "越想要越焦虑，焦虑在生理上直接抑制了想要的那种状态",
+    "大脑无法处理否定指令，「别想」在执行中被当成了「去想」",
+    "用力时多了个查岗的监控者，人一累，它找的失败信号就占满脑子"
+   ],
+   "answer": 3,
+   "explanation": "韦格纳的讽刺性加工理论：每次控制心灵都有一个执行者去够目标状态，一个监控者在查是否失败；人累了执行者没力气，监控者照常工作，它找的失败信号就占满了注意。所以他说用力本身不坏，坏在用力时多了一个查岗的。",
+   "question_en": "What mechanism does Wegner offer for why trying to fall asleep keeps you awake?",
+   "options_en": [
+    "Effort steadily drains a limited reserve of willpower, and once it runs out you rebound noticeably",
+    "Wanting it more makes you anxious, and anxiety physiologically suppresses the state you want",
+    "The brain can't process negation, so \"don't think\" gets executed as \"think\"",
+    "Effort adds a background monitor checking for failure; when you're tired, the failure signal it searches for fills your mind"
+   ],
+   "explanation_en": "Wegner's ironic process theory: mental control runs an operator reaching for the goal state and a monitor checking for failure. When you're tired the operator weakens but the monitor keeps working, so the failure signal it hunts for takes over attention. Hence his line: effort isn't the problem — the problem is the inspector that comes with it."
+  },
+  {
+   "id": "efe0091dfe",
+   "question": "弗兰克尔对塞利格曼「每晚写三件好事」的练习做了什么补充？",
+   "options": [
+    "应该改成写三件让自己害怕的事，用矛盾意向直面恐惧",
+    "为感谢那个人去写，和为让自己幸福去写是两回事",
+    "这类刻意练习和躺平等待没有本质区别，都绕不开过度反思",
+    "写的同时应该给自己当天的幸福感打个分，这样才能持续追踪练习有没有效果"
+   ],
+   "answer": 1,
+   "explanation": "弗兰克尔同意方法可以教，但指出为自己幸福而写会让人每晚检查「起效没有」，又回到过度反思；为感谢别人而写，目光落在别人身上，幸福才有空落下。给幸福打分恰恰是辩论里大家都认为要放下的那一步。",
+   "question_en": "What did Frankl add to Seligman's \"write down three good things each night\" exercise?",
+   "options_en": [
+    "It should be replaced with writing three things you fear, using paradoxical intention to face them",
+    "Writing to thank the person differs from writing to make yourself happy; the arrow must point beyond yourself",
+    "Deliberate exercises like this are no different from passively waiting; both fall into hyper-reflection",
+    "You should also score that day's happiness while writing, so you can keep tracking whether it works"
+   ],
+   "explanation_en": "Frankl agrees methods can be taught, but writing for your own happiness makes you check nightly whether it's working — back into hyper-reflection. Writing to thank someone puts your gaze on them, leaving room for happiness to land. Scoring your happiness is exactly the step the debate agreed to drop."
+  }
+ ]
+}

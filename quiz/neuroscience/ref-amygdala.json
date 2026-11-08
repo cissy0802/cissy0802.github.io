@@ -1,0 +1,49 @@
+{
+ "page": "/neuroscience/ref-amygdala.html",
+ "title": "参考 · 杏仁核 — 神经科学",
+ "page_en": "/neuroscience/ref-amygdala.en.html",
+ "title_en": "Reference · Amygdala — Neuroscience",
+ "src_hash": "c5b477417931",
+ "questions": [
+  {
+   "id": "d5f612f123",
+   "question": "这篇参考条目认为，比「恐惧中枢」更准确的杏仁核画像是什么？",
+   "options": [
+    "一个负面情绪的总开关，只在面对威胁和危险时才被激活",
+    "显著性探测器：估一件事跟我关系多大、多不确定，好坏都会点亮",
+    "恐惧中枢：它一旦受损，这个人从此就再也不能感到恐惧了",
+    "一个理性核实中心，负责细看信号并判断威胁是否真实"
+   ],
+   "answer": 1,
+   "explanation": "文章指出杏仁核在惊讶、好奇、兴奋、看到暧昧表情甚至碰到好事时都会活跃，而受损者也并非从此不知恐惧，所以更像「重要性」探测器，正负通吃。慢慢细看、核实威胁的是绕道皮层的「高路」，不是杏仁核本身。",
+   "question_en": "According to this reference entry, what is a more accurate picture of the amygdala than \"the fear center\"?",
+   "options_en": [
+    "A master switch for negative emotion, activated only by threats and danger",
+    "A salience detector gauging how much something matters to me and how uncertain it is, lit up by good things as well as bad",
+    "A fear center: once it's damaged, the person can never feel fear again",
+    "A rational verification center that examines signals and decides whether a threat is real"
+   ],
+   "explanation_en": "The entry notes the amygdala is active during surprise, curiosity, excitement, ambiguous faces and even good news, and that people with amygdala damage don't simply lose fear — so it's better seen as a relevance detector for both positive and negative. Careful checking of threats is the cortical \"high road,\" not the amygdala itself."
+  },
+  {
+   "id": "ec58053c2c",
+   "question": "放进「情绪建构」框架里看，杏仁核在一次情绪的产生中扮演什么角色？",
+   "options": [
+    "发出「这事重要且不确定」的信号、抬高唤醒度，成为什么情绪取决于情境",
+    "只在负面情境下参与，正面情绪完全由其他脑区独立产生",
+    "先判定这是哪一种情绪，再把结果交给下丘脑去执行身体反应",
+    "直接生成恐惧这一成品情绪，皮层只是在事后给这个已经成形的情绪贴上名称"
+   ],
+   "answer": 0,
+   "explanation": "文章说杏仁核提供的不是「恐惧」这个成品，而是一记加急信号：抬高核心情感的唤醒度、给身体预算按下动员键；被抬高的身体状态最终被建构成恐惧、愤怒还是兴奋，是全脑合作的结果，不是杏仁核一个人说了算。",
+   "question_en": "Viewed through the theory of constructed emotion, what role does the amygdala play in producing an emotion?",
+   "options_en": [
+    "It sends an urgent \"this matters and is uncertain\" signal and raises arousal; whether that becomes fear or excitement depends on concepts and context",
+    "It joins in only in negative situations; positive emotions are produced entirely by other regions",
+    "It first decides which emotion this is, then hands the result to the hypothalamus to carry out",
+    "It directly produces the finished emotion of fear, which the cortex merely labels after it has formed"
+   ],
+   "explanation_en": "The entry says the amygdala supplies not a finished \"fear\" but an urgent signal: raising core-affect arousal and mobilizing the body budget. Whether that heightened state is constructed as fear, anger or excitement is a whole-brain outcome, not the amygdala's call alone."
+  }
+ ]
+}

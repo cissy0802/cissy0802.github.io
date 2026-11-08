@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/elon-work-topic24.html",
+ "title": "Elon Musk 专题 · 工作、风险与痛苦 — 他怎么讲自己",
+ "page_en": "/podcast-deepread/elon-work-topic24.en.html",
+ "title_en": "Elon Musk Series · Work, Risk and Pain — How He Tells His Own Story",
+ "src_hash": "a40707fe2280",
+ "questions": [
+  {
+   "id": "567cbd8157",
+   "question": "文章认为 Musk「一分钟高质量思考值一百万美元，所以要干到理智边缘」这套论证，最弱的一环在哪里？",
+   "options": [
+    "只证明了某一小时的价值，没证明第一百个小时仍是「高质量」",
+    "长工时损害健康是确定的，因此这笔杠杆账从根本上就算错了",
+    "Tesla 的营收数字被夸大了，因此杠杆乘出来的结果并不成立",
+    "普通创业者没有那种杠杆，所以长工时对他们来说毫无意义，只是在白白消耗健康"
+   ],
+   "answer": 0,
+   "explanation": "文章说时间账成立靠的是「高质量」三个字，而他从没说多出来的几十个小时是否仍是高质量的；边界一节引 Pencavel 的数据说明工时过长后产出增长放缓，判词是「杠杆的算法成立，多出来的工时却未必都是高质量的」。所以不是杠杆账本身算错了。",
+   "question_en": "Per the piece, where is the weakest link in Musk's argument that a minute of high-quality thinking is worth a million dollars, so he works to the edge of sanity?",
+   "options_en": [
+    "It shows the value of one particular hour, not that each minute is still \"high-quality\" by the hundredth hour",
+    "Long hours certainly harm health, so the leverage calculation is fundamentally wrong",
+    "Tesla's revenue figures are inflated, so the leverage math doesn't hold",
+    "Ordinary founders lack that leverage, so long hours are meaningless for them and just burn their health"
+   ],
+   "explanation_en": "The piece says the time math rests on the words \"high quality,\" and he never claims the extra dozens of hours stay high quality; the limits section cites Pencavel's data on output gains slowing as hours rise. Its verdict: the leverage arithmetic holds, but the extra hours aren't necessarily high quality. So the leverage math itself isn't wrong."
+  },
+  {
+   "id": "89086b0fed",
+   "question": "Musk 说「宁可站在乐观一边而犯错，也不要站在悲观一边而说对」，文章怎么理解他这里的乐观？",
+   "options": [
+    "乐观是他高痛阈带来的天性，并不是刻意做出的选择",
+    "认为乐观的预测在长期来看更准确，所以应当押注乐观",
+    "把乐观当作一种生活质量的选择，而不是对事实的判断",
+    "乐观主要是对外的策略，用来稳住投资人和团队的士气"
+   ],
+   "answer": 2,
+   "explanation": "他给的理由是乐观的人活得更好，文章特意点出：他把乐观当成生活质量的选择，而不是对事实的判断，并说这一点值得记住。他的时间表偏乐观、常常不准，文章还建议拿《预测记录》一篇对照，所以「乐观更准确」不是他的论据。",
+   "question_en": "Musk says he'd rather be optimistic and wrong than pessimistic and right. How does the piece read his optimism?",
+   "options_en": [
+    "As a temperament flowing from his high pain threshold, not a deliberate choice",
+    "As a bet that optimistic forecasts prove more accurate over the long run",
+    "As a choice about quality of life, not a judgment about the facts",
+    "As an outward strategy for steadying investors' and the team's morale"
+   ],
+   "explanation_en": "His reason is that optimists live better, and the piece flags it: he treats optimism as a quality-of-life choice, not an assessment of facts — worth remembering. His timelines run optimistic and often miss (the piece points to its forecasting-record installment), so \"optimism is more accurate\" isn't his argument."
+  },
+  {
+   "id": "e42b5919c5",
+   "question": "文章用佛学的「两支箭」对照 Musk 的「我的痛阈很高」，指出两者的区别是什么？",
+   "options": [
+    "他和佛学其实一样，都主张放下对痛苦的执着，只是各自使用的说法不同",
+    "他的高痛阈相当于修行者只受第一支箭，与佛学方向一致",
+    "佛学要人通过苦修提高痛阈，他则靠早年逆境自然获得",
+    "他硬扛第一支箭、把痛当燃料，佛学是不补射第二支"
+   ],
+   "answer": 3,
+   "explanation": "《箭经》区分身体的痛（第一支箭）和心里的苦（第二支）。文章说 Musk 的高痛阈是硬扛第一支，佛学的办法是别射第二支；他把痛当成燃料，佛学把苦当成可以放下的东西，方向正相反。",
+   "question_en": "The piece compares Musk's \"I have a high pain threshold\" with the Buddhist parable of the two arrows. What difference does it point out?",
+   "options_en": [
+    "He and Buddhism actually agree — both advocate letting go of attachment to pain, just in different words",
+    "His high threshold is equivalent to the practitioner receiving only the first arrow, so the two align",
+    "Buddhism raises pain tolerance through austerities, while he gained it naturally from early hardship",
+    "He grits through the first arrow and uses pain as fuel; the Buddhist approach is not to shoot yourself with the second"
+   ],
+   "explanation_en": "The Sallatha Sutta separates bodily pain (the first arrow) from mental suffering (the second). The piece says Musk's high threshold means enduring the first, while Buddhism's move is not firing the second; he treats pain as fuel, Buddhism treats suffering as something to set down — opposite directions."
+  }
+ ]
+}

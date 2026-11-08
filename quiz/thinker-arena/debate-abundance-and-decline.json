@@ -1,0 +1,69 @@
+{
+ "page": "/thinker-arena/debate.html?d=abundance-and-decline",
+ "title": "辩论：物质极度丰裕后，人会走向衰亡吗？",
+ "page_en": "/thinker-arena/debate.en.html?d=abundance-and-decline",
+ "title_en": "Does material abundance lead to decline?",
+ "src_hash": "cdaa300ad583",
+ "questions": [
+  {
+   "id": "2be6af5fc0",
+   "question": "卡尔霍恩本人如何解读他那个「老鼠乌托邦」的崩溃？",
+   "options": [
+    "食物和水供应过剩，导致代谢疾病在鼠群中大面积蔓延",
+    "缺的是位置：角色被先来者占满，新一代无处成为任何人",
+    "没有天敌和挑战，种群的基因质量在几代之内持续退化",
+    "种群过度拥挤、远远超出了围场设计的容量，长期的应激最终压垮了整个群体"
+   ],
+   "answer": 1,
+   "explanation": "卡尔霍恩强调峰值约两千二百只，远低于三千八百的容量，不缺食物也不缺空间，缺的是「还没有人做过的事」。他认为一个社会先耗尽的是可当的角色，而不是资源，所以把实验读成「富足会毁掉我们」是把结论念反了。",
+   "question_en": "How did Calhoun himself interpret the collapse of his \"mouse utopia\"?",
+   "options_en": [
+    "An oversupply of food and water led to widespread metabolic disease in the colony",
+    "What ran out was positions: every social role was taken by earlier arrivals, leaving the new generation nowhere to become anyone",
+    "With no predators or challenges, the population's genetic quality degraded within a few generations",
+    "Overcrowding far beyond the enclosure's designed capacity created chronic stress that finally broke the colony"
+   ],
+   "explanation_en": "Calhoun stresses the population peaked around 2,200, far below the 3,800 capacity — no shortage of food or space; what was missing was \"things no one had done yet.\" A society runs out of roles before resources, he argues, so reading the experiment as \"abundance destroys us\" gets his conclusion backwards."
+  },
+  {
+   "id": "2c2bc2c822",
+   "question": "凯恩斯解释自己「一周工作十五小时」的预言为何落空，给出的理由是什么？",
+   "options": [
+    "生产率的实际增长远远低于他当年的估计，所以人们身上的经济压力从未真正解除",
+    "资本方持续压低工资，迫使工人不得不靠加班来维持生活",
+    "人天生热爱工作，一旦闲暇过多反而会陷入焦虑和失落",
+    "相对需要只在高人一头时才满足、永不饱和，丰裕给了它更大的赛场"
+   ],
+   "answer": 3,
+   "explanation": "凯恩斯说产出那一半猜得相当准，错的是工时。他早分过两种需要：绝对需要会饱和，相对需要永不知足；丰裕解决了第一种，却为第二种扩大了赛场，所以生产力红利几乎全兑换成了更多东西，没有兑换成时间。",
+   "question_en": "Why, according to Keynes, did his prediction of a fifteen-hour workweek fail?",
+   "options_en": [
+    "Actual productivity growth fell far short of his estimate, so people's economic pressure never really lifted",
+    "Employers kept wages down, forcing workers to rely on overtime to get by",
+    "People inherently love work, and too much leisure leaves them anxious and lost",
+    "Relative needs are satisfied only by being above others and never saturate; abundance just gave them a bigger arena"
+   ],
+   "explanation_en": "Keynes says he got output roughly right and hours badly wrong. He had distinguished absolute needs, which saturate, from relative needs, which never do; abundance met the first but enlarged the arena for the second, so productivity gains were cashed out almost entirely in more stuff rather than more time."
+  },
+  {
+   "id": "6dda3e6ca2",
+   "question": "凯恩斯为什么认为伊壁鸠鲁「替他减去欲望」的办法不能当公共政策？",
+   "options": [
+    "欲望本身就是幸福的来源，减少欲望只会让人变得更不快乐",
+    "欲望是创新的根本动力，大规模减欲会在长期拖累技术进步与整体生活水平",
+    "减欲违背人性，绝大多数人根本做不到，劝了也没有用",
+    "人人同时减欲会让需求坍塌、工厂关门，造成失业"
+   ],
+   "answer": 3,
+   "explanation": "这就是凯恩斯说的节俭悖论：个人美德加总起来可能是集体灾难，省下来的不会变成宁静，会变成失业。他说这是一道分配与制度的题，不是修养题，处方是更短的工时和更好的图书馆、球场。他承认减欲作为个人处方「极好」。",
+   "question_en": "Why does Keynes say Epicurus's remedy of \"subtracting desires\" can't serve as public policy?",
+   "options_en": [
+    "Desire is itself the source of happiness, so reducing it would only make people less happy",
+    "Desire is the root driver of innovation, so mass desire-reduction would drag down technology and living standards over time",
+    "Reducing desire goes against human nature; most people simply can't do it, so urging them is pointless",
+    "If everyone cut desires at once, demand would collapse and factories would close, causing unemployment"
+   ],
+   "explanation_en": "This is Keynes's paradox of thrift: individual virtue summed up can be collective disaster — the savings become unemployment, not tranquility. He frames it as a problem of distribution and institutions, not self-cultivation, prescribing shorter hours and better libraries and playing fields. He calls desire-reduction an excellent personal prescription."
+  }
+ ]
+}

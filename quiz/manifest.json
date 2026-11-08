@@ -239,11 +239,146 @@
     "a79b51ecc6",
     "4ff5dcdc58"
    ]
+  },
+  "/blog-deepread/lil-log-blog13.html": {
+   "t": "Lilian Weng · lilianweng.github.io — 27 万字，她只说过四次「我认为」",
+   "f": "blog-deepread/lil-log-blog13.json",
+   "q": [
+    "9e2bb8a59c",
+    "6cef1dd767",
+    "1916cd169b"
+   ]
+  },
+  "/deep-reading/power-of-now-read982.html": {
+   "t": "《当下的力量》",
+   "f": "deep-reading/power-of-now-read982.json",
+   "q": [
+    "5fb53d4794",
+    "1153ffd0bc",
+    "434deae28b"
+   ]
+  },
+  "/thinker-arena/debate.html?d=by-product-goods": {
+   "t": "辩论：越想要越得不到的东西，该怎么要？",
+   "f": "thinker-arena/debate-by-product-goods.json",
+   "q": [
+    "9b7d183fc6",
+    "fcd740f412",
+    "efe0091dfe"
+   ]
+  },
+  "/deep-reading/outlive-read901.html": {
+   "t": "《超越百岁》— 每日精读 Read 901",
+   "f": "deep-reading/outlive-read901.json",
+   "q": [
+    "daae2a7646",
+    "8022b7b7b3",
+    "8d0a0bebc6"
+   ]
+  },
+  "/thinker-arena/debate.html?d=believe-in-fate": {
+   "t": "辩论：该不该信命？",
+   "f": "thinker-arena/debate-believe-in-fate.json",
+   "q": [
+    "e244fe003f",
+    "b90bfbba12",
+    "6fd50ffa99"
+   ]
+  },
+  "/buddhism/chan-day4.html": {
+   "t": "佛经详解：禅宗经典 — Day 4",
+   "f": "buddhism/chan-day4.json",
+   "q": [
+    "7261649d98",
+    "928802d79c",
+    "1630dbf957"
+   ]
+  },
+  "/novel-deepread/dream-red-chamber-novel4.html": {
+   "t": "红楼梦 — 小说精读 No.4",
+   "f": "novel-deepread/dream-red-chamber-novel4.json",
+   "q": [
+    "acd884e7eb",
+    "3a4614b714",
+    "51e98ab22c"
+   ]
+  },
+  "/leadership/delegation-day13.html": {
+   "t": "领导力 Day 13：授权与放手 — 从微管理到信任的档位",
+   "f": "leadership/delegation-day13.json",
+   "q": [
+    "f212c867af",
+    "db8b94b463",
+    "69826a86d1"
+   ]
+  },
+  "/deep-research/recursive-self-improvement-deep.html": {
+   "t": "递归自我改进走到哪一步了?「AI 改进 AI」的分层体检(深入版) — BigCat Deep Research",
+   "f": "deep-research/recursive-self-improvement-deep.json",
+   "q": [
+    "edf73fd549",
+    "a2c15b4e4f",
+    "4721c79e06"
+   ]
+  },
+  "/neuroscience/ref-amygdala.html": {
+   "t": "参考 · 杏仁核 — 神经科学",
+   "f": "neuroscience/ref-amygdala.json",
+   "q": [
+    "d5f612f123",
+    "ec58053c2c"
+   ]
+  },
+  "/meta-knowledge/evolutionary-biology-day4.html": {
+   "t": "元知识详解：进化生物学 — Day 4",
+   "f": "meta-knowledge/evolutionary-biology-day4.json",
+   "q": [
+    "bb0fbeeba5",
+    "5bc8d3710b",
+    "9335da9b04"
+   ]
+  },
+  "/thinker-arena/debate.html?d=abundance-and-decline": {
+   "t": "辩论：物质极度丰裕后，人会走向衰亡吗？",
+   "f": "thinker-arena/debate-abundance-and-decline.json",
+   "q": [
+    "2be6af5fc0",
+    "2c2bc2c822",
+    "6dda3e6ca2"
+   ]
+  },
+  "/podcast-deepread/ethan-evans-career-life-topic8.html": {
+   "t": "Ethan Evans 专题 · 职业选择与人生",
+   "f": "podcast-deepread/ethan-evans-career-life-topic8.json",
+   "q": [
+    "cebca38b3a",
+    "26eb41c47e",
+    "54d11453b4"
+   ]
+  },
+  "/podcast-deepread/elon-work-topic24.html": {
+   "t": "Elon Musk 专题 · 工作、风险与痛苦 — 他怎么讲自己",
+   "f": "podcast-deepread/elon-work-topic24.json",
+   "q": [
+    "567cbd8157",
+    "89086b0fed",
+    "e42b5919c5"
+   ]
+  },
+  "/deep-reading/leadership-bs-read974.html": {
+   "t": "《Leadership BS》",
+   "f": "deep-reading/leadership-bs-read974.json",
+   "q": [
+    "d9b417df46",
+    "e1719d12ec",
+    "f5985cbac4"
+   ]
   }
  },
  "aliases": {
   "/deep-research/choosing-a-major-plain.html": "/deep-research/choosing-a-major-deep.html",
   "/deep-research/junior-engineers-plain.html": "/deep-research/junior-engineers-deep.html",
-  "/deep-research/ai-native-plain.html": "/deep-research/ai-native-deep.html"
+  "/deep-research/ai-native-plain.html": "/deep-research/ai-native-deep.html",
+  "/deep-research/recursive-self-improvement-plain.html": "/deep-research/recursive-self-improvement-deep.html"
  }
 }

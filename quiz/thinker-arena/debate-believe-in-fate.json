@@ -1,0 +1,69 @@
+{
+ "page": "/thinker-arena/debate.html?d=believe-in-fate",
+ "title": "辩论：该不该信命？",
+ "page_en": "/thinker-arena/debate.en.html?d=believe-in-fate",
+ "title_en": "Should you believe in fate?",
+ "src_hash": "ab8546e9b228",
+ "questions": [
+  {
+   "id": "e244fe003f",
+   "question": "在「该不该信命」辩论中，荀子对卜筮的态度是什么？",
+   "options": [
+    "卜筮毫无用处，应当连同那些相关的祭祀之礼一并废除",
+    "当作礼的文饰可以，当成真能求得神意就凶",
+    "卜筮准不准，取决于占卜者本人的德行高低",
+    "卜筮能揭示天意，只是君子不应事事依赖它"
+   ],
+   "answer": 1,
+   "explanation": "荀子说「君子以为文，而百姓以为神。以为文则吉，以为神则凶」：天行有常，与人的吉凶无关，卜筮只是为大事加一层仪式。他同时主张礼不可废，因为人之情需要寄托，所以「连礼一并废除」不对。",
+   "question_en": "In the debate on whether to believe in fate, what is Xunzi's stance on divination?",
+   "options_en": [
+    "Divination is useless and should be abolished along with the related sacrificial rites",
+    "Treating divination as ritual adornment is fine; treating it as truly obtaining the gods' will is ominous",
+    "Whether divination is accurate depends on the diviner's own virtue",
+    "Divination does reveal Heaven's will, but a gentleman shouldn't rely on it for everything"
+   ],
+   "explanation_en": "Xunzi: \"The gentleman regards it as ornament; the common people regard it as spirit-work. As ornament it is auspicious; as spirit-work, ominous.\" Heaven runs on constant patterns unrelated to human fortune; divination only adds ceremony to big decisions. He also insists the rites must not be abandoned because human feeling needs somewhere to rest, so \"abolish the rites\" is wrong."
+  },
+  {
+   "id": "b90bfbba12",
+   "question": "波伏娃给爱比克泰德的「控制二分法」加了哪一栏？",
+   "options": [
+    "「改得动但很贵」，多数被叫作命的事落在这里",
+    "「生来注定」——承认有些事确实由出身预先决定",
+    "「暂时不由我」——先忍耐，等待时机成熟再行动",
+    "「由别人决定」——把这类事的责任明确归到施加压迫的那一方"
+   ],
+   "answer": 0,
+   "explanation": "波伏娃指出「这不由我」常被有权改变的人拿来推卸，于是加了第三栏：改得动但很贵。它被「由我/不由我」两栏一挤就消失了；而一旦有价，就可以攒、借、合伙、分期。爱比克泰德接受了这一栏，并说真正的功夫是估价。",
+   "question_en": "What column did Beauvoir add to Epictetus's dichotomy of control?",
+   "options_en": [
+    "\"Changeable but expensive\" — where most things called fate actually belong",
+    "\"Fixed at birth\" — admitting some things really are predetermined by origin",
+    "\"Not up to me yet\" — endure and wait until the time is right to act",
+    "\"Decided by others\" — assigning responsibility for these squarely to the oppressor"
+   ],
+   "explanation_en": "Beauvoir notes that \"this isn't up to me\" is often used by people who could change things to dodge them, so she adds a third column: changeable but costly. It vanishes when squeezed between \"up to me\" and \"not up to me\"; yet once something has a price, you can save, borrow, pool or pay in installments. Epictetus accepts it and says the real skill is pricing."
+  },
+  {
+   "id": "6fd50ffa99",
+   "question": "塔勒布收尾时给想去算命的人留了两把尺，是哪两把？",
+   "options": [
+    "只找历史命中率最高的那位大师，并请另外几位分别算过之后再交叉验证结果",
+    "小事可以参考预测，大事则反着预测去做以对冲风险",
+    "撤不回的决定不让不担后果的人参与，并事先写下带日期的预测",
+    "认定算命本质上是骗局，任何情况下都拒绝为它付钱"
+   ],
+   "answer": 2,
+   "explanation": "塔勒布的第一把尺是可逆性：结婚、离职、押首付这类撤不回的决定，不让不担后果的人参与；第二把是记录：写在备忘录里，半年后对，因为心里的账会自动删掉不准的。他明确说花两百块听人说话是消费，并不全盘禁止。",
+   "question_en": "Taleb closes by offering two yardsticks to anyone tempted to consult a fortune-teller. What are they?",
+   "options_en": [
+    "Only use the master with the best track record, and have several others do readings to cross-check the results",
+    "Follow predictions on small matters, and do the opposite on big ones to hedge",
+    "Never let someone who bears no consequences into an irreversible decision, and write down dated, specific predictions to check later",
+    "Treat fortune-telling as a scam and refuse to pay for it under any circumstances"
+   ],
+   "explanation_en": "Taleb's first yardstick is reversibility: marriage, quitting, a down payment — irreversible calls get no input from people with no skin in the game. The second is a record: write predictions in your notes and check in six months, because memory quietly deletes the misses. He explicitly says paying to be listened to is just consumption, not something to ban."
+  }
+ ]
+}

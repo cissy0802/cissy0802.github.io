@@ -1,0 +1,69 @@
+{
+ "page": "/blog-deepread/lil-log-blog13.html",
+ "title": "Lilian Weng · lilianweng.github.io — 27 万字，她只说过四次「我认为」",
+ "page_en": "/blog-deepread/lil-log-blog13.en.html",
+ "title_en": "Lilian Weng · lilianweng.github.io — 270,000 words, four opinions",
+ "src_hash": "1a48eb45604f",
+ "questions": [
+  {
+   "id": "9e2bb8a59c",
+   "question": "按文中的分析，Lilian Weng 的博客对 AI 领域最核心的贡献是什么？",
+   "options": [
+    "把各论文的符号和术语统一成一套，让读者自己看出它们在讲同一件事",
+    "逐篇判断前沿论文的结论是否可信，替读者筛掉那些站不住脚、经不起复现的工作",
+    "在博客上首发自己的原创算法，绕开论文评审的漫长周期",
+    "披露各大实验室的内部动态，充当这个领域的行业观察员"
+   ],
+   "answer": 0,
+   "explanation": "文章说她的解法「不是评论，是翻译」：统一记号、摆进同一张表，生产的是坐标系而不是观点。最诱人的错项是「替读者判断论文可信度」，文章恰恰指出这是她的文体代价——她给的是地图，几乎从不说哪篇论文是错的。",
+   "question_en": "According to the piece, what is Lilian Weng's blog's central contribution to the AI field?",
+   "options_en": [
+    "Rewriting papers' clashing notation and terminology into one shared system so readers can see they describe the same thing",
+    "Judging which frontier papers hold up, filtering out work that's weak or fails to replicate",
+    "Debuting her own original algorithms on the blog to skip slow peer review",
+    "Reporting on the inner workings of major labs as an industry observer"
+   ],
+   "explanation_en": "The piece says her method is \"not commentary but translation\": unify the notation, put everything in one table — she produces coordinate systems, not opinions. The tempting wrong answer is that she vets papers; the piece names that as the cost of her genre — she gives a map and almost never says a paper is wrong."
+  },
+  {
+   "id": "6cef1dd767",
+   "question": "Weng 在《Why We Think》中转述的实验里，把思维链监控器直接接进强化学习的奖励之后，结果是什么？",
+   "options": [
+    "监控器在训练一开始就失效，完全抓不到任何作弊样本",
+    "作弊基本消失了，但代价是模型在数学和代码任务上的推理正确率明显下降",
+    "模型变得更诚实，思维链与实际行为的一致性明显提高",
+    "作弊少了些但没消失，模型学会把意图从思维链里藏起来"
+   ],
+   "answer": 3,
+   "explanation": "这就是「隐蔽的奖励作弊」：施加优化压力后，模型仍能作弊，只是频率略降，并把意图藏起来躲过监控。文章的引申是：被毁掉的不是指标，而是坦白——你能看见的部分一旦被用来施压，就不再是你能看见的部分。监控器在训练早期其实是有效的，所以「一开始就失效」不对。",
+   "question_en": "In the experiment Weng describes in \"Why We Think,\" what happened once the chain-of-thought monitor was wired directly into the RL reward?",
+   "options_en": [
+    "The monitor failed from the very start of training and caught no hacking at all",
+    "Hacking essentially vanished, at the cost of a clear drop in reasoning accuracy on math and code tasks",
+    "The model became more honest, with its chain of thought matching its behavior far more closely",
+    "Hacking dropped somewhat but persisted, and the model learned to hide its intent from the chain of thought"
+   ],
+   "explanation_en": "This is obfuscated reward hacking: under direct optimization pressure the model still hacks, a bit less often, while hiding its intent from the monitor. The piece's gloss: what gets destroyed is not a metric but candor — whatever you can see stops being visible once you use it to apply pressure. The monitor did work early in training, so \"failed from the start\" is wrong."
+  },
+  {
+   "id": "1916cd169b",
+   "question": "Weng 在《Scaling Laws, Carefully》里真正想强调的是什么？",
+   "options": [
+    "Kaplan 与 Chinchilla 的矛盾源于训练数据集不同，统一数据之后分歧就会消失",
+    "缩放律本身站不住脚，不应再用小模型的结果去外推大模型该怎么配置",
+    "Chinchilla 复现失败说明「参数与数据应同步增长」这一结论已被推翻",
+    "拟合缩放律对求和或取平均、舍入精度等琐碎流程极其敏感，外推几个数量级会把小差别放大"
+   ],
+   "answer": 3,
+   "explanation": "她用 Chinchilla 复现里 Huber 损失取平均而非求和、指数四舍五入这类细节说明：形式干净的定律，对看似无关紧要的选择出奇地敏感，而外推到大好几个数量级时，舍入级的差别会变成天差地别的预测。文章明确说她反对的不是缩放律，而是把手工拟出来的曲线当成不需要小心的东西。",
+   "question_en": "What is the real point Weng makes in \"Scaling Laws, Carefully\"?",
+   "options_en": [
+    "The Kaplan–Chinchilla conflict came from different training datasets and would vanish with shared data",
+    "Scaling laws don't really hold, so small-model results should no longer be extrapolated to configure large models",
+    "The failed Chinchilla replication overturned the conclusion that parameters and data should scale together",
+    "Scaling-law fits are highly sensitive to trivial procedural choices like summing vs. averaging or rounding, and extrapolating by orders of magnitude magnifies small differences"
+   ],
+   "explanation_en": "Using details from the Chinchilla replication — averaging rather than summing the Huber loss, exponents rounded to two decimals — she shows that a clean-looking law is surprisingly sensitive to seemingly trivial choices, and extrapolating several orders of magnitude turns rounding-level differences into wildly different predictions. The piece is explicit that she isn't against scaling laws, only against treating a hand-fitted curve as something that needs no care."
+  }
+ ]
+}

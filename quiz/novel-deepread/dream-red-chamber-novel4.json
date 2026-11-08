@@ -1,0 +1,69 @@
+{
+ "page": "/novel-deepread/dream-red-chamber-novel4.html",
+ "title": "红楼梦 — 小说精读 No.4",
+ "page_en": "/novel-deepread/dream-red-chamber-novel4.en.html",
+ "title_en": "Dream of the Red Chamber — Novels, Deep-Read No.4",
+ "src_hash": "f8871e01dae8",
+ "questions": [
+  {
+   "id": "acd884e7eb",
+   "question": "文章认为第五回把所有人的结局提前公开，起了什么作用？",
+   "options": [
+    "用隐晦的画和判词制造一连串谜题，吸引读者一路猜测每个人物的最终结局",
+    "借梦境交代贾府的家族来历，为后文铺设人物关系网",
+    "把读者的问题从「会怎样」换成「怎么会这样」，让日常有了重量",
+    "暗示结局并非注定，只要宝玉记住警示就能避开灾祸"
+   ],
+   "answer": 2,
+   "explanation": "文章说这是中国小说史上最大胆的赌博：主动扔掉「接下来会怎样」的动力，换来「怎么会这样」，读者以近乎神的位置看书，一顿家常饭因此有了倒计时。开头也明说这本书没打算跟你玩悬念，所以「制造谜题让人猜」不是它的用意。",
+   "question_en": "According to the piece, what does revealing everyone's fate early, in Chapter 5, accomplish?",
+   "options_en": [
+    "It plants a string of cryptic pictures and verses that keep readers guessing every character's final fate",
+    "It uses the dream to lay out the family's origins and set up the web of relationships",
+    "It shifts the reader's question from \"what will happen\" to \"how could it come to this,\" giving everyday scenes a countdown-like weight",
+    "It hints that fate isn't fixed — Baoyu could avoid disaster if he heeded the warning"
+   ],
+   "explanation_en": "The piece calls it the boldest gamble in Chinese fiction: abandoning \"what next\" in exchange for \"how could this happen,\" putting the reader in a near-godlike position so that an ordinary family meal carries a countdown. The opening states outright that the book isn't playing the suspense game, so riddles for guessing aren't the point."
+  },
+  {
+   "id": "3a4614b714",
+   "question": "文章把贾府衰败的「引信」归结为什么？",
+   "options": [
+    "宝玉不肯走仕途经济之路，家族后继无人而逐渐中落",
+    "进项全系于皇恩与元春，体面全靠花钱，两者同时到期",
+    "王熙凤私放高利贷败露，直接触发了朝廷的查抄",
+    "政敌趁元妃去世之后联手构陷，朝中的外部势力最终把贾府彻底打垮"
+   ],
+   "answer": 1,
+   "explanation": "文章说引信不是某一件事，而是一个结构：这座府一直在借将来的钱过今天的日子，而它的将来就是元春的一条命。高利贷等旧账是抄家时被一并翻出来的，并非根源；探春那句「自杀自灭」也说明它是从里面撕开的，不是被外敌打倒的。",
+   "question_en": "What does the piece identify as the \"fuse\" of the Jia family's collapse?",
+   "options_en": [
+    "Baoyu refused an official career, leaving the family without a successor so it slowly declined",
+    "All income depended on imperial favor via Yuanchun, all prestige on constant spending, and both came due at once",
+    "Wang Xifeng's secret moneylending was exposed and directly triggered the confiscation",
+    "Political enemies conspired after the consort's death, and outside forces at court finally brought the house down"
+   ],
+   "explanation_en": "The piece says the fuse wasn't any single event but a structure: the household kept borrowing against the future to live today, and its future was Yuanchun's life. Old misdeeds like the moneylending surfaced during the raid; they weren't the root. Tanchun's line about destroying themselves from within shows it was torn apart from inside, not toppled by enemies."
+  },
+  {
+   "id": "51e98ab22c",
+   "question": "文章如何解读「抄检大观园」？",
+   "options": [
+    "清查主要针对探春这些主子小姐，丫鬟们只是顺带被殃及",
+    "香囊主人始终没查出，被撵的全是没靠山的人，掏空家族的男人毫发无伤",
+    "抄检查实了园中的私情，证明大观园的管理确实存在严重漏洞",
+    "王夫人纯属道德洁癖发作，园中有私情的风声其实对这些姑娘的婚事不构成任何实际风险"
+   ],
+   "answer": 1,
+   "explanation": "文章指出一场清洗需要的不是证据，是一个可以开始的理由；代价落在晴雯、入画这些成本最低的人身上，贾赦、贾珍、贾琏一根头发也没动。它也特意承认王夫人的恐惧真实且致命——风声传出去，几十个女孩子的婚事全完，所以「不构成风险」不对。",
+   "question_en": "How does the piece read the search of the Grand View Garden?",
+   "options_en": [
+    "The search mainly targeted the young mistresses like Tanchun; the maids were collateral damage",
+    "The pouch's owner was never found, those expelled were all the ones with no backing, and the men who drained the family went untouched",
+    "The search confirmed the affairs in the garden and proved its management had serious gaps",
+    "Lady Wang was simply prudish; rumors of romance posed no real risk to the girls' marriage prospects"
+   ],
+   "explanation_en": "The piece notes a purge needs not evidence but a reason to begin; the cost fell on Qingwen and Ruhua, the cheapest people to remove, while Jia She, Jia Zhen and Jia Lian lost not a hair. It also stresses that Lady Wang's fear was real — leaked rumors could wreck dozens of girls' marriages — so \"no real risk\" is wrong."
+  }
+ ]
+}

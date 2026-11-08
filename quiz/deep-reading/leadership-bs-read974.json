@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/leadership-bs-read974.html",
+ "title": "《Leadership BS》",
+ "page_en": "/deep-reading/leadership-bs-read974.en.html",
+ "title_en": "Dying for a Paycheck",
+ "src_hash": "a0fbb774cb98",
+ "questions": [
+  {
+   "id": "d9b417df46",
+   "question": "菲佛认为领导力产业失败的根子在哪里？",
+   "options": [
+    "领导力根本无法后天培养，只能靠一开始的选拔",
+    "培训内容陈旧，没有跟上新一代员工的价值观变化",
+    "美德本身并不重要，真正有效的领导力其实全靠权术",
+    "把领导者「应该是什么样」当成了「实际是什么样」来推销"
+   ],
+   "answer": 3,
+   "explanation": "菲佛说谦逊、真诚、讲真话、可信、关怀这五种美德是规范性的愿望，不是描述性的事实；拿应然冒充实然，就无从改变现实。文章也专门澄清误读：他说的是美德说教无效，不是美德本身没有价值。",
+   "question_en": "Where does Pfeffer locate the root failure of the leadership industry?",
+   "options_en": [
+    "Leadership simply can't be developed, so only initial selection matters",
+    "Its training content is dated and hasn't kept up with younger employees' values",
+    "Virtues don't really matter; effective leadership is entirely about power plays",
+    "It sells what leaders should be as if it were what leaders actually are"
+   ],
+   "explanation_en": "Pfeffer says the five virtues — modesty, authenticity, truthfulness, trustworthiness, caring for others — are normative aspirations, not descriptions; passing off ought as is makes reality impossible to change. The piece also clears up a misreading: he says preaching virtue is ineffective, not that virtue itself is worthless."
+  },
+  {
+   "id": "e1719d12ec",
+   "question": "关于信任，菲佛建议读者换成怎样的判断方式？",
+   "options": [
+    "不问人值不值得信，问守信对他是否有利、背信代价多大",
+    "先通过长期共事观察对方的品格，确认此人可靠之后再把重要的事情托付给他",
+    "默认任何领导都不值得信任，对一切承诺一律保持怀疑",
+    "要求对方当众作出承诺，用公开的声誉压力来约束他守信"
+   ],
+   "answer": 0,
+   "explanation": "菲佛观察到背信常见且很少受罚，因为背信常常对背信者有利、被背弃的一方又缺乏报复能力。所以他把信任从对人品的期待变成对激励结构的判断——这是谈判与合同的思路。观察品格恰恰是他认为不可靠的旧办法。",
+   "question_en": "On trust, what way of judging does Pfeffer urge readers to adopt instead?",
+   "options_en": [
+    "Don't ask whether the person is trustworthy; ask whether keeping faith pays for them in this situation and what breaking it would cost",
+    "Observe their character over long collaboration first, and entrust important matters only once they prove reliable",
+    "Assume no leader can be trusted and treat every promise with suspicion",
+    "Have them commit publicly so reputational pressure holds them to their word"
+   ],
+   "explanation_en": "Pfeffer observes that betrayal is common and rarely punished, because it often benefits the betrayer and the betrayed lack the means to retaliate. So he turns trust from an expectation about character into a judgment about incentives — the logic of negotiation and contracts. Watching character is precisely the old approach he considers unreliable."
+  },
+  {
+   "id": "f5985cbac4",
+   "question": "文章在批评部分引用 Grijalva 等人 2015 年的元分析，说明了菲佛关于自恋的论点哪里需要收窄？",
+   "options": [
+    "自恋与能否成为领导毫无关系，菲佛引用的研究有误",
+    "自恋与领导有效性显著正相关，这一结果完全证实了菲佛在书中的结论",
+    "自恋与「被选上」正相关，与「当好领导」基本无关，呈倒 U 形",
+    "自恋只在女性领导者身上表现出负面效果，男性则不受影响"
+   ],
+   "answer": 2,
+   "explanation": "元分析发现自恋有助于被选上，但与干得好基本无关，适度最好、过度有害——「被选上」和「干得好」是两回事，菲佛对「被选上」的描述成立，但不能推到「干得好」。性别差异是另一条批评（鲁德曼的反弹效应），讲的是自我推销对女性的回报更低。",
+   "question_en": "In its critique section, the piece cites Grijalva et al.'s 2015 meta-analysis. How does it narrow Pfeffer's claim about narcissism?",
+   "options_en": [
+    "Narcissism has nothing to do with becoming a leader, so Pfeffer's sources were wrong",
+    "Narcissism is strongly linked to leadership effectiveness, a result that fully confirms Pfeffer's conclusion",
+    "Narcissism predicts being chosen as leader but is essentially unrelated to leading well, in an inverted-U shape",
+    "Narcissism harms only female leaders, while male leaders are unaffected"
+   ],
+   "explanation_en": "The meta-analysis found narcissism helps people get selected but has little to do with performing well — moderate is best, too much hurts. Getting picked and doing well are different things: Pfeffer is right about the first but can't extend it to the second. The gender point is a separate critique (Rudman's backlash effect) about self-promotion paying off less for women."
+  }
+ ]
+}

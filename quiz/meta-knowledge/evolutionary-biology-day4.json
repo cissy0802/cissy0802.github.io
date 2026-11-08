@@ -1,0 +1,69 @@
+{
+ "page": "/meta-knowledge/evolutionary-biology-day4.html",
+ "title": "元知识详解：进化生物学 — Day 4",
+ "page_en": "/meta-knowledge/evolutionary-biology-day4.en.html",
+ "title_en": "Meta-Knowledge Deep Dive: Evolutionary Biology — Day 4",
+ "src_hash": "78fc12620508",
+ "questions": [
+  {
+   "id": "bb0fbeeba5",
+   "question": "文章说「所有进化产物都带着前身的补丁感」，这是由自然选择的哪个特点决定的？",
+   "options": [
+    "选择压力越强，新性状就被设计得越精巧、越合理",
+    "选择只能从已有的变异里挑，不会凭空创造出新性状",
+    "生物会针对环境压力主动产生它所需要的那种变异",
+    "选择总是推动种群朝更复杂、更完善的方向单调前进"
+   ],
+   "answer": 1,
+   "explanation": "选择作用于既有的表型差异，只能在手头的变异里挑，所以产物总带着前身的痕迹。「生物主动产生所需变异」是常见误解；文章用 Grant 地雀的喙形在干旱和暴雨年份被来回选择说明，进化也不是单调向上。",
+   "question_en": "The piece says every product of evolution carries a \"patched-together\" feel inherited from its predecessors. Which feature of natural selection explains this?",
+   "options_en": [
+    "The stronger the selection pressure, the more elegantly and rationally new traits are designed",
+    "Selection can only pick among existing variation; it never creates new traits from scratch",
+    "Organisms actively generate the specific variations their environment demands",
+    "Selection always drives populations monotonically toward greater complexity and perfection"
+   ],
+   "explanation_en": "Selection acts on existing phenotypic differences and can only choose from what's on hand, so its products bear traces of their forebears. \"Organisms generate what they need\" is a common misconception; and the Grants' finches, whose beaks were selected back and forth between drought and flood years, show evolution isn't monotonic progress either."
+  },
+  {
+   "id": "5bc8d3710b",
+   "question": "按 Zahavi 的累赘原理，孔雀拖着有损生存的大尾巴为什么反而是可靠的信号？",
+   "options": [
+    "它昂贵到适应度差的个体负担不起，扛着它活下来就证明了健康",
+    "尾巴越华丽越吸引异性，这与信号是否可靠其实没有关系",
+    "大尾巴在同性竞争中能直接威慑对手，减少了打斗带来的伤亡",
+    "雌性偏好与尾长基因相互关联形成正反馈，于是尾巴越长就越受雌性欢迎、代代加码"
+   ],
+   "answer": 0,
+   "explanation": "累赘原理的要点是：信号只有昂贵到弱者无法伪造才可靠——孔雀拖着大尾还能躲过捕食者，证明基因和健康过硬。偏好与性状互相推高是 Fisher 的「失控选择」，那是另一条机制，讲的是性状如何走向极端，而不是信号为何可信。",
+   "question_en": "Under Zahavi's handicap principle, why is a peacock's survival-impairing tail a reliable signal?",
+   "options_en": [
+    "Because it's so costly that less-fit males can't afford it, surviving while carrying it proves good health",
+    "Showier tails attract more mates, which has nothing to do with whether the signal is reliable",
+    "A big tail directly intimidates rivals in male–male competition, reducing injuries from fights",
+    "Female preference and tail-length genes link into a feedback loop, so longer tails win ever more favor generation after generation"
+   ],
+   "explanation_en": "The handicap principle says a signal is reliable only if it's too costly for weaker individuals to fake — a peacock that drags a huge tail and still evades predators is advertising sound genes and health. Preference and trait ratcheting each other up is Fisher's runaway selection, a separate mechanism explaining how traits go extreme, not why signals are honest."
+  },
+  {
+   "id": "9335da9b04",
+   "question": "间断平衡论如何解释化石记录里「长期静止、突然变形」的模式？",
+   "options": [
+    "大种群中的稳定化选择最终被突破，整个种群在短时间内同步发生转变",
+    "新物种多在地理隔离的小边缘种群中快速形成，过渡期太短，化石层分辨率抓不到",
+    "大种群内部持续累积的突变达到某个阈值之后，会一次性集中爆发",
+    "环境剧变直接诱发大量定向突变，物种因而在一夜之间改头换面"
+   ],
+   "answer": 1,
+   "explanation": "文章说大种群里的稳定化选择和基因流会稀释边缘变异，所以变化不在那里发生；真正的物种形成多在隔离的小边缘种群，靠漂变、局部选择和创立者效应迅速固定，再迁回取代旧种群。过渡期短于地质分辨率，于是呈现「间断」。",
+   "question_en": "How does punctuated equilibrium explain the fossil pattern of long stasis followed by abrupt change?",
+   "options_en": [
+    "Stabilizing selection in a large population eventually breaks down and the whole population transforms in sync",
+    "New species mostly form quickly in small, geographically isolated peripheral populations, with transitions too brief for fossil layers to capture",
+    "Mutations accumulate within a large population until they cross a threshold and erupt all at once",
+    "Drastic environmental change directly induces many directed mutations, remaking the species almost overnight"
+   ],
+   "explanation_en": "The piece says stabilizing selection and gene flow in large populations dilute peripheral variants, so change doesn't happen there. Speciation mostly occurs in small isolated peripheral groups, where drift, local selection and founder effects fix new traits fast; the new species then spreads back and replaces the parent stock. The transition is shorter than geological resolution, so it looks like a break."
+  }
+ ]
+}

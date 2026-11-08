@@ -1,0 +1,69 @@
+{
+ "page": "/leadership/delegation-day13.html",
+ "title": "领导力 Day 13：授权与放手 — 从微管理到信任的档位",
+ "page_en": "/leadership/delegation-day13.en.html",
+ "title_en": "Leadership Day 13: Delegation — From Micromanaging to Trust Levels",
+ "src_hash": "4b81e1812893",
+ "questions": [
+  {
+   "id": "f212c867af",
+   "question": "同一个设计 API 契约的任务要交给一个新人和一个资深工程师，按「信任阶梯」该怎么做？",
+   "options": [
+    "为了公平起见，对两人统一用第 4 档共定，避免让任何一方觉得被区别对待",
+    "按「人×任务」给不同档位，并把「这件事我在第几档」说出口",
+    "对新人全程盯紧每个 endpoint，对资深则只在上线前做一次最终审批",
+    "对两人都先给第 7 档全权以示信任，出了问题再把决定权收回"
+   ],
+   "answer": 1,
+   "explanation": "文章说授权档位是「人 × 任务」的函数，不是你的固定性格：新人在第 7 档会淹死，资深在第 1 档会窒息。关键一句是把档位讲出口，避免「我以为你会先问我」。对新人全程盯每个细节实际是第 1 档，文章示范给新人的是第 4 档。",
+   "question_en": "The same task — designing a new service's API contract — goes to a new hire and a senior engineer. What does the Trust Ladder say to do?",
+   "options_en": [
+    "For fairness, put both at level 4 (decide together) so neither feels treated differently",
+    "Set different levels by person × task — e.g., co-decide with the new hire, full authority for the senior — and say aloud which level you're at",
+    "Watch every endpoint the new hire writes, and give the senior one final approval before launch",
+    "Give both full authority at level 7 to show trust, and take decisions back if something goes wrong"
+   ],
+   "explanation_en": "The piece says delegation level is a function of person × task, not your fixed personality: a newcomer at level 7 drowns, a senior at level 1 suffocates. The key move is to name the level out loud to avoid \"I thought you'd check with me first.\" Watching every detail is effectively level 1; the piece's example puts the new hire at level 4."
+  },
+  {
+   "id": "db8b94b463",
+   "question": "你 review 下属的实现：方案能跑、完全可逆，只是不是你会选的写法。文章建议怎么处理？",
+   "options": [
+    "直接在 PR 里改成更优的写法并附上原因，让他通过对比学习",
+    "要求他按你的方案重写，因为 80% 的解法在长期会积累技术债",
+    "不接管，说明这是风格不是对错、由他来定，约好两周后看监控数据",
+    "当下先放行，但把这次记录下来，留到绩效评估时一并反馈"
+   ],
+   "answer": 2,
+   "explanation": "先问「这可逆吗？三周后改回来贵吗」——不贵就放手。接管会让他学到「反正老板最后会改成他的样子」，下次干脆不动脑。文章明说 80% 的解法加他的成长，常常胜过 100% 的解法加他的依赖；留到绩效时清算则是会杀死授权文化的秋后算账。",
+   "question_en": "Reviewing a report's implementation, you find it works and is fully reversible — just not how you'd write it. What does the piece recommend?",
+   "options_en": [
+    "Rewrite it in the PR the better way with your reasons, so they learn by comparison",
+    "Have them redo it your way, since an 80% solution piles up tech debt over time",
+    "Don't take over; say it's style not correctness, let them decide, and agree to check the monitoring in two weeks",
+    "Let it through for now but note it down to raise at performance review time"
+   ],
+   "explanation_en": "First ask whether it's reversible and whether undoing it in three weeks would be costly — if not, let go. Taking over teaches them the boss will rewrite it anyway, so they stop thinking. The piece says an 80% solution plus their growth often beats a 100% solution plus their dependence; saving it for the review is the after-the-fact reckoning that kills delegation culture."
+  },
+  {
+   "id": "69826a86d1",
+   "question": "关于「把猴子还回去」的教练式提问，文章认为在什么情况下反而应该直接告诉答案？",
+   "options": [
+    "对方是资深工程师，只是想让你为他的决定背书的时候",
+    "问题涉及架构选型这类影响较大的技术决策的时候",
+    "任务紧急、涉及安全，或者对方确实没有相关背景的时候",
+    "你确信自己的答案明显比对方能想到的更好的时候"
+   ],
+   "answer": 2,
+   "explanation": "文章的边界条款：火烧眉毛、涉及安全，或新人没方向时一直反问，那是折磨不是 coaching。资深的人只想要背书，恰恰是该把决定还给他的情形；而「我的答案更好」正是「建议怪兽」的 IC 惯性，架构选型本身就是文中示范要反问的例子。",
+   "question_en": "On giving the monkey back through coaching questions, when does the piece say you should simply tell them the answer instead?",
+   "options_en": [
+    "When they're a senior engineer who just wants you to endorse their decision",
+    "When the question is a high-impact technical decision like an architecture choice",
+    "When the task is urgent, involves safety, or the person genuinely lacks the background",
+    "When you're confident your answer is clearly better than what they'd come up with"
+   ],
+   "explanation_en": "The piece's boundary: when things are on fire, safety is involved, or a newcomer has no bearings, endless counter-questions are torture, not coaching. A senior who just wants your blessing is exactly when to hand the decision back; \"my answer is better\" is the advice-monster IC habit; and an architecture choice is the very example the piece uses for asking first."
+  }
+ ]
+}

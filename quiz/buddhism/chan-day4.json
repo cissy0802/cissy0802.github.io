@@ -1,0 +1,69 @@
+{
+ "page": "/buddhism/chan-day4.html",
+ "title": "佛经详解：禅宗经典 — Day 4",
+ "page_en": "/buddhism/chan-day4.en.html",
+ "title_en": "Buddhist Sutra Deep Dive: Chan Classics — Day 4",
+ "src_hash": "9505b0e1e3eb",
+ "questions": [
+  {
+   "id": "7261649d98",
+   "question": "《坛经》所说的「无念」指的是什么？",
+   "options": [
+    "念头照样生起，只是不黏上去、不跟着走",
+    "停止一切概念思考，让心维持一片空白",
+    "只起善念、不起恶念，让心保持清净",
+    "通过长期坐禅把念头压住，达到一念不生"
+   ],
+   "answer": 0,
+   "explanation": "文章强调无念是「于念而离念」，说的是心的一种运作方式，不是要维持的空白状态。把它当成「什么都不想」去练，练出来的是昏沉；把念头压住则正是慧能所说的「法缚」。",
+   "question_en": "What does \"no-thought\" mean in the Platform Sutra?",
+   "options_en": [
+    "Thoughts still arise; you just don't cling to them or follow them",
+    "Halting all conceptual thinking so the mind stays blank",
+    "Giving rise only to good thoughts and never bad ones, keeping the mind pure",
+    "Suppressing thoughts through long sitting until not a single one arises"
+   ],
+   "explanation_en": "The piece stresses that no-thought means being amid thoughts without being caught by them — a way the mind operates, not a blank state to maintain. Practicing it as \"thinking nothing\" produces dullness, and pressing thoughts down is exactly the bondage Huineng warns against."
+  },
+  {
+   "id": "928802d79c",
+   "question": "《永嘉证道歌》「无明实性即佛性」一句，文章认为它颠覆在哪里？",
+   "options": [
+    "必须先充分经历无明，它是通往佛性不可跳过的阶段",
+    "佛性被无明遮蔽，所以要时时勤拂拭、不使惹尘埃",
+    "不必先除尽无明再证佛性，当下识取无明的本性就是佛性",
+    "无明与佛性本是两样东西，须靠修行一步步转化"
+   ],
+   "answer": 2,
+   "explanation": "文章说这是禅最颠覆的洞见：修行不是从此岸到彼岸，而是识取此岸本身就是彼岸。「时时勤拂拭」是神秀的偈，属于把心当镜子擦的思路，正是这句话要翻过去的。",
+   "question_en": "Yongjia's Song of Enlightenment says \"the true nature of ignorance is Buddha-nature.\" What makes this line radical, per the piece?",
+   "options_en": [
+    "Ignorance must be fully lived through first, as an unskippable stage on the way to Buddha-nature",
+    "Buddha-nature is covered by ignorance, so you must keep wiping it so no dust collects",
+    "You needn't eliminate ignorance before realizing Buddha-nature; recognizing ignorance's own nature right now is it",
+    "Ignorance and Buddha-nature are two separate things, converted step by step through practice"
+   ],
+   "explanation_en": "The piece calls it Chan's most subversive insight: practice isn't crossing from this shore to the other; it's recognizing this shore as the other. \"Keep wiping the mirror\" is Shenxiu's verse — the polish-the-mirror approach this line overturns."
+  },
+  {
+   "id": "1630dbf957",
+   "question": "大慧宗杲为什么烧掉师父圜悟克勤《碧岩录》的书版？",
+   "options": [
+    "书中的评唱有错，偏离了雪窦重显颂古的原意",
+    "圜悟的评唱太精彩，学人执着文字，反而成了新的缠缚",
+    "他主张回归经论研读，反对一切祖师语录",
+    "朝廷下令禁止公案集流通，他只得奉命销毁"
+   ],
+   "answer": 1,
+   "explanation": "文章说学人执着公案文字反成新缠缚，大慧便焚版、改倡专参一个「无」字的看话禅——「连最珍贵的也敢烧，这本身就是禅」。他并不是回到经论，而是更彻底地离开文字。",
+   "question_en": "Why did Dahui Zonggao burn the printing blocks of his teacher Yuanwu's Blue Cliff Record?",
+   "options_en": [
+    "The commentary contained errors that strayed from Xuedou's original verses",
+    "Yuanwu's commentary was so brilliant that students clung to the words, which became a new bondage",
+    "He wanted a return to sutra study and rejected all records of the masters' sayings",
+    "The court banned kōan collections and he had to destroy the blocks on orders"
+   ],
+   "explanation_en": "The piece says students grew attached to the kōan texts, turning them into a fresh entanglement, so Dahui burned the blocks and promoted huatou practice — investigating the single word \"Wu.\" \"Daring to burn even the most precious thing is itself Chan.\" He wasn't returning to scripture but leaving words behind even more thoroughly."
+  }
+ ]
+}

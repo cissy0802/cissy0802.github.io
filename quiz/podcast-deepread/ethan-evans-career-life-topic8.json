@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/ethan-evans-career-life-topic8.html",
+ "title": "Ethan Evans 专题 · 职业选择与人生",
+ "page_en": "/podcast-deepread/ethan-evans-career-life-topic8.en.html",
+ "title_en": "Ethan Evans Series · Career Choices and Life",
+ "src_hash": "2859c4f015b9",
+ "questions": [
+  {
+   "id": "cebca38b3a",
+   "question": "Ethan Evans 怎么看转行难？",
+   "options": [
+    "转行难主要是热情不够明显，所以关键是先拿到新领域的权威证书来证明自己的决心",
+    "应当瞄准比现在薪资更高的职位，用开价来显示自己的信心和价值",
+    "招聘方最怕你干不了，所以要降低对方感到的风险，或找愿冒险的人",
+    "转行者只要讲清可迁移技能，就完全没有必要接受降级或减薪"
+   ],
+   "answer": 2,
+   "explanation": "Evans 站在招聘经理一侧：对方只关心你能不能干、靠不靠谱、合不合群，转行让第一个问题的风险陡增。由此推出内部转岗、找老上司、降一档、去小公司四条路——降级恰恰是他认可的办法之一，相当于把自己打折卖出去。",
+   "question_en": "How does Ethan Evans explain why career switches are hard?",
+   "options_en": [
+    "It's mostly that your passion isn't obvious, so the key is earning a recognized certificate in the new field to prove commitment",
+    "Aim for a higher-paying role than your current one, since your ask signals confidence and worth",
+    "Hiring managers mainly fear you can't do the job, so you must either lower their perceived risk or find someone willing to take more risk",
+    "If you explain your transferable skills well, there's no need to accept a step down or a pay cut"
+   ],
+   "explanation_en": "Evans takes the hiring manager's side: they only ask whether you can do it, whether you'll be reliable, and whether you'll fit, and a switch spikes the risk on the first. Hence his four paths — internal transfer, a former boss, a level down, or a smaller company. Taking a step back is one of the moves he endorses: selling a proven person at a discount."
+  },
+  {
+   "id": "26eb41c47e",
+   "question": "对 Evans「跟着好上司在普通公司，比跟错上司在最好的公司走得更远」这个说法，文章的「边界」判断是什么？",
+   "options": [
+    "有据但说宽了：管的是产出和留任，没比较谁更影响长期薪酬",
+    "这只是 Evans 的个人经验之谈，找不到任何实证研究支持",
+    "研究显示公司品牌对职业发展的影响其实大于直属上司",
+    "研究完全证实了这一点：跟着好上司的员工长期薪酬和职级都明显更高"
+   ],
+   "answer": 0,
+   "explanation": "文章判为「有据，但说宽了」：Lazear 等发现把最差一成上司换成最好一成，产出提升超过给九人团队加一个人，员工也更少离职；但证据管的是产出和留任，没比较上司与公司对长期薪酬和职业高度的影响。读者补充还提醒好上司可能入职后就调走。",
+   "question_en": "How does the piece's \"limits\" section judge Evans's claim that a good manager at an ordinary company beats the wrong manager at the best company?",
+   "options_en": [
+    "Supported but too broad: the evidence covers output and retention, not which matters more for long-run pay",
+    "It's just Evans's personal experience, with no empirical research behind it at all",
+    "Research shows the company's brand matters more for career growth than one's direct manager",
+    "Research fully confirms it: people with good bosses end up with markedly higher long-run pay and rank"
+   ],
+   "explanation_en": "The piece rates it \"supported, but stated too broadly\": Lazear and colleagues found swapping a bottom-decile boss for a top-decile one lifts output more than adding a worker to a nine-person team, and reduces quitting. But the evidence covers output and retention, not boss versus company on long-run pay or career height. Readers also noted a good boss may move on after you join."
+  },
+  {
+   "id": "54d11453b4",
+   "question": "在 BigDeal 访谈里，Evans 说倦怠主要来自什么？",
+   "options": [
+    "上司缺乏支持，长期得不到认可与反馈",
+    "看不见方向、失去愿景，而不主要是工作辛苦",
+    "长期超长工时把身体透支到了极限",
+    "薪酬和投入不成比例，觉得付出没有回报"
+   ],
+   "answer": 1,
+   "explanation": "他的原话是倦怠「和辛苦关系不大」，虽然人确实会累到身体垮掉，但更多是因为看不见方向。他以 Amazon 为例：自己像个小 CEO，清楚在建 Prime Video，所以累而不倦。",
+   "question_en": "In the BigDeal interview, what does Evans say burnout mostly comes from?",
+   "options_en": [
+    "A manager who gives no support, recognition or feedback",
+    "Losing sight of direction — losing your vision — more than hard work itself",
+    "Years of extreme hours pushing the body to its limits",
+    "Pay out of proportion to effort, leaving you feeling unrewarded"
+   ],
+   "explanation_en": "His words: burnout turns out to be less about hard work — though you can overwork to physical exhaustion — and more about losing your vision. He cites Amazon: he felt like a small CEO who knew he was building Prime Video, so he was tired but not burned out."
+  }
+ ]
+}

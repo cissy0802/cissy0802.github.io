@@ -1,0 +1,69 @@
+{
+ "page": "/deep-research/recursive-self-improvement-deep.html",
+ "title": "递归自我改进走到哪一步了?「AI 改进 AI」的分层体检(深入版) — BigCat Deep Research",
+ "page_en": "/deep-research/recursive-self-improvement-deep.en.html",
+ "title_en": "How Far Has Recursive Self-Improvement Actually Gone? A Layer-by-Layer Inspection of \"AI Improving AI\" (Deep Dive) — BigCat Deep Research",
+ "src_hash": "9bd658e54f86",
+ "questions": [
+  {
+   "id": "edf73fd549",
+   "question": "这份深度研究用什么标准判断一个系统是否在「递归自我改进」？",
+   "options": [
+    "AI 撰写了实验室绝大部分代码，使整体研发速度远快于没有 AI 的情形",
+    "AI 能够自行修改自己的 prompt、工具和 agent 脚手架代码",
+    "有证据显示它让下一轮改进本身变得更快或更大，而且这种效应逐轮累积",
+    "AI 在某个公开基准上的表现超过了人类工程师搭建的基线"
+   ],
+   "answer": 2,
+   "explanation": "文章区分「改进了产出」和「改进了改进能力」，只有「改进了改进能力」且逐轮累积才算。它援引 Anthropic 自己的 RSP：即便 AI 让进步速度远快于反事实，只要速率恒定或放缓就不算越过阈值——看的是加速度，不是被 AI 托住的高速度。能改自己的脚手架只是 L1 的活动，本身不等于递归。",
+   "question_en": "What criterion does this deep-research report use to decide whether a system is undergoing recursive self-improvement?",
+   "options_en": [
+    "AI writes most of a lab's code, making R&D far faster than it would be without AI",
+    "AI can modify its own prompts, tools and agent scaffolding code",
+    "Evidence that it makes the next round of improvement itself faster or larger, with the effect compounding round over round",
+    "AI beats a human-engineered baseline on some public benchmark"
+   ],
+   "explanation_en": "The report separates improving outputs from improving the ability to improve; only the latter, compounding across rounds, counts. It cites Anthropic's own RSP: even if AI makes progress far faster than the counterfactual, a constant or slowing rate doesn't cross the threshold — what matters is acceleration, not AI-sustained speed. Editing one's own scaffolding is just L1 activity, not recursion by itself."
+  },
+  {
+   "id": "a2c15b4e4f",
+   "question": "根据 Darwin Gödel Machine 的消融实验，它的性能增益主要来自哪里？",
+   "options": [
+    "人类专家对每一轮改写提案的人工筛选",
+    "开放式的档案搜索，而不是改进者本身在变强",
+    "基础模型在自我改进过程中被持续地微调更新",
+    "自我修改让每一轮改进来得越来越快、越来越大"
+   ],
+   "answer": 1,
+   "explanation": "消融显示去掉自改后分数仍保留大半，去掉开放式档案则在 Polyglot 上原地不动；基础模型全程冻结。文章总结 L1 的第一个共同形状就是「增益来自搜索，不来自改进者变强」。",
+   "question_en": "According to the Darwin Gödel Machine's ablations, where did most of its performance gains come from?",
+   "options_en": [
+    "Human experts manually screening each round's rewrite proposals",
+    "The open-ended archive search, not the improver itself getting better",
+    "The base model being continually fine-tuned during self-improvement",
+    "Self-modification making each round of improvement faster and larger"
+   ],
+   "explanation_en": "The ablations show that removing self-modification keeps most of the gain, while removing the open-ended archive leaves Polyglot flat; the base model stays frozen throughout. The report's first common pattern for L1 is that gains come from search, not from the improver getting stronger."
+  },
+  {
+   "id": "4721c79e06",
+   "question": "关于 L2「模型自己出题、自己打分」这一类自我改进，文章汇总的证据显示什么？",
+   "options": [
+    "DeepSeek-R1 的推理跃进证明了纯自打分能持续推高能力",
+    "自打分的进步稳定可持续，只是速度慢于有硬裁判的方法",
+    "模型规模越大，能持续自我改进的轮数就越多，呈现出复利",
+    "没有新信息时通常两三轮就饱和，缺少外部裁判时还会退化甚至崩溃"
+   ],
+   "answer": 3,
+   "explanation": "Song 等发现无新信息时迭代自改「两三轮就饱和，与模型能力无关」；规模变大的是单轮可收割的余量，不是轮数。R-Zero 的伪标签准确率逐轮下降，SRT 甚至突然崩溃。R1 的奖励来自硬裁判而非自打分，文章特意把这个混淆挪开。",
+   "question_en": "For L2 self-improvement — models setting and grading their own problems — what does the report's evidence show?",
+   "options_en": [
+    "DeepSeek-R1's reasoning leap proves pure self-grading can keep pushing capability up",
+    "Self-grading gains are steady and sustainable, just slower than methods with hard verifiers",
+    "Bigger models can sustain more rounds of self-improvement, producing a compounding effect",
+    "Without new information it usually saturates within two or three rounds, and without an external judge it degrades or even collapses"
+   ],
+   "explanation_en": "Song et al. found iterative self-improvement without new information \"saturates after two or three rounds, regardless of the model's capacity\"; scale grows the harvestable margin per round, not the number of rounds. R-Zero's pseudo-label accuracy fell each round, and SRT collapsed outright. R1's rewards came from hard verifiers, not self-grading — a confusion the report explicitly clears up."
+  }
+ ]
+}

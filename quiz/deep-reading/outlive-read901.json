@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/outlive-read901.html",
+ "title": "《超越百岁》— 每日精读 Read 901",
+ "page_en": "/deep-reading/outlive-read901.en.html",
+ "title_en": "Outlive — Deep Read 901",
+ "src_hash": "84322da15275",
+ "questions": [
+  {
+   "id": "daae2a7646",
+   "question": "阿蒂亚主张「从终点倒推」安排训练，理由是什么？",
+   "options": [
+    "运动带来的长寿益处，只有在四十五岁之前开始才会出现",
+    "晚年训练受伤的风险太高，因此应当尽早完成大部分训练量",
+    "老年人的肌肉基本已经无法再增长，所以力量只能趁年轻的时候一次性练够",
+    "体能会随年龄折旧，中年就得练到远超眼下够用的水平"
+   ],
+   "answer": 3,
+   "explanation": "VO₂max 每十年掉约 10%，肌肉也逐年流失。想在 85 岁还能爬山，就得在 45、55 岁把体能练到远超「现在够用」，经得起几十年折旧。文章没有说老年练不出效果或有年龄门槛，只是说越晚越透支。",
+   "question_en": "Why does Attia insist on \"back-casting\" your training from the end point?",
+   "options_en": [
+    "The longevity benefits of exercise appear only if you start before age 45",
+    "Training in old age carries too much injury risk, so most training should be done early",
+    "Older adults basically can no longer grow muscle, so strength has to be built in one go while young",
+    "Fitness depreciates steadily with age, so in midlife you must build far above what you need now to have enough left late in life"
+   ],
+   "explanation_en": "VO₂max falls about 10% per decade and muscle declines yearly. To hike at 85 you need, at 45 or 55, fitness far beyond what's \"enough\" today so it survives decades of depreciation. The piece doesn't say late training fails or that there's an age cutoff — only that waiting means you're already overdrawn."
+  },
+  {
+   "id": "8022b7b7b3",
+   "question": "《超越百岁》为什么把代谢功能障碍当作对付「四骑士」的重中之重？",
+   "options": [
+    "代谢障碍是四类病里唯一已经有特效药可以根治的一种",
+    "胰岛素抵抗是另外三类慢病共同的上游，且早在确诊前就已出现",
+    "代谢指标检测最便宜，普通人在家就能自己完成监测",
+    "2 型糖尿病是四骑士里致死人数最多的一类，所以在预防上的优先级自然最高"
+   ],
+   "answer": 1,
+   "explanation": "书中把代谢障碍称为四骑士脚下的共同地基：胰岛素抵抗在确诊前十几年就悄悄推高心脏病、癌症和阿尔茨海默的风险，管住它等于同时给四扇门上锁。头号杀手其实是心血管病；代谢病的特殊在于「基本可防、甚至可逆」，而不是有特效药。",
+   "question_en": "Why does Outlive treat metabolic dysfunction as the top priority among the Four Horsemen?",
+   "options_en": [
+    "It is the only one of the four with a drug that can cure it outright",
+    "Insulin resistance is the shared upstream that raises the risk of the other three, and it appears a decade or more before diabetes is diagnosed",
+    "Metabolic markers are the cheapest to test, so ordinary people can monitor them at home",
+    "Type 2 diabetes kills more people than any other horseman, so it naturally gets top priority for prevention"
+   ],
+   "explanation_en": "The book calls metabolic dysfunction the common foundation under all four: insulin resistance quietly raises the risk of heart disease, cancer and Alzheimer's for years before diagnosis, so guarding it locks all four doors at once. The top killer is actually cardiovascular disease; what's special about metabolic disease is that it's largely preventable and even reversible, not that a cure-all drug exists."
+  },
+  {
+   "id": "8d0a0bebc6",
+   "question": "阿蒂亚把「情绪健康」放在全书最后一章，文章认为这一章传达的核心意思是什么？",
+   "options": [
+    "持续的心理治疗能显著提升 VO₂max 等体能指标，是隐藏的训练手段",
+    "活得更久却活在痛苦与疏离里，前面的身体指标就都失去了意义",
+    "情绪压力是心血管病最大的可控风险因素，所以必须比运动和饮食更优先地管理",
+    "把自律做到极致本身就会带来情绪上的稳定和满足感"
+   ],
+   "answer": 1,
+   "explanation": "阿蒂亚写自己长期的愤怒和童年创伤，结论是：如果这一块塌了，练得再好也只是给一个不快乐的人续命——这才是长寿真正的目的，其余只是手段。「极致自律带来满足」恰好相反，批评部分还指出优化上瘾会滑向新的焦虑。",
+   "question_en": "Attia puts emotional health in the book's final chapter. What does the piece say that chapter is really saying?",
+   "options_en": [
+    "Ongoing therapy markedly improves VO₂max and other fitness markers, making it a hidden training tool",
+    "Living longer in misery and isolation makes every physical metric meaningless; emotional health and relationships are the actual goal",
+    "Emotional stress is the biggest modifiable risk factor for heart disease, so it must come before exercise and diet",
+    "Pushing self-discipline to the extreme brings emotional stability and contentment on its own"
+   ],
+   "explanation_en": "Attia writes about his long-running anger and childhood trauma, concluding that if this collapses, all the training just extends the life of an unhappy person — this is longevity's real purpose; everything else is means. \"Extreme discipline brings contentment\" is the reverse; the critique section even warns that optimization can tip into new anxiety."
+  }
+ ]
+}
