@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/48-laws-of-power-read971.html",
+ "title": "《权力的 48 条法则》",
+ "page_en": "/deep-reading/48-laws-of-power-read971.en.html",
+ "title_en": "The 48 Laws of Power",
+ "src_hash": "d1a8d896e073",
+ "questions": [
+  {
+   "id": "41180f0fde",
+   "question": "批评者说《权力的 48 条法则》这套体系几乎无法证伪。文章给出的理由是什么？",
+   "options": [
+    "每条法则都附有「反转」：成功说明法则有效，失败说明该用反转，什么结果都能解释",
+    "格林从未公开他的研究方法和数据来源，其他学者因此无法重复他的工作",
+    "48 条法则数量太少，覆盖不了现实中的各种情境，所以无从检验对错",
+    "书中的史例大多发生在几百上千年前，资料早已散佚，今天已经无法逐一核实它们的真伪"
+   ],
+   "answer": 0,
+   "explanation": "文章说这是幸存者偏差之外更麻烦的一点：每条法则都带「反转」，成功了归功于法则，失败了说这次该用反转，一个能解释所有结果的体系，等于什么也没有预测。史例不准确是另一条批评，不是不可证伪的原因。",
+   "question_en": "Critics say the system in The 48 Laws of Power is nearly unfalsifiable. What reason does the article give?",
+   "options_en": [
+    "Every law has a 'reversal': success proves the law, failure means the reversal applied, so any outcome fits",
+    "Greene never disclosed his methods or sources, so other scholars can't replicate his work",
+    "Forty-eight laws are too few to cover real situations, so there's no way to test them",
+    "Most examples are centuries old with sources lost, so they can't be checked one by one today"
+   ],
+   "explanation_en": "Beyond survivorship bias, the article says, every law comes with a reversal: success is credited to the law, failure to the reversal. A system that explains every outcome predicts nothing. Inaccurate history is a separate criticism, not why it's unfalsifiable."
+  },
+  {
+   "id": "533cb2e6fc",
+   "question": "文章拿阿克塞尔罗德的重复囚徒困境锦标赛与格林的法则对照。这项研究对 48 条构成了什么挑战？",
+   "options": [
+    "在重复博弈里胜出的「以牙还牙」恰恰意图清晰、不隐藏，格林的法则更像为一次性博弈而写",
+    "锦标赛证明了合作永远优于背叛，所以格林所说的权力游戏在现实中其实并不存在",
+    "锦标赛表明程序比人更理性，人类的权力斗争无法用博弈论模型来加以研究",
+    "以牙还牙靠的是不可预测性取胜，说明格林第 17 条「让人捉摸不透」才是唯一有效的法则"
+   ],
+   "answer": 0,
+   "explanation": "以牙还牙先合作、再照搬对手上一步：善意、会报复、会原谅、意图清晰。在反复打交道的环境里，赢家正是不隐藏意图的那一个。这与第 3 条「隐藏意图」相反，也呼应文章说的书与现代合作型组织水土不服。",
+   "question_en": "The article contrasts Greene's laws with Axelrod's repeated prisoner's dilemma tournament. What challenge does that research pose to the 48 laws?",
+   "options_en": [
+    "The winning tit-for-tat strategy was transparent about its intentions; Greene's laws suit one-shot games",
+    "It proved cooperation always beats defection, so the power game Greene describes doesn't exist in reality",
+    "It showed programs are more rational than people, so human power struggles can't be modeled by game theory",
+    "Tit for tat won through unpredictability, showing Law 17, 'keep others in suspense,' is the only one that works"
+   ],
+   "explanation_en": "Tit for tat cooperates first, then copies the opponent's last move: nice, retaliatory, forgiving and clear. In repeated interaction, the winner is precisely the one that doesn't hide its intentions, the opposite of Law 3, and it echoes the article's point that the book fits poorly in modern cooperative organizations."
+  },
+  {
+   "id": "c02a105413",
+   "question": "格林用科西拉与科林斯同时向雅典求援的故事说明第 13 条。雅典选了科西拉，格林从中得出的教训是什么？",
+   "options": [
+    "求人时要诉诸对方的利益，而不是诉诸恩情、道义或感激",
+    "求人时要搬出古老的盟约与传统，用历史和道义约束对方",
+    "求人时要显得比对方弱小无害，让对方放下防备主动帮你",
+    "求人时要先用一次出人意料的诚实与慷慨，解除对方的戒心"
+   ],
+   "answer": 0,
+   "explanation": "科林斯讲旧日恩情与道义，科西拉直接摊牌：我们有仅次于你们的海军，结盟对你们有利，落入敌手对你们有害。格林的结论是人们对「你欠我的」反应冷淡，对「这对你有好处」反应热烈。用诚实解除戒心是第 12 条，装弱是第 21 条。",
+   "question_en": "Greene illustrates Law 13 with Corcyra and Corinth both asking Athens for help. Athens chose Corcyra. What lesson does Greene draw?",
+   "options_en": [
+    "When asking for help, appeal to the other side's self-interest, not to gratitude, mercy or obligation",
+    "When asking for help, invoke old treaties and traditions to bind them by history and duty",
+    "When asking for help, appear weaker and harmless so they drop their guard and help you",
+    "When asking for help, first disarm them with a surprising act of honesty and generosity"
+   ],
+   "explanation_en": "Corinth invoked past favors and morality; Corcyra laid it out: we have the second-largest navy in Greece, alliance helps you, and letting it fall to your enemies hurts you. Greene's point: people shrug at 'you owe me' and respond eagerly to 'this benefits you.' Disarming honesty is Law 12; playing dumb is Law 21."
+  }
+ ]
+}

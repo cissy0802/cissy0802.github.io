@@ -1,0 +1,69 @@
+{
+ "page": "/health-longevity/posture-training-plan.html",
+ "title": "体态训练计划 — 4 周 · 每天 10 分钟",
+ "page_en": "/health-longevity/posture-training-plan.en.html",
+ "title_en": "Posture Training Plan — 4 Weeks · 10 Minutes a Day",
+ "src_hash": "2bb950ab85d5",
+ "questions": [
+  {
+   "id": "ee4c891371",
+   "question": "按这份体态训练计划的观点，让人下午腰酸脖子紧的主要原因，以及收益最大的对策是什么？",
+   "options": [
+    "连续几小时不换姿势；提高换姿势的频率，比任何单个动作都更有用",
+    "肌肉力量不够；每次训练都练到力竭，才能撑住一整天",
+    "坐姿不够标准；找到并始终保持那个唯一正确的坐姿，就能防住疼痛",
+    "头前倾角度太大；白天戴矫姿带，把角度长期固定回来"
+   ],
+   "answer": 0,
+   "explanation": "文章说每天 10 分钟改变的是肌肉耐力，但真正让人难受的是中间那几小时没换过的姿势，「最好的姿势是下一个姿势」。它明确否认存在唯一正确坐姿，也指出矫姿带没有证据显示能带来持久改变。",
+   "question_en": "According to this posture plan, what mainly causes the afternoon back and neck ache, and what is the highest-payoff fix?",
+   "options_en": [
+    "Hours without changing position; moving more often beats any single exercise",
+    "Weak muscles; train to failure every session so they can hold you up all day",
+    "A non-standard sitting posture; find the one correct posture and hold it all day",
+    "Too much forward head tilt; wear a posture brace during the day to reset the angle"
+   ],
+   "explanation_en": "The plan says the daily ten minutes build endurance, but what actually hurts is the three straight hours in one position: the best posture is your next posture. It explicitly rejects the idea of one correct sitting posture and says braces have no reliable evidence of lasting change."
+  },
+  {
+   "id": "0c226bc59b",
+   "question": "一个人侧面照显示明显头前倾、圆肩，但从不颈肩痛。按这份计划引用的证据，应该怎么看？",
+   "options": [
+    "只要每天拉伸胸前和髋前，把活动度松开，角度自然会回正，不必做强化训练",
+    "侧面照是最客观的指标，应每周拍照对比，以角度是否改善作为计划成败标准",
+    "现在不痛只是还没到时候，应尽早把角度矫正到那个标准位置，以免将来真正出问题",
+    "体态角度与颈肩痛的关联很弱且不一致；练是为了提高耐受，不是修正某个角度"
+   ],
+   "answer": 3,
+   "explanation": "文章把「驼背圆肩不矫正迟早出问题」列为误区：研究里头前倾、圆肩与颈肩痛的关联很弱且不一致。只拉伸不强化也是误区，而侧面照被称为最不重要的指标，和疼痛改善常常不同步。",
+   "question_en": "Someone's side-view photo shows a clear forward head and rounded shoulders, yet they never have neck or shoulder pain. Based on the evidence the plan cites, how should this be read?",
+   "options_en": [
+    "Daily stretching of the chest and hip flexors will restore the angle on its own, so strengthening is unnecessary",
+    "Side photos are the most objective metric; compare them weekly and judge the plan by whether the angle improves",
+    "No pain yet just means it hasn't caught up; correct the angle to standard early to prevent future trouble",
+    "Posture angles relate only weakly and inconsistently to pain; training builds tolerance, not a target angle"
+   ],
+   "explanation_en": "The plan lists 'uncorrected slouching will eventually cause problems' as a myth: forward head and rounded shoulders correlate weakly and inconsistently with pain. Stretching without strengthening is another myth, and side photos are called the least important metric, often out of sync with pain."
+  },
+  {
+   "id": "7187e2eee5",
+   "question": "这份计划的核心训练日选了死虫、侧桥、鸟狗，而不是卷腹。它给出的理由是什么？",
+   "options": [
+    "这三个动作能同时燃烧腹部脂肪，比卷腹更快练出平坦的小腹和腰线",
+    "卷腹只练耐力，而这三个动作练爆发力，爆发力才决定体态能保持多久",
+    "日常撑住坐姿靠的是抗伸展、抗侧屈、抗旋转的耐力，核心的工作是「别动」",
+    "卷腹容易拉伤颈椎，这三个动作只是更安全的替代品，其实练的是同一种腹肌力量"
+   ],
+   "answer": 2,
+   "explanation": "文章写道这三个动作练的都是「抗动」：死虫抗伸展、侧桥抗侧屈、鸟狗抗旋转，日常坐姿撑住身体靠的正是这种耐力，而不是卷腹的力量。它没有把它们当作卷腹的安全替代，也没谈燃脂。",
+   "question_en": "The plan's core day uses dead bugs, side planks and bird dogs rather than crunches. What reason does it give?",
+   "options_en": [
+    "These three burn belly fat at the same time, giving a flatter stomach faster than crunches do",
+    "Crunches only build endurance, while these build explosive power, which is what determines how long posture holds",
+    "Holding a seated posture relies on anti-extension, anti-lateral-flexion and anti-rotation endurance; the core's job is to resist movement",
+    "Crunches strain the neck, so these three are just safer substitutes that train the same abdominal strength"
+   ],
+   "explanation_en": "The plan says all three train resisting motion: dead bugs resist extension, side planks resist lateral flexion, bird dogs resist rotation. That endurance, not crunch strength, is what holds you up while sitting. It does not frame them as safer crunches or mention fat burning."
+  }
+ ]
+}

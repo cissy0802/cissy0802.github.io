@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/long-term-memory-topic4.html",
+ "title": "Topic 4 · 长时记忆 — 神经科学",
+ "page_en": "/neuroscience/long-term-memory-topic4.en.html",
+ "title_en": "Topic 4 · Long-Term Memory — Neuroscience",
+ "src_hash": "1a89c7b8fd07",
+ "questions": [
+  {
+   "id": "beb10a7ad1",
+   "question": "按文章，回忆一段往事时，海马起的作用最接近下面哪一种？",
+   "options": [
+    "像一个过滤器：只负责删除不重要的细节，记忆本身统一存在前额叶的同一处",
+    "像一个保险柜：把完整的那一幕原封不动地封存起来，回忆时再整段取出重新播放",
+    "像一块临时硬盘：永久保存所有细节，皮层只负责在回忆时读取并显示出来",
+    "像一份索引：记下哪些分散在各脑区的碎片是一伙的，回忆时召集它们当场重拼"
+   ],
+   "answer": 3,
+   "explanation": "文章说一段经历被拆开分存在不同脑区，没有任何一处存着完整的一幕；海马像订书钉或索引，只别下书签，回忆时顺着书签把碎片召集起来从头拼装，缺了就用相似经验和当下期待去补。海马上的新记忆是临时的，要靠巩固搬进皮层。",
+   "question_en": "According to the article, what role does the hippocampus play when you recall a past event?",
+   "options_en": [
+    "Like a filter: it only deletes unimportant details, while the memory itself sits in one prefrontal location",
+    "Like a safe: it seals the complete scene intact and plays the whole thing back when you remember",
+    "Like a scratch drive: it permanently keeps every detail, and the cortex just displays them on recall",
+    "Like an index: it notes which fragments scattered across brain regions belong together and reassembles them on recall"
+   ],
+   "explanation_en": "The article says an experience is split across regions with no complete scene stored anywhere. The hippocampus acts like a staple or index, tagging pieces that belong together; recall gathers and rebuilds them from scratch, filling gaps with similar experience and current expectations. New hippocampal memories are temporary and must be consolidated into cortex."
+  },
+  {
+   "id": "a79b51ecc6",
+   "question": "研究追踪人们对重大灾难当天的「闪光灯记忆」，几年后发现了什么？",
+   "options": [
+    "细节和自信程度一起下降，人们自己也承认已经记不太清楚了",
+    "因为情绪强烈，细节几年后仍然准确，自信程度也一直很高",
+    "细节已大幅走样，但人们对自己记忆的自信程度几乎纹丝不动",
+    "细节基本准确，但人们反而开始怀疑自己记得不对、缺乏自信"
+   ],
+   "answer": 2,
+   "explanation": "重大事件让人确信自己记得清楚，于是反复讲、反复回忆；每次讲述都是一次再巩固、一次重写，日期地点和身边的人被后来的说法悄悄替换。文章的结论是：记得有多生动、有多确信，和它有多准几乎是两回事。",
+   "question_en": "Studies tracking people's 'flashbulb memories' of a major disaster day found what, years later?",
+   "options_en": [
+    "Details and confidence both declined, and people admitted they no longer remembered well",
+    "Because the emotion was intense, details stayed accurate years later and confidence stayed high",
+    "Details had drifted a lot, yet people's confidence in their memories barely moved",
+    "Details stayed mostly accurate, but people began doubting their memories and lost confidence"
+   ],
+   "explanation_en": "Big events make people sure they remember clearly, so they retell and recall them often; each retelling is a reconsolidation that rewrites details, letting later accounts replace dates, places and companions. The article's conclusion: vividness and confidence have almost nothing to do with accuracy."
+  },
+  {
+   "id": "4ff5dcdc58",
+   "question": "你总把今天的停车位（3 楼 B 区）和昨天的（3 楼 A 区）搞混。按文章，这是海马哪项功能没做好？",
+   "options": [
+    "模式分离：把极相似的经历编码成差得很远的两份",
+    "再巩固：每次回忆时把记忆短暂解封再重新封存",
+    "模式补全：从一个残缺的小线索勾出整段完整记忆",
+    "系统巩固：在睡眠中把记忆从海马慢慢搬进皮层"
+   ],
+   "answer": 0,
+   "explanation": "文章正是用停车位举例：两段极像的经历必须存成两份、别糊成一团，这靠模式分离。模式补全干的是相反的活，从半个线索勾出整体。巩固和再巩固讲的是存储搬家和回忆改写，不是区分相似经历。",
+   "question_en": "You keep confusing today's parking spot (level 3, zone B) with yesterday's (level 3, zone A). Per the article, which hippocampal function is falling short?",
+   "options_en": [
+    "Pattern separation: encoding very similar experiences as far-apart codes",
+    "Reconsolidation: briefly unsealing and re-storing a memory each time it's recalled",
+    "Pattern completion: retrieving a whole memory from a partial cue",
+    "Systems consolidation: moving memories from hippocampus to cortex during sleep"
+   ],
+   "explanation_en": "The article uses exactly this parking example: two near-identical experiences must be stored separately rather than blurred together, which is pattern separation. Pattern completion does the opposite, filling in a whole from a fragment. Consolidation and reconsolidation concern moving and rewriting memories, not telling look-alikes apart."
+  }
+ ]
+}

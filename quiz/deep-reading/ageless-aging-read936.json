@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/ageless-aging-read936.html",
+ "title": "《Ageless Aging》— 好书精读 Read 936",
+ "page_en": "/deep-reading/ageless-aging-read936.en.html",
+ "title_en": "Ageless Aging — Deep Reading Read 936",
+ "src_hash": "440c1adaa579",
+ "questions": [
+  {
+   "id": "2895b367e3",
+   "question": "2002 年妇女健康倡议（WHI）之后，激素治疗处方量骤降，出现了二十年的治疗空白。文章怎样解释这件事？",
+   "options": [
+    "后续研究证明激素治疗能预防痴呆、延长寿命，当年的试验恰好把最大的获益遗漏了",
+    "一项以平均 63 岁、多已绝经十年以上人群为对象的结论，被套到了刚绝经、有症状的女性身上",
+    "WHI 的数据后来被发现存在严重造假，相关论文被撤回，激素治疗的风险其实从未被真正证实",
+    "当年统计方法有误把绝对风险算成了相对风险，修正后激素治疗适合所有更年期女性"
+   ],
+   "answer": 1,
+   "explanation": "后续重估的关键是绝对风险量级与时间窗：受试者平均约 63 岁，多数已绝经十年以上，结论却被用在五十岁、正潮热失眠的女性身上。文章同时强调激素治疗不是长寿药，没有被证明能预防痴呆，也不适合所有人。",
+   "question_en": "After the 2002 Women's Health Initiative, hormone therapy prescriptions collapsed, leaving a twenty-year treatment gap. How does the article explain this?",
+   "options_en": [
+    "Later studies proved hormone therapy prevents dementia and extends life, the biggest benefit the trial missed",
+    "A finding from women averaging 63 and mostly a decade past menopause was applied to recently menopausal women with symptoms",
+    "WHI data were later found to be fabricated and the papers retracted, so the risks were never actually shown",
+    "Faulty statistics turned absolute risk into relative risk; once corrected, hormone therapy suits every menopausal woman"
+   ],
+   "explanation_en": "The reassessment hinged on absolute risk and timing: participants averaged about 63, most over ten years past menopause, yet the conclusion was applied to 50-year-olds with hot flashes and insomnia. The article also stresses hormone therapy is not a longevity drug, isn't proven to prevent dementia and isn't for everyone."
+  },
+  {
+   "id": "526ee575f5",
+   "question": "一位 52 岁女性每天游泳一小时，想借此预防骨质疏松。按文章的说法，她最该补上什么？",
+   "options": [
+    "负重训练、跳跃等冲击性动作和爬楼，因为游泳身体不承重，对骨密度帮助有限",
+    "什么都不用补，游泳是全身运动，只要强度足够，对心肺和骨密度都同样有效",
+    "重点补充钙片和维生素 D，骨密度主要靠营养维持，运动方式影响不大",
+    "改成每天快走一小时，再配合两磅小哑铃做很多次，就能兼顾骨骼和肌肉"
+   ],
+   "answer": 0,
+   "explanation": "文章说骨对拉力与冲击有反应，有效的是负重、跳跃、冲击性动作和爬楼；游泳和骑车对心肺很好，但身体不承重，对骨密度帮助有限。肌肉则要渐进加重，而不是永远拿两磅小哑铃做很多次。",
+   "question_en": "A 52-year-old woman swims an hour a day hoping to prevent osteoporosis. According to the article, what should she add?",
+   "options_en": [
+    "Weight-bearing work, jumping or impact moves and stair climbing, since swimming doesn't load the skeleton",
+    "Nothing; swimming is full-body exercise and, done hard enough, helps bone density as much as the heart",
+    "Mainly calcium and vitamin D, because bone density depends on nutrition and exercise type matters little",
+    "Switch to an hour of brisk walking plus many reps with two-pound dumbbells to cover bone and muscle"
+   ],
+   "explanation_en": "The article says bone responds to pulling forces and impact, so weight-bearing, jumping, impact moves and stairs work; swimming and cycling are great for the heart but don't load the body, so they do little for bone. Muscle needs progressive overload, not endless reps with two-pound weights."
+  },
+  {
+   "id": "514eeb45ae",
+   "question": "文章提到，2018 年一项超大规模家谱分析认为，过去高估了遗传对寿命的作用。主要原因是什么？",
+   "options": [
+    "寿命遗传主要来自母系，旧研究错把父系数据也一并算了进去",
+    "人倾向于和相似的人结婚，夫妻共享的生活条件被误算成了遗传",
+    "现代医学大幅抵消了长寿基因的作用，旧数据已经不再适用",
+    "早期双生子研究的样本量太小，同卵双胞胎的数量不足以得出可靠结论"
+   ],
+   "answer": 1,
+   "explanation": "这是选型婚配（assortative mating）问题：夫妻寿命相近并不是基因，而是共享的生活条件。修正后的遗传度可能低于 10%，方向不变甚至更强，能动的部分比以为的更多。",
+   "question_en": "The article mentions a huge 2018 genealogy analysis concluding that genetics' role in lifespan had been overestimated. What was the main reason?",
+   "options_en": [
+    "Longevity is inherited mainly through the mother, and old studies wrongly mixed in paternal data",
+    "People tend to marry people like themselves, so a couple's shared living conditions were counted as heredity",
+    "Modern medicine has largely cancelled out longevity genes, making the old data obsolete",
+    "Early twin studies had too few identical twins to support firm conclusions"
+   ],
+   "explanation_en": "This is assortative mating: spouses' similar lifespans reflect shared circumstances, not genes. The corrected heritability may be under 10%, which only strengthens the point: more is within your control than you'd think."
+  }
+ ]
+}

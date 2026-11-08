@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/naval-wealth-topic10.html",
+ "title": "Naval 专题 · 致富的机制",
+ "page_en": "/podcast-deepread/naval-wealth-topic10.en.html",
+ "title_en": "Naval Series · The Mechanics of Wealth",
+ "src_hash": "bb7dfd4d9430",
+ "questions": [
+  {
+   "id": "dbf27b5e44",
+   "question": "Naval 给「靠出租时间富不起来」提过两套理由。一个生活极其节俭、每小时收费很高的医生，能驳倒哪一套？",
+   "options": [
+    "两套都驳不倒，因为医生的收入终究有上限，两套理由说的其实是同一件事",
+    "能驳倒「生活水准随收入膨胀」那套，驳不倒「投入产出绑定、角色可替换」那套",
+    "能驳倒「投入产出绑定、角色可替换」那套，驳不倒「生活水准跟着收入膨胀」那套",
+    "两套都能驳倒，因为只要存得下钱，按时间收费同样可以积累起大量财富"
+   ],
+   "answer": 1,
+   "explanation": "文章指出 nav.al 上的理由是结构论证：拿工资意味着投入产出绑定，不干活就没收入，固定角色迟早被替换。对 Rogan 讲的是行为论证：收入涨、开销也涨。两套前提不同，节俭的医生只能驳倒行为论证。",
+   "question_en": "Naval has given two reasons why you won't get rich renting out your time. Which one could a very frugal doctor with a high hourly rate refute?",
+   "options_en": [
+    "Neither, because a doctor's income is capped anyway and the two arguments are really the same point",
+    "The 'lifestyle inflates with income' argument, but not the 'inputs tied to outputs, replaceable role' one",
+    "The 'inputs tied to outputs, replaceable role' argument, but not the 'lifestyle inflates with income' one",
+    "Both, because as long as you save, billing by the hour can still build substantial wealth"
+   ],
+   "explanation_en": "The article notes the nav.al reason is structural: a salary ties inputs to outputs, no work means no income, and fixed roles get replaced. The one given on Rogan is behavioral: spending rises with income. The premises differ, so a frugal doctor only refutes the behavioral one."
+  },
+  {
+   "id": "c82707eba3",
+   "question": "Naval 说在一千倍杠杆下，八成时候判断对的人和九成时候对的人，收入能差几百倍。按文章，这个说法成立的前提是什么？",
+   "options": [
+    "你已经站在杠杆上；没有杠杆，八成和九成的差距就只是一成",
+    "你身处硅谷那样的好生态，失败会被原谅，才敢放大每次判断",
+    "你的判断经过复利积累了很多年，短期内这种差距并不会出现",
+    "你掌握的是教不会的特定知识，否则判断准确率无法稳定在九成"
+   ],
+   "answer": 0,
+   "explanation": "文章特别指出这个数字只是示意、没有出处，而且有一个前提：你已经站在杠杆上。没有杠杆，准确率的小差距就只是小差距。这也是 Rosen 超级明星经济学的逻辑：能服务整个市场时，小差距才会变成巨大收入差。",
+   "question_en": "Naval says that with 1,000x leverage, someone right 80% of the time and someone right 90% of the time can earn hundreds of times apart. Per the article, what does that claim depend on?",
+   "options_en": [
+    "That you're already on leverage; without it, the gap between 80% and 90% is just ten points",
+    "That you're in a good ecosystem like Silicon Valley, where failure is forgiven, so you dare scale each call",
+    "That your judgment has compounded for many years; in the short run the gap doesn't appear",
+    "That you have unteachable specific knowledge, or your accuracy can't stay at 90%"
+   ],
+   "explanation_en": "The article stresses the figure is illustrative and unsourced, with one precondition: you're already on leverage. Without it, a small accuracy gap stays small. It's the same logic as Rosen's superstar economics: only when one person can serve the whole market do small differences become huge income gaps."
+  },
+  {
+   "id": "c131c1338a",
+   "question": "文章认为 Naval 的「特定知识—责任—杠杆」链条里，最弱的是哪一环，为什么？",
+   "options": [
+    "杠杆：福布斯榜数据显示资本并未退场，代码和媒体的杠杆被他说得太宽了",
+    "责任：它只在硅谷那样失败会被原谅的生态里成立，离开那里就很难照做",
+    "特定知识：它被定义为教不会、多半要事后被认出，「不靠运气」在这里要打问号",
+    "股权：它其实是独立的第四个零件，Naval 把它并进责任里，削弱了整台机器"
+   ],
+   "answer": 2,
+   "explanation": "文章说责任和杠杆都能当行动指南，署名、写代码、发东西就行；特定知识却教不会、过了二十出头基本定型，整套方法在关键处变成「先发现你已经是谁」，他只能说跟着好奇心走。文章还明确说股权不是第四个零件。",
+   "question_en": "Which link in Naval's chain of specific knowledge, accountability and leverage does the article call the weakest, and why?",
+   "options_en": [
+    "Leverage: Forbes data show capital never left, so he overstated the leverage of code and media",
+    "Accountability: it only holds in ecosystems like Silicon Valley that forgive failure, so it's hard to follow elsewhere",
+    "Specific knowledge: defined as unteachable and mostly recognized in hindsight, it puts 'without luck' in question",
+    "Equity: it's really a separate fourth part, and folding it into accountability weakens the machine"
+   ],
+   "explanation_en": "The article says accountability and leverage work as instructions: put your name on it, write code, publish. Specific knowledge can't be taught and is largely fixed by your early twenties, so the method turns into 'first discover who you already are,' with only 'follow your curiosity' as guidance. It also says equity is not a fourth component."
+  }
+ ]
+}

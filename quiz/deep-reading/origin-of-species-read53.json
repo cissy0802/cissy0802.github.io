@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/origin-of-species-read53.html",
+ "title": "《物种起源》— 好书精读 Read 53",
+ "page_en": "/deep-reading/origin-of-species-read53.en.html",
+ "title_en": "On the Origin of Species — Deep Reading Read 53",
+ "src_hash": "ab9f6a559cf6",
+ "questions": [
+  {
+   "id": "287bd16026",
+   "question": "《物种起源》的两层主张，在当时的科学界分别受到怎样的对待？",
+   "options": [
+    "两层都被冷落了四十年，直到 1900 年孟德尔被重新发现后，才同时得到科学界承认",
+    "自然选择很快被接受，因为它的四步推理无懈可击；共同由来争议最大，一直要等到后来的化石记录补全",
+    "物种会变、且出自共同祖先，很快被接受；自然选择是主要机制，争议最大，直到 20 世纪才坐实",
+    "两层都在出版后不久被普遍接受，只有宗教界持续反对，科学界内部并无实质分歧"
+   ],
+   "answer": 2,
+   "explanation": "文章强调要分清两层：共同由来靠多学科证据汇聚，当时几乎立刻被接受，是更革命也更快被接受的部分；自然选择逻辑上严密，但缺遗传机制，直到与遗传学合流才被坐实。很多批评打的只是第二层。",
+   "question_en": "How did scientists of the time respond to the two layers of claims in On the Origin of Species?",
+   "options_en": [
+    "Both were ignored for forty years and only accepted together after Mendel was rediscovered in 1900",
+    "Natural selection was accepted quickly because its four-step logic was airtight; common descent stayed contested until fossils filled in",
+    "Change and common descent were accepted quickly; natural selection as the main mechanism stayed contested until the 20th century",
+    "Both were widely accepted soon after publication; only religious critics objected, with no real dispute among scientists"
+   ],
+   "explanation_en": "The article stresses separating the two layers. Common descent rested on converging evidence from many fields and was accepted almost at once. Natural selection was logically tight but lacked a mechanism of heredity, and was only confirmed once it merged with genetics. Many critiques hit only the second layer."
+  },
+  {
+   "id": "9efdaea452",
+   "question": "按文章对达尔文论证的解读，真正压垮「物种分别被创造」说的最硬证据是哪一类？",
+   "options": [
+    "完整的化石序列：一步步记录了每个物种从祖先变来的全部过渡",
+    "生物的精巧：像眼睛、蜂房这类结构，精密到接近数学上的最优设计方案",
+    "生物的「凑合」：同源结构共用一套骨头、痕迹器官留着没用的零件",
+    "人工选择的成果：育种者在几百年里造出了形态迥异的家鸽品种"
+   ],
+   "answer": 2,
+   "explanation": "精巧两边都能解释（设计者做的或选择筛的），凑合只有一边能解释：人手、蝙蝠翼、鲸鳍沿用同一套骨头，痕迹器官像不发音的字母，泄露了来历。文章还指出达尔文自己承认化石记录很不完整。",
+   "question_en": "In the article's reading of Darwin, what kind of evidence most decisively undercuts the idea that species were separately created?",
+   "options_en": [
+    "A complete fossil sequence recording every transition from ancestor to each living species",
+    "How exquisite organisms are: eyes and honeycombs so precise they approach mathematically optimal designs",
+    "How makeshift organisms are: homologous limbs sharing one set of bones, vestigial organs keeping useless parts",
+    "The results of artificial selection: breeders producing wildly different pigeon breeds over centuries"
+   ],
+   "explanation_en": "Exquisite design fits both explanations (a designer or a sieve); makeshift design fits only one. Human hands, bat wings and whale flippers reuse one set of bones, and vestigial organs are like silent letters that betray a word's origin. Darwin himself conceded the fossil record was badly incomplete."
+  },
+  {
+   "id": "7c1a5b7a54",
+   "question": "海岛上常有大量特有的鸟类、昆虫和植物，却几乎没有本土的陆生哺乳类和两栖类。达尔文怎样解释这个模式？",
+   "options": [
+    "哺乳类和两栖类曾在岛上出现，但被更善于竞争的鸟类和昆虫排挤灭绝",
+    "每座岛按自身环境被分别安排了合适的物种，哺乳类不在那份清单之中",
+    "岛屿物种是少数渡海拓殖者的后代，渡不过海的类群就一个也不会有",
+    "海岛气候和资源不适合哺乳类与两栖类生存，所以那里没有它们的位置"
+   ],
+   "answer": 2,
+   "explanation": "达尔文指出岛上完全有这些类群的位置，按环境需要「造物」解释不了它们的缺席；共同由来的解释是现成的：岛屿生物是从大陆漂来、飞来、被风吹来的拓殖者后代。所以岛上物种像最近的大陆邻居，带的是血统而非环境的订单。",
+   "question_en": "Oceanic islands often have many endemic birds, insects and plants but almost no native land mammals or amphibians. How did Darwin explain this pattern?",
+   "options_en": [
+    "Mammals and amphibians once lived there but were outcompeted to extinction by birds and insects",
+    "Each island was stocked with species suited to its environment, and mammals weren't on that list",
+    "Island species descend from a few colonists that crossed the sea; groups that can't cross never arrive",
+    "Island climates and resources can't support mammals and amphibians, so there is no niche for them"
+   ],
+   "explanation_en": "Darwin argued the islands had room for these groups, so creation-to-fit-the-environment can't explain their absence. Common descent can: island life descends from colonists that drifted, flew or blew in from the mainland. That's why island species resemble their nearest mainland neighbors: they carry ancestry, not an environmental order form."
+  }
+ ]
+}

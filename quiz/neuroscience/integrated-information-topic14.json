@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/integrated-information-topic14.html",
+ "title": "Topic 14 · 整合信息论 — 神经科学",
+ "page_en": "/neuroscience/integrated-information-topic14.en.html",
+ "title_en": "Topic 14 · Integrated Information Theory — Neuroscience",
+ "src_hash": "8d0972338407",
+ "questions": [
+  {
+   "id": "f279c7c3e5",
+   "question": "一台有上百万像素的相机，按整合信息论（IIT）为什么 Φ 几乎为零？",
+   "options": [
+    "相机不会说话也不会报告，没有任何行为可以表明它有体验",
+    "像素数量远少于人脑的神经元数量，还没有达到产生意识的门槛",
+    "像素各测各的光、互不影响，传感器剪成两半也不损失任何因果结构",
+    "相机只是记录光线而不处理信息，所以根本谈不上计算与整合"
+   ],
+   "answer": 2,
+   "explanation": "Φ 量的是系统作为整体的因果力比切开后各自单干多出多少。相机像素是互不搭理的小孤岛，剪成两半照样成像、毫无损失，没有「合起来才存在」的东西。IIT 明确说意识与会不会说话、聪不聪明无关，也不看零件数量。",
+   "question_en": "Under integrated information theory (IIT), why is a camera with millions of pixels at nearly zero Φ?",
+   "options_en": [
+    "A camera can't speak or report, so there's no behavior suggesting it has experience",
+    "It has far fewer pixels than the brain has neurons, so it hasn't crossed the threshold for consciousness",
+    "Each pixel measures light independently, so cutting the sensor in half loses no causal structure",
+    "A camera only records light without processing information, so there's nothing to integrate"
+   ],
+   "explanation_en": "Φ measures how much causal power a system has as a whole beyond its parts cut apart. Camera pixels are isolated islands; snip the sensor in two and both halves still image with nothing lost. IIT says consciousness has nothing to do with speech, intelligence or part count."
+  },
+  {
+   "id": "0fb90bb8b3",
+   "question": "小脑装着全脑约八成的神经元，整个受损后人却照样清醒。IIT 怎样解释这一点？",
+   "options": [
+    "小脑大部分时间处于静息状态，活跃度太低，才没能对意识做出贡献",
+    "小脑只负责运动协调，按功能分工它本来就不属于产生意识的那套系统",
+    "小脑接线像一排排各走各的传送带，很少回绕成不可分的整体，所以 Φ 低",
+    "小脑的神经元个头太小、放电又太弱，单个神经元能贡献的意识远远不如皮层"
+   ],
+   "answer": 2,
+   "explanation": "IIT 的结论是神经元多不等于意识多，要数的是「拧成一团」的程度。小脑接线近乎并行、很少横向回绕，Φ 低；撑起意识的是高度回绕交织的后部皮层热区。IIT 看的是因果结构，不是功能分工或活跃度。",
+   "question_en": "The cerebellum holds about 80% of the brain's neurons, yet people stay conscious after losing it. How does IIT explain this?",
+   "options_en": [
+    "It sits idle most of the time, and its activity is too low to contribute to consciousness",
+    "It only handles motor coordination, so by division of labor it was never part of the conscious system",
+    "Its wiring runs like parallel conveyor belts with little feedback into an irreducible whole, so its Φ is low",
+    "Its neurons are too small and fire too weakly, so each contributes far less consciousness than cortex"
+   ],
+   "explanation_en": "IIT says more neurons doesn't mean more consciousness; what counts is how tightly things knot together. The cerebellum is wired nearly in parallel with little lateral feedback, so its Φ is low; the densely recurrent posterior hot zone carries consciousness. IIT looks at causal structure, not function or activity level."
+  },
+  {
+   "id": "e89ea23a94",
+   "question": "一个大语言模型能写诗、推理、通过各种行为测试。按 IIT，它有没有内在体验取决于什么？",
+   "options": [
+    "它能否把信息广播给各个模块、跨模块调用，像全局工作空间那样",
+    "它在行为测试里能否骗过人类，骗得过就应当认为它有意识",
+    "它的参数规模是否超过人脑的连接数，规模够大就会涌现体验",
+    "它的物理硬件怎么接线：跑在前馈流水线上，Φ 低到可以忽略"
+   ],
+   "answer": 3,
+   "explanation": "IIT 算的是物理基质本身怎么接线，不是它在算什么：同一个函数，交织的机器和流水线机器 Φ 可以天差地别。今天的芯片逐个门电路往前推，按 IIT 硬件层 Φ 可忽略。能广播就有意识是功能主义的立场，正是 IIT 的对立面。",
+   "question_en": "A large language model writes poetry, reasons and passes behavioral tests. Under IIT, what determines whether it has inner experience?",
+   "options_en": [
+    "Whether it broadcasts information across modules for global use, like a global workspace",
+    "Whether it can fool humans in behavioral tests; if it can, we should credit it with consciousness",
+    "Whether its parameter count exceeds the brain's connections, at which point experience emerges",
+    "How its physical hardware is wired: running on a feedforward pipeline, its Φ is negligible"
+   ],
+   "explanation_en": "IIT measures how the physical substrate is wired, not what it computes: the same function can have wildly different Φ on an interwoven machine versus a pipeline. Today's chips push signals forward gate by gate, so by IIT their hardware Φ is negligible. 'Broadcasting is enough' is functionalism, IIT's direct opponent."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/novel-deepread/journey-west-novel16.html",
+ "title": "西游记 — 小说精读 No.16",
+ "page_en": "/novel-deepread/journey-west-novel16.en.html",
+ "title_en": "Journey to the West — Novels, Deep-Read No.16",
+ "src_hash": "fd95b233a0fe",
+ "questions": [
+  {
+   "id": "f994de73c3",
+   "question": "文章把八十一难排在一起看，发现妖怪的下场遵循什么规律？",
+   "options": [
+    "看是否主动认错：肯投降的都被宽恕，顽抗到底的才被一棒打死",
+    "与做过什么无关，只看它是谁家的：有主人的被领走，没主人的被打死",
+    "看法力高低：法力强的悟空打不过只能请人收走，弱的才被打死",
+    "看吃过多少人：作恶越多下场越惨，作恶少的才有机会被菩萨收编带回去"
+   ],
+   "answer": 1,
+   "explanation": "金角银角、青牛、黄眉都被主人到场领回，一句处罚也没有；白骨精、六耳猕猴这类没后台的被一棒打死。最刺眼的是狮驼岭：吃光一城人的三个魔王被菩萨一人牵走一个，没有任何交代。",
+   "question_en": "Lining up the eighty-one ordeals, what rule does the article find governing how the demons end up?",
+   "options_en": [
+    "It depends on whether they repent: those who surrender are pardoned, only the defiant are clubbed to death",
+    "It isn't what they did but whose they are: those with masters get led home, those without get killed",
+    "It depends on power: strong ones Wukong can't beat must be collected by others, weak ones get killed",
+    "It depends on how many people they ate: the worse the crimes, the worse the end, minor ones get recruited"
+   ],
+   "explanation_en": "The gold and silver horned kings, the blue buffalo and Yellow Brows are all collected by their masters with no punishment; masterless ones like the White Bone Demon and the six-eared macaque are clubbed to death. Starkest is Lion-Camel Ridge: three demons who ate an entire city are simply led away by bodhisattvas."
+  },
+  {
+   "id": "a9eba5be53",
+   "question": "孙悟空一个筋斗十万八千里，长安到灵山也正好十万八千里，他却不能带师父飞过去。文章怎样解读这个设计？",
+   "options": [
+    "捷径被摆上桌又被禁止：这段距离量的是取经人必须完成的改变，而不是空间",
+    "它暗示悟空的神通早已胜过如来，取经只是佛门给他安排的面子工程",
+    "它说明佛法无边，凡人眼中的空间距离在佛门面前本来就毫无意义",
+    "这是作者编故事时不小心留下的逻辑漏洞，说明取经其实悟空一个人就足以办完"
+   ],
+   "answer": 0,
+   "explanation": "文章承认当成物理看这毫无道理，但作为装置很精确：它把「距离」从空间量改成了资历量。要变的不是位置，是走路的人，所以省不掉。文章并没有把它当成疏漏。",
+   "question_en": "Wukong's somersault covers 108,000 li, exactly the distance from Chang'an to Vulture Peak, yet he can't just fly his master there. How does the article read this design?",
+   "options_en": [
+    "The shortcut is laid on the table and then forbidden: the distance measures the change the pilgrim must undergo, not space",
+    "It hints that Wukong's powers already exceed the Buddha's, making the journey a face-saving arrangement",
+    "It shows the Dharma is boundless, so physical distance means nothing from the Buddhist point of view",
+    "It's a plot hole the author left in, showing Wukong could really have fetched the scriptures alone"
+   ],
+   "explanation_en": "The article concedes it makes no physical sense, but as a device it's precise: it turns distance from a spatial quantity into one of seasoning. What has to change is the walker, not his location, so it can't be skipped. The article doesn't treat it as an oversight."
+  },
+  {
+   "id": "c281bf78e1",
+   "question": "受封成佛后，孙悟空一摸头，紧箍已经不在了。文章从这个细节推出了什么？",
+   "options": [
+    "佛门最终承认当年给悟空戴紧箍是一个错误，并向他道歉",
+    "外部约束的正当性有期限，它的目标是让自己变得不再必要",
+    "约束一旦戴上就永远需要，紧箍只是换成了佛位的形式",
+    "唐僧终于信任了悟空，于是主动念起松箍咒替他把紧箍取了下来"
+   ],
+   "answer": 1,
+   "explanation": "文章强调紧箍不是被谁取下来的，是自己消失的，因为已经没有东西需要它箍住。由此推出：外部约束的正当性有期限，一个从不打算失效的约束就不是约束，是统治。",
+   "question_en": "After Wukong becomes a Buddha, he touches his head and the headband is simply gone. What does the article draw from this?",
+   "options_en": [
+    "The Buddhist establishment admitted the headband was a mistake and apologized to him",
+    "An external constraint is legitimate only for a time; its aim is to make itself unnecessary",
+    "Once imposed, a constraint is needed forever; the band was just replaced by his Buddha title",
+    "Tripitaka finally trusted Wukong and chanted the release spell to take the band off"
+   ],
+   "explanation_en": "The article stresses that no one removed the band; it vanished because there was nothing left to restrain. Hence: an external constraint's legitimacy has a time limit, and one that never intends to expire is no longer a constraint but rule."
+  }
+ ]
+}

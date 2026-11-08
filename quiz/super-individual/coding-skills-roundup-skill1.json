@@ -1,0 +1,69 @@
+{
+ "page": "/super-individual/coding-skills-roundup-skill1.html",
+ "title": "Skill 01 · AI 编码 Skills 榜单 — Super Individual",
+ "page_en": "/super-individual/coding-skills-roundup-skill1.en.html",
+ "title_en": "Skill 01 · Coding Skills Roundup — Super Individual",
+ "src_hash": "84aa9c92ff3e",
+ "questions": [
+  {
+   "id": "68ec1e2a69",
+   "question": "你想让编码 agent 随时查到某个第三方库的最新 API 文档。按文章的判断顺序，这件事最该用什么来做？",
+   "options": [
+    "把整份 API 文档写成一个 skill，每次触发时读进上下文",
+    "文档检索类的 MCP server，它能接入外部的实时数据",
+    "派一个 subagent 先把文档背下来，再把结论带回来",
+    "写一个 hook，在每次调用工具前自动打印文档内容"
+   ],
+   "answer": 1,
+   "explanation": "文章的判断顺序是：每次必须发生用 hook，需要外部数据或能力用 MCP，大量中间过程用 subagent，只是「知道该怎么做」才用 skill。它明确把 API 文档做成 skill 列为失败模式：文档会过期，每次触发还吃 token。",
+   "question_en": "You want your coding agent to always have the latest API docs for a third-party library. Following the article's decision order, what should you use?",
+   "options_en": [
+    "Turn the whole API doc into a skill that loads into context when triggered",
+    "A documentation-retrieval MCP server, which can pull in live external data",
+    "A subagent that memorizes the docs first and brings back conclusions",
+    "A hook that automatically prints the docs before every tool call"
+   ],
+   "explanation_en": "The article's order: must happen every time, use a hook; needs external data or capabilities, use MCP; generates lots of intermediate work, use a subagent; just needs know-how, use a skill. It explicitly calls turning API docs into a skill a failure mode: docs go stale and every trigger costs tokens."
+  },
+  {
+   "id": "981dac5e31",
+   "question": "文章认为，一口气装很多 skill，真正的代价主要在哪里？",
+   "options": [
+    "agent 每次启动都要逐一加载脚本，启动时间成倍增长",
+    "描述重叠的 skill 越多，模型从候选里挑错的概率越高",
+    "第三方 skill 装得越多，被植入恶意指令的概率就成倍上升",
+    "每个 skill 的完整正文都会在启动时塞满上下文窗口"
+   ],
+   "answer": 1,
+   "explanation": "渐进式披露让启动时只预加载 name 和 description，单个 skill 的边际成本只有几十 token，所以装很多在启动时几乎免费。真正的成本在选择：描述重叠时就制造了选择问题，而不是能力叠加。安全风险文章也提到，但不是它说的主要代价。",
+   "question_en": "According to the article, what is the real cost of installing lots of skills at once?",
+   "options_en": [
+    "The agent loads every script one by one at launch, multiplying startup time",
+    "The more skills with overlapping descriptions, the likelier the model picks the wrong one",
+    "More third-party skills multiply the chance that malicious instructions slip in",
+    "Every skill's full body gets loaded at startup and fills up the context window"
+   ],
+   "explanation_en": "Progressive disclosure preloads only each skill's name and description, a few dozen tokens apiece, so installing many is nearly free at startup. The real cost is selection: overlapping descriptions create a choice problem rather than adding capability. The article does mention security, but not as the main cost."
+  },
+  {
+   "id": "eacc2d08c2",
+   "question": "superpowers 在 GitHub 上有约 27.9 万 star，code-reviewer 在某个 marketplace 上有 764 次安装。按文章，应该怎样读这两个数字？",
+   "options": [
+    "star 的样本远比装机量大，所以 star 榜是更可信的排名依据",
+    "superpowers 的受欢迎程度大约是 code-reviewer 的几百倍",
+    "装机量只有三位数，说明 code-reviewer 质量不行，不值得装",
+    "两者量的是不同池子、不同时点的东西，不能拿来比谁更受欢迎"
+   ],
+   "answer": 3,
+   "explanation": "文章说 star 数的是全 GitHub 的路人，装机量数的是某个 marketplace 的注册用户，编辑推荐是写稿人的偏好，三者分母不同、不可比；而且数字还在动，764 五个月后已是 1,236。读榜要问：量的是什么、哪个池子、哪个月。",
+   "question_en": "superpowers has about 279k GitHub stars; code-reviewer shows 764 installs on one marketplace. How does the article say to read these numbers?",
+   "options_en": [
+    "Stars come from a far bigger sample, so the star ranking is the more trustworthy one",
+    "superpowers is roughly several hundred times as popular as code-reviewer",
+    "Only three-digit installs means code-reviewer is low quality and not worth installing",
+    "They measure different pools at different times, so they can't tell you which is more popular"
+   ],
+   "explanation_en": "The article says stars count passers-by across GitHub, installs count one marketplace's users, and editor picks reflect a writer's taste: different denominators, not comparable. The numbers also move; 764 became 1,236 five months later. Ask: what's measured, which pool, which month."
+  }
+ ]
+}

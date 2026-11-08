@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/odyssey-read36b.html",
+ "title": "《奥德赛》",
+ "page_en": "/deep-reading/odyssey-read36b.en.html",
+ "title_en": "The Odyssey — Deep Reading READ 36b",
+ "src_hash": "4adb1a4d83b9",
+ "questions": [
+  {
+   "id": "fa31a29649",
+   "question": "奥德修斯拒绝卡吕普索许诺的永生与青春，宁可回到会衰老的凡人妻子身边。文章认为荷马借此表达了什么？",
+   "options": [
+    "他回家主要是为了夺回王位、向求婚者复仇，爱情只是表面理由",
+    "属于人的圆满恰恰在「有限」，长在具体的、会失去的家与人里",
+    "永生是诸神设下的陷阱，接受它就会永远失去自由和尊严",
+    "凡人与神不能通婚，他明白这段关系注定得不到诸神承认"
+   ],
+   "answer": 1,
+   "explanation": "文章称这是西方文学第一次如此清楚地表态：永生意味着停在原地、脱离时间和具体的家，而人的意义恰恰长在这份会失去里。复仇与重立秩序是归乡的结果，不是他拒绝永生的理由。",
+   "question_en": "Odysseus turns down Calypso's offer of immortality and eternal youth to return to a mortal wife who will age. What does the article say Homer is expressing?",
+   "options_en": [
+    "He goes home to reclaim the throne and punish the suitors; love is just the stated reason",
+    "Human fulfillment lies precisely in finitude, rooted in a particular home and people that can be lost",
+    "Immortality is a trap set by the gods; accepting it would cost him his freedom and dignity forever",
+    "Mortals and gods can't marry, and he knows the gods would never recognize the union"
+   ],
+   "explanation_en": "The article calls this Western literature's first clear statement that immortality means standing still, outside time and outside a real home, while human meaning grows from what can be lost. Revenge and restoring order follow from the homecoming; they aren't why he refuses immortality."
+  },
+  {
+   "id": "a9fc246508",
+   "question": "逃出独眼巨人的山洞后，奥德修斯忍不住喊出自己的真名，结果招来海神的诅咒。文章认为这一情节说明了什么？",
+   "options": [
+    "诚实终究是英雄的最高美德，用假名「没有人」这件事本身就要遭神惩罚",
+    "「没有人」这个计策本身有漏洞，巨人迟早会从同伴口中查出真名",
+    "他故意激怒海神来考验自己的命运，显示出一种主动求险的勇气",
+    "智计里藏着它的反面：聪明人最难防的是想被认出、被称颂的虚荣"
+   ],
+   "answer": 3,
+   "explanation": "文章说荷马没把 mētis 写成单纯的褒义：逞口舌炫名暴露了身份，巨人得以向父亲波塞冬诅咒他，招来十年海上灾祸。智计的反面是管不住嘴的骄傲（hubris）。",
+   "question_en": "After escaping the Cyclops' cave, Odysseus can't resist shouting his real name, which brings down the sea god's curse. What does the article say this episode shows?",
+   "options_en": [
+    "Honesty is the hero's highest virtue, and using the false name 'Nobody' was itself bound to be punished",
+    "The 'Nobody' trick was flawed anyway; the Cyclops would have learned the real name from others",
+    "He deliberately provokes the sea god to test his fate, showing a bold appetite for danger",
+    "Cunning hides its own opposite: what a clever man guards against least is his vanity, his wish to be recognized"
+   ],
+   "explanation_en": "The article says Homer doesn't present mētis as purely good: boasting gave away his identity, letting the Cyclops ask his father Poseidon for a curse that cost ten years at sea. The flip side of cunning is hubris, an inability to hold one's tongue."
+  },
+  {
+   "id": "5e55a5e8f9",
+   "question": "《奥德赛》结尾奥德修斯杀光了求婚者。按文章的分析，在荷马的伦理框架里，这场屠杀为什么被当作正义？",
+   "options": [
+    "荷马时代的战士以杀敌数量论英雄，他借此证明自己胜过阿喀琉斯",
+    "求婚者人数实在太多、无法和平驱逐，杀光他们是保全家人的唯一办法",
+    "诸神事先下令必须杀光他们，奥德修斯只是在执行神谕而别无选择",
+    "求婚者践踏了宙斯担保的待客之道，屠杀是对文明底线的强制修复"
+   ],
+   "answer": 3,
+   "explanation": "文章说全诗用 xenia 这把尺量遍每一站：一百多个求婚者赖在他宫里吃喝、逼婚、图谋杀他儿子，是把待客之道彻底踩烂。看懂 xenia，才明白结尾的屠杀在荷马眼里是修复秩序而非残忍。",
+   "question_en": "At the end of the Odyssey, Odysseus kills all the suitors. According to the article, why does Homer's ethical framework treat this as justice?",
+   "options_en": [
+    "Warriors of Homer's age were ranked by kills, and he used it to prove himself greater than Achilles",
+    "There were too many suitors to expel peacefully, so killing them was the only way to protect his family",
+    "The gods ordered beforehand that they all die, so Odysseus was simply carrying out a divine command",
+    "The suitors trampled the Zeus-guaranteed code of hospitality; the killing is a forced repair of civilization's baseline"
+   ],
+   "explanation_en": "The article says the poem measures every stop with the yardstick of xenia. A hundred-plus suitors eating his stores, pressing his wife to marry and plotting to kill his son is hospitality trampled outright. Once you see xenia, the slaughter reads in Homer's eyes as restoring order, not cruelty."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/reorg-read970.html",
+ "title": "《ReOrg》",
+ "page_en": "/deep-reading/reorg-read970.en.html",
+ "title_en": "ReOrg",
+ "src_hash": "340ac022562a",
+ "questions": [
+  {
+   "id": "f37fac8d0a",
+   "question": "一家公司宣布了新组织图，人员也换了位置，几个月后员工普遍说「什么都没变，只是更乱了」。按《ReOrg》的框架，最可能被跳过的是哪一步？",
+   "options": [
+    "上线后频繁调整结构，一发现阻力就换一种新的组织方案",
+    "重新定义流程、决策权、岗位职责并选定关键岗位上的人",
+    "加大对新愿景的宣讲力度，让员工从情感上真正认同这次改变",
+    "画出一张更大胆的新结构图，把旧的部门划分彻底推倒"
+   ],
+   "answer": 1,
+   "explanation": "作者把流程、决策权、岗位和人称为墙里的「水管和电线」：只换框和线，人还按旧流程做事，新旧逻辑打架，结果就是更乱。遇阻就推倒重来恰恰是作者批评的另一种失败，纠偏应是有针对性的小修。",
+   "question_en": "A company announces a new org chart and reshuffles people, but months later staff say 'nothing has changed, it's just messier.' In the ReOrg framework, which step was most likely skipped?",
+   "options_en": [
+    "Reworking the structure often after launch, switching designs at the first sign of resistance",
+    "Redefining processes, decision rights and roles, and picking people for key positions",
+    "Promoting the new vision harder so employees buy into the change emotionally",
+    "Drawing a bolder new structure that tears up the old departmental lines entirely"
+   ],
+   "explanation_en": "The authors call processes, decision rights, roles and people the 'plumbing and wiring.' Change only the boxes and lines and people keep working the old way, so two logics collide and things get messier. Redesigning at every bump is a separate failure they criticize; course correction should be targeted fixes."
+  },
+  {
+   "id": "aa80fb432a",
+   "question": "《ReOrg》要求重组第一步像评估一笔投资那样写出「损益表」。作者这样做的主要用意是什么？",
+   "options": [
+    "先确定裁员与砍成本的规模，因为重组的本质目标就是降低组织的运营成本",
+    "逼出可衡量的价值和代价：说不清换回什么也许就不该重组，上线后也有标尺",
+    "让各部门先各自提出理想的结构方案，再由高层从中挑出最受欢迎的那一张",
+    "主要用来说服董事会批准咨询预算，让整个重组项目在财务上显得更加正当可信"
+   ],
+   "answer": 1,
+   "explanation": "损益表要求把收益和代价（遣散、生产率下滑、人才流失）都写成可衡量的数字：它逼高层说实话、事先对齐，也给第五步提供判断成败的标尺。作者明确反对把重组等同于裁员或砍成本。",
+   "question_en": "ReOrg's first step is to build a 'profit and loss' for the reorg, as if evaluating an investment. What is the main point of doing this?",
+   "options_en": [
+    "To fix the size of layoffs and cost cuts first, since a reorg is fundamentally about lowering operating costs",
+    "To force out measurable value and costs: if you can't say what it buys, maybe don't reorg, and you get a yardstick later",
+    "To let each department propose its ideal structure, then have leadership pick the most popular one",
+    "Mainly to persuade the board to approve the consulting budget and make the project look financially sound"
+   ],
+   "explanation_en": "The reorg P&L writes both benefits and costs (severance, productivity dips, talent loss) as measurable targets. It forces leaders to be honest, aligns them up front and gives step five a yardstick for success. The authors explicitly reject equating reorgs with layoffs or cost-cutting."
+  },
+  {
+   "id": "f5b5251f17",
+   "question": "重组方案还没有全部敲定时，《ReOrg》主张怎样和员工沟通？",
+   "options": [
+    "集中讲清宏大的新愿景，用激动人心的前景来稳住员工的情绪",
+    "方案完全确定之前一直保持沉默，以免半成品信息引发不必要的恐慌",
+    "尽早、反复说清已定与未定的事，并尽快回答「这对我意味着什么」",
+    "邀请全体员工参与方案设计，让每个人都觉得自己有发言权"
+   ],
+   "answer": 2,
+   "explanation": "作者点名两种错误：「等等再说」让小道消息填满真空，「象牙塔理想主义」只讲愿景不讲每个人会怎样。在回答「对我意味着什么」之前，员工听不进愿景。作者也不主张全员参与设计，核心设计应由小团队完成。",
+   "question_en": "When the reorg plan isn't fully settled yet, how does ReOrg say leaders should communicate with employees?",
+   "options_en": [
+    "Focus on a grand new vision, using an exciting future to keep people's emotions steady",
+    "Stay silent until the plan is final, so half-baked information doesn't cause unnecessary panic",
+    "Early and often, spell out what's decided and what isn't, and answer 'what does this mean for me' fast",
+    "Invite every employee into the design so that everyone feels they have a say"
+   ],
+   "explanation_en": "The authors name two mistakes: 'wait and see,' which lets rumors fill the vacuum, and 'ivory-tower idealism,' which sells a vision without saying what happens to each person. Until 'what does this mean for me' is answered, people can't hear any vision. Nor do they want everyone designing; a small team should do the core design."
+  }
+ ]
+}

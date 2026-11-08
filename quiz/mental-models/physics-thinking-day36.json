@@ -1,0 +1,69 @@
+{
+ "page": "/mental-models/physics-thinking-day36.html",
+ "title": "思维模型详解：物理学思维 · 2026-05-28",
+ "page_en": "/mental-models/physics-thinking-day36.en.html",
+ "title_en": "Mental Models: Physics as a Thinking Tool · 2026-05-28",
+ "src_hash": "e77567668e14",
+ "questions": [
+  {
+   "id": "f19fbba1b2",
+   "question": "把代码库看成普里高津式的「耗散结构」，会得出什么样的维护策略？",
+   "options": [
+    "既然熵增不可避免，就接受代码库必然腐化，到时候整体重写即可",
+    "建立持续重构之流来不断再生秩序，而不是一次性彻底整理完就放手",
+    "集中精力做一次彻底的大重构，之后冻结改动，让系统保持在有序状态",
+    "尽量把代码库与外界隔离成封闭系统，减少输入就能阻止熵的增加"
+   ],
+   "answer": 1,
+   "explanation": "文章说秩序是一种流而不是状态，只在能量穿流时存在；所以别追求「一次做好就稳定」，要建立持续再生秩序的代谢。一次性整理完就放手的代码库必然腐化，有持续重构之流的才长期有序。封闭系统的熵恰恰只增不减。",
+   "question_en": "Treating a codebase as one of Prigogine's dissipative structures leads to what maintenance strategy?",
+   "options_en": [
+    "Since entropy always rises, accept that the code will rot and plan to rewrite it wholesale later",
+    "Keep a continuous flow of refactoring that regenerates order, rather than one big cleanup and walking away",
+    "Do one thorough refactor, then freeze changes so the system stays in its ordered state",
+    "Seal the codebase off as a closed system; fewer inputs means entropy can't increase"
+   ],
+   "explanation_en": "The article says order is a flow, not a state; it exists only while energy streams through. So don't chase 'build it once and it stays ordered'; build a metabolism that keeps regenerating order. A codebase cleaned once and abandoned rots; one with steady refactoring stays ordered. Isolated systems are exactly where entropy only rises."
+  },
+  {
+   "id": "6144390e33",
+   "question": "按文章对「临界慢化」的应用，下面哪种迹象最说明一个人的身心状态正在逼近临界点？",
+   "options": [
+    "从小挫折中恢复得越来越慢，睡一觉不够了，周末也缓不过来",
+    "工作效率突然大幅下降，在某一天之内就明显地整个崩溃了下来",
+    "偶尔遇到一次很大的打击，但很快就恢复了原来的状态",
+    "最近承担的任务数量和每周工作时长比上个月多了一倍"
+   ],
+   "answer": 0,
+   "explanation": "临界慢化指越接近临界点，系统从扰动中恢复得越慢，这是相变之前可测的预警信号。文章的建议是：当你从小挫折中恢复越来越慢，就该在相变前干预，而不是等到崩溃之后。突然崩溃已是相变本身。",
+   "question_en": "Applying the article's idea of critical slowing down, which sign best indicates someone's mental and physical state is nearing a tipping point?",
+   "options_en": [
+    "Bouncing back from small setbacks more and more slowly: a night's sleep or a weekend no longer resets you",
+    "A sudden steep drop in productivity, an obvious collapse within a single day",
+    "Taking one big blow occasionally but quickly returning to normal",
+    "Taking on twice as many tasks and weekly hours as last month"
+   ],
+   "explanation_en": "Critical slowing down means that near a tipping point, a system recovers from perturbations ever more slowly, a measurable warning before the transition. The article says when your recovery from small setbacks keeps slowing, intervene before the shift rather than after collapse. A sudden crash is the transition itself."
+  },
+  {
+   "id": "be4184389a",
+   "question": "把量子「退相干」当作思维模型，文章推出了一个关于可选性的什么结论？",
+   "options": [
+    "越早做出不可逆的承诺越好，这样就能避免选项被环境偷偷吞掉",
+    "只要自己不主动做决定，所有的选项就会一直完整地保留下去",
+    "不必别人来逼，可选性也会随你不断承诺、暴露立场而自行消失",
+    "保留的选项越多越好，因为维持开放的选项本身几乎没有任何成本"
+   ],
+   "answer": 2,
+   "explanation": "退相干说叠加不只被主动测量摧毁，还会因系统与环境纠缠而自发坍缩。迁移过来就是：可选性会随着你不断对外承诺、与环境耦合而悄悄消失，所以要主动延迟绑定。文章同时说维持选项有成本，只留凸性最高的几个。",
+   "question_en": "Using quantum decoherence as a mental model, what conclusion about optionality does the article draw?",
+   "options_en": [
+    "Commit irreversibly as early as possible, so the environment can't quietly eat your options",
+    "As long as you don't actively decide, every option stays fully intact indefinitely",
+    "No one has to force you: options quietly vanish as you keep making commitments and taking public stances",
+    "The more options you keep the better, since keeping options open costs almost nothing"
+   ],
+   "explanation_en": "Decoherence means a superposition collapses not only when deliberately measured but spontaneously through entanglement with the environment. Translated: optionality erodes as you commit and couple to the world, so delay binding on purpose. The article also says options cost upkeep, so keep only the most convex few."
+  }
+ ]
+}

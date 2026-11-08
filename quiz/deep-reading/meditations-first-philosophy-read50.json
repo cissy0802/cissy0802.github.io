@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/meditations-first-philosophy-read50.html",
+ "title": "《第一哲学沉思集》— 好书精读 Read 50",
+ "page_en": "/deep-reading/meditations-first-philosophy-read50.en.html",
+ "title_en": "Meditations on First Philosophy — Deep Read 50",
+ "src_hash": "6fec817ea31e",
+ "questions": [
+  {
+   "id": "cb335ccb5a",
+   "question": "笛卡尔用「梦的论证」推倒了外部世界，为什么还要再请出「恶魔」假设？",
+   "options": [
+    "他认为恶魔比梦更可能真实存在，所以必须先在理论上排除它，才能证明上帝的存在",
+    "梦的论证只能怀疑远处和模糊的东西，连「我此刻坐在火炉边」都怀疑不了，所以才需要恶魔来补上",
+    "梦的论证本身是一个三段论推理，依赖大前提，只有恶魔假设才是不需要前提的直观",
+    "梦只能拆组感官材料，动不了 2+3=5 这类最简单普遍的东西，需要更强的假设连数学一起放倒"
+   ],
+   "answer": 3,
+   "explanation": "三级加压里，感官错觉怀疑不了「我坐在火炉边」，梦的论证才推倒它；但梦像画家用真零件拼出人首马身，动不了算术这类简单普遍的东西。恶魔假设不需要真有恶魔，只要无法排除，就连数学也得当假。",
+   "question_en": "Descartes's dream argument already topples the external world. Why does he then bring in the evil demon?",
+   "options_en": [
+    "He thought a demon more likely to exist than dreams, so it had to be ruled out before proving God",
+    "The dream argument only doubts distant, blurry things and can't doubt 'I am sitting by the fire,' so the demon fills that gap",
+    "The dream argument is a syllogism resting on a premise, while only the demon hypothesis is a premise-free intuition",
+    "Dreams only recombine sensory material and can't touch simple universals like 2+3=5; a stronger hypothesis is needed to doubt math too"
+   ],
+   "explanation_en": "In the three-stage escalation, sensory illusion can't doubt 'I'm by the fire'; the dream argument does. But dreams, like a painter building a centaur from real parts, can't touch arithmetic. The demon needn't exist; if it can't be ruled out, even math must be treated as false."
+  },
+  {
+   "id": "30d216470b",
+   "question": "笛卡尔坚持「我在，我存在」不是从「凡思维者皆存在」推出来的三段论，而是一次直观。这一点为什么对他的体系很要紧？",
+   "options": [
+    "因为直观可以从蜡块的分析中推出，比三段论更容易被读者接受",
+    "若它是推理，就得依赖别的前提，也就当不成整个体系的第一块地基",
+    "若它是直观，就只在此刻成立，能顺带证明昨天和明天的我是同一个人",
+    "因为三段论必须依靠上帝担保，而他此时还没有证明上帝的存在"
+   ],
+   "answer": 1,
+   "explanation": "笛卡尔在答辩里否认偷用了大前提：一想到「我在怀疑」就当场看见「我在」，中间没有推理步骤。若是推理，它就依赖别的前提，当不成地基。文章还特别指出这份确定性只覆盖此刻，跨时间的同一性要靠后面上帝担保。",
+   "question_en": "Descartes insists 'I am, I exist' is an intuition, not a syllogism from 'whatever thinks exists.' Why does this matter for his system?",
+   "options_en": [
+    "Because intuitions can be derived from the wax analysis and are easier for readers to accept than syllogisms",
+    "If it were an inference, it would rest on other premises and couldn't serve as the system's first foundation",
+    "If it is an intuition, it holds only now, and that also proves yesterday's and tomorrow's self are the same",
+    "Because syllogisms need God's guarantee, and at that point he hasn't yet proved God exists"
+   ],
+   "explanation_en": "In his replies Descartes denies smuggling in a major premise: the moment you think 'I am doubting,' you see 'I am,' with no inference in between. If it were an inference, it would depend on other premises and couldn't be the foundation. The article adds that its certainty covers only the present; identity over time needs God later."
+  },
+  {
+   "id": "83c673cbec",
+   "question": "既然上帝不骗人，人为什么还会犯错？笛卡尔在第四沉思里给出的解释是什么？",
+   "options": [
+    "恶魔虽然被排除了，但它仍会在记忆里篡改已有的结论",
+    "理智本身就有缺陷：上帝给人的那份认识能力天生就不够完善",
+    "感官提供了错误的材料，理智只能被动地接受这些内容",
+    "意志比理智大：在理智还没看清的地方，意志就已经点了头"
+   ],
+   "answer": 3,
+   "explanation": "判断由理智提供内容、意志负责点头或摇头；理智有限而意志无限，错误发生在意志越界之处。所以错不在上帝给的能力，也不怪理智不够用，而是滥用自由，由此推出「不清楚分明就悬置判断」。",
+   "question_en": "If God doesn't deceive, why do people still make mistakes? What explanation does Descartes give in the Fourth Meditation?",
+   "options_en": [
+    "Though ruled out, the demon still tampers with conclusions stored in memory",
+    "The intellect itself is flawed: the faculty God gave us is inherently imperfect",
+    "The senses supply false material, which the intellect can only passively accept",
+    "The will outruns the intellect: it says yes where the intellect hasn't yet seen clearly"
+   ],
+   "explanation_en": "A judgment combines content from the intellect with assent or denial from the will. The intellect is finite, the will unlimited, and error happens where the will oversteps. So the fault lies neither with God's gifts nor with an inadequate intellect but with misused freedom, hence: suspend judgment until things are clear and distinct."
+  }
+ ]
+}

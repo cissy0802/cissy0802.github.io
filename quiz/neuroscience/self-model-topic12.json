@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/self-model-topic12.html",
+ "title": "Topic 12 · 高阶理论与注意图式 — 神经科学",
+ "page_en": "/neuroscience/self-model-topic12.en.html",
+ "title_en": "Topic 12 · Higher-Order Theories & the Attention Schema — Neuroscience",
+ "src_hash": "c094b10cba34",
+ "questions": [
+  {
+   "id": "e7edc9feaf",
+   "question": "盲视病人说自己什么都看不见，却能远超瞎猜地判断物体往哪动。高阶理论怎样解释这种现象？",
+   "options": [
+    "一阶视觉加工还在、能指导行为，但缺了一层盯着它的高阶表征",
+    "高阶表征仍然完整，只是一阶的视觉信号从一开始就没有进入大脑",
+    "病人其实有视觉体验，只是语言区受损导致他无法如实报告出来",
+    "前馈扫掠和本地递归环路都受损，所以信息只能靠猜测勉强输出"
+   ],
+   "answer": 0,
+   "explanation": "高阶理论把心理状态拆成一阶状态（看见）和关于它的高阶表征（知道自己在看）。盲视里信息明明进了脑、还能指导行为，却没进意识，正是一阶有、高阶缺的活标本。",
+   "question_en": "Blindsight patients say they see nothing, yet guess the direction of motion far above chance. How do higher-order theories explain this?",
+   "options_en": [
+    "First-order visual processing is intact and guides behavior, but the higher-order representation of it is missing",
+    "The higher-order representation is intact; it's the first-order visual signal that never reaches the brain",
+    "Patients do have visual experience, but damage to language areas keeps them from reporting it",
+    "Both the feedforward sweep and local recurrent loops are damaged, so information only leaks out as guesses"
+   ],
+   "explanation_en": "Higher-order theories split a mental state into a first-order state (seeing) and a higher-order representation of it (knowing you see). In blindsight, information reaches the brain and guides behavior without reaching awareness: first-order present, higher-order absent."
+  },
+  {
+   "id": "2ae0e75b5c",
+   "question": "按 Graziano 的注意图式理论，为什么我们内省时，意识总让人觉得「不像物理的东西」？",
+   "options": [
+    "大脑天生没有观察自身的能力，内省所得的一切内容都是随机生成的噪声",
+    "注意本身没有任何物理基础，它是一种无法被神经活动描述的独立心理过程",
+    "意识确实是一种非物理的存在，大脑只是接收它的通道，所以内省摸不到机制",
+    "那张注意自画像本就省掉了神经元等全部机械细节，内省读到的是抽象草图"
+   ],
+   "answer": 3,
+   "explanation": "注意图式是大脑为调度注意而建的潦草模型，它不画神经元、突触竞争这些细节，只把「注意扑在红点上」简化成一团说不清的「鲜活觉知」。内省摸到的是这张刻意抽象的草图，所以觉知显得虚无缥缈。",
+   "question_en": "According to Graziano's attention schema theory, why does consciousness feel non-physical when we introspect?",
+   "options_en": [
+    "The brain has no ability to observe itself, so everything introspection reports is random noise",
+    "Attention has no physical basis at all; it's an independent mental process neural activity can't describe",
+    "Consciousness really is non-physical and the brain merely receives it, so introspection can't reach a mechanism",
+    "The brain's self-portrait of attention omits all mechanical detail like neurons, so introspection reads an abstract sketch"
+   ],
+   "explanation_en": "The attention schema is a rough model the brain builds to control attention. It leaves out neurons and synaptic competition and simplifies 'attention is locked on the red dot' into a vague sense of vivid awareness. Introspection reads that deliberately abstract sketch, so awareness seems ethereal."
+  },
+  {
+   "id": "eae5a88824",
+   "question": "在意识研究的「前 vs 后」之争上，高阶理论、递归加工理论和注意图式理论分别怎么押注？",
+   "options": [
+    "高阶押感觉皮层的本地环路；递归加工押前额叶；注意图式认为意识必须广播到全脑",
+    "高阶押前额叶；递归加工押感觉皮层的本地环路；注意图式偏功能，位置不是死穴",
+    "三家都押前额叶，只是在高阶表征需要多少层、由哪块前额叶承担上有分歧",
+    "递归加工和注意图式都押前额叶；只有高阶理论认为感觉皮层本地就足够"
+   ],
+   "answer": 1,
+   "explanation": "高阶理论需要前额叶那层再表征；Lamme 的递归加工认为高层回传、在感觉皮层本地结成环路就够，不必广播也不必前额叶；注意图式把意识看作自模型，物理落点不是关键。三家的分歧把「前 vs 后」变成了可检验的岔口。",
+   "question_en": "On the front-versus-back debate in consciousness research, where do higher-order theory, recurrent processing theory and attention schema theory place their bets?",
+   "options_en": [
+    "HOT on local sensory loops; recurrent processing on prefrontal cortex; AST says consciousness must broadcast brain-wide",
+    "HOT on prefrontal cortex; recurrent processing on local loops in sensory cortex; AST stays functional, location isn't decisive",
+    "All three bet on prefrontal cortex, differing only on how many layers and which prefrontal area",
+    "Recurrent processing and AST both bet on prefrontal cortex; only HOT says local sensory cortex is enough"
+   ],
+   "explanation_en": "HOT needs the prefrontal re-representation; Lamme's recurrent processing says feedback forming local loops in sensory cortex is enough, with no broadcast or prefrontal layer; AST treats consciousness as a self-model whose physical location isn't the point. Their disagreement turns front-vs-back into a testable fork."
+  }
+ ]
+}

@@ -104,6 +104,141 @@
     "be87200a06",
     "6bf749fdae"
    ]
+  },
+  "/health-longevity/posture-training-plan.html": {
+   "t": "体态训练计划 — 4 周 · 每天 10 分钟",
+   "f": "health-longevity/posture-training-plan.json",
+   "q": [
+    "ee4c891371",
+    "0c226bc59b",
+    "7187e2eee5"
+   ]
+  },
+  "/deep-reading/reorg-read970.html": {
+   "t": "《ReOrg》",
+   "f": "deep-reading/reorg-read970.json",
+   "q": [
+    "f37fac8d0a",
+    "aa80fb432a",
+    "f5b5251f17"
+   ]
+  },
+  "/deep-reading/origin-of-species-read53.html": {
+   "t": "《物种起源》— 好书精读 Read 53",
+   "f": "deep-reading/origin-of-species-read53.json",
+   "q": [
+    "287bd16026",
+    "9efdaea452",
+    "7c1a5b7a54"
+   ]
+  },
+  "/novel-deepread/journey-west-novel16.html": {
+   "t": "西游记 — 小说精读 No.16",
+   "f": "novel-deepread/journey-west-novel16.json",
+   "q": [
+    "f994de73c3",
+    "a9eba5be53",
+    "c281bf78e1"
+   ]
+  },
+  "/deep-reading/odyssey-read36b.html": {
+   "t": "《奥德赛》",
+   "f": "deep-reading/odyssey-read36b.json",
+   "q": [
+    "fa31a29649",
+    "a9fc246508",
+    "5e55a5e8f9"
+   ]
+  },
+  "/podcast-deepread/naval-wealth-topic10.html": {
+   "t": "Naval 专题 · 致富的机制",
+   "f": "podcast-deepread/naval-wealth-topic10.json",
+   "q": [
+    "dbf27b5e44",
+    "c82707eba3",
+    "c131c1338a"
+   ]
+  },
+  "/neuroscience/self-model-topic12.html": {
+   "t": "Topic 12 · 高阶理论与注意图式 — 神经科学",
+   "f": "neuroscience/self-model-topic12.json",
+   "q": [
+    "e7edc9feaf",
+    "2ae0e75b5c",
+    "eae5a88824"
+   ]
+  },
+  "/super-individual/coding-skills-roundup-skill1.html": {
+   "t": "Skill 01 · AI 编码 Skills 榜单 — Super Individual",
+   "f": "super-individual/coding-skills-roundup-skill1.json",
+   "q": [
+    "68ec1e2a69",
+    "981dac5e31",
+    "eacc2d08c2"
+   ]
+  },
+  "/deep-reading/meditations-first-philosophy-read50.html": {
+   "t": "《第一哲学沉思集》— 好书精读 Read 50",
+   "f": "deep-reading/meditations-first-philosophy-read50.json",
+   "q": [
+    "cb335ccb5a",
+    "30d216470b",
+    "83c673cbec"
+   ]
+  },
+  "/deep-reading/ageless-aging-read936.html": {
+   "t": "《Ageless Aging》— 好书精读 Read 936",
+   "f": "deep-reading/ageless-aging-read936.json",
+   "q": [
+    "2895b367e3",
+    "526ee575f5",
+    "514eeb45ae"
+   ]
+  },
+  "/mental-models/negotiation-day16.html": {
+   "t": "思维模型详解：谈判类 — 2026-05-15",
+   "f": "mental-models/negotiation-day16.json",
+   "q": [
+    "cb77c46816",
+    "91bacbaba9",
+    "b10e8d1295"
+   ]
+  },
+  "/mental-models/physics-thinking-day36.html": {
+   "t": "思维模型详解：物理学思维 · 2026-05-28",
+   "f": "mental-models/physics-thinking-day36.json",
+   "q": [
+    "f19fbba1b2",
+    "6144390e33",
+    "be4184389a"
+   ]
+  },
+  "/neuroscience/integrated-information-topic14.html": {
+   "t": "Topic 14 · 整合信息论 — 神经科学",
+   "f": "neuroscience/integrated-information-topic14.json",
+   "q": [
+    "f279c7c3e5",
+    "0fb90bb8b3",
+    "e89ea23a94"
+   ]
+  },
+  "/deep-reading/48-laws-of-power-read971.html": {
+   "t": "《权力的 48 条法则》",
+   "f": "deep-reading/48-laws-of-power-read971.json",
+   "q": [
+    "41180f0fde",
+    "533cb2e6fc",
+    "c02a105413"
+   ]
+  },
+  "/neuroscience/long-term-memory-topic4.html": {
+   "t": "Topic 4 · 长时记忆 — 神经科学",
+   "f": "neuroscience/long-term-memory-topic4.json",
+   "q": [
+    "beb10a7ad1",
+    "a79b51ecc6",
+    "4ff5dcdc58"
+   ]
   }
  },
  "aliases": {

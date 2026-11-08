@@ -1,0 +1,69 @@
+{
+ "page": "/mental-models/negotiation-day16.html",
+ "title": "思维模型详解：谈判类 — 2026-05-15",
+ "page_en": "/mental-models/negotiation-day16.en.html",
+ "title_en": "Mental Models Deep Dive: Negotiation — 2026-05-15",
+ "src_hash": "de40039a0864",
+ "questions": [
+  {
+   "id": "cb77c46816",
+   "question": "按这篇谈判思维模型的建议，下面哪种让步方式最能向对方传递「已接近底线」的信号？",
+   "options": [
+    "每轮让步幅度递增，比如 20、50、100，用越来越大的让步促成尽快成交",
+    "第一轮直接让到底线，然后宣布不再让步，用一次性的诚意换取对方信任",
+    "每轮让步幅度相同，比如 100、100、100，以显示自己始终有诚意和耐心",
+    "每轮让步幅度递减，比如 100、50、20，且每次都要求对方给出对等回报"
+   ],
+   "answer": 3,
+   "explanation": "文章说让步应递减，向对方传递已接近底线的信号；等幅让步会让对方以为你还有很大空间。每次让步都要附带交换条件，否则会被视为单方面退让。",
+   "question_en": "According to this piece on negotiation models, which concession pattern best signals that you're near your limit?",
+   "options_en": [
+    "Growing concessions, say 20, 50, 100, using bigger moves to close faster",
+    "Concede straight to your floor in round one, then refuse to move, trading candor for trust",
+    "Equal concessions, say 100, 100, 100, to show steady good faith and patience",
+    "Shrinking concessions, say 100, 50, 20, each tied to a reciprocal ask"
+   ],
+   "explanation_en": "The article says concessions should shrink to signal you're near the bottom; equal steps make the other side think there's plenty of room left. Every concession should come with a reciprocal ask, or it reads as unilateral retreat."
+  },
+  {
+   "id": "91bacbaba9",
+   "question": "按 BATNA 的思路，进入一场重要谈判之前，最值得花时间做的是什么？",
+   "options": [
+    "把桌面上要用的论据和说辞反复演练，直到每一句都滴水不漏为止",
+    "摸清对方公开表态的立场，提前准备好逐条反驳的理由",
+    "主动构建和强化自己的备选方案，同时评估对方的备选",
+    "先想好一个尽量激进的开价，确保自己第一个抛出锚点"
+   ],
+   "answer": 2,
+   "explanation": "文章强调 BATNA 不是固定值，而是要主动构建和强化的：谈判前应花时间改善自己的备选，而不只是准备桌面上的论据，同时评估对方的 BATNA。BATNA 越强，越敢说「不」、愿意走开。",
+   "question_en": "Under BATNA thinking, what is most worth your time before an important negotiation?",
+   "options_en": [
+    "Rehearsing your arguments and talking points until they're airtight",
+    "Mapping the other side's stated positions and preparing point-by-point rebuttals",
+    "Actively building and strengthening your alternatives while sizing up theirs",
+    "Settling on an aggressive opening number so you're the first to anchor"
+   ],
+   "explanation_en": "The article stresses that a BATNA isn't fixed; you build and strengthen it. Before negotiating, invest in improving your alternatives rather than just planning arguments, and assess the other side's BATNA. The stronger yours, the more willing you are to say no and walk away."
+  },
+  {
+   "id": "b10e8d1295",
+   "question": "戴维营协议把西奈半岛归还埃及，同时设为非军事区。文章用它来说明什么？",
+   "options": [
+    "先出价的一方设定了谈判框架，埃及首先开价所以拿回了全部领土",
+    "谈判结果最终由 BATNA 更强的一方决定，弱势一方只能接受其条件",
+    "当双方立场对立时，最公平的做法是把争议领土对半分割、各让一步",
+    "立场完全对立时，背后的利益（埃及要主权、以色列要安全）仍可能兼容"
+   ],
+   "answer": 3,
+   "explanation": "文章用它示范《Getting to Yes》的利益与立场之分：双方立场（绝不归还 / 必须收回每一寸）完全对立，但底层利益一个是安全、一个是主权，于是归还领土满足主权，非军事化满足安全。这不是对半妥协。",
+   "question_en": "The Camp David Accords returned the Sinai to Egypt while making it a demilitarized zone. What does the article use this to show?",
+   "options_en": [
+    "Whoever names a figure first frames the talks, and Egypt opened first so it got all the land back",
+    "Outcomes are decided by whoever has the stronger BATNA, and the weaker side must accept its terms",
+    "When positions clash, the fairest move is to split the disputed territory in half so each side gives ground",
+    "Even when positions are flatly opposed, the underlying interests (Egypt's sovereignty, Israel's security) can fit together"
+   ],
+   "explanation_en": "The article uses it to illustrate Getting to Yes's interests-versus-positions distinction: the positions ('never return it' vs. 'every inch back') were opposed, but the interests were security and sovereignty. Returning the land met sovereignty; demilitarizing it met security. It wasn't a split-the-difference compromise."
+  }
+ ]
+}
