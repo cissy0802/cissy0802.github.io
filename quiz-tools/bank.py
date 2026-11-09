@@ -13,7 +13,7 @@ decides which articles are next and is the only thing that writes to /quiz/.
 Nothing reaches /quiz/ until an independent blind answer matches the author's.
 A question the second reader gets wrong is dropped, not argued with.
 """
-import argparse, glob, hashlib, html, json, os, random, re, subprocess, sys
+import argparse, fnmatch, glob, hashlib, html, json, os, random, re, subprocess, sys, urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 HUB = os.path.dirname(HERE)
@@ -28,8 +28,76 @@ MIN_CHARS = 800
 MAX_ATTEMPTS = 2
 NOT_CONTENT = {"cissy0802.github.io", "hub", "cissychen-homepage", "video-pipeline", "daily-quiz",
                "podcast-transcripts", "career-radar", "ai-code-review"}
+ENGAGE_API = os.environ.get("ENGAGE_API", "https://bigcat-engage.cissychen.workers.dev")
 SKIP = re.compile(r"(^|/)(index|404|skills|profiles|ideas|debate)(\.en)?\.html$")
 TWIN = re.compile(r"-(plain|deep)\.html$")
+
+
+# ---- Where article text comes from ---------------------------------------
+# On the laptop every site is a sibling checkout of this repo. In a cloud
+# routine only this repo is mounted, so each site is cloned blobless into
+# work/clones and files are read with `git show` (blobs arrive on demand; the
+# baked audio never downloads). api.github.com is not reachable from the cloud
+# sandbox, plain git over github.com is.
+CLONES = os.path.join(WORK, "clones")
+GIT_MODE = os.environ.get("QUIZ_SOURCE") == "git" or not os.path.isdir(os.path.join(REPOS, "deep-reading", ".git"))
+_cloned = {}
+
+
+def site_repos():
+    """Content repos: every site the hub's landing page links to, plus the debates."""
+    if not GIT_MODE:
+        return [d for d in sorted(os.listdir(REPOS))
+                if d not in NOT_CONTENT and os.path.isdir(os.path.join(REPOS, d, ".git"))]
+    hub = open(os.path.join(HUB, "index.zh.html"), encoding="utf-8").read()
+    names = set(re.findall(r'href="/([A-Za-z0-9-]+)/', hub)) | {"thinker-arena"}
+    return sorted(n for n in names if n not in NOT_CONTENT and n != "icons")
+
+
+def _clone(repo):
+    if repo in _cloned:
+        return _cloned[repo]
+    dest = os.path.join(CLONES, repo)
+    if os.path.isdir(os.path.join(dest, ".git")):
+        p = subprocess.run(["git", "-C", dest, "fetch", "-q", "origin"], capture_output=True, text=True, timeout=300)
+    else:
+        os.makedirs(CLONES, exist_ok=True)
+        p = subprocess.run(["git", "clone", "-q", "--filter=blob:none", "--no-checkout",
+                            f"https://github.com/cissy0802/{repo}", dest], capture_output=True, text=True, timeout=300)
+    if p.returncode != 0:
+        # A missing site would quietly drop its articles from the queue, so stop instead.
+        sys.exit(f"git clone/fetch failed for {repo}: {(p.stderr or p.stdout)[-300:]}")
+    _cloned[repo] = dest
+    return dest
+
+
+def ls_files(repo, pattern):
+    """Tracked files of a repo matching a git pathspec, e.g. '*.html'."""
+    if GIT_MODE:
+        out = subprocess.run(["git", "-C", _clone(repo), "ls-tree", "-r", "--name-only", "origin/HEAD"],
+                             capture_output=True, text=True).stdout
+        return [f for f in out.split() if fnmatch.fnmatch(f, pattern)]
+    else:
+        out = subprocess.run(["git", "-C", os.path.join(REPOS, repo), "ls-files", pattern],
+                             capture_output=True, text=True).stdout
+    return out.split()
+
+
+def refresh(repo):
+    if GIT_MODE:
+        _clone(repo)
+    else:
+        subprocess.run(["git", "-C", os.path.join(REPOS, repo), "pull", "--ff-only", "-q"],
+                       capture_output=True, timeout=120)
+
+
+def read_file(repo, path):
+    """A file's text, or None if the repo doesn't have it."""
+    if GIT_MODE:
+        p = subprocess.run(["git", "-C", _clone(repo), "show", f"origin/HEAD:{path}"], capture_output=True, timeout=120)
+        return p.stdout.decode("utf-8", "ignore") if p.returncode == 0 else None
+    f = os.path.join(REPOS, repo, path)
+    return open(f, encoding="utf-8", errors="ignore").read() if os.path.exists(f) else None
 
 
 def load(path, default):
@@ -69,7 +137,7 @@ def en_page(page):
     if rest.startswith("debate.html?d="):
         return f"/{repo}/debate.en.html?d=" + rest.split("=", 1)[1]
     en = rest.replace(".html", ".en.html")
-    return f"/{repo}/{en}" if os.path.exists(os.path.join(REPOS, repo, en)) else None
+    return f"/{repo}/{en}" if read_file(repo, en) is not None else None
 
 
 def en_title(page):
@@ -78,9 +146,9 @@ def en_title(page):
         return None
     repo, rest = target.lstrip("/").split("/", 1)
     if rest.startswith("debate.en.html?d="):
-        f = os.path.join(REPOS, repo, "debates", rest.split("=", 1)[1] + ".json")
-        return json.load(open(f)).get("question_en") if os.path.exists(f) else None
-    raw = open(os.path.join(REPOS, repo, rest), encoding="utf-8", errors="ignore").read()
+        raw = read_file(repo, "debates/" + rest.split("=", 1)[1] + ".json")
+        return json.loads(raw).get("question_en") if raw else None
+    raw = read_file(repo, rest) or ""
     m = re.search(r"(?is)<title>(.*?)</title>", raw)
     t = html.unescape(m.group(1)).strip() if m else None
     return t if t and not CJK.search(t) else None
@@ -98,8 +166,29 @@ def twin_of(page):
     return TWIN.sub("-deep.html", page) if TWIN.search(page) else page
 
 
-def reader_counts():
-    """Returns (readers per article, articles the priority account has read)."""
+def read_rows():
+    """[{page, n, mine}] for every article someone has finished reading.
+
+    Cloud: the engage worker's admin endpoint (BIGCAT_ADMIN_TOKEN is in the
+    routine's environment; the priority account is a worker secret).
+    Laptop: D1 directly through wrangler, with ~/.bigcat-hub/.env."""
+    admin = os.environ.get("BIGCAT_ADMIN_TOKEN", "")
+    if admin:
+        err = ""
+        for _ in range(3):
+            try:
+                req = urllib.request.Request(ENGAGE_API + "/quiz-reads", data=json.dumps({"admin": admin}).encode(),
+                                             headers={"Content-Type": "application/json", "User-Agent": "bigcat-quiz-bank/1.0"})
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    d = json.loads(r.read().decode("utf-8"))
+                if d.get("ok"):
+                    return d["results"]
+                err = str(d.get("error"))
+            except Exception as e:  # noqa: BLE001 - reported below
+                err = str(e)
+        sys.exit("engage worker /quiz-reads failed: " + err)
+    if GIT_MODE:
+        sys.exit("BIGCAT_ADMIN_TOKEN is not set; the cloud routine's environment must provide it")
     env = dict(os.environ)
     for line in open(os.path.join(CREDS, ".env")):
         line = line.strip()
@@ -116,30 +205,31 @@ def reader_counts():
     for _ in range(3):
         p = subprocess.run(cmd, capture_output=True, text=True, env=env, cwd=CREDS)
         if p.returncode == 0:
-            out, mine = {}, set()
-            for r in json.loads(p.stdout)[0]["results"]:
-                k = twin_of(canonical(r["page"]))
-                out[k] = out.get(k, 0) + r["n"]
-                if r["mine"]:
-                    mine.add(k)
-            if not mine:
-                sys.exit("priority account has no read articles; check QUIZ_PRIORITY_USER")
-            return out, mine
+            return json.loads(p.stdout)[0]["results"]
         err = (p.stderr + p.stdout)[-400:]
     sys.exit("wrangler failed: " + err)
 
 
+def reader_counts():
+    """Returns (readers per article, articles the priority account has read)."""
+    out, mine = {}, set()
+    for r in read_rows():
+        k = twin_of(canonical(r["page"]))
+        out[k] = out.get(k, 0) + r["n"]
+        if r["mine"]:
+            mine.add(k)
+    if not mine:
+        sys.exit("priority account has no read articles; check QUIZ_PRIORITY_USER")
+    return out, mine
+
+
 def all_pages():
     pages = []
-    for d in sorted(os.listdir(REPOS)):
-        path = os.path.join(REPOS, d)
-        if d in NOT_CONTENT or not os.path.isdir(os.path.join(path, ".git")):
-            continue
-        out = subprocess.run(["git", "-C", path, "ls-files", "*.html"], capture_output=True, text=True).stdout
-        for f in out.split():
+    for d in site_repos():
+        for f in ls_files(d, "*.html"):
             if not f.endswith(".en.html") and not SKIP.search(f):
                 pages.append(twin_of(f"/{d}/{f}"))
-    for f in glob.glob(os.path.join(REPOS, "thinker-arena", "debates", "*.json")):
+    for f in ls_files("thinker-arena", "debates/*.json"):
         pages.append("/thinker-arena/debate.html?d=" + os.path.basename(f)[:-5])
     return sorted(set(pages))
 
@@ -154,21 +244,19 @@ def html_to_text(s):
 
 def article(page):
     repo, rest = page.lstrip("/").split("/", 1)
-    subprocess.run(["git", "-C", os.path.join(REPOS, repo), "pull", "--ff-only", "-q"],
-                   capture_output=True, timeout=120)
+    refresh(repo)
     if repo == "thinker-arena" and rest.startswith("debate.html?d="):
-        f = os.path.join(REPOS, repo, "debates", rest.split("=", 1)[1] + ".json")
-        if not os.path.exists(f):
+        raw = read_file(repo, "debates/" + rest.split("=", 1)[1] + ".json")
+        if not raw:
             return None, None
-        d = json.load(open(f))
+        d = json.loads(raw)
         parts = [d.get("question", ""), d.get("sub", "")]
         parts += [f"[{p.get('thinker')}] {p.get('text', '')}" for p in d.get("posts", [])]
         parts += [s.get("summary", "") for s in d.get("summaries", [])[:1]]
         return "辩论：" + d.get("question", ""), "\n".join(parts)
-    f = os.path.join(REPOS, repo, rest)
-    if not os.path.exists(f):
+    raw = read_file(repo, rest)
+    if raw is None:
         return None, None
-    raw = open(f, encoding="utf-8", errors="ignore").read()
     m = re.search(r"(?is)<title>(.*?)</title>", raw)
     title = html.unescape(m.group(1)).strip() if m else rest
     body = re.search(r"(?is)<(article|main)[^>]*>(.*)</\1>", raw)

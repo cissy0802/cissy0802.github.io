@@ -23,6 +23,7 @@
  *   POST /reads-set    { session, page, read }       -> mark / unmark one page as read
  *   POST /reads-thought{ session, page, thought }    -> article-level thought
  *   POST /quiz-history { session }                   -> this account's quiz record, per question
+ *   POST /quiz-reads   { admin }                     -> per-article reader counts for the quiz bank
  *   POST /quiz-answer  { session, qid, page, correct } -> record one answer
  *   Notes are private per account: every note is scoped to the session's user,
  *   so one account can never read or delete another's. POST-only keeps
@@ -204,6 +205,25 @@ export default {
           .bind(e, l)
           .run();
         return json({ ok: true, removed: res.meta.changes > 0 }, 200, origin);
+      }
+
+      // ---- Read counts for filling the quiz bank (admin only) ----------
+      // quiz-tools/bank.py in the cloud routine: which articles have readers,
+      // and which the priority account (worker secret QUIZ_PRIORITY_USER) read.
+      if (url.pathname === "/quiz-reads" && request.method === "POST") {
+        const body = await request.json().catch(() => ({}));
+        if (!env.ADMIN_TOKEN || body.admin !== env.ADMIN_TOKEN) {
+          return json({ ok: false, error: "unauthorized" }, 401, origin);
+        }
+        if (!/^[0-9a-f-]{36}$/.test(env.QUIZ_PRIORITY_USER || "")) {
+          return json({ ok: false, error: "no_priority_user" }, 500, origin);
+        }
+        const { results } = await env.DB.prepare(
+          "SELECT page, count(*) n, max(user_id = ?) mine FROM reads WHERE is_read = 1 GROUP BY page"
+        )
+          .bind(env.QUIZ_PRIORITY_USER)
+          .all();
+        return json({ ok: true, results }, 200, origin);
       }
 
       // ---- Send a newsletter to a list (admin only) --------------------
