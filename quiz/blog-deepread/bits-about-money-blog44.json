@@ -1,0 +1,69 @@
+{
+ "page": "/blog-deepread/bits-about-money-blog44.html",
+ "title": "Patrick McKenzie · Bits about Money — 银行难用，往往是因为我们要它难用",
+ "page_en": "/blog-deepread/bits-about-money-blog44.en.html",
+ "title_en": "Patrick McKenzie · Bits about Money — Banks are often hard to use because we want them to be",
+ "src_hash": "bcfd823f4e1a",
+ "questions": [
+  {
+   "id": "8924930599",
+   "question": "McKenzie 说「欺诈的最优数量大于零」。他的核心理由是什么？",
+   "options": [
+    "每道防欺诈关卡同时挡住诚实顾客，压到零会损失更多正当交易",
+    "欺诈损失最终由政府兜底，商户和银行其实都不必太在意",
+    "骗子总能找到新漏洞，投入再多资源也不可能把它根除",
+    "保留一定量的欺诈，能帮银行积累真实样本、持续训练和改进风控模型"
+   ],
+   "answer": 0,
+   "explanation": "顺着损失瀑布追，欺诈成本停在商户那里，是一项和广告费一样的预算；而每加一道关卡，比如多要一栏账单地址，转化率就掉一截。所以高毛利的软件公司宁可多吃欺诈多成交，低毛利、好转卖的主机就要逐单审核。损失由商户吞下，不是政府兜底。",
+   "question_en": "McKenzie argues that 'the optimal amount of fraud is non-zero'. What is his core reason?",
+   "options_en": [
+    "Every anti-fraud barrier also blocks honest customers, so driving fraud to zero loses more legitimate sales",
+    "Fraud losses are ultimately covered by the government, so merchants and banks needn't care much",
+    "Fraudsters always find new holes, so no amount of resources can eliminate them",
+    "Keeping some fraud gives banks data to train their risk models"
+   ],
+   "explanation_en": "Following the loss waterfall, fraud costs land on the merchant as a budget line like advertising, and every added check, such as asking for a billing address, cuts conversion. So high-margin software firms accept more fraud to close more sales, while low-margin, easily resold consoles get every first order reviewed. Merchants absorb the loss, not the government."
+  },
+  {
+   "id": "7cf940b4e9",
+   "question": "开户问卷问你的职业和资金来源，看起来罪犯根本不会老实填。按 McKenzie 的分析，它真正起作用的主要方式是什么？",
+   "options": [
+    "收集客户的财务画像，方便银行向他们推销合适的产品",
+    "罪犯迟早得对银行撒谎，这份被精确存档的谎言成了现成的起诉罪名",
+    "让银行在客户日后出事时，可以免于承担相应的法律责任",
+    "通过问卷上填写的答案，准确识别出哪些客户是毒贩、军火商和洗钱分子"
+   ],
+   "answer": 1,
+   "explanation": "他说 KYC 本来就不是为了「了解客户」：对银行撒谎是重罪，且会被最擅长记账的机构一字不差地存很多年，检察官证明不了主罪时也能拿它逼人认罪，就像用逃税抓 Al Capone。他称之为「没有有效性的效果」：不必按自身标准有效，也能在统计上让犯罪更难。",
+   "question_en": "Account-opening forms ask your occupation and source of funds, which criminals would never answer honestly. By McKenzie's analysis, how do they mainly work?",
+   "options_en": [
+    "They build a financial profile so the bank can market suitable products to customers",
+    "Criminals eventually must lie to a bank, and that precisely archived lie becomes a ready-made charge",
+    "They shield the bank from legal liability if a customer later gets into trouble",
+    "The answers let banks accurately identify which customers are drug dealers and launderers"
+   ],
+   "explanation_en": "He says KYC was never really about knowing the customer: lying to a bank is a felony, recorded verbatim for years by the institution best at record-keeping, so prosecutors can use it even when they can't prove the main crime, much as tax evasion caught Al Capone. He calls this effects achieved without effectiveness."
+  },
+  {
+   "id": "d4ff23cbd3",
+   "question": "银行突然关掉你的账户却一个字都不解释，客服也一问三不知。McKenzie 认为背后最硬的那条原因是什么？",
+   "options": [
+    "银行老旧系统在并购迁移时丢失了关户的原始记录和理由",
+    "银行担心解释了会被客户起诉，所以内部统一要求保持沉默",
+    "法律禁止银行透露、甚至承认可疑活动报告存在，一线员工也看不到",
+    "银行客服培训不足、考核只看结单数，员工懒得去查具体原因"
+   ],
+   "answer": 2,
+   "explanation": "联邦法规禁止银行及员工披露 SAR 或任何能透露其存在的信息，哪怕对政府自己的传票也一样；为免一线员工说漏嘴，SAR 被锁进独立子系统，于是银行转眼连自己都不知道为什么关户。客服分层和系统边界确实也让体验很差，但他把 SAR 保密列为最硬的一条，并由此得出「有时银行烂是因为我们要它烂」。",
+   "question_en": "Your bank suddenly closes your account with no explanation, and no one on the phone knows anything. What does McKenzie see as the hardest underlying reason?",
+   "options_en": [
+    "Old systems lost the original closure records and reasons during a merger migration",
+    "The bank fears lawsuits if it explains, so it has a policy of staying silent",
+    "The law forbids banks to disclose, or even confirm, a suspicious activity report, and front-line staff can't see it",
+    "Customer service is undertrained and measured on tickets closed, so staff don't bother to look"
+   ],
+   "explanation_en": "Federal rules bar banks and staff from disclosing a SAR or anything revealing its existence, even to a government subpoena; to keep front-line staff from slipping, SARs sit in a walled-off subsystem, so the bank soon doesn't know why it closed the account. Tiered support and system seams also hurt, but he treats SAR secrecy as the hard core, behind 'sometimes banks suck because we want them to suck'."
+  }
+ ]
+}

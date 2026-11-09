@@ -1,0 +1,69 @@
+{
+ "page": "/talk-deepread/dawkins-strange-universe-talk23.html",
+ "title": "Richard Dawkins ·《为什么宇宙显得如此奇怪》— 大脑生在「中间世界」，可我们偏偏懂了量子力学",
+ "page_en": "/talk-deepread/dawkins-strange-universe-talk23.en.html",
+ "title_en": "Richard Dawkins · \"Why the universe seems so strange\" — our brains were built for Middle World, and yet we cracked quantum mechanics",
+ "src_hash": "4f48cf971fed",
+ "questions": [
+  {
+   "id": "4b5fe23c49",
+   "question": "按 Dawkins「中间世界」的论证，石头几乎全是空的，却摸起来坚硬。这说明了什么？",
+   "options": [
+    "原子之间的空隙小到肉眼无法分辨，所以我们才误以为石头是实心的",
+    "「坚固」是在中等尺度上导航时有用的概念，因为手和石头确实穿不过彼此",
+    "「坚硬」只是文化习得的词语，不同语言对它的划分方式并不相同",
+    "我们的触觉其实在系统性地欺骗我们，石头远没有我们感到的那么坚硬结实"
+   ],
+   "answer": 1,
+   "explanation": "Dawkins 说石头摸起来坚硬，恰恰因为石头和手确实穿不过彼此；「坚固」是在中间世界里导航的有用模型，不是错觉。他用维特根斯坦的段子说明的也是这点：眼睛没被骗，「显而易见」只是特定尺度上的显而易见。",
+   "question_en": "In Dawkins's 'Middle World' argument, rock is almost entirely empty space yet feels hard. What does that show?",
+   "options_en": [
+    "The gaps between atoms are too small to see, so we wrongly assume rock is solid",
+    "'Solid' is a useful concept for navigating at medium scale, because hands and rocks really can't pass through each other",
+    "'Hard' is a culturally learned word that different languages divide up differently",
+    "Our sense of touch systematically deceives us; rock isn't as hard as it feels"
+   ],
+   "explanation_en": "Dawkins says rock feels hard precisely because rock and hand can't pass through each other; solidity is a useful model for getting around Middle World, not an illusion. His Wittgenstein anecdote makes the same point: your eyes aren't fooled; 'obvious' is only obvious at a particular scale."
+  },
+  {
+   "id": "ea2aa2e6e4",
+   "question": "文章援引后来的研究，认为 Dawkins 把直觉的边界画错了位置。真正的分界线在哪里？",
+   "options": [
+    "在原子尺度和日常尺度之间，正如「中间世界」这个概念所划定的那样",
+    "在「感知与动作」和「讲道理、显式推理」之间，而不在尺度大小",
+    "在接近光速的高速世界和日常低速世界之间，相对论才是门槛",
+    "在受过系统物理训练的人和从没学过物理的人之间"
+   ],
+   "answer": 1,
+   "explanation": "1980 年的研究显示，过半大学生连中间世界里的运动轨迹都画错；2013 年的研究又显示，人在看和动的时候是相当准的「直觉物理引擎」。所以演化给的是好用的感知—动作模拟器，不是好用的显式物理理论，哪怕在中间世界里也一样。上过物理课的学生同样画错，训练也不是分界线。",
+   "question_en": "Citing later research, the article says Dawkins drew the boundary of intuition in the wrong place. Where does it really lie?",
+   "options_en": [
+    "Between the atomic scale and the everyday scale, just as 'Middle World' suggests",
+    "Between perception-and-action and explicit reasoning, not between scales",
+    "Between near-light-speed worlds and everyday low speeds, where relativity is the threshold",
+    "Between people trained in physics and people who never studied it"
+   ],
+   "explanation_en": "A 1980 study found most college students misdraw trajectories even in everyday settings, while 2013 work showed people are accurate 'intuitive physics engines' when seeing and acting. Evolution gave us a good perception-action simulator, not a good explicit theory of physics, even in Middle World. Students who had taken physics erred too, so training isn't the line."
+  },
+  {
+   "id": "a746ddd8ad",
+   "question": "对「宇宙可能超出人类能理解的范围」这个悲观推论，文章认为最直接的反例是什么？",
+   "options": [
+    "蝙蝠、水黾等动物能感知人类感知不到的世界，说明感知可扩展",
+    "人类已经掌握了量子力学，只不过是靠数学而不是靠直觉拿下的",
+    "量子理论的预测精度高得惊人，这证明我们已经从直觉上真正理解了它",
+    "从小玩量子和相对论游戏的孩子，已经被证明养出了相应的直觉"
+   ],
+   "answer": 1,
+   "explanation": "文章总结说：科学反直觉是真的，演化塑造直觉也是真的，但推不出人类理解有一道生物学上限——量子力学本身就是反例，只是用数学拿下的。游戏养直觉至今没有研究证明，一篇相关量子游戏论文还被撤稿；预测精确也不等于直觉上懂了。",
+   "question_en": "Against the pessimistic idea that the universe may lie beyond human understanding, what does the article treat as the most direct counterexample?",
+   "options_en": [
+    "Bats and water striders sense worlds humans can't, showing perception can be extended",
+    "Humans have already mastered quantum mechanics, just through mathematics rather than intuition",
+    "Quantum theory's astonishing predictive accuracy shows we already grasp it intuitively",
+    "Children raised on quantum and relativity games have been shown to develop matching intuitions"
+   ],
+   "explanation_en": "The article concludes that science is counterintuitive and evolution shaped intuition, but neither implies a biological ceiling on understanding: quantum mechanics itself is the counterexample, won through math. No study shows games build intuition, and one quantum-game paper was retracted; accurate predictions don't mean intuitive understanding either."
+  }
+ ]
+}

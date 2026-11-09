@@ -1,0 +1,69 @@
+{
+ "page": "/novel-deepread/three-body-novel1.html",
+ "title": "三体 — 小说精读 No.1",
+ "page_en": "/novel-deepread/three-body-novel1.en.html",
+ "title_en": "The Three-Body Problem — Novels, Deep-Read No.1",
+ "src_hash": "ae96ee49d69c",
+ "questions": [
+  {
+   "id": "0018ee847f",
+   "question": "关于叶文洁替全人类按下回答键，文章强调了一个容易被滑过去的区别。是哪一个？",
+   "options": [
+    "她的决定其实出于对父亲被打死的私人仇恨，与对人类前途的理性判断毫无关系",
+    "她是被三体人蒙骗的，按键之前并不知道回答会把地球坐标暴露出去",
+    "她只是在执行红岸基地的既定任务，真正的责任应当由那个体制承担",
+    "绝望有根据是对世界的判断，它能否授权她替所有人做不可逆的决定是另一回事"
+   ],
+   "answer": 3,
+   "explanation": "文章先把她的推理讲到最强——一个无法自我纠错的系统只能靠外力纠错——再指出：她的绝望有根据，不等于这份绝望能授权她替没被问过的人做终局判决，而且这一判决不可逆。她并没有被蒙骗：监听员明确警告过「不要回答」。",
+   "question_en": "On Ye Wenjie answering the aliens on behalf of humanity, the article stresses a distinction that is easy to skip past. Which one?",
+   "options_en": [
+    "Her choice came from private revenge for her father's death and had nothing to do with any reasoned view of humanity",
+    "She was deceived by the Trisolarans and didn't know that replying would expose Earth's coordinates",
+    "She was only carrying out Red Coast's assigned mission, so the responsibility lies with the system",
+    "Despair grounded in evidence is a judgment about the world; whether it authorizes an irreversible choice for everyone is a separate question"
+   ],
+   "explanation_en": "The article first states her case at its strongest: a system that can't correct itself can only be corrected from outside. Then it notes that well-founded despair doesn't authorize her to pass a final, irreversible verdict for people who were never asked. She wasn't deceived: the listener explicitly warned 'Do not answer.'"
+  },
+  {
+   "id": "a4ce30baed",
+   "question": "文章认为，智子「锁死基础科学」这一设定最狠的地方在哪里？",
+   "options": [
+    "它亲手杀死了一批顶尖的物理学家，让学界失去了领军人物",
+    "它让人类当时正在使用的一切技术和武器都在一夜之间失灵",
+    "它能读出每个人心里正在想什么，从此人类再也不可能保有任何秘密",
+    "它否定的不是人类眼下的实力，而是「人类会不断进步」这个信念"
+   ],
+   "answer": 3,
+   "explanation": "智子在加速器里制造自相矛盾的数据，让物理学停止前进，应用技术就会撞上同一块天花板——被否定的是近代以来「人类会进步」的基本信念。已有技术并未失灵；智子也恰恰读不到思想，这条缝后来长出了面壁计划。",
+   "question_en": "What does the article see as the cruelest part of the sophons 'locking down basic science'?",
+   "options_en": [
+    "It directly killed a group of top physicists, leaving the field leaderless",
+    "It makes every technology and weapon humans were using fail overnight",
+    "It reads everyone's thoughts, so humans can never keep a secret again",
+    "It denies not humanity's present strength but the belief that humanity will keep progressing"
+   ],
+   "explanation_en": "Sophons corrupt accelerator results so physics stops advancing and all applied technology hits the same ceiling; what dies is the modern faith that humanity progresses. Existing technology keeps working, and sophons precisely cannot read thoughts, the gap that later gives rise to the Wallfacer Project."
+  },
+  {
+   "id": "9319c3b01b",
+   "question": "对结尾那句「虫子从来就没有被真正战胜过」，文章的评价是什么？",
+   "options": [
+    "当作鼓舞人的姿态是对的，当作论证就轻了：物种活下来不等于文明活下来",
+    "这是全书最严密的一个论证，蝗虫几千年的生存经验足以证明人类必然获胜",
+    "这是一句纯粹的自我安慰，技术代差面前任何抵抗都毫无意义",
+    "这句话把「虫子」重新定义成了侵略者，暗示三体人终将失败"
+   ],
+   "answer": 0,
+   "explanation": "文章承认它成立的部分很硬：技术代差不等于结局。但人类可以像虫子一样繁衍下去，同时失去科学、艺术和记忆；虫子的从容还来自无知。所以它是一个知情者递出的勇气，不是证明。说它「毫无意义」走到了另一个极端。",
+   "question_en": "How does the article assess the closing line 'Bugs have never been truly defeated'?",
+   "options_en": [
+    "Right as a morale-raising gesture, too thin as an argument: a species surviving isn't a civilization surviving",
+    "It is the book's most rigorous argument: the locusts' record proves humanity will win",
+    "It is pure self-consolation; any resistance is pointless against such a technology gap",
+    "It recasts the invaders as the 'bugs', hinting that the Trisolarans will eventually lose"
+   ],
+   "explanation_en": "The article grants the solid part: a technology gap doesn't settle the outcome. But humans could breed on like insects while losing science, art, and memory, and the bugs' calm comes from ignorance. So the line is courage offered by someone who knows the truth, not a proof. Calling it pointless overshoots the other way."
+  }
+ ]
+}

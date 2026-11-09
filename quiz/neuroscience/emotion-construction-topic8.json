@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/emotion-construction-topic8.html",
+ "title": "Topic 8 · 情绪的建构 — 神经科学",
+ "page_en": "/neuroscience/emotion-construction-topic8.en.html",
+ "title_en": "Topic 8 · The Construction of Emotion — Neuroscience",
+ "src_hash": "b93929b4ec26",
+ "questions": [
+  {
+   "id": "bf177505ff",
+   "question": "按建构情绪论，同样是心跳加速，在悬崖边被感受成恐惧、在过山车上被感受成兴奋，主要差别来自哪里？",
+   "options": [
+    "大脑结合当下情境，用不同的情绪概念去解释同一份身体感觉",
+    "兴奋时主要分泌多巴胺，恐惧时主要分泌肾上腺素和皮质醇",
+    "两种场合下，杏仁核和自主神经系统的反应模式本来就完全不同",
+    "恐惧是进化预装的先天程序，兴奋则是后天在文化里学来的"
+   ],
+   "answer": 0,
+   "explanation": "建构论认为情绪是大脑用身体信号、学来的概念和情境当场拼出的解释：心跳一样快，标签一换，体验就变了。认为每种情绪各有专属的脑区、生理或化学「指纹」，正是被大样本汇总研究质疑的经典观。",
+   "question_en": "Under the theory of constructed emotion, a racing heart feels like fear at a cliff edge and thrill on a roller coaster. Where does the difference mainly come from?",
+   "options_en": [
+    "The brain uses the situation to explain the same bodily state with different emotion concepts",
+    "Thrill mainly releases dopamine, while fear mainly releases adrenaline and cortisol",
+    "The amygdala and autonomic system respond in entirely different patterns in the two settings",
+    "Fear is an innate, prewired program, whereas thrill is learned later from culture"
+   ],
+   "explanation_en": "Constructionism says an emotion is the brain's on-the-spot explanation built from body signals, learned concepts, and context: same heart rate, different label, different experience. The idea that each emotion has its own neural, physiological, or chemical fingerprint is the classical view that large meta-analyses call into question."
+  },
+  {
+   "id": "b14e9787af",
+   "question": "文章强调「核心情感本身还不是情绪」，这句话是什么意思？",
+   "options": [
+    "它是一阵情绪退去之后留下的长期心境，比单次的情绪更持久、也更稳定",
+    "它只是「舒不舒服、亢不亢奋」的身体底图，要套上概念才成为具体情绪",
+    "它就是少数几种进化预装、在各种文化里都相同的基本情绪",
+    "它只存在于还没有学会语言的婴儿和动物身上，成人已经没有"
+   ],
+   "answer": 1,
+   "explanation": "核心情感由效价和唤醒度两根轴组成，是一团尚未被命名的身体感觉；同一团「高唤醒、略不适」可以被建构成恐惧、兴奋或心动。把它等同于几种预装的基本情绪，等于又回到了文章要修正的经典观。",
+   "question_en": "The article stresses that 'core affect is not yet an emotion'. What does that mean?",
+   "options_en": [
+    "It is the long-lasting mood left after an emotion fades, more stable than any single emotion",
+    "It is only a bodily map of pleasant-or-not and aroused-or-calm; a concept must be applied to make a specific emotion",
+    "It is the handful of prewired basic emotions that are the same in every culture",
+    "It exists only in infants and animals without language; adults no longer have it"
+   ],
+   "explanation_en": "Core affect has two axes, valence and arousal, and is an as-yet-unnamed bodily feeling; the same 'high-arousal, slightly unpleasant' state can be built into fear, thrill, or a crush. Equating it with a few prewired basic emotions is the classical view the article sets out to revise."
+  },
+  {
+   "id": "07b98a4194",
+   "question": "按文章的解释，为什么情绪粒度高的人往往更善于调节情绪？",
+   "options": [
+    "先认准是哪一种情绪才能对症处理，而命名本身也在收束那团感受",
+    "他们的词汇量更大，向别人倾诉、求助时更容易得到理解",
+    "他们天生体验到的负面情绪就比较少，需要调节的场合也少",
+    "他们更擅长把情绪压下去，不让它在表情和行为上流露出来"
+   ],
+   "answer": 0,
+   "explanation": "粒度高意味着能把一团模糊的「难受」分辨成失望、焦虑或羞愧，分清了才知道下一步该做什么；而把弥散的核心情感收束成一个具体概念，本身就是一种调节，那股劲往往当场松一点。它靠的是辨认，不是压抑。",
+   "question_en": "According to the article, why are people with high emotional granularity usually better at regulating emotions?",
+   "options_en": [
+    "You can only treat a feeling once you know which one it is, and naming it already helps contain it",
+    "Their larger vocabulary makes it easier to confide in others and be understood",
+    "They naturally feel fewer negative emotions, so there is less to regulate",
+    "They are better at suppressing feelings so nothing shows in their face or behavior"
+   ],
+   "explanation_en": "High granularity lets you split a vague 'bad' into disappointment, anxiety, or shame, which tells you what to do next; and condensing diffuse core affect into a specific concept is itself a regulation move that often eases it on the spot. It works through recognition, not suppression."
+  }
+ ]
+}

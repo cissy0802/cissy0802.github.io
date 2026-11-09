@@ -1,0 +1,69 @@
+{
+ "page": "/novel-deepread/brave-new-world-novel39.html",
+ "title": "美丽新世界 — 小说精读 No.39",
+ "page_en": "/novel-deepread/brave-new-world-novel39.en.html",
+ "title_en": "Brave New World — Novels, Deep-Read No.39",
+ "src_hash": "78122465c2a8",
+ "questions": [
+  {
+   "id": "50bada7698",
+   "question": "《美丽新世界》里的睡眠教育对什么有效、对什么无效？为什么这一设定被认为最有预见性？",
+   "options": [
+    "对任何内容都同样有效，因为日复一日的重复本身就足以完成洗脑",
+    "只对低等级的人有效，阿尔法级的人智力够高，能识破那些口号",
+    "教不会科学知识，却能装进好恶——操纵不跟你辩论，而是在偏好形成前就放进去",
+    "能教会科学知识，却改不了人的价值观，所以还得配上索麻和条件反射来补足控制"
+   ],
+   "answer": 2,
+   "explanation": "书里明说睡眠教育教不了科学，只教「什么是好的、我该想要什么」。文章由此指出：有效的操纵不改变你的判断，而是改变判断之前的偏好，今天的推荐算法正是同一机制。「重复即洗脑」把它说成了万能工具，恰好漏掉了这条区分。",
+   "question_en": "In Brave New World, what does sleep-teaching work for and fail at, and why is that detail called its most prescient line?",
+   "options_en": [
+    "It works equally on any content, since daily repetition is enough to brainwash anyone",
+    "It only works on the lower castes; Alphas are smart enough to see through the slogans",
+    "It can't teach science but can install likes and dislikes: manipulation doesn't argue, it plants preferences before you form them",
+    "It teaches facts but can't change values, so soma and conditioning have to complete the control"
+   ],
+   "explanation_en": "The novel says hypnopaedia can't teach science, only what is good and what you should want. The article draws the lesson that effective manipulation shapes preferences before judgment rather than changing judgment, the same mechanism as today's recommendation feeds. 'Repetition brainwashes anything' misses that distinction."
+  },
+  {
+   "id": "aee9d9f142",
+   "question": "和《一九八四》相比，文章认为《美丽新世界》里的反抗为什么找不到支点？",
+   "options": [
+    "索麻让人体力衰弱、行动迟缓，即使有反抗的念头也无力付诸行动",
+    "保留地把所有不满的人都吸走了，文明世界里只剩下天生的顺民",
+    "监视和刑讯严密到异见者还没来得及开口就被清除，根本组织不起任何形式的反抗",
+    "欲望是它先装进去再喂饱的，没人觉得不自由，「自由」一词也就无从被听懂"
+   ],
+   "answer": 3,
+   "explanation": "这个世界不压制欲望，而是先制造欲望再满足它，所以没有人痛苦，也就没有人需要被解放——约翰扔掉索麻时，德尔塔们的反应是暴怒而不是感激。靠监视与刑讯维持的是《一九八四》的靴子，不是这本书的糖。",
+   "question_en": "Compared with Nineteen Eighty-Four, why does the article say rebellion in Brave New World has nothing to push against?",
+   "options_en": [
+    "Soma leaves people too weak and sluggish to act on any rebellious thought",
+    "The reservation absorbs every malcontent, leaving only born conformists in civilization",
+    "Surveillance and torture are so thorough that dissenters vanish before they can organize",
+    "Desires are installed and then satisfied, so no one feels unfree and 'freedom' can't even be understood"
+   ],
+   "explanation_en": "This world doesn't suppress desire; it manufactures desire and then satisfies it, so no one suffers and no one needs liberating. When John throws out the soma, the Deltas riot in rage, not gratitude. Control through surveillance and torture is Orwell's boot, not Huxley's sugar."
+  },
+  {
+   "id": "8d4844982b",
+   "question": "约翰对蒙德说「我就是要求不幸的权利」。文章认为他真正要的是什么？",
+   "options": [
+    "推翻世界国的统治，让所有人都能自由阅读莎士比亚和圣经",
+    "痛苦本身能使人变得高贵，所以疾病、衰老、饥饿这些苦难都应当被原样保留下来",
+    "回到保留地那种有家庭、有宗教、有父母的原始生活方式里去",
+    "不被别人以「为你好」替自己做主的资格；把它说成想吃苦，是蒙德的偷换"
+   ],
+   "answer": 3,
+   "explanation": "文章认为约翰要的不是不幸，而是自己选择的资格：同一件事，自己选择承担和被人以「为你好」免除，性质不同。蒙德把「我要自己选」译成「他要吃苦」，一译就显得荒谬。「痛苦使人高贵」正是文章说的便宜话，而且常是由不必受苦的一方保留的。",
+   "question_en": "John tells Mond, 'I'm claiming the right to be unhappy.' What does the article say he is really asking for?",
+   "options_en": [
+    "The overthrow of the World State so everyone may freely read Shakespeare and the Bible",
+    "Suffering ennobles people, so disease, aging, and hunger should all be preserved",
+    "A return to the reservation's primitive life with families, religion, and parents",
+    "The standing not to have others decide for him 'for his own good'; calling it a wish to suffer is Mond's sleight of hand"
+   ],
+   "explanation_en": "The article reads John's demand as the right to choose: bearing something by choice differs from being spared it by someone acting 'for your good'. Mond translates 'I want to choose' into 'he wants to suffer', which makes it sound absurd. 'Suffering ennobles' is the cheap version the article rejects, usually kept alive by those who don't have to suffer."
+  }
+ ]
+}

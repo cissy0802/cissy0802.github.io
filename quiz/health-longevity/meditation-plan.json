@@ -1,0 +1,69 @@
+{
+ "page": "/health-longevity/meditation-plan.html",
+ "title": "冥想入门计划 — 4 周 · 每天 10 分钟",
+ "page_en": "/health-longevity/meditation-plan.en.html",
+ "title_en": "Meditation Starter Plan — 4 Weeks · 10 Minutes a Day",
+ "src_hash": "6a54ff3e43a2",
+ "questions": [
+  {
+   "id": "5f5e798cd3",
+   "question": "在这份冥想入门计划里，第一周呼吸锚定的「成功标准」是什么？",
+   "options": [
+    "能够连续专注在呼吸上、一次都不走神地坚持下来的最长时长",
+    "走神后发现并带回锚点的次数，每带回一次就算做了一组",
+    "每次坐完之后，自己感到平静和放松的程度",
+    "脑子里完全放空、没有任何念头出现的时间长短"
+   ],
+   "answer": 1,
+   "explanation": "计划说成功标准不是「专注了多久」，而是「带回了多少次」：8 分钟走神 30 次、带回 30 次，就是做了 30 组的好练习。「把脑子放空」是开篇就纠正的第一个误解，以它为目标的人几乎都会在两周内认定自己不适合冥想。",
+   "question_en": "In this beginner meditation plan, what counts as success in week one's breath-anchor practice?",
+   "options_en": [
+    "The longest stretch you can stay on the breath without wandering once",
+    "The number of times you notice wandering and return to the anchor; each return is one rep",
+    "How calm and relaxed you feel after each session",
+    "How long your mind stays completely blank with no thoughts at all"
+   ],
+   "explanation_en": "The plan says success isn't how long you focused but how many times you came back: wandering 30 times in 8 minutes and returning 30 times is a good session of 30 reps. 'Emptying the mind' is the first misconception the plan corrects; people who aim for it almost always decide within two weeks that meditation isn't for them."
+  },
+  {
+   "id": "a5e504e8c8",
+   "question": "第三周用「计划」「担心」这类标签标记念头。计划认为标记真正起作用的机制是什么？",
+   "options": [
+    "切换视角：从「我在担心」变成「出现了一个担心的念头」，不必跟着跑",
+    "把模糊的担心转写成具体的计划，从而把那件事情本身解决掉",
+    "把念头准确分类，找出最常出现的那一类，再有针对性地加以纠正",
+    "通过给念头命名，让它尽快消失，从而回到脑中空白、平静的状态"
+   ],
+   "answer": 0,
+   "explanation": "计划说标记的作用不是分类，而是切换视角：这一点距离就是冥想对焦虑起作用的机制——不是让念头消失，而是不必每个都跟着跑。所以标签要轻要短，若开始琢磨「这算计划还是担心」，那已经是新的思考了。",
+   "question_en": "Week three labels thoughts with tags like 'planning' or 'worrying'. What does the plan say is the real mechanism?",
+   "options_en": [
+    "A shift in perspective, from 'I am worried' to 'a worried thought has appeared', so you needn't follow it",
+    "Turning vague worries into concrete plans so the underlying problem gets solved",
+    "Sorting thoughts accurately to find the most frequent category and then correct it",
+    "Naming a thought so it disappears quickly and the mind returns to a calm blank"
+   ],
+   "explanation_en": "The plan says labeling isn't about classification but about shifting perspective; that small distance is how meditation helps anxiety, not by making thoughts vanish but by letting you not chase each one. So labels should be light and brief: if you start debating 'planning or worrying?', that is already new thinking."
+  },
+  {
+   "id": "2d06fb4d40",
+   "question": "计划在讲四无量心的「舍」（平等心）时，特别澄清了什么？",
+   "options": [
+    "舍是原谅伤害过你的人，并且主动和对方重新和解",
+    "舍是四个里证据最充分的一种，所以应当最先开始练",
+    "舍不是冷漠，而是在意对方，但不把对方的情绪当成自己的",
+    "舍就是放下一切人际关系，从此不再为任何人操心、担忧和牵挂"
+   ],
+   "answer": 2,
+   "explanation": "计划说舍是悲的安全阀，缺了它，悲就成了共情耗竭；它不是冷漠、不是「随他去吧」，而是在意但不被淹没。计划也明说喜与舍基本没有独立的随机对照试验，放进来不是因为证据和慈心相当。",
+   "question_en": "When the plan discusses equanimity (upekkha) among the four immeasurables, what does it specifically clarify?",
+   "options_en": [
+    "Equanimity means forgiving those who hurt you and actively reconciling with them",
+    "Equanimity has the strongest evidence of the four, so it should be practiced first",
+    "Equanimity isn't indifference; it means caring about someone without taking their emotions as your own",
+    "Equanimity means letting go of all relationships and no longer worrying about anyone"
+   ],
+   "explanation_en": "The plan calls equanimity the safety valve for compassion; without it, compassion becomes empathy burnout. It isn't coldness or 'let it go', but caring without being swamped. The plan also says joy and equanimity have essentially no standalone randomized trials and are included for other reasons, not comparable evidence."
+  }
+ ]
+}

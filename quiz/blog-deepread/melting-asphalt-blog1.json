@@ -1,0 +1,69 @@
+{
+ "page": "/blog-deepread/melting-asphalt-blog1.html",
+ "title": "Kevin Simler · Melting Asphalt — 你的怪行为在替谁办事",
+ "page_en": "/blog-deepread/melting-asphalt-blog1.en.html",
+ "title_en": "Kevin Simler · Melting Asphalt — Who Are Your Strangest Behaviors Working For?",
+ "src_hash": "f5e5b61c7a96",
+ "questions": [
+  {
+   "id": "fc72890520",
+   "question": "按 Simler 的「文化烙印」理论，为什么床单和汽油几乎没有那种塑造品牌形象的广告？",
+   "options": [
+    "人们购买必需品时更加理性，广告的情绪操纵手段对它们基本失效",
+    "用它们的时候旁人看不见，广告改写的公共含义派不上用场",
+    "必需品的情感联结早已饱和，再投放广告也加深不了好感",
+    "这两类商品利润太薄，厂商负担不起大规模的形象广告"
+   ],
+   "answer": 1,
+   "explanation": "文化烙印说广告改的不是你的偏好，而是周围人的「词典」：用某产品会向旁人「说」出什么。床单没人看得见、加油是一个人干的，所以无处可烙印。「情绪操纵对必需品失效」仍是情感植入的思路，正是 Simler 要拆掉的那套。",
+   "question_en": "Under Simler's 'cultural imprinting' theory, why are there almost no image-building ads for bedsheets or gasoline?",
+   "options_en": [
+    "People buy necessities rationally, so emotional manipulation by ads doesn't work on them",
+    "Nobody else sees you use them, so the public meanings ads create have nothing to attach to",
+    "Emotional associations with necessities are saturated, so more ads can't deepen them",
+    "Margins on both are too thin for makers to afford large image campaigns"
+   ],
+   "explanation_en": "Cultural imprinting says ads don't change your preferences; they change the shared vocabulary of what using a product says to others. Sheets are unseen and filling up is done alone, so there is nothing to imprint. 'Emotional manipulation fails for necessities' is still the emotional-inception model Simler is attacking."
+  },
+  {
+   "id": "1a39a45266",
+   "question": "按 Simler「关系户信念」的诊断，判断你对某个议题的看法是不是关系户，关键看什么？",
+   "options": [
+    "它是不是来自你所信任的群体、权威或者从小受的教育",
+    "被质疑时你会不会动气，以及你的行动回报是否取决于它的真假",
+    "它在内容上是否符合主流科学共识，还是属于阴谋论一类的错误说法",
+    "你有没有认真读过文献、仔细推理过，甚至曾经改过主意"
+   ],
+   "answer": 1,
+   "explanation": "Simler 明说「我不是在指控你的信念为假，是指控它是关系户」：判据不是真假，而是回报从哪来，以及骄傲、愤怒、改主意之痛这类不该出现在绩效信念附近的情绪。「读过文献、改过主意」正是他预料到并一句堵死的反驳。",
+   "question_en": "By Simler's 'crony beliefs' diagnosis, what mainly tells you whether one of your views is a crony belief?",
+   "options_en": [
+    "Whether it comes from a group, authority, or upbringing that you trust",
+    "Whether challenges to it make you angry, and whether any payoff of yours depends on it being true",
+    "Whether its content matches scientific consensus or belongs with conspiracy theories",
+    "Whether you have read the literature, reasoned carefully, and even changed your mind before"
+   ],
+   "explanation_en": "Simler says outright he is not accusing the belief of being false, only of being a crony: the test is where its rewards come from, plus emotions like pride and anger that have no business near a merit-based belief. 'I read the literature and changed my mind' is exactly the objection he anticipates and dismisses."
+  },
+  {
+   "id": "defc79deef",
+   "question": "Simler 借阿拉伯鸫鹛「抢着喂食、抢着站岗」的例子，反驳「崇拜是为了向高手学本事」。他给声望的替代解释是什么？",
+   "options": [
+    "公开表明你有本事也乐于帮人，是个值得留在群里的好盟友",
+    "为了群体整体利益而甘愿牺牲自己的一种演化出来的利他倾向",
+    "公开排出谁的技能最高，方便崇拜者挑选模仿和学习的对象",
+    "通过威慑让别的成员主动让出食物、栖位等资源的那种能力"
+   ],
+   "answer": 0,
+   "explanation": "声望是「你作为队友值多少」的公共信用：鸟愿意为它付账，因为乐于付出者值得留在群里。鸫鹛会主动妨碍对手做好事，所以「为群体好」说不通；靠威慑拿到的是支配，不是声望。",
+   "question_en": "Simler uses Arabian babblers, which compete to feed others and stand guard, to reject the idea that admiration is for learning from experts. What does he offer instead as the basis of prestige?",
+   "options_en": [
+    "Public knowledge that you are capable and willing to help, making you an ally worth keeping",
+    "An evolved altruism that makes individuals sacrifice themselves for the group's good",
+    "A public ranking of skill that lets admirers pick whom to copy and learn from",
+    "The ability to intimidate others into giving up food, perches, and other resources"
+   ],
+   "explanation_en": "Prestige is public credit for your value as a teammate: others pay for it because a generous member is worth keeping. Babblers actively block rivals from doing good, so 'for the good of the group' fails, and status won by intimidation is dominance, not prestige."
+  }
+ ]
+}

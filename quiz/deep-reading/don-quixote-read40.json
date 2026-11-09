@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/don-quixote-read40.html",
+ "title": "《堂吉诃德》— 每日精读 Read 40",
+ "page_en": "/deep-reading/don-quixote-read40.en.html",
+ "title_en": "Don Quixote — Deep Reading Read 40",
+ "src_hash": "78dea8d0aeec",
+ "questions": [
+  {
+   "id": "3a36b1ad0f",
+   "question": "堂吉诃德把冲风车失败解释为「魔法师把巨人变成了风车」。文章借此提出判断一个信念健不健康的标准是什么？",
+   "options": [
+    "看它能解释多少种现象，能解释的范围越广，这个信念也就越加可靠",
+    "看它是不是来自书本，书本得来的知识往往最容易脱离现实",
+    "看持有者推理是否流畅、前后是否自洽，没有矛盾就算健康",
+    "看它拒绝被什么反驳：能把一切反例都转译成印证的系统就有问题"
+   ],
+   "answer": 3,
+   "explanation": "预测失败后他不改信念，而是增补「暗中有魔法师」这条辅助假设，信念反而被加强，这就是不可证伪。文章说他每次推理都很流畅，问题在于系统里没有一个位置能让世界告诉他「你错了」。「能解释得越多越可靠」恰好是这台解释机的诱惑。",
+   "question_en": "Don Quixote explains his failed charge by saying an enchanter turned the giants into windmills. What test of a healthy belief does the article draw from this?",
+   "options_en": [
+    "Ask how much it can explain; the wider its reach, the more reliable the belief",
+    "Ask whether it came from books, since book knowledge is most prone to lose touch with reality",
+    "Ask whether the believer reasons fluently and consistently; no contradictions means it's healthy",
+    "Ask what it refuses to be refuted by: a system that turns every counterexample into confirmation is unhealthy"
+   ],
+   "explanation_en": "When his prediction fails he adds an auxiliary hypothesis, a hidden enchanter, and the belief grows stronger: that is unfalsifiability. The article notes his reasoning is always fluent; the trouble is that his system has no slot where the world can tell him he's wrong. 'The more it explains, the better' is precisely this machine's lure."
+  },
+  {
+   "id": "09b329f81c",
+   "question": "文章认为《堂吉诃德》下卷比上卷更残酷。关键原因是什么？",
+   "options": [
+    "他在下卷里挨的打比上卷还要重得多，伤病最终彻底拖垮了他的身体",
+    "他越来越清楚骑士小说全是虚构，从此陷入长久的万念俱灰",
+    "周围的人开始配合他演戏，他因此失去了最后一个校准现实的点",
+    "桑丘在下卷里背叛了主人，转投到公爵夫妇的门下当差"
+   ],
+   "answer": 2,
+   "explanation": "上卷里世界用石头和棍棒硬碰硬地回敬他；下卷里读过上卷的人为他布景、雇演员、造假情节。文章说幻觉最怕的不是被戳破，而是被人当真：一旦别人开始配合，你就失去了最后一个校准点。",
+   "question_en": "The article says Part Two of Don Quixote is crueler than Part One. What is the key reason?",
+   "options_en": [
+    "He is beaten more severely in Part Two, and his injuries finally wear his body down",
+    "He grows ever more aware that chivalric romances are fiction and sinks into lasting despair",
+    "People around him start playing along, so he loses his last point of contact with reality",
+    "Sancho betrays his master in Part Two and enters the duke and duchess's service"
+   ],
+   "explanation_en": "In Part One the world hits back with stones and clubs; in Part Two people who have read Part One build sets, hire actors, and stage fake adventures for him. The article says illusion fears being taken seriously more than being exposed: once others play along, you lose your last calibration point."
+  },
+  {
+   "id": "1a662b8251",
+   "question": "桑丘生造了「盆盔」（baciyelmo）这个词。文章认为它对处理日常争执有什么启示？",
+   "options": [
+    "双方可能在用不同的用途系统给同一事物命名，需要一个能同时容纳两种真实的说法",
+    "应当请一位中立的第三方出面来裁决，避免让双方直接对话从而激化矛盾",
+    "争执中总有一方是错的，要尽快找到证据把对错判定清楚，免得事情越拖越大",
+    "既然各人从各自的角度看，真相就无所谓有无，怎么说其实都同样可以成立"
+   ],
+   "answer": 0,
+   "explanation": "同一个物件，在理发师的用途系统里是脸盆，在堂吉诃德的意义系统里是头盔，语言里没有词能同时装下两者，于是要造一个。文章借奥尔特加的视角主义强调：没有脱离位置的客观视角，但这不等于怎么说都行——脸盆确实能装水，也确实挡不住剑。",
+   "question_en": "Sancho coins the word 'baciyelmo' (basin-helmet). What lesson does the article draw from it for everyday disputes?",
+   "options_en": [
+    "The two sides may be naming the same thing within different systems of use, and need a term that holds both truths",
+    "Bring in a neutral third party to rule, so the two sides don't talk directly and inflame things",
+    "One side is always wrong, so find evidence quickly and settle who is right before things escalate",
+    "Since everyone sees from their own position, there is no truth and any account is equally valid"
+   ],
+   "explanation_en": "The same object is a basin in the barber's system of use and a helmet in Quixote's system of meaning, and no word held both, so one had to be coined. Via Ortega's perspectivism the article stresses that there is no view from nowhere, yet not anything goes: the basin really holds water and really can't stop a sword."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/buddhism/yogacara-day3.html",
+ "title": "佛经详解：唯识心学 — Day 3",
+ "page_en": "/buddhism/yogacara-day3.en.html",
+ "title_en": "Buddhist Sutra Deep Dive: Yogācāra Mind-Only — Day 3",
+ "src_hash": "478175de62d1",
+ "questions": [
+  {
+   "id": "3176f55410",
+   "question": "同事一句话让你不舒服，你立刻认定「他在针对我」。按唯识三性的绳蛇喻，「他在针对我」对应哪一层？",
+   "options": [
+    "阿赖耶识：储藏一切过去经验种子的那一层",
+    "依他起性：由麻、搓捻、光线等各种条件凑合而成的那根「绳」",
+    "遍计所执性：心构想出来、又被当成真的那条「蛇」",
+    "圆成实性：看清绳上本来没有蛇的那一层真实"
+   ],
+   "answer": 2,
+   "explanation": "文中正用这个例子：「他针对我」是蛇，是心自动安上去的名目；「他说了一句话、他今天疲惫、你这周本就紧绷」才是绳，即依他起；知道条件一散此事便不成立、不必另立实体，是第三层。阿赖耶识是第八识，不属于三性。",
+   "question_en": "A colleague's remark upsets you and you instantly decide 'he's targeting me'. In Yogacara's rope-and-snake image of the three natures, which layer is 'he's targeting me'?",
+   "options_en": [
+    "The storehouse consciousness: the layer holding seeds of all past experience",
+    "The dependent nature: the 'rope' assembled from various conditions",
+    "The imagined nature: the 'snake' the mind constructs and then takes as real",
+    "The perfected nature: the reality of seeing there was never a snake on the rope"
+   ],
+   "explanation_en": "The article uses this very example: 'he's targeting me' is the snake, a label the mind adds automatically. 'He said one sentence, he's tired, you've been tense all week' is the rope, the dependent nature. Seeing that it dissolves once the conditions part, with no entity to posit, is the third layer. The storehouse consciousness is the eighth consciousness, not one of the three natures."
+  },
+  {
+   "id": "9d1dcadbb0",
+   "question": "关于唯识的「圆成实性」，下列哪种理解符合文中的解释？",
+   "options": [
+    "它是修行到最后证得的一种神秘境界，和日常认知没有关系",
+    "它不是另外藏着的真东西，就是在依他起上没有遍计所执这一事实",
+    "它就是绳本身，因为绳比蛇更真实，所以绳就是最终的真实",
+    "它是蛇和绳之外另有的一个更深的真实本体，需要修行去找到"
+   ],
+   "answer": 1,
+   "explanation": "文中特别强调「圆成实不是第四样东西」：不是蛇假、绳半真、另有真的藏在别处，而就是「绳上无蛇」这个事实，《唯识三十颂》称「圆成实于彼，常远离前性」。绳本身仍是条件凑成的，属于依他起，不是圆成实。",
+   "question_en": "Which reading of Yogacara's 'perfected nature' matches the article's explanation?",
+   "options_en": [
+    "It is a mystical state attained at the end of practice, unrelated to ordinary cognition",
+    "It is no hidden extra thing, just the fact that the dependent nature is free of the imagined one",
+    "It is the rope itself, since the rope is more real than the snake and so is ultimate reality",
+    "It is a deeper true substance beyond both snake and rope, which practice must uncover"
+   ],
+   "explanation_en": "The article stresses that the perfected nature is not a fourth thing: not 'snake false, rope half-true, the real one hidden elsewhere', but simply the fact that there is no snake on the rope; the Thirty Verses say it lies in the dependent nature, always free of the former. The rope itself is still conditioned, which makes it the dependent nature, not the perfected one."
+  },
+  {
+   "id": "74c8c9aee7",
+   "question": "唯识所说的「转识成智」指的是什么？",
+   "options": [
+    "彻底消灭第七末那识，让阿赖耶识成为一个永恒不变的真我",
+    "通过禅定把八识一个个关闭，最终回到没有任何念头的寂静状态",
+    "用深层的第八识取代前六识，从此不再依赖感官和日常的判断",
+    "同一套心换一种运作：感官照用，判断照下，只是不再由我执说了算"
+   ],
+   "answer": 3,
+   "explanation": "文中说修行不是把心关掉、消灭识，而是「转」：前五识、第六识、第七识、第八识分别转为四种智。阿赖耶识刹那生灭、如瀑流，佛陀不轻易讲它，正是怕人把它当成灵魂或真我。",
+   "question_en": "What does Yogacara mean by 'transforming consciousness into wisdom'?",
+   "options_en": [
+    "Wiping out the seventh consciousness so the storehouse consciousness becomes an eternal true self",
+    "Shutting down the eight consciousnesses one by one in meditation until no thought remains",
+    "Replacing the first six consciousnesses with the deep eighth one, so senses and judgment are no longer needed",
+    "The same mind works differently: senses still used, judgments still made, but self-grasping no longer in charge"
+   ],
+   "explanation_en": "The article says practice doesn't switch the mind off or destroy consciousness but transforms it: the five senses, the sixth, seventh, and eighth consciousnesses each turn into one of four wisdoms. The storehouse consciousness arises and ceases each moment like a waterfall, and the Buddha was wary of teaching it precisely so it wouldn't be mistaken for a soul or true self."
+  }
+ ]
+}

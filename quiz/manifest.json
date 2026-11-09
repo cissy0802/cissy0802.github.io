@@ -462,6 +462,141 @@
     "fb924baed6",
     "0ed511daac"
    ]
+  },
+  "/blog-deepread/melting-asphalt-blog1.html": {
+   "t": "Kevin Simler · Melting Asphalt — 你的怪行为在替谁办事",
+   "f": "blog-deepread/melting-asphalt-blog1.json",
+   "q": [
+    "fc72890520",
+    "1a39a45266",
+    "defc79deef"
+   ]
+  },
+  "/novel-deepread/brave-new-world-novel39.html": {
+   "t": "美丽新世界 — 小说精读 No.39",
+   "f": "novel-deepread/brave-new-world-novel39.json",
+   "q": [
+    "50bada7698",
+    "aee9d9f142",
+    "8d4844982b"
+   ]
+  },
+  "/deep-reading/compass-to-fulfillment-read934.html": {
+   "t": "《活法》— 好书精读 Read 934",
+   "f": "deep-reading/compass-to-fulfillment-read934.json",
+   "q": [
+    "42c41fb02d",
+    "7b43191527",
+    "285fefeb0a"
+   ]
+  },
+  "/novel-deepread/three-body-novel1.html": {
+   "t": "三体 — 小说精读 No.1",
+   "f": "novel-deepread/three-body-novel1.json",
+   "q": [
+    "0018ee847f",
+    "a4ce30baed",
+    "9319c3b01b"
+   ]
+  },
+  "/thinker-arena/debate.html?d=democracy-best": {
+   "t": "辩论：民主一定是最好的制度吗？",
+   "f": "thinker-arena/debate-democracy-best.json",
+   "q": [
+    "fc2d7ae822",
+    "0e5dce6503",
+    "6e5f64f532"
+   ]
+  },
+  "/thinker-arena/debate.html?d=procrastination": {
+   "t": "辩论：拖延症，到底要不要治？",
+   "f": "thinker-arena/debate-procrastination.json",
+   "q": [
+    "39a54e75b0",
+    "ed6a13fd87",
+    "fb68e992df"
+   ]
+  },
+  "/neuroscience/emotion-construction-topic8.html": {
+   "t": "Topic 8 · 情绪的建构 — 神经科学",
+   "f": "neuroscience/emotion-construction-topic8.json",
+   "q": [
+    "bf177505ff",
+    "b14e9787af",
+    "07b98a4194"
+   ]
+  },
+  "/talk-deepread/dawkins-strange-universe-talk23.html": {
+   "t": "Richard Dawkins ·《为什么宇宙显得如此奇怪》— 大脑生在「中间世界」，可我们偏偏懂了量子力学",
+   "f": "talk-deepread/dawkins-strange-universe-talk23.json",
+   "q": [
+    "4b5fe23c49",
+    "ea2aa2e6e4",
+    "a746ddd8ad"
+   ]
+  },
+  "/deep-reading/don-quixote-read40.html": {
+   "t": "《堂吉诃德》— 每日精读 Read 40",
+   "f": "deep-reading/don-quixote-read40.json",
+   "q": [
+    "3a36b1ad0f",
+    "09b329f81c",
+    "1a662b8251"
+   ]
+  },
+  "/deep-reading/body-keeps-the-score-read953.html": {
+   "t": "《身体从未忘记》— 好书精读",
+   "f": "deep-reading/body-keeps-the-score-read953.json",
+   "q": [
+    "6b1c755f13",
+    "ba6aaf2be6",
+    "d7cd80b39a"
+   ]
+  },
+  "/buddhism/yogacara-day3.html": {
+   "t": "佛经详解：唯识心学 — Day 3",
+   "f": "buddhism/yogacara-day3.json",
+   "q": [
+    "3176f55410",
+    "9d1dcadbb0",
+    "74c8c9aee7"
+   ]
+  },
+  "/health-longevity/meditation-plan.html": {
+   "t": "冥想入门计划 — 4 周 · 每天 10 分钟",
+   "f": "health-longevity/meditation-plan.json",
+   "q": [
+    "5f5e798cd3",
+    "a5e504e8c8",
+    "2d06fb4d40"
+   ]
+  },
+  "/deep-reading/wisdom-of-life-read928.html": {
+   "t": "《人生的智慧》— 好书精读 Read 928",
+   "f": "deep-reading/wisdom-of-life-read928.json",
+   "q": [
+    "22907a2dae",
+    "b6c7c42b0e",
+    "61bd53bedc"
+   ]
+  },
+  "/deep-reading/the-prince-read42.html": {
+   "t": "《君主论》— 好书精读 Read 42",
+   "f": "deep-reading/the-prince-read42.json",
+   "q": [
+    "200ec07a85",
+    "b8bb7da40f",
+    "d160517197"
+   ]
+  },
+  "/blog-deepread/bits-about-money-blog44.html": {
+   "t": "Patrick McKenzie · Bits about Money — 银行难用，往往是因为我们要它难用",
+   "f": "blog-deepread/bits-about-money-blog44.json",
+   "q": [
+    "8924930599",
+    "7cf940b4e9",
+    "d4ff23cbd3"
+   ]
   }
  },
  "aliases": {

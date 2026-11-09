@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/wisdom-of-life-read928.html",
+ "title": "《人生的智慧》— 好书精读 Read 928",
+ "page_en": "/deep-reading/wisdom-of-life-read928.en.html",
+ "title_en": "The Wisdom of Life — Deep Read 928",
+ "src_hash": "cddd1dead3ac",
+ "questions": [
+  {
+   "id": "22907a2dae",
+   "question": "叔本华说「幸福是负的」。按文章的解释，这个主张在行动上意味着什么？",
+   "options": [
+    "把目标从增加快乐换成减少痛苦与损耗，评估选择先看每天必然的消耗",
+    "人生在根本上没有意义，任何追求和努力到头来都只是一场徒劳",
+    "快乐只能靠不断提高峰值体验来维持，所以要持续追求新的刺激",
+    "应当主动去寻找痛苦来磨炼自己，以便日后换来更深更持久的快乐"
+   ],
+   "answer": 0,
+   "explanation": "「幸福是负的」是一个会计口径：只有痛与缺被直接感受，满足只是它们的消失。所以明智的人追求的不是快乐而是无痛，评估工作或关系先看日常摩擦，因为峰值会衰减，摩擦不会。文章把「什么都没意义」列为对这句话的误读。",
+   "question_en": "Schopenhauer says happiness is 'negative'. As the article explains it, what does this mean in practice?",
+   "options_en": [
+    "Shift the goal from adding pleasure to cutting pain and wear, judging choices first by their unavoidable daily costs",
+    "Life is fundamentally meaningless, and every pursuit and effort is futile in the end",
+    "Pleasure can only be kept up by raising peak experiences, so keep chasing new thrills",
+    "Seek out suffering deliberately to toughen yourself and earn deeper, lasting pleasure later"
+   ],
+   "explanation_en": "'Happiness is negative' is an accounting convention: only pain and lack are felt directly, and satisfaction is just their absence. So the wise seek freedom from pain rather than pleasure, and judge a job or relationship by its daily friction first, because peaks fade and friction doesn't. The article lists 'nothing matters' as a misreading."
+  },
+  {
+   "id": "b6c7c42b0e",
+   "question": "按叔本华对荣誉和名声的区分，下列哪项说法正确？",
+   "options": [
+    "荣誉指才能出众，名声指品行上毫无缺点",
+    "荣誉可失而不可得，名声可得而难失",
+    "荣誉可得而难失，名声可失而不可得",
+    "两者都必须靠作品挣来，事功的名声最持久"
+   ],
+   "answer": 1,
+   "explanation": "荣誉是「别人没有理由认为我缺少普通的品质」，守信一百次攒不出来，失信一次就丢光；名声是「我有别人没有的东西」，必须挣来，一旦有了却难失去。叔本华还说事功的名声传得快、灭得也快，作品的名声才活得久。",
+   "question_en": "By Schopenhauer's distinction between honor and fame, which statement is correct?",
+   "options_en": [
+    "Honor means outstanding talent; fame means having no moral flaws",
+    "Honor can be lost but not gained; fame can be gained and is hard to lose",
+    "Honor can be gained and is hard to lose; fame can be lost but not gained",
+    "Both must be earned through works, and fame from deeds lasts longest"
+   ],
+   "explanation_en": "Honor means others have no reason to think you lack ordinary decent qualities: a hundred kept promises don't build it up, one broken promise loses it. Fame means having something others lack; it must be earned but is hard to lose once had. He adds that fame from deeds spreads and dies fast, while fame from works lasts."
+  },
+  {
+   "id": "61bd53bedc",
+   "question": "叔本华说「财富就像海水，喝得越多越渴」。按文章的解释，原因是什么？",
+   "options": [
+    "满意度取决于拥有与期待之比，收入一涨，期待也跟着被抬高",
+    "钱越多就越容易被人盯上和欺骗，损失反而跟着越来越大",
+    "富人得花钱维持身份和体面，开销总是比收入涨得更快一些",
+    "财富会带来无聊，而无聊带来的痛苦远比贫穷更加难熬"
+   ],
+   "answer": 0,
+   "explanation": "不满足感等于你要求的减去你拥有的；每次收入跃升都顺手抬高期待，差额岿然不动。所以叔本华建议用钱买断不必再做的事，而不是买进新的欲望入口。富人与无聊搏斗出自钟摆那一节，不是海水比喻要说的机制。",
+   "question_en": "Schopenhauer says 'wealth is like seawater: the more you drink, the thirstier you get'. Why, as the article explains it?",
+   "options_en": [
+    "Satisfaction depends on what you have relative to what you expect, and expectations rise with every raise",
+    "The more money you have, the more you attract fraud, so losses grow along with it",
+    "The rich must spend to keep up status, so their outgoings always grow faster than income",
+    "Wealth brings boredom, and boredom is far harder to bear than poverty"
+   ],
+   "explanation_en": "Dissatisfaction equals what you demand minus what you have; every jump in income lifts the expectation too, so the gap stays put. Hence his advice to spend money buying out things you no longer have to do, not new doorways for desire. The rich battling boredom comes from the pendulum section, not the mechanism behind the seawater image."
+  }
+ ]
+}

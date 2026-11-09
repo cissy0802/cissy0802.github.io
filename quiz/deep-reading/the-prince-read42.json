@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/the-prince-read42.html",
+ "title": "《君主论》— 好书精读 Read 42",
+ "page_en": "/deep-reading/the-prince-read42.en.html",
+ "title_en": "The Prince — Deep Reading Read 42",
+ "src_hash": "582d88fc5073",
+ "questions": [
+  {
+   "id": "200ec07a85",
+   "question": "马基雅维利说「若必须择一，被怕比被爱安全」。文章认为这句话最常被砍掉的关键限制是什么？",
+   "options": [
+    "恐惧只能维持一时，最终一定要设法把它转化成人民的爱戴",
+    "只能对外敌使用恐惧，对自己的臣民则始终要保持仁慈宽厚",
+    "绝不能被恨：别动人的财产和妻女，因为怕让人服从，恨让人合谋",
+    "必须先赢得人民真心的爱戴，在这个基础上才可以适度地让人感到害怕"
+   ],
+   "answer": 2,
+   "explanation": "第 17 章紧接着要求：要让人怕，但必须避免被恨，具体就是不动臣民的财产和妻女——「人忘掉父亲之死比忘掉财产之失更快」。被怕的君主面对的是分散盘算的个体，被恨的君主则制造出有共同目标的阴谋联盟。",
+   "question_en": "Machiavelli says that if you must choose, it is safer to be feared than loved. What crucial condition does the article say is most often cut from this line?",
+   "options_en": [
+    "Fear lasts only a while, so it must eventually be converted into the people's affection",
+    "Use fear only against foreign enemies, and always stay merciful toward your own subjects",
+    "Never be hated: leave people's property and women alone, because fear brings obedience and hatred brings conspiracy",
+    "You must first win the people's love, and only then make yourself moderately feared"
+   ],
+   "explanation_en": "Chapter 17 immediately adds that a prince should be feared but must avoid being hated, which means not touching subjects' property or women, since men forget a father's death sooner than the loss of their patrimony. A feared ruler faces scattered, calculating individuals; a hated one creates a conspiracy with a shared goal."
+  },
+  {
+   "id": "b8bb7da40f",
+   "question": "博尔贾先派雷米罗严酷整治罗马涅，秩序建立后又把他劈成两段示众。文章认为这个案例揭示了权力的什么手法？",
+   "options": [
+    "把伤害的账挂到别人名下，让秩序和正义两笔都记进自己的账",
+    "故意显得喜怒无常，让臣民和大臣都无法预测君主的意图",
+    "用不断加码的恐怖维持统治，让人民永远不敢起来反抗",
+    "惩处滥用职权的官员，以此证明君主是真心爱护人民的"
+   ],
+   "answer": 0,
+   "explanation": "博尔贾一手把暴力外包出去收走「秩序」，一手把执行者当祭品献出去收走「正义」，怨恨留在一具尸体上。文章把它推到今天：外部顾问背书裁员、中层宣布坏消息。「越用越多的恐怖」恰是第 8 章说的用得坏的残酷。",
+   "question_en": "Borgia sent Remirro to pacify Romagna harshly, then once order was restored had him displayed cut in two. What technique of power does the article say this reveals?",
+   "options_en": [
+    "Charging the harm to someone else's account, so both 'order' and 'justice' are credited to your own",
+    "Appearing deliberately erratic so subjects and ministers can't predict the prince's intentions",
+    "Ruling by ever-escalating terror so the people never dare to rise up",
+    "Punishing an abusive official to prove that the prince truly cares for his people"
+   ],
+   "explanation_en": "Borgia outsourced the violence to collect 'order', then sacrificed the enforcer to collect 'justice', leaving the resentment on a corpse. The article extends it to today: consultants endorsing layoffs, middle managers delivering bad news. 'Ever-escalating terror' is what Chapter 8 calls cruelty badly used."
+  },
+  {
+   "id": "d160517197",
+   "question": "「目的证明手段正当」常被当作马基雅维利的名言。按文章，书中最接近的那句话实际是什么意思？",
+   "options": [
+    "它就是原话，意思是只要国家保住了，任何手段在道德上都正当",
+    "它是在说只要目的是善的，行为本身就会自动变得合乎道德",
+    "描述世人只按成败评判君主，并不是一条允许为所欲为的道德许可",
+    "它出自《论李维》，原本是在为共和国的纷争和冲突辩护"
+   ],
+   "answer": 2,
+   "explanation": "第 18 章最接近的一句是人们「看结果」：这是对大众如何评判的描述，后世把它改写成一条道德原则，是这本书四百年来最大的误传。文章同时强调他并不为必要时的「不好」道歉，但描述和许可是两回事。",
+   "question_en": "'The end justifies the means' is often attributed to Machiavelli. According to the article, what does the closest line in the book actually mean?",
+   "options_en": [
+    "It is his exact wording: as long as the state survives, any means is morally justified",
+    "It says that if the goal is good, the act itself automatically becomes moral",
+    "It describes how people judge princes by results, not a moral license to do anything",
+    "It comes from the Discourses on Livy, where it defends the republic's internal conflicts"
+   ],
+   "explanation_en": "The nearest line, in Chapter 18, says people look to the outcome: a description of how the public judges. Rewriting it as a moral principle is the book's biggest misquotation in four centuries. The article also notes he doesn't apologize for necessary wrongs, but describing and licensing are different things."
+  }
+ ]
+}

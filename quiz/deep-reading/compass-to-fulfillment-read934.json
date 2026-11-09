@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/compass-to-fulfillment-read934.html",
+ "title": "《活法》— 好书精读 Read 934",
+ "page_en": "/deep-reading/compass-to-fulfillment-read934.en.html",
+ "title_en": "A Compass to Fulfillment — Deep Reading Read 934",
+ "src_hash": "4ecd886dba63",
+ "questions": [
+  {
+   "id": "42c41fb02d",
+   "question": "按稻盛和夫的人生方程式，为什么一个能力强、干劲足的人可能比平庸的人更危险？",
+   "options": [
+    "三项是相加的，能力一高，人就容易忽视热情和心态这两项",
+    "三项是相乘的，而思维方式可以取负值，前两项越大，负的结果越大",
+    "能力越强的人越容易骄傲自满，热情会随着成功一路递减下去",
+    "能力多半是天生的，能力越高，就越难靠后天的思维方式来修正自己的方向"
+   ],
+   "answer": 1,
+   "explanation": "能力和热情只能取 0 到 100，思维方式却在 −100 到 +100 之间，且它是乘数。一旦心态为负，能力和干劲越大，破坏力越大。加法模型意味着短板能被长板补上，这正是稻盛用乘法要否定的。",
+   "question_en": "By Inamori's life equation, why can a highly able, hard-driving person be more dangerous than a mediocre one?",
+   "options_en": [
+    "The three factors add up, so high ability leads people to neglect passion and mindset",
+    "The three factors multiply, and mindset can be negative, so bigger ability and passion make a bigger negative result",
+    "The more able people are, the more arrogant they get, and their passion fades with each success",
+    "Ability is mostly innate, and the higher it is, the harder it is to correct with mindset"
+   ],
+   "explanation_en": "Ability and passion range from 0 to 100, but mindset runs from -100 to +100 and acts as a multiplier. Once mindset is negative, more ability and effort means more damage. An additive model lets strengths cover weaknesses, which is exactly what the multiplication rules out."
+  },
+  {
+   "id": "7b43191527",
+   "question": "稻盛主张用「不可撒谎、不可贪心」这类小时候学的标准做经营判断。文章认为这种原始标准最大的优势是什么？",
+   "options": [
+    "它能写成明确的制度条款，便于在各个部门里统一考核执行",
+    "它在日本文化里早已普遍接受，最容易用来凝聚全体员工",
+    "它不需要论证，聪明人也就没法替违背它的事找到体面的理由",
+    "它和多数情况下的商业最优解一致，因此照做几乎没有什么代价"
+   ],
+   "answer": 2,
+   "explanation": "越复杂的判断框架越容易被聪明人绕过去，你总能给任何事找到一个商业理由；「不可撒谎」不需要论证，也就无法被论证驳倒，在压力下最抗腐蚀。两套标准多数时候结论一致，但文章强调要紧的恰恰是它们分岔的那几次。",
+   "question_en": "Inamori judges business decisions by childhood rules like 'don't lie, don't be greedy'. What does the article see as the main strength of such primitive standards?",
+   "options_en": [
+    "They can be written as explicit policies and audited uniformly across departments",
+    "They are already widely accepted in Japanese culture, so they unite employees easily",
+    "They need no argument, so clever people can't build a respectable case for breaking them",
+    "They match the business optimum in most cases, so following them costs almost nothing"
+   ],
+   "explanation_en": "The more elaborate a framework, the easier it is for clever people to talk their way around it; you can always find a business rationale. 'Don't lie' needs no argument and so can't be argued away, which makes it resistant to corruption under pressure. The two standards usually agree, but the article says what matters are the moments they diverge."
+  },
+  {
+   "id": "285fefeb0a",
+   "question": "创办第二电电前，稻盛每晚自问「动机善吗？私心无吗？」。文章认为这个自检实际在检验什么？",
+   "options": [
+    "自己的做法是否合乎佛教戒律，从而能得到「他力之风」的推动",
+    "项目在商业上能不能成功，与垄断对手相比胜算究竟有多大",
+    "动力够不够硬：掺了私心的动机，事情一变难，私心会先撤退",
+    "这项挑战能不能说服政府、媒体和公众站到自己这一边来"
+   ],
+   "answer": 2,
+   "explanation": "这个自检不问「能不能成」，那是可行性分析的事；它问的是动力的纯度。难事中途必然反复受挫，私心在事情变难时最先撤退，所以它是对意志强度的压力测试。「他力之风」属于文章特别标注的信仰层，不是这个工具本身的作用。",
+   "question_en": "Before founding DDI, Inamori asked himself nightly, 'Is my motive good? Is there no selfishness?' What does the article say this check actually tests?",
+   "options_en": [
+    "Whether his conduct fits Buddhist precepts so that the 'wind of other-power' will help him",
+    "Whether the venture can succeed commercially and how its odds compare with the monopoly",
+    "Whether the drive is strong enough: selfish motives are the first to retreat once things get hard",
+    "Whether the challenge can win over the government, the media, and the public"
+   ],
+   "explanation_en": "The check doesn't ask whether it can succeed; that is feasibility analysis. It asks about the purity of the drive. Hard projects meet repeated setbacks, and selfish motives are the first to retreat, so it is a stress test of resolve. The 'wind of other-power' belongs to the faith layer the article flags separately."
+  }
+ ]
+}

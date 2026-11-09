@@ -1,0 +1,69 @@
+{
+ "page": "/thinker-arena/debate.html?d=procrastination",
+ "title": "辩论：拖延症，到底要不要治？",
+ "page_en": "/thinker-arena/debate.en.html?d=procrastination",
+ "title_en": "Should we cure procrastination at all?",
+ "src_hash": "de4fb33d21ad",
+ "questions": [
+  {
+   "id": "39a54e75b0",
+   "question": "按这场拖延辩论的结论，一个人迟迟不敢动笔写一本自己很在乎、又怕写砸的书，最对症的做法是什么？",
+   "options": [
+    "今天就做出一个会被人看见的粗糙初稿或第一步，用行动打破幻想",
+    "先把桌面、资料和写作工具全部摆好，把启动时的环境阻力降到最低",
+    "每次拖延后严厉地反省自责，用羞耻感逼自己按时交稿",
+    "承认它也许本就不值得做，坦然把它从清单上划掉，不再内疚"
+   ],
+   "answer": 0,
+   "explanation": "结论把拖延分成三种：怕搞砸的大事是逃避型，药方是做出一个丑陋、会被看见的第一步；减摩擦、改环境是对付摩擦型的，划掉是对付无意义型的。拿重排桌面去对付恐惧，正是总结说的「拿错了药」。",
+   "question_en": "By this debate's conclusion, someone keeps putting off writing a book they care about and fear botching. What fits best?",
+   "options_en": [
+    "Produce a rough first draft or first step that others will see, today, and let action kill the fantasy",
+    "First set up the desk, materials, and tools so the friction of starting is as low as possible",
+    "After every delay, reproach yourself harshly and let shame force you to deliver",
+    "Accept it may not be worth doing, cross it off the list, and stop feeling guilty"
+   ],
+   "explanation_en": "The conclusion sorts procrastination into three kinds. A big task you fear botching is avoidance, treated by an ugly first step others will see. Cutting friction treats the friction type, and crossing off treats the pointless type. Tidying your desk against fear is exactly the 'wrong medicine' the summary warns about."
+  },
+  {
+   "id": "ed6a13fd87",
+   "question": "这场辩论指出一个被全场默认、却没人点破的混淆。按结论，人们在拖延上徒劳自责的主要根源是什么？",
+   "options": [
+    "把逃避型、摩擦型、无意义型三种拖延当成一回事，用错了药",
+    "没有给自己设定足够紧、违约代价足够痛的外部 deadline",
+    "对拖延长期浪费生命的危害，认识得还远远不够深刻",
+    "意志力天生不够，无论用什么方法都很难真正改过来"
+   ],
+   "answer": 0,
+   "explanation": "结论说「拖延」其实是三件被安上同一个名字的事：怕搞砸的、启动成本高的、本不该做的。多数自责来自拿错了药，所以第一步不是「治」而是分诊。全场几乎一致认为咬牙硬逼、单靠意志并不是答案。",
+   "question_en": "The debate names a confusion everyone assumed but no one pointed out. By its conclusion, what mainly makes people's self-blame over procrastination futile?",
+   "options_en": [
+    "Treating avoidance, friction, and pointless tasks as one thing, and so using the wrong remedy",
+    "Not setting external deadlines that are tight enough and painful enough to miss",
+    "Not yet grasping deeply enough how procrastination wastes one's life",
+    "Willpower is innately lacking, so no method can really change the habit"
+   ],
+   "explanation_en": "The conclusion says 'procrastination' is three different things under one name: fear of failing, high start-up cost, and tasks that shouldn't be done at all. Most self-blame comes from the wrong remedy, so step one is triage, not cure. Nearly everyone agreed that gritting your teeth on willpower alone isn't the answer."
+  },
+  {
+   "id": "fb68e992df",
+   "question": "按这场辩论的总结，判断一个人的拖延是否需要当作「病」来对待，关键看什么？",
+   "options": [
+    "他最后有没有赶在 deadline 之前把事情勉强完成",
+    "他是不是总要拖到截止前最后一刻，才肯开始动手做事",
+    "他拖着的那些事情在别人眼里是否重要、是否紧急",
+    "它是否长期损害工作、关系或睡眠，并伴随强烈羞耻或反复无法启动"
+   ],
+   "answer": 3,
+   "explanation": "总结主张不用「病」来贴标签，而是看是否造成持续损害：偶尔拖到最后完成未必是病，但长期影响多处生活、伴随强烈羞耻、明知后果严重仍反复无法启动，就可能和焦虑、抑郁、ADHD 等有关。把「病」理解成求助路线，而不是道德判决。",
+   "question_en": "By the debate's summary, what decides whether someone's procrastination should be treated as a 'disorder'?",
+   "options_en": [
+    "Whether they still manage to finish just before the deadline in the end",
+    "Whether they always wait until the last minute before a deadline to begin",
+    "Whether the tasks they put off look important or urgent to other people",
+    "Whether it persistently harms work, relationships, or sleep, with intense shame or repeated inability to start"
+   ],
+   "explanation_en": "The summary says not to use 'disorder' as a label but to look at lasting harm. Occasionally finishing at the last minute isn't a disorder; long-term damage across life, intense shame, and repeated failure to start despite serious stakes may involve anxiety, depression, or ADHD. Treat 'disorder' as a route to help, not a moral verdict."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/body-keeps-the-score-read953.html",
+ "title": "《身体从未忘记》— 好书精读",
+ "page_en": "/deep-reading/body-keeps-the-score-read953.en.html",
+ "title_en": "The Body Keeps the Score — Deep Reading",
+ "src_hash": "363ae21f1a4d",
+ "questions": [
+  {
+   "id": "6b1c755f13",
+   "question": "《身体从未忘记》区分了「自上而下」和「自下而上」两条路径。它对创伤治疗的核心建议是什么？",
+   "options": [
+    "先用认知重评说服自己现在已经安全，然后再配合做一些身体练习",
+    "谈话和认知疗法对创伤基本无效，应当全部改用瑜伽、击鼓等身体疗法来取代",
+    "先把创伤经历完整地复述出来，身体的警觉反应自然就会慢慢消退",
+    "两条路都要走，但常常得先用呼吸、动作、节律让身体安定，再处理叙事"
+   ],
+   "answer": 3,
+   "explanation": "创伤状态下，「瞭望塔」前额叶在警报响起时离线，光从认知那边下命令够不着，所以顺序常要倒过来：先身体，后语言。书的论点不是「谈话无用」；文章还提醒，创伤聚焦认知行为疗法至今是证据最充分的一线方案，合理读法是「不止于谈话」。",
+   "question_en": "The Body Keeps the Score distinguishes top-down from bottom-up routes. What is its core advice for treating trauma?",
+   "options_en": [
+    "First use cognitive reappraisal to convince yourself you're safe now, then add some body exercises",
+    "Talk and cognitive therapies basically fail and should be replaced entirely by yoga, drumming, and other body work",
+    "First recount the traumatic experience in full, and the body's alarm reactions will fade on their own",
+    "Use both, but often settle the body first through breathing, movement, and rhythm before working on the narrative"
+   ],
+   "explanation_en": "In trauma the prefrontal 'watchtower' goes offline when the alarm sounds, so commands from the cognitive side can't reach it; the order often has to flip to body first, words second. The book doesn't claim talk is useless, and the article adds that trauma-focused CBT remains the best-evidenced first-line treatment: the right reading is 'not only talk'."
+  },
+  {
+   "id": "ba6aaf2be6",
+   "question": "文章认为「身体从未忘记」（身体记分）这个说法最该怎么理解？",
+   "options": [
+    "身体会逐字记住事件的每个细节，记得比大脑的叙事记忆更准确",
+    "神经和内分泌系统的默认设置被调到「战时」那一档并留在那里",
+    "创伤记忆被整块压抑在潜意识深处，需要专门的疗法把它挖出来",
+    "肌肉和身体组织里储存着事件的记忆，可以通过按摩等方式把它释放出来"
+   ],
+   "answer": 1,
+   "explanation": "书名不是说细胞里存着一段录像，而是静息心率、呼吸、肌张力、应激激素基线等被调到战时档且不回落。文章把「肌肉里存着记忆」列为被滥用得最厉害的误读；「挖出被压抑的记忆」也被点名为记忆科学里争议极大的假设——创伤通常是被记得太清楚。",
+   "question_en": "According to the article, how should the idea that 'the body keeps the score' best be understood?",
+   "options_en": [
+    "The body records every detail of an event verbatim, more accurately than the brain's narrative memory",
+    "The nervous and endocrine systems' default settings are switched to a wartime mode and stay there",
+    "Traumatic memories are repressed whole in the unconscious and must be dug out by special therapy",
+    "Muscles and tissues store memories of events, which massage can release"
+   ],
+   "explanation_en": "The title doesn't mean cells hold a recording; resting heart rate, breathing, muscle tone, and stress-hormone baselines get set to wartime and don't come back down. The article calls 'memories stored in muscles' the most abused misreading, and flags 'recovering repressed memories' as highly contested: trauma is usually remembered too well."
+  },
+  {
+   "id": "d7cd80b39a",
+   "question": "范德考克给出的一个定义被文章称为全书最好的一句：创伤的反面是什么？",
+   "options": [
+    "遗忘：让那段经历不再被时时想起、反复闯入",
+    "理解：把那件事的来龙去脉彻底想明白、讲清楚",
+    "主动性：重新相信自己的动作能够改变所处的境况",
+    "快乐：重新体验到愉悦、满足和对生活的兴致"
+   ],
+   "answer": 2,
+   "explanation": "无助是创伤的核心体验，所以任何能恢复「我做了一件事，世界因此变了一点」的活动都是治疗：划船、击鼓、排戏、在合唱里跟上拍子。「想明白」属于自上而下的路径，书里说它在警报响起时恰恰够不着。",
+   "question_en": "The article calls one of van der Kolk's definitions the best line in the book: what is the opposite of trauma?",
+   "options_en": [
+    "Forgetting: no longer having the experience intrude again and again",
+    "Understanding: thinking the whole event through and explaining it clearly",
+    "Agency: believing again that your actions can change your situation",
+    "Happiness: feeling pleasure, satisfaction, and zest for life again"
+   ],
+   "explanation_en": "Helplessness is the core of trauma, so anything that restores 'I did something and the world changed a little' is therapy: rowing, drumming, staging a play, keeping time in a choir. 'Figuring it out' is the top-down route, which the book says can't reach you when the alarm is ringing."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/thinker-arena/debate.html?d=democracy-best",
+ "title": "辩论：民主一定是最好的制度吗？",
+ "page_en": "/thinker-arena/debate.en.html?d=democracy-best",
+ "title_en": "Is democracy necessarily the best system?",
+ "src_hash": "cab3d481dd96",
+ "questions": [
+  {
+   "id": "fc2d7ae822",
+   "question": "按这场「民主是不是最好的制度」辩论最后的共识，衡量一套制度最该看什么？",
+   "options": [
+    "它是否让每一项公共决策都经过全体公民投票表决",
+    "它能否稳定地选出最有知识、最有德行的那批人来掌握国家权力",
+    "多数人的意见是否在每一次选举中都得到了尊重",
+    "它出错之后，能否让错误暴露，并且不流血地把它改过来"
+   ],
+   "answer": 3,
+   "explanation": "共识落在：衡量制度不看它选出谁，而看错了以后能不能不流血地改；民主的核心价值在于和平纠错，不在于多数天然正确。总结还明说，好的民主不是让每件事全民表决，而是让目标可争、执行可查、失败可改。",
+   "question_en": "According to the consensus this debate on whether democracy is the best system reached, what matters most in judging a political system?",
+   "options_en": [
+    "Whether every public decision goes to a vote of all citizens",
+    "Whether it reliably puts the most knowledgeable and virtuous people in power",
+    "Whether the majority's view is respected in every single election",
+    "Whether, after it errs, the error can surface and be corrected without bloodshed"
+   ],
+   "explanation_en": "The consensus: judge a system not by whom it picks but by whether its mistakes can be fixed without bloodshed; democracy's core value is peaceful correction, not the majority being right. The summary also says good democracy isn't voting on everything but keeping goals contestable, execution checkable, and failures reversible."
+  },
+  {
+   "id": "0e5dce6503",
+   "question": "某国选举赢家通吃、社会托底又薄，败选一方屡屡拒不交权。按这场辩论总结的分析，最该从哪里着手？",
+   "options": [
+    "提高投票率，让选举结果更能代表真正的多数",
+    "把争议议题交给专家委员会，减少选举结果的分量",
+    "降低失败的不可逆代价，让败选的人还能体面地回到生活",
+    "加强全民的公民教育，系统提升选民的素质与理性判断能力"
+   ],
+   "answer": 2,
+   "explanation": "总结指出「输了就走」的认账是投票的前提，而肯不肯认输取决于输一次要付多少不可逆的代价：败选若意味着失去医保、房子乃至人身安全，拒不交权就是理性行为，与选民素质无关。所以稳定要到失败的可恢复性里找，而不只是教育和文化。",
+   "question_en": "In a country where elections are winner-take-all and the safety net is thin, losers keep refusing to hand over power. By this debate's summary, where should a fix start?",
+   "options_en": [
+    "Raise turnout so results better reflect the true majority",
+    "Hand contested issues to expert committees to reduce what elections decide",
+    "Lower the irreversible cost of losing so the defeated can return to ordinary life with dignity",
+    "Strengthen civic education to raise voters' quality and rational judgment"
+   ],
+   "explanation_en": "The summary notes that 'lose and leave' is a precondition of voting, and willingness to concede depends on how irreversible a loss is. If defeat means losing health cover, a home, or personal safety, refusing to yield is rational and has nothing to do with voter quality. So stability lies in making failure recoverable, not only in education and culture."
+  },
+  {
+   "id": "6e5f64f532",
+   "question": "这场辩论的总结如何安排专家、官僚和民意三者的关系？",
+   "options": [
+    "公众定方向，专业给方案，执行留记录，结果受审查，连成一条闭环",
+    "三者天然冲突，只能靠定期选举让它们轮流占据上风",
+    "民意至上，专家和官僚只负责不打折扣地执行投票的结果",
+    "治国是一门需要知识的技艺，关键决策应交给专家，民意只作为参考意见"
+   ],
+   "answer": 0,
+   "explanation": "总结认为专家、官僚、民意不是三组选边站的人：没有行政能力，民主承诺会变空话；没有民主约束，行政能力会变成不受追问的机器。因此要连成闭环。「关键决策交给专家」是辩论中被追问「专家凭什么免于公开辩护」的立场。",
+   "question_en": "How does the debate's summary arrange the roles of experts, officials, and public opinion?",
+   "options_en": [
+    "The public sets direction, experts propose, execution is recorded, results are reviewed: one closed loop",
+    "The three are naturally at odds and can only take turns winning through regular elections",
+    "Public opinion is supreme; experts and officials just carry out votes to the letter",
+    "Governing is a craft, so key decisions go to experts and public opinion is only advisory"
+   ],
+   "explanation_en": "The summary says experts, officials, and the public are not rival camps: without administrative capacity, democratic promises are empty; without democratic checks, capacity becomes an unaccountable machine. Hence a closed loop. 'Leave key decisions to experts' is the position the debate challenged by asking why expertise should be exempt from public justification."
+  }
+ ]
+}
