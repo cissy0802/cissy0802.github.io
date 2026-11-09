@@ -1,0 +1,69 @@
+{
+ "page": "/health-longevity/chronic-pain-plan.html",
+ "title": "慢性疼痛管理计划 — 肩 · 背 · 膝",
+ "page_en": "/health-longevity/chronic-pain-plan.en.html",
+ "title_en": "Chronic Pain Plan — Shoulder · Back · Knee",
+ "src_hash": "46e6d9b13f26",
+ "questions": [
+  {
+   "id": "0d7db19c7c",
+   "question": "按慢性疼痛的「疼痛红绿灯」，如果练习后第二天清晨疼痛没回到基线，应该怎么做？",
+   "options": [
+    "只要练的时候疼痛不超过 5 分，下次就可以维持原量",
+    "说明这次量大了，减回上一级的量继续练，而不是停练",
+    "说明组织受了损伤，应停练休息到完全不痛再重新开始",
+    "改做完全无痛的动作，因为允许疼痛的方案效果更差"
+   ],
+   "answer": 1,
+   "explanation": "红灯的标准之一就是次日清晨没回到基线，处理方式是减到上一级的量，明确「而不是停练」。停练休息看起来更稳妥，但文章说对慢性疼痛完全休息几乎总是错的，会让组织耐受继续下降。",
+   "question_en": "Under the 'pain traffic light' for chronic pain, what should you do if your pain hasn't returned to baseline by the next morning after a session?",
+   "options_en": [
+    "Keep the same load next time, as long as pain during the session stayed at 5 or below",
+    "Treat it as too much load and drop back to the previous level, rather than stopping",
+    "Treat it as tissue damage and rest until it stops hurting completely before restarting",
+    "Switch to entirely pain-free exercises, since programs that allow pain work less well"
+   ],
+   "explanation_en": "Not being back to baseline the next morning is a red light, and the instruction is to step down to the previous load, explicitly 'not to stop training'. Resting until pain-free sounds safer, but the article says complete rest is almost always wrong for chronic pain because tissue tolerance keeps falling."
+  },
+  {
+   "id": "335438ef5e",
+   "question": "一位 55 岁、没有任何红旗症状的慢性下背痛患者，想先拍 MRI 弄清「到底哪里坏了」。按文中的观点，最合理的建议是？",
+   "options": [
+    "先拍片，如果看到椎间盘退变，就应长期避免弯腰和负重类动作",
+    "不必拍片，因为影像检查对慢性疼痛既排除不了严重问题，也提供不了任何帮助",
+    "尽早拍片，因为只有找到具体损伤，才能针对性地选择要练的动作",
+    "先练 6–12 周再评估，因为影像上的退变在无症状人群里也很常见"
+   ],
+   "answer": 3,
+   "explanation": "文章说椎间盘退变、肩袖和半月板撕裂在无症状人群里都很常见，对没有红旗的慢性痛，早拍片不改善结局，还常让人更不敢动，所以先练 6–12 周。说影像「完全没用」也不对：文章明确说影像的用处是排除严重问题。",
+   "question_en": "A 55-year-old with chronic low back pain and no red flags wants an MRI first to find out 'what's actually broken'. What does the article recommend?",
+   "options_en": [
+    "Scan first, and if it shows disc degeneration, avoid bending and lifting for the long term",
+    "Skip imaging, because for chronic pain it neither rules out serious problems nor helps in any way",
+    "Get a scan early, because only by locating the specific damage can you choose which exercises to do",
+    "Train seriously for 6–12 weeks before reassessing, since degeneration on scans is common in people with no symptoms"
+   ],
+   "explanation_en": "The article notes that disc degeneration and rotator-cuff and meniscus tears are common in symptom-free people; for chronic pain without red flags, early imaging doesn't improve outcomes and often makes people more afraid to move, so train for 6–12 weeks first. Saying imaging is useless is also wrong: the article says its job is to rule out serious problems."
+  },
+  {
+   "id": "52b56fc525",
+   "question": "按文中的追踪建议，判断慢性疼痛康复是否有进展，最好看什么？",
+   "options": [
+    "每周记一次功能和坏日子的天数，而不是每天给疼痛打分",
+    "看前两周疼痛分数降了多少，它最能预示长期的康复结局",
+    "每天早晚各给疼痛打一次分，看每周的平均分有没有在逐步下降",
+    "看哪一天终于完全不痛了，那才说明受损的组织修复好了"
+   ],
+   "answer": 0,
+   "explanation": "文章建议记功能（能走多久、能提多重）、坏日子数量、当前负荷和睡眠，并明确说别每天给疼痛打分，因为反复监测会把注意力锁在症状上。它还说真正预示长期结果的是有没有坚持练，不是前两周降了几分。",
+   "question_en": "According to the article's tracking advice, what's the best way to judge whether chronic-pain rehab is working?",
+   "options_en": [
+    "Log function and the number of bad days once a week, rather than rating pain every day",
+    "Look at how far pain scores dropped in the first two weeks, the best predictor of outcome",
+    "Rate pain every morning and evening and check whether the weekly average is falling",
+    "Wait for the first completely pain-free day, which shows the damaged tissue has healed"
+   ],
+   "explanation_en": "The article says to track function (how far you can walk, how much you can lift), bad days, current load and sleep, and explicitly warns against daily pain ratings because constant monitoring locks attention onto symptoms. It also says the real predictor of long-term results is whether you keep training, not how much pain fell in the first two weeks."
+  }
+ ]
+}

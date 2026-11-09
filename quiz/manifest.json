@@ -373,6 +373,140 @@
     "e1719d12ec",
     "f5985cbac4"
    ]
+  },
+  "/neuroscience/attention-topic2.html": {
+   "t": "Topic 2 · 注意 — 神经科学",
+   "f": "neuroscience/attention-topic2.json",
+   "q": [
+    "1e24f81e3f",
+    "c4c1c48d8e",
+    "c8022ee7a9"
+   ]
+  },
+  "/health-longevity/chronic-pain-plan.html": {
+   "t": "慢性疼痛管理计划 — 肩 · 背 · 膝",
+   "f": "health-longevity/chronic-pain-plan.json",
+   "q": [
+    "0d7db19c7c",
+    "335438ef5e",
+    "52b56fc525"
+   ]
+  },
+  "/novel-deepread/hitchhikers-guide-novel86.html": {
+   "t": "银河系漫游指南 — 小说精读 No.86",
+   "f": "novel-deepread/hitchhikers-guide-novel86.json",
+   "q": [
+    "a27be1ac16",
+    "17f7e1a5e1",
+    "e1cfa7ca98"
+   ]
+  },
+  "/meta-knowledge/linguistics-day15.html": {
+   "t": "元知识详解：语言学 — Day 15",
+   "f": "meta-knowledge/linguistics-day15.json",
+   "q": [
+    "29354cc633",
+    "5bc16844bd",
+    "7b95aadfa5"
+   ]
+  },
+  "/thinker-arena/debate.html?d=democracy-best": {
+   "t": "辩论：民主一定是最好的制度吗？",
+   "f": "thinker-arena/debate-democracy-best.json",
+   "q": [
+    "858dd51f6f",
+    "9100d3a540",
+    "829c0a626a"
+   ]
+  },
+  "/novel-deepread/ball-lightning-novel15.html": {
+   "t": "球状闪电 — 小说精读 No.15",
+   "f": "novel-deepread/ball-lightning-novel15.json",
+   "q": [
+    "833ae62fd2",
+    "8de709ce1a",
+    "92b89a1a30"
+   ]
+  },
+  "/neuroscience/semantic-population-topic45.html": {
+   "t": "Topic 45 · 语义的群体编码 — 神经科学",
+   "f": "neuroscience/semantic-population-topic45.json",
+   "q": [
+    "2471eba7c0",
+    "4997db5906",
+    "ef5d672cb1"
+   ]
+  },
+  "/system-design/scalability-day1.html": {
+   "t": "Day 1 · Scalability 基础 — System Design",
+   "f": "system-design/scalability-day1.json",
+   "q": [
+    "78042d3e62",
+    "47564f23e6"
+   ]
+  },
+  "/podcast-deepread/ethan-evans-who-topic1.html": {
+   "t": "Ethan Evans 专题 · 读他之前：四个折扣",
+   "f": "podcast-deepread/ethan-evans-who-topic1.json",
+   "q": [
+    "d350a0c486",
+    "356f573a6d",
+    "127011697e"
+   ]
+  },
+  "/deep-reading/montaigne-essays-read41.html": {
+   "t": "《随笔集》— 每日精读 Read 41",
+   "f": "deep-reading/montaigne-essays-read41.json",
+   "q": [
+    "11f6a72244",
+    "8d4d06fb49",
+    "630f0d9864"
+   ]
+  },
+  "/chapter-deepread/ddia-ch01-reliable-scalable-maintainable-book1.html": {
+   "t": "DDIA 第 1 章 · 可靠、可扩展、可维护 — 专业书籍精读 Book 1",
+   "f": "chapter-deepread/ddia-ch01-reliable-scalable-maintainable-book1.json",
+   "q": [
+    "21b19d1c88",
+    "5edce7de33",
+    "10d88a5906"
+   ]
+  },
+  "/thinker-arena/debate.html?d=small-step-drift": {
+   "t": "辩论：人是怎么一步步走到当初绝不会做的事的？",
+   "f": "thinker-arena/debate-small-step-drift.json",
+   "q": [
+    "20d0e80983",
+    "df5ecb6853",
+    "4c511562ef"
+   ]
+  },
+  "/talk-deepread/feynman-cargo-cult-science-talk1.html": {
+   "t": "Richard Feynman ·《Cargo Cult Science》— 跑道修得一模一样，飞机还是不降落",
+   "f": "talk-deepread/feynman-cargo-cult-science-talk1.json",
+   "q": [
+    "63afcf8e26",
+    "db21548ead",
+    "aed19d90dc"
+   ]
+  },
+  "/health-longevity/exercise-day1.html": {
+   "t": "健康长寿 Day 1 — 运动基础协议",
+   "f": "health-longevity/exercise-day1.json",
+   "q": [
+    "7631c029e6",
+    "1904b4b244",
+    "bda9aaafcf"
+   ]
+  },
+  "/deep-reading/when-things-fall-apart-read983.html": {
+   "t": "《当生命陷落时》",
+   "f": "deep-reading/when-things-fall-apart-read983.json",
+   "q": [
+    "f4bde4d2a4",
+    "fb924baed6",
+    "0ed511daac"
+   ]
   }
  },
  "aliases": {

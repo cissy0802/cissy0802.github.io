@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/semantic-population-topic45.html",
+ "title": "Topic 45 · 语义的群体编码 — 神经科学",
+ "page_en": "/neuroscience/semantic-population-topic45.en.html",
+ "title_en": "Topic 45 · A Population Code for Meaning — Neuroscience",
+ "src_hash": "4e729c09c654",
+ "questions": [
+  {
+   "id": "2471eba7c0",
+   "question": "研究者在癫痫病人海马里记录几百个神经元听故事时的放电。单个神经元对词义的反应是什么样的？",
+   "options": [
+    "只有极少数神经元有反应，每一个精确对应一个具体的词",
+    "一个神经元往往对好几个不相干类别里的好几个词都有反应",
+    "每个神经元只对一个类别的词有反应，比如专门负责「动物」",
+    "单个神经元只编码词的读音，词义要到皮层里才会出现"
+   ],
+   "answer": 1,
+   "explanation": "研究发现没有「狗神经元」：单个细胞常对多个类别里八竿子打不着的词都有反应，这叫混合选择性或多义性，单看一个细胞读不出它管什么。研究恰恰是在扣掉读音和语法角色之后，仍能用词义预测放电，所以「只编码读音」不成立。",
+   "question_en": "Researchers recorded hundreds of hippocampal neurons in epilepsy patients listening to stories. How do individual neurons respond to word meaning?",
+   "options_en": [
+    "Only a handful of neurons respond, each tied precisely to one specific word",
+    "A single neuron often responds to several words from several unrelated categories",
+    "Each neuron responds to words from just one category, such as being dedicated to 'animals'",
+    "Single neurons encode only how a word sounds; meaning appears only later in the cortex"
+   ],
+   "explanation_en": "There are no 'dog cells': individual neurons respond to words from several unrelated categories (mixed selectivity, or polysemy), so you can't read off what any one cell 'is for'. The study removed the effects of sound and grammatical role and could still predict firing from meaning, so 'only encodes sound' doesn't hold."
+  },
+  {
+   "id": "4997db5906",
+   "question": "把海马神经元群体反应的「词义几何」和语言模型的词向量对比，结果如何？",
+   "options": [
+    "与上下文词向量（如 GPT-2）对得上，与静态词向量（如 word2vec）相反",
+    "与哪种词向量都对不上，说明人脑与语言模型的表示方式毫无共同之处",
+    "模型越大越像人脑，参数最多的最新大模型和神经元的几何对得最好",
+    "与静态词向量最吻合，因为大脑给每个词只存一个不随语境变化而改变的固定坐标"
+   ],
+   "answer": 0,
+   "explanation": "同一个词的群体反应会随语境挪动，所以「群体距离≈词义距离」只在上下文词向量上成立，静态词向量反而反过来，最贴的是 GPT-2 那一档。「越大越像脑」是文章特意提醒不要得出的结论：对得最好的是一个很小很旧的模型。",
+   "question_en": "When the 'meaning geometry' of hippocampal population responses was compared with language-model word vectors, what was found?",
+   "options_en": [
+    "It matched contextual embeddings like GPT-2 and BERT, but reversed for static ones like word2vec",
+    "It matched no kind of embedding, showing brains and language models represent words in unrelated ways",
+    "Bigger models looked more brain-like, with the largest recent models fitting the neurons best",
+    "It matched static embeddings best, because the brain stores one fixed, context-free coordinate per word"
+   ],
+   "explanation_en": "A word's population response shifts with context, so 'population distance ≈ meaning distance' held for contextual embeddings and reversed for static ones, with GPT-2 fitting best. 'Bigger is more brain-like' is precisely the conclusion the article warns against: the best fit was a small, old model."
+  },
+  {
+   "id": "ef5d672cb1",
+   "question": "对「海马的词义编码和大语言模型很像」这一发现，文章划了什么边界？",
+   "options": [
+    "相似说明大脑内部实际运行着和 Transformer 相同的注意力计算",
+    "相似只在说话时的额叶出现，听故事时的海马没有这种结构",
+    "相似只在几何层面，不说明脑子里在跑和 GPT-2 一样的算法",
+    "相似证明已经可以借语言模型无创地读出普通人在想哪个词"
+   ],
+   "answer": 2,
+   "explanation": "文章说两张地图形状对得上，不代表算法相同：脑子没有先读完整段再统一算的步骤，学习方式也完全不同。读心那一项也被文章否定了：要埋电极、用本人数据训练、只在固定材料下有效，离读心还很远。",
+   "question_en": "What limit does the article draw on the finding that hippocampal meaning codes resemble those of large language models?",
+   "options_en": [
+    "The resemblance shows the brain literally runs the same attention computation as a Transformer",
+    "The resemblance appears only in frontal cortex during speech, not in the hippocampus during listening",
+    "The resemblance is geometric only; it doesn't mean the brain runs the same algorithm as GPT-2",
+    "The resemblance proves language models can already non-invasively read which word anyone is thinking"
+   ],
+   "explanation_en": "The article says matching map shapes doesn't mean matching algorithms: the brain doesn't take in a whole passage and compute it at once, and it learns completely differently. The mind-reading option is also rejected: it requires implanted electrodes, training on that person's own data, and fixed material, so it's far from mind reading."
+  }
+ ]
+}

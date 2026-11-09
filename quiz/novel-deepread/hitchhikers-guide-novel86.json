@@ -1,0 +1,69 @@
+{
+ "page": "/novel-deepread/hitchhikers-guide-novel86.html",
+ "title": "银河系漫游指南 — 小说精读 No.86",
+ "page_en": "/novel-deepread/hitchhikers-guide-novel86.en.html",
+ "title_en": "The Hitchhiker's Guide to the Galaxy — Novels, Deep-Read No.86",
+ "src_hash": "6b469789e858",
+ "questions": [
+  {
+   "id": "a27be1ac16",
+   "question": "《银河系漫游指南》开篇，阿瑟抱怨拆房规划图被锁在地下室废弃厕所的柜子里。按文章的分析，这段笑话在结构上起什么作用？",
+   "options": [
+    "它是全书的小号预演：同一句「规划图早就公示过了」先拆房、再拆星球",
+    "它暗示普罗瑟先生其实是沃贡人派到地球、提前清场的地方代理人",
+    "它只是英国式的抱怨段子，用来铺垫阿瑟宿醉之后又冷又湿的坏心情",
+    "它交代阿瑟是个从不关心公共事务的人，解释了他为什么对地球毁灭毫无准备"
+   ],
+   "answer": 0,
+   "explanation": "文章指出普罗瑟和杰尔茨从没见过面，却说了大意相同的话：规划早就公示了。早上那段笑话不是闲笔，是同一套逻辑先在一栋房子上演小号、再在星球上演大号。读成单纯的抱怨段子，正是文章说读者「笑完就翻过去」的那种读法。",
+   "question_en": "At the start of The Hitchhiker's Guide, Arthur complains the demolition plans were kept in a locked cabinet in a disused lavatory in a dark cellar. According to the article, what does this joke do structurally?",
+   "options_en": [
+    "It previews the whole book in miniature: the same line, 'the plans were on display', demolishes a house and then a planet",
+    "It hints that Mr Prosser is secretly an agent sent by the Vogons to clear the way ahead of time",
+    "It's just a British grumble used to set up Arthur's cold, wet, hungover bad mood that morning",
+    "It establishes Arthur as someone who ignores civic matters, explaining why he's unprepared for Earth's end"
+   ],
+   "explanation_en": "The article points out that Prosser and Jeltz never meet yet say essentially the same thing: the plans were published long ago. The morning joke isn't filler; the same logic plays out small on a house and then large on a planet. Reading it as just a grumble is exactly the reading the article says most readers make before moving on."
+  },
+  {
+   "id": "17f7e1a5e1",
+   "question": "按文章的解读，「终极答案是 42」这个设定的核心意思是什么？",
+   "options": [
+    "没有问题的答案毫无用处，而问题只能靠有机生命的生活去「活」出来",
+    "42 对应着某个宇宙常数，亚当斯借此暗示宇宙最终可以被完全计算出来",
+    "亚当斯精心挑了一个带象征意味的数字，留给读者去解读其中的暗示",
+    "深思的计算出了错，所以才要造地球这台更大的计算机来验证这个答案"
+   ],
+   "answer": 0,
+   "explanation": "深思说答案没错，问题是没人知道问题是什么；算问题的计算机以有机生命的生活为运算过程，文章概括为「问题只能被活出来，不能被算出来」。说 42 有象征意味恰好反了：文中说亚当斯选它就是因为它足够普通，让一切附会落空。",
+   "question_en": "As the article reads it, what is the core point of 'the Answer is 42'?",
+   "options_en": [
+    "An answer without its question is useless, and the question can only be lived out by organic life, not computed",
+    "42 corresponds to some cosmic constant, Adams's hint that the universe can ultimately be fully calculated",
+    "Adams carefully chose a number rich in symbolism and left it to readers to decode the hidden meaning",
+    "Deep Thought made an error, which is why the larger computer, Earth, had to be built to check the answer"
+   ],
+   "explanation_en": "Deep Thought says the answer is correct; the trouble is nobody knows what the question is, and the computer built to find it runs on the lives of organic beings, which the article sums up as 'the question can only be lived, not computed'. The symbolism option is backwards: Adams picked 42 precisely because it was ordinary enough to defeat every attempt at interpretation."
+  },
+  {
+   "id": "e1cfa7ca98",
+   "question": "文章认为「无限非概率驱动器」这个设定在小说技法上聪明在哪里？",
+   "options": [
+    "把巧合本身做成一台机器装进故事，读者就没法指责作者滥用巧合",
+    "它准确描述了量子隧穿，让荒诞的情节有了真实可靠的物理依据",
+    "它证明概率可以当作燃料来调节，为科幻提供了一种新的动力学",
+    "它给了被动的阿瑟一种超能力，让他从此能够主导情节的走向"
+   ],
+   "answer": 0,
+   "explanation": "主角被扔进太空三十秒内正好被捞起，这种巧合本会被骂偷懒；亚当斯让救他们的飞船恰好靠「让不可能的事发生」的引擎运转，巧合成了宇宙的交通工具。文章明确说「可以控制不可能程度」是纯虚构，概率不是可以拧的旋钮，所以说它有真实物理依据是错的。",
+   "question_en": "Why does the article consider the Infinite Improbability Drive a clever piece of novelistic technique?",
+   "options_en": [
+    "It turns coincidence itself into a machine inside the story, so readers can't accuse the author of abusing coincidence",
+    "It accurately describes quantum tunnelling, giving the absurd plot a genuine and reliable basis in physics",
+    "It shows that probability can be tuned like fuel, giving science fiction a new kind of propulsion",
+    "It gives the passive Arthur a superpower, letting him take control of the plot from then on"
+   ],
+   "explanation_en": "Being rescued within thirty seconds of being thrown into space is the kind of coincidence a writer gets mocked for; Adams makes the rescuing ship run on an engine whose job is making impossible things happen, so coincidence becomes the universe's transport. The article says outright that 'controlling improbability' is pure fiction, since probability isn't a knob, so the physics option is wrong."
+  }
+ ]
+}

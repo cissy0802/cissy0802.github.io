@@ -1,0 +1,69 @@
+{
+ "page": "/thinker-arena/debate.html?d=democracy-best",
+ "title": "辩论：民主一定是最好的制度吗？",
+ "page_en": "/thinker-arena/debate.en.html?d=democracy-best",
+ "title_en": "Is democracy necessarily the best system?",
+ "src_hash": "ae9551238f5e",
+ "questions": [
+  {
+   "id": "858dd51f6f",
+   "question": "在「民主是否最好」的辩论里，森举了 1943 年孟加拉饥荒和印度长期儿童营养不良两个例子。他想说明什么？",
+   "options": [
+    "反对派、自由报纸和选举能挡住上头版的急性灾难，却挡不住不上头版的慢性匮乏",
+    "饥荒的根源是粮食产量不足，民主国家主要是因为更富裕，才避免了大规模饥荒",
+    "民主能从根本上消除各种匮乏，印度的营养问题只是因为选举还不够频繁",
+    "威权政府应对饥荒更高效，民主制度只有在国家富裕之后才显出它的优势"
+   ],
+   "answer": 0,
+   "explanation": "森说孟加拉饥荒时粮食并没有消失，只是统治者不必向饿着的人交代，饥荒需要沉默才能持续；而印度虽有选举，却容忍了几十年儿童营养不良，因为慢性匮乏不上头版。他特意说有自由报纸的国家没发生大饥荒「不是因为它们更富」，所以把原因归于富裕是错的。",
+   "question_en": "In the debate on whether democracy is best, Sen cites the 1943 Bengal famine and India's decades of child malnutrition. What is he showing?",
+   "options_en": [
+    "Opposition parties, a free press and elections stop acute, front-page disasters but not chronic deprivation that never makes the news",
+    "Famines come from food shortages, and democracies avoid them mainly because they tend to be richer countries",
+    "Democracy eliminates deprivation at the root; India's nutrition problem just reflects elections not being frequent enough",
+    "Authoritarian governments handle famine more efficiently, and democracy shows its advantages only after a country is rich"
+   ],
+   "explanation_en": "Sen says that in Bengal the food hadn't vanished; the rulers simply didn't have to answer to the hungry, and famine needs silence to persist. Yet India, with elections, tolerated child malnutrition for decades because chronic deprivation doesn't make headlines. He explicitly says democracies avoided famine 'not because they were richer', so the wealth explanation is wrong."
+  },
+  {
+   "id": "9100d3a540",
+   "question": "海特用「群体极化」实验反驳哈贝马斯的商谈理想。他最终的立场是什么？",
+   "options": [
+    "应该把观点相近的人分组讨论，这样冲突更少，讨论的效率也会更高",
+    "选民只凭直觉投票，所以任何公共讨论都没有意义，决策应交给专家来做",
+    "群体极化是因为大家没有好好说话，只要遵守理性对话的规则，就能完全避免",
+    "商谈本身不是解药；管用的商谈要混合的人、面对面、必须共同交出一个结论"
+   ],
+   "answer": 3,
+   "explanation": "海特指出观点相近的人好好讨论后立场反而更极端，所以他「不反对商谈，反对把商谈本身当解药」，并开出三个结构条件。说极化来自「没好好说话」正是他反驳的看法：他说极化恰恰是好好说了话的结果。",
+   "question_en": "Haidt uses group polarisation research against Habermas's ideal of deliberation. Where does he end up?",
+   "options_en": [
+    "Like-minded people should deliberate in separate groups, since that means less conflict and more efficient discussion",
+    "Voters run on intuition, so public discussion is pointless and decisions should be handed to experts",
+    "Polarisation comes from people not talking properly, so following rules of rational dialogue prevents it entirely",
+    "Deliberation isn't a cure in itself; it works only with mixed groups, face to face, required to reach a joint conclusion"
+   ],
+   "explanation_en": "Haidt notes that like-minded people who discuss carefully leave more extreme than they arrived, so he 'doesn't oppose deliberation, only treating deliberation itself as the cure', and names three structural conditions. The idea that polarisation comes from poor discussion is exactly what he rejects: he says it is the result of discussing well."
+  },
+  {
+   "id": "829c0a626a",
+   "question": "霍布斯承认民主「换手不流血」是它唯一的重大发明。他认为这件事成立的条件是什么？",
+   "options": [
+    "把主权分成三份、让它们相互制衡，任何一方都没法单独发动内战",
+    "所有人事先认了「输了就走」，这份认账是投票的前提而非产物",
+    "选民在投票之前充分公开辩论，形成经得起检验的理性共识",
+    "选出一位最有智慧、又不贪恋权力的统治者，由他来保证每次权力交接的秩序"
+   ],
+   "answer": 1,
+   "explanation": "霍布斯说换手不流血的条件是所有人事先认了输了就走，「这份认账不是投票产出的，它是投票的前提」，一旦它不在，选票只是点算兵力的方式。分权制衡正是他担心的事：他说真正危险的是把主权切成三份还指望它们彼此相爱。",
+   "question_en": "Hobbes grants that democracy's one great invention is changing power without bloodshed. What condition does he say this depends on?",
+   "options_en": [
+    "Splitting sovereignty three ways so the branches check each other and no one can start a civil war",
+    "Everyone has agreed in advance that losers walk away, and that acceptance is a precondition of voting, not its product",
+    "Voters debating openly before the vote until they reach a rational consensus that can withstand scrutiny",
+    "Choosing the wisest ruler, one who doesn't crave power, to guarantee an orderly handover"
+   ],
+   "explanation_en": "Hobbes says bloodless transfer requires that everyone accepted beforehand that losers leave; 'that acceptance isn't produced by voting, it's the precondition of voting', and without it ballots just count troops. Separation of powers is what he fears: he calls it dangerous to split sovereignty in three and expect the parts to love one another."
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "page": "/system-design/scalability-day1.html",
+ "title": "Day 1 · Scalability 基础 — System Design",
+ "page_en": "/system-design/scalability-day1.en.html",
+ "title_en": "Day 1 · Scalability Foundations — System Design",
+ "src_hash": "f38b9d9146a4",
+ "questions": [
+  {
+   "id": "78042d3e62",
+   "question": "为什么说「无状态服务」是横向扩展的入场券？",
+   "options": [
+    "无状态服务完全不用缓存，因此永远不会出现实例之间数据不一致的问题",
+    "无状态服务依靠 sticky session 绑定实例，扩容和重启时用户就不会掉线",
+    "无状态服务可以省掉数据库，把全部数据放进内存里以降低每次请求的延迟",
+    "实例不持有下次请求要用的状态，负载均衡器才能把任意请求发给任意实例"
+   ],
+   "answer": 3,
+   "explanation": "无状态指 session、缓存、计数器都外置到 Redis 或数据库，于是任何请求都能打到任何实例，挂掉一台也无人受伤。文章特意说「无状态不等于无缓存」，本地缓存照样能用，只是要接受实例间不一致；sticky session 则被列为常见坑。",
+   "question_en": "Why are stateless services called the entry ticket to horizontal scaling?",
+   "options_en": [
+    "Stateless services use no caching at all, so data can never become inconsistent between instances",
+    "Stateless services pin users to instances with sticky sessions, so nobody drops off during scaling or restarts",
+    "Stateless services can skip the database and keep all data in memory to cut latency on every request",
+    "Instances hold no state the next request needs, so the load balancer can send any request to any instance"
+   ],
+   "explanation_en": "Stateless means sessions, caches and counters live in Redis or the database, so any request can hit any instance and losing one hurts nobody. The article stresses that stateless doesn't mean cache-free: local caches still work if you accept some inconsistency between instances. Sticky sessions are listed as a common pitfall."
+  },
+  {
+   "id": "47564f23e6",
+   "question": "一个服务每多加一台应用服务器，p99 延迟反而更高。按文中的诊断思路，最该先怀疑什么？",
+   "options": [
+    "负载均衡用了 Power of Two Choices 算法，让请求分布变得更不均匀",
+    "无状态服务本来就无法横向扩展，应该改回在实例内存里保存会话",
+    "数据库连接池等共享资源已经饱和，加应用机器只是让排队的队伍更长",
+    "新加的机器 CPU 规格太小，应该改成换一台更大的单机来做垂直扩展"
+   ],
+   "answer": 2,
+   "explanation": "文中的诊断顺序是看哪些指标随机器数增长：应用 CPU 应该下降，延迟却上升，说明是 DB 连接池、Redis 单点这类共享资源饱和；比如 100 台各开 20 个连接，会直接撞上 Postgres 默认上限。P2C 在文中是接近最优的分配算法，不是让分布变差的原因。",
+   "question_en": "Every application server you add makes p99 latency worse. Following the article's diagnostic approach, what should you suspect first?",
+   "options_en": [
+    "The load balancer uses Power of Two Choices, which makes request distribution more uneven",
+    "Stateless services can't really scale out, so sessions should go back into instance memory",
+    "A shared resource such as the database connection pool is saturated, so more app servers just lengthen the queue",
+    "The new machines' CPUs are too small, so you should switch to one bigger machine and scale vertically"
+   ],
+   "explanation_en": "The article's diagnostic order is to see which metrics grow with machine count: app CPU should fall, so rising latency points to a saturated shared resource like the DB connection pool or a single Redis node; 100 servers each opening 20 connections will hit Postgres's default limit. P2C is described as a near-optimal balancing algorithm, not a cause of skew."
+  }
+ ]
+}

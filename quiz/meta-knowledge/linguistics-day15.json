@@ -1,0 +1,69 @@
+{
+ "page": "/meta-knowledge/linguistics-day15.html",
+ "title": "元知识详解：语言学 — Day 15",
+ "page_en": "/meta-knowledge/linguistics-day15.en.html",
+ "title_en": "Meta-Knowledge: Linguistics — Day 15",
+ "src_hash": "1e57dfa9d541",
+ "questions": [
+  {
+   "id": "29354cc633",
+   "question": "有人在房间里说「这里好冷」，对方随即起身关了窗。按奥斯汀的言语行为三层结构，「请关窗」这一层属于哪一层？",
+   "options": [
+    "言之效果：对听者产生的实际后果",
+    "恰当条件：让这句话生效的前提",
+    "言之所为：说这句话的真实意图",
+    "言之所述：句子本身的字面意义"
+   ],
+   "answer": 2,
+   "explanation": "「这里好冷」字面陈述温度，是言之所述；它真正要做的事是请求关窗，是言之所为；对方起身关窗才是言之效果。最容易混的是言之效果，但那指听者实际做了什么，不是说话人的意图。",
+   "question_en": "Someone says 'It's cold in here', and the other person gets up and shuts the window. In Austin's three-layer model of speech acts, which layer is 'please close the window'?",
+   "options_en": [
+    "The perlocutionary effect: the actual consequence for the listener",
+    "The felicity conditions: what must hold for the utterance to work",
+    "The illocutionary act: what the speaker is actually doing in saying it",
+    "The locutionary act: the literal meaning of the sentence itself"
+   ],
+   "explanation_en": "'It's cold in here' literally states a temperature (locution); what it is doing is requesting that the window be closed (illocution); the listener getting up to shut it is the perlocutionary effect. The perlocution is the easy one to confuse, but it refers to what the listener actually does, not to the speaker's intent."
+  },
+  {
+   "id": "5bc16844bd",
+   "question": "一个没有主持资格的人在婚礼上说「我宣布你们结为夫妻」，在场的人都知道什么也没发生。按言语行为理论，原因是什么？",
+   "options": [
+    "在场的人没有作出回应，所以言之效果没有发生",
+    "说话人的语气太含糊，成了一次低功率的言语行为",
+    "这句话是在描述一个事实，而这一次描述的内容为假",
+    "这句话缺少恰当条件，比如说话者得有相应的制度授权"
+   ],
+   "answer": 3,
+   "explanation": "塞尔指出言语行为要成立须满足恰当条件，如说话者有权威、共享语境、有诚意；没有资格的人说这句话，制度授权不满足，所以无效。把它当作「描述为假」是误解：文章说这类句子没有真假，它们是在做事而不是描述。",
+   "question_en": "Someone with no authority to officiate says 'I now pronounce you husband and wife' at a wedding, and everyone knows nothing has happened. According to speech act theory, why?",
+   "options_en": [
+    "The audience didn't respond, so no perlocutionary effect took place",
+    "The speaker's tone was too vague, making it a low-powered speech act",
+    "The utterance describes a fact, and this time what it describes happens to be false",
+    "The utterance lacks its felicity conditions, such as the speaker holding the relevant institutional authority"
+   ],
+   "explanation_en": "Searle holds that a speech act succeeds only when its felicity conditions are met, such as authority, shared context and sincerity; an unauthorised speaker fails the institutional requirement, so the act is void. Treating it as a false description is the misunderstanding: the article says such sentences are neither true nor false, because they perform rather than describe."
+  },
+  {
+   "id": "7b95aadfa5",
+   "question": "按莱考夫的概念隐喻理论，「争论是战争」这类隐喻的作用最接近哪一项？",
+   "options": [
+    "是诗歌等文学语言特有的现象，日常说话很少依赖这样的映射",
+    "反映各民族对争论的不同态度，所以这类说法在不同语言之间无法翻译",
+    "只是一种修辞装饰，换个说法并不会改变人们对争论本身的理解",
+    "借具身经验来理解抽象概念，并暗中规定我们怎样推理这个领域"
+   ],
+   "answer": 3,
+   "explanation": "文章说隐喻是思维的脚手架：我们用身体、空间、战争这类熟悉经验去映射抽象概念，一旦内化，就会把对话当成零和的攻防。说它「只是修辞装饰」正是该理论要反驳的看法，开篇第一句就说隐喻不是文学修饰。",
+   "question_en": "In Lakoff's conceptual metaphor theory, what is the role of a metaphor like 'argument is war'?",
+   "options_en": [
+    "It's peculiar to poetry and literary language; everyday speech rarely relies on mappings like this",
+    "It reflects each culture's attitude to arguing, which is why such phrases can't be translated across languages",
+    "It's mere rhetorical ornament; phrasing it differently wouldn't change how people understand arguing",
+    "It lets us grasp an abstract concept through embodied experience, and quietly shapes how we reason about it"
+   ],
+   "explanation_en": "The article calls metaphor the scaffolding of thought: we map abstract concepts onto familiar embodied domains, and once 'argument is war' is internalised we treat conversations as zero-sum attack and defence. 'Mere ornament' is precisely the view the theory rejects; the section opens by saying metaphor is not literary decoration."
+  }
+ ]
+}

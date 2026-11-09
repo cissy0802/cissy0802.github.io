@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/when-things-fall-apart-read983.html",
+ "title": "《当生命陷落时》",
+ "page_en": "/deep-reading/when-things-fall-apart-read983.en.html",
+ "title_en": "When Things Fall Apart",
+ "src_hash": "e0953495ae37",
+ "questions": [
+  {
+   "id": "f4bde4d2a4",
+   "question": "佩玛·丘卓说的「放下希望（hopelessness）」是什么意思？",
+   "options": [
+    "希望落空之后陷入的那种绝望，是每个修行者都必须经历的低谷",
+    "承认生活已经没有出路，从此停止为改变自己的处境做出任何努力",
+    "不再指望今生的结果，而是把希望寄托在来世和最终的觉悟上",
+    "希望和恐惧是一枚硬币的两面，放下「一定会好」的期待，才能完整地活在此刻"
+   ],
+   "answer": 3,
+   "explanation": "丘卓说只要还希望事情变成某样，就一定同时害怕它变不成；放下希望是放弃让你永远不在场的期待，不是放弃生活，也不等于不努力改变处境。文章专门指出把它读成绝望是误读：绝望仍是被希望绑住的状态，因为希望落空才绝望。",
+   "question_en": "What does Pema Chödrön mean by 'hopelessness'?",
+   "options_en": [
+    "The despair that follows dashed hopes, a low point every practitioner must pass through",
+    "Accepting that life has no way out and ceasing to make any effort to change your situation",
+    "No longer counting on results in this life and placing your hope in future lives and final awakening",
+    "Hope and fear are two sides of one coin; dropping the expectation that things must get better lets you be fully present"
+   ],
+   "explanation_en": "Chödrön says that as long as you hope things turn out a certain way, you also fear they won't; giving up hope means giving up the expectation that keeps you from ever being present, not giving up on life or on changing your circumstances. The article flags reading it as despair as a misreading: despair is still bound to hope, since it comes from hope being dashed."
+  },
+  {
+   "id": "fb924baed6",
+   "question": "施受法（tonglen）的做法和用意是什么？",
+   "options": [
+    "吸气时吸进外界的好能量，呼气时把自己的痛苦和各种负面情绪统统排出体外",
+    "只为自己喜欢和亲近的人练习，避免把讨厌的人带进自己的心里",
+    "通过呼吸真的把别人的病痛转移到自己身上，由自己替对方承受下来",
+    "吸气时吸进别人的痛苦，呼气时送出舒缓，把只想保护自己的本能倒过来"
+   ],
+   "answer": 3,
+   "explanation": "施受法要你吸进「热、重、暗」的痛、呼出「凉、轻、亮」的舒缓，方向和本能相反，最后要扩展到所有众生，包括你讨厌的人。文章说把它当成真的能把病吸走的能量交换是误读：它是转化态度的训练，对付的是那个只想保护自己的习惯。",
+   "question_en": "What is the practice of tonglen, and what is it for?",
+   "options_en": [
+    "Breathing in good energy from outside and breathing out your own pain and negative emotions",
+    "Practising only for people you like and feel close to, so as not to let disliked people into your heart",
+    "Using the breath to actually transfer another person's illness into your own body and bear it for them",
+    "Breathing in others' suffering and breathing out relief, reversing the instinct to protect only yourself"
+   ],
+   "explanation_en": "Tonglen has you breathe in the hot, heavy, dark quality of pain and breathe out cool, light, bright relief, the reverse of instinct, eventually extending it to all beings, including those you dislike. The article calls the energy-exchange reading, where you literally absorb illness, a misreading: it's training in a change of attitude aimed at the habit of self-protection."
+  },
+  {
+   "id": "0ed511daac",
+   "question": "丘卓为什么强调，「待在不适里」必须以 maitri（对自己无条件的友善）为前提？",
+   "options": [
+    "因为对自己友善能让不适更快消失，这样就不必再在里面待太久了",
+    "靠咬牙硬撑会让修行变成又一种自我攻击，只有对自己友善才敢看清自己",
+    "因为要先改掉坏毛病、成为更好的人以后，才配得上对自己保持友善",
+    "因为有了 maitri 就可以替代禅修，之后不再需要专门练习觉察"
+   ],
+   "answer": 1,
+   "explanation": "丘卓说如果靠硬撑，就会变成「我又走神了，我真没用」式的自我攻击，只会让人更想逃；就像孩子不怕挨骂才会说出做错了什么。maitri 不是变好以后的奖赏，而是此刻带着全部混乱就可以练的心态，所以「先变好才配」恰好说反了。",
+   "question_en": "Why does Chödrön insist that 'staying with discomfort' requires maitri, unconditional friendliness toward yourself?",
+   "options_en": [
+    "Because being kind to yourself makes discomfort disappear faster, so you don't have to stay with it for long",
+    "Gritting your teeth turns practice into another form of self-attack; only kindness to yourself lets you look honestly",
+    "Because only after fixing your bad habits and becoming a better person do you deserve to be kind to yourself",
+    "Because maitri can replace meditation, so once you have it you no longer need to practise awareness"
+   ],
+   "explanation_en": "Chödrön says that white-knuckling it becomes self-attack ('I drifted again, I'm hopeless'), which only makes you want to flee, just as a child admits a mistake only when not afraid of a scolding. Maitri isn't a reward for improving; it's something you practise now, mess and all, so 'become better first' gets it backwards."
+  }
+ ]
+}

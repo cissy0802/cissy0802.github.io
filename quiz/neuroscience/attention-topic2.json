@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/attention-topic2.html",
+ "title": "Topic 2 · 注意 — 神经科学",
+ "page_en": "/neuroscience/attention-topic2.en.html",
+ "title_en": "Topic 2 · Attention — Neuroscience",
+ "src_hash": "dc1ffc368805",
+ "questions": [
+  {
+   "id": "1e24f81e3f",
+   "question": "按「偏向竞争」的观点，注意在大脑里实际做的是什么？",
+   "options": [
+    "关掉目标以外的全部感觉通道，让其他刺激从一开始就进不了大脑",
+    "像一束探照灯那样把选中的刺激照亮，其余的刺激保持原样、照常进入意识",
+    "先把所有输入都同时深度加工一遍，再从结果里挑出最相关的送进意识",
+    "给本就在互相争抢下游处理的神经表征暗中加码，让其中一个更容易赢"
+   ],
+   "answer": 3,
+   "explanation": "文中说代表不同东西的神经元本来就在争有限的下游处理，注意只是给其中一个加码、拨动天平。探照灯比喻最诱人，但文章明确说它在机制上是反的：注意不是额外照亮，而是偏置一场本已存在的竞争。",
+   "question_en": "According to the 'biased competition' view, what does attention actually do in the brain?",
+   "options_en": [
+    "It shuts down every sensory channel except the target, so other stimuli never enter the brain at all",
+    "Like a spotlight, it brightens the selected stimulus while everything else still reaches awareness unchanged",
+    "It first processes every input deeply and in parallel, then picks the most relevant result to pass into awareness",
+    "It quietly tips the scales for one of many neural representations already competing for limited downstream processing"
+   ],
+   "explanation_en": "The article says neurons coding different things are always competing for limited downstream processing; attention just adds weight to one of them. The spotlight metaphor is the tempting one, but the article calls it mechanistically backwards: attention biases a competition that is already under way rather than adding light."
+  },
+  {
+   "id": "c4c1c48d8e",
+   "question": "「看不见的大猩猩」实验中，约一半专心数传球的观众没看见穿大猩猩服的人走过画面中央。按文中的解释，原因是什么？",
+   "options": [
+    "大猩猩出现在视野的边缘位置，眼睛的感光细胞根本没有拍到它",
+    "大猩猩其实被看见了，只是因为与任务无关，观众事后很快就把它忘得一干二净",
+    "数数任务占满了视觉皮层，大脑在这段时间里暂停接收一切新输入",
+    "光已经落在视网膜上，但这个刺激没赢下注意的竞争，所以没进入意识"
+   ],
+   "answer": 3,
+   "explanation": "文章强调大猩猩在画面正中，光清清楚楚落在视网膜上；问题是它没在注意的竞争中胜出，于是压根没进意识，这叫非注意盲视。「看见了但忘了」听起来合理，但文章的说法是它从一开始就没进意识，而不是进了以后没记住。",
+   "question_en": "In the 'invisible gorilla' study, about half the viewers counting passes missed a person in a gorilla suit walking through the middle of the frame. How does the article explain this?",
+   "options_en": [
+    "The gorilla appeared at the edge of the visual field, so the eye's photoreceptors never captured it in the first place",
+    "They did see the gorilla, but because it was irrelevant to the task they forgot it almost immediately afterwards",
+    "The counting task saturated the visual cortex, so the brain stopped taking in any new input for that stretch",
+    "The light did reach their retinas, but the stimulus lost the competition for attention and never entered awareness"
+   ],
+   "explanation_en": "The article stresses that the gorilla was in the centre of the frame and its image landed clearly on the retina; it simply failed to win the competition for attention, so it never reached consciousness. That is inattentional blindness. 'Saw it but forgot' sounds reasonable, but the article's claim is that it never got into awareness at all, not that it got in and wasn't remembered."
+  },
+  {
+   "id": "c8022ee7a9",
+   "question": "丘脑网状核在注意中扮演什么角色？",
+   "options": [
+    "它只在深睡和麻醉时才启动，人清醒的时候并不参与注意的调节",
+    "它不向皮层送信息，只靠抑制丘脑中继细胞决定哪路感官信号放行",
+    "它是包括嗅觉在内全部感觉的中继站，把信号整理好之后集中送往皮层",
+    "它对已经抵达皮层的信号做深加工，从中挑出最重要的一路送进意识"
+   ],
+   "answer": 1,
+   "explanation": "文中说丘脑网状核像一层裹在丘脑外的刹车，本身不往皮层送信息，只抑制中继细胞、决定放行哪路，克里克称之为探照灯闸门。把它当成中继站是混淆了丘脑本身和它外面那层网状核，而且嗅觉恰恰是不经丘脑换车的例外。",
+   "question_en": "What role does the thalamic reticular nucleus play in attention?",
+   "options_en": [
+    "It only switches on during deep sleep and anaesthesia and plays no part in regulating attention while awake",
+    "It sends nothing to the cortex itself and only inhibits thalamic relay cells, deciding which sensory channels get through",
+    "It is the relay station for every sense, smell included, tidying the signals before sending them on to the cortex",
+    "It does deep processing on signals that have already reached the cortex and picks the most important one for awareness"
+   ],
+   "explanation_en": "The article describes the reticular nucleus as an inhibitory shell around the thalamus: it projects nothing to the cortex and only suppresses relay cells to decide which channels pass, which is why Crick called it a 'searchlight' gate. Calling it the relay station confuses it with the thalamus proper, and smell is precisely the sense that skips the thalamus."
+  }
+ ]
+}

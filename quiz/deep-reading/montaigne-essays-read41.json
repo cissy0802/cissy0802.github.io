@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/montaigne-essays-read41.html",
+ "title": "《随笔集》— 每日精读 Read 41",
+ "page_en": "/deep-reading/montaigne-essays-read41.en.html",
+ "title_en": "Essays — Deep Reading Read 41",
+ "src_hash": "181c11b8ec44",
+ "questions": [
+  {
+   "id": "11f6a72244",
+   "question": "蒙田为什么把箴言定为「我知道什么？」，而不是「我什么都不知道」？",
+   "options": [
+    "问句更便于引出答案，体现了他追求最终确定真理的决心与信心",
+    "后者语气太悲观，和他在塔楼里读书养老时那种从容自得的性格不合",
+    "后者是皮浪主义者的原话，他想借此和古希腊的怀疑论传统明确划清界限",
+    "后者本身就是一个断言，会自我拆台；只有问句才能把判断真正悬在半空"
+   ],
+   "answer": 3,
+   "explanation": "文章说「我什么都不知道」会自我拆台（你怎么知道你不知道？），而「我知道什么？」是一个真问句，配上天平的图案，表示判断悬着不落地。他恰恰是皮浪主义悬置判断的最重要接手人，并不想和它划清界限。",
+   "question_en": "Why did Montaigne take 'What do I know?' as his motto rather than 'I know nothing'?",
+   "options_en": [
+    "A question invites an answer, showing his resolve to arrive at a final, certain truth",
+    "The latter sounded too gloomy for the serene temperament of a man retiring to read in his tower",
+    "The latter was the Pyrrhonists' own phrase, and he wanted to distance himself clearly from Greek scepticism",
+    "The latter is itself an assertion that undermines itself; only a question truly holds judgement in suspension"
+   ],
+   "explanation_en": "The article explains that 'I know nothing' refutes itself (how do you know that?), while 'What do I know?' is a genuine question, paired on his medal with balanced scales to show judgement held in the air. Far from distancing himself from Pyrrhonism, he was its most important heir, taking up its suspension of judgement."
+  },
+  {
+   "id": "8d4d06fb49",
+   "question": "在《论食人族》里，蒙田的核心动作是什么？",
+   "options": [
+    "拿图皮人当镜子作比较：宗教战争里活活烧死一个人，比烤一个死人更野蛮",
+    "细致描写食人习俗的骇人之处，以证明欧洲的基督教文明更加优越",
+    "把图皮人写成天真无邪的「高贵的野蛮人」，以此赞美未开化的原始生活",
+    "回避图皮人吃掉俘虏的事实，只挑他们的美德来记录，为他们辩护"
+   ],
+   "answer": 0,
+   "explanation": "蒙田照实写了图皮人打仗、吃俘虏，然后把刀锋转向法国：每个人都把不合习惯的事叫野蛮，而活活拷打烧死人比吃死人野蛮得多。文章专门指出读成「高贵的野蛮人」是误读，这个说法要到卢梭那代才成型，他的动作是比较，不是崇拜。",
+   "question_en": "In 'Of Cannibals', what is Montaigne's central move?",
+   "options_en": [
+    "Using the Tupinambá as a mirror: burning a living man alive in the wars of religion is more barbaric than roasting a dead one",
+    "Describing the horrors of cannibalism in detail to prove the superiority of Christian European civilisation",
+    "Portraying the Tupinambá as innocent 'noble savages' in order to praise uncivilised primitive life",
+    "Glossing over the fact that they ate captives and recording only their virtues, in their defence"
+   ],
+   "explanation_en": "Montaigne records plainly that the Tupinambá wage war and eat captives, then turns the blade on France: everyone calls barbarous whatever isn't their custom, and torturing and burning a living person is far more barbaric than eating a dead one. The article flags the 'noble savage' reading as a misreading that only took shape with Rousseau; his move is comparison, not admiration."
+  },
+  {
+   "id": "630f0d9864",
+   "question": "蒙田对死亡的看法，从早年的「探讨哲学就是学习死亡」变成晚年的「不必预演，自然到时会教你」。文章认为这个转向最值得讲的是什么？",
+   "options": [
+    "他是被一次落马濒死的亲身经验修正的，而且把前后两篇都留在了书里",
+    "他删掉了早年那篇文章，好让全书在这个问题上保持前后一致",
+    "他晚年皈依了宗教，用对救恩的虔诚信仰取代了早年斯多葛式的理性准备",
+    "他读到皮浪主义之后，就彻底放弃了对死亡问题的一切思考"
+   ],
+   "answer": 0,
+   "explanation": "落马昏迷后，他发现濒死的感觉不是恐怖而是松弛，这份第一手数据推翻了他读来的理论；而他没有回头删早年那篇，两篇并排留着。这正是全书「只加不删、我画的是经过」的方法，所以「删掉旧文保持一致」恰好相反。",
+   "question_en": "Montaigne moved from 'to philosophise is to learn to die' to 'don't rehearse it; nature will teach you when the time comes'. What does the article find most worth noting about this shift?",
+   "options_en": [
+    "He was corrected by his own near-death experience after a riding accident, and kept both essays in the book",
+    "He deleted the earlier essay so that the book would stay consistent on this question",
+    "He turned to religion late in life, replacing Stoic rational preparation with faith in salvation",
+    "After reading the Pyrrhonists he gave up thinking about the problem of death altogether"
+   ],
+   "explanation_en": "After being knocked unconscious, he found dying felt not terrifying but loose and sweet, first-hand data that overturned the theory he'd read; and he didn't go back and remove the earlier essay, leaving both side by side. That's the book's add-but-don't-delete method, 'I paint not being but passing', so deleting for consistency is the opposite."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/chapter-deepread/ddia-ch01-reliable-scalable-maintainable-book1.html",
+ "title": "DDIA 第 1 章 · 可靠、可扩展、可维护 — 专业书籍精读 Book 1",
+ "page_en": "/chapter-deepread/ddia-ch01-reliable-scalable-maintainable-book1.en.html",
+ "title_en": "DDIA Ch 1 · Reliable, Scalable, Maintainable — Books Deep-Read Book 1",
+ "src_hash": "de685ce42f48",
+ "questions": [
+  {
+   "id": "21b19d1c88",
+   "question": "按 DDIA 第 1 章，「故障（fault）」和「失效（failure）」有什么区别？可靠性追求的是什么？",
+   "options": [
+    "故障专指人为的配置错误，失效专指硬件损坏；目标是彻底消除一切人为的操作",
+    "两者是同义词，只是叫法不同；目标是让每一个组件都永远不出任何故障",
+    "失效是单个组件出问题，故障是系统整体停摆；目标是尽量减少失效的次数",
+    "故障是组件偏离应有表现，失效是整体停止服务；目标是别让故障变成失效"
+   ],
+   "answer": 3,
+   "explanation": "本章区分故障（一块盘坏了、一个进程崩了）和失效（系统对外停摆）：故障几乎不可避免，但可以容错，不让它蔓延成失效。追求零故障被列为易错点，既不现实也不经济；把两个词的定义互换是最容易犯的混淆。",
+   "question_en": "In DDIA Chapter 1, how does a 'fault' differ from a 'failure', and what is reliability aiming for?",
+   "options_en": [
+    "A fault means a human configuration error and a failure means broken hardware; the goal is to eliminate human operations",
+    "They are synonyms with different names; the goal is for every component to never fault at all",
+    "A failure is one component going wrong and a fault is the whole system going down; the goal is fewer failures",
+    "A fault is one component deviating from spec; a failure is the whole system stopping service; the goal is to keep faults from becoming failures"
+   ],
+   "explanation_en": "The chapter separates a fault (a disk dies, a process crashes) from a failure (the system stops serving users): faults are nearly inevitable but can be tolerated so they don't spread into failures. Chasing zero faults is listed as a mistake, neither realistic nor economical, and swapping the two definitions is the classic confusion."
+  },
+  {
+   "id": "5edce7de33",
+   "question": "一次用户请求要并行调用 100 个后端，每个后端只有 1% 的概率变慢，页面必须等最慢的那个返回。按本章的分析，会怎样？",
+   "options": [
+    "整页变慢的概率仍然只有约 1%，因为这些后端调用是同时并行发出的",
+    "页面的平均响应时间几乎不变，所以只需要盯住服务端的平均延迟即可",
+    "至少一个慢调用拖慢整页的概率约 63%，单个后端健康不等于整页健康",
+    "整页变慢的概率几乎是 100%，因此每个后端都必须优化到 p99.99"
+   ],
+   "answer": 2,
+   "explanation": "概率是 1 − 0.99¹⁰⁰ ≈ 63%，这就是尾延迟放大：后端只要有一点慢请求，页面级的慢就会被放大，所以要在客户端按百分位持续观测。以为并行就不会放大，恰好忽略了「必须等最慢那个」这一条件。",
+   "question_en": "A user request fans out in parallel to 100 backends, each with a 1% chance of being slow, and the page must wait for the slowest. According to the chapter, what happens?",
+   "options_en": [
+    "Only about 1% of page loads are slow, because the backend calls are all issued at the same time in parallel",
+    "Average page response time barely changes, so watching the server-side average latency is enough",
+    "About 63% of page loads hit at least one slow call; healthy individual backends don't mean a healthy page-level tail",
+    "Nearly 100% of page loads are slow, so every backend must be optimised all the way to p99.99"
+   ],
+   "explanation_en": "The probability is 1 − 0.99¹⁰⁰ ≈ 63%. That is tail latency amplification: a few slow backend requests get magnified at the page level, which is why you should measure percentiles continuously on the client side. Assuming parallelism prevents amplification ignores the condition that the page must wait for the slowest call."
+  },
+  {
+   "id": "10d88a5906",
+   "question": "在 Twitter 首页时间线的例子里，本章认为真正关键的负载参数是什么？Twitter 最后怎么做？",
+   "options": [
+    "读写比；所有用户统一走写时扇出，让读取时间线始终最快",
+    "同时在线的用户数；按地区分片，让各区独立生成自己的时间线",
+    "每个用户的粉丝数分布；普通用户走写时扇出，超大 V 走读时合并",
+    "每秒发推的速率；把所有推文统一改成读时合并来减少写入的压力"
+   ],
+   "answer": 2,
+   "explanation": "本章说真正的负载参数不是发推速率，而是粉丝数分布：名人一条推要写进几千万人的收件箱，扇出才是难点。Twitter 的答案是混合方案，用粉丝数本身来分流，这正是「可扩展性只能针对具体负载定制」的样板。",
+   "question_en": "In the Twitter home timeline example, what does the chapter identify as the key load parameter, and what did Twitter end up doing?",
+   "options_en": [
+    "The read/write ratio; every user gets fan-out on write so that reading a timeline is always fastest",
+    "The number of concurrent users; Twitter sharded by region so each region builds its own timelines",
+    "The distribution of followers per user; ordinary users get fan-out on write, huge accounts get merged at read time",
+    "The rate of tweets per second; Twitter switched every tweet to read-time merging to reduce write pressure"
+   ],
+   "explanation_en": "The chapter says the real load parameter isn't the tweet rate but the follower distribution: one celebrity tweet must land in tens of millions of inboxes, so fan-out is the hard part. Twitter's answer is a hybrid that uses follower count itself to route the work, the model case of scalability being tailored to a specific load."
+  }
+ ]
+}

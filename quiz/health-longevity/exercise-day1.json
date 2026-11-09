@@ -1,0 +1,69 @@
+{
+ "page": "/health-longevity/exercise-day1.html",
+ "title": "健康长寿 Day 1 — 运动基础协议",
+ "page_en": "/health-longevity/exercise-day1.en.html",
+ "title_en": "Health & Longevity Day 1 — Exercise Foundation Protocol",
+ "src_hash": "d09f3d1cced6",
+ "questions": [
+  {
+   "id": "7631c029e6",
+   "question": "月经黄体期核心体温升高，做 Zone 2 时心率会比平时高 5–10 bpm。文中建议怎么处理？",
+   "options": [
+    "按主观用力程度（RPE）来控制强度，而不是死守原来的心率区间",
+    "把目标心率区间整体调低，继续严格按照心率数字来控制强度",
+    "换成 4×4 高强度间歇训练，因为这段时间做高强度效果更好",
+    "心率偏高说明强度过大，应暂停 Zone 2 训练，等经期结束再练"
+   ],
+   "answer": 0,
+   "explanation": "文中说黄体期心率会自然升高，应按 RPE 而非死守心率区间，避免误判为强度不足而过量加码。暂停训练没有依据，因为心率高是体温引起的，并不代表实际强度过大。",
+   "question_en": "In the luteal phase, core temperature rises and Zone 2 heart rate runs 5–10 bpm higher than usual. What does the article advise?",
+   "options_en": [
+    "Control intensity by perceived exertion (RPE) rather than sticking rigidly to the usual heart-rate zone",
+    "Lower the whole target zone and keep controlling intensity strictly by heart-rate numbers",
+    "Switch to 4×4 high-intensity intervals, since hard efforts work better during this phase",
+    "Treat the higher heart rate as overexertion and pause Zone 2 training until the period ends"
+   ],
+   "explanation_en": "The article says heart rate naturally runs higher in the luteal phase, so go by RPE rather than the zone, to avoid misreading the session as too easy and overdoing it. Pausing training isn't supported: the higher reading comes from body temperature and doesn't mean the effort is actually too hard."
+  },
+  {
+   "id": "1904b4b244",
+   "question": "按文中的标准，下面哪种状态最符合 Zone 2 训练的强度？",
+   "options": [
+    "说不完一句整话，心率到最大心率的九成",
+    "鼻呼吸基本顺畅，能完整说话，但唱不了歌",
+    "以器械显示的「燃脂区」为准，越低越好",
+    "轻松到能唱歌，并且练得越久收益越大"
+   ],
+   "answer": 1,
+   "explanation": "Zone 2 的标准是「能说话不能唱歌」、鼻呼吸基本顺畅，对应 RPE 4–5。说不完整句、心率九成是 4×4 间歇的强度；文中还把商用器材的「燃脂区」和「越久越好」都列为常见误区，单次超过 90 分钟收益递减。",
+   "question_en": "By the article's standard, which of these best matches Zone 2 intensity?",
+   "options_en": [
+    "Unable to finish a sentence, with heart rate at about 90% of maximum",
+    "Breathing comfortably through the nose, able to talk in full sentences but not to sing",
+    "Whatever the machine's 'fat-burning zone' shows, and the lower the better",
+    "Easy enough to sing, and the longer you go the bigger the payoff"
+   ],
+   "explanation_en": "Zone 2 means 'can talk but can't sing', with comfortable nasal breathing, around RPE 4–5. Being unable to finish a sentence at 90% of max is the 4×4 interval intensity, and the article lists both the gym-machine 'fat-burning zone' and 'longer is always better' as common mistakes, with returns diminishing past 90 minutes."
+  },
+  {
+   "id": "bda9aaafcf",
+   "question": "文中对抗阻训练动作和强度的建议是什么？",
+   "options": [
+    "以深蹲、硬拉、推举等覆盖全身的复合动作为主，最后 1–2 次接近力竭",
+    "以器械上的孤立训练为主，把每一块小肌群都单独练到位，才算一次完整的训练",
+    "用小重量做超高次数，这样燃脂效果最好，对骨密度的刺激也最大",
+    "每天都练同一组肌群，肌肉的适应来得最快，不需要专门留出恢复"
+   ],
+   "answer": 0,
+   "explanation": "协议是每周 2–3 次、间隔至少 48 小时，6 个复合动作覆盖全身，每动作 3 组 6–12 次、留 1–2 次余力。文中把器械孤立训练和「小重量超高次数」都列为误区，小重量高次数对肌肉合成与骨密度的刺激最小。",
+   "question_en": "What does the article recommend for resistance training exercises and intensity?",
+   "options_en": [
+    "Mainly full-body compound lifts such as squats, deadlifts and presses, taking the last 1–2 reps close to failure",
+    "Mainly isolation work on machines, training each small muscle separately so nothing is missed",
+    "Very high reps with light weights, which burns the most fat and gives bones the biggest stimulus",
+    "Training the same muscle group every day, since adaptation comes fastest without dedicated recovery"
+   ],
+   "explanation_en": "The protocol is 2–3 sessions a week at least 48 hours apart, six compound lifts covering the whole body, 3 sets of 6–12 reps with 1–2 reps in reserve. The article lists machine isolation work and 'light weight, very high reps' as mistakes, light-and-many giving the least stimulus to muscle growth and bone density."
+  }
+ ]
+}

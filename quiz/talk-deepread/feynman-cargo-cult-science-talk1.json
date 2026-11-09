@@ -1,0 +1,69 @@
+{
+ "page": "/talk-deepread/feynman-cargo-cult-science-talk1.html",
+ "title": "Richard Feynman ·《Cargo Cult Science》— 跑道修得一模一样，飞机还是不降落",
+ "page_en": "/talk-deepread/feynman-cargo-cult-science-talk1.en.html",
+ "title_en": "Richard Feynman · \"Cargo Cult Science\" — The runway is perfect and still no planes land",
+ "src_hash": "bb93bb349b95",
+ "questions": [
+  {
+   "id": "63afcf8e26",
+   "question": "Feynman 认为「货物崇拜科学」缺的到底是什么？",
+   "options": [
+    "更精密的仪器和更大的样本量，好让研究的形式更接近一门真正的科学该有的样子",
+    "严格的同行评审制度，由领域里的权威专家先把关，然后才允许发表结果",
+    "一套成熟完整的理论框架，让每个实验都有明确的假设可以拿去检验",
+    "一种「把腰向后弯到底」的诚实：主动报告一切可能让结论失效的因素和不利事实"
+   ],
+   "answer": 3,
+   "explanation": "Feynman 说岛民形式完美、飞机不来，缺的不是把耳机形状改好一点，而是一种科学正直：报告所有可能让实验失效的东西，把不符合理论的事实一起公布，无论结果朝哪边都发表。「更精密的形式」恰好是货物崇拜本身，形式已经完美了。",
+   "question_en": "What, according to Feynman, is cargo cult science actually missing?",
+   "options_en": [
+    "More precise instruments and larger samples, so the research looks more like what real science should look like",
+    "A rigorous peer review system in which leading experts vet the results before anything is published",
+    "A mature, complete theoretical framework, so every experiment has a clear hypothesis to test",
+    "A 'leaning over backwards' honesty: volunteering everything that might invalidate your conclusion, including unfavourable facts"
+   ],
+   "explanation_en": "Feynman says the islanders' form is perfect and still no planes land; what's missing isn't better-shaped headphones but scientific integrity: reporting everything that could make your experiment wrong, publishing facts that don't fit your theory, and publishing whichever way the result goes. Polishing the form is the cargo cult itself, and the form is already perfect."
+  },
+  {
+   "id": "db21548ead",
+   "question": "Feynman 把 Millikan 当作「后人不敢偏离前人数值」的受害者。后来对 Millikan 实验笔记本的考证发现了什么？",
+   "options": [
+    "他严重篡改了电子电荷的中心值，发表的数字偏离真实值达到好几倍之多",
+    "他的偏差只来自用错了空气粘滞系数，和他怎样取舍数据毫无关系",
+    "他如实报告了全部油滴，偏差完全是后人不敢一步跳到正确值造成的",
+    "他排除了 107 滴里的 49 滴却称已全部报告，误差棒因此显得更小"
+   ],
+   "answer": 3,
+   "explanation": "Franklin 的考证显示，Millikan 发表时排除了 49 滴看上去不一致的油滴，尽管他声称报告了全部；这对 e 的最佳估计影响甚微，但抬高了表观精度。所以后人不敢跳的起点是 Millikan 自己把不确定度做小了，而不只是后人怯懦。",
+   "question_en": "Feynman cast Millikan as the victim of later researchers afraid to stray from his value. What did later study of Millikan's lab notebooks reveal?",
+   "options_en": [
+    "He badly falsified the central value of the electron's charge, publishing a figure several times off the true value",
+    "His bias came only from using the wrong viscosity of air and had nothing to do with how he selected data",
+    "He honestly reported every drop, and the bias came entirely from successors afraid to jump to the correct value",
+    "He excluded 49 of 107 drops while claiming to have reported them all, making the error bars look smaller"
+   ],
+   "explanation_en": "Franklin's work showed Millikan dropped 49 discrepant-looking drops despite claiming to report all of them; this barely changed the best estimate of e but inflated the apparent precision. So successors' reluctance began with Millikan himself understating the uncertainty, not just with their timidity."
+  },
+  {
+   "id": "aed19d90dc",
+   "question": "文章给这篇演讲「后来的命运」下的判词是什么？",
+   "options": [
+    "部分站住：他的原则经受住了后来四十年的检验，用来撑起它的具体例子却没有通过",
+    "部分站住：物理学确实像他说的那样痊愈了，问题只出在心理学等软科学里",
+    "完全站住：后来的复制危机和注册报告，证明他的原则和例子都经得起检验",
+    "基本被推翻：复制危机说明他的原则过于理想化，在科研现实中根本无法执行"
+   ],
+   "answer": 0,
+   "explanation": "复制危机几乎逐条印证了他点名的病灶，「无论结果都发表」也已做成注册报告；但他断言物理已痊愈，1986 年的数据显示基本常数推荐值 57% 落在前一版的置信区间外，Millikan 和 Young 两个例子也都出了问题。文章说这正印证了那句话：你是最容易被自己骗的那一个。",
+   "question_en": "What verdict does the article give on the speech's later fate?",
+   "options_en": [
+    "Partly upheld: his principles survived forty years of testing, but the specific examples he used to support them did not",
+    "Partly upheld: physics did recover just as he said, and the problem lay only in psychology and the soft sciences",
+    "Fully upheld: the replication crisis and registered reports vindicated both his principles and his examples",
+    "Largely overturned: the replication crisis showed his principles were too idealistic to apply in real research"
+   ],
+   "explanation_en": "The replication crisis confirmed almost point by point the ills he named, and 'publish whichever way it comes out' became registered reports. But his claim that physics was cured fell to 1986 data showing 57% of recommended constants outside the previous intervals, and both the Millikan and 'Young' examples turned out wrong. The article says this simply confirms his line: you are the easiest person to fool."
+  }
+ ]
+}

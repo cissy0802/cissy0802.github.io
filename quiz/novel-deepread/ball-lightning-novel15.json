@@ -1,0 +1,69 @@
+{
+ "page": "/novel-deepread/ball-lightning-novel15.html",
+ "title": "球状闪电 — 小说精读 No.15",
+ "page_en": "/novel-deepread/ball-lightning-novel15.en.html",
+ "title_en": "Ball Lightning — Novels, Deep-Read No.15",
+ "src_hash": "2e8d751dfe41",
+ "questions": [
+  {
+   "id": "833ae62fd2",
+   "question": "在《球状闪电》的设定里，苏联 3141 基地用巨型闪电模拟器轰了三十年也找不出规律。按宏电子理论，原因是什么？",
+   "options": [
+    "球状闪电是一直存在的宏电子，只能被激发，根本不是「造」出来的",
+    "球状闪电只在泰山这类特定地理环境里形成，西伯利亚条件不对",
+    "模拟器的能量还不够大，只要继续往上加大能量，就能稳定地造出球状闪电",
+    "实验中死了三个人，关键数据随之丢失，规律因此无法总结出来"
+   ],
+   "answer": 0,
+   "explanation": "丁仪的解释是空泡就是未激发的宏电子，闪电击中它才发光发热；它不是被造出来的，而是一直存在、只能被激发。文章说这一下把基地三十年的失败从「技术不够」变成了「方向错了」，所以加大能量的思路恰恰是错的方向。",
+   "question_en": "In Ball Lightning, the Soviet Base 3141 bombarded the air with giant lightning simulators for thirty years and found no pattern. Under the macro-electron theory, why?",
+   "options_en": [
+    "Ball lightning is a macro-electron that already exists; it can only be excited, never 'made'",
+    "Ball lightning only forms in particular terrain like Mount Tai, so Siberia had the wrong conditions",
+    "The simulators simply weren't powerful enough; more energy would have produced it reliably",
+    "Three people died in the experiments, key data was lost, and so no pattern could be found"
+   ],
+   "explanation_en": "Ding Yi explains that the empty bubble is an unexcited macro-electron that glows only when lightning strikes it; it isn't manufactured but has always been there. The article says this recasts thirty years of failure from 'not enough technology' to 'wrong direction', so turning up the energy is exactly the mistaken approach."
+  },
+  {
+   "id": "8de709ce1a",
+   "question": "文章如何评价小说里「被球状闪电烧毁的人进入量子态、既存在又毁灭」这一设定？",
+   "options": [
+    "这是全书唯一有物理依据的设定，哥本哈根诠释可以直接推出宏观叠加态",
+    "球状闪电本身就是作者虚构的现象，所以整套设定都无需拿物理来比对",
+    "这是全书科学上最越界的一步：按退相干理论，宏观物体根本无法维持叠加态",
+    "宏电子虽是虚构，但宏观物体维持叠加态已经在人体尺度上被实验反复证实"
+   ],
+   "answer": 2,
+   "explanation": "文章直说把薛定谔的猫当成真的猫是最越界的一步：物体越大、与环境相互作用越多，量子相干消失越快，人不可能维持叠加态。说球状闪电本身是虚构也不对：文章分三层，球状闪电是两百多年的真实悬案，宏电子和宏观量子态才是编的。",
+   "question_en": "How does the article assess the novel's idea that people 'burned' by ball lightning enter a quantum state, both existing and destroyed?",
+   "options_en": [
+    "It's the only idea in the book with real physical grounding, since the Copenhagen interpretation directly implies it",
+    "Ball lightning itself is the author's invention, so none of the premises need to be checked against physics",
+    "It's the book's biggest scientific overreach: by decoherence theory, macroscopic objects can't sustain superposition",
+    "Macro-electrons are invented, but macroscopic superposition has been experimentally confirmed at human scale"
+   ],
+   "explanation_en": "The article says treating Schrödinger's cat as a real cat is the book's biggest overreach: the larger an object and the more it interacts with its environment, the faster coherence vanishes, so a person can't stay in superposition. Calling ball lightning invented is also wrong: the article separates real (ball lightning, a two-century mystery) from invented (macro-electrons and macroscopic quantum states)."
+  },
+  {
+   "id": "92b89a1a30",
+   "question": "讨论核电站那一夜的「零附带损伤」武器时，文章给出的最强反方论点是什么？",
+   "options": [
+    "拒绝使用更精确的手段，就等于主动选择让更多无辜的人死去，这本身是一种道德失职",
+    "武器越干净，动用门槛越低、用得越多；精确性改变的是战争的心理成本",
+    "只要行动中有人质伤亡，任何军事手段在伦理上都是完全不可接受的",
+    "精确武器的技术并不成熟，实战中的附带损伤往往比常规武器还要更大"
+   ],
+   "answer": 1,
+   "explanation": "反方说核电站那一夜真正的后果是证明了雷球「能用」，此后它成了制式装备；精确性不改变战争总量，只改变心理成本。「拒绝精确手段等于让更多人死」是文章替正方讲到最强的论点，不是反方。",
+   "question_en": "Discussing the 'zero collateral damage' weapon used at the nuclear plant, what does the article present as the strongest case against it?",
+   "options_en": [
+    "Refusing a more precise option means choosing to let more innocents die, which is itself a moral failure",
+    "The cleaner a weapon, the lower the bar to using it and the more it gets used; precision changes war's psychological cost",
+    "If any hostage is harmed, every military option is ethically unacceptable without exception",
+    "Precision weapons are technically immature, and in combat their collateral damage often exceeds conventional arms"
+   ],
+   "explanation_en": "The opposing case says the real consequence of that night was proving the weapon 'usable', after which it became standard issue; precision doesn't reduce the amount of war, only its psychological cost. 'Refusing precision lets more people die' is the article's strongest version of the case in favour, not against."
+  }
+ ]
+}

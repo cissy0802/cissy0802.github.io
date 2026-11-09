@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/ethan-evans-who-topic1.html",
+ "title": "Ethan Evans 专题 · 读他之前：四个折扣",
+ "page_en": "/podcast-deepread/ethan-evans-who-topic1.en.html",
+ "title_en": "Ethan Evans Series · Before Reading Him: Four Discounts",
+ "src_hash": "6fa4984ae940",
+ "questions": [
+  {
+   "id": "d350a0c486",
+   "question": "Ethan Evans 主张「大赢加大输，胜过一直稳稳当当的中等表现」。文章认为这条建议成立依赖什么前提？",
+   "options": [
+    "上司在位置上长期稳定，能陪着你把整个晋升流程走完",
+    "说话的人是受过高等教育的白人男性，换个人可能行不通",
+    "输了代价不大，而且新坑位源源不断，即只在高速增长期才划算",
+    "公司有一年两轮的固定评审周期，大赢能及时写进晋升文件"
+   ],
+   "answer": 2,
+   "explanation": "文章说这条规律有两个前提：输了代价不大、新坑位源源不断，所以把它归入「时代折扣」，Evans 自己也说今天已经没有速通。「白人男性」那一条是他对另一种做法（先拿方案、推着别人走）的自我限定，不是这条建议的前提。",
+   "question_en": "Ethan Evans advises that 'big wins and big losses beat consistent middle performance'. According to the article, what does this advice depend on?",
+   "options_en": [
+    "A boss who stays in place long enough to see you through the whole promotion process",
+    "The speaker being a highly educated white man; someone else might find it doesn't work",
+    "Losses being cheap and new openings constantly appearing, so it pays only in a period of rapid growth",
+    "A fixed review cycle twice a year, so big wins can be written into promotion documents in time"
+   ],
+   "explanation_en": "The article names two preconditions, cheap losses and a steady supply of new openings, and files it under the 'era' discount; Evans himself says there's no speedrun today. The 'white male' caveat is his own qualification on a different habit, pushing others with ready-made plans, not a precondition of this advice."
+  },
+  {
+   "id": "356f573a6d",
+   "question": "Evans 说能力相近的两个人里，他常先升那个威胁要走的，还说「是你自己没把自己升上去」。文章提醒读者对这类话主要打哪个折扣？",
+   "options": [
+    "时代折扣：这条规律只在 Amazon 员工涨了一百倍的那些年里成立",
+    "公司折扣：这依赖 Amazon 特有的评审周期、晋升文件和 LP 话术",
+    "位置折扣：这是决策者那一侧的视角，被决策一侧的代价要自己补上",
+    "动机折扣：这是为了推销晋升课程而故意说得笃定、说得锋利"
+   ],
+   "answer": 2,
+   "explanation": "文章把「经理其实怎么想」这类内幕归到位置折扣：从 VP 椅子上看是实话，但成本落在椅子下面的人身上，比如错过评审周期而离开的明星工程师。文章还借行动者—观察者不对称说明，「是你自己没升上去」是典型的观察者归因。",
+   "question_en": "Evans says that between two equally able people he often promotes the one threatening to leave, and that 'you did not promote yourself'. Which discount does the article mainly tell readers to apply here?",
+   "options_en": [
+    "Era: this pattern only held during the years Amazon's headcount grew a hundredfold",
+    "Company: it relies on Amazon's particular review cycles, promotion documents and Leadership Principles",
+    "Position: this is the decision-maker's view, and readers must add the cost borne by those being decided about",
+    "Motive: it's deliberately confident and sharp-edged in order to sell promotion courses"
+   ],
+   "explanation_en": "The article files 'what managers really think' under the position discount: true from the VP's chair, but the cost lands on people below it, like the star engineer who left after a missed review cycle. It also uses the actor–observer asymmetry to show that 'you didn't promote yourself' is a classic observer's attribution."
+  },
+  {
+   "id": "127011697e",
+   "question": "Evans 写过「大多数工作（80%！！）来自人脉」。文章核查后的结论是什么？",
+   "options": [
+    "准确无误，Granovetter 1973 年对波士顿郊区的调查得出的正是 80%",
+    "人脉确是最重要的渠道，但原始数据是一半出头，80% 找不到出处",
+    "有依据，但这个比例只适用于 Amazon 内部转岗，不适用于外部求职",
+    "完全没有依据，Granovetter 的研究发现人脉在求职中的作用其实非常小"
+   ],
+   "answer": 1,
+   "explanation": "文章判为「有据，但说宽了」：Granovetter 访谈的 100 人里有 54 人经人介绍找到工作，比任何其他渠道都多，但那是一半出头；流传很广的 80% 找不到可追溯的原始研究。它借此说明动机折扣：数字要追出处，语气要打折。",
+   "question_en": "Evans wrote that 'most jobs (80%!!) come from networking'. What does the article conclude after checking?",
+   "options_en": [
+    "It's exactly right; Granovetter's 1973 survey of Boston suburbs found precisely 80%",
+    "Networking is indeed the top job-search channel, but Granovetter's figure was just over half; the 80% has no traceable source",
+    "It's grounded, but the figure applies only to internal transfers at Amazon, not to outside job searches",
+    "It has no basis at all; Granovetter found personal contacts played only a very small role in finding jobs"
+   ],
+   "explanation_en": "The article rates it 'grounded but overstated': of the 100 people Granovetter interviewed, 54 found jobs through contacts, more than any other channel, but that's just over half, and the widely repeated 80% has no traceable original study. It illustrates the motive discount: trace the numbers and discount the tone."
+  }
+ ]
+}
