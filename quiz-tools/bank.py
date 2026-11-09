@@ -234,6 +234,27 @@ def all_pages():
     return sorted(set(pages))
 
 
+_thinkers = None
+
+
+def debate_names(page):
+    """Names that must not appear in a debate question or its options."""
+    global _thinkers
+    if "debate.html?d=" not in page:
+        return []
+    if _thinkers is None:
+        raw = read_file("thinker-arena", "thinkers.json")
+        _thinkers = {t["id"]: t for t in json.loads(raw)["thinkers"]} if raw else {}
+    raw = read_file("thinker-arena", "debates/" + page.split("=", 1)[1] + ".json")
+    names = set()
+    for tid in (json.loads(raw).get("participants", []) if raw else []):
+        t = _thinkers.get(tid, {})
+        zh, en = t.get("name", ""), t.get("name_en", "")
+        names |= {n for n in (zh, zh.split("·")[-1]) if len(n) >= 2}
+        names |= {n for n in (en, en.split()[-1] if en else "") if len(n) >= 3}
+    return sorted(names)
+
+
 def html_to_text(s):
     s = re.sub(r"(?is)<(script|style|nav|header|footer|svg|button|noscript)[^>]*>.*?</\1>", " ", s)
     s = re.sub(r"(?i)<br\s*/?>|</(p|div|li|h[1-6]|section|blockquote|tr)>", "\n", s)
@@ -250,9 +271,14 @@ def article(page):
         if not raw:
             return None, None
         d = json.loads(raw)
-        parts = [d.get("question", ""), d.get("sub", "")]
+        # What a reader should carry away from a debate is where it landed, so
+        # the closing summaries come first; the posts follow as background and
+        # are what gets cut when the text is truncated.
+        parts = [d.get("question", ""), d.get("sub", ""), "", "【结论：三份总结】"]
+        for s in d.get("summaries", []):
+            parts += [s.get(k, "") for k in ("summary", "insight", "advice") if s.get(k)]
+        parts += ["", "【辩论过程（背景，不是考点）】"]
         parts += [f"[{p.get('thinker')}] {p.get('text', '')}" for p in d.get("posts", [])]
-        parts += [s.get("summary", "") for s in d.get("summaries", [])[:1]]
         return "辩论：" + d.get("question", ""), "\n".join(parts)
     raw = read_file(repo, rest)
     if raw is None:
@@ -317,6 +343,12 @@ def cmd_build():
         errs += [f"q{i}: {e}" for e in en_problems(q.get("question_en"), q.get("options_en"), q.get("explanation_en"))]
         if re.search(r"第[一二三四1-4]项|选项\s*[A-Da-d1-4]|[A-D]\s*项|前者|后者", str(q.get("explanation", ""))):
             errs.append(f"q{i}: explanation refers to an option by position; options get shuffled")
+        stem = " ".join([str(q.get("question", ""))] + opts + [str(q.get("question_en", ""))]
+                        + [str(o) for o in q.get("options_en") or []])
+        named = [n for n in debate_names(a["page"])
+                 if (re.search(r"\b" + re.escape(n) + r"\b", stem) if n.isascii() else n in stem)]
+        if named:
+            errs.append(f"q{i}: debate question names {', '.join(named)}; ask about the conclusion, not who said it")
         per[q["slot"]] = per.get(q["slot"], 0) + 1
         if per[q["slot"]] > 3:
             errs.append(f"q{i}: more than 3 questions for slot {q['slot']}")
