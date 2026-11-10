@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/leading-neuroscientist-stress-leaks-through-skin-pod22.html",
+ "title": "The Diary of a CEO × Tara Swart — 老板的压力，助理的腰围",
+ "page_en": "/podcast-deepread/leading-neuroscientist-stress-leaks-through-skin-pod22.en.html",
+ "title_en": "The Diary of a CEO × Tara Swart — The Boss's Stress, the Assistant's Waistline",
+ "src_hash": "c38e5e2f88b6",
+ "questions": [
+  {
+   "id": "8e4441a8ae",
+   "question": "Tara Swart 说领导的压力会像性激素一样经汗液「漏」进下属的皮肤。按节目页的核查，证据实际支持的是哪种说法？",
+   "options": [
+    "压力经汗液传播已被证实，只是传染强度比她说的小一些",
+    "压力传染本身就是迷思，观察别人受压并不会改变观察者的皮质醇",
+    "压力传染和月经同步一样，都是已被证实的激素经皮肤在人与人之间传递的现象",
+    "压力传染确有其事，但已知通道是看见别人受压，经汗液传播找不到研究"
+   ],
+   "answer": 3,
+   "explanation": "Engert 等人的研究里，隔着单向镜看别人受压的观察者有 26% 皮质醇显著升高，所以传染是真的，但通道是眼睛。她用来类比的月经同步本身就没被复现，皮质醇随汗液进入他人身体则找不到任何研究。",
+   "question_en": "Tara Swart claims a leader's stress \"leaks\" through sweat into subordinates' skin, like sex hormones. Per the page's fact-check, what does the evidence actually support?",
+   "options_en": [
+    "Transmission through sweat is established; the effect is just smaller than she suggests",
+    "Stress contagion is a myth; watching others under stress doesn't change the observer's cortisol",
+    "Like menstrual synchrony, it is a confirmed case of hormones passing from person to person through the skin",
+    "Stress contagion is real, but the known channel is seeing others stressed; no study shows transfer via sweat"
+   ],
+   "explanation_en": "In Engert et al., 26% of people watching others get stressed through a one-way mirror showed a significant cortisol rise, so contagion is real but travels through the eyes. Her analogy, menstrual synchrony, failed to replicate, and no study was found showing cortisol entering others through sweat."
+  },
+  {
+   "id": "82149cbf31",
+   "question": "Swart 说「只是坐着想象举重，肌肉量就增加了 13%」。与这个数字吻合的研究实际说明了什么？",
+   "options": [
+    "想象训练能增加肌肉量，只是需要 12 周而不是两周",
+    "这个数字来自一项无法复现的实验，想象训练对身体没有任何可测效果",
+    "想象训练和实际训练效果相当，所以完全可以用来替代真正去健身房的力量训练",
+    "想象训练提高的是力量，作者归因于大脑驱动信号变强，没测出肌肉变大"
+   ],
+   "answer": 3,
+   "explanation": "Ranganathan 等人 2004 年的研究测的是力量而不是肌肉量，想象组涨幅也明显小于真练组，作者认为是大脑调动肌肉的信号变强。想象能练出更会调动肌肉的大脑，但没有证据说能练出肌肉。",
+   "question_en": "Swart says people who merely imagined lifting weights gained 13% muscle. What does the study matching that figure actually show?",
+   "options_en": [
+    "Imagery does build muscle mass, it just takes 12 weeks rather than two",
+    "The figure comes from an experiment that failed to replicate; imagery has no measurable physical effect",
+    "Imagined training works as well as real training, so it can fully replace actually lifting at the gym",
+    "Imagery raised strength, credited to stronger neural drive; no growth in muscle size was measured"
+   ],
+   "explanation_en": "Ranganathan et al. (2004) measured strength, not muscle mass, and the imagery group gained clearly less than those who actually trained; the authors attributed the gain to stronger signals from the brain. Imagery trains a brain better at recruiting muscle, not bigger muscles."
+  },
+  {
+   "id": "1a8312f221",
+   "question": "「只要还在往外漏皮质醇，少吃多动都减不掉肚子」——按核查，这句话的问题在哪？",
+   "options": [
+    "皮质醇确实决定了腹部脂肪的多少，只是必须靠严格节食而不是靠运动才能减下来",
+    "说法基本属实，只有长期高强度运动才能抵消皮质醇的作用",
+    "两者只有弱的横断面相关、因果方向不明，而单做有氧 12 周就能减内脏脂肪",
+    "皮质醇与腰围毫无关联，压力和腹部脂肪之间不存在任何联系"
+   ],
+   "answer": 2,
+   "explanation": "头发皮质醇和腰围确有关联，但相关系数只有 0.1 到 0.2，数据是横断面的，甚至可能是腹部肥胖反过来改变了压力轴。「运动减不掉」则说反了：汇总试验显示不节食、只做有氧 12 周就能减少内脏脂肪。",
+   "question_en": "\"As long as you're leaking cortisol, no diet or exercise will shift belly fat\" — according to the fact-check, what's wrong with this?",
+   "options_en": [
+    "Cortisol really does control belly fat, but it can only be reduced through strict dieting, not through exercise",
+    "It's basically true; only prolonged high-intensity exercise can offset cortisol's effect",
+    "The link is weak, cross-sectional and of unclear direction, and aerobic exercise alone cuts visceral fat in 12 weeks",
+    "Cortisol and waist size are completely unrelated; stress has nothing to do with abdominal fat"
+   ],
+   "explanation_en": "Hair cortisol does correlate with waist size, but only at 0.1–0.2, in cross-sectional data, and abdominal obesity may even be altering the stress axis rather than the reverse. \"Exercise won't work\" is backwards: pooled trials show aerobic exercise without dieting reduces visceral fat within 12 weeks."
+  }
+ ]
+}

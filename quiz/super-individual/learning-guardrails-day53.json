@@ -1,0 +1,69 @@
+{
+ "page": "/super-individual/learning-guardrails-day53.html",
+ "title": "Day 53 · 用 AI 学习的护栏工程 — Super Individual",
+ "page_en": "/super-individual/learning-guardrails-day53.en.html",
+ "title_en": "Day 53 · Guardrail Engineering for Learning with AI — Super Individual",
+ "src_hash": "bb26f8e83174",
+ "questions": [
+  {
+   "id": "d0ef6e152b",
+   "question": "2025 年 PNAS 的高中生实验里，用原味 GPT-4 练习的组练习期成绩大涨，撤掉 AI 后却比从没用过 AI 的组还差。最好的解释是？",
+   "options": [
+    "AI 直接给答案，删掉了自己挣扎产出再被纠正的过程",
+    "练习期太短，如果继续用 AI 练更久，撤掉后的成绩就会追上来",
+    "学生对 AI 产生了情绪依赖，撤掉后焦虑导致发挥失常",
+    "原味 GPT-4 给出的答案错误率高，学生学到了错误的知识"
+   ],
+   "answer": 0,
+   "explanation": "学习发生在自己挣扎着产出、然后被纠正的过程里，也就是 Bjork 说的合意困难。原味 AI 把这段挣扎抄近路抄掉了，于是加速的是产出而不是能力。同一实验里只提示不给答案的导师版几乎消除了损害，说明问题在用法而非 AI 本身。",
+   "question_en": "In the 2025 PNAS high-school study, students who practiced with plain GPT-4 surged during practice but, once AI was removed, did worse than those who never used it. What best explains this?",
+   "options_en": [
+    "The AI handed over answers, cutting out the struggle to produce and then be corrected",
+    "The practice period was too short; with longer AI-assisted practice, post-removal scores would have caught up",
+    "Students grew emotionally dependent on the AI, and anxiety after its removal hurt their performance",
+    "Plain GPT-4 gave many wrong answers, so students learned incorrect material"
+   ],
+   "explanation_en": "Learning happens in struggling to produce and then being corrected — Bjork's desirable difficulty. Plain AI short-circuits that struggle, so it accelerates output, not capability. In the same study, a tutor version that hinted instead of answering nearly eliminated the harm, so the problem is the usage pattern, not AI itself."
+  },
+  {
+   "id": "2120e90eea",
+   "question": "你想借 AI 学会一种之前没用过的设计模式。按「生成-验证倒置」的原则，最合适的做法是？",
+   "options": [
+    "连样板和语法也坚持全部手写，完全不用 AI，避免任何依赖",
+    "先自己给出伪代码或思路草图，再让 AI 揭晓并对照差距，让它追问和出题",
+    "让 AI 先生成，你来仔细审查验证，这样能同时练到验证能力",
+    "让 AI 写出完整代码并逐行讲解，读到完全理解为止"
+   ],
+   "answer": 1,
+   "explanation": "干活模式是 AI 生成、你验证；学习模式要反过来，让产出这个动作留在你身上，AI 只碰纠错。读完讲解觉得懂了、关掉页面复现不出来正是反模式。但先试后揭晓只针对要学的那一块，已会的样板代码照常让 AI 先写。",
+   "question_en": "You want to use AI to learn a design pattern you've never used. Following the principle of inverting generate-and-verify, what's the best approach?",
+   "options_en": [
+    "Hand-write everything, boilerplate and syntax included, with no AI at all, to avoid any dependence",
+    "Produce your own pseudocode or sketch first, then have the AI reveal its version so you compare the gap, and let it quiz and probe you",
+    "Let the AI generate first and review it carefully yourself, which trains your verification skills too",
+    "Have the AI write the full code and explain it line by line until you fully understand it"
+   ],
+   "explanation_en": "In production mode AI generates and you verify; in learning mode you flip it, keeping the act of producing with you while AI only handles correction. Reading an explanation, feeling you get it, then failing to reproduce it is the anti-pattern. But attempt-first applies only to what you're learning; boilerplate you already know can still be AI-written."
+  },
+  {
+   "id": "e8ca588b75",
+   "question": "作为 tech lead，你想让团队里的 junior 用 AI 又不毁掉他们的成长。按文中的组织护栏，哪种安排最对？",
+   "options": [
+    "既然 AI 能回答大部分问题，可以适当减少资深对 junior 的带教，把时间留给更难的工作",
+    "让 junior 用 AI 尽快生成大量代码，AI 写的部分可以少审一些以提升吞吐",
+    "为了保护成长，禁止 junior 在工作中使用 AI，等他们成长为资深之后再全面放开",
+    "让 junior 当 AI 产出的第一验证者，AI 代码走同一套 review，保留资深带教"
+   ],
+   "answer": 3,
+   "explanation": "复杂代码库的瓶颈是读懂和验证，junior 要长成资深，练的正是这块；让他当第一验证者就是刻意练习。review 是 junior 被资深纠错的主通道，不能为 AI 代码开绿色通道；减少带教正是组织里「撤掉护栏」的样子。结论不是禁用，而是装护栏。",
+   "question_en": "As a tech lead, you want juniors to use AI without stunting their growth. Per the article's organizational guardrails, which setup is right?",
+   "options_en": [
+    "Since AI answers most questions, trim senior mentoring of juniors and save that time for harder work",
+    "Let juniors generate lots of code quickly with AI, reviewing the AI-written parts more lightly to boost throughput",
+    "To protect their growth, ban juniors from using AI at work and open it up fully only once they've become seniors",
+    "Make juniors the first verifiers of AI output, run AI code through the same review, and keep senior mentoring"
+   ],
+   "explanation_en": "In complex codebases the bottleneck is reading and verifying, which is exactly what juniors must practice to become seniors; making them first verifiers is deliberate practice. Review is the main channel through which seniors correct juniors, so AI code gets no fast lane, and cutting mentoring is what \"removing the guardrails\" looks like in an organization. The answer is guardrails, not a ban."
+  }
+ ]
+}

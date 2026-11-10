@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/amazon-vp-corporate-politics-work-win-pod2.html",
+ "title": "The Peterman Pod × Ethan Evans — 礼貌的虚构",
+ "page_en": "/podcast-deepread/amazon-vp-corporate-politics-work-win-pod2.en.html",
+ "title_en": "The Peterman Pod × Ethan Evans — The Polite Fiction",
+ "src_hash": "fd6377595a91",
+ "questions": [
+  {
+   "id": "0426ee8789",
+   "question": "按 Ethan Evans 讲的「礼貌的虚构」（polite fiction），想争取更大的地盘时，哪种说法最符合这套做法？",
+   "options": [
+    "「我对扩大地盘没兴趣」——先隐藏意图，等机会自己送上门",
+    "「把他的组划给我，不然我就考虑另一个部门给的 offer」——把筹码直接摆上桌",
+    "「如果重组需要人顶上，我在，而且不打算走」——诉求不变，只换成无私的样子",
+    "「他的组管得不好，大家都看在眼里」——先削弱对手，再提出接手"
+   ],
+   "answer": 2,
+   "explanation": "礼貌的虚构不是撒谎，也不是藏起诉求：底意仍是「有什么我都接」，只是说成像无私的仆人，两者可以同时为真。直接摆出「不给就走」是它刻意避开的海盗式说法。",
+   "question_en": "Under what Ethan Evans calls a \"polite fiction,\" which line best fits how you should ask for a bigger scope?",
+   "options_en": [
+    "\"I have no interest in growing my scope\" — hide the intent and wait for the opportunity to come",
+    "\"Give me his team, or I'll take the other department's offer\" — put your leverage right on the table",
+    "\"If the reorg needs someone to step up, I'm here and not planning to leave\" — same ask, framed as service",
+    "\"Everyone can see his team is struggling\" — weaken the rival first, then offer to take over"
+   ],
+   "explanation_en": "A polite fiction is neither a lie nor a concealed ask: the underlying message is still \"I'll take whatever comes,\" just delivered like a selfless servant, and both can be true at once. Stating \"give it to me or I walk\" is exactly the pirate version it avoids."
+  },
+  {
+   "id": "178cb6a45c",
+   "question": "Ethan Evans 建议想越级投诉直属经理时「别单独去」。他给的理由是什么？",
+   "options": [
+    "越级领导信你就多出三个麻烦，不信你则毫无麻烦，单人报告天然吃亏",
+    "单独去会被视为个人恩怨，几个人去能显得问题更有普遍性、更占道德高地",
+    "公司制度规定越级投诉至少需要两人联署，否则 HR 不会受理",
+    "几个人一起去，越级领导会觉得被挑战，反而更愿意保护提出问题的人"
+   ],
+   "answer": 0,
+   "explanation": "他站在越级领导的位置算账：相信一个人的投诉会带来三个麻烦，不信则没有麻烦，所以单个人的说法天然吃亏，几个人的说法先后传上来才会被认真对待。这不是制度要求，而是激励问题。",
+   "question_en": "Ethan Evans advises against going over your manager's head alone. What reasoning does he give?",
+   "options_en": [
+    "If the skip-level believes you they inherit three problems, if not they have none, so a lone report starts behind",
+    "Going alone looks like a personal grudge, while a group looks principled and holds the moral high ground",
+    "Company policy requires at least two signatories before HR will accept a skip-level complaint",
+    "A group makes the skip-level feel challenged, which makes them more inclined to protect the people raising it"
+   ],
+   "explanation_en": "He reasons from the skip-level's incentives: believing one complaint creates three problems, disbelieving creates none, so a lone report starts at a disadvantage. Only when several accounts arrive does it get taken seriously. It's an incentive problem, not a policy rule."
+  },
+  {
+   "id": "8bb2fbf4b8",
+   "question": "Ethan Evans 区分了好的和坏的「背后沟通」（backchanneling）。下面哪种属于他说的好的那种，以及它为什么管用？",
+   "options": [
+    "会前单独问 CFO「我的方案你哪里不放心」，对方被咨询过就更愿支持你",
+    "会后再单独找决策者补充论据，因为会上的第一印象往往不是最终决定，还能翻盘",
+    "私下把会上不便公开说的顾虑告诉决策者，让对手的方案在会前就失分",
+    "会前先把方案的全部细节发给所有与会者，避免会上被临时提问难住"
+   ],
+   "answer": 0,
+   "explanation": "好的背后沟通是会前私下请教决策者的顾虑；它起作用不只因为交换了信息，更因为对方觉得被咨询过。拨款的人在算「出事时谁靠得住」，两个方案差不多时会给先来问过他的人。私下说公开场合不敢说的话，正是他说的坏的那种。",
+   "question_en": "Ethan Evans separates good backchanneling from bad. Which is the good kind, and why does it work?",
+   "options_en": [
+    "Privately asking the CFO beforehand what worries them about your plan; having been consulted, they lean your way",
+    "Following up with the decision-maker after the meeting, since first impressions in the room are rarely final and can be reversed",
+    "Privately telling the decision-maker the concerns you can't voice in the meeting, so the rival plan loses ground early",
+    "Sending every attendee the full details ahead of time so you aren't caught off guard by questions"
+   ],
+   "explanation_en": "Good backchanneling means privately asking the decision-maker about their concerns beforehand. It works not only through information exchange but because they feel consulted; a funder weighing \"who can I count on\" will back whoever came to them first when plans are close. Saying privately what you won't say publicly is his example of the bad kind."
+  }
+ ]
+}

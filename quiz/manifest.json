@@ -597,6 +597,141 @@
     "7cf940b4e9",
     "d4ff23cbd3"
    ]
+  },
+  "/podcast-deepread/amazon-vp-corporate-politics-work-win-pod2.html": {
+   "t": "The Peterman Pod × Ethan Evans — 礼貌的虚构",
+   "f": "podcast-deepread/amazon-vp-corporate-politics-work-win-pod2.json",
+   "q": [
+    "0426ee8789",
+    "178cb6a45c",
+    "8bb2fbf4b8"
+   ]
+  },
+  "/health-longevity/posture-day34.html": {
+   "t": "健康长寿 Day 34 — 体态与肩颈背",
+   "f": "health-longevity/posture-day34.json",
+   "q": [
+    "3a0aade397",
+    "eba1942c30",
+    "1982364241"
+   ]
+  },
+  "/podcast-deepread/leading-neuroscientist-stress-leaks-through-skin-pod22.html": {
+   "t": "The Diary of a CEO × Tara Swart — 老板的压力，助理的腰围",
+   "f": "podcast-deepread/leading-neuroscientist-stress-leaks-through-skin-pod22.json",
+   "q": [
+    "8e4441a8ae",
+    "82149cbf31",
+    "1a8312f221"
+   ]
+  },
+  "/thinker-arena/debate.html?d=believe-in-fate": {
+   "t": "辩论：该不该信命？",
+   "f": "thinker-arena/debate-believe-in-fate.json",
+   "q": [
+    "3563192b11",
+    "6cda1c68f4",
+    "4c0a42ec7d"
+   ]
+  },
+  "/meta-knowledge/behavioral-econ-day3.html": {
+   "t": "元知识详解：行为经济学 — Day 3",
+   "f": "meta-knowledge/behavioral-econ-day3.json",
+   "q": [
+    "1fa634bb70",
+    "d601c1a75c",
+    "3142c43dd1"
+   ]
+  },
+  "/meta-knowledge/complex-systems-day5.html": {
+   "t": "元知识详解：复杂系统 — Day 5",
+   "f": "meta-knowledge/complex-systems-day5.json",
+   "q": [
+    "3936e16f8b",
+    "9bce636c2e",
+    "c740547dc6"
+   ]
+  },
+  "/deep-reading/varieties-religious-experience-read98.html": {
+   "t": "《宗教经验之种种》— 好书精读",
+   "f": "deep-reading/varieties-religious-experience-read98.json",
+   "q": [
+    "2445fca3de",
+    "f1cf786d16",
+    "124bb96771"
+   ]
+  },
+  "/meta-knowledge/quantum-intuition-day6.html": {
+   "t": "元知识详解：量子力学直觉 — Day 6",
+   "f": "meta-knowledge/quantum-intuition-day6.json",
+   "q": [
+    "20075e2515",
+    "351d036dc1",
+    "10b5b658f6"
+   ]
+  },
+  "/chapter-deepread/accelerate-ch02-measuring-performance-book39.html": {
+   "t": "Accelerate 第 2 章 · 测量效能 — 专业书籍精读 Book 39",
+   "f": "chapter-deepread/accelerate-ch02-measuring-performance-book39.json",
+   "q": [
+    "cc14499511",
+    "36a8797565",
+    "a651362b5f"
+   ]
+  },
+  "/podcast-deepread/ethan-evans-presence-topic5.html": {
+   "t": "Ethan Evans 专题 · 高管气场与表达",
+   "f": "podcast-deepread/ethan-evans-presence-topic5.json",
+   "q": [
+    "96c7d33512",
+    "28405debfa",
+    "8b5812b00e"
+   ]
+  },
+  "/super-individual/learning-guardrails-day53.html": {
+   "t": "Day 53 · 用 AI 学习的护栏工程 — Super Individual",
+   "f": "super-individual/learning-guardrails-day53.json",
+   "q": [
+    "d0ef6e152b",
+    "2120e90eea",
+    "e8ca588b75"
+   ]
+  },
+  "/podcast-deepread/naval-who-topic9.html": {
+   "t": "Naval 专题 · 读他之前：四个折扣",
+   "f": "podcast-deepread/naval-who-topic9.json",
+   "q": [
+    "1bc2f8970e",
+    "08f224257d",
+    "2419a23d87"
+   ]
+  },
+  "/thinker-arena/debate.html?d=small-step-drift": {
+   "t": "辩论：人是怎么一步步走到当初绝不会做的事的？",
+   "f": "thinker-arena/debate-small-step-drift.json",
+   "q": [
+    "d64b859f73",
+    "f923467e89",
+    "06828e8104"
+   ]
+  },
+  "/neuroscience/decision-making-topic6.html": {
+   "t": "Topic 6 · 决策 — 神经科学",
+   "f": "neuroscience/decision-making-topic6.json",
+   "q": [
+    "59e2790371",
+    "ef4496e4ef",
+    "0ded7af830"
+   ]
+  },
+  "/neuroscience/hard-problem-topic10.html": {
+   "t": "Topic 10 · 意识的难题 — 神经科学",
+   "f": "neuroscience/hard-problem-topic10.json",
+   "q": [
+    "d2a56242f3",
+    "029f65cf60",
+    "fc19b93f07"
+   ]
   }
  },
  "aliases": {

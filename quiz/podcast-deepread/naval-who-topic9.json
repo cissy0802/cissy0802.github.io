@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/naval-who-topic9.html",
+ "title": "Naval 专题 · 读他之前：四个折扣",
+ "page_en": "/podcast-deepread/naval-who-topic9.en.html",
+ "title_en": "Naval Series · Before You Read Him: Four Discounts",
+ "src_hash": "f3a4436c1a0d",
+ "questions": [
+  {
+   "id": "1bc2f8970e",
+   "question": "Naval 说「在一千个平行宇宙里，你要在九百九十九个里都变得富有」。按「位置」这一折扣，这句话对一个普通创业者的问题在哪？",
+   "options": [
+    "问题在于他低估了勤奋的作用，普通人只要更努力就能弥补运气的差距",
+    "这句话本身没有问题，只要判断力足够好，任何人都能在大多数宇宙里致富",
+    "问题在于平行宇宙只是比喻，现实中无法验证，所以这句话没有意义",
+    "投资人能靠组合里一两笔赢家抹平失败，创业者只有一张票、一条时间线"
+   ],
+   "answer": 3,
+   "explanation": "天使投资的回报几乎全来自一两笔，手里一百张票九十张作废也没关系；他自己也讲过遍历性：一百个人的平均不等于一个人重复一百次。拿组合视角给只有一张票的人开「不靠运气」的承诺，正是位置带来的落差。",
+   "question_en": "Naval says \"in 1,000 parallel universes, you want to be wealthy in 999 of them.\" Under the \"position\" discount, what's the problem with this for an ordinary founder?",
+   "options_en": [
+    "The problem is that he underrates hard work; ordinary people can make up for luck by trying harder",
+    "Nothing is wrong with it; with good enough judgment, anyone can get rich in most universes",
+    "The problem is that parallel universes are just a metaphor that can't be tested, so the line is meaningless",
+    "An investor's one or two winners cover a portfolio of losses; a founder holds one ticket on one timeline"
+   ],
+   "explanation_en": "Angel returns come almost entirely from one or two deals, so ninety dead tickets out of a hundred don't matter. He himself has explained ergodicity: what holds on average across a hundred people doesn't hold for one person repeating a hundred times. Offering a \"without luck\" promise from a portfolio seat to someone holding one ticket is the gap that position creates."
+  },
+  {
+   "id": "08f224257d",
+   "question": "Naval 提出：教人致富又靠这个赚钱的人，钱最好是在别处赚的。按「动机」这一折扣，他自己的情况应如何看？",
+   "options": [
+    "他过了这条检验，钱确实是在别处赚的，所以他的建议没有利益冲突，不必再打动机折扣",
+    "动机折扣不适用于他，因为他的财富主要来自运气而非任何主动布局",
+    "他没过这条检验，因为他的播客靠广告和付费课程盈利",
+    "他过了这条检验，但大部分身家压在未上市创业公司，劝人投身创业与他的仓位同向"
+   ],
+   "answer": 3,
+   "explanation": "按他自己的标准他是过关的：播客不放广告、不卖东西，钱在别处赚。但动机不在课程而在仓位：他大部分身家在未上市公司，劝科技从业者把钱「加倍」投回科技业，搭档也直说免不了替自己的持仓说话。",
+   "question_en": "Naval says anyone teaching how to get rich while profiting from it should have made their money elsewhere. Under the \"motive\" discount, how should his own case be seen?",
+   "options_en": [
+    "He passes the test, his money really was made elsewhere, so his advice has no conflict of interest and needs no motive discount",
+    "The motive discount doesn't apply, since his wealth came mainly from luck rather than any deliberate positioning",
+    "He fails that test, because his podcast makes money from ads and paid courses",
+    "He passes the test, but most of his wealth sits in private startups, so urging people into startups matches his positions"
+   ],
+   "explanation_en": "By his own standard he passes: the podcast has no ads and sells nothing, and his money was made elsewhere. But the motive lies in his positions, not courses: most of his net worth is in private startups, he urged tech workers to \"double down\" on tech, and his co-host admitted they probably talk their book."
+  },
+  {
+   "id": "2419a23d87",
+   "question": "Naval 说二十年前他认定聪明又勤奋的人，现在几乎无一例外都成功了。按节目页的核查，这个说法最主要的漏洞是？",
+   "options": [
+    "说法完全属实，研究证实有能力的人几乎必然成功",
+    "聪明和勤奋其实与创业成功毫无关系，成功完全取决于运气",
+    "他的判断力只适用于 2009 年以前的硅谷，那之后创业的市场环境已经完全不同了",
+    "没有分母：他记得的只是仍在视野里的人；连成功过的创业者再上市也只有约三成"
+   ],
+   "answer": 3,
+   "explanation": "Gompers 等人的数据显示能力确实会延续，但上一家成功上市的人，下一家上市的概率也只有 30%。他的样本是自己记得、仍在视野里的人；聪明和成功都会让人更容易留在视野里，这正是伯克森悖论式的筛选。说「毫无关系」则走向了另一个极端。",
+   "question_en": "Naval says nearly everyone he judged smart and hardworking twenty years ago has since succeeded. Per the page's fact-check, what is the main flaw in this claim?",
+   "options_en": [
+    "The claim is entirely accurate; research confirms capable people almost always succeed",
+    "Intelligence and hard work actually have nothing to do with startup success, which depends entirely on luck",
+    "His judgment only applied to Silicon Valley before 2009, and the startup market has been completely different since then",
+    "No denominator: he recalls only people still in view; even proven founders take their next company public only about 30% of the time"
+   ],
+   "explanation_en": "Gompers et al. show skill does persist, but founders whose last company went public have only a 30% chance with the next. His sample is people he remembers who remain in view, and both intelligence and success make people likelier to stay in view, a Berkson-style selection. Saying skill is irrelevant goes to the opposite extreme."
+  }
+ ]
+}

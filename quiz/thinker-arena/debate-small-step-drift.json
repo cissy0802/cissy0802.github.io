@@ -1,0 +1,69 @@
+{
+ "page": "/thinker-arena/debate.html?d=small-step-drift",
+ "title": "辩论：人是怎么一步步走到当初绝不会做的事的？",
+ "page_en": "/thinker-arena/debate.en.html?d=small-step-drift",
+ "title_en": "How do people end up, step by step, doing what they once never would?",
+ "src_hash": "7d902c9f75be",
+ "questions": [
+  {
+   "id": "d64b859f73",
+   "question": "按「人是怎么一步步走到当初绝不会做的事的」这场辩论的共识，为什么不能把当下那点「不对劲」的感觉当作判断自己是否越线的唯一尺子？",
+   "options": [
+    "这种感觉往往过度敏感，大多数让人不安的小事其实无害，跟着它走会错过很多机会",
+    "这种感觉只在面对大诱惑时可靠，面对小事时根本不会出现",
+    "这种感觉是社会规训的产物，不反映真正的对错，应该依靠理性推理取代它",
+    "这种感觉会被重复磨钝，所以要趁冷静写下具体红线，日后对照纸而非感觉"
+   ],
+   "answer": 3,
+   "explanation": "共识是：神经对重复的习惯化、事后改写信念的自我辩护、环境对下一小步的奖励和团队沉默叠在一起，警报会被调低到听不见。所以防线要设在它够不着的地方：冷静时写下具体的「我不做的事」，并借用局外人的眼睛。",
+   "question_en": "Per the consensus of the debate on how people drift step by step into things they once swore they'd never do, why can't the in-the-moment sense that \"something's off\" be your only gauge?",
+   "options_en": [
+    "That feeling is usually oversensitive; most small unsettling things are harmless, and following it means missing opportunities",
+    "That feeling is only reliable for big temptations and never shows up for small matters",
+    "That feeling is just social conditioning that doesn't track right and wrong, so rational reasoning should replace it",
+    "Repetition dulls that feeling, so write concrete red lines while calm and later check the paper, not the feeling"
+   ],
+   "explanation_en": "The consensus is that habituation to repetition, self-justification that rewrites beliefs after the fact, environmental rewards for the next small step, and team silence combine to turn the alarm down until it's inaudible. So defenses go where it can't reach: write concrete \"things I won't do\" while calm, and borrow an outsider's eyes."
+  },
+  {
+   "id": "f923467e89",
+   "question": "一步步的变化既可能是滑坡，也可能是成长，比如戒烟、学会认错。按这场辩论的结论，区分两者更好的检验是？",
+   "options": [
+    "问第一天的自己肯不肯做，第一天的自己不肯做的就是滑坡",
+    "看这段变化是否让自己感觉更好，感觉更好的就是成长",
+    "把整条路一次摊开给一位你尊重的人看：他会认可这段变化，还是会吃惊",
+    "看现在的做法离最初的自己有多远，离得越远越可能是滑坡"
+   ],
+   "answer": 2,
+   "explanation": "同一套机制能把人往下带，也能往上带；如果把原点当唯一标准，人会被过去的自己锁死。所以判据不是离原点多远，而是这条路能不能被看见：被尊重的人认可的是成长，让他吃惊的才是滑坡。",
+   "question_en": "Step-by-step change can be a slide or growth, such as quitting smoking or learning to admit mistakes. According to the debate's conclusions, what's the better test for telling them apart?",
+   "options_en": [
+    "Ask whether your first-day self would have done it; anything that self would refuse is a slide",
+    "Check whether the change makes you feel better; if it does, it's growth",
+    "Lay out the whole path at once for someone you respect: would they endorse the change, or be shocked?",
+    "Measure how far your current behavior is from your original self; the further, the more likely it's a slide"
+   ],
+   "explanation_en": "The same mechanism can carry people down or up; using the starting point as the only standard locks you into your past self. So the test isn't distance from the origin but whether the path can be seen: what a respected person endorses is growth, what shocks them is a slide."
+  },
+  {
+   "id": "06828e8104",
+   "question": "按这场辩论的结论，判断自己是否正在一步步下滑，最灵敏的指标常常是什么？",
+   "options": [
+    "是否有人明确指出自己做错了",
+    "内疚感是否越来越强，内疚越强说明滑得越远",
+    "每一步的收益是否越来越大，收益越大说明越危险",
+    "说「不」、讲真话或回头的代价是否在持续上升"
+   ],
+   "answer": 3,
+   "explanation": "很多滑坡不只让警报变弱，还让退出越来越贵：既往邮件、个人收益、同事期待绑在一起，承认错误会同时威胁收入、关系与自我形象。内疚恰恰会被磨钝，不是可靠指标；所以预防还要保留退出权，让纠错可以分阶段进行。",
+   "question_en": "According to the debate's conclusions, what is often the most sensitive indicator that you're gradually sliding?",
+   "options_en": [
+    "Whether someone has explicitly told you that you've done something wrong",
+    "Whether your guilt keeps getting stronger; the stronger it is, the further you've slid",
+    "Whether each step's payoff keeps growing; the bigger the payoff, the more dangerous",
+    "Whether the cost of saying no, telling the truth, or turning back keeps rising"
+   ],
+   "explanation_en": "Many slides don't just weaken the alarm; they make exit ever more expensive, as past emails, personal gains and colleagues' expectations bind together until admitting error threatens income, relationships and self-image at once. Guilt is exactly what gets dulled, so it's unreliable; prevention means preserving the right to exit and allowing correction in stages."
+  }
+ ]
+}

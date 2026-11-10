@@ -1,0 +1,69 @@
+{
+ "page": "/thinker-arena/debate.html?d=believe-in-fate",
+ "title": "辩论：该不该信命？",
+ "page_en": "/thinker-arena/debate.en.html?d=believe-in-fate",
+ "title_en": "Should you believe in fate?",
+ "src_hash": "b1ca1f215b60",
+ "questions": [
+  {
+   "id": "3563192b11",
+   "question": "朋友想按八字决定要不要辞掉唯一的收入来源。按「该不该信命」这场辩论的共识，最合适的判断是？",
+   "options": [
+    "命理没有科学依据，应该先耐心说服朋友彻底放弃这类信念，然后再来讨论辞职的事",
+    "只要算命师过往的预测足够准，就可以把它当作重要参考之一",
+    "这是个人自由，旁人不必干预，按八字决定和按直觉决定没有本质区别",
+    "关键是这个决定撤不回：不承担后果的人不该参与，要靠证据、试运行和止损线"
+   ],
+   "answer": 3,
+   "explanation": "共识是按决策风险分层：低风险、可逆的事允许象征和游戏，高代价、难逆转的决定绝不交给不承担后果的人，哪怕他说得再准。「先说服对方放弃信念」不是要点，辩论认为信念最难改，也没必要先改。",
+   "question_en": "A friend wants to decide whether to quit their only source of income based on a birth-chart reading. Following the debate's consensus, what is the best judgment?",
+   "options_en": [
+    "Astrology has no scientific basis, so first patiently persuade the friend to drop the belief entirely, and only then discuss quitting",
+    "If the fortune-teller's past predictions were accurate enough, the reading can be one major input",
+    "It's a personal choice; deciding by birth chart is no different in kind from deciding by gut feeling",
+    "What matters is that it can't be undone: no one without skin in the game should weigh in; use evidence, trial runs and stop-losses"
+   ],
+   "explanation_en": "The consensus sorts by decision risk: low-stakes, reversible choices can use symbols and play, but costly, hard-to-reverse decisions must never involve someone who bears no consequences, however accurate they seem. Talking the person out of the belief first isn't the point; the debate treats belief as the hardest thing to change and not the thing to target."
+  },
+  {
+   "id": "6cda1c68f4",
+   "question": "算命、星座在识字率、医疗和科学最发达的社会里反而卖得最好。按辩论的共识，最好的解释是？",
+   "options": [
+    "科学教育其实并不成功，多数人仍缺乏辨别伪科学的常识",
+    "富裕社会的人可支配收入更高，算命只是众多娱乐消费中的一种",
+    "科学撤走了意义的旧供应者却没派来新的，无人担保的选择留下空位，总会被填上",
+    "这些社会的商业营销更发达，把算命包装得更有吸引力，消费者是被骗进来的"
+   ],
+   "answer": 2,
+   "explanation": "共识是这套东西替人接住了没人接的东西：不确定、无人担保的选择、深夜那句「我该怎么办」。需求不是被骗出来的，而是被空缺吸出来的；封掉一个算命摊，还会长出性格测评和人生规划课。买家恰恰多是受过教育、并不缺常识的人。",
+   "question_en": "Fortune-telling and horoscopes sell best in the most literate, medically advanced, science-driven societies. Per the debate's consensus, what best explains this?",
+   "options_en": [
+    "Science education hasn't actually worked, and most people still lack the basic sense to spot pseudoscience",
+    "People in rich societies have more disposable income, and fortune-telling is just one more form of entertainment",
+    "Science removed the old suppliers of meaning without replacing them, and choices no one underwrites leave a slot that gets filled",
+    "Marketing is more sophisticated there, packaging fortune-telling attractively so consumers get tricked into it"
+   ],
+   "explanation_en": "The consensus is that these practices catch what nobody else catches: uncertainty, choices no one will vouch for, the late-night \"what should I do.\" Demand isn't conjured by deception but pulled in by a vacancy; shut one stall and personality tests and life-planning courses sprout. The buyers are often educated people who don't lack common sense."
+  },
+  {
+   "id": "4c0a42ec7d",
+   "question": "家里一位长辈已经在算命上投入了大量钱和心力。按辩论的结论，劝他时哪种做法最可能奏效？",
+   "options": [
+    "顺着他的信念，找一位更可靠的算命师给出相反的建议",
+    "严肃指出他是在逃避责任，要求他承认这些选择都是自己做的",
+    "把算命不准的统计证据整理出来，耐心地一条条摆给他看，直到他自己承认",
+    "不正面拆穿，给他一个不丢脸的台阶，把那笔钱换成体检或旅行"
+   ],
+   "answer": 3,
+   "explanation": "信念不是被证据打垮的，而是被已付出的代价护住的：投入越多，越不可能承认落空，正面戳穿几乎总会失败。更有效的是换掉强化物、给出能改变做法而不必承认自己蠢过的下台阶。",
+   "question_en": "An older relative has already sunk a lot of money and emotion into fortune-telling. According to the debate's conclusions, what approach is most likely to work?",
+   "options_en": [
+    "Work within the belief and find a more reliable fortune-teller who will give the opposite advice",
+    "Firmly point out that they are dodging responsibility and ask them to own every choice as their own",
+    "Compile statistics showing the predictions fail and patiently walk them through it point by point until they admit it",
+    "Don't confront them; offer a face-saving way out and turn that money into a checkup or a trip"
+   ],
+   "explanation_en": "Beliefs aren't toppled by evidence; they're protected by what has already been paid. The more someone has invested, the less able they are to admit it failed, so direct debunking almost always backfires. What works is replacing the reinforcer and offering a way to change behavior without having to admit they were foolish."
+  }
+ ]
+}

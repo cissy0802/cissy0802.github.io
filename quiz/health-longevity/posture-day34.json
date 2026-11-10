@@ -1,0 +1,69 @@
+{
+ "page": "/health-longevity/posture-day34.html",
+ "title": "健康长寿 Day 34 — 体态与肩颈背",
+ "page_en": "/health-longevity/posture-day34.en.html",
+ "title_en": "Health & Longevity Day 34 — Posture, Neck & Back",
+ "src_hash": "31a13f83266f",
+ "questions": [
+  {
+   "id": "3a0aade397",
+   "question": "关于圆肩、驼背、头前倾的「上交叉综合征」，下面哪种理解最准确？",
+   "options": [
+    "它是一组肌肉紧而短、另一组弱而长的失衡模式，可逆，解法是练和动",
+    "它是颈椎退变的早期信号，要等影像检查确认之后才需要开始系统干预",
+    "它源于姿势本身错误，只要时刻挺胸收腹站直就能纠正过来",
+    "它主要是骨骼长期受力后的形变，中青年一旦形成就很难逆转"
+   ],
+   "answer": 0,
+   "explanation": "上交叉是肌力失衡的模式，不是骨头长歪，因此可逆。文章强调没有哪个姿势本身是错的，靠肌肉硬撑站直几分钟就累、不可持续，真正的解法是力量训练加活动度。",
+   "question_en": "Which understanding of \"upper-crossed syndrome\" (rounded shoulders, hunched back, forward head) is most accurate?",
+   "options_en": [
+    "A pattern where some muscles are tight and short while others are weak and long; reversible through training and movement",
+    "An early sign of cervical degeneration that only needs systematic treatment once imaging has confirmed it",
+    "Caused by wrong posture itself, and fixed by consciously holding your chest up and standing straight all day",
+    "Mainly a skeletal deformity from long-term loading, hard to reverse once it sets in during adulthood"
+   ],
+   "explanation_en": "Upper-crossed syndrome is a muscle-imbalance pattern, not a bent skeleton, so it is reversible. No posture is inherently wrong; forcing yourself upright tires out within minutes. The real fix is strength plus mobility."
+  },
+  {
+   "id": "eba1942c30",
+   "question": "有人长期颈痛，拍照发现头明显前倾。按文中综述的证据，哪类做法最可能真正缓解？",
+   "options": [
+    "长期佩戴矫姿带，把头的角度固定回中立位置，等肌肉形成记忆后再摘掉",
+    "先拍颈椎影像，按退变程度决定要不要减少低头",
+    "把注意力放在纠正前倾角度上，每天对镜练习保持标准姿态",
+    "常起身活动，练颈深屈肌和肩背力量，并管好睡眠与压力"
+   ],
+   "answer": 3,
+   "explanation": "系统综述发现头前倾角度与颈痛关联很弱，更强的预测因素是久坐不动、压力、睡眠差和缺乏锻炼；关键是静态持续负荷，而不是角度对错。矫姿带长期依赖会弱化自身肌肉，影像退变也常与疼痛不对应。",
+   "question_en": "Someone has chronic neck pain and a clearly forward head. Based on the reviews cited, what is most likely to actually help?",
+   "options_en": [
+    "Wearing a posture brace long-term to hold the head neutral, removing it once the muscles have \"learned\" the position",
+    "Getting neck imaging first and limiting looking down according to the degree of degeneration",
+    "Focusing on correcting the head angle, practicing a textbook posture in the mirror daily",
+    "Moving often, training deep neck flexors and upper back, and managing sleep and stress"
+   ],
+   "explanation_en": "Reviews find only a weak link between forward-head angle and neck pain; stronger predictors are prolonged sitting, stress, poor sleep and lack of exercise. Sustained static load matters more than the angle. Long-term brace use weakens your own muscles, and imaging changes often don't match pain."
+  },
+  {
+   "id": "1982364241",
+   "question": "按「最好的姿势是下一个姿势」的思路，怎么看用升降桌改成整天站着办公？",
+   "options": [
+    "整天站着也是单一姿势的持续负荷，会加重下肢静脉负担，有益的是坐站轮换",
+    "站姿让脊柱保持自然曲线，比任何一种坐姿都更护腰，所以每天站得越久就越好",
+    "升降桌的价值主要在于让坐姿更标准，站立只是偶尔调剂",
+    "站着办公的收益有限，钱更应该花在一把好的人体工学椅上"
+   ],
+   "answer": 0,
+   "explanation": "文章说问题不在坐还是站，而在一个姿势维持太久；久站同样伤身，关键是轮换。贵椅子的增量收益也有限，行为（动起来）才是主菜，设备是配菜。",
+   "question_en": "Following \"the best posture is your next posture,\" how should you view switching to standing all day at a sit-stand desk?",
+   "options_en": [
+    "Standing all day is still one sustained posture that strains legs and veins; the benefit comes from alternating",
+    "Standing keeps the spine's natural curve and protects the back better than any sitting position, so the more hours the better",
+    "A sit-stand desk mainly helps you sit more correctly; standing is only an occasional change",
+    "Standing desks offer little; the money is better spent on a good ergonomic chair"
+   ],
+   "explanation_en": "The problem is holding any one position too long, not sitting versus standing; prolonged standing has its own costs, and rotation is what helps. Expensive chairs add little too: behavior (moving) is the main course, equipment the side dish."
+  }
+ ]
+}

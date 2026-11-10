@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/decision-making-topic6.html",
+ "title": "Topic 6 · 决策 — 神经科学",
+ "page_en": "/neuroscience/decision-making-topic6.en.html",
+ "title_en": "Topic 6 · Decision-making — Neuroscience",
+ "src_hash": "27055e88e567",
+ "questions": [
+  {
+   "id": "59e2790371",
+   "question": "一只猴子已经学会「铃一响就有果汁」。某次铃响了，果汁却没有来。按奖励预测误差的理论，它的多巴胺神经元此刻会怎样？",
+   "options": [
+    "跌到基线以下，因为现实比预期差，差价为负",
+    "比平时爆发得更强，因为落空的意外让刺激更显著",
+    "保持不变，因为没有果汁就没有任何奖励信号",
+    "照常爆发，因为铃声已经带来了期待中的快乐"
+   ],
+   "answer": 0,
+   "explanation": "多巴胺报的是「现实 − 预期」的差价，不是快乐本身。学会预兆后爆发移到铃响那一刻；果汁按时到达时多巴胺不动，因为没有差价；预期落空时则跌破基线，像在说「亏了」。",
+   "question_en": "A monkey has learned that a bell means juice is coming. One time the bell rings but no juice arrives. Under reward prediction error theory, what do its dopamine neurons do at that moment?",
+   "options_en": [
+    "Dip below baseline, because reality fell short of expectation and the error is negative",
+    "Burst more strongly than usual, because the surprise of the miss makes the event more salient",
+    "Stay unchanged, because with no juice there is no reward signal at all",
+    "Burst as usual, because the bell has already delivered the anticipated pleasure"
+   ],
+   "explanation_en": "Dopamine reports reality minus expectation, not pleasure. Once the cue is learned, the burst shifts to the bell; when juice arrives on schedule, dopamine stays flat because there's no gap; when the expected reward fails, it drops below baseline, as if saying \"I was shortchanged.\""
+  },
+  {
+   "id": "ef4496e4ef",
+   "question": "按漂移扩散模型，人在赶时间时做决定更容易出错，原因是什么？",
+   "options": [
+    "赶时间会让价值尺失准，大脑把选项的价值标错了",
+    "门槛被调低，水位更早撞线，噪声还没被平均掉就下了结论",
+    "赶时间时证据本身变弱了，漂移速度下降导致选错",
+    "时间压力让基底节的闸门失灵，多个动作同时被放行"
+   ],
+   "answer": 1,
+   "explanation": "漂移扩散把决策看成带噪声的证据往门槛爬。证据弱会让决策变慢，但图快出错的根源在门槛：门槛调低就更早撞线，随机抖动还没被平均掉。所以速度和准确率天生互相拽着，这不是性格，是门槛高低在悄悄挪。",
+   "question_en": "Under the drift-diffusion model, why are decisions made in a hurry more error-prone?",
+   "options_en": [
+    "Rushing throws off the value scale, so the brain prices the options incorrectly",
+    "The threshold is lowered, so the level hits the bound sooner and a decision is made before the noise has averaged out",
+    "Under time pressure the evidence itself weakens, and a slower drift leads to the wrong choice",
+    "Time pressure breaks the basal ganglia's gate, letting several actions through at once"
+   ],
+   "explanation_en": "Drift-diffusion treats a decision as noisy evidence climbing toward a bound. Weak evidence makes decisions slower, but hurried errors come from the threshold: a lower bound is hit sooner, before random fluctuations average out. So speed and accuracy pull against each other — not personality, just where the bounds sit."
+  },
+  {
+   "id": "0ded7af830",
+   "question": "一个人日子安稳、来日方长，却每天只去那家吃了八回的老店，从不尝试新店。按探索与利用的框架，最贴切的看法是？",
+   "options": [
+    "他应该完全随机地挑店，因为没有任何策略能解决探索与利用的两难",
+    "只选已知最好的选项永远是最理性的，在新店上的每一次探索都只是在浪费机会",
+    "只要老店的价值标得足够准，探索就没有必要",
+    "安稳、来日方长时多探索更划算，未知本身就该加分；长期只利用是错配"
+   ],
+   "answer": 3,
+   "explanation": "没有完美解，但一个关键策略是把不确定本身当加分，并随处境调节旋钮：时间长、赌注低时多探索，压力大、时间紧时收回熟悉选项。问题出在错配，比如长期过度利用会让世界越缩越小。价值标得再准，也绕不过这个两难。",
+   "question_en": "Someone with a stable life and plenty of time ahead eats every day at the restaurant they've been to eight times, never trying anything new. In the explore-exploit framework, what's the most fitting view?",
+   "options_en": [
+    "They should pick restaurants completely at random, since no strategy can address the explore-exploit dilemma",
+    "Always picking the best known option is the most rational choice, and every visit to a new place just wastes an opportunity",
+    "As long as the old restaurant's value is estimated accurately enough, exploration is unnecessary",
+    "With stability and a long horizon, exploring pays; uncertainty itself deserves a bonus, and only exploiting is a mis-set dial"
+   ],
+   "explanation_en": "There's no perfect solution, but a key strategy is to treat uncertainty as a bonus and adjust the dial to circumstances: explore more when time is long and stakes are low, fall back on the familiar under pressure or tight deadlines. The trouble is a mismatch, such as chronic over-exploitation shrinking one's world. Accurate value estimates don't make the dilemma go away."
+  }
+ ]
+}

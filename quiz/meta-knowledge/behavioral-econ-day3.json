@@ -1,0 +1,69 @@
+{
+ "page": "/meta-knowledge/behavioral-econ-day3.html",
+ "title": "元知识详解：行为经济学 — Day 3",
+ "page_en": "/meta-knowledge/behavioral-econ-day3.en.html",
+ "title_en": "Meta-Knowledge Deep Dive: Behavioral Economics — Day 3",
+ "src_hash": "9e3b9fcbfd13",
+ "questions": [
+  {
+   "id": "1fa634bb70",
+   "question": "一个人宁可要「今天 10 元」也不要「明天 11 元」，却会在「一年后 10 元」和「一年零一天后 11 元」之间选后者。按双曲贴现，最有效的应对思路是？",
+   "options": [
+    "把大目标的期限尽量推远，减少眼前的压力，让计划更容易坚持",
+    "在理智的计划时刻用强制截止日、默认选项、自动扣款锁住未来的自己",
+    "给自己保留最大的灵活性，让临场的自己根据当时的状态和精力做出最优的决定",
+    "通过反复提醒自己长期收益有多大，在每次诱惑来临时提升意志力"
+   ],
+   "answer": 1,
+   "explanation": "双曲贴现让折扣率在近端陡、远端缓，于是计划时理智、临场时屈服。MIT 论文实验里强制等距截止日一组表现最好，最灵活的学期末统一交一组最差：人愿意主动放弃自由，因为知道未来的自己不可靠。",
+   "question_en": "Someone prefers $10 today over $11 tomorrow, yet picks $11 in a year and a day over $10 in a year. Given hyperbolic discounting, what's the most effective response?",
+   "options_en": [
+    "Push big goals' deadlines as far out as possible to reduce pressure and make plans easier to stick with",
+    "At the calm planning moment, lock in your future self with fixed deadlines, defaults and auto-debits",
+    "Keep maximum flexibility so your in-the-moment self can choose optimally based on how you feel and your energy then",
+    "Build willpower by reminding yourself of the long-term payoff each time temptation hits"
+   ],
+   "explanation_en": "Hyperbolic discounting is steep up close and flat far away, so we plan rationally and cave in the moment. In the MIT paper experiment, students with imposed evenly spaced deadlines did best and the most flexible end-of-term group did worst: people will give up freedom because they know their future self is unreliable."
+  },
+  {
+   "id": "d601c1a75c",
+   "question": "人们估计龙卷风的致死数远高于哮喘，实际上哮喘致死人数是龙卷风的 20 倍。按可得性启发式，这个偏差的根源是？",
+   "options": [
+    "大脑没有频率计数器，用一件事多容易被想起来代替它多常发生，且不会反过来校正这种容易",
+    "哮喘的危害被医学界低估了，公众的判断反映了信息源本身的错误",
+    "人天生对自然灾害有进化上的恐惧，所以会系统性高估所有灾害的风险",
+    "人们缺乏统计数据，如果给出准确数字，这种偏差就会基本消失"
+   ],
+   "answer": 0,
+   "explanation": "可得性启发式的机制是用提取流畅度做频率的代理；生动性、近因和情绪显著性都会放大流畅度。关键的元认知失败是人不会追问「为什么这件事我容易想起来」，直接把容易想起当成真实频率。",
+   "question_en": "People estimate far more deaths from tornadoes than asthma, though asthma kills about 20 times as many. Under the availability heuristic, what is the root of this bias?",
+   "options_en": [
+    "The brain has no frequency counter, so it substitutes how easily an event comes to mind, and never corrects for why it's easy",
+    "Medicine underplays asthma's danger, so the public is just reflecting errors in its sources",
+    "Humans have an evolved fear of natural disasters and systematically overrate every kind of disaster risk",
+    "People simply lack statistics; given accurate numbers, the bias would largely disappear"
+   ],
+   "explanation_en": "The availability heuristic uses retrieval fluency as a proxy for frequency, and vividness, recency and emotional salience all boost fluency. The key metacognitive failure is not asking \"why is this so easy to recall?\" and treating ease of recall as actual frequency."
+  },
+  {
+   "id": "3142c43dd1",
+   "question": "你一直留着一只亏损的股票，心里想「等回本再卖」。按前景理论和禀赋效应，文中建议的纪律性做法是？",
+   "options": [
+    "把「继续持有」看成「今天按现价重新买入」，问自己若从零开始还买不买",
+    "设定一个回本价，到价立即卖出，避免再一次经历损失",
+    "先卖掉组合里盈利的股票锁定收益，用利润来平衡这只股票的亏损",
+    "继续持有直到亏损缩小，因为一旦卖出，账面上的浮亏就会变成真正实现的损失"
+   ],
+   "answer": 0,
+   "explanation": "「等回本」以买入价为参照点，卖出就被感受为损失，于是烂资产被留到底；卖盈利股太早、亏损股太晚正是处置效应。对策是强行换参照点：把留着看成今天用现价重新买入，或做零基练习，问今天用现金重建组合还会不会买它。",
+   "question_en": "You've been holding a losing stock, telling yourself you'll sell once it gets back to break-even. Drawing on prospect theory and the endowment effect, what disciplined approach is recommended?",
+   "options_en": [
+    "Treat \"keep holding\" as \"buying it again today at the current price,\" and ask if you'd buy it from scratch",
+    "Set a break-even target and sell the moment it's reached, to avoid living through another loss",
+    "Sell your winning stocks first to lock in gains and use the profit to offset this stock's loss",
+    "Keep holding until the loss narrows, because once you sell, the paper loss turns into a real, realized one"
+   ],
+   "explanation_en": "\"Waiting to break even\" anchors on the purchase price, so selling feels like a loss and bad assets get held to the end; selling winners too early and losers too late is the disposition effect. The fix is to force a new reference point: treat holding as rebuying at today's price, or ask whether you'd buy it rebuilding the portfolio from cash."
+  }
+ ]
+}

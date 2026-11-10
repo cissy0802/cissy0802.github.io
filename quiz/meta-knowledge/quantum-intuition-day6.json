@@ -1,0 +1,69 @@
+{
+ "page": "/meta-knowledge/quantum-intuition-day6.html",
+ "title": "元知识详解：量子力学直觉 — Day 6",
+ "page_en": "/meta-knowledge/quantum-intuition-day6.en.html",
+ "title_en": "Meta-Knowledge Deep Dive: Quantum Intuition — Day 6",
+ "src_hash": "b5594e23ec5a",
+ "questions": [
+  {
+   "id": "20075e2515",
+   "question": "量子叠加态和「我们只是不知道它是 0 还是 1」的经典不确定，关键区别在哪里？",
+   "options": [
+    "两者在物理上完全等价，区别只在于用量子语言还是经典语言来描述",
+    "叠加只是测量精度不够造成的，仪器足够好时就能读出系统本来的确定值",
+    "叠加用带相位的复数振幅描述，振幅能相消或相加产生干涉；经典的概率混合不会干涉",
+    "叠加态里 0 和 1 各占一半概率，经典不确定则可以是任意比例"
+   ],
+   "answer": 2,
+   "explanation": "经典不确定是认识论的无知，系统本有确定值只是我们不知道；叠加则是测量前根本没有确定值。振幅带相位，可以破坏性或建设性干涉，这是概率混合没有的；一旦退相干丢掉相位信息，叠加才退化成经典概率混合。",
+   "question_en": "What is the key difference between a quantum superposition and the classical uncertainty of \"we just don't know whether it's 0 or 1\"?",
+   "options_en": [
+    "They are physically identical; the only difference is whether you describe it in quantum or classical language",
+    "Superposition is just a limit of measurement precision; good enough instruments would read out the definite value the system already has",
+    "Superposition uses complex amplitudes with phase that can cancel or reinforce, producing interference; a classical probability mixture cannot interfere",
+    "In superposition 0 and 1 always have equal probability, while classical uncertainty can have any ratio"
+   ],
+   "explanation_en": "Classical uncertainty is ignorance: the system has a definite value we don't know. In superposition there is no definite value before measurement. Amplitudes carry phase and can interfere destructively or constructively, which a probability mixture can't; only when decoherence destroys the phase information does superposition degrade into a classical mixture."
+  },
+  {
+   "id": "351d036dc1",
+   "question": "测量一个纠缠粒子会瞬时确定远处另一个粒子的对应结果。为什么这仍然不能用来做超光速通信？",
+   "options": [
+    "因为纠缠粒子在分开时就各自携带了预先确定的答案，并没有发生真正的影响",
+    "单独看每一端的结果都完全随机，接收方无法从中读出发送方的选择",
+    "因为实验还没有排除所有漏洞，纠缠是否真实存在尚无定论",
+    "因为纠缠关联会随距离迅速衰减，超过一定距离后就不再成立"
+   ],
+   "answer": 1,
+   "explanation": "纠缠的关联只有把两端结果放在一起比对时才看得出来，单边测量结果是完全随机的，所以无法携带信息。至于「粒子早就带着预定答案」，正是贝尔不等式的实验违反所排除的局部隐变量解释；墨子号在 1203 公里外也观测到违反。",
+   "question_en": "Measuring one entangled particle instantly fixes the corresponding outcome of its distant partner. Why still can't this be used for faster-than-light communication?",
+   "options_en": [
+    "The particles carried predetermined answers from the moment they separated, so no real influence occurs",
+    "Each side's results on their own are completely random, so the receiver can't read the sender's choice from them",
+    "Experiments haven't closed every loophole, so whether entanglement is real remains unsettled",
+    "Entangled correlations decay quickly with distance and stop holding beyond a certain range"
+   ],
+   "explanation_en": "Entangled correlations only show up when both sides' results are compared; each side alone sees pure randomness, so no information gets through. The \"predetermined answers\" idea is exactly the local hidden-variable account that experimental Bell violations rule out; the Micius satellite saw violations across 1,203 km."
+  },
+  {
+   "id": "10b5b658f6",
+   "question": "有人说：「位置和动量测不准，是因为测量时光子撞歪了粒子；仪器足够精巧就能突破。」按文中的讲法，这错在哪？",
+   "options": [
+    "根源是位置与动量算符不对易，粒子本来就没有同时精确的两个值",
+    "错在方向：真正的限制来自观察者的意识，而不是任何物理过程",
+    "错在程度：只要把测量时间拉长，两者的不确定度可以同时降到零",
+    "没有错，海森堡的原始论证就是测量扰动论，这至今仍是教科书上的标准解释"
+   ],
+   "answer": 0,
+   "explanation": "Δx·Δp ≥ ℏ/2 来自 [X,P] = iℏ：一个变量在其基下越尖锐，在共轭基下就越弥散，这是结构性的。海森堡最初确实用伽马射线显微镜的扰动来论证，但 Ozawa 指出扰动形式可以被违反，而态本身弥散度的 Robertson-Kennard 形式不可违反。",
+   "question_en": "Someone says: \"Position and momentum are uncertain because the measuring photon knocks the particle; a clever enough instrument could beat it.\" Per the article, what's wrong with this?",
+   "options_en": [
+    "It stems from position and momentum operators not commuting; the particle simply lacks two sharp values at once",
+    "The direction: the real limit comes from the observer's consciousness, not any physical process",
+    "The degree: if you measure for long enough, both uncertainties can be driven to zero together",
+    "Nothing; Heisenberg's original argument was about measurement disturbance, and that is still the standard textbook explanation"
+   ],
+   "explanation_en": "Δx·Δp ≥ ℏ/2 follows from [X,P] = iℏ: the sharper a state is in one basis, the more spread it is in the conjugate one, a structural fact. Heisenberg did first argue via the gamma-ray microscope, but Ozawa showed the disturbance form can be violated, while the Robertson–Kennard form about the state's own spread cannot."
+  }
+ ]
+}

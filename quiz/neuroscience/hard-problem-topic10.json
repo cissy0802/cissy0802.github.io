@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/hard-problem-topic10.html",
+ "title": "Topic 10 · 意识的难题 — 神经科学",
+ "page_en": "/neuroscience/hard-problem-topic10.en.html",
+ "title_en": "Topic 10 · The Hard Problem of Consciousness — Neuroscience",
+ "src_hash": "8595748757d1",
+ "questions": [
+  {
+   "id": "d2a56242f3",
+   "question": "假设科学家完整弄清了大脑如何分辨红色、整合场景并报告「我看到了红」的每一条回路。按 Chalmers 的区分，这意味着什么？",
+   "options": [
+    "意识问题已基本解决，因为体验无非就是这些功能的总和",
+    "这些问题都无法用神经科学研究，所以这个假设本身不成立",
+    "解决了难问题，因为报告「我看到了红」本身就证明了体验的机制",
+    "解决的是一批「易问题」；为什么这些处理伴随着主观体验的「难问题」仍然没被回答"
+   ],
+   "answer": 3,
+   "explanation": "易问题并不简单，它们「易」只在于知道答案长什么样：找到实现该功能的机制。难问题是就算每个易问题都答满分，仍要问为什么这些处理不是在黑暗里默默跑完，而是被体验到了。把体验等同于功能总和是某些立场的主张，不是这个区分本身的结论。",
+   "question_en": "Suppose scientists fully map every circuit by which the brain discriminates red, integrates a scene, and reports \"I see red.\" By Chalmers's distinction, what would that mean?",
+   "options_en": [
+    "Consciousness would be essentially solved, since experience is simply the sum of these functions",
+    "None of these questions can be studied by neuroscience, so the scenario itself is incoherent",
+    "The hard problem would be solved, since the report \"I see red\" itself reveals the mechanism of experience",
+    "A set of \"easy problems\" would be solved; the \"hard problem\" of why this processing comes with subjective experience would remain open"
+   ],
+   "explanation_en": "The easy problems aren't simple; they're \"easy\" only because we know what an answer looks like: a mechanism that performs the function. The hard problem is that even with every easy problem fully answered, one still asks why the processing is experienced rather than running in the dark. Equating experience with the sum of functions is what some positions claim, not what the distinction itself concludes."
+  },
+  {
+   "id": "029f65cf60",
+   "question": "「水就是 H₂O」和「疼就是神经状态 X」看起来是同一种科学等同。按 Levine 的「解释鸿沟」，两者的关键差别是什么？",
+   "options": [
+    "H₂O 已被实验证实，神经状态 X 与疼的对应还没有被测到，等找到就没有差别",
+    "懂了 H₂O 就讲通水的性质；把 X 讲得再细，「为什么会疼」仍原封不动",
+    "水是宏观物质而疼是微观过程，所以前者容易解释，后者需要更精密的仪器",
+    "两者没有本质差别，解释鸿沟只是哲学家对科学进展的过度担忧"
+   ],
+   "answer": 1,
+   "explanation": "Levine 的要点是：就算神经状态和体验一一对应、铁律般准确，也没解释为什么偏偏是这个状态配上这种体验，而不是别的或什么都不配。别的科学解释能把「为什么」消化干净，唯独体验留下嚼不烂的那一块，所以问题不在相关性有没有找到。",
+   "question_en": "\"Water is H₂O\" and \"pain is neural state X\" look like the same kind of scientific identity. According to Levine's \"explanatory gap,\" what's the key difference?",
+   "options_en": [
+    "H₂O has been experimentally confirmed while the X–pain correlation hasn't been measured yet; once found, there's no difference",
+    "Knowing H₂O explains water's properties; describe X as finely as you like, and \"why does it hurt\" stays untouched",
+    "Water is a macroscopic substance and pain a microscopic process, so the latter just needs more precise instruments",
+    "There's no real difference; the explanatory gap is just philosophers overworrying about scientific progress"
+   ],
+   "explanation_en": "Levine's point is that even a perfect, lawlike correlation between a neural state and an experience doesn't explain why that state comes with that experience rather than another or none. Other scientific explanations dissolve the \"why\" completely; experience alone leaves an indigestible residue, so the issue isn't whether the correlation has been found."
+  },
+  {
+   "id": "fc19b93f07",
+   "question": "在意识立场的光谱上，幻觉论（illusionism）认为真正需要解释的是什么？",
+   "options": [
+    "物质本身都带有一丁点体验，大脑只是把它组装放大了",
+    "难问题是真的，但人类这种大脑可能天生无法解答它",
+    "体验作为世界的一笔额外基本事实，应该像质量、电荷一样单列进物理清单",
+    "为什么大脑会顽固地相信存在难问题，即内省为何报了一笔假账"
+   ],
+   "answer": 3,
+   "explanation": "幻觉论站在光谱最左端：所谓额外的感受质是内省造成的错觉，所以要解释的不是意识，而是为什么我们觉得有个难问题。把体验当额外基本事实是属性二元论，物质都带点体验是泛心论，承认问题真实却可能永远解不了是神秘主义。",
+   "question_en": "On the spectrum of positions about consciousness, what does illusionism say actually needs explaining?",
+   "options_en": [
+    "The tiny bit of experience present in all matter, which the brain merely assembles and amplifies",
+    "The hard problem is real, but brains like ours may be inherently unable to solve it",
+    "Experience as an additional fundamental fact of the world, to be listed alongside mass and charge in physics",
+    "Why the brain stubbornly believes there is a hard problem — why introspection files a false report"
+   ],
+   "explanation_en": "Illusionism sits at the far left: the supposedly extra qualia are an introspective illusion, so what needs explaining isn't consciousness but why we think there's a hard problem. Treating experience as an extra fundamental fact is property dualism, experience in all matter is panpsychism, and a real but possibly unsolvable problem is mysterianism."
+  }
+ ]
+}

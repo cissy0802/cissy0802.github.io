@@ -1,0 +1,69 @@
+{
+ "page": "/meta-knowledge/complex-systems-day5.html",
+ "title": "元知识详解：复杂系统 — Day 5",
+ "page_en": "/meta-knowledge/complex-systems-day5.en.html",
+ "title_en": "Meta-Knowledge Deep Dive: Complex Systems — Day 5",
+ "src_hash": "41962fd36b7e",
+ "questions": [
+  {
+   "id": "3936e16f8b",
+   "question": "一座城市出现了大片按族群聚集的街区。按 Schelling 隔离模型带来的涌现视角，能从这个宏观格局推出什么？",
+   "options": [
+    "可以推出存在一个统一的规划者或制度在刻意推动隔离",
+    "可以推出个体偏好越温和，宏观上的隔离程度就会越低",
+    "可以推出多数居民有明显的隔离意图，否则不会形成如此清晰的格局",
+    "推不出个体想要隔离：每个人只有温和的同色偏好，局部规则也能演化出大片隔离"
+   ],
+   "answer": 3,
+   "explanation": "Schelling 模型里每个棋子只要求邻居中同色不低于 30%，没有谁想要隔离，模拟却迅速出现大片同色聚集区。微观偏好与宏观结果之间存在巨大鸿沟，所以不能从宏观格局倒推个体意图或某个设计者。",
+   "question_en": "A city develops large neighborhoods clustered by ethnicity. Through the emergence lens of Schelling's segregation model, what can you infer from this macro pattern?",
+   "options_en": [
+    "That a central planner or institution must be deliberately driving the segregation",
+    "That the milder individual preferences are, the less segregated the city will be overall",
+    "That most residents clearly intend segregation, or such a sharp pattern wouldn't form",
+    "Not that individuals want segregation: mild same-group preferences under local rules can still produce large segregated zones"
+   ],
+   "explanation_en": "In Schelling's model each agent only wants at least 30% same-color neighbors, nobody wants segregation, yet large same-color clusters form quickly. The gap between micro preferences and macro outcomes is huge, so you can't read individual intent or a designer off the macro pattern."
+  },
+  {
+   "id": "9bce636c2e",
+   "question": "一个系统多年来几乎没出过小故障，团队也一直在努力压住每一个小问题。按自组织临界性（SOC）的视角，这意味着什么、该怎么做？",
+   "options": [
+    "说明系统已经足够稳健，应继续加强监控，把小故障的发生率压到零",
+    "说明大故障的概率也随之下降，因为大故障本质上就是许多小故障层层累积放大的结果",
+    "长期压住小扰动是在堆积应力、抬升临界点，应主动引发小型可控危机来释放",
+    "说明系统远离了临界态，此后出现的任何故障规模都会大致服从正态分布"
+   ],
+   "answer": 2,
+   "explanation": "在临界系统里，偶发的巨灾是常态而非异常；长期压制小火让可燃物超额堆积，每次火灾都可能升级为系统级大火。SOC 的反直觉建议是主动让系统经历中等扰动，比如混沌工程、Game Day，而不是把小事件压到零。",
+   "question_en": "A system has had almost no small failures for years, and the team works hard to suppress every minor issue. From a self-organized criticality perspective, what does this imply and what should be done?",
+   "options_en": [
+    "The system is robust enough, so keep tightening monitoring and drive small failures down to zero",
+    "The odds of a big failure are falling too, since big failures are essentially many small failures accumulating and amplifying",
+    "Suppressing small disturbances builds stress and raises the critical point; deliberately trigger small, controlled crises to release it",
+    "The system has moved away from criticality, so any future failure sizes will follow a roughly normal distribution"
+   ],
+   "explanation_en": "In a critical system, rare catastrophes are normal, not anomalies; long-term suppression of small fires lets fuel pile up until a fire becomes system-wide. SOC's counterintuitive advice is to let the system experience moderate disturbances, as with chaos engineering or game days, rather than pushing small events to zero."
+  },
+  {
+   "id": "c740547dc6",
+   "question": "一家公司靠持续优化现有 KPI 稳步改进，却被另起炉灶的对手颠覆。按适应性景观的框架，问题出在哪？",
+   "options": [
+    "公司过度探索、分散了资源，本应把全部精力和预算都集中在当前最强的那块业务上",
+    "对手运气更好，地形上的高峰是随机分布的，无法通过策略接近",
+    "公司优化得还不够快，只要加大现有方向的投入就能保持领先",
+    "贪婪爬山只会停在最近的局部峰，跨越山谷必须刻意保留探索，不能只做利用"
+   ],
+   "answer": 3,
+   "explanation": "把所有策略画成多峰地形，KPI 优化相当于梯度上升，只能爬到最近的山峰，离更高的峰可能差很远；地形本身也在变。跨越山谷要靠漂变、重组或刻意探索，所以文中建议组织预算一部分探索性资源作为反贪婪机制。",
+   "question_en": "A company steadily improves by optimizing its existing KPIs, yet gets disrupted by a rival starting from somewhere else entirely. Within the fitness-landscape framework, what went wrong?",
+   "options_en": [
+    "The company explored too much and scattered resources; it should have put all its energy and budget into its strongest business",
+    "The rival got lucky; peaks are randomly placed on the landscape and can't be approached by strategy",
+    "The company didn't optimize fast enough; investing harder in the current direction would have kept it ahead",
+    "Greedy hill-climbing stops at the nearest local peak; crossing valleys takes deliberate exploration, not just exploitation"
+   ],
+   "explanation_en": "Mapping all strategies as a multi-peaked terrain, KPI optimization is gradient ascent: it reaches the nearest peak, which may be far below higher ones, and the terrain itself keeps shifting. Crossing valleys takes drift, recombination or deliberate exploration, which is why organizations should budget some resources for exploration as an anti-greedy mechanism."
+  }
+ ]
+}

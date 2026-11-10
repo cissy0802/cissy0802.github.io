@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/ethan-evans-presence-topic5.html",
+ "title": "Ethan Evans 专题 · 高管气场与表达",
+ "page_en": "/podcast-deepread/ethan-evans-presence-topic5.en.html",
+ "title_en": "Ethan Evans Series · Executive Presence and Communication",
+ "src_hash": "5d165cd28c69",
+ "questions": [
+  {
+   "id": "96c7d33512",
+   "question": "晋升评审里，你收到一句反馈：「还缺乏高管气场」。按 Ethan Evans 的解读，这句话通常意味着什么？",
+   "options": [
+    "评审者还没被你说服：你影响力不够、没留下深刻印象",
+    "你的着装和外表不够正式，需要先改善形象",
+    "你的性格过于内向，需要从根本上改变自己待人接物的方式",
+    "你在某次会议上的具体发言出了问题，修正那次表现即可"
+   ],
+   "answer": 0,
+   "explanation": "Evans 强调气场是别人评定的，不是你身上固有的属性，所以没法自己证明。他把「缺乏高管气场」翻译为没有影响力、没让我印象深刻，往往是一句客气的「还不够」。外表在他引用的框架里占比最轻。",
+   "question_en": "In a promotion review you get the feedback: \"lacks executive presence.\" According to Ethan Evans, what does this usually mean?",
+   "options_en": [
+    "The reviewers aren't convinced yet: you don't come across as influential or impressive",
+    "Your clothing and appearance aren't formal enough, so fix your image first",
+    "Your personality is too introverted, and you need to fundamentally change how you deal with people",
+    "Something specific went wrong in one meeting, and correcting that one performance will fix it"
+   ],
+   "explanation_en": "Evans stresses that presence is assessed by others, not something you possess, so you can't prove it yourself. He translates \"lacks executive presence\" as \"has no influence and hasn't impressed me\" — often a polite \"not yet.\" Appearance carries the least weight in the framework he cites."
+  },
+  {
+   "id": "28405debfa",
+   "question": "一位高级经理活干得好、人缘也好，却在大会上很少开口，迟迟升不上去。按 Ethan Evans 讲的气场构成，下面哪个判断最贴切？",
+   "options": [
+    "口才是气场的核心，他首先要报一门演讲课，把表达练到出色才谈得上分量",
+    "他需要先在外表上投入，因为外表是评审者对气场的第一印象，占比最大",
+    "只要战绩足够好，沟通就无关紧要，他只需继续埋头做事等待被发现",
+    "分量他已经有了；卡住他的是能练的沟通，别让说话习惯给分量打折"
+   ],
+   "answer": 3,
+   "explanation": "Evans 引用的框架是分量最重、沟通其次、外表最轻，口才排在战绩之后，前四项做好了口才平平也能赢。但分量要靠被看见才能被计分，所以他教的大多是能速成的那部分：开口、去掉限定词、说完就停。",
+   "question_en": "A senior manager does great work and is well liked, but rarely speaks up in big meetings and keeps getting passed over. Using Ethan Evans's breakdown of presence, which judgment fits best?",
+   "options_en": [
+    "Eloquence is the core of presence, so they should first take a speaking course and become excellent before gravitas can count",
+    "They should invest in appearance first, since it forms the reviewers' first impression and carries the most weight",
+    "If the record is strong enough, communication doesn't matter; they should just keep working and wait to be noticed",
+    "They already have gravitas; what holds them back is trainable communication, so speaking habits shouldn't discount it"
+   ],
+   "explanation_en": "The framework Evans cites puts gravitas first, communication second and appearance last; eloquence ranks behind track record, and with the fundamentals done, modest speaking wins. But gravitas only scores when it's seen, which is why most of what he teaches is the quick-to-fix part: speak up, drop hedges, stop when you're done."
+  },
+  {
+   "id": "8b5812b00e",
+   "question": "Evans 主张说话要笃定、少用限定词。按节目页引用的 Tenney 等人 2007 年的实验，这条建议的边界在哪？",
+   "options": [
+    "没出错时笃定更可信，一旦被发现说错，笃定者掉分更多",
+    "笃定的说法总是比犹豫的说法更可信，无论事后是否被发现出错",
+    "听众其实更信任犹豫的人，因为犹豫显得谦虚、诚实",
+    "笃定只对女性说话者有效，对男性说话者没有影响"
+   ],
+   "answer": 0,
+   "explanation": "模拟陪审团实验发现，证人没出错时笃定的更可信，但一旦被发现说错，笃定的证人掉分更多，即「校准胜过自信」。Evans 讲妻子明知该右转却因他说得太肯定而没开口，正是笃定用过头的代价。",
+   "question_en": "Evans advises speaking with certainty and avoiding hedge words. Per the 2007 Tenney et al. experiments cited on the page, where does this advice hit its limit?",
+   "options_en": [
+    "Confidence wins when you're right, but once caught wrong, the confident lose more credibility",
+    "Confident statements are always more credible than hesitant ones, whether or not errors are later discovered",
+    "Listeners actually trust hesitant speakers more, because hesitation seems modest and honest",
+    "Certainty only helps female speakers and has no effect for male speakers"
+   ],
+   "explanation_en": "The mock-jury experiments found confident witnesses more credible when accurate, but once shown to be wrong, they lost more credibility than hesitant ones: calibration trumps confidence. Evans's own story of his wife not speaking up about the turn because he sounded so sure is the cost of overdoing it."
+  }
+ ]
+}

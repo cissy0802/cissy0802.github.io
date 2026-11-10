@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/varieties-religious-experience-read98.html",
+ "title": "《宗教经验之种种》— 好书精读",
+ "page_en": "/deep-reading/varieties-religious-experience-read98.en.html",
+ "title_en": "The Varieties of Religious Experience — Deep Reading",
+ "src_hash": "c3bd40981416",
+ "questions": [
+  {
+   "id": "2445fca3de",
+   "question": "有人说：「你那次强烈的宗教体验不过是颞叶异常放电，所以不必当真。」按威廉·詹姆斯在《宗教经验之种种》里的立场，该怎么回应？",
+   "options": [
+    "应先否认存在任何生理原因，强调真正的宗教体验与大脑活动无关",
+    "起源不能裁定价值：照这条规则，怀疑者的怀疑也一并作废；该看它结出的果实",
+    "既然已经找到了生理病因，这段体验就被科学彻底解释了，确实不必再讨论它的意义",
+    "这类体验恰恰因为有特殊的生理基础，才证明它接通了超自然的实在"
+   ],
+   "answer": 1,
+   "explanation": "詹姆斯称这种论证为「医学唯物主义」：他不否认病因，而是指出任何心理状态都有身体条件，包括怀疑者的怀疑，所以这条规则会让所有观点一起陪葬。说清信念怎么来的和说清它对不对是两件事，检验要看果实。",
+   "question_en": "Someone says: \"Your intense religious experience was just abnormal temporal-lobe firing, so it doesn't count.\" How would William James in The Varieties of Religious Experience respond?",
+   "options_en": [
+    "Deny that any physiological cause exists, insisting genuine religious experience has nothing to do with the brain",
+    "Origins don't settle value: by that rule the skeptic's doubt would fall too; judge the experience by its fruits",
+    "Once a physiological cause has been found, science has fully explained the experience, so its meaning needs no further discussion",
+    "Its special physiological basis is precisely what proves it connects to a supernatural reality"
+   ],
+   "explanation_en": "James calls this \"medical materialism.\" He doesn't deny bodily causes; he points out that every mental state has them, including the skeptic's doubt, so the rule would sink every view at once. Explaining where a belief came from and judging whether it is right are separate jobs; the test is its fruits."
+  },
+  {
+   "id": "f1cf786d16",
+   "question": "威廉·詹姆斯对比了「健康心灵」（一次生）和「病态灵魂」（二次生）。他的判决是什么，理由是什么？",
+   "options": [
+    "病态灵魂看得更全：它装得下健康心灵的全部事实，反过来却装不下苦难与失败",
+    "两者只是气质不同、各有所长，詹姆斯刻意不做高下判断",
+    "病态灵魂更可取，因为痛苦本身具有道德价值，越痛苦的人越接近神圣",
+    "健康心灵更可取：它的效果可观察、让人更愉快，病态灵魂则是有待治疗的心理问题"
+   ],
+   "answer": 0,
+   "explanation": "詹姆斯承认健康心灵确实有效，但它对癌症病房、灭绝、失败到底的人无话可说，本人摊上这些时整套方案就碎了；病态灵魂的世界观则能容纳健康心灵的全部事实。他的理由是经验主义的「视野更大」，不是痛苦本身有价值。",
+   "question_en": "William James contrasts the \"healthy-minded\" (once-born) with the \"sick soul\" (twice-born). What is his verdict, and why?",
+   "options_en": [
+    "The sick soul sees more: it holds every fact the healthy-minded view does, while the reverse can't hold suffering and failure",
+    "They are just different temperaments with different strengths, and James deliberately declines to rank them",
+    "The sick soul is preferable because suffering has moral value in itself, and those who suffer more are closer to the divine",
+    "The healthy-minded is preferable: its effects are observable and happier, while the sick soul is a condition needing treatment"
+   ],
+   "explanation_en": "James grants that healthy-mindedness works, but it has nothing to say to the cancer ward, to extinction, to people who fail utterly, and it shatters when those strike the person themselves. The sick soul's worldview can contain all of the healthy-minded facts. His reason is the empirical one of a wider view, not that suffering is valuable in itself."
+  },
+  {
+   "id": "124bb96771",
+   "question": "按威廉·詹姆斯的结论，神秘经验在认识上有什么样的权威？",
+   "options": [
+    "它对亲历者和旁人都不构成任何权威，只是一种需要用心理学解释的情绪状态",
+    "它证明了神的存在，只是这种证明只能被亲历者本人理解",
+    "只要满足不可言说、知性品格、短暂、被动四个标记，它对所有人都有证明力",
+    "对亲历者有权威，对旁人没有，但足以取消理性意识对「真实」的垄断"
+   ],
+   "answer": 3,
+   "explanation": "詹姆斯给了三条：对亲历者具有权威，对未经历者不构成权威，但推翻了理性意识对真实的垄断权。他要的不是证明神存在，而是让「只有清醒理性才是认识世界的合法渠道」这个前提不能被默认。四个标记是识别标准，不是证明标准。",
+   "question_en": "According to William James's conclusion, what epistemic authority do mystical experiences have?",
+   "options_en": [
+    "No authority for anyone, whether the mystic or others; they are emotional states for psychology to explain",
+    "They prove God exists, though only the person who had the experience can grasp the proof",
+    "If they show ineffability, noetic quality, transiency and passivity, they carry proof for everyone",
+    "Authority for those who have them, none for others, yet enough to end rational consciousness's monopoly on the real"
+   ],
+   "explanation_en": "James gives three points: they are authoritative for those who have them, carry no authority for those who don't, but do overturn rational consciousness's monopoly on reality. His aim is not to prove God but to deny that waking rational consciousness can be assumed to be the only legitimate channel to the world. The four marks identify such experiences; they don't prove anything."
+  }
+ ]
+}

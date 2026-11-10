@@ -1,0 +1,69 @@
+{
+ "page": "/chapter-deepread/accelerate-ch02-measuring-performance-book39.html",
+ "title": "Accelerate 第 2 章 · 测量效能 — 专业书籍精读 Book 39",
+ "page_en": "/chapter-deepread/accelerate-ch02-measuring-performance-book39.en.html",
+ "title_en": "Accelerate Ch 2 · Measuring Performance — Chapter Deep Read Book 39",
+ "src_hash": "8cb503e4058c",
+ "questions": [
+  {
+   "id": "cc14499511",
+   "question": "在《Accelerate》的四个交付指标里，变更失败率用「比例」而不是「出事次数」。这个设计主要防住了什么？",
+   "options": [
+    "防住故障恢复时间被拉长，因为比例会同时反映修复速度",
+    "防住团队把小故障瞒报成没有故障，因为比例更难被篡改",
+    "防住靠少发版来压低事故数：少发一半，次数掉一半，比例却不变",
+    "防住不同规模的团队之间无法比较，因为比例能消除人数差异"
+   ],
+   "answer": 2,
+   "explanation": "发得越勤，绝对出事次数必然越多，只有比例才能跨节奏比较；更重要的是它堵死了「不发版就不出事」的捷径。至于把「失败」的定义收窄到只算 P0，比例照样能被刷，所以要把定义写死在事故分级里。",
+   "question_en": "Among Accelerate's four delivery metrics, change failure rate is a percentage rather than a count of incidents. What does this design mainly guard against?",
+   "options_en": [
+    "Recovery times getting longer, since the percentage also reflects how fast fixes happen",
+    "Teams hiding minor failures as non-failures, since a percentage is harder to tamper with",
+    "Lowering incidents by deploying less: halve your deploys and the count halves, but the percentage doesn't move",
+    "Teams of different headcount being impossible to compare, since a ratio removes the size difference"
+   ],
+   "explanation_en": "More frequent deploys inevitably mean more incidents in absolute terms, so only a rate compares across cadences; above all, it closes the \"don't ship, don't break\" shortcut. Narrowing \"failure\" to P0 only can still game the rate, which is why the definition has to be fixed in the incident-severity scheme."
+  },
+  {
+   "id": "36a8797565",
+   "question": "一位经理想把工程师的日程排到接近 100%，觉得这样最不浪费。按《Accelerate》第 2 章借用的排队论，结果最可能是什么？",
+   "options": [
+    "短期内会变慢，但团队适应高负荷之后，交付会稳定在比以前更快的水平",
+    "交付速度基本不变，影响主要体现在员工满意度下降上",
+    "产出会线性增加，交付速度和利用率同比例提升",
+    "前置时间会远快于线性地膨胀：没有留白，计划外的事只能排队"
+   ],
+   "answer": 3,
+   "explanation": "像高速公路一样，车流填满路面后一脚刹车就堵成一片：利用率越逼近 100%，前置时间涨得越陡，直至趋于无穷。但这不等于利用率越低越好，本章主张的是留白，不是闲置。",
+   "question_en": "A manager wants engineers' schedules near 100% booked, reasoning it wastes nothing. Under the queueing theory Accelerate chapter 2 draws on, what is the most likely result?",
+   "options_en": [
+    "It slows things down briefly, but once the team adapts to the load, delivery settles faster than before",
+    "Delivery speed barely changes; the main effect shows up as lower employee satisfaction",
+    "Output rises linearly, with delivery speed increasing in proportion to utilization",
+    "Lead time balloons far faster than linearly: with no slack, unplanned work has to queue"
+   ],
+   "explanation_en": "Like a highway packed with cars where one tap on the brakes causes a jam, lead time climbs ever more steeply as utilization approaches 100%, toward infinity. That doesn't mean lower is always better: the chapter argues for slack, not idleness."
+  },
+  {
+   "id": "a651362b5f",
+   "question": "公司打算用四个 DORA 指标给各团队排名，并直接挂钩奖金。按这一章的观点，最大的问题是？",
+   "options": [
+    "四个数是体检报告不是 KPI，拿去排名发奖就会被刷，该和自己的过去比",
+    "问题在于四个指标还不够全面，再加上代码行数和速率后就可以公平排名",
+    "四个指标彼此牵制、单独刷不动，所以排名本身没问题，只是奖金应该再加上产品指标",
+    "排名之所以不合适，是因为这四个指标只适用于大型团队，小团队的数据噪音太大"
+   ],
+   "answer": 0,
+   "explanation": "刷指标比真改进它容易得多；把「失败」收窄、把一次发布拆成多次，理论上能同时刷高几项。各团队对部署和失败的口径也不同，DORA 官方也说跟自己的去年比更有意义。代码行数和速率正是本章批判的毒尺子。",
+   "question_en": "A company plans to rank its teams by the four DORA metrics and tie bonuses to them. From this chapter's perspective, what's the biggest problem?",
+   "options_en": [
+    "The four numbers are a health checkup, not KPIs; rank and pay on them and they get gamed — compare against your own past",
+    "The four metrics aren't comprehensive enough; adding lines of code and velocity would make rankings fair",
+    "Since the four metrics constrain each other and can't be gamed individually, ranking is fine; bonuses just need product metrics added",
+    "Ranking is inappropriate because these metrics only apply to large teams, and small teams' data are too noisy"
+   ],
+   "explanation_en": "Gaming a metric is far easier than genuinely improving it; narrowing \"failure\" and splitting one release into many could in principle inflate several at once. Teams define deployments and failures differently, and DORA itself says comparing year over year is more meaningful. Lines of code and velocity are exactly the toxic yardsticks the chapter dismantles."
+  }
+ ]
+}
