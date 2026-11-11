@@ -1,0 +1,69 @@
+{
+ "page": "/meta-knowledge/management-day9.html",
+ "title": "management-day9.html",
+ "page_en": "/meta-knowledge/management-day9.en.html",
+ "title_en": "Meta-Knowledge Deep Dive: Management — Day 9",
+ "src_hash": "4aa4bb94f899",
+ "questions": [
+  {
+   "id": "4fc9299c41",
+   "question": "按 March（1991）的分析，组织为什么越成功越难去探索？",
+   "options": [
+    "成功组织的员工流动率低，缺少新人带来的新想法",
+    "让组织高效的标准化、最佳实践和经验复用，本身就在挤压探索",
+    "成功后规模变大，探索所需的预算审批流程变得太长",
+    "成功后利润充裕，管理层渐渐失去危机感，不愿再冒险尝试新东西"
+   ],
+   "answer": 1,
+   "explanation": "March 的反直觉结论是：标准化、最佳实践、复用经验这些让组织高效的机制，恰恰是杀死探索的机制；加上利用的回报近而确定，理性的 KPI 体系几乎必然偏向利用。问题出在机制，不在管理层懈怠。",
+   "question_en": "According to March (1991), why does success make exploration harder for an organization?",
+   "options_en": [
+    "Successful firms have low turnover and lack fresh ideas from newcomers",
+    "The standardization, best practices and reuse of experience that make it efficient are what crowd out exploration",
+    "Success makes the firm bigger, and budget approvals for exploration become too slow",
+    "Success brings ample profits, so managers lose their sense of urgency and stop trying new things"
+   ],
+   "explanation_en": "March's counterintuitive point is that the very mechanisms that make a firm efficient, standardization, best practices, reusing experience, are what kill exploration. Since exploitation pays off sooner and more certainly, rational KPIs tilt toward it. The cause is structural, not complacent managers."
+  },
+  {
+   "id": "5f5fa4cc4f",
+   "question": "一座核电站已经连续很长时间没出事故。按高可靠组织（HRO）的思路，管理者该怎么看？",
+   "options": [
+    "这正是该警惕的时候，系统可能在悄悄积累未被发现的隐性失败",
+    "说明现有流程已被验证有效，应当把它固化下来，减少不必要的改动",
+    "说明风险已降到可接受水平，下一步重点应转向提升运行效率",
+    "说明一线人员已足够熟练，可以把监控资源调去更薄弱的环节"
+   ],
+   "answer": 0,
+   "explanation": "HRO 的哲学是「失败是数据，成功是危险」：一段时间没出事，恰恰最该警惕，因为系统可能在悄悄积累隐性失败。把长期无事故当成放松监控的理由，正是 HRO 要防的。",
+   "question_en": "A nuclear plant has gone a long time without an incident. How would a high-reliability organization (HRO) read this?",
+   "options_en": [
+    "As a moment for extra vigilance, since latent failures may be quietly building up",
+    "As proof the current procedures work, so they should be locked in with fewer changes",
+    "As evidence risk is acceptably low, so the focus should shift to efficiency",
+    "As a sign frontline staff are skilled enough that monitoring can move to weaker areas"
+   ],
+   "explanation_en": "HRO thinking holds that failure is data and success is dangerous: a long quiet stretch is exactly when to worry, because hidden failures may be accumulating. Treating a clean record as grounds to relax monitoring is what HROs guard against."
+  },
+  {
+   "id": "b9447a8e5b",
+   "question": "按委托代理理论，为什么代理成本不能靠「招到品行好的人」来消除？",
+   "options": [
+    "品行再好的人也会随时间变坏，所以必须定期更换代理人",
+    "品行好的人太稀缺，招聘他们的成本本身就会超过节省下来的代理成本",
+    "品行好的人往往能力不足，最后造成的价值损失反而更大",
+    "它源于目标不一致加信息不对称的结构，只能靠机制设计来降低"
+   ],
+   "answer": 3,
+   "explanation": "只要委托别人做事、双方目标不完全一致、你又看不到他的全部行为，代理成本就必然产生。文章强调这是结构问题而非道德问题，只能用股权激励、绩效合约、声誉机制等去降低，不能根除。",
+   "question_en": "Under agency theory, why can't agency costs be eliminated just by hiring people of good character?",
+   "options_en": [
+    "Even good people go bad over time, so agents must be replaced regularly",
+    "Good people are so rare that recruiting them costs more than the agency costs saved",
+    "People of good character are often less capable, so the value lost ends up larger",
+    "They arise from the structure of misaligned goals plus asymmetric information, so only mechanism design can reduce them"
+   ],
+   "explanation_en": "Whenever you delegate, goals differ somewhat, and you can't see everything the agent does, agency costs follow. The article stresses this is a structural, not moral, problem: equity incentives, performance contracts and reputation can reduce it but never remove it."
+  }
+ ]
+}

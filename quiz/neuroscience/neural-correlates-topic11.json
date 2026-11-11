@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/neural-correlates-topic11.html",
+ "title": "Topic 11 · 意识的神经关联 NCC — 神经科学",
+ "page_en": "/neuroscience/neural-correlates-topic11.en.html",
+ "title_en": "Topic 11 · Neural Correlates of Consciousness (NCC) — Neuroscience",
+ "src_hash": "31c28bdf3188",
+ "questions": [
+  {
+   "id": "4ff3e842f7",
+   "question": "双眼竞争为什么是寻找意识的神经关联（NCC）的理想范式？",
+   "options": [
+    "它能让两张图同时进入意识，便于比较两份体验各自对应的那组神经活动",
+    "两眼收到的输入不变，觉察却在两张图之间翻转，能把意识和刺激分开",
+    "它让刺激快速变化，能测出意识跟上刺激变化所需要的时间",
+    "它只刺激一只眼睛，另一侧视觉皮层的活动正好可作对照组"
+   ],
+   "answer": 1,
+   "explanation": "找 NCC 要做减法：刺激不变，只让意识变。双眼竞争中两眼输入一秒不变，大脑却一次只让你意识到一张图、来回翻转，于是跟着觉察翻转的活动就和稳定的刺激干净地分开了。两张图并不会同时进入意识。",
+   "question_en": "Why is binocular rivalry an ideal paradigm for finding the neural correlates of consciousness (NCC)?",
+   "options_en": [
+    "Both images enter awareness at once, making it easy to compare the neural activity of each",
+    "Input to the eyes stays fixed while awareness flips between the images, separating consciousness from stimulus",
+    "The stimulus changes rapidly, revealing how long awareness takes to catch up",
+    "Only one eye is stimulated, so the other side's visual cortex serves as a control"
+   ],
+   "explanation_en": "Finding the NCC is subtraction: hold the stimulus fixed and let only awareness change. In rivalry the input never changes, yet you're aware of only one image at a time and it flips, so activity that tracks the flip separates cleanly from the steady stimulus. The two images never enter awareness together."
+  },
+  {
+   "id": "14d943a5b1",
+   "question": "早年实验常发现「有意识时前额叶亮起」，并据此认为前额叶是意识的关键。无报告范式对此提出了什么质疑？",
+   "options": [
+    "前额叶确是意识所在，但按键报告这个动作会抑制它，导致信号被低估",
+    "那片活动在不同被试之间差异太大，结果根本无法被重复",
+    "那片活动可能是刺激太强造成的，与被试有没有觉察并无关系",
+    "那片活动可能来自按键报告所需的记忆、决策和运动，而不是体验本身"
+   ],
+   "answer": 3,
+   "explanation": "从「看见」到「按键」要经过工作记忆、决策和运动指令，这些都由前额叶挑大梁。无报告范式改用眼震、瞳孔偷读被试所见，撤掉报告后前额叶的「意识信号」大幅缩水，说明其中不少是报告的账。",
+   "question_en": "Early experiments often found the prefrontal cortex lighting up with conscious perception and concluded it was key to consciousness. What doubt did no-report paradigms raise?",
+   "options_en": [
+    "The prefrontal cortex is the seat of consciousness, but reporting suppresses it, so the signal is underestimated",
+    "That activity varies too much between subjects to be replicated at all",
+    "That activity may come from overly strong stimuli, unrelated to whether subjects were aware",
+    "That activity may reflect the memory, decision and motor work of reporting, not the experience itself"
+   ],
+   "explanation_en": "Getting from 'seeing' to 'pressing a button' involves working memory, a decision and a motor command, all heavily prefrontal. No-report paradigms read the percept from eye movements or pupil size instead, and the prefrontal 'consciousness signal' shrinks a lot, suggesting much of it belonged to reporting."
+  },
+  {
+   "id": "2adc7c591b",
+   "question": "Cogitate 对抗性协作中，全局工作空间理论和整合信息论的招牌预言都没被证实。为什么说这并非白忙一场？",
+   "options": [
+    "两派事先写死预言、约定输赢，意识理论第一次真的可能被证伪",
+    "结果表明两种理论其实是同一个理论的两种表述，可以合并成一个",
+    "结果表明意识无法用神经活动来研究，今后可以省下相关投入",
+    "中立实验室最终裁定后部热区一方胜出，这场争论就此结束"
+   ],
+   "answer": 0,
+   "explanation": "意识理论的老毛病是解释都在事后补，怎么都能自圆其说。Cogitate 让两派预注册预言、约定哪种结果算输，交给中立实验室；两家都被自己签字画押的预言证伪了一部分，这正是把意识拉进科学的样子。结果是平局，并没有分出胜负。",
+   "question_en": "In the Cogitate adversarial collaboration, the signature predictions of both Global Neuronal Workspace and Integrated Information Theory failed. Why was it not a wasted effort?",
+   "options_en": [
+    "Both sides pre-registered predictions and agreed what counted as losing, so a consciousness theory could truly fail for once",
+    "It showed the two theories are really one theory stated two ways, so they can be merged",
+    "It showed consciousness can't be studied through neural activity, saving future investment",
+    "The neutral labs ruled that the posterior hot zone camp won, ending the debate"
+   ],
+   "explanation_en": "Consciousness theories long explained data after the fact and could fit anything. Cogitate had both camps pre-register predictions and losing conditions for neutral labs to test; each was partly falsified by its own signed predictions, which is what bringing consciousness into science looks like. The result was a draw, not a win."
+  }
+ ]
+}

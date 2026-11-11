@@ -1,0 +1,69 @@
+{
+ "page": "/thinker-arena/debate.html?d=happiness",
+ "title": "辩论：幸福到底是什么？我们是否应该追求幸福？",
+ "page_en": "/thinker-arena/debate.en.html?d=happiness",
+ "title_en": "What is happiness, really? And should we even pursue it?",
+ "src_hash": "aa2d92f669d5",
+ "questions": [
+  {
+   "id": "9a2f7ec5d0",
+   "question": "一个人长期睡眠不足、付不起房租、每天被工作压榨。按这场「幸福」辩论最后落地的分层思路，最先该做什么？",
+   "options": [
+    "先寻找人生的意义：投身一个超出自己的目标，幸福会作为副产品随之出现",
+    "先每天写下三件好事：用积极情绪来抵消处境带来的压力",
+    "先练习放下欲望：只要心不向外求，外在处境就不再构成痛苦",
+    "先托住下限：改善睡眠、降低慢性压力、改善处境，再谈修心与意义"
+   ],
+   "answer": 3,
+   "explanation": "辩论的结论是分层的：向内放下的智慧默认你已不至于挨饿、不至于被慢性压力击垮，所以先用睡眠、减压、社会联结和处境改善托住下限，再用修心与意义去够上限。也就是先诊断卡在哪里：缺钱、缺睡、被压榨时，结构与生理优先。",
+   "question_en": "Someone is chronically sleep-deprived, can't make rent, and is ground down by work every day. Following the layered conclusion of this debate on happiness, what comes first?",
+   "options_en": [
+    "Find meaning: devote yourself to something beyond yourself and happiness follows as a by-product",
+    "Write down three good things each day to offset the stress with positive emotion",
+    "Practice letting go of desire: once the mind stops grasping outward, circumstances no longer cause suffering",
+    "Secure the floor: better sleep, less chronic stress, better circumstances, before inner work or meaning"
+   ],
+   "explanation_en": "The debate lands on layers: the wisdom of letting go assumes you aren't starving or crushed by chronic stress. So first secure the floor with sleep, stress reduction, connection and better circumstances, then reach higher with inner work and meaning. Diagnose the bottleneck: when money, sleep or exploitation is the problem, structure and physiology come first."
+  },
+  {
+   "id": "48655dc084",
+   "question": "这场关于幸福的辩论里，几乎所有立场最终都认同的一点是什么？",
+   "options": [
+    "直接追逐快感、不断满足欲望，本身带不来幸福",
+    "幸福是一种可以靠练习习得的技能，人人都能练成",
+    "幸福主要由基因设定点决定，个人努力只能微调",
+    "幸福首先是社会分配问题，个人修心是次要的事"
+   ],
+   "answer": 0,
+   "explanation": "三份总结都把这一点列为最大共识：节制、放下、投入意义、改造结构，都是在反对把幸福当即时快感来追。基因设定点、社会分配、可习得的技能，都是分歧所在，即钥匙放在生理、结构还是个人修炼上。",
+   "question_en": "In this debate on happiness, what point did nearly every position end up agreeing on?",
+   "options_en": [
+    "Chasing pleasure and satisfying desires directly does not by itself bring happiness",
+    "Happiness is a learnable skill that anyone can master with practice",
+    "Happiness is mostly set by a genetic set point; effort only fine-tunes it",
+    "Happiness is first a matter of social distribution; inner work is secondary"
+   ],
+   "explanation_en": "All three summaries name this as the main consensus: moderation, letting go, meaning and structural change all reject chasing happiness as instant pleasure. The genetic set point, distribution and learnable skill are where the participants split, over whether the key lies in biology, social structure or personal practice."
+  },
+  {
+   "id": "39ef3b211c",
+   "question": "辩论的总结建议每周留一件「为它本身而做」的事，比如一门手艺或一场深谈。它为什么比买来的东西更能持续带来满足？",
+   "options": [
+    "它能抬高多巴胺的基线水平，让人整体上更容易感到快乐",
+    "它的花费比买东西低得多，不会带来事后的经济压力和后悔",
+    "它能带来他人的认可与赞赏，满足人对社会地位的需要",
+    "它每次都要你重新投入，也就每次都还给你一点，不会很快归于平淡"
+   ],
+   "answer": 3,
+   "explanation": "总结的说法是：买来的东西很快归于平淡，而为它本身而做的事每次都要你重新投入，也就每次都还给你一点。重点在投入本身，不在花费或别人的认可。",
+   "question_en": "The debate's summary suggests keeping one thing each week that you do for its own sake, like a craft or a deep conversation. Why does it satisfy more durably than things you buy?",
+   "options_en": [
+    "It raises your baseline dopamine so you feel happier overall",
+    "It costs far less than buying things, so there's no financial stress or regret afterward",
+    "It earns recognition and praise, meeting the need for social status",
+    "It demands fresh engagement each time, so it gives something back each time instead of fading"
+   ],
+   "explanation_en": "The summary's point: purchases quickly fade into the background, while something done for its own sake requires you to engage anew each time and so repays you each time. The value is in the engagement, not the cost or others' approval."
+  }
+ ]
+}

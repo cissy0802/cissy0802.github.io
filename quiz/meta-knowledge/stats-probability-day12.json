@@ -1,0 +1,69 @@
+{
+ "page": "/meta-knowledge/stats-probability-day12.html",
+ "title": "元知识详解：统计与概率 — Day 12",
+ "page_en": "/meta-knowledge/stats-probability-day12.en.html",
+ "title_en": "Meta Knowledge: Statistics & Probability — Day 12",
+ "src_hash": "d2ed7db30bc4",
+ "questions": [
+  {
+   "id": "8f536f9e15",
+   "question": "团队里约八成项目都会拖期。某同事的项目也拖了几次，有人就断定他「爱拖延」。按贝叶斯思路，这个判断错在哪？",
+   "options": [
+    "犯了生存偏差：只看到拖期的项目，没看到按时完成的项目",
+    "忽略了基础率：既然大多数项目都拖，他拖几次几乎说明不了什么",
+    "混淆了因果：拖期可能是他拖延造成的，也可能刚好相反",
+    "证据还不够：只要再多观察几次他的拖期，就能确认他确实是爱拖延"
+   ],
+   "answer": 1,
+   "explanation": "文章的例子：如果所有项目都拖（基础率 80%），单看他拖几次根本说明不了什么。该先问「我原本的相信程度是多少，这条证据把概率提高了 2 倍还是 20 倍」。再多观察几次拖期也一样，因为这是人人都会出现的证据。",
+   "question_en": "About 80% of a team's projects run late. One colleague's projects have been late a few times, and someone concludes he's a procrastinator. From a Bayesian view, what's wrong with this?",
+   "options_en": [
+    "It's survivorship bias: only late projects are seen, not on-time ones",
+    "It ignores the base rate: if most projects run late, his few late ones say almost nothing",
+    "It confuses cause and effect: lateness may cause procrastination or vice versa",
+    "There isn't enough evidence yet; a few more late projects would confirm it"
+   ],
+   "explanation_en": "The article's example: if nearly every project runs late (an 80% base rate), a few late ones from him tell you very little. First ask what your prior was and whether the evidence raises the odds 2x or 20x. More late projects wouldn't help, since that evidence shows up for everyone."
+  },
+  {
+   "id": "5658a0038c",
+   "question": "某项数据整体上 A 优于 B，按某个变量分组后，每一组却都是 B 优于 A。文章认为这说明了什么？",
+   "options": [
+    "分组后各组样本太小，整体数据更可靠，所以应当以加总后的结果为准来下结论",
+    "结论方向取决于是否控制了对的混杂变量，没有因果判断的数据没有方向",
+    "两种结论只是看问题的角度不同，选择哪一个其实都没关系",
+    "分组数据和整体数据中必有一份出了统计错误，需要重新采集"
+   ],
+   "answer": 1,
+   "explanation": "辛普森悖论说明，相关的方向取决于有没有控制对的混杂变量，比如录取案例里的申请方向。不是数据骗人，而是没有因果判断，数据本身给不出方向。肾结石例子也说明，两种结论回答的是不同的问题，选哪个要看你在问什么。",
+   "question_en": "Data show A beating B overall, yet when split by some variable, B beats A in every group. What does the article say this shows?",
+   "options_en": [
+    "The subgroups are too small, so the aggregate is more reliable and should be trusted",
+    "The direction of the conclusion depends on controlling the right confounder; without causal judgment, data have no direction",
+    "The two conclusions are just different perspectives, so it doesn't matter which you pick",
+    "One of the two datasets must contain a statistical error and should be recollected"
+   ],
+   "explanation_en": "Simpson's paradox shows that a correlation's direction depends on controlling the right confounder, like which department applicants chose in the admissions case. The data aren't lying; without causal reasoning they simply have no direction. The kidney-stone case shows the two answers address different questions, so which one you need depends on what you're asking."
+  },
+  {
+   "id": "044d8a1100",
+   "question": "为了对抗生存偏差，文章建议每读一个成功案例就去找 3 个用了相似策略却失败的例子。如果怎么也找不到，该怎么理解？",
+   "options": [
+    "说明这个策略刚出现不久，失败案例还没来得及积累",
+    "说明这个策略的成功率极高，几乎没有人用了它还会失败",
+    "说明成功者与失败者用的是完全不同的策略，归因可信",
+    "要么失败者没有声音，要么这个策略根本无法识别，都不该轻信那套归因"
+   ],
+   "answer": 3,
+   "explanation": "文章说：找不到失败例子，要么是失败者沉默、没人统计，要么是这个「策略」根本无法被识别——两种情况都不该轻信那套成功归因。把「找不到失败者」当成「策略很灵」，正是生存偏差本身。",
+   "question_en": "To counter survivorship bias, the article suggests finding three examples of people who used a similar strategy and failed for every success story you read. What if you can't find any?",
+   "options_en": [
+    "The strategy is too new for failures to have piled up yet",
+    "The strategy's success rate must be extremely high, since almost no one fails with it",
+    "Winners and losers must have used completely different strategies, so the attribution holds",
+    "Either the failures are silent or the strategy can't really be identified; either way, distrust the attribution"
+   ],
+   "explanation_en": "The article says that if you can't find failures, either the failures are silent and uncounted, or the 'strategy' can't be pinned down at all. In both cases you shouldn't trust the success story's attribution. Reading 'no failures found' as 'the strategy works' is survivorship bias itself."
+  }
+ ]
+}

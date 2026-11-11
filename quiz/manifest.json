@@ -732,6 +732,141 @@
     "029f65cf60",
     "fc19b93f07"
    ]
+  },
+  "/deep-reading/give-and-take-read84.html": {
+   "t": "《Give and Take》— 好书精读 Read 84",
+   "f": "deep-reading/give-and-take-read84.json",
+   "q": [
+    "a8cefdae6e",
+    "f50dbc539d",
+    "64626d1e9c"
+   ]
+  },
+  "/health-longevity/nutrition-day2.html": {
+   "t": "健康长寿 Day 2 — 营养基本盘",
+   "f": "health-longevity/nutrition-day2.json",
+   "q": [
+    "a28021f14c",
+    "efbc4260e5",
+    "f25a943a16"
+   ]
+  },
+  "/meta-knowledge/management-day9.html": {
+   "t": "management-day9.html",
+   "f": "meta-knowledge/management-day9.json",
+   "q": [
+    "4fc9299c41",
+    "5f5fa4cc4f",
+    "b9447a8e5b"
+   ]
+  },
+  "/deep-reading/crucial-conversations-read948.html": {
+   "t": "《关键对话》— 好书精读",
+   "f": "deep-reading/crucial-conversations-read948.json",
+   "q": [
+    "0b7e31fcde",
+    "f7a2253220",
+    "ec5d2336da"
+   ]
+  },
+  "/mental-models/military-strategy-day31.html": {
+   "t": "思维模型详解：军事战略思维 · Day 31",
+   "f": "mental-models/military-strategy-day31.json",
+   "q": [
+    "fbac16ee23",
+    "76c39791b9",
+    "5f16fdd3b3"
+   ]
+  },
+  "/meta-knowledge/stats-probability-day12.html": {
+   "t": "元知识详解：统计与概率 — Day 12",
+   "f": "meta-knowledge/stats-probability-day12.json",
+   "q": [
+    "8f536f9e15",
+    "5658a0038c",
+    "044d8a1100"
+   ]
+  },
+  "/thinker-arena/debate.html?d=happiness": {
+   "t": "辩论：幸福到底是什么？我们是否应该追求幸福？",
+   "f": "thinker-arena/debate-happiness.json",
+   "q": [
+    "9a2f7ec5d0",
+    "48655dc084",
+    "39ef3b211c"
+   ]
+  },
+  "/neuroscience/neural-correlates-topic11.html": {
+   "t": "Topic 11 · 意识的神经关联 NCC — 神经科学",
+   "f": "neuroscience/neural-correlates-topic11.json",
+   "q": [
+    "4ff3e842f7",
+    "14d943a5b1",
+    "2adc7c591b"
+   ]
+  },
+  "/podcast-deepread/build-immense-inner-strength-david-goggins-pod4.html": {
+   "t": "Huberman Lab × David Goggins — 只有棍子，和一个被当场递过来的脑区",
+   "f": "podcast-deepread/build-immense-inner-strength-david-goggins-pod4.json",
+   "q": [
+    "ec98d93c9f",
+    "8d06081af8",
+    "7dc189b207"
+   ]
+  },
+  "/deep-reading/beginning-of-infinity-read158.html": {
+   "t": "《无穷的开始》",
+   "f": "deep-reading/beginning-of-infinity-read158.json",
+   "q": [
+    "d5cf8293c3",
+    "55620b77d9",
+    "fdfeb05d09"
+   ]
+  },
+  "/thinker-arena/debate.html?d=strength-and-flaw-same-root": {
+   "t": "辩论：优点和缺点，是同一个特点的两面吗？",
+   "f": "thinker-arena/debate-strength-and-flaw-same-root.json",
+   "q": [
+    "2a801150d1",
+    "dc63717f20",
+    "c2d2baa64a"
+   ]
+  },
+  "/deep-reading/tale-of-genji-read45.html": {
+   "t": "《源氏物语》— 好书精读 Read 45",
+   "f": "deep-reading/tale-of-genji-read45.json",
+   "q": [
+    "007feaa6d7",
+    "2f6dc2277a",
+    "999a057583"
+   ]
+  },
+  "/meta-knowledge/sociology-day7.html": {
+   "t": "元知识详解：社会学 — Day 7",
+   "f": "meta-knowledge/sociology-day7.json",
+   "q": [
+    "65a3af34f7",
+    "7b6e534e21",
+    "350ca08ca9"
+   ]
+  },
+  "/deep-reading/metaphors-we-live-by-read911.html": {
+   "t": "《我们赖以生存的隐喻》— 每日精读 Read 911",
+   "f": "deep-reading/metaphors-we-live-by-read911.json",
+   "q": [
+    "5b56af512a",
+    "b275e36974",
+    "5b8c5a743f"
+   ]
+  },
+  "/thinker-arena/debate.html?d=by-product-goods": {
+   "t": "辩论：越想要越得不到的东西，该怎么要？",
+   "f": "thinker-arena/debate-by-product-goods.json",
+   "q": [
+    "bd7d92b460",
+    "c99e11065d",
+    "304816173a"
+   ]
   }
  },
  "aliases": {

@@ -1,0 +1,69 @@
+{
+ "page": "/mental-models/military-strategy-day31.html",
+ "title": "思维模型详解：军事战略思维 · Day 31",
+ "page_en": "/mental-models/military-strategy-day31.en.html",
+ "title_en": "Mental Models Deep Dive: Military Strategic Thinking · Day 31",
+ "src_hash": "06da6703238b",
+ "questions": [
+  {
+   "id": "fbac16ee23",
+   "question": "按 Boyd 的 OODA 循环，高手的主要优势在哪里？",
+   "options": [
+    "更快地跑完整圈，让对手始终依据过期的情况做决策",
+    "收集比对手更完整的情报，在观察阶段建立信息优势",
+    "把每一步决策想得更周全，以减少行动中出错的次数",
+    "严格按观察、定向、决策、行动的顺序执行，从不跳步"
+   ],
+   "answer": 0,
+   "explanation": "OODA 是回路而非流程，杠杆在循环时间而非每步更准：谁更快完成整圈，谁就把对手锁死在过期数据里。多数人花力气优化决策质量，高手优化的是整圈的周期。",
+   "question_en": "In Boyd's OODA loop, where does the expert's main advantage lie?",
+   "options_en": [
+    "Cycling through the whole loop faster, so the opponent keeps acting on outdated reality",
+    "Gathering more complete intelligence to win the Observe stage",
+    "Thinking each decision through more carefully to make fewer mistakes",
+    "Following Observe, Orient, Decide, Act strictly in order without skipping steps"
+   ],
+   "explanation_en": "OODA is a loop, not a procedure, and the leverage is cycle time, not precision at each step: whoever completes the loop faster locks the opponent into stale data. Most people optimize decision quality; experts optimize the length of the whole cycle."
+  },
+  {
+   "id": "76c39791b9",
+   "question": "一个团队背着一堆技术债。按克劳塞维茨「重心」的思路，应该先还哪一块？",
+   "options": [
+    "客诉最响、bug 最多的那一块，因为它最影响用户感受",
+    "阻塞了其他许多事情的那一块，哪怕它看起来并不起眼",
+    "规模最大、最显眼的那一块，因为它消耗的资源最多",
+    "最容易修的那一块，先拿下小胜利来积累团队信心"
+   ],
+   "answer": 1,
+   "explanation": "重心是支撑系统稳定的非线性枢纽，不一定最大、最显眼。文章说按债大小排序是错的，真正的重心是阻塞了其他十件事的那一块；客诉最响、bug 最多的地方往往是症状而非重心。",
+   "question_en": "A team is carrying a pile of technical debt. Applying Clausewitz's center of gravity, which piece should it pay down first?",
+   "options_en": [
+    "The piece with the loudest complaints and most bugs, since users feel it most",
+    "The piece that blocks many other things, even if it looks minor",
+    "The largest, most visible piece, since it consumes the most resources",
+    "The easiest piece to fix, to build team confidence with a quick win"
+   ],
+   "explanation_en": "A center of gravity is the nonlinear hinge that holds the system together, not necessarily the biggest or most visible part. The article says sorting debt by size is wrong; the real center is whatever blocks ten other things. Loud complaints and bug counts are usually symptoms."
+  },
+  {
+   "id": "5f16fdd3b3",
+   "question": "面对「战争迷雾」式的信息残缺，文章认为正确的应对是什么？",
+   "options": [
+    "尽量推迟决策，等对手先行动暴露意图后再作反应",
+    "多投入资源做调研，直到信息足够完整再做出决定",
+    "凭经验和直觉一次性下大注，用行动的速度来弥补信息上的不足",
+    "设计信息残缺时仍能执行的决策原则，用小代价行动当探针"
+   ],
+   "answer": 3,
+   "explanation": "迷雾是对抗系统的本征属性，不是能修掉的 bug。「再调研一轮」是把它当 bug；正确做法是让决策架构在迷雾中仍然稳健，并用小注下场、以真实反应替代猜测。一次性下大注恰恰是脆弱的做法。",
+   "question_en": "Facing 'fog of war'—information that is always incomplete—what response does the article recommend?",
+   "options_en": [
+    "Delay deciding until the opponent moves first and reveals their intent",
+    "Invest in more research until the information is complete, then decide",
+    "Make one big bet on instinct and experience, using speed to make up for missing information",
+    "Design decision rules that still work with missing information, and use cheap actions as probes"
+   ],
+   "explanation_en": "Fog is intrinsic to adversarial systems, not a fixable bug. 'One more round of research' treats it as a bug; the right move is a decision architecture that stays robust under fog, plus small bets that replace guesses with real signal. One big bet is the fragile choice."
+  }
+ ]
+}

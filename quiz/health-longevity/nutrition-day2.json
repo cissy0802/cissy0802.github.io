@@ -1,0 +1,69 @@
+{
+ "page": "/health-longevity/nutrition-day2.html",
+ "title": "健康长寿 Day 2 — 营养基本盘",
+ "page_en": "/health-longevity/nutrition-day2.en.html",
+ "title_en": "Health & Longevity Day 2 — Nutrition Fundamentals",
+ "src_hash": "7ecd402df54c",
+ "questions": [
+  {
+   "id": "a28021f14c",
+   "question": "为什么不能把胶原蛋白当作主要的蛋白质来源？",
+   "options": [
+    "它的亮氨酸含量极低，达不到触发肌肉蛋白合成的阈值",
+    "它分子太大难以吸收，大部分会原样排出体外",
+    "它属于植物来源的蛋白，生物利用度天然就低于各类动物蛋白",
+    "它会加重肾脏的代谢负担，健康人长期吃也有风险"
+   ],
+   "answer": 0,
+   "explanation": "肌肉蛋白合成由亮氨酸触发，每餐要达到约 2.5 g 的阈值；胶原蛋白亮氨酸极少，只能作辅助。「高蛋白伤肾」文章明确说只对已有中重度肾病的人成立。",
+   "question_en": "Why shouldn't collagen be your main protein source?",
+   "options_en": [
+    "Its leucine content is very low, too little to trigger muscle protein synthesis",
+    "Its molecules are too large to absorb, so most of it passes through unused",
+    "It is a plant protein, so its bioavailability is inherently lower than animal protein",
+    "It strains the kidneys, which is risky even for healthy people long term"
+   ],
+   "explanation_en": "Muscle protein synthesis is triggered by leucine, roughly 2.5 g per meal. Collagen has very little, so it can only play a supporting role. The article says the 'protein harms kidneys' worry only applies to people who already have moderate-to-severe kidney disease."
+  },
+  {
+   "id": "efbc4260e5",
+   "question": "文章认为膳食纤维比益生菌胶囊更能改善肠道菌群，理由是什么？",
+   "options": [
+    "纤维能先杀死肠道里的有害菌，给后续补充的益生菌腾出空间",
+    "益生菌会和原生菌群争夺营养，长期吃反而降低菌群多样性",
+    "多数益生菌过胃后难以存活定植，纤维则直接喂养体内原有的菌群",
+    "纤维本身含有大量活菌，吃下去相当于一次补充了更多种类的益生菌"
+   ],
+   "answer": 2,
+   "explanation": "益生菌胶囊的问题是过胃后存活率低、定植失败；膳食纤维是益生元，被大肠里原本就住着的菌群发酵，产生丁酸等短链脂肪酸。纤维本身并不含活菌。",
+   "question_en": "Why does the article say dietary fiber beats probiotic capsules for improving the gut microbiome?",
+   "options_en": [
+    "Fiber first kills harmful gut bacteria, clearing room for probiotics taken afterward",
+    "Probiotics compete with resident microbes for nutrients and reduce diversity over time",
+    "Most probiotics die or fail to colonize after the stomach, while fiber feeds the microbes already living there",
+    "Fiber itself contains many live bacteria, so it delivers more strains at once"
+   ],
+   "explanation_en": "Probiotic capsules mostly fail to survive the stomach or take hold. Fiber is a prebiotic: the resident microbes in the colon ferment it into short-chain fatty acids like butyrate. Fiber contains no live bacteria itself."
+  },
+  {
+   "id": "f25a943a16",
+   "question": "买鱼油时，文章提醒最该看标签上的哪一项？",
+   "options": [
+    "鱼油的总毫克数，单粒剂量越大的软胶囊效果越好",
+    "每粒的 EPA+DHA 实际含量，而不是鱼油的总毫克数",
+    "是否混入了亚麻籽油，植物与鱼类两种来源搭配起来吸收更全面",
+    "是否来自深海鱼，只要是深海鱼来源，含量差别就不大"
+   ],
+   "answer": 1,
+   "explanation": "一粒 1000 mg 的鱼油软胶囊常常只含约 300 mg EPA+DHA，所以要看有效成分而非总量。亚麻籽里的 ALA 转化成 EPA/DHA 的效率极低，不能拿来替代。",
+   "question_en": "When buying fish oil, what does the article say to check on the label above all?",
+   "options_en": [
+    "The total milligrams of fish oil, since bigger capsules work better",
+    "The actual EPA+DHA per capsule, not the total milligrams of fish oil",
+    "Whether flaxseed oil is blended in, since mixing plant and fish sources aids absorption",
+    "Whether it comes from deep-sea fish; if so, the content barely varies"
+   ],
+   "explanation_en": "A 1000 mg fish-oil softgel often contains only about 300 mg of EPA+DHA, so check the active content, not the total. The ALA in flaxseed converts to EPA/DHA very poorly and is no substitute."
+  }
+ ]
+}

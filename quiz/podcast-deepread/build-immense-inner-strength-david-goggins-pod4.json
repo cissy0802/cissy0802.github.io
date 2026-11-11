@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/build-immense-inner-strength-david-goggins-pod4.html",
+ "title": "Huberman Lab × David Goggins — 只有棍子，和一个被当场递过来的脑区",
+ "page_en": "/podcast-deepread/build-immense-inner-strength-david-goggins-pod4.en.html",
+ "title_en": "Huberman Lab × David Goggins — Only a stick, and a brain region handed over on the spot",
+ "src_hash": "4df78a5199c3",
+ "questions": [
+  {
+   "id": "ec98d93c9f",
+   "question": "Huberman 说 aMCC 只在你做不想做的事时才会长大、一旦享受就会缩回去。文章核查后怎么评价这个说法？",
+   "options": [
+    "无法核实：目前还没有任何研究测量过训练前后脑区的变化",
+    "证据充分：多项随机试验已经证实，只有不情愿的训练才能让它增大",
+    "说法相反：研究显示享受运动的人这块区域增长得反而更快",
+    "证据不足：最接近的干预研究比较的是运动种类，与想不想做无关"
+   ],
+   "answer": 3,
+   "explanation": "文章判为「证据不足」：Huberman 依据的综述自己只说这是「诱人的可能」；最接近的六个月随机试验发现做有氧的老人前额区域（含扣带）灰质增加、做拉伸的没有，比的是运动种类，跟想不想做无关。",
+   "question_en": "Huberman claims the aMCC grows only when you do things you don't want to do, and shrinks once you enjoy them. How does the article's fact-check rate this?",
+   "options_en": [
+    "Unverifiable: no study has ever measured brain changes before and after training",
+    "Well supported: several randomized trials show only reluctant training enlarges it",
+    "The reverse is true: people who enjoy exercise show faster growth in that region",
+    "Insufficient evidence: the closest intervention study compared exercise types, not willingness"
+   ],
+   "explanation_en": "The article rates it 'insufficient evidence.' The review Huberman relies on calls it only 'a tantalizing possibility,' and the closest trial, six months in older adults, found aerobic exercise grew frontal gray matter including cingulate while stretching didn't. That compares exercise types, not whether people wanted to do it."
+  },
+  {
+   "id": "8d06081af8",
+   "question": "Goggins 说，三百磅时要是对自己好一点，只会让自己回到便利店买甜甜圈。文章引用的实验，对这个道理放到别人身上给出了什么结论？",
+   "options": [
+    "被引导善待自己失败的人，失败后反而花更多时间备考、更想改掉弱点",
+    "严厉的自我批评进步最快，只要持续时间不太长就不会伤人",
+    "善待自己的人短期内会更快乐，但长期来看自我改进的动力明显下降",
+    "善待自己与否对后续行为没有显著影响，关键在于目标设定"
+   ],
+   "answer": 0,
+   "explanation": "文章把这句话判为观点而非事实，并引用 Breines 和 Chen 的四个实验：被引导善待自己失败的人，失败后花更多时间备考，也更想改掉弱点。善待自己不等于放过自己。",
+   "question_en": "Goggins says that being kind to himself at 300 pounds would only have sent him back to the convenience store for donuts. What did the experiments the article cites find when this idea is tested on other people?",
+   "options_en": [
+    "People guided to be kind about a failure then studied longer and were more motivated to fix their weaknesses",
+    "Harsh self-criticism produced the fastest improvement, as long as it didn't last too long",
+    "Self-kindness made people happier short term but clearly weakened long-term motivation to improve",
+    "Self-kindness had no significant effect on later behavior; goal-setting was what mattered"
+   ],
+   "explanation_en": "The article rates his line as opinion, not fact, and cites four experiments by Breines and Chen: people prompted to treat a failure with self-compassion spent more time studying afterward and were more motivated to fix weaknesses. Self-compassion isn't letting yourself off the hook."
+  },
+  {
+   "id": "7dc189b207",
+   "question": "Goggins 听到 aMCC 后说「这就是我的一生」，后来还用它解释自己为什么不退休。文章怎么看这件事？",
+   "options": [
+    "这说明他的系统完全靠这块脑区驱动，与心理因素关系不大",
+    "他的经历给 aMCC 理论提供了一个关键反例，动摇了这个说法",
+    "科学在这里做的，是给一个早已成形的人生故事配了一张解剖图",
+    "这是神经科学首次验证了一套可以推广的意志力训练方法"
+   ],
+   "answer": 2,
+   "explanation": "文章指出，他自己对这些一无所知，听完却说「这就是我的一生」，一小时后已经在用它解释不退休。科学在这段对话里是给现成的人生故事配图，而 Huberman 自己也说他是 n of one，不能直接照搬。",
+   "question_en": "After hearing about the aMCC, Goggins said 'that's my whole life,' and later used it to explain why he won't retire. How does the article read this?",
+   "options_en": [
+    "It shows his system runs entirely on that brain region, with little psychological input",
+    "His experience offered a key counterexample that undermines the aMCC claim",
+    "Science here supplied an anatomy chart for a life story that had already taken shape",
+    "It was the first neuroscientific validation of a generalizable willpower training method"
+   ],
+   "explanation_en": "The article notes he knew nothing about it, yet said 'that's my whole life' and within an hour was using it to explain not retiring. In this exchange science illustrated a ready-made life story, and Huberman himself calls Goggins an n of one, not a template."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/meta-knowledge/sociology-day7.html",
+ "title": "元知识详解：社会学 — Day 7",
+ "page_en": "/meta-knowledge/sociology-day7.en.html",
+ "title_en": "Meta-Knowledge Deep Dive: Sociology — Day 7",
+ "src_hash": "afddbb4c1e4d",
+ "questions": [
+  {
+   "id": "65a3af34f7",
+   "question": "Granovetter 为什么说，连接两个子网络的「桥」几乎都是弱连接？",
+   "options": [
+    "强连接的双方很可能共享朋友，两人之间就不再是唯一的通路",
+    "强连接的维护成本太高，人们没精力和不同圈子都保持强连接",
+    "弱连接之间的竞争更少，双方因此更愿意分享别人不知道的消息",
+    "弱连接的人通常地位更高，掌握着更多跨圈子的资源和信息"
+   ],
+   "answer": 0,
+   "explanation": "这是三元闭合的推论：A 与 B 是强连接，他们就很可能共享朋友 C；C 同时连着 A 和 B，A-B 就不是唯一通路，也就不是桥。所以桥必然嵌在弱连接里。这是拓扑结构的结论，不是精力或地位问题。",
+   "question_en": "Why did Granovetter argue that the 'bridges' linking two separate clusters are almost always weak ties?",
+   "options_en": [
+    "Strongly tied people likely share friends, so the tie between them is no longer the only path",
+    "Strong ties cost too much to maintain, so people can't keep strong ties across many circles",
+    "Weak ties compete less with each other, so they're more willing to share news others lack",
+    "Weak ties tend to have higher status and control more cross-group resources"
+   ],
+   "explanation_en": "It follows from triadic closure: if A and B are strongly tied, they probably share a friend C, and with C linked to both, A–B is no longer the only route, so it isn't a bridge. Bridges must therefore be weak ties. It's a point about network topology, not energy or status."
+  },
+  {
+   "id": "7b6e534e21",
+   "question": "一项研究发现，较早引入全面质量管理（TQM）的医院获得了真实的绩效提升，较晚引入的几乎没有改善。按制度同形理论，原因是什么？",
+   "options": [
+    "早采用者已占据市场优势，晚采用者无论怎么做都难以追赶上来",
+    "晚采用的医院资源较少，没有能力把 TQM 做得和早期采用者一样好",
+    "实践成为行业标配后，采用更多是为了合法性，退化成形式化遵循",
+    "TQM 本身已经过时，后来的医院面对的是完全不同的管理问题"
+   ],
+   "answer": 2,
+   "explanation": "早期采用基于真实业务需求、定制化实施；晚期采用是「我们也得有 TQM 团队，否则评审过不了」的形式化遵循。一项创新一旦成为同形标准，就从效率工具退化为合法性符号。",
+   "question_en": "A study found hospitals that adopted Total Quality Management (TQM) early saw real gains, while late adopters saw almost none. What does institutional isomorphism say explains this?",
+   "options_en": [
+    "Early adopters had already captured the market, so late adopters couldn't catch up",
+    "Late adopters had fewer resources and couldn't implement TQM as well",
+    "Once a practice becomes standard, adopting it is mostly about legitimacy, so it turns into ritual compliance",
+    "TQM itself became outdated, and later hospitals faced different problems"
+   ],
+   "explanation_en": "Early adoption was tailored to real operational needs; late adoption was box-ticking, 'we need a TQM team or we'll fail review.' Once an innovation becomes the field's standard, it degrades from an efficiency tool into a symbol of legitimacy."
+  },
+  {
+   "id": "350ca08ca9",
+   "question": "用 Merton 的自我实现预言来看，存款保险为什么能防止一家健康的银行被挤兑垮？",
+   "options": [
+    "它保证银行手里永远有足够的现金，可以应付任何规模的集中提现",
+    "它让监管者能提前识别不健康的银行，在出事前就把它们关掉",
+    "它抬高了存款利率，让储户觉得把钱留在银行里更划算",
+    "它切断了「相信要倒闭→提现→真的倒闭」这条从信念到行为的回路"
+   ],
+   "answer": 3,
+   "explanation": "挤兑是典型的自我实现预言：储户相信银行不稳就去提现，银行流动性紧张被迫抛资产，最后真的倒闭。存款保险让储户不再需要抢先提现，从而人为切断了从信念到挤兑的因果链。",
+   "question_en": "In terms of Merton's self-fulfilling prophecy, why does deposit insurance stop a healthy bank from collapsing in a run?",
+   "options_en": [
+    "It guarantees the bank always has enough cash for withdrawals of any size",
+    "It lets regulators spot unhealthy banks early and close them before trouble spreads",
+    "It raises deposit rates, making it more attractive to leave money in the bank",
+    "It cuts the loop from belief to behavior: 'it will fail' → withdrawals → it actually fails"
+   ],
+   "explanation_en": "A bank run is a textbook self-fulfilling prophecy: depositors who believe the bank is shaky withdraw, the bank sells assets to cover it, and it really fails. Deposit insurance removes the reason to rush for the exit, cutting the causal chain from belief to run."
+  }
+ ]
+}

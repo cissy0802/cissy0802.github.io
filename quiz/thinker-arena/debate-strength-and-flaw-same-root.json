@@ -1,0 +1,69 @@
+{
+ "page": "/thinker-arena/debate.html?d=strength-and-flaw-same-root",
+ "title": "辩论：优点和缺点，是同一个特点的两面吗？",
+ "page_en": "/thinker-arena/debate.en.html?d=strength-and-flaw-same-root",
+ "title_en": "Are your strengths and flaws two faces of one trait?",
+ "src_hash": "914797322ffb",
+ "questions": [
+  {
+   "id": "2a801150d1",
+   "question": "按这场辩论的共识，如果一个人的毛病和优点确实同源，最值得动手改的是哪一层？",
+   "options": [
+    "哪一层都不必动：既然同源，改掉缺点就会把优点一起改掉",
+    "它发作的场合与土壤：换环境、换出口，比切除本性更划算",
+    "别人评价它的尺度：换一群欣赏你的人，它就不再是缺点",
+    "底层气质本身：只要决心够大，就能把缺点那一面连根拔掉"
+   ],
+   "answer": 1,
+   "explanation": "共识是：真能动的不是「我这个人」，而是它发作的场合与土壤，换土壤比动刀便宜。全场既没人主张把缺点切干净，也没人说就这么算了；同源也不等于免责，伤了人照样要认账。",
+   "question_en": "According to this debate's consensus, if a person's flaw really shares a root with a strength, which layer is most worth changing?",
+   "options_en": [
+    "Nothing: since they share a root, removing the flaw removes the strength too",
+    "The situations and soil where it flares up: changing settings and outlets beats cutting out the trait",
+    "Other people's standards: find people who appreciate you and it stops being a flaw",
+    "The underlying temperament itself: with enough resolve, the flaw can be pulled out by the roots"
+   ],
+   "explanation_en": "The consensus: what you can really change isn't 'who I am' but the situations and conditions in which it fires, and changing the soil is cheaper than surgery. No one argued for excising the flaw or for leaving it be, and a shared root doesn't excuse harm done."
+  },
+  {
+   "id": "dc63717f20",
+   "question": "为什么靠内省很难判断「去掉这个毛病，优点还在不在」？",
+   "options": [
+    "内省只能看到外在行为，看不到背后的神经基础，所以必然会失真",
+    "优点和缺点在脑中存为同一段记忆，内省时根本无法把两者区分开来",
+    "人天生倾向自我批评，回忆时会系统性地夸大自己缺点造成的那些危害",
+    "优点的回报当场可见、归自己，缺点的账延后、分散、落在别人头上"
+   ],
+   "answer": 3,
+   "explanation": "总结指出，同一特点的两面很少在同一天兑现：你记得它替你赢下的会议，不记得三年里陆续走开的人。两边证据的权重不对等，所以要把检验外包，找不同时期认识你的人各问一句。",
+   "question_en": "Why is introspection a poor way to judge whether a strength would survive removing the flaw?",
+   "options_en": [
+    "Introspection sees only behavior, not its neural basis, so it must be distorted",
+    "Strengths and flaws are stored as one memory, so introspection can't tell them apart",
+    "People naturally lean toward self-criticism and systematically exaggerate their flaws' harm",
+    "The strength pays off immediately and visibly to you, while the flaw's costs are delayed, spread out and borne by others, so memory is biased"
+   ],
+   "explanation_en": "The summary notes the two sides rarely come due on the same day: you remember the meetings it won you, not the people who drifted away over three years. The evidence is weighted unevenly in memory, so outsource the test by asking people who knew you at different times."
+  },
+  {
+   "id": "c2d2baa64a",
+   "question": "某人刻薄伤了人，事后说「我性格直，这是我诚实的另一面」。按这场辩论的共识，正确的顺序是什么？",
+   "options": [
+    "先向对方说明这是性格使然，让对方理解后再商量如何补偿",
+    "先接纳完整的自己，内在整合完成后再去处理与对方的关系",
+    "先认账并修复伤害，再谈如何给这股劲换个场景和出口",
+    "先弄清这个特点从何而来，理解了原因，伤害自然可以被原谅"
+   ],
+   "answer": 2,
+   "explanation": "共识强调：承认同源绝不等于免责。对自己讲同源是自知，对被伤的人讲同源是耍赖；顺序是先认账，再谈完整，之后再为同一股力量更换场景、技能和出口。",
+   "question_en": "Someone hurts another person with a cutting remark and then says, 'I'm just blunt; it's the flip side of my honesty.' According to the debate's consensus, what is the right order?",
+   "options_en": [
+    "First explain to them that it's your personality, then discuss compensation once they understand",
+    "First accept your whole self, and deal with the other person once inner integration is done",
+    "Own it and repair the harm first, then work on giving that energy a different setting and outlet",
+    "First understand where the trait comes from; once understood, the harm can be forgiven"
+   ],
+   "explanation_en": "The consensus: admitting a shared root never excuses anyone. Telling yourself it's two sides of one trait is self-knowledge; telling the person you hurt is dodging. Own it first, then talk about wholeness, then find new settings, skills and outlets for the same energy."
+  }
+ ]
+}

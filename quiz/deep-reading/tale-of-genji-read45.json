@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/tale-of-genji-read45.html",
+ "title": "《源氏物语》— 好书精读 Read 45",
+ "page_en": "/deep-reading/tale-of-genji-read45.en.html",
+ "title_en": "The Tale of Genji — Deep Reading 45",
+ "src_hash": "a465979b6e45",
+ "questions": [
+  {
+   "id": "007feaa6d7",
+   "question": "《源氏物语》里的「物哀」（もののあはれ）准确指什么？",
+   "options": [
+    "对不伦之恋的同情与宽恕，是平安贵族特有的一种道德观念",
+    "面对万物无常时生出的悲哀与伤感，是一种特定的哀愁情绪",
+    "事物打进心里、心不由自主应一声的感受力本身，不限于悲或喜",
+    "在因果报应观念下，人对罪与罚所怀有的那种敬畏之心"
+   ],
+   "answer": 2,
+   "explanation": "「あはれ」本是叹词，樱花开会「あはれ」，樱花落也会，所以物哀不是「悲哀」，而是被触动的能力本身。把它理解成一种哀愁情绪，是最常见的误读。",
+   "question_en": "In The Tale of Genji, what exactly does mono no aware mean?",
+   "options_en": [
+    "Sympathy and forgiveness toward forbidden love, a moral code peculiar to Heian nobles",
+    "A specific melancholy that arises from facing the impermanence of all things",
+    "The capacity itself to be moved, when something strikes the heart, whether in joy or sorrow",
+    "A reverent fear of sin and punishment under the idea of karmic retribution"
+   ],
+   "explanation_en": "'Aware' began as an exclamation: blossoms opening and blossoms falling both draw it. So mono no aware is not sadness but the capacity to be moved itself. Reading it as a melancholy mood is the most common mistake."
+  },
+  {
+   "id": "2f6dc2277a",
+   "question": "本居宣长用「要养莲花就得有一池泥水」的比喻，反驳的是哪种读法？",
+   "options": [
+    "把全书读成「淫乱者必有报」的儒佛劝诫书",
+    "把全书读成只讲宫廷权力斗争的政治史",
+    "把全书读成平安贵族的日常生活实录",
+    "把全书读成世界上第一部长篇小说"
+   ],
+   "answer": 0,
+   "explanation": "宣长之前的主流读法认为源氏私通继母、诸事凋零，可见淫乱必报，全书是劝诫书。宣长说物语自有物语的伦理，目的是让人知物哀：写不伦之恋是那池泥水，不是要赞美它，也不是要劝诫，而是唯有这种感情才逼得出最深的「あはれ」。",
+   "question_en": "Motoori Norinaga said that to grow a lotus you need a pond of muddy water. Which reading of the book was this metaphor meant to refute?",
+   "options_en": [
+    "A Confucian-Buddhist morality tale showing that licentiousness is always punished",
+    "A political history concerned only with court power struggles",
+    "A factual record of everyday Heian aristocratic life",
+    "The claim that it is the world's first novel"
+   ],
+   "explanation_en": "Before Norinaga, the dominant reading said Genji's affair with his stepmother and his later decline proved vice is punished, so the book was a cautionary tale. Norinaga argued tales have their own ethic, cultivating mono no aware: the forbidden love is the mud, there neither to praise nor to warn, because only such feelings draw out the deepest aware."
+  },
+  {
+   "id": "999a057583",
+   "question": "源氏年轻时与父皇的中宫藤壶私通、生下孩子。这桩罪在书里后来是怎样「兑现」的？",
+   "options": [
+    "冷泉帝得知身世真相后与他决裂，并剥夺了他的权位",
+    "同样的事在他身上重演，他坐到被背叛者的位置，看清了当年的罪",
+    "他因此遭到天罚，在流放须磨、明石期间身染重病，几乎因此丧了命",
+    "藤壶临终前公开了秘密，他因此失去了朝中的支持"
+   ],
+   "answer": 1,
+   "explanation": "书里没有天罚，只有对称：三十年后柏木与源氏的正妻女三宫生下薰，源氏抱着这个名义上的儿子，想到父皇当年会不会其实全都知道。报应不是外来的惩罚，是你终于坐到了对面那把椅子上。",
+   "question_en": "As a young man, Genji had an affair with his father's empress Fujitsubo and fathered a child. How does this wrong later come home to him in the book?",
+   "options_en": [
+    "Emperor Reizei learns the truth of his birth, breaks with him and strips his power",
+    "The same thing happens to him, putting him in the betrayed husband's seat to see his own wrong",
+    "Heaven punishes him with a grave illness during his exile at Suma and Akashi, nearly killing him",
+    "Fujitsubo reveals the secret on her deathbed, and he loses support at court"
+   ],
+   "explanation_en": "There is no divine punishment, only symmetry: thirty years later Kashiwagi fathers Kaoru with Genji's principal wife, the Third Princess, and Genji, holding the child, wonders whether his own father had known all along. Retribution isn't imposed from outside; it's finally sitting in the other chair."
+  }
+ ]
+}

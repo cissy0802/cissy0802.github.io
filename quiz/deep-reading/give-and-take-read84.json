@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/give-and-take-read84.html",
+ "title": "《Give and Take》— 好书精读 Read 84",
+ "page_en": "/deep-reading/give-and-take-read84.en.html",
+ "title_en": "Give and Take — Deep Reading Read 84",
+ "src_hash": "8f34c7448748",
+ "questions": [
+  {
+   "id": "a8cefdae6e",
+   "question": "按《Give and Take》，同样是给予者，有人落在业绩榜底部、有人登顶，分水岭在哪里？",
+   "options": [
+    "是否在关心他人和关心自己之间各让一半、取个折中",
+    "给予的总量多少，给得越多越容易被榨干垫底",
+    "是否在关心他人的同时也同样精明地关心自己",
+    "是否只帮那些日后有能力回报自己的人"
+   ],
+   "answer": 2,
+   "explanation": "格兰特把关心他人与关心自己看成两条独立的轴：两条都拉满的「利他兼利己」者登顶，只剩前一条的「无私」者垫底。各让一半的折中恰恰是把两条轴误当成一根跷跷板。",
+   "question_en": "In Give and Take, some givers end up at the bottom of the performance ladder and others at the top. What separates them?",
+   "options_en": [
+    "Whether they split the difference, giving up half of each kind of concern",
+    "How much they give: the more they give, the likelier they burn out at the bottom",
+    "Whether they look out for their own interests as shrewdly as they care about others",
+    "Whether they only help people who can repay them later"
+   ],
+   "explanation_en": "Grant treats concern for others and concern for self as two independent axes. 'Otherish' givers score high on both and rise; selfless givers have only the first and sink. Splitting the difference mistakes the two axes for a single seesaw."
+  },
+  {
+   "id": "f50dbc539d",
+   "question": "书中解释给予在长期里为什么会变成优势，靠的是什么结构性机制？",
+   "options": [
+    "管理层偏爱乐于助人的员工，会优先提拔他们",
+    "给予者在帮忙中积累了更多技能，最终凭个人能力胜出",
+    "人数最多的互利者会主动惩罚索取者、回报给予者，回报多来自旁观者",
+    "被帮过的人迟早会良心发现，把当初得到的好处加倍奉还给当初的给予者"
+   ],
+   "answer": 2,
+   "explanation": "格兰特明确说「善有善报」在心理学上站不住：给予者的回报很少来自被帮的那个人，而来自看在眼里的互利者，他们维护公平、惩罚索取者、回报给予者。",
+   "question_en": "What structural mechanism does the book offer for why giving pays off in the long run?",
+   "options_en": [
+    "Managers favor helpful employees and promote them first",
+    "Givers build more skills while helping and ultimately win on individual ability",
+    "Matchers, the majority, punish takers and reward givers, so the payback comes from bystanders",
+    "People who were helped eventually feel grateful and repay the giver several times over"
+   ],
+   "explanation_en": "Grant explicitly rejects 'good deeds get rewarded' as psychologically weak. The return rarely comes from the person helped; it comes from watching matchers, who enforce fairness by punishing takers and rewarding givers."
+  },
+  {
+   "id": "64626d1e9c",
+   "question": "按书中的说法，识别「随和的索取者」（伪装者）最可靠的线索是什么？",
+   "options": [
+    "看行为是否不对称：对上对下是否两副面孔，讲成果说「我」还是「我们」",
+    "看态度是否始终热情客气，过分好相处、从不得罪人的人多半另有所图",
+    "看他在团队里的人缘，人缘越好越说明大家都欠过他人情",
+    "看他是否经常拒绝别人的请求，懂得拒绝的人通常也更会替自己打算盘"
+   ],
+   "answer": 0,
+   "explanation": "随和是外观，给予还是索取是动机，两者互相独立，所以看态度识别不了伪装者。格兰特给的办法是看行为的不对称：对上司和对前台是不是两副面孔、讲成果时用「我」还是「我们」。",
+   "question_en": "According to the book, what is the most reliable way to spot an agreeable taker (a 'faker')?",
+   "options_en": [
+    "Look for asymmetry: different faces up and down the ladder, 'I' versus 'we' when describing results",
+    "Watch their manner: someone who is overly warm and pleasant usually has an agenda",
+    "Check their popularity: the better liked they are, the more people owe them favors",
+    "See whether they often turn down requests, since people who say no tend to look out for themselves"
+   ],
+   "explanation_en": "Agreeableness is a surface style while giving versus taking is a motive, and the two are independent, so manner won't expose a faker. Grant's test is behavioral asymmetry: how they treat bosses versus receptionists, and whether they say 'I' or 'we' about results."
+  }
+ ]
+}

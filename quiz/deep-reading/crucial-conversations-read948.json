@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/crucial-conversations-read948.html",
+ "title": "《关键对话》— 好书精读",
+ "page_en": "/deep-reading/crucial-conversations-read948.en.html",
+ "title_en": "Crucial Conversations — Deep Reading",
+ "src_hash": "23a1c471efd6",
+ "questions": [
+  {
+   "id": "0b7e31fcde",
+   "question": "你给下属负面反馈，他误以为你在否定他这半年的整体工作，而你并没有做错什么。《关键对话》建议用哪种工具？",
+   "options": [
+    "暂停对话：等他情绪平复几天，再换个场合重新谈这件事",
+    "对比说明：先否认他担心的那层意思，再说出你真正想谈的具体问题",
+    "先扬后抑：多列几条他的优点，冲淡这次批评的分量",
+    "真诚道歉：先为让他产生误会而道歉，等关系修复好之后再继续谈问题"
+   ],
+   "answer": 1,
+   "explanation": "书中区分得很清楚：你确实伤害了对方才道歉；你没做错、只是意图被误读，就用对比说明——先否认对方担心的意思，再说真意。误会不先清掉，后半句一个字都进不去，而且前半句必须是真话，不是缓冲客套。",
+   "question_en": "You give a report negative feedback, and he takes it as a verdict on his whole half-year, though you've done nothing wrong. Which tool does Crucial Conversations recommend?",
+   "options_en": [
+    "Pausing the conversation for a few days until he calms down, then trying again elsewhere",
+    "Contrasting: first deny the meaning he fears, then state the specific issue you actually want to discuss",
+    "Praising several of his strengths first to soften the criticism",
+    "A sincere apology for the misunderstanding, then continue once the relationship is repaired"
+   ],
+   "explanation_en": "The book draws a clear line: apologize when you actually did harm; when you did nothing wrong but your intent is misread, use contrasting, denying the feared meaning before stating your real one. Until the misunderstanding is cleared nothing else gets through, and the 'don't' half must be true, not a cushion."
+  },
+  {
+   "id": "f7a2253220",
+   "question": "同样被人当众打断，有人暴怒、有人毫无波澜。按书中的「行动路径」，主要差别在哪里？",
+   "options": [
+    "各人在事实与情绪之间给这件事编的故事不同",
+    "各人对会议本身的重视程度不同，越在乎越生气",
+    "各人与打断者的亲疏不同，关系越近越不在意",
+    "各人天生的情绪阈值不同，急性子更容易被激怒"
+   ],
+   "answer": 0,
+   "explanation": "行动路径是「看到听到 → 编故事 → 产生情绪 → 行动」。让你愤怒的是「他看不起我」这个解释，不是那次打断；换成「他大概怕会议超时」，感受就完全不同。故事是整条链上唯一可以改写的一环。",
+   "question_en": "Two people are interrupted in the same way in a meeting; one is furious, the other unbothered. According to the book's Path to Action, what mainly accounts for the difference?",
+   "options_en": [
+    "The story each tells about the event, between the fact and the feeling",
+    "How much each cares about the meeting; the more they care, the angrier",
+    "How close each is to the interrupter; the closer, the less it bothers them",
+    "Their innate emotional thresholds; hot-tempered people anger more easily"
+   ],
+   "explanation_en": "The Path to Action runs: see and hear, tell a story, feel, act. What makes you angry is the interpretation ('he looks down on me'), not the interruption; tell yourself 'he's worried about running over' and the feeling changes. The story is the one link you can rewrite."
+  },
+  {
+   "id": "ec5d2336da",
+   "question": "同事已经第三次迟交报告，你还在和他讨论「这一份怎么补救」。按书中的 CPR 框架，问题出在哪里？",
+   "options": [
+    "谈得比问题深：迟交是小事，不该上升到对他整个人的评价",
+    "时机不对：本该在他第一次迟交时就直接谈双方的信任关系",
+    "谈得比问题浅：该谈反复出现的模式，而不只是这一次的内容",
+    "缺少决策方式：应先确定由谁来拍板这次的补救方案"
+   ],
+   "answer": 2,
+   "explanation": "CPR 区分内容、模式、关系三层。第一次迟交谈内容；第三次还谈「这一份」，他道个歉、下月照旧，所以该谈模式。谈得比问题浅，问题会反复出现；谈得比问题深，对方会觉得小题大做。",
+   "question_en": "A colleague is late with a report for the third time, and you're still discussing how to fix this one. Under the book's CPR framework, what's wrong?",
+   "options_en": [
+    "You're talking too deep: a late report is minor and shouldn't become a judgment of the person",
+    "Bad timing: you should have raised the trust relationship the very first time",
+    "You're talking too shallow: it's time to address the recurring pattern, not just this instance",
+    "No decision method: first settle who decides the fix for this report"
+   ],
+   "explanation_en": "CPR separates content, pattern and relationship. The first late report is a content conversation; by the third, discussing 'this one' just gets an apology and a repeat next month, so it's time to talk about the pattern. Go shallower than the problem and it recurs; go deeper and the other person feels you're overreacting."
+  }
+ ]
+}

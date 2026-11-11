@@ -1,0 +1,69 @@
+{
+ "page": "/thinker-arena/debate.html?d=by-product-goods",
+ "title": "辩论：越想要越得不到的东西，该怎么要？",
+ "page_en": "/thinker-arena/debate.en.html?d=by-product-goods",
+ "title_en": "How do you pursue what pursuit drives away?",
+ "src_hash": "d686cc614775",
+ "questions": [
+  {
+   "id": "bd7d92b460",
+   "question": "对睡眠、灵感这类越用力越远的东西，按这场辩论的共识，最可取的做法是什么？",
+   "options": [
+    "完全不用力，什么都不安排，静静等它自己到来",
+    "把它当成纯技能，每天按固定时长反复刻意练习",
+    "对结果加倍用力，持续监测进展以便随时调整",
+    "对动作和条件用力，同时撤掉对结果的实时查岗"
+   ],
+   "answer": 3,
+   "explanation": "共识是：能直接做的是动作和条件，不能直接做的是对结果的检查。比如睡眠的动作是固定起床、睡不着就离床，分数是手环和「睡着没」，只做动作那一栏、把分数那一栏关掉。什么都不安排同样被否定，修路、作息都是要主动去做的。",
+   "question_en": "For things like sleep and inspiration that recede the harder you chase them, what does this debate's consensus recommend?",
+   "options_en": [
+    "Make no effort at all, arrange nothing, and wait for it to come on its own",
+    "Treat it purely as a skill and drill it deliberately for a fixed time daily",
+    "Push harder on the result itself, monitoring progress closely to adjust",
+    "Put effort into actions and conditions, while dropping real-time checks on the result"
+   ],
+   "explanation_en": "The consensus: actions and conditions can be done directly; checking the result can't. For sleep, the actions are a fixed wake time and leaving bed when awake, the score is the tracker and 'am I asleep yet'; do the actions and switch off the score. Arranging nothing was rejected too: building the path and keeping a schedule take active effort."
+  },
+  {
+   "id": "c99e11065d",
+   "question": "一个失眠的人每晚盯着手环的睡眠分数，越盯越睡不着。按辩论中给出的机制，问题出在哪里？",
+   "options": [
+    "用力时后台有个查岗的监控者，人一累，它要找的失败信号就占满了脑子",
+    "过度关注睡眠会让人白天减少活动，夜里身体不够疲劳",
+    "手环屏幕的蓝光会抑制褪黑素分泌，从生理上直接干扰入睡",
+    "睡眠分数往往并不准确，错误的数据让人对自己的作息做出了错误调整"
+   ],
+   "answer": 0,
+   "explanation": "这是讽刺性加工的解释：控制心灵时，执行者去够你要的状态，监控者在后台查你失败没有。人一累，执行者没力气了，查岗的照常上班，它找的失败信号就占满脑子。所以用力本身不坏，坏在多了一个查岗的。",
+   "question_en": "An insomniac checks their sleep-tracker score every night and sleeps worse the more they watch it. Using the mechanism offered in the debate, what's going wrong?",
+   "options_en": [
+    "Effort brings a background monitor checking for failure, and when you're tired its failure signal fills your mind",
+    "Focusing on sleep makes people less active by day, so they aren't tired enough at night",
+    "Blue light from the tracker suppresses melatonin and physically disrupts sleep",
+    "Sleep scores are often inaccurate, so bad data leads to wrong adjustments"
+   ],
+   "explanation_en": "This is ironic process theory: when you control your mind, an operator reaches for the desired state while a monitor checks for failure. When you're tired the operator weakens but the monitor keeps working, and the failure it's scanning for floods your mind. Effort isn't the problem; the extra checker is."
+  },
+  {
+   "id": "304816173a",
+   "question": "被爱、被信任这类副产品，和睡眠、灵感相比，有什么关键不同？",
+   "options": [
+    "它还要另一个人同意，你再怎么不查岗，对方也有完全的自由不给",
+    "它比睡眠更依赖生理条件，必须先把作息和身体状态调整好",
+    "它完全不受自己行为的影响，努力与否最后的结果都是一样的",
+    "它可以直接通过请求得到，只要把自己的需要讲清楚，就一定能拿得到"
+   ],
+   "answer": 0,
+   "explanation": "总结补充的维度：睡眠、灵感只跟自己的心有关，绕开查岗就够了；被爱还要另一个人同意，你可以把需要说具体、提出请求，但要允许对方拒绝。所以对这一类，要放下的还有「我做对了就该得到」那本账。",
+   "question_en": "How do by-products like being loved or trusted differ crucially from sleep or inspiration?",
+   "options_en": [
+    "They also need another person's consent; however little you monitor, the other person is free to withhold them",
+    "They depend even more on physiology, so you must fix your sleep and health first",
+    "They are entirely unaffected by your own behavior; effort makes no difference",
+    "They can be had just by asking; state your needs clearly and you'll get them"
+   ],
+   "explanation_en": "The summary adds this dimension: sleep and inspiration involve only your own mind, so getting rid of the checker is enough. Being loved needs someone else's consent; you can make specific requests, but must allow a no. For these, you also have to drop the ledger that says 'if I do it right, I'm owed it.'"
+  }
+ ]
+}

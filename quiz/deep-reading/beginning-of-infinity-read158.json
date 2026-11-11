@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/beginning-of-infinity-read158.html",
+ "title": "《无穷的开始》",
+ "page_en": "/deep-reading/beginning-of-infinity-read158.en.html",
+ "title_en": "The Beginning of Infinity",
+ "src_hash": "57f015c06de9",
+ "questions": [
+  {
+   "id": "d5cf8293c3",
+   "question": "多伊奇比较四季的两种解释：女神悲喜的神话，与地轴倾斜。两者的关键差别是什么？",
+   "options": [
+    "神话的细节能随手替换而照样「解释」，地轴解释的每个细节都在承重",
+    "地轴解释背后有更多观测数据支持，神话只靠口耳相传",
+    "神话依赖超自然的存在，科学解释只依赖自然界的物质",
+    "神话无法被检验，而地轴解释能做出可以被观测检验、也可能出错的预言"
+   ],
+   "answer": 0,
+   "explanation": "多伊奇特意指出神话也能检验（它预言四季循环），所以可检验性只是必要条件。真正的门槛是「难以改动」：女神、情绪、冥府都能随手换掉，而地轴倾角改一处，季节就变，还顺带解释了南北半球季节相反。",
+   "question_en": "Deutsch compares two explanations of the seasons: a myth about a goddess's grief and joy, and the tilt of Earth's axis. What is the key difference?",
+   "options_en": [
+    "The myth's details can be swapped freely and it still 'explains'; in the axial-tilt account every detail bears weight",
+    "The tilt account is backed by more observational data, while the myth is only oral tradition",
+    "The myth relies on supernatural beings, while science relies only on natural matter",
+    "The myth can't be tested, while the tilt account makes observable predictions that could fail"
+   ],
+   "explanation_en": "Deutsch notes the myth is testable too, since it predicts the cycle of seasons, so testability is only a necessary condition. The real bar is being hard to vary: the goddess, the emotion and the underworld can all be swapped, while changing the tilt changes the seasons, and it also explains why the hemispheres have opposite seasons."
+  },
+  {
+   "id": "55620b77d9",
+   "question": "一个人一辈子看到的年份都以「19」开头。多伊奇认为，我们之所以不会因此以为 2000 年后还是 19 开头，靠的是什么？",
+   "options": [
+    "许多人亲身经历过跨世纪，有了直接经验可以作为反例",
+    "概率论告诉我们，任何规律持续下去的可能性都会逐渐降低",
+    "我们有关于日历如何运作的解释：预测来自解释，不来自重复",
+    "我们归纳得足够小心，会把样本的时间跨度也考虑进去"
+   ],
+   "answer": 2,
+   "explanation": "这是多伊奇反归纳主义的例子：按归纳，这个人应确信明天还是 19 开头。我们不被骗，不是因为归纳得更小心，而是因为我们有一个关于日历如何运作的解释。",
+   "question_en": "Someone has seen every year of their life begin with '19.' Why, according to Deutsch, do we not conclude that years after 2000 will still begin with 19?",
+   "options_en": [
+    "Many people lived through the turn of a century and have direct experience as a counterexample",
+    "Probability theory tells us any pattern becomes less likely to continue over time",
+    "We have an explanation of how the calendar works; predictions come from explanations, not repetition",
+    "We induce carefully enough to factor in how long the sample spans"
+   ],
+   "explanation_en": "This is Deutsch's case against inductivism: by induction this person should be sure the next year starts with 19. We aren't fooled not because we induce more carefully, but because we have an explanation of how calendars work."
+  },
+  {
+   "id": "fdfeb05d09",
+   "question": "多伊奇为什么反对把地球看成为人类量身定做的「飞船」、只要别弄坏就好的观念？",
+   "options": [
+    "地球大部分地方会在几天内杀死没有知识和技术的人，是知识让它宜居",
+    "人类迟早要移民太空，与其守护地球，不如投资航天去寻找新家园",
+    "地球的环境本身相当稳定，人类活动对它的影响一直被严重高估",
+    "地球的资源其实是无限的，并不存在一个需要人类小心翼翼维护的生命维持系统"
+   ],
+   "answer": 0,
+   "explanation": "多伊奇说海洋、沙漠、极地、高山会在几天内杀死一个没有知识和技术的人；地球之所以「宜居」，是因为我们一直在用知识改造它。他并不说资源天然无限，而是说资源本身是知识造出来的，比如石油曾经只是讨厌的黑泥。",
+   "question_en": "Why does Deutsch reject the idea of 'spaceship Earth,' a life-support system tailored for humans that we just need to avoid breaking?",
+   "options_en": [
+    "Most of Earth would kill a person without knowledge and technology within days; knowledge is what makes it habitable",
+    "Humans will eventually emigrate to space, so investing in spaceflight beats protecting Earth",
+    "Earth's environment is stable, and human impact on it has been greatly exaggerated",
+    "Earth's resources are actually unlimited, so there's no life-support system humans must carefully maintain"
+   ],
+   "explanation_en": "Deutsch points out that oceans, deserts, polar regions and mountains would kill an unequipped person within days; Earth is habitable because we keep reshaping it with knowledge. He doesn't claim resources are naturally unlimited; rather, knowledge creates resources, as when oil went from nuisance sludge to fuel."
+  }
+ ]
+}

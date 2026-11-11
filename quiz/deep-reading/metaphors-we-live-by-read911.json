@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/metaphors-we-live-by-read911.html",
+ "title": "《我们赖以生存的隐喻》— 每日精读 Read 911",
+ "page_en": "/deep-reading/metaphors-we-live-by-read911.en.html",
+ "title_en": "Metaphors We Live By — Deep Read 911",
+ "src_hash": "a788162eab95",
+ "questions": [
+  {
+   "id": "5b56af512a",
+   "question": "莱考夫和约翰逊设想有一种文化把「争论」看成「舞蹈」。他们想借此说明什么？",
+   "options": [
+    "隐喻是修辞技巧，好的演说者应当挑选最动听的那一种",
+    "我们视为天经地义的思考与行动方式，是被一个隐喻悄悄规定好的",
+    "争论本质上是一种合作，「战争」隐喻是对它的一种错误而有害的描述",
+    "不同文化的词汇不同，翻译争论类的说法时容易出现误解"
+   ],
+   "answer": 1,
+   "explanation": "这个设想要说明：我们把争论当成攻防输赢，不是因为争论本来如此，而是被「争论是战争」这个隐喻规定了；换成舞蹈，人们体验和进行争论的方式会截然不同。他们并不说战争隐喻是「错的」，而是说每个隐喻都凸显一面、遮蔽一面。",
+   "question_en": "Lakoff and Johnson imagine a culture that sees argument as a dance. What point are they making?",
+   "options_en": [
+    "Metaphor is a rhetorical device, and good speakers should pick the most appealing one",
+    "Ways of thinking and acting we take for granted are quietly set by a metaphor",
+    "Argument is fundamentally cooperative, and the war metaphor is a false and harmful description of it",
+    "Different cultures use different words, so translating argument talk causes misunderstandings"
+   ],
+   "explanation_en": "The thought experiment shows we treat argument as attack and defense not because argument is inherently like that, but because ARGUMENT IS WAR structures it; with dance, people would experience and conduct arguments very differently. They don't call the war metaphor 'wrong'; every metaphor highlights one side and hides another."
+  },
+  {
+   "id": "b275e36974",
+   "question": "说「时间是金钱」时，隐喻搬过来的不只是「花」「省」几个词。按「隐喻蕴含」，它还带来了什么？",
+   "options": [
+    "一种可以精确换算的比例，让人能给每个小时定出价格",
+    "源域的整套推理：时间有限、宝贵、会用完，浪费它就是亏损",
+    "一组更生动的说法，让关于时间的表达更容易被人记住",
+    "对时间本质的一项客观发现：时间确实是一种经济资源"
+   ],
+   "answer": 1,
+   "explanation": "隐喻蕴含指源域的整套推理逻辑顺着映射灌进目标域：因为金钱有限、宝贵、可耗尽，我们自动推断时间也如此。这些推论不是对时间的独立观察。文章还说「时间是金钱」是工业资本主义的文化产物，不是普世真理。",
+   "question_en": "When we say 'time is money,' the metaphor brings more than words like 'spend' and 'save.' What else, according to metaphorical entailment?",
+   "options_en": [
+    "An exact conversion rate that lets people put a price on every hour",
+    "The source domain's whole logic: time is limited, precious, can run out, and wasting it is a loss",
+    "More vivid expressions that make talk about time easier to remember",
+    "An objective discovery about time's nature: it really is an economic resource"
+   ],
+   "explanation_en": "Metaphorical entailment means the source domain's reasoning flows into the target: because money is limited, precious and exhaustible, we automatically infer the same of time. These inferences aren't independent observations about time. The article adds that TIME IS MONEY is a product of industrial capitalism, not a universal truth."
+  },
+  {
+   "id": "5b8c5a743f",
+   "question": "「管道隐喻」把沟通想成把装着意思的词语发送给对方。按书中的分析，它遮蔽了什么？",
+   "options": [
+    "沟通双方之间往往存在权力差异，影响谁能把话说出口",
+    "语言会随着时代演变，旧词会不断获得新的含义和用法",
+    "意义高度依赖语境，需要听者自己去重建，而不是原样送达",
+    "表情和语气等非语言信号，比词语本身传递的信息更多"
+   ],
+   "answer": 2,
+   "explanation": "管道隐喻让我们以为话说清楚了，意思就装在词里原样送到对方脑子里，于是会对「我明明说清楚了你怎么还理解错」感到愤怒。它藏起的是：意义依赖语境，要靠听者重建。",
+   "question_en": "The 'conduit metaphor' pictures communication as sending words packed with meaning to the listener. According to the book, what does it hide?",
+   "options_en": [
+    "Power differences between speakers that affect who gets to speak",
+    "Language changes over time, so old words keep picking up new meanings",
+    "Meaning depends heavily on context and has to be rebuilt by the listener, not delivered intact",
+    "Nonverbal cues like expression and tone carry more than the words themselves"
+   ],
+   "explanation_en": "The conduit metaphor makes us think that once we've said it clearly, the meaning travels inside the words into the other person's head, which is why we're angry when they 'still' misunderstand. What it hides is that meaning depends on context and must be reconstructed by the listener."
+  }
+ ]
+}
