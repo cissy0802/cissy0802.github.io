@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/atomic-habits-read907.html",
+ "title": "《掌控习惯》— 每日精读 Read 907",
+ "page_en": "/deep-reading/atomic-habits-read907.en.html",
+ "title_en": "Atomic Habits — Deep Read 907",
+ "src_hash": "d1787048f80a",
+ "questions": [
+  {
+   "id": "cbd450bef6",
+   "question": "按《掌控习惯》的身份认同框架，有人递烟时，回答「不了，我不抽烟」为什么比「不了，我在戒烟」更可能让人坚持下去？",
+   "options": [
+    "后一种说法暴露了戒烟目标，达成目标后人容易松懈，因而更易反弹",
+    "前一种说法省掉了解释，减少社交摩擦，正是「让反应简便」这条定律的应用",
+    "前一种说法语气更坚决，能当场给对方施加压力，让递烟的人不再坚持",
+    "前一种说法已把不抽烟当成自我的一部分，后一种仍默认自己是烟民在硬扛"
+   ],
+   "answer": 3,
+   "explanation": "克利尔把这一对回答当作身份层改变的例子：说「我不抽烟」的人已把行为纳入自我认同，几乎不需要意志力；说「我在戒烟」的人心里仍认定自己是烟民。把它归到「让反应简便」是混淆了身份层和行为四定律，这里的关键是自我认同而非减少摩擦。",
+   "question_en": "In Atomic Habits' identity framework, why is someone who declines a cigarette with \"No thanks, I don't smoke\" more likely to stick with it than someone who says \"No thanks, I'm trying to quit\"?",
+   "options_en": [
+    "The second announces a goal, and once a goal is reached people tend to relax and relapse",
+    "The first skips any explanation, reducing social friction — an application of \"make it easy\"",
+    "The first sounds more decisive, putting social pressure on the other person to stop offering",
+    "The first has made not smoking part of who they are; the second still sees themselves as a smoker holding out"
+   ],
+   "explanation_en": "Clear uses this pair to illustrate identity-based change: the person who says \"I don't smoke\" has absorbed the behavior into their identity and barely needs willpower, while \"I'm trying to quit\" still assumes a smoker's identity. Calling it \"make it easy\" confuses the identity layer with the Four Laws; the point is self-image, not friction."
+  },
+  {
+   "id": "f3187c37d0",
+   "question": "《掌控习惯》主张「你不会升到目标的高度，只会跌到系统的水平」。克利尔用来说明「目标无法解释成败」的核心论证是什么？",
+   "options": [
+    "研究发现写下目标的人和不写的人成功率相近，说明设定目标本身对结果没有作用",
+    "目标只能由外界设定，系统却由自己掌控，因此只有系统才能体现个人能力的差别",
+    "赢家和输家的目标往往相同，目标既是共享的，能区分他们的只有系统",
+    "目标定得太高会让人焦虑，焦虑会拖垮执行，所以目标越宏大成功率反而越低"
+   ],
+   "answer": 2,
+   "explanation": "克利尔的例子是奥运决赛人人都想拿金牌、同场考试人人都想拿高分：目标人人相同，所以解释不了谁赢谁输。他并不否定目标的作用，目标仍用来定方向，因此「设定目标本身没用」把他的观点说过头了。",
+   "question_en": "Atomic Habits says \"you do not rise to the level of your goals, you fall to the level of your systems.\" What is Clear's central argument that goals cannot explain who succeeds?",
+   "options_en": [
+    "Studies show people who write goals down succeed no more often, so setting goals does nothing",
+    "Goals are set by others while systems are under your control, so only systems reflect ability",
+    "Winners and losers usually share the same goals, so only their day-to-day systems can tell them apart",
+    "Lofty goals breed anxiety that undermines execution, so the bigger the goal the lower the odds"
+   ],
+   "explanation_en": "Clear's examples: every Olympic finalist wants gold, every student in the exam wants a top score. Since the goal is shared, it can't explain the outcome. He doesn't say goals are useless — they still set direction — so \"setting goals does nothing\" overstates his view."
+  },
+  {
+   "id": "22549a4849",
+   "question": "想养成每晚读书的习惯，按《掌控习惯》的「两分钟法则」，最初应该怎么做，背后的理由是什么？",
+   "options": [
+    "先只要求读一页，因为习惯真正的门槛在开始那一下，先定型再优化",
+    "先每晚硬读满两分钟再停，因为限制时长能制造意犹未尽的渴求感",
+    "先定一个月读完一本书，因为具体、可衡量的目标能持续提供动力",
+    "先挑一本最感兴趣的书来读，因为让习惯有吸引力比让它简单更关键"
+   ],
+   "answer": 0,
+   "explanation": "两分钟法则是把新习惯缩到两分钟内就能启动的版本，比如「读一页」，逻辑是开始比坚持更难，先让习惯每天出现，再谈做多少。它不是要求读满两分钟就停，重点是降低启动门槛，而不是用时长限制制造渴求。",
+   "question_en": "You want to build a nightly reading habit. Under Atomic Habits' Two-Minute Rule, how should you start, and why?",
+   "options_en": [
+    "Commit to reading just one page, because the real barrier is getting started — establish first, optimize later",
+    "Read for exactly two minutes and then stop, because cutting it short leaves you craving more",
+    "Set a goal of one book a month, because a concrete, measurable target keeps motivation going",
+    "Pick the book you're most excited about, because making it attractive matters more than making it easy"
+   ],
+   "explanation_en": "The Two-Minute Rule scales a habit down to a version you can start in under two minutes, like reading one page, because starting is harder than continuing: get the habit to show up every day before worrying about how much. It isn't about stopping at two minutes to create craving; it's about lowering the barrier to starting."
+  }
+ ]
+}

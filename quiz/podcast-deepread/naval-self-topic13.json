@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/naval-self-topic13.html",
+ "title": "Naval 专题 · 自我、冥想与东方哲学",
+ "page_en": "/podcast-deepread/naval-self-topic13.en.html",
+ "title_en": "Naval Series · Self, Meditation and Eastern Philosophy",
+ "src_hash": "261e25f35180",
+ "questions": [
+  {
+   "id": "f19e14400b",
+   "question": "Naval 对冥想的说法十年里变了好几次。按其十年来说法的梳理，他到 2025–2026 年落脚在哪里？",
+   "options": [
+    "冥想的价值在于让人马上更快乐、更平静，长时间无引导静坐是最可靠的做法",
+    "冥想只是学会观察念头的途径之一，咨询、写日记、散步也行，不必盘腿",
+    "冥想已被他彻底放弃，因为他认定只有看清真相才有用，任何自我观察都是处方",
+    "冥想是开悟的必经之路，每天坐满一小时、坚持六十天，是唯一不会失败的方法"
+   ],
+   "answer": 1,
+   "explanation": "Naval 的说法首尾相接：起点和终点都是「看着念头」，2020 年那套一小时、六十天的苦功被他自己降格为许多途径中的一条，2026 年他说冥想的目的只是让人学会观察自己。同一段里他明确说冥想不会让你开悟，甚至不一定让你马上更快乐或更平静。",
+   "question_en": "Naval's account of meditation shifted several times over a decade. Tracing what he said over those ten years, where had he landed by 2025-2026?",
+   "options_en": [
+    "Meditation's value lies in making you happier and calmer right away, and long unguided sitting is the most reliable way to get there",
+    "Meditation is just one route to observing your own thoughts; therapy, journaling or long walks work too, no cross-legged sitting required",
+    "He has dropped meditation entirely, having concluded that only seeing the truth works and any self-observation is just another prescription",
+    "Meditation is the necessary path to enlightenment, and an hour a day for sixty days is the one method that cannot fail"
+   ],
+   "explanation_en": "His story comes full circle: it starts and ends with watching your thoughts, and he himself demoted the hour-a-day, sixty-day regimen of 2020 to one route among many. In 2026 he said the purpose of meditation is just to become self-observant, and in the same passage he said it won't make you enlightened and may not even make you happier or calmer right away."
+  },
+  {
+   "id": "e29a6508c2",
+   "question": "Naval 接过导师 Kapil Gupta「处方会变成新的神」的说法，主张要真相、不要方法技巧，甚至说自我提升只是换了身衣服的自我冲突。在「处方」这件事上，他自己有一个没处理的张力，是什么？",
+   "options": [
+    "他说真理不能由某个人传授，却又花多年拜访十来位开悟者，并把他们的话当作处方",
+    "他说看清真相能让坏习惯自己消失，却承认自己戒烟时仍要靠技巧，过程相当痛苦",
+    "他反对自我提升，却一直在写书和做访谈，向大众推销一套如何变富变幸福的方法",
+    "他反对方法技巧，自己却开出了「每天坐一小时、至少六十天」这张标准处方"
+   ],
+   "answer": 3,
+   "explanation": "一小时、六十天本身就是一张很标准的处方，而且正是在他和 Kapil 合作期间开出来的，这个张力他没有处理。拜访开悟者那件事，他得出的结论恰恰是得自己想明白，并没有把对方的话当处方；戒烟只是他用来说明「看清真相，习惯自己消失」的例子。",
+   "question_en": "Naval took up his mentor Kapil Gupta's idea that prescriptions become a new god, argued for truth over techniques, and even called self-improvement a dressed-up form of self-conflict. On the question of prescriptions, what tension does he leave unresolved?",
+   "options_en": [
+    "He says truth can't be handed down by anyone, yet he spent years visiting a dozen enlightened teachers and treated their words as prescriptions",
+    "He says seeing the truth makes bad habits fall away, yet he admits he still needed techniques to quit smoking and found it painful",
+    "He rejects self-improvement, yet he keeps writing and giving interviews that sell the public a method for getting rich and happy",
+    "He rejects methods and techniques, yet he himself handed out a textbook prescription: sit an hour a day for at least sixty days"
+   ],
+   "explanation_en": "An hour a day for sixty days is itself a standard prescription, and he issued it during the very years he was working with Kapil; he never reconciles the two. From his visits to the enlightened teachers he actually concluded that you have to figure it out yourself, not that their words were prescriptions to follow, and smoking was only his example of a habit that vanishes once you see clearly."
+  },
+  {
+   "id": "9a13e84b10",
+   "question": "Naval 的内心哲学链条是：财富买自由，自由是为了平静，平静来自看穿自我。如果要找这条链上最站不住的一环，应该是哪里？",
+   "options": [
+    "无我：Hume 早已证明往内看找不到自我只会让人忧郁，所以「无我」不可能通向平静",
+    "冥想：他那种无引导的一小时长坐，在研究里找不到任何对应，是整套主张里最没根据的",
+    "认识论：从「只收能亲自验证的」走到暂且相信他自认无法检验的「物质生于意识」",
+    "财富：他承认有钱有帮助，这直接推翻了「平静来自看穿自我」，链条因此自相矛盾"
+   ],
+   "answer": 2,
+   "explanation": "最弱的一环在认识论：2017 年他的规矩是不能亲自验证的一律拒绝，2026 年却暂且相信一个他承认想不出实验去检验的形而上学，判断「开悟者」也只靠个人观察，没有样本和对照。冥想部分反而站得稳一些，因为它最后收缩成「观察自己的念头」，在研究里有对应。Hume 只是得出了不同的结论，并没有驳倒无我。",
+   "question_en": "Naval's inner-life chain runs: wealth buys freedom, freedom is for peace, and peace comes from seeing through the self. Which is the weakest link in that chain?",
+   "options_en": [
+    "No-self: Hume already showed that finding no self on introspection only leads to melancholy, so no-self cannot be a path to peace",
+    "Meditation: his unguided hour-long sits have no counterpart in the research at all, making them the least supported part of his views",
+    "Epistemology: he went from accepting only what he could verify himself to tentatively believing that matter arises in consciousness, which he admits cannot be tested",
+    "Wealth: by admitting that money helps, he directly undercuts the idea that peace comes from seeing through the self, so the chain contradicts itself"
+   ],
+   "explanation_en": "The weakest link is epistemic. In 2017 his rule was to reject anything he couldn't verify himself; by 2026 he tentatively accepted a metaphysics he admits no experiment could test, and he judges who is enlightened by personal observation alone, with no sample or controls. The meditation piece actually holds up better, because it shrinks to observing your own thoughts, which does have research behind it. Hume simply reached a different conclusion; he did not refute no-self."
+  }
+ ]
+}

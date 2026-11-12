@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/ref-emotion-vocabulary.html",
+ "title": "参考 · 情绪词表与粒度训练 — 神经科学",
+ "page_en": "/neuroscience/ref-emotion-vocabulary.en.html",
+ "title_en": "Reference · Emotion Vocabulary & Granularity Training — Neuroscience",
+ "src_hash": "f6005fbdee86",
+ "questions": [
+  {
+   "id": "ddd33ebba3",
+   "question": "有人练情绪粒度，把「烦」扩展成了二十个近义词，但发现不管用哪个词，自己接下来的处理方式都一样。按情绪粒度的判据，他练到东西了吗？",
+   "options": [
+    "练到了：能稳定调用的情绪词明显变多，本身就是粒度提高最直接的标志",
+    "还没有：真正的粒度要求每个中文词都能找到准确的英文对应，才算分清",
+    "练到了：只要每个词对应的身体感觉略有不同，就说明已经分出了不同的格",
+    "还没有：一个词要指向不同的下一步才算真分出来，这些词还没分开"
+   ],
+   "answer": 3,
+   "explanation": "情绪粒度常被误解成词汇量比赛，真正的判据只有一条：两个词接下来该做的事不一样，才算分开了。下一步一样，就再找一个词。身体感觉是命名的起点，不是判据；跨语言的词本来就常常对不上，英文只是最近的落点，不是等号。",
+   "question_en": "Someone training emotional granularity expands \"annoyed\" into twenty near-synonyms, but notices that whichever word they pick, what they do next is the same. By the criterion for granularity, have they actually gained anything?",
+   "options_en": [
+    "Yes: having many more emotion words reliably at hand is itself the most direct sign that granularity has improved",
+    "Not yet: real granularity requires finding an exact English equivalent for each Chinese word before the categories are clear",
+    "Yes: as long as each word comes with a slightly different bodily sensation, they have carved out distinct categories",
+    "Not yet: a word only counts as a real distinction if it points to a different next step, and these words don't"
+   ],
+   "explanation_en": "Granularity is often mistaken for a vocabulary contest, but the only real test is whether two words lead to different next steps. If the next step is the same, keep looking for another word. Bodily sensation is where naming starts, not the test, and emotion words often don't map neatly across languages anyway; an English gloss is the nearest landing spot, not an equals sign."
+  },
+  {
+   "id": "6382c5f466",
+   "question": "一个人明知自己做错了，也想挽回，却怎么都开不了口道歉。按「内疚 vs 羞耻」的区分，卡住他的多半是什么？",
+   "options": [
+    "内疚：感受落在「我做的事很不好」上，越愧疚就越没脸开口去修复",
+    "心虚：怕的是道歉之后把更多没被发现的事一并牵扯出来、暴露出来",
+    "尴尬：只是怕被人看见自己低头认错，不涉及觉得自己坏",
+    "羞耻：感受落在「我这个人不好」上，推动的是隐藏而不是修复"
+   ],
+   "answer": 3,
+   "explanation": "内疚说「我做的这件事不好」，推动修复；羞耻说「我这个人不好」，推动躲藏。很多死活开不了口道歉的场面，卡住的其实是羞耻，不是内疚。把它当成内疚太强，就把两者的方向弄反了：内疚恰恰是推人去道歉的那种情绪。",
+   "question_en": "Someone knows they did wrong and wants to make it right, yet simply cannot bring themselves to apologize. Using the guilt-versus-shame distinction, what is most likely holding them back?",
+   "options_en": [
+    "Guilt: the feeling lands on \"what I did was very bad,\" and the guiltier they feel, the harder it is to face repair",
+    "Guilty nerves: they fear an apology will drag other undiscovered things into the open",
+    "Embarrassment: they just dread being seen backing down, without any sense that they are bad",
+    "Shame: the feeling lands on \"I am a bad person,\" which pushes toward hiding rather than repair"
+   ],
+   "explanation_en": "Guilt says \"what I did was bad\" and pushes toward repair; shame says \"I am bad\" and pushes toward hiding. Many cases of being unable to apologize are actually stuck on shame, not guilt. Blaming it on too much guilt gets the direction backwards, since guilt is precisely the emotion that moves people to apologize."
+  },
+  {
+   "id": "cc5a447651",
+   "question": "练情绪粒度时每天写一句「我感到 ____，因为 ____，我想 ____」。如果第三段（想做什么）总是写不出来，最可能说明什么？",
+   "options": [
+    "第二段的触发原因找错了，应该先回头重新梳理是什么事引起的",
+    "这类情绪本不带行动倾向，第三段空着也可以",
+    "当下情绪强度太高、前额叶不好使，应等它降下来之后再动笔写",
+    "第一段的情绪词多半还不够准，应该回去找第二个更准的词"
+   ],
+   "answer": 3,
+   "explanation": "完整句是情绪、触发、行动倾向三件套，而一个词是否分得准，判据正是它是否指向明确的下一步。所以第三段写不出来，多半是第一段的词还是「烦」「难受」这类粗标签，要回去用第二个词法则再找。高唤醒时别练是另一条关于时机的建议，不是用来解释这种情况的。",
+   "question_en": "A daily granularity exercise is to complete \"I feel ___, because ___, and I want to ___.\" If you keep failing to fill in the last part (what you want to do), what does that most likely indicate?",
+   "options_en": [
+    "The trigger in the second blank is wrong, so go back and work out again what actually set the feeling off",
+    "Some emotions simply carry no action tendency, so leaving the last blank empty is perfectly acceptable",
+    "The emotion is running too hot for the prefrontal cortex, so wait for it to come down before writing anything",
+    "The emotion word in the first blank probably isn't precise enough yet, so go back and find a more accurate second word"
+   ],
+   "explanation_en": "The full sentence is a trio of emotion, trigger and action tendency, and the test of whether a word is precise is exactly whether it points to a clear next step. So if the last part won't come, the first word is probably still a coarse label like \"annoyed\" or \"upset,\" and the second-word rule applies. Not practicing at peak arousal is separate advice about timing, not the explanation here."
+  }
+ ]
+}

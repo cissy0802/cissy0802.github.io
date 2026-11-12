@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/why-buddhism-is-true-read956.html",
+ "title": "《为什么佛学是真的》",
+ "page_en": "/deep-reading/why-buddhism-is-true-read956.en.html",
+ "title_en": "Why Buddhism Is True",
+ "src_hash": "6b5938aee9e2",
+ "questions": [
+  {
+   "id": "b175684732",
+   "question": "赖特认为，人对一场演讲、领导的一个眼神常常产生远超实际风险的焦虑。他给出的进化解释是：",
+   "options": [
+    "大脑分不清想象与现实，反复担忧不断强化恐惧回路，形成恶性循环",
+    "现代生活压力源太多，神经系统长期过载，调节焦虑的能力随之下降",
+    "误报便宜、漏报致命，焦虑被调得过敏，又与今天的环境错配",
+    "焦虑起初准确反映风险，是个人经历中的挫折把它逐渐调得过于敏感"
+   ],
+   "answer": 2,
+   "explanation": "这是内瑟的「烟雾报警器原则」：宁可误响一百次也不能漏响一次，所以焦虑天生偏敏感；再加上社交焦虑是按「被部落赶出去就会死」校准的，放到八十亿陌生人的世界里就成了假警报。问题出在设计和环境，不在现代压力或个人经历。",
+   "question_en": "Wright argues we often feel anxiety about a speech or a boss's glance far out of proportion to the real risk. What is his evolutionary explanation?",
+   "options_en": [
+    "The brain can't tell imagination from reality, so repeated worry strengthens fear circuits in a vicious cycle",
+    "Modern life has too many stressors; the overloaded nervous system gradually loses its ability to regulate anxiety",
+    "False alarms are cheap and misses are fatal, so anxiety is set too sensitive, and it was tuned for tribal life, not today",
+    "Anxiety starts out accurately tracking risk, but setbacks in one's personal history gradually make it oversensitive"
+   ],
+   "explanation_en": "This is Nesse's smoke detector principle: better a hundred false alarms than one miss, so anxiety is built oversensitive. On top of that, social anxiety was calibrated for a world where exclusion from the tribe meant death, so among eight billion strangers it fires false alarms. The cause is design plus environmental mismatch, not modern stress or personal history."
+  },
+  {
+   "id": "04bb2bcb0c",
+   "question": "赖特如何解读佛陀在《无我相经》中关于「无我」的论证？",
+   "options": [
+    "标准是道德：只有放下自我利益、不再执着得失，才谈得上真正的无我",
+    "标准是控制：若五蕴是「我」就该听我的，可心中并无总指挥",
+    "标准是实体：宇宙中不存在任何独立实体，因此「我」在形而上学上不存在",
+    "标准是存在：人没有连续的记忆和人格，所谓「我」只是一种语言幻觉"
+   ],
+   "answer": 1,
+   "explanation": "佛陀逐一检视五蕴，问的都是「它听不听我的」；赖特把它接上模块化心智：没有一个能统一掌控念头和感受的 CEO。他明确说无我不是否认人有连续的记忆、性格和身体，也不主张形而上学的绝对无我，而是关于控制与体验上的不认同。",
+   "question_en": "How does Wright read the Buddha's argument for not-self (anattā) in the Anattalakkhana Sutta?",
+   "options_en": [
+    "The criterion is morality: only by dropping self-interest and attachment can one truly realize not-self",
+    "The criterion is control: if the aggregates were the self they'd obey me, and no unified commander exists",
+    "The criterion is substance: nothing in the universe is an independent entity, so the self doesn't exist metaphysically",
+    "The criterion is existence: people lack continuous memory and personality, so the self is a linguistic illusion"
+   ],
+   "explanation_en": "The Buddha examines each of the five aggregates and asks whether it obeys you; Wright links this to the modular mind: there is no CEO with unified control over thoughts and feelings. He explicitly says not-self doesn't deny continuous memory, character or body, and he isn't defending an absolute metaphysical no-self; it's about control and experiential non-identification."
+  },
+  {
+   "id": "09f0f700f1",
+   "question": "埃文·汤普森在《我为什么不是佛教徒》中批评「佛教例外论」，其核心逻辑问题是什么？",
+   "options": [
+    "所引冥想研究样本小、缺对照组，不足以支撑「佛学为真」这一结论",
+    "把冥想包装成减压工具，剥离了佛教原本对贪婪与社会不公的批判锋芒",
+    "进化心理学解释大多难以证伪，无法为佛学的诊断提供可靠的科学背书",
+    "先剥掉与科学不合的部分，再宣布余下的「被科学证明」，是循环论证"
+   ],
+   "answer": 3,
+   "explanation": "汤普森针对的是论证结构：把佛教从宗教、仪式和伦理传统里剥离，只留与现代科学契合的部分，再说它被科学证实，结论早已被筛选方式决定。研究质量问题出自《注意炒作》，剥离社会批判是「麦当劳式正念」的批评，难以证伪是对进化心理学「就是如此的故事」的批评，都是另外几条批评。",
+   "question_en": "In Why I Am Not a Buddhist, what is the core logical problem Evan Thompson finds in \"Buddhist exceptionalism\"?",
+   "options_en": [
+    "The meditation studies it cites are small and poorly controlled, too weak to show Buddhism is true",
+    "It repackages meditation as stress relief, stripping out Buddhism's critique of greed and social injustice",
+    "Evolutionary psychology's explanations are mostly unfalsifiable, so they can't scientifically back Buddhism",
+    "It strips out whatever doesn't fit science, then declares the remainder \"proven by science\", which is circular"
+   ],
+   "explanation_en": "Thompson targets the structure of the argument: detach Buddhism from its religious, ritual and ethical traditions, keep only what fits modern science, then announce science confirms it, so the selection guarantees the conclusion. Weak studies is the \"Mind the Hype\" critique, lost social critique is the McMindfulness critique, and unfalsifiability is the just-so-story critique of evolutionary psychology; those are separate objections."
+  }
+ ]
+}

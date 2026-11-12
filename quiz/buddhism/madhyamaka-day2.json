@@ -1,0 +1,69 @@
+{
+ "page": "/buddhism/madhyamaka-day2.html",
+ "title": "佛经详解：空性与中观 — Day 2",
+ "page_en": "/buddhism/madhyamaka-day2.en.html",
+ "title_en": "Buddhist Sutra Deep Dive: Emptiness and Madhyamaka — Day 2",
+ "src_hash": "8f45f150499f",
+ "questions": [
+  {
+   "id": "3bfface172",
+   "question": "有人说：「既然中观讲桌子是空的，那桌子其实不存在，撞上去会疼也只是错觉。」按中观的立场，这句话错在哪里？",
+   "options": [
+    "没有错，只是说得太早：要等证得胜义谛之后，才能看出桌子和疼痛都不存在",
+    "空只针对心念和情绪这类心理现象，木头桌子这样的物质对象仍然有自性",
+    "空是「无自性」：否定桌子是独立不变的实体，不否定桌子本身和它的作用",
+    "错在混淆了二谛：桌子在胜义谛里是假的，在世俗谛里才是真的，两层不能混说"
+   ],
+   "answer": 2,
+   "explanation": "中观的空是「无自性」的省称：桌子依赖木料、工匠和名言约定才成立，所以无自性，但它照样能摆东西、撞上去照样疼。把二谛读成「一真一假」也不对，世俗谛与胜义谛是同一件事的两面，并不是一层真一层假。",
+   "question_en": "Someone says: \"If Madhyamaka holds that a table is empty, then the table doesn't really exist, and the pain of bumping into it is an illusion too.\" From the Madhyamaka standpoint, what is wrong with this?",
+   "options_en": [
+    "Nothing, it is just premature: only after realizing ultimate truth does one see that the table and the pain do not exist",
+    "Emptiness applies only to mental phenomena like thoughts and moods; a physical object like a wooden table still has inherent existence",
+    "Emptiness means lacking svabhava: it denies the table an independent, unchanging identity, not the table itself or what it does",
+    "It mixes the two truths: the table is false at the ultimate level and true only at the conventional level, and the levels must be kept apart"
+   ],
+   "explanation_en": "In Madhyamaka, emptiness is shorthand for the absence of svabhava (inherent existence). The table depends on wood, a carpenter and a naming convention, so it lacks svabhava, yet it still holds things up and still hurts when you hit it. Reading the two truths as one true and one false is also a mistake: conventional and ultimate truth are two aspects of the same thing."
+  },
+  {
+   "id": "a2e0003b1e",
+   "question": "月称有一个「反过来」的论证，说明空性不但不否定因果，反而是因果成立的条件。这个论证的关键是什么？",
+   "options": [
+    "因果只在世俗谛中成立，到了胜义谛就被空性取消，所以修行者证空后不再受因果约束",
+    "每个事物都有一个稳定的本质在因与果之间传递，空性保证这个本质不被外缘干扰",
+    "空性超越一切二元，因果也属于二元分别，所以证悟者应当把因果看作戏论而放下",
+    "有自性的东西不会变，种子就长不成树；正因无自性，生灭、修行乃至成佛才可能"
+   ],
+   "answer": 3,
+   "explanation": "月称的要点是：不变的东西不能变化，若有自性，种子就成不了树，凡夫也成不了佛。《中论》说「以有空义故，一切法得成」。说空性取消因果，恰好把这个论证弄反了：在二谛里，世俗谛的因果和胜义谛的空性互相依存，并不冲突。",
+   "question_en": "Candrakirti offers a \"reverse\" argument that emptiness, far from denying causality, is what makes causality possible. What is the crux of it?",
+   "options_en": [
+    "Causality holds only conventionally and is cancelled by emptiness at the ultimate level, so a realized practitioner is no longer bound by cause and effect",
+    "Each thing carries a stable essence from cause to effect, and emptiness protects that essence from interference by outside conditions",
+    "Emptiness transcends all duality, and causality is a dualistic construct, so the awakened should regard cause and effect as mere proliferation and drop it",
+    "Anything with svabhava could never change, so a seed could never become a tree; only because things lack it can arising, practice and buddhahood happen"
+   ],
+   "explanation_en": "Candrakirti's point is that what is unchanging cannot change: if things had svabhava, seeds could never become trees and ordinary beings could never become buddhas. As the Mulamadhyamakakarika puts it, \"because emptiness is possible, everything is possible.\" Claiming that emptiness cancels causality gets the argument backwards; under the two truths, conventional causality and ultimate emptiness depend on each other rather than conflict."
+  },
+  {
+   "id": "da45db3926",
+   "question": "龙树的著作几乎全是否定句（八不、四句破），提婆更说「空亦复空」。中观为什么坚持「破而不立」，连「空」也不肯立住？",
+   "options": [
+    "实相本是虚无，没有任何可以肯定的东西，所以只能用否定来描述它",
+    "任何正面立下的说法，包括「空」，一立住就成了新的执着对象",
+    "否定句比肯定句更难被反驳，便于在辩论中立于不败",
+    "「空」是唯一的终极实体，其余一切概念都须被否定，才能把它显露出来"
+   ],
+   "answer": 1,
+   "explanation": "破而不立是一种防执着的策略：只要正面立下一个说法，它就又成了可以抓住的东西，所以连「空」也只是假名，把空执为实有会落入新的边见。把空当作唯一实在的终极实体，正是「空亦复空」要拆掉的东西；读成「实相是虚无」，则是龙树花大篇幅防范的那种误读。",
+   "question_en": "Nagarjuna's work is almost entirely negations (the eight negations, the tetralemma), and Aryadeva adds that \"emptiness too is empty.\" Why does Madhyamaka refute without asserting, refusing to establish even emptiness?",
+   "options_en": [
+    "Reality is ultimately nothingness, so there is nothing to affirm and it can only be described by negation",
+    "Any positive claim, emptiness included, becomes a new object of clinging the moment it is put forward",
+    "Negative claims are logically harder to rebut than positive ones, which keeps Madhyamaka undefeated in debate",
+    "Emptiness is the one ultimate reality, and every other concept must be negated so that it can shine through"
+   ],
+   "explanation_en": "Refuting without asserting is a safeguard against clinging: once you put forward a positive claim, it becomes something to grab onto. So even emptiness is only a conventional designation, and reifying it lands you in a new extreme. Treating emptiness as the one ultimate reality is exactly what \"emptiness too is empty\" takes apart, and reading it as nothingness is the misreading Nagarjuna spends so much effort heading off."
+  }
+ ]
+}

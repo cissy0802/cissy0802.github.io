@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/amazon-vp-questions-corporate-politics-but-pod3.html",
+ "title": "The Peterman Pod × Ethan Evans — 往白的那头说宽一点",
+ "page_en": "/podcast-deepread/amazon-vp-questions-corporate-politics-but-pod3.en.html",
+ "title_en": "The Peterman Pod × Ethan Evans — Stretch Toward the White End",
+ "src_hash": "ce622fa28159",
+ "questions": [
+  {
+   "id": "a1c2df2040",
+   "question": "一位前 Amazon VP 在讲「高管气场」时随口说「带数字的说法可信度高 62%」，随即承认这个数字是他当场编的。这一幕最直接地揭示了「把自己说宽一点」为什么管用？",
+   "options": [
+    "精确的数字能体现说话人的专业素养，因此数字本身就是可信度的来源",
+    "听众更在意说话人的职位和资历，内容真假并不影响他们的判断",
+    "人们其实知道这类数字多半是编的，但出于礼貌不会当面点破",
+    "听的人通常不去核查，一个具体又说得笃定的说法就足以被当真"
+   ],
+   "answer": 3,
+   "explanation": "节目点出这条线的落点：说宽之所以管用，是因为听的人不核查，62% 就是当场的证明。数字只是让说法听起来具体，它本身并不提供可信度，真正起作用的是没人去查；同一期里他引用的气场公式也和原始出处对不上。",
+   "question_en": "While discussing executive presence, a former Amazon VP tossed out that \"claims with numbers are 62% more believable,\" then admitted he had just made the figure up. What does this moment most directly reveal about why stretching your claims works?",
+   "options_en": [
+    "Precise figures signal the speaker's expertise, so the number itself is what makes a claim credible",
+    "Audiences care more about the speaker's title and seniority, so whether the content is true doesn't matter",
+    "People actually know such figures are mostly invented but are too polite to say so to the speaker's face",
+    "Listeners usually don't check, so a specific claim delivered with confidence is enough to be believed"
+   ],
+   "explanation_en": "The episode lands on this point: stretching works because listeners don't verify, and the 62% figure proved it on the spot. The number only makes a claim sound specific; credibility comes from nobody checking. Even the executive-presence formula he cited in the same episode didn't match its original source."
+  },
+  {
+   "id": "e2b46def56",
+   "question": "经理手上只有一个好项目，一位下属天天来要，另一位从不吭声。按节目中对经理心理的描述，安静的那位通常会怎样？",
+   "options": [
+    "经理会告诉自己「以后再补偿他」，然后一直没补上，等待越久越被跳过",
+    "经理会按两人的实际能力分配，安静与否对结果影响不大，最终公平",
+    "经理会把项目给安静的那位，因为不争不抢在经理眼里代表更可靠",
+    "经理会意识到自己在亏待老实人，于是在下一次机会里优先补偿给他"
+   ],
+   "answer": 0,
+   "explanation": "经理不会对自己说「我在亏待老实人」，而是合理化成「以后再补偿」，结果永远补不上。这就像操作系统里没有实现「老化」的调度器：按谁吵谁先排，低优先级进程会一直饿着。以为经理会意识到并主动补偿，恰好低估了人作为「合理化机器」的能力。",
+   "question_en": "A manager has one good project. One report asks for it every day; the other never speaks up. According to the episode's account of how managers think, what usually happens to the quiet one?",
+   "options_en": [
+    "The manager tells themselves \"I'll make it up to them later,\" never does, and the longer they wait the more they're skipped",
+    "The manager assigns work on actual ability, so being quiet makes little difference and things end up fair",
+    "The manager gives them the project, because not pushing comes across as more reliable in a manager's eyes",
+    "The manager realizes they're shortchanging the nice person and makes sure to compensate them at the next opportunity"
+   ],
+   "explanation_en": "Managers don't tell themselves \"I'm shortchanging the nice people\"; they rationalize it as \"I'll make it up later\" and never do. It's like an OS scheduler without aging: serve whoever is loudest and low-priority processes starve. Expecting the manager to notice and compensate underestimates people as \"rationalization machines.\""
+  },
+  {
+   "id": "aec7560054",
+   "question": "如果每个人都把职场政治的招数玩到最优，节目里给出的判断和建议是什么？",
+   "options": [
+    "这会让真正有实力的人脱颖而出，因为各种手段被拉平之后，大家比的就只剩下技术能力",
+    "这会变成人人互捅、回到原点的囚徒困境，与其玩得更狠，不如换一张对手更弱的牌桌",
+    "这会让组织迅速崩溃，所以应该主动退出政治游戏，专心把本职工作做到无可挑剔",
+    "这会逼出更高明的玩法，所以要比别人更早学会更暗的招数，才能保住自己的位置"
+   ],
+   "answer": 1,
+   "explanation": "他把人人玩到最优的局面比作囚徒困境，结果是互相抵消、原地不动（类似红皇后效应）。他的对策是换桌，找自己几项能力交集里几乎没人竞争的位置，比如在大公司学成 AWS 专家后去高增长公司。「学更暗的招」正是他说的不要做的事。",
+   "question_en": "If everyone played office politics optimally, what does the episode conclude, and what does it advise?",
+   "options_en": [
+    "It lets the truly skilled rise, because once tactics cancel out, the only thing left to compete on is technical ability",
+    "It becomes a prisoner's dilemma where everyone stabs everyone and ends up back at zero, so rather than play harder, move to a table with weaker opponents",
+    "It quickly destroys the organization, so you should opt out of politics entirely and make your own work beyond reproach",
+    "It forces ever cleverer play, so you need to learn darker tactics before others do just to hold your position"
+   ],
+   "explanation_en": "He frames universal optimal play as a prisoner's dilemma: everything cancels out and nobody moves (a Red Queen effect). His answer is to change tables — find the intersection of skills where almost no one competes, like becoming an AWS expert at Amazon and then joining a high-growth company. Learning darker tactics is exactly what he advises against."
+  }
+ ]
+}

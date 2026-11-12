@@ -1,0 +1,69 @@
+{
+ "page": "/novel-deepread/dark-forest-novel2.html",
+ "title": "三体II · 黑暗森林 — 小说精读 No.2",
+ "page_en": "/novel-deepread/dark-forest-novel2.en.html",
+ "title_en": "The Dark Forest — Novels, Deep-Read No.2",
+ "src_hash": "84c819205d74",
+ "questions": [
+  {
+   "id": "eb010c2025",
+   "question": "在「黑暗森林」的推导中，假如两个文明都确知自己是善意的，隔着几十光年相遇，猜疑链为什么仍让它们难以建立信任？",
+   "options": [
+    "弱的一方会刻意隐藏真实实力，强的一方因此无法相信它的任何表态",
+    "善意的文明在资源竞争中也会逐渐变得敌对，最初的善意终将被消耗殆尽",
+    "我不知道你如何判断我、如何判断我对你的判断，可无限嵌套",
+    "两个文明的语言和思维差异太大，信号无法被翻译，善意因此传达不过去"
+   ],
+   "answer": 2,
+   "explanation": "猜疑链与双方善恶无关：漫长的通信延迟让双方无法靠交流确认对方怎么看自己，这种推测层层嵌套、没有尽头，两个善良的文明一样解不开。资源竞争来自公理二，实力隐藏接近技术爆炸，都是推导里的其他环节，不是猜疑链本身。",
+   "question_en": "In the Dark Forest argument, suppose two civilizations each know they are benevolent and meet across decades of light-travel. Why does the chain of suspicion still block trust?",
+   "options_en": [
+    "The weaker side will hide its true strength, so the stronger side can't believe anything it says",
+    "Even benevolent civilizations turn hostile under resource competition, so goodwill eventually runs out",
+    "I can't know how you judge me, or how you judge my judgment of you, and this nests without end",
+    "Their languages and minds differ too much to translate signals, so goodwill can't get across"
+   ],
+   "explanation_en": "The chain of suspicion doesn't depend on anyone's intentions: communication lag makes it impossible to confirm how the other side reads you, and the guessing recurses forever, so two good civilizations are just as stuck. Resource competition comes from the second axiom and hidden strength is closer to the technological explosion; both are other links in the argument, not the chain itself."
+  },
+  {
+   "id": "6249d681cf",
+   "question": "把黑暗森林当作一个博弈论模型来检验，哪一环最站得住？",
+   "options": [
+    "公理二，物质总量不变，必然让任意两个文明陷入资源上的竞争",
+    "清除策略，打击手段不暴露发射源，开枪几乎不会给自己招来风险",
+    "技术爆炸，人类历史已证明这一点，所以它是基石",
+    "猜疑链，它不需要任何关于外星人心理的假设，只依赖通信延迟"
+   ],
+   "answer": 3,
+   "explanation": "猜疑链最硬：它只靠通信延迟，在地球上也有军备竞赛与安全困境作对应。公理二在宇宙尺度上撑不起稀缺，清除策略既没算成本、又靠设定给自己开了不暴露发射源的方便之门，这些都是为了得出最黑的结论挑出来的前提。",
+   "question_en": "Treating the Dark Forest as a game-theoretic model, which link holds up best?",
+   "options_en": [
+    "The second axiom: a fixed total of matter forces any two civilizations into resource competition",
+    "The cleansing strategy: strikes don't reveal their source, so shooting carries almost no risk",
+    "The technological explosion: human history already proves it, so it anchors the whole argument",
+    "The chain of suspicion: it assumes nothing about alien psychology, only communication lag"
+   ],
+   "explanation_en": "The chain of suspicion is the sturdiest: it rests only on signal delay and has real analogues in arms races and the security dilemma. The second axiom can't generate scarcity at cosmic scale, and the cleansing strategy ignores its own cost and relies on a convenient premise that shooters stay hidden; these were picked to reach the darkest conclusion."
+  },
+  {
+   "id": "ee0c410ff3",
+   "question": "有人引用《黑暗森林》论证「商场上永远别释放善意，发现对手就先下手」。小说自身的情节对这种读法构成了什么反驳？",
+   "options": [
+    "罗辑全凭严守秘密取胜，说明隐藏信息才是唯一稳定的策略",
+    "叶文洁临终承认两条公理有误，推导的前提因此被推翻",
+    "三体世界最终在威慑下妥协，威慑之下的沟通是成立的",
+    "黑暗战役中各舰最终拒绝开火，说明合作能够战胜猜疑"
+   ],
+   "answer": 2,
+   "explanation": "结局里三体世界在罗辑的威慑下接受了三条要求，在这本书里，威慑之下的沟通行得通，这本身就否定了把黑暗森林当现实法则的读法。罗辑恰恰是把一切说出来才赢的；黑暗战役里各舰先开了火，叶文洁也从未收回公理。",
+   "question_en": "Someone cites The Dark Forest to argue \"in business, never show goodwill; strike first the moment you spot a rival\". How does the novel's own plot undercut this reading?",
+   "options_en": [
+    "Luo Ji wins purely by keeping his secret, showing that concealment is the only stable strategy",
+    "Ye Wenjie admits before dying that her two axioms were wrong, collapsing the premises",
+    "Trisolaris ultimately concedes under deterrence, so communication under deterrence works in the book",
+    "The ships in the Battle of Darkness finally refuse to fire, showing cooperation beats suspicion"
+   ],
+   "explanation_en": "In the ending Trisolaris accepts Luo Ji's three demands under deterrence: within the novel, communication backed by deterrence works, which itself refutes treating the Dark Forest as a law of real life. Luo Ji actually wins by revealing everything; in the Battle of Darkness the ships do fire, and Ye Wenjie never retracts the axioms."
+  }
+ ]
+}

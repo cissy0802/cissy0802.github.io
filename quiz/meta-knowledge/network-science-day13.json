@@ -1,0 +1,69 @@
+{
+ "page": "/meta-knowledge/network-science-day13.html",
+ "title": "元知识详解：网络科学 — Day 13",
+ "page_en": "/meta-knowledge/network-science-day13.en.html",
+ "title_en": "Meta Knowledge: Network Science — Day 13",
+ "src_hash": "04fe15d59316",
+ "questions": [
+  {
+   "id": "0dda7e824e",
+   "question": "一个团队信息流转很慢。按小世界网络的原理，哪种改动最可能用最小成本大幅缩短信息传递的路径？",
+   "options": [
+    "把全员的联系彻底打散重新随机分配，让每个人和任意部门都有同样多的联系",
+    "在几个原本不相往来的部门之间建立两三条跨部门协作关系，不必频繁联系",
+    "增加全员例会的频率，让所有信息都集中在会上同步，减少私下的点对点传递",
+    "让每个人都和本部门所有同事保持更密切的日常沟通，把邻里关系织得更紧"
+   ],
+   "answer": 1,
+   "explanation": "Watts 与 Strogatz 的模型显示，在邻里紧密的网络里只要加入极少量跨圈捷径，平均距离就会骤降，同时保留邻里结构。全部打散成随机网络虽然路径也短，却丢掉了邻里紧密度；问题不在沟通太少，而在缺少几条跨部门的桥。",
+   "question_en": "Information moves slowly through a team. Based on small-world network principles, which change is most likely to sharply shorten information paths at the lowest cost?",
+   "options_en": [
+    "Scramble everyone's connections at random so each person is equally linked to every department",
+    "Set up two or three working ties between departments that don't normally talk — no need for frequent contact",
+    "Hold all-hands meetings more often so all information is synced there rather than passed person to person",
+    "Have everyone communicate more closely with all colleagues in their own department, tightening local ties"
+   ],
+   "explanation_en": "Watts and Strogatz showed that adding just a few long-range shortcuts to a highly clustered network collapses the average path length while keeping local clustering. Fully randomizing also gives short paths but destroys the local structure. The problem isn't too little communication; it's missing a few cross-group bridges."
+  },
+  {
+   "id": "8deecc0e3c",
+   "question": "关于无标度网络（少数枢纽连接极多、大多数节点连接很少）的稳健性，下列哪种说法正确？",
+   "options": [
+    "由于大多数节点都很脆弱，随机损坏 5% 的节点就足以让无标度网络失去连通性",
+    "随机损坏一部分节点几乎没影响，但专门打掉连接最多的少数枢纽会让全网近乎瘫痪",
+    "无论随机损坏还是定向攻击，影响都取决于损坏节点的总数，与挑哪些节点无关",
+    "因为枢纽之间有大量冗余连接，即使枢纽被精准打掉，网络也能靠其余节点维持连通"
+   ],
+   "answer": 1,
+   "explanation": "绝大多数节点连接很少，随机坏掉的几乎总是这些不重要的节点，所以随机故障影响很小；而连通性高度依赖少数枢纽，定向打掉它们网络就会崩溃。枢纽既是稳健的来源也是最大的弱点，所以「挑哪些节点无关」恰好说反了。",
+   "question_en": "Regarding the robustness of scale-free networks (a few hubs with huge numbers of links, most nodes with very few), which statement is correct?",
+   "options_en": [
+    "Since most nodes are fragile, randomly removing just 5% of nodes is enough to break a scale-free network apart",
+    "Randomly knocking out some nodes barely matters, but deliberately taking out the few biggest hubs nearly cripples the network",
+    "Random failure and targeted attack do the same damage; what matters is how many nodes fail, not which ones",
+    "Because hubs are heavily interconnected, the network stays connected through other nodes even if hubs are targeted"
+   ],
+   "explanation_en": "Most nodes have few links, so random failures almost always hit unimportant nodes and do little harm. But connectivity depends heavily on a handful of hubs, so a targeted attack on them collapses the network. Hubs are both the source of robustness and the biggest weakness, so \"which nodes doesn't matter\" gets it backwards."
+  },
+  {
+   "id": "c7de50b8e6",
+   "question": "公司准备裁员，名单上有一位职位不高、KPI 也不亮眼的跨部门协调员。用「中介中心性」的视角，应该先看什么？",
+   "options": [
+    "这个人的直接产出与同级员工相比排在什么位置，产出靠后的就可以先裁",
+    "有多少跨部门之间的信息和合作路径必须经过这个人，他走后哪些流会断",
+    "这个人在公司里认识的同事总数有多少，人脉越广的员工越不应该被裁掉",
+    "这个人在组织架构图上离高管有几级，离决策层越近的节点权力越大越难替代"
+   ],
+   "answer": 1,
+   "explanation": "中介中心性衡量的是有多少条最短路径必须穿过某个节点，桥接两个群体的人不必朋友最多，却垄断了跨群体的信息流。只看人脉总数是把度数和中介性混为一谈；这类协调者的价值常常要等他离开、项目周期拉长后才显现。",
+   "question_en": "A company is planning layoffs, and the list includes a cross-team coordinator with a modest title and unimpressive KPIs. From a betweenness-centrality perspective, what should you look at first?",
+   "options_en": [
+    "How this person's direct output ranks against peers at the same level, cutting the lowest performers first",
+    "How many cross-team information and collaboration paths run through this person, and which would break if they left",
+    "How many colleagues this person knows in total — the wider someone's network, the less they should be cut",
+    "How many levels this person sits below the executives, since nodes closer to leadership hold more power"
+   ],
+   "explanation_en": "Betweenness centrality counts how many shortest paths must pass through a node. Someone bridging two groups needn't have the most contacts, yet controls the flow between them. Counting total contacts confuses degree with betweenness; a bridge's value often only shows after they leave and projects slow down."
+  }
+ ]
+}

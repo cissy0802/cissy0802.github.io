@@ -1,0 +1,69 @@
+{
+ "page": "/mental-models/munger-misjudgment-day40.html",
+ "title": "思维模型详解：芒格人类误判心理学（上） · 2026-05-31",
+ "page_en": "/mental-models/munger-misjudgment-day40.en.html",
+ "title_en": "Mental Models: Munger's Psychology of Misjudgment (Part 1) · 2026-05-31",
+ "src_hash": "6cc95ddc3778",
+ "questions": [
+  {
+   "id": "d9fb621714",
+   "question": "一位按小时计费的律师真诚地认为，继续打官司对客户最有利。按芒格「激励引起的偏见」，这种情况比明知故犯更危险，原因是：",
+   "options": [
+    "客户缺乏专业知识，信息不对称让他能够长期得逞",
+    "他明知不妥却习惯成自然，道德感被一点点磨钝了",
+    "激励改写了他的判断本身，他真心相信，自己觉察不到",
+    "他的贪婪被专业话语包装起来，客户和同行都更难识破"
+   ],
+   "answer": 2,
+   "explanation": "芒格的要点是激励不只塑造行为，还塑造信念：当事人不是在骗人，而是被激励调过色的认知让他真诚地相信自己正当。危险在于本人觉察不到；把它理解成被包装的贪婪或逐渐麻木的明知故犯，都默认了他心里清楚。",
+   "question_en": "A lawyer who bills by the hour sincerely believes continued litigation is best for the client. Why does Munger see this \"incentive-caused bias\" as more dangerous than conscious self-dealing?",
+   "options_en": [
+    "The client lacks expertise, so information asymmetry lets him get away with it for years",
+    "He knows it's wrong but has grown used to it, slowly dulling his moral sense",
+    "The incentive has rewritten his judgment itself; he truly believes it, so he can't detect it",
+    "His greed is dressed up in professional language, making it harder for others to spot"
+   ],
+   "explanation_en": "Munger's point is that incentives shape belief, not just behavior: the agent isn't lying, his incentive-tinted cognition makes him sincerely see himself as right. The danger is that he can't see it. Reading it as disguised greed or as knowing wrongdoing gone numb both assume he knows, deep down."
+  },
+  {
+   "id": "99ce7bf329",
+   "question": "你押注了半年的技术方向开始出现反例数据。按芒格的「痛苦回避型否认」，哪种做法最对症？",
+   "options": [
+    "先把数据放一放，等情绪平复以后再凭直觉重新做判断",
+    "提醒自己保持客观，亲自逐条复核这些数据是否真的属实",
+    "找几位最了解你、一直支持你的老朋友，听听他们的判断",
+    "事先定好什么算失败，再请一个不在乎你面子的人来指认"
+   ],
+   "answer": 3,
+   "explanation": "否认发生在感知层、本人主观真诚，所以无法靠「努力客观」自查：你没法用被污染的工具检查自己有没有被污染。解法是预先注册失败标准，再加外部对照。朋友恰恰不行，因为朋友会维护你的否认。",
+   "question_en": "A technical direction you've bet six months on starts producing counter-evidence. Under Munger's pain-avoiding psychological denial, which response actually addresses the problem?",
+   "options_en": [
+    "Set the data aside until your emotions settle, then judge again by intuition",
+    "Remind yourself to stay objective and personally re-check each data point",
+    "Ask a few old friends who know you best and have always backed you",
+    "Decide in advance what counts as failure, and get someone who doesn't care about your ego to call it"
+   ],
+   "explanation_en": "Denial happens at the perceptual level and the denier is sincere, so trying harder to be objective can't catch it: you can't use a contaminated instrument to test itself for contamination. The fix is pre-registering failure criteria plus an outside check. Friends are exactly the wrong outside check, because they protect your denial."
+  },
+  {
+   "id": "b9ded76b49",
+   "question": "买一套 200 万的房子时，销售推荐一个 3 万元的升级包，你下意识觉得「才 1.5%，无所谓」。按芒格的对比误反应，最可靠的防御是：",
+   "options": [
+    "把 3 万单独拿出来，跟年薪、机会成本等无关基准比",
+    "意识到自己正被总价锚定，并提醒自己不要受它影响",
+    "仔细核算升级包占总价的比例，确认它确实足够小",
+    "再看一套更贵的升级方案作对照，判断眼前这个是否划算"
+   ],
+   "answer": 0,
+   "explanation": "对比误反应源自感知只编码相对变化，是硬件限制，「我意识到了」修不好它，芒格说办法是永远只看绝对数字并换一个外部锚。算百分比或再找一个对照，只是在相对比较里继续打转。",
+   "question_en": "Buying a 2-million-yuan home, you're offered a 30,000-yuan upgrade and instinctively think \"it's only 1.5%\". Under Munger's contrast-misreaction tendency, what's the most reliable defense?",
+   "options_en": [
+    "Take the 30,000 on its own and compare it with an unrelated benchmark such as salary or opportunity cost",
+    "Recognize you're being anchored by the total price and tell yourself not to be swayed",
+    "Carefully work out the upgrade's share of the total to confirm it really is small",
+    "Look at a pricier upgrade package for comparison to judge whether this one is a deal"
+   ],
+   "explanation_en": "Contrast misreaction comes from perception encoding only relative change; it's a hardware limit, so mere awareness doesn't fix it. Munger's remedy is to look only at absolute numbers and swap in an external anchor. Computing percentages or adding another comparison just keeps you inside the relative frame."
+  }
+ ]
+}

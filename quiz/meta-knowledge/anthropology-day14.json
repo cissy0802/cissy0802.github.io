@@ -1,0 +1,69 @@
+{
+ "page": "/meta-knowledge/anthropology-day14.html",
+ "title": "元知识详解：人类学 — Day 14",
+ "page_en": "/meta-knowledge/anthropology-day14.en.html",
+ "title_en": "Meta-Knowledge: Anthropology — Day 14",
+ "src_hash": "4656e1f3de14",
+ "questions": [
+  {
+   "id": "58041fd913",
+   "question": "按莫斯对礼物经济的分析，朋友送你一份礼物，你当场掏出等值的现金还给对方，为什么会被视为冒犯？",
+   "options": [
+    "按三重义务的规定，回礼必须是实物而不能是货币，用现金回礼违反了交换规则",
+    "当场等值清算等于宣布两清、关系了结，而礼物正靠悬着的人情债维系关系",
+    "现金被视为不洁之物，用钱回礼会玷污礼物的神圣意味",
+    "等值回礼暴露了你对礼物价格的估算，让对方感到自己的心意被看轻、被精打细算"
+   ],
+   "answer": 1,
+   "explanation": "莫斯指出礼物的关键在时间差与不等价：回礼要延迟、略有出入，债务才能在循环中维系关系。当场等值奉还等于说「我不想欠你，我们两清」，把礼物变成了市场清算。问题不在用现金还是实物，而在立即两清。",
+   "question_en": "Following Mauss's analysis of gift economies, why is it an insult to immediately hand a friend cash equal to the value of the gift they just gave you?",
+   "options_en": [
+    "Under the three obligations, a return gift must be an object rather than money, so cash breaks the rules of exchange",
+    "Settling up on the spot declares you owe each other nothing and ends the tie, while gifts bind people through unpaid debt",
+    "Money is seen as impure, and in many traditional cultures repaying with cash defiles the sacred meaning of the gift",
+    "Matching the value exposes your estimate of the gift's price, making the giver feel their gesture was coldly appraised"
+   ],
+   "explanation_en": "Mauss stresses delay and inequivalence: the return should come later and differ a little, so the debt keeps circulating and sustains the relationship. Paying back the exact value at once says \"I don't want to owe you; we're square,\" turning the gift into a market settlement. The issue is instant squaring, not cash versus objects."
+  },
+  {
+   "id": "dc27d5a87f",
+   "question": "一个人辞去稳定工作准备转型，几个月来一直陷在「我现在到底算什么」的悬空和焦虑里。用人类学的「阈限期」概念，该如何看待这段经历？",
+   "options": [
+    "这是融合阶段的典型反应，新身份已经确立，只是周围的人还没有完成对它的接纳",
+    "这说明转型前的准备不足，应尽快找回一个确定的身份标签，以免长期失序损害心理健康",
+    "这种焦虑来自现代社会缺乏成人礼，只要补办一个仪式就能直接跳过这段中间状态",
+    "这是旧身份已去、新身份未立的过渡态，失序是转变的必经阶段，也是可塑性最高的窗口"
+   ],
+   "answer": 3,
+   "explanation": "通过仪式分为分离、阈限、融合三段；阈限期规则悬置、身份被剥除，最混乱也最有可塑性，没有穿越这段失序，新身份就无法真正落地。急着抓回确定的身份反而会错过这个窗口。仪式的作用是安全摆渡过这段真空，而不是跳过它。",
+   "question_en": "Someone quits a stable job to change careers and has spent months stuck in an unsettled \"what am I now?\" anxiety. Through the anthropological concept of liminality, how should this be understood?",
+   "options_en": [
+    "It's typical of the incorporation phase: the new identity is already set and others just haven't accepted it yet",
+    "It shows the transition was poorly prepared; they should quickly reclaim a definite identity before prolonged disorder harms them",
+    "It stems from modern society lacking coming-of-age rites; holding a ritual would let them skip this middle stage entirely",
+    "It's the in-between state after the old identity is gone and before the new one forms — necessary disorder, and the most malleable window"
+   ],
+   "explanation_en": "Rites of passage run through separation, liminality, and incorporation. In the liminal phase rules are suspended and status is stripped away — the most chaotic and the most malleable stage — and without passing through it the new identity never takes root. Rushing back to certainty wastes the window. Rituals exist to carry people safely through the void, not to skip it."
+  },
+  {
+   "id": "d645f4173b",
+   "question": "按布迪厄的理论，「符号暴力」指的是什么？",
+   "options": [
+    "被支配者认同支配者的标准，把结构性的不利归咎于自己不够好、不够努力",
+    "支配阶层借助媒体和宣传公开贬低弱势群体的文化，以语言羞辱维持社会等级",
+    "弱势群体拒绝接受主流文化的品味，用对抗性的符号表达来反击上层的支配",
+    "学校用标准化考试公开淘汰下层家庭的孩子，以制度化的手段剥夺他们的机会"
+   ],
+   "answer": 0,
+   "explanation": "符号暴力的「狠」在于它不需要公开强制：被支配者心甘情愿接受游戏规则，还觉得天经地义，于是把出身劣势看成个人能力不足。公开贬低、公开淘汰都是看得见的压迫，恰恰不是布迪厄说的这种隐蔽机制；学校的作用是把家庭传下的惯习包装成「个人天赋」，让不平等显得公平。",
+   "question_en": "In Bourdieu's theory, what is \"symbolic violence\"?",
+   "options_en": [
+    "The dominated adopt the standards of the dominant and blame structural disadvantage on their own inadequacy or lack of effort",
+    "The dominant class openly disparages subordinate groups' culture through media and propaganda to keep hierarchy in place",
+    "Subordinate groups reject mainstream taste and use oppositional symbols to push back against domination from above",
+    "Schools openly weed out lower-class children through standardized exams, stripping their opportunities by institutional means"
+   ],
+   "explanation_en": "What makes symbolic violence so effective is that it needs no open coercion: the dominated willingly accept the rules of the game as natural and read their inherited disadvantage as personal failing. Open disparagement or overt exclusion are visible oppression, not the hidden mechanism Bourdieu describes. Schools repackage inherited habitus as \"natural talent,\" making inequality look fair."
+  }
+ ]
+}

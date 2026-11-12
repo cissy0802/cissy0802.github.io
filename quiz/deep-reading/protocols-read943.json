@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/protocols-read943.html",
+ "title": "《Protocols》— 好书精读 Read 943",
+ "page_en": "/deep-reading/protocols-read943.en.html",
+ "title_en": "Protocols — Deep Reading 943",
+ "src_hash": "de21ab944289",
+ "questions": [
+  {
+   "id": "82d957f4c5",
+   "question": "对《Protocols》这类「协议化科普」，书评认为最核心的毛病是什么？",
+   "options": [
+    "大多数协议的方向本身是错的，照做非但无益，反而会损害睡眠、情绪和运动表现",
+    "整齐的步骤格式抹平了证据强度，读者分不清哪条有大样本支撑、哪条只有小样本",
+    "协议写得过于笼统，只说「晒太阳有好处」，缺少剂量和时机，导致读者无从下手",
+    "书里推荐的干预大多依赖昂贵的设备和补剂，普通读者很难长期负担得起，难以坚持"
+   ],
+   "answer": 1,
+   "explanation": "书评的判断是：该批评的是置信度校准，不是方向。两条写得一样漂亮的协议，背后可能一条是六万人的队列，一条是八个人的实验，格式让读者失去了分辨证据强弱的能力。说协议「方向是错的」与书评相反，书评认为最上游那几条免费、低风险且证据扎实。",
+   "question_en": "For \"protocolized\" popular science like Protocols, what does the review identify as the core flaw?",
+   "options_en": [
+    "Most of the protocols point in the wrong direction, so following them actually harms sleep, mood, and performance",
+    "The uniform step-by-step format flattens evidence strength, so readers can't tell large-cohort findings from tiny experiments",
+    "The protocols are too vague — just \"sunlight is good\" without dose or timing — leaving readers unsure what to do",
+    "Most recommended interventions require expensive devices and supplements that ordinary readers can't afford"
+   ],
+   "explanation_en": "The review's verdict: the problem is calibration, not direction. Two equally tidy protocols may rest on a 60,000-person cohort and an eight-person experiment, and the format strips away the reader's ability to weigh evidence. Saying the protocols point the wrong way contradicts the review, which holds the top few are free, low-risk, and well supported."
+  },
+  {
+   "id": "61a46b3145",
+   "question": "某天你坐在桌前怎么也进入不了工作，心里只有一句「我今天很没自制力」。按《Protocols》的「边缘摩擦」框架，第一步该做什么？",
+   "options": [
+    "先喝一杯咖啡提升唤醒水平，因为注意力涣散说明神经系统还没完全启动",
+    "先判断自己是唤醒过高（焦虑亢奋）还是过低（困倦迟钝），再选对应的工具",
+    "先做几轮生理性叹息让自己平静下来，因为进入不了状态通常是由焦虑引起的",
+    "先给自己定一个明确的完成奖励，用多巴胺的驱动力来弥补此刻动机上的不足"
+   ],
+   "answer": 1,
+   "explanation": "边缘摩擦是当前唤醒水平与任务所需水平之间的差距，太亢奋和太困倦在自我叙事里是同一句「没自制力」，处理方向却正好相反。直接做生理性叹息或直接喝咖啡，都是在没判断方向前就选了工具，方向弄反了会越用越糟。",
+   "question_en": "You're at your desk and just can't get into work; all you can think is \"I have no self-control today.\" Under Protocols' \"limbic friction\" framework, what should you do first?",
+   "options_en": [
+    "Have a coffee to raise your arousal, since scattered attention means your nervous system isn't fully online",
+    "Figure out whether your arousal is too high (anxious, wired) or too low (sluggish, sleepy), then pick a tool for that direction",
+    "Do a few physiological sighs to calm down, since being unable to focus is usually caused by anxiety",
+    "Set yourself a clear reward for finishing, using dopamine drive to make up for the motivation you lack"
+   ],
+   "explanation_en": "Limbic friction is the gap between your current arousal and what the task needs. Being too wired and too sluggish produce the same story — \"no self-control\" — but call for opposite fixes. Jumping straight to a calming breath or a coffee picks a tool before diagnosing the direction, and the wrong direction makes things worse."
+  },
+  {
+   "id": "1a2db31a32",
+   "question": "一个人习惯熬到凌晨四点，这时才开灯刷手机。按《Protocols》对光与生物钟的解释，这样做主要造成了什么？",
+   "options": [
+    "手机屏幕亮度太低，达不到生物钟的感光阈值，所以对昼夜节律几乎没有什么影响",
+    "主要问题是总睡眠时间被压缩，只要白天补足时长，生物钟就不会受到影响",
+    "在核心体温最低点之后接触强光，把生物钟往前拉，让人第二天傍晚就早早犯困",
+    "在核心体温最低点之前见强光，把生物钟往后推，相当于把自己的时区往西搬"
+   ],
+   "answer": 3,
+   "explanation": "光对生物钟是推后还是提前，取决于在核心体温最低点（大约习惯起床前两小时）之前还是之后接触它。凌晨四点对这个人来说还在最低点之前，开灯会把钟往后推，所以问题不是「睡得少」，而是相位被推迟。把它说成往前拉，是把时点前后弄反了。",
+   "question_en": "Someone habitually stays up until 4 a.m. and only then turns on the lights to scroll their phone. According to Protocols' account of light and the circadian clock, what is this mainly doing?",
+   "options_en": [
+    "Phone screens are too dim to reach the clock's light threshold, so the habit has almost no effect on their rhythm",
+    "The main problem is lost sleep time; as long as they make up the hours during the day, the clock is unaffected",
+    "Bright light after the core-body-temperature minimum pulls the clock earlier, making them sleepy early the next evening",
+    "Bright light before the core-body-temperature minimum pushes the clock later — effectively moving their time zone west"
+   ],
+   "explanation_en": "Whether light delays or advances the clock depends on whether it hits before or after the core-temperature minimum (roughly two hours before habitual wake time). For this person 4 a.m. is still before that minimum, so the light shifts the clock later: the issue is a delayed phase, not just short sleep. Saying it advances the clock gets the timing backwards."
+  }
+ ]
+}

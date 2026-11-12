@@ -867,6 +867,141 @@
     "c99e11065d",
     "304816173a"
    ]
+  },
+  "/buddhism/madhyamaka-day2.html": {
+   "t": "佛经详解：空性与中观 — Day 2",
+   "f": "buddhism/madhyamaka-day2.json",
+   "q": [
+    "3bfface172",
+    "a2e0003b1e",
+    "da45db3926"
+   ]
+  },
+  "/podcast-deepread/naval-self-topic13.html": {
+   "t": "Naval 专题 · 自我、冥想与东方哲学",
+   "f": "podcast-deepread/naval-self-topic13.json",
+   "q": [
+    "f19e14400b",
+    "e29a6508c2",
+    "9a13e84b10"
+   ]
+  },
+  "/neuroscience/ref-emotion-vocabulary.html": {
+   "t": "参考 · 情绪词表与粒度训练 — 神经科学",
+   "f": "neuroscience/ref-emotion-vocabulary.json",
+   "q": [
+    "ddd33ebba3",
+    "6382c5f466",
+    "cc5a447651"
+   ]
+  },
+  "/deep-reading/burnout-society-read997.html": {
+   "t": "《倦怠社会》",
+   "f": "deep-reading/burnout-society-read997.json",
+   "q": [
+    "e81931434b",
+    "34e6ff1a8b",
+    "2bb3a17990"
+   ]
+  },
+  "/novel-deepread/nineteen-eighty-four-novel29.html": {
+   "t": "一九八四 — 小说精读 No.29",
+   "f": "novel-deepread/nineteen-eighty-four-novel29.json",
+   "q": [
+    "1e489a58b3",
+    "fcbdf6c744",
+    "d9c30d14e4"
+   ]
+  },
+  "/deep-reading/atomic-habits-read907.html": {
+   "t": "《掌控习惯》— 每日精读 Read 907",
+   "f": "deep-reading/atomic-habits-read907.json",
+   "q": [
+    "cbd450bef6",
+    "f3187c37d0",
+    "22549a4849"
+   ]
+  },
+  "/meta-knowledge/network-science-day13.html": {
+   "t": "元知识详解：网络科学 — Day 13",
+   "f": "meta-knowledge/network-science-day13.json",
+   "q": [
+    "0dda7e824e",
+    "8deecc0e3c",
+    "c7de50b8e6"
+   ]
+  },
+  "/meta-knowledge/anthropology-day14.html": {
+   "t": "元知识详解：人类学 — Day 14",
+   "f": "meta-knowledge/anthropology-day14.json",
+   "q": [
+    "58041fd913",
+    "dc27d5a87f",
+    "d645f4173b"
+   ]
+  },
+  "/podcast-deepread/amazon-vp-questions-corporate-politics-but-pod3.html": {
+   "t": "The Peterman Pod × Ethan Evans — 往白的那头说宽一点",
+   "f": "podcast-deepread/amazon-vp-questions-corporate-politics-but-pod3.json",
+   "q": [
+    "a1c2df2040",
+    "e2b46def56",
+    "aec7560054"
+   ]
+  },
+  "/deep-reading/protocols-read943.html": {
+   "t": "《Protocols》— 好书精读 Read 943",
+   "f": "deep-reading/protocols-read943.json",
+   "q": [
+    "82d957f4c5",
+    "61a46b3145",
+    "1a2db31a32"
+   ]
+  },
+  "/neuroscience/global-workspace-topic13.html": {
+   "t": "Topic 13 · 全局工作空间 — 神经科学",
+   "f": "neuroscience/global-workspace-topic13.json",
+   "q": [
+    "2b3973871e",
+    "959e2cf181",
+    "76e2bf1054"
+   ]
+  },
+  "/mental-models/munger-misjudgment-day40.html": {
+   "t": "思维模型详解：芒格人类误判心理学（上） · 2026-05-31",
+   "f": "mental-models/munger-misjudgment-day40.json",
+   "q": [
+    "d9fb621714",
+    "99ce7bf329",
+    "b9ded76b49"
+   ]
+  },
+  "/novel-deepread/dark-forest-novel2.html": {
+   "t": "三体II · 黑暗森林 — 小说精读 No.2",
+   "f": "novel-deepread/dark-forest-novel2.json",
+   "q": [
+    "eb010c2025",
+    "6249d681cf",
+    "ee0c410ff3"
+   ]
+  },
+  "/deep-reading/why-buddhism-is-true-read956.html": {
+   "t": "《为什么佛学是真的》",
+   "f": "deep-reading/why-buddhism-is-true-read956.json",
+   "q": [
+    "b175684732",
+    "04bb2bcb0c",
+    "09f0f700f1"
+   ]
+  },
+  "/mental-models/distributed-systems-day37.html": {
+   "t": "思维模型详解：分布式系统思维 · 2026-05-28",
+   "f": "mental-models/distributed-systems-day37.json",
+   "q": [
+    "673c053778",
+    "c781add515",
+    "512df13107"
+   ]
   }
  },
  "aliases": {

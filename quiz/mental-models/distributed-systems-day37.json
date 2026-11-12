@@ -1,0 +1,69 @@
+{
+ "page": "/mental-models/distributed-systems-day37.html",
+ "title": "思维模型详解：分布式系统思维 · 2026-05-28",
+ "page_en": "/mental-models/distributed-systems-day37.en.html",
+ "title_en": "Mental Models: Distributed Systems Thinking · 2026-05-28",
+ "src_hash": "f8f31d757298",
+ "questions": [
+  {
+   "id": "673c053778",
+   "question": "一位工程师说：「我们的跨机房系统选了 CA，放弃分区容错，所以既一致又可用。」按对 CAP 的资深理解，问题出在哪？",
+   "options": [
+    "CA 组合能够实现，只是代价高昂，通常只适合预算极其充足的大型系统",
+    "跨空间的系统必然断网，P 放弃不了，要选的是断网时保 C 还是 A",
+    "三者最多取其二，他应当放弃可用性，换取一致性与分区容错兼得",
+    "一致性和可用性天然互斥，即便网络从不中断，两者也不可能同时满足"
+   ],
+   "answer": 1,
+   "explanation": "把 CAP 读成「三选二」是初学者误读：分区在跨空间系统里是物理必然，不是可以放弃的选项，真正的问题是分区发生时选 C 还是选 A。网络正常时 C 和 A 并不冲突，而且这个取舍应按操作粒度来做，不是给整个系统贴一个 CP 标签。",
+   "question_en": "An engineer says: \"Our multi-datacenter system chose CA and gave up partition tolerance, so it's both consistent and available.\" On a mature reading of CAP, what's wrong?",
+   "options_en": [
+    "CA is achievable but expensive, so it generally suits only very large systems with ample budgets",
+    "Any system spread across space will lose links, so P isn't optional; the real choice is C or A during a partition",
+    "You can have at most two of three, so he should drop availability and keep consistency plus partition tolerance",
+    "Consistency and availability are inherently exclusive, so even with a perfect network you can't have both"
+   ],
+   "explanation_en": "Reading CAP as \"pick two of three\" is the novice error: partitions are a physical inevitability in distributed systems, not something you can opt out of, so the real question is C or A when a partition happens. With a healthy network C and A don't conflict, and the trade-off should be made per operation rather than by labeling the whole system CP."
+  },
+  {
+   "id": "c781add515",
+   "question": "一个团队采用「最终一致」的协作方式：各自先推进、不要求实时同步。几个月后各方信息依然对不上。按最终一致性的思路，最可能缺的是什么？",
+   "options": [
+    "更多副本：让每个人都保存一份完整的记录以备随时查对",
+    "收敛机制：固定的同步点，以及明确的冲突裁决规则",
+    "更多时间：最终一致本来就要更久，才能自己慢慢收敛",
+    "更强的一致：把关键信息都改成实时全员同步审批"
+   ],
+   "answer": 1,
+   "explanation": "「最终」不会自动发生，必须设计收敛机制：何时同步，冲突用什么规则裁决（谁拍板）。没有收敛规则的最终一致只是「永远不一致」，再等多久都不会自己收敛；反过来改成事事实时同步，又回到了拖垮所有人的强一致执念。",
+   "question_en": "A team works in an \"eventually consistent\" way: everyone moves ahead without real-time syncing. Months later, people's information still doesn't match. On eventual-consistency thinking, what's most likely missing?",
+   "options_en": [
+    "More replicas: have everyone keep a complete copy of the records for cross-checking",
+    "A convergence mechanism: fixed sync points plus a clear rule for resolving conflicts",
+    "More time: eventual consistency simply takes longer to converge on its own",
+    "Stronger consistency: route all key information through real-time, all-hands approval"
+   ],
+   "explanation_en": "\"Eventually\" doesn't happen for free; you need a convergence mechanism: when to sync and what rule settles conflicts (who decides). Eventual consistency without a convergence rule just means never consistent, however long you wait. Swinging to real-time sync on everything brings back the strong-consistency obsession that bogs everyone down."
+  },
+  {
+   "id": "512df13107",
+   "question": "一条处理流水线中，下游跟不上上游，任务队列持续增长。哪种应对是在「治本」，并能维持更高的可持续吞吐？",
+   "options": [
+    "扩大缓冲区，给突发流量留出更大的排队空间，避免丢任务",
+    "给下游加上自动重试，确保每条任务最终一定会被处理完",
+    "让上游保持全速推送，使瞬时吞吐量最大",
+    "下游把拥塞状态回传，上游据此降速，满了就拒绝或延后"
+   ],
+   "answer": 3,
+   "explanation": "背压是把下游拥塞回传给上游的负反馈环，主动降速反而能维持更高的可持续吞吐。缓冲只是治标，队列无界增长迟早耗尽内存而雪崩；贪婪地全速接收，崩溃后吞吐直接归零。",
+   "question_en": "In a processing pipeline the downstream stage can't keep up and the task queue keeps growing. Which response fixes the root cause and sustains higher throughput?",
+   "options_en": [
+    "Enlarge the buffer to give bursts more room to queue, so no tasks are dropped",
+    "Add automatic retries downstream so every task is guaranteed to be processed eventually",
+    "Keep the producer pushing at full speed to maximize the system's instantaneous throughput",
+    "Have downstream signal its congestion upstream so the producer slows, rejecting or deferring when full"
+   ],
+   "explanation_en": "Backpressure is a negative-feedback loop that feeds downstream congestion back to the producer, and deliberately slowing down sustains more throughput over time. A buffer only treats the symptom: an unbounded queue eventually exhausts memory and collapses. Greedily accepting everything drives throughput to zero once the system falls over."
+  }
+ ]
+}

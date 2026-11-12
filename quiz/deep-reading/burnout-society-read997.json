@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/burnout-society-read997.html",
+ "title": "《倦怠社会》",
+ "page_en": "/deep-reading/burnout-society-read997.en.html",
+ "title_en": "The Burnout Society",
+ "src_hash": "3f83c3ebe9f6",
+ "questions": [
+  {
+   "id": "e81931434b",
+   "question": "没有老板要求，一位职员周末主动学新技能、回工作邮件，还把这称为「投资自己」。按韩炳哲《倦怠社会》的框架，该怎么看这件事？",
+   "options": [
+    "这仍是福柯式的规训：老板通过绩效考核在背后监视他，只是他自己没有察觉到这一点",
+    "这是免疫学范式下的病：外来的工作要求像病毒一样闯入私人时间，突破了身心的防线",
+    "这说明规训社会已经结束，人摆脱了外部禁令和监视，终于获得了可以自我实现的真正自主",
+    "这是自我剥削：「应该」内化成了「我能够」，带着自由感，更高效也无从反抗"
+   ],
+   "answer": 3,
+   "explanation": "韩炳哲认为功绩社会里「能够」并没有废掉「应该」，而是吞下了它：规训被装进了自己，剥削者和被剥削者合为一体。因为带着自由的感觉，自我剥削零监督成本，也没有可以反抗的对象。说他摆脱了强制、获得了自主，正是韩炳哲要拆穿的那种感受：你感到最自由的时候，恰恰是被管理得最彻底的时候。",
+   "question_en": "With no boss asking, an employee spends weekends learning new skills and answering work email, calling it \"investing in myself.\" How would Byung-Chul Han's The Burnout Society read this?",
+   "options_en": [
+    "As Foucauldian discipline as usual: the boss is watching through performance reviews, and the employee simply hasn't noticed",
+    "As a disease of the immunological paradigm: outside work demands invade private time like a virus and break through the body's defenses",
+    "As proof the disciplinary society is over: freed from external prohibitions and surveillance, the person has finally gained real autonomy for self-realization",
+    "As auto-exploitation: \"should\" has been internalized as \"I can,\" and because it feels like freedom it is more efficient than outside exploitation and leaves nothing to resist"
+   ],
+   "explanation_en": "For Han, \"can\" in the achievement society doesn't abolish \"should\" but swallows it: discipline is installed inside the self, and exploiter and exploited become one person. Because it feels like freedom, auto-exploitation needs no supervision and offers no one to rebel against. Reading it as hard-won autonomy is exactly the feeling Han sets out to expose: you are most thoroughly managed precisely when you feel most free."
+  },
+  {
+   "id": "34e6ff1a8b",
+   "question": "韩炳哲说二十一世纪的典型疾病（抑郁、倦怠、注意缺陷等）不再是「免疫学」的，而是「神经元」的。这个区分的核心意思是什么？",
+   "options": [
+    "病因不是闯入的他者，而是同者过剩：刺激、选项、自我要求太多，没有敌人可抵抗",
+    "全球化让外来威胁变得更隐蔽、更难识别，免疫系统式的防御因此一再失灵、反应总是慢一步",
+    "规训社会的禁令和监视越积越多，人被压抑到极限，最终在神经层面崩溃，表现为抑郁和倦怠",
+    "社会压力已经能通过神经递质直接作用于大脑，所以这些病应当从生理层面而不是社会层面理解"
+   ],
+   "answer": 0,
+   "explanation": "免疫学范式靠「自己与非己」的二分对付外来者；韩炳哲认为新的暴力来自「肯定性」的过剩，压垮人的往往是一大堆都「挺好」的东西，就像身体不会对过量的糖产生免疫反应。说病因是禁令越积越多，就把他的诊断弄反了：他恰恰认为否定性的禁令已让位给没有边界的「能够」。",
+   "question_en": "Han says the signature illnesses of the 21st century (depression, burnout, attention disorders) are no longer \"immunological\" but \"neuronal.\" What is the core of that distinction?",
+   "options_en": [
+    "The cause is no longer an invading Other but an excess of the Same: too many stimuli, options and self-demands, with no identifiable enemy to fight",
+    "Globalization has made outside threats stealthier and harder to detect, so immune-style defenses keep failing and always react a step too late",
+    "The prohibitions and surveillance of disciplinary society keep piling up until people, repressed to the limit, break down neurologically",
+    "Social pressure now acts on the brain directly through neurotransmitters, so these illnesses should be understood physiologically rather than socially"
+   ],
+   "explanation_en": "The immunological paradigm deals with outsiders through a self/non-self split. Han argues the new violence comes from an excess of positivity: what crushes people is often a pile of things that are each \"fine,\" just as the body mounts no immune response to too much sugar. Blaming piled-up prohibitions gets his diagnosis backwards, since he holds that negative prohibition has given way to a boundless \"can.\""
+  },
+  {
+   "id": "2bb3a17990",
+   "question": "韩炳哲借汉德克区分了两种疲倦，并把出路指向「不做」。下面哪种休息最接近他珍视的那种？",
+   "options": [
+    "严格执行工作与生活的平衡，把运动、冥想和陪伴家人都写进日程，按时完成",
+    "一个不为产出的安息日：松开紧抓，自我变小，重新看见孩子、树叶和身边的人",
+    "安排一次高质量的度假，彻底给自己充满电，好让下周回去的工作效率明显回升",
+    "独自缩回自己的世界，关掉手机，不跟任何人说话，一直待到精力慢慢恢复为止"
+   ],
+   "answer": 1,
+   "explanation": "汉德克所说「信任世界的疲倦」是消极能力的疲倦：不再追逐，于是有了空间和别人一起「在」，韩炳哲把它和不为下周更高产而休息的安息日相连。充电和工作生活平衡仍是为了更有效地工作，充电的比喻本身就把人当成了电池；缩回自己、与人隔绝，则是功绩社会那种让人分裂的疲倦。",
+   "question_en": "Drawing on Peter Handke, Han distinguishes two kinds of tiredness and points to \"not-doing\" as a way out. Which kind of rest comes closest to what he values?",
+   "options_en": [
+    "Strict work-life balance, with exercise, meditation and family time all scheduled into the calendar and checked off on time",
+    "A Sabbath with no output in view: letting go, the self shrinking, seeing the children, the leaves and the people nearby again",
+    "A carefully planned high-quality vacation that fully recharges you, so your productivity is noticeably higher when you return",
+    "Withdrawing into yourself, phone off, speaking to no one, and staying that way until your energy slowly comes back"
+   ],
+   "explanation_en": "Handke's \"tiredness that trusts the world\" is the tiredness of negative potency: no longer chasing, you finally have room to simply be with others, and Han links it to a Sabbath that is not rest for the sake of next week's output. Recharging and work-life balance still serve more efficient work, and the recharging metaphor treats people as batteries. Withdrawing and cutting yourself off is the divisive tiredness of the achievement society."
+  }
+ ]
+}

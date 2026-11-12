@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/global-workspace-topic13.html",
+ "title": "Topic 13 · 全局工作空间 — 神经科学",
+ "page_en": "/neuroscience/global-workspace-topic13.en.html",
+ "title_en": "Topic 13 · The Global Workspace — Neuroscience",
+ "src_hash": "0520cd813699",
+ "questions": [
+  {
+   "id": "2b3973871e",
+   "question": "按全局工作空间理论，一条信息「被意识到」指的是什么？",
+   "options": [
+    "大脑额外生成了一份「我正在感知它」的自我表征",
+    "它被某个专门部门加工得足够深入、也足够精细",
+    "它被广播出去，语言、记忆、决策等系统可同时调用",
+    "它在感觉皮层本地反复回响，形成一个稳定的回路"
+   ],
+   "answer": 2,
+   "explanation": "全局工作空间给意识下的是功能主义定义：有意识就是这条信息此刻对全脑可用。加工得再深，只要锁在一个部门里，仍是无意识的；本地回路就够、需要额外自我表征，分别是递归加工理论和高阶理论的主张，正是它与之对照的对手。",
+   "question_en": "According to global workspace theory, what does it mean for a piece of information to become conscious?",
+   "options_en": [
+    "The brain generates an extra self-representation of \"I am perceiving this\"",
+    "It is processed deeply and finely enough by one specialized module",
+    "It is broadcast so that language, memory and decision systems can all use it at once",
+    "It reverberates locally in sensory cortex, forming a stable recurrent loop"
+   ],
+   "explanation_en": "GWT defines consciousness functionally: being conscious of something just is that information being globally available. However deep the processing, if it stays locked inside one module it remains unconscious. Local recurrence and higher-order self-representation are the rival claims of recurrent processing theory and higher-order theories, which GWT is set against."
+  },
+  {
+   "id": "959e2cf181",
+   "question": "无意识的专门加工又快又省，为什么大脑还要维持一套又慢又「全有或全无」的全局广播？按全局工作空间理论的解释：",
+   "options": [
+    "广播让大脑把资源集中给一个部门，其他部门暂停工作以节省能量",
+    "广播能让更多神经元同时投入，提高每个专门模块各自的计算精度",
+    "专门加工只会应付接好线的老问题，新情况要各部门临时交换信息",
+    "专门加工的输出常常出错，需要广播给前额叶统一核查后才能放行"
+   ],
+   "answer": 2,
+   "explanation": "广播的慢不是缺陷而是代价：它用速度换来灵活、可跨部门重组的加工，让人能把没演练过的几步临时拼起来。理论并不认为无意识专家不可靠，广播也不是用来纠错或给单个模块提精度，而是让信息被所有部门同时拿到。",
+   "question_en": "Unconscious specialist processing is fast and cheap. Why, on global workspace theory, does the brain also maintain a slow, all-or-none global broadcast?",
+   "options_en": [
+    "Broadcasting concentrates resources on one module while the others pause to save energy",
+    "Broadcasting recruits more neurons at once, raising the computational precision of each specialist module",
+    "Specialists only handle pre-wired problems; novel situations need normally separate modules to share information on the fly",
+    "Specialist outputs are often wrong and must be broadcast to prefrontal cortex for checking before release"
+   ],
+   "explanation_en": "The slowness is a price, not a flaw: it buys flexible processing that can recombine across modules, letting you improvise a sequence of steps you have never rehearsed. The theory does not treat unconscious specialists as unreliable, and broadcasting is not error-checking or a precision boost for one module; it makes the information available to all of them at once."
+  },
+  {
+   "id": "76e2bf1054",
+   "question": "用「聚光灯照亮舞台、内容广播给台下观众」来比喻全局工作空间时，台下的「观众」应当理解为什么？",
+   "options": [
+    "前额叶里一个整合并体验内容的主体",
+    "其余那些各管一摊的无意识加工系统本身",
+    "由聚光灯兼任的注意系统，它既选内容也看内容",
+    "一个专门把台上内容转交给语言区的监控模块"
+   ],
+   "answer": 1,
+   "explanation": "广播没有唯一收件人，「被意识到」等于被足够多的下游系统接住并动用，而不是被某个「我」看见。把观众想成一个统一的观者，就是把要解释的体验主体偷偷当成了起点，即 Dennett 批评的「笛卡尔剧场」。",
+   "question_en": "In the metaphor of a spotlit stage broadcasting to an audience, how should the \"audience\" in global workspace theory be understood?",
+   "options_en": [
+    "A subject in prefrontal cortex that integrates and experiences the content",
+    "The many other unconscious specialist processes themselves",
+    "The attention system doubling as spotlight, both selecting and viewing the content",
+    "A monitoring module that relays stage content to the language areas"
+   ],
+   "explanation_en": "The broadcast has no single recipient: becoming conscious means being picked up and used by enough downstream systems, not being seen by some \"self\". Picturing the audience as one unified viewer smuggles in the very experiencing subject that needs explaining, which is the \"Cartesian theater\" Dennett attacked."
+  }
+ ]
+}

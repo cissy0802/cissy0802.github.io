@@ -1,0 +1,69 @@
+{
+ "page": "/novel-deepread/nineteen-eighty-four-novel29.html",
+ "title": "一九八四 — 小说精读 No.29",
+ "page_en": "/novel-deepread/nineteen-eighty-four-novel29.en.html",
+ "title_en": "Nineteen Eighty-Four — Novels, Deep-Read No.29",
+ "src_hash": "499c10ada401",
+ "questions": [
+  {
+   "id": "1e489a58b3",
+   "question": "在《一九八四》的设定里，「双重思想」——有意识地撒谎，同时真心相信自己没撒谎——为什么是篡改历史的体制必不可少的一环？",
+   "options": [
+    "民众需要真心相信谎言，而负责篡改的官员必须始终清醒地记得真相，才能操纵得滴水不漏",
+    "纯粹的骗子知道真相，知道真相的人会动摇；体制要的是边说谎边相信自己诚实的人",
+    "认知失调会逼人放弃其中一个信念，体制需要人在两个说法之间长期摇摆、保持怀疑",
+    "新话已经把相关的词汇削掉，人们找不到词来描述矛盾，所以根本察觉不到自己在撒谎"
+   ],
+   "answer": 1,
+   "explanation": "篡改历史的人不能是纯粹的骗子：知道真相的人是不稳定的，可能哪天说出去。所以体制要的不是听话的说谎者，而是说谎时真心相信自己诚实的人。说官员必须清醒地记得真相，正好是双重思想要消除的那种不稳定。它与新话削词是两套不同的机制，这个推导也不依赖任何科幻设定。",
+   "question_en": "In Nineteen Eighty-Four, why is doublethink (lying deliberately while sincerely believing you are not lying) an indispensable part of a regime that rewrites history?",
+   "options_en": [
+    "The public must sincerely believe the lies, while the officials doing the rewriting must always clearly remember the truth to keep the manipulation airtight",
+    "A pure liar knows the truth, and anyone who knows the truth is a liability who might waver; the regime needs people who lie while believing themselves honest",
+    "Cognitive dissonance forces people to drop one of two beliefs, so the regime needs them to keep wavering between the two accounts in permanent doubt",
+    "Newspeak has already cut the relevant vocabulary, so people lack the words to describe a contradiction and simply cannot notice they are lying"
+   ],
+   "explanation_en": "Those who falsify history can't be pure liars: someone who knows the truth is unstable and might talk one day. So the regime needs not obedient liars but people who sincerely believe they are honest while lying. Officials who clearly remember the truth are exactly the instability doublethink exists to remove. It is also a separate mechanism from Newspeak's shrinking vocabulary, and the argument needs no science-fiction premise."
+  },
+  {
+   "id": "fcbdf6c744",
+   "question": "裘莉亚和温斯顿都相信「他们能逼你说任何话，但进不到你心里去」，第三部的友爱部却证明了相反的结果。对「内心自由」到底值多少，下面哪种看法最符合对这本书的这种读法？",
+   "options": [
+    "它只是自我安慰：全书证明私下的不同意从外部看与完全同意毫无区别，对制度没有任何意义",
+    "它确实是阵地，党不惜代价要他真心爱老大哥就是证据；但价值取决于能否兑换成行动",
+    "它是最可靠的抵抗：温斯顿虽在嘴上屈服，结尾时心里仍保有一块党始终没能拿走的地方",
+    "它在书里只是因为条件极端才被攻破；日常压力下守住内心本身就已足够，不必再兑换成行动"
+   ],
+   "answer": 1,
+   "explanation": "如果内心保留真的无害，友爱部大可在认罪后直接枪毙他；党非要他真心爱上老大哥，等于替这块阵地作了证，只是它并非攻不破。同时它也最容易被当成永远不用兑现的欠条：它的价值取决于有一天能否兑换成哪怕很小的具体行为。说守住内心本身就已足够，正是这种欠条式的用法。",
+   "question_en": "Julia and Winston both believe \"they can make you say anything, but they can't get inside you,\" yet the Ministry of Love in Part Three proves the opposite. Which view of what inner freedom is worth best fits this reading of the novel?",
+   "options_en": [
+    "It is mere self-consolation: the book shows that private dissent looks exactly like full agreement from outside and means nothing to the system",
+    "It really is contested ground, as the Party's lavish effort to make him truly love Big Brother shows; but its worth depends on whether it is ever cashed out in concrete action",
+    "It is the most reliable form of resistance: Winston gives in outwardly, but at the end he still keeps a corner of his mind the Party never took",
+    "It falls in the book only because the conditions are extreme; under everyday pressure, keeping your inner reservation is enough on its own, with no need to act"
+   ],
+   "explanation_en": "If inner reservations were harmless, the Ministry could simply have shot him after the confession; by insisting he truly love Big Brother, the Party testifies that this ground matters, just not that it is impregnable. It is also easily used as an IOU that never comes due: its value depends on whether it is someday cashed out in some concrete act, however small. Saying an inner reservation is enough on its own is exactly that IOU use."
+  },
+  {
+   "id": "d9c30d14e4",
+   "question": "有人批评《一九八四》的「可变的过去」不现实：人证会跨境、副本会外流、私人日记会在某个抽屉里留下来，没有机器能完全改写历史。按对这一设定的分析，这个批评的问题在哪里？",
+   "options": [
+    "批评已经过时，数字时代的技术早已能把所有记录一并改写，奥威尔的设想如今已经成真",
+    "党根本不需要改档案，因为双重思想会让每个人自愿忘掉不方便的事，记录只是摆设",
+    "批评完全成立，副本和人证迟早会让篡改败露，所以真理部只是一种不必当真的文学夸张",
+    "机制不必彻底，只要让核对真相的成本高过多数人愿意付出的成本就够用"
+   ],
+   "answer": 3,
+   "explanation": "完全改写确实是小说的夸张，但这个批评的杀伤力比看上去小：机制只需把核对成本抬到多数人放弃的程度，而鉴定剪报所需的档案也在同一个部门手上，苏联修版照片就是现实中的例子。说党不需要改档案也不对：党每天派人重印报纸，修改本身就承认有需要覆盖的东西。",
+   "question_en": "A common objection to the \"mutable past\" in Nineteen Eighty-Four: witnesses cross borders, copies leak, a private diary survives in some drawer, so no machine could fully rewrite history. On this analysis of the premise, what is wrong with the objection?",
+   "options_en": [
+    "It is outdated: digital technology can already rewrite every record at once, so Orwell's scenario has simply come true",
+    "The Party doesn't need to alter records at all, because doublethink makes everyone willingly forget inconvenient facts and the archives are just for show",
+    "Nothing; copies and witnesses will expose the falsification sooner or later, so the Ministry of Truth is literary exaggeration not to be taken seriously",
+    "The mechanism doesn't need to be total; it only has to make checking the truth cost more than most ordinary people are willing to pay"
+   ],
+   "explanation_en": "Total rewriting is indeed the novel's exaggeration, but the objection bites less than it seems: the mechanism only needs to raise the cost of checking until most people give up, and the archives needed to authenticate a clipping sit in the same ministry. Doctored Soviet photographs are a real-world case. Nor can the Party skip the records: it sends people to reprint newspapers every day, and the editing itself concedes there is something that has to be covered up."
+  }
+ ]
+}
