@@ -1,0 +1,69 @@
+{
+ "page": "/chapter-deepread/contdelivery-ch01-problem-of-delivering-software-book13.html",
+ "title": "持续交付 第 1 章 · 软件交付的难题 — 专业书籍精读 Book 13",
+ "page_en": "/chapter-deepread/contdelivery-ch01-problem-of-delivering-software-book13.en.html",
+ "title_en": "Continuous Delivery Ch 1 · The Problem of Delivering Software — Books Deep-Read 13",
+ "src_hash": "085425a877e4",
+ "questions": [
+  {
+   "id": "6f1fa07f2d",
+   "question": "关于「发布为什么危险」，《持续交付》第 1 章提出的反直觉因果是？",
+   "options": [
+    "发布危险是因为生产环境本身就比测试环境复杂得多，无法避免",
+    "发布危险是因为开发人员写的代码质量不够高，测试也不足",
+    "不是改动大所以危险，而是发布得少，每次改动才那么大",
+    "发布本质上就有风险，越少发布，累积的风险也就越小"
+   ],
+   "answer": 2,
+   "explanation": "根源在于发布过程手工、罕见、不可重复。「越少发布风险越小」正是被本章反驳的常识，所以有了「痛就更频繁地做它」。",
+   "question_en": "On why releases are dangerous, what counterintuitive causality does chapter 1 of Continuous Delivery put forward?",
+   "options_en": [
+    "Releases are risky because production is inherently far more complex than test, which can't be avoided",
+    "Releases are risky because developers' code quality is too low and testing is inadequate",
+    "It's not that big changes make releases risky; releasing rarely is what makes each change so big",
+    "Releasing is inherently risky, so the fewer releases you do, the less risk accumulates"
+   ],
+   "explanation_en": "The root cause is a release process that is manual, rare and unrepeatable. \"Fewer releases, less risk\" is exactly the common sense this chapter refutes, hence \"if it hurts, do it more often.\""
+  },
+  {
+   "id": "d9e19f8ca6",
+   "question": "一家公司搭好了流水线，每个通过全部关卡的构建都可以上线，但什么时候真正发给用户由业务方决定。按本章的区分，这是？",
+   "options": [
+    "持续集成：每天把改动合回主干并自动构建测试，就是这个意思",
+    "持续部署：只要流水线全部通过，就已经等于自动部署到了生产环境上",
+    "持续交付：每个通过的构建都具备上线资格，按不按按钮是业务决策",
+    "还不算持续交付：必须让每个通过的构建自动进入生产才算数"
+   ],
+   "answer": 2,
+   "explanation": "本书主张的正是中间那一档：具备上线资格，由业务按按钮。自动直推生产是更激进的持续部署，并非所有产品都适用。",
+   "question_en": "A company has a pipeline where every build that passes all stages can go live, but the business decides when users actually get it. By the chapter's distinctions, what is this?",
+   "options_en": [
+    "Continuous integration: merging to trunk daily with automated build and test is exactly this",
+    "Continuous deployment: passing the whole pipeline already amounts to being deployed to production",
+    "Continuous delivery: every passing build is releasable, and pressing the button is a business decision",
+    "Not yet continuous delivery: every passing build must go to production automatically to count"
+   ],
+   "explanation_en": "This is the middle tier the book advocates: releasable, with the business pressing the button. Pushing automatically to production is the more aggressive continuous deployment, which doesn't suit every product."
+  },
+  {
+   "id": "af733bdaf9",
+   "question": "本章说「每一次签入都产生一个潜在的发布版本」。这带来的关键转变是？",
+   "options": [
+    "「能不能发」从人拍板的里程碑，变成流水线随时回答的状态，每关都在证伪它",
+    "每次签入都必须立刻发布到生产环境，不再需要任何人工判断",
+    "开发人员签入前必须自己完成全部测试，确保代码可以直接发布",
+    "测试全部完成之后，再由团队从多个构建中提名一个发布候选版，并跑一遍完整回归"
+   ],
+   "answer": 0,
+   "explanation": "传统做法是末端由人提名候选版；本章反过来，让每个构建默认都是候选，流水线逐关淘汰。这不等于每次签入都自动上线，那是持续部署。",
+   "question_en": "The chapter says \"every check-in produces a potential release.\" What key shift does this bring?",
+   "options_en": [
+    "\"Can we ship?\" stops being a milestone a person decides and becomes a status the pipeline answers anytime, each stage trying to falsify it",
+    "Every check-in must be released to production immediately, with no further human judgment",
+    "Developers must finish all testing themselves before checking in, so the code can ship directly",
+    "After testing, the team nominates one release candidate from several builds and runs a full regression"
+   ],
+   "explanation_en": "Traditionally a person nominates a candidate at the end; here every build is a candidate by default and the pipeline weeds them out stage by stage. That doesn't mean every check-in auto-deploys; that would be continuous deployment."
+  }
+ ]
+}

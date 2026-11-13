@@ -1,0 +1,69 @@
+{
+ "page": "/chapter-deepread/accelerate-ch01-accelerate-book38.html",
+ "title": "Accelerate 第 1 章 · 加速 — 专业书籍精读 Book 38",
+ "page_en": "/chapter-deepread/accelerate-ch01-accelerate-book38.en.html",
+ "title_en": "Accelerate Ch 1 · Accelerate — Books Deep-Read Book 38",
+ "src_hash": "34499355ca68",
+ "questions": [
+  {
+   "id": "2d15817839",
+   "question": "一家公司为了降低线上事故，把发布改成每季度一次、每次走三层审批。按《Accelerate》第 1 章，最可能的结果是？",
+   "options": [
+    "实际风险更高：每次批量巨大，一出事无从下手，于是更怕发、攒得更久",
+    "影响不大：交付表现主要由团队技术水平决定，与发布流程无关",
+    "速度变慢但稳定性提升：这是快与稳之间一个合理的取舍",
+    "事故明显减少：审批层级越多，每次变更在上线之前就能被拦下越多的问题"
+   ],
+   "answer": 0,
+   "explanation": "数据显示快与稳同向，不是跷跷板；机制在批量大小。少发慢发加审批是负循环，「审批越重，实际风险越高」是本章最反直觉的结论。",
+   "question_en": "To reduce production incidents, a company moves to quarterly releases with three layers of approval. Per chapter 1 of Accelerate, what is the most likely result?",
+   "options_en": [
+    "Higher real risk: each batch is huge, failures are hard to trace, so the team fears releasing and waits even longer",
+    "Little effect: delivery performance depends mainly on technical skill, not on the release process",
+    "Slower but more stable: a reasonable trade-off between speed and stability",
+    "Clearly fewer incidents: more approval layers catch more problems in each change before it ships"
+   ],
+   "explanation_en": "The data show speed and stability move together, not as a seesaw, and the mechanism is batch size. Releasing rarely behind heavy approvals is a vicious cycle; heavier approval means higher actual risk, the chapter's most counterintuitive finding."
+  },
+  {
+   "id": "1e664e20dc",
+   "question": "一家公司拿到了成熟度模型的第 4 级认证，宣布转型成功。按本章主张的能力模型，问题在哪？",
+   "options": [
+    "转型应该直接照搬 Netflix 等领先公司的完整实践清单，而不是自己从头摸索",
+    "认证机构不够权威，应该改用国际上更认可的成熟度评级体系",
+    "改进不该有终点：应持续测出当前最弱的一环、专治它、再测量，路径因团队而异",
+    "第 4 级还不够，应该继续投入，直到拿到第 5 级认证再宣布成功"
+   ],
+   "answer": 2,
+   "explanation": "成熟度模型的毛病是终点思维、一刀切、量活动不量结果；拿到认证那天改进就停了。照抄 Netflix 的清单同样被本章否定，要找的是自己的约束点。",
+   "question_en": "A company earns Level 4 certification under a maturity model and declares its transformation complete. Under the capability model this chapter advocates, what's wrong?",
+   "options_en": [
+    "The transformation should copy the practice checklists of leaders like Netflix rather than finding its own way",
+    "The certifying body isn't authoritative enough; switch to a more internationally recognized maturity scheme",
+    "Improvement has no finish line: keep measuring your current weakest link, fix it, measure again, with paths that differ by team",
+    "Level 4 isn't enough; keep investing until Level 5 certification before declaring success"
+   ],
+   "explanation_en": "Maturity models suffer from end-state thinking, lockstep paths, and measuring activities rather than outcomes, so improvement stops the day the certificate arrives. Copying Netflix's checklist is also rejected; you need to find your own constraint."
+  },
+  {
+   "id": "a2cd7d3e9b",
+   "question": "管理层打算把四个交付指标写进各团队的绩效考核并横向排名。按本章的提醒，这样做的风险是？",
+   "options": [
+    "考核会让团队过于追求稳定，从而不敢发版，部署频率下降",
+    "这些指标太难测量，团队之间的数据口径无法统一，没法比较",
+    "指标会被刷：拆发布刷频率、收窄故障定义压失败率，它们本该是看趋势的诊断工具",
+    "四个指标之间互相冲突，考核任何一个都会让另外三个变差"
+   ],
+   "answer": 2,
+   "explanation": "一旦写进考核，Goodhart 定律立刻生效，人会去刷数字。作者本意是诊断工具，该按团队看趋势，不该横向排名或折算奖金。",
+   "question_en": "Management plans to put the four delivery metrics into each team's performance review and rank teams against each other. Per the chapter's warning, what's the risk?",
+   "options_en": [
+    "Reviews will make teams overly cautious and afraid to release, so deployment frequency drops",
+    "The metrics are too hard to measure and definitions can't be unified, so teams can't be compared",
+    "The numbers get gamed: split releases to inflate frequency, narrow \"failure\" to cut the rate; they're meant as diagnostic trend tools",
+    "The four metrics conflict, so rewarding any one of them makes the other three worse"
+   ],
+   "explanation_en": "Once tied to reviews, Goodhart's law kicks in and people game the numbers. The authors meant them as a diagnostic, read as per-team trends, not for cross-team ranking or bonuses."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/process-finding-achieving-unique-purpose-robert-pod9.html",
+ "title": "Huberman Lab × Robert Greene — 焦虑是思考的引擎",
+ "page_en": "/podcast-deepread/process-finding-achieving-unique-purpose-robert-pod9.en.html",
+ "title_en": "Huberman Lab × Robert Greene — Anxiety as the engine of thought",
+ "src_hash": "10cce95eef26",
+ "questions": [
+  {
+   "id": "e2bec744ab",
+   "question": "Robert Greene 认为，阻碍一个人把别人的观点变成「活的想法」的主要是什么？",
+   "options": [
+    "外部干扰：工作和社交占用了时间，没有足够的独处来思考",
+    "焦虑：没有安全感的人会抓住第一个能让焦虑消失的答案，不再往下翻转",
+    "信息不足：读过的书和资料还不够多，手里就没有足够多的不同观点可供比较",
+    "智力限制：只有少数人天生具备把观点推到反面的思维能力"
+   ],
+   "answer": 1,
+   "explanation": "Greene 说焦虑是在提醒你还有东西没弄懂；能忍住焦虑的人会继续想「也许是 A，也许是 B」，忍不住的人就停在第一个答案上。",
+   "question_en": "According to Robert Greene, what mainly keeps someone from turning others' ideas into \"living ideas\" of their own?",
+   "options_en": [
+    "Outside distractions: work and social life eat the solitude needed to think",
+    "Anxiety: insecure people grab the first answer that makes the anxiety go away and stop turning the idea over",
+    "Too little information: without enough books and sources, there aren't enough views to compare",
+    "Intellectual limits: only a few people are born able to push an idea to its opposite"
+   ],
+   "explanation_en": "Greene says anxiety signals that you don't yet understand something. Those who can tolerate it keep going, \"maybe A, maybe B\"; those who can't stop at the first answer."
+  },
+  {
+   "id": "a870d2602c",
+   "question": "Greene 借 Hofstadter「坐直升机到珠峰顶」的比喻谈 ChatGPT，他担心的是？",
+   "options": [
+    "AI 很快会取代作家这类职业，写作者会因此失去生计",
+    "AI 生成的答案常常不准确，直接拿来用会让人得出错误的结论",
+    "跳过了焦虑与挣扎的过程，思考的「肌肉」就长不出来，看到的风景一样却不是同一个时刻",
+    "一切工具都会让人退化，所以应当像他自己一样拒绝使用搜索引擎"
+   ],
+   "answer": 2,
+   "explanation": "他并不反对工具，自己天天用 Google；他担心的是顺序反了、人被工具用。Huberman 补的那句是：走过的路会改变你到达的地方。",
+   "question_en": "Borrowing Hofstadter's image of \"taking a helicopter to the top of Everest,\" what worries Greene about ChatGPT?",
+   "options_en": [
+    "AI will soon replace professions like writing, and writers will lose their livelihoods",
+    "AI answers are often inaccurate, so using them directly leads people to wrong conclusions",
+    "Skip the anxious struggle and the thinking \"muscle\" never grows; the view is the same, but it isn't the same moment",
+    "All tools make people degenerate, so one should refuse even search engines, as he does himself"
+   ],
+   "explanation_en": "He isn't against tools; he uses Google daily. His worry is the order getting reversed, the tool using the person. Huberman adds: the journey transforms where you arrive."
+  },
+  {
+   "id": "7107c81f28",
+   "question": "Greene 说把视频调成静音、只看对方的身体，就能看穿对方是否真诚。节目页的说法核查怎么判断这一说法？",
+   "options": [
+    "有据但说宽了：静音观察确实更准，只是效果没有他说的那么大",
+    "与证据相反：人辨别谎言的平均正确率只有 54%，而且听声音比看画面判得更准",
+    "无法核查：相关研究都在实验室里进行，无法用来评估这种说法",
+    "证据充分：元分析显示，经过仔细观察肢体语言，人辨别谎言的准确率甚至可以超过八成"
+   ],
+   "answer": 1,
+   "explanation": "Bond 和 DePaulo 的元分析显示平均正确率 54%，且听声音比看画面更准，静音恰好丢掉了更有用的线索。核查也注明了限度：没回答训练能否改变结果。",
+   "question_en": "Greene says that by muting a video and watching only someone's body, you can tell whether they're sincere. How does the episode page's claim check rate this?",
+   "options_en": [
+    "Supported but overstated: watching with the sound off is more accurate, just less dramatically than he says",
+    "Contrary to evidence: people detect lies only about 54% of the time, and do better listening than watching",
+    "Unverifiable: the studies were all done in labs and can't be used to assess the claim",
+    "Well supported: a meta-analysis shows that by reading body language, accuracy can exceed eighty percent"
+   ],
+   "explanation_en": "Bond and DePaulo's meta-analysis found 54% average accuracy, with audio beating video, so muting throws away the more useful cues. The check also notes its limit: it doesn't say whether training changes the result."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/anxiety-topic52.html",
+ "title": "Topic 52 · 焦虑的神经机制 — 神经科学",
+ "page_en": "/neuroscience/anxiety-topic52.en.html",
+ "title_en": "Topic 52 · The Neuroscience of Anxiety — Neuroscience",
+ "src_hash": "e723e4fcd0d5",
+ "questions": [
+  {
+   "id": "641b8abc36",
+   "question": "在电击概率会变化的翻石头实验里，受试者的紧张程度和电击概率是什么关系？",
+   "options": [
+    "概率越高越紧张，确定会挨电时紧张程度达到最高点",
+    "紧张程度与概率无关，只取决于电击本身的强度大小",
+    "概率越低越紧张，因为小概率的威胁最难提前做好准备",
+    "概率在一半一半时最紧张，确定会挨电或确定不会时最不紧张"
+   ],
+   "answer": 3,
+   "explanation": "主观压力、瞳孔和出汗都跟着不确定程度走，50% 时最高、0% 和 100% 时最低。这说明焦虑针对的是不确定本身，所以「肯定会出事」反而没那么难受。",
+   "question_en": "In the rock-turning experiment where shock probability varied, how did participants' stress relate to that probability?",
+   "options_en": [
+    "Stress rose with probability, peaking when a shock was certain",
+    "Stress was unrelated to probability and depended only on how strong the shock was",
+    "Stress rose as probability fell, because unlikely threats are the hardest to prepare for",
+    "Stress peaked when the odds were fifty-fifty and was lowest when a shock was certain or certainly absent"
+   ],
+   "explanation_en": "Subjective stress, pupil size and sweating tracked uncertainty, peaking near 50% and lowest at 0% or 100%. Anxiety targets uncertainty itself, which is why a sure outcome is easier to bear."
+  },
+  {
+   "id": "e9d3e5d140",
+   "question": "一个人因为怕尴尬，每次聚会都找理由不去。按回避的机制，这为什么会让焦虑越来越顽固？",
+   "options": [
+    "每次躲开带来的松一口气强化了躲，而且「这很可怕」的预测从未被现实检验和更新",
+    "每次缺席都会让人积累更多的内疚与自责，久而久之，是内疚而不是恐惧在维持着焦虑",
+    "长期回避会让杏仁核逐渐萎缩，使人对一切社交信号的反应都变得迟钝",
+    "回避会把过去学会的安全记忆直接擦除，下次只好从头重新学习"
+   ],
+   "answer": 0,
+   "explanation": "回避带来立刻的解脱，这是负强化，于是更想躲；更隐蔽的代价是永远没机会验证「其实没那么危险」，那条预测就从不被更新。",
+   "question_en": "Someone afraid of awkwardness keeps finding excuses to skip parties. By the mechanism of avoidance, why does this make the anxiety more entrenched?",
+   "options_en": [
+    "The relief of escaping reinforces the escape, and the prediction \"this is dangerous\" never gets tested or updated",
+    "Each absence piles up guilt and self-reproach, and over time it is guilt rather than fear that keeps the anxiety going",
+    "Long-term avoidance gradually shrinks the amygdala, dulling responses to all social signals",
+    "Avoidance directly erases previously learned safety memories, so they must be learned again from scratch"
+   ],
+   "explanation_en": "Avoidance brings instant relief, which is negative reinforcement, so escaping becomes more likely. The subtler cost is that the person never learns it wasn't that dangerous, so the prediction is never updated."
+  },
+  {
+   "id": "ff5cd762d6",
+   "question": "一个人在治疗室里通过暴露疗法不再怕狗，搬到新城市后却又怕了。最能解释这一点的是？",
+   "options": [
+    "消退并没有擦掉原来的恐惧记忆，只是另学了一条「这里安全」的新记忆，换了环境旧记忆会复发",
+    "治疗时间不够长，恐惧记忆只被擦掉了一半，剩下的那一半在新环境里重新长了出来",
+    "新城市的狗确实更凶，这次恐惧是对真实威胁的正常反应，与之前的恐惧无关",
+    "暴露疗法其实只是暂时压低了焦虑情绪，旧的恐惧记忆从未改变，疗效不过是安慰剂"
+   ],
+   "answer": 0,
+   "explanation": "关键发现是消退不是擦除，而是另写一条安全记忆；旧记忆还在，所以换环境或隔一段时间会复发。「擦掉了一半」仍然是把消退误当成擦除。",
+   "question_en": "Someone stops fearing dogs through exposure therapy in the clinic, but the fear returns after moving to a new city. What best explains this?",
+   "options_en": [
+    "Extinction didn't erase the original fear memory; it added a new \"safe here\" memory, so the old one can return in a new context",
+    "Therapy didn't last long enough; only half of the fear memory was erased, and the rest regrew in the new setting",
+    "Dogs in the new city really are fiercer, so this is a normal response to real threat, unrelated to the old fear",
+    "Exposure therapy merely suppressed the feeling for a while; the fear memory never changed and the effect was placebo"
+   ],
+   "explanation_en": "The key finding is that extinction doesn't erase fear; it writes a new safety memory alongside the old one, which can return with a change of context or time. \"Half erased\" still mistakes extinction for erasure."
+  }
+ ]
+}

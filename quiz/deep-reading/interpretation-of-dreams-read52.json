@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/interpretation-of-dreams-read52.html",
+ "title": "《梦的解析》— 每日精读 Read 52a",
+ "page_en": "/deep-reading/interpretation-of-dreams-read52.en.html",
+ "title_en": "The Interpretation of Dreams — Deep Reading Read 52a",
+ "src_hash": "c27b88b1eaea",
+ "questions": [
+  {
+   "id": "2d2cba3af3",
+   "question": "按弗洛伊德的看法，梦为什么常常荒诞难懂？",
+   "options": [
+    "恰恰因为意义太清楚，必须经过稽查改写；晦涩是伪装成功的证据",
+    "因为睡眠中脑干在随机放电，大脑皮层再把这些噪声硬编成了一个故事",
+    "因为梦的素材多是白天的琐事，本来就缺少连贯的意义",
+    "因为梦用的是全人类共有的象征语言，需要专门词典才能读懂"
+   ],
+   "answer": 0,
+   "explanation": "弗洛伊德的反向定理是：梦晦涩不是因为没有意义，而是因为意义清楚到必须被改写。「随机放电」是霍布森与麦卡利的激活—合成假说，正是与他相冲突的解释。",
+   "question_en": "According to Freud, why are dreams so often bizarre and hard to understand?",
+   "options_en": [
+    "Precisely because their meaning is too clear and must be rewritten past the censor; obscurity is evidence of successful disguise",
+    "Because the brainstem fires randomly during sleep and the cortex weaves the noise into a story",
+    "Because dream material is mostly trivial daytime events that lack coherent meaning to begin with",
+    "Because dreams speak a symbolic language shared by all humanity that requires a special dictionary"
+   ],
+   "explanation_en": "Freud's inverse theorem: dreams are obscure not because they're meaningless but because their meaning is clear enough to need rewriting. \"Random firing\" is Hobson and McCarley's activation-synthesis hypothesis, the rival account."
+  },
+  {
+   "id": "bf30536ac6",
+   "question": "有人翻解梦书，查到「梦见牙掉了＝亲人有难」。弗洛伊德会怎么反对？",
+   "options": [
+    "要先确定这个梦属于哪种原型，再对照神话里的同类意象去解",
+    "意义要从做梦者本人对每个碎片的自由联想里找，同一形象对不同人可以完全不同",
+    "梦根本没有心理意义，只是睡眠中神经活动留下的副产品",
+    "解梦书的错在于没有看出牙齿其实是性的象征，应当换成性的解释"
+   ],
+   "answer": 1,
+   "explanation": "弗洛伊德终结解梦书传统的方法是自由联想：梦象连着做梦者自己的联想网络，不是公共词典。把一切换成性象征，正是他流传史上最大的误会。",
+   "question_en": "Someone checks a dream book and finds \"teeth falling out means a relative is in danger.\" How would Freud object?",
+   "options_en": [
+    "First determine which archetype the dream belongs to, then compare it with similar images in myth",
+    "Meaning must come from the dreamer's own free associations to each fragment, and the same image can mean entirely different things to different people",
+    "Dreams have no psychological meaning at all; they are by-products of neural activity during sleep",
+    "The dream book's mistake is missing that teeth are really a sexual symbol, which should replace its reading"
+   ],
+   "explanation_en": "Freud broke with the dream-book tradition through free association: a dream image connects to the dreamer's own web of associations, not a public dictionary. Turning everything into sexual symbols is the biggest misunderstanding in the book's reception."
+  },
+  {
+   "id": "0c3e0d6484",
+   "question": "弗洛伊德说日间残余像「有项目却没钱的企业家」，出资的「资本家」是童年的潜意识愿望。这个比喻要说明？",
+   "options": [
+    "梦的素材和动力都来自童年，白天的经历对梦没有影响",
+    "梦像一笔交易，做梦者在梦里权衡近期利益与长期目标",
+    "梦的内容取自最近的琐事，推动它的动力却来自很久以前",
+    "梦主要是在处理白天没有完成的事务，童年经历对梦的影响很小"
+   ],
+   "answer": 2,
+   "explanation": "日间残余提供素材却拿不出动力，真正出资的是童年愿望。所以梦看起来关于昨天，动力却来自很久以前，眼下的事只是被征用的外壳。",
+   "question_en": "Freud likens the day's residues to \"an entrepreneur with a project but no money,\" financed by a \"capitalist,\" an unconscious childhood wish. What is the metaphor meant to show?",
+   "options_en": [
+    "Both a dream's material and its drive come from childhood, and daytime life plays no part",
+    "A dream is a transaction in which the dreamer weighs short-term gains against long-term goals",
+    "Dream content is drawn from recent trivia, but the force driving it comes from long ago",
+    "Dreams mainly process unfinished daytime business, with childhood having little effect"
+   ],
+   "explanation_en": "The day's residues supply material but no driving force; the funding comes from a childhood wish. So a dream seems to be about yesterday while its energy comes from long ago, and the present only provides the shell."
+  }
+ ]
+}

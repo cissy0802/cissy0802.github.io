@@ -1002,6 +1002,141 @@
     "c781add515",
     "512df13107"
    ]
+  },
+  "/buddhism/prajna-day1.html": {
+   "t": "佛经详解：般若智慧 — Day 1",
+   "f": "buddhism/prajna-day1.json",
+   "q": [
+    "4227debc68",
+    "384a30883c",
+    "7b02165400"
+   ]
+  },
+  "/deep-reading/geography-of-thought-read85.html": {
+   "t": "《思维的版图》— 好书精读 Read 85",
+   "f": "deep-reading/geography-of-thought-read85.json",
+   "q": [
+    "1f9d2001ca",
+    "df5e36079f",
+    "aa86d23dcf"
+   ]
+  },
+  "/deep-reading/man-and-his-symbols-read81.html": {
+   "t": "《人及其象征》— 好书精读 Read 81",
+   "f": "deep-reading/man-and-his-symbols-read81.json",
+   "q": [
+    "2af0c1306d",
+    "4c6d4baa71",
+    "dda776a2e8"
+   ]
+  },
+  "/neuroscience/anxiety-topic52.html": {
+   "t": "Topic 52 · 焦虑的神经机制 — 神经科学",
+   "f": "neuroscience/anxiety-topic52.json",
+   "q": [
+    "641b8abc36",
+    "e9d3e5d140",
+    "ff5cd762d6"
+   ]
+  },
+  "/deep-reading/elegant-puzzle-read904.html": {
+   "t": "《一道优雅的难题》— 每日精读 Read 904",
+   "f": "deep-reading/elegant-puzzle-read904.json",
+   "q": [
+    "9fb1c2bc14",
+    "a5935b1a27",
+    "231d9575c3"
+   ]
+  },
+  "/deep-reading/iliad-read36.html": {
+   "t": "《伊利亚特》— 每日精读 READ 36a",
+   "f": "deep-reading/iliad-read36.json",
+   "q": [
+    "bfb81eb281",
+    "14a295a489",
+    "0ac8aa87b6"
+   ]
+  },
+  "/mental-models/information-knowledge-day23.html": {
+   "t": "思维模型详解：信息与知识管理类 · 2026-05-19",
+   "f": "mental-models/information-knowledge-day23.json",
+   "q": [
+    "ce353ecec9",
+    "e931f051d7",
+    "4ef4f6545c"
+   ]
+  },
+  "/deep-reading/hamlet-read39.html": {
+   "t": "《哈姆雷特》— 每日精读 Read 39a",
+   "f": "deep-reading/hamlet-read39.json",
+   "q": [
+    "204fc51a3c",
+    "d14a995767",
+    "5197951465"
+   ]
+  },
+  "/deep-reading/interpretation-of-dreams-read52.html": {
+   "t": "《梦的解析》— 每日精读 Read 52a",
+   "f": "deep-reading/interpretation-of-dreams-read52.json",
+   "q": [
+    "2d2cba3af3",
+    "bf30536ac6",
+    "0c3e0d6484"
+   ]
+  },
+  "/deep-reading/king-lear-read39b.html": {
+   "t": "《李尔王》— 每日精读 Read 39b",
+   "f": "deep-reading/king-lear-read39b.json",
+   "q": [
+    "bcb9f6ef41",
+    "02fcd48896",
+    "f2c6e502da"
+   ]
+  },
+  "/podcast-deepread/process-finding-achieving-unique-purpose-robert-pod9.html": {
+   "t": "Huberman Lab × Robert Greene — 焦虑是思考的引擎",
+   "f": "podcast-deepread/process-finding-achieving-unique-purpose-robert-pod9.json",
+   "q": [
+    "e2bec744ab",
+    "a870d2602c",
+    "7107c81f28"
+   ]
+  },
+  "/chapter-deepread/accelerate-ch01-accelerate-book38.html": {
+   "t": "Accelerate 第 1 章 · 加速 — 专业书籍精读 Book 38",
+   "f": "chapter-deepread/accelerate-ch01-accelerate-book38.json",
+   "q": [
+    "2d15817839",
+    "1e664e20dc",
+    "a2cd7d3e9b"
+   ]
+  },
+  "/health-longevity/vo2max-training-plan.html": {
+   "t": "VO₂max 提升计划 — 8 周 · 每周 3–4 次",
+   "f": "health-longevity/vo2max-training-plan.json",
+   "q": [
+    "8f6d0f7d6b",
+    "46accca8bc",
+    "d4819214d8"
+   ]
+  },
+  "/chapter-deepread/contdelivery-ch01-problem-of-delivering-software-book13.html": {
+   "t": "持续交付 第 1 章 · 软件交付的难题 — 专业书籍精读 Book 13",
+   "f": "chapter-deepread/contdelivery-ch01-problem-of-delivering-software-book13.json",
+   "q": [
+    "6f1fa07f2d",
+    "d9e19f8ca6",
+    "af733bdaf9"
+   ]
+  },
+  "/meta-knowledge/game-theory-day11.html": {
+   "t": "元知识详解：博弈论 — Day 11",
+   "f": "meta-knowledge/game-theory-day11.json",
+   "q": [
+    "5287368c81",
+    "de495a1eaa",
+    "4ead1148c6"
+   ]
   }
  },
  "aliases": {

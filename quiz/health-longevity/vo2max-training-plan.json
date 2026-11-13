@@ -1,0 +1,69 @@
+{
+ "page": "/health-longevity/vo2max-training-plan.html",
+ "title": "VO₂max 提升计划 — 8 周 · 每周 3–4 次",
+ "page_en": "/health-longevity/vo2max-training-plan.en.html",
+ "title_en": "VO₂max Training Plan — 8 Weeks · 3–4 Sessions a Week",
+ "src_hash": "d444dbb3f771",
+ "questions": [
+  {
+   "id": "8f6d0f7d6b",
+   "question": "按这份 VO₂max 计划，业余训练者最常见的失败是什么？",
+   "options": [
+    "练得太少，每周不到三次，身体得不到足够的训练刺激",
+    "间歇课强度不够猛，每一组都没有冲到自己的极限",
+    "把每堂课都练成「中等偏累」，既攒不下基础量，又达不到刺激所需的强度",
+    "只做轻松的 Zone 2，从不做高强度间歇，始终缺少刺激"
+   ],
+   "answer": 2,
+   "explanation": "计划强调约八成时间要轻松，最常见的失败不是练得太少，而是所有课都练成中等强度，两头不讨好。",
+   "question_en": "According to this VO₂max plan, what is the most common mistake recreational trainees make?",
+   "options_en": [
+    "Training too little, fewer than three times a week, so the body never gets enough stimulus",
+    "Not pushing intervals hard enough, failing to reach their limit in every set",
+    "Doing every session \"moderately hard,\" which neither builds the base nor reaches the intensity needed for a stimulus",
+    "Doing only easy Zone 2 work and never high-intensity intervals, so the stimulus is always missing"
+   ],
+   "explanation_en": "The plan says about 80% of training time should be easy; the most common failure isn't too little training but turning every session into moderate effort, which serves neither goal."
+  },
+  {
+   "id": "46accca8bc",
+   "question": "做 4×4 间歇时，第一组的速度应该怎么定？",
+   "options": [
+    "第一组故意放得很慢当作热身，从第二组开始再逐步加速",
+    "第一组全力冲到极限，后面几组能坚持多少就算多少",
+    "定在你确信四组都能完成的速度，目标是在高强度区累积尽可能多的时间",
+    "以手表心率为准，第一分钟心率没进目标区就立即加速"
+   ],
+   "answer": 2,
+   "explanation": "第一组冲到极限、后两组崩掉是最常见也最没收益的做法。心率会滞后，前一分钟没到目标区是正常的，别因此加速，用呼吸和 RPE 判断。",
+   "question_en": "In a 4×4 interval session, how should you set your pace for the first rep?",
+   "options_en": [
+    "Deliberately go very slow on the first rep as a warm-up, then build speed from the second",
+    "Go all-out to your limit on the first rep, then hold on as best you can for the rest",
+    "At a pace you're sure you can hold for all four, since the aim is to accumulate as much time as possible at high intensity",
+    "Follow your watch's heart rate and speed up immediately if it isn't in the target zone within the first minute"
+   ],
+   "explanation_en": "Blasting the first rep and collapsing in the last two is the most common and least productive approach. Heart rate lags, so not being in zone during the first minute is normal; judge by breathing and RPE instead."
+  },
+  {
+   "id": "d4819214d8",
+   "question": "手表显示你的 VO₂max 是 42。按这份计划，应该怎么看这个数字？",
+   "options": [
+    "当作最大心率的依据：用它反推训练分区，比说话测试更准确",
+    "完全不可信：手表估算误差太大，应当一律以实验室测试为准，否则就不看",
+    "当作体检报告看：42 就是你的有氧能力，可以直接拿来和朋友的手表读数做比较",
+    "当作估算值看趋势：同一块表、同一条路线，连续几周往上走才说明真的进步"
+   ],
+   "answer": 3,
+   "explanation": "手表 VO₂max 由心率与配速反推，个体误差可达 ±10–15%，跨品牌比较更没意义；但同一设备上的趋势是可信的。全盘否定也不是计划的建议。",
+   "question_en": "Your watch says your VO₂max is 42. How does this plan say you should treat that number?",
+   "options_en": [
+    "As the basis for max heart rate: use it to back-calculate training zones, more accurately than the talk test",
+    "As worthless: watch estimates are too error-prone, so ignore them unless you have lab testing",
+    "As a medical result: 42 is your aerobic capacity and can be compared directly with friends' watch readings",
+    "As an estimate to track for trends: same watch, same route, rising over several weeks means real progress"
+   ],
+   "explanation_en": "A watch's VO₂max is inferred from heart rate and pace, with individual error up to ±10–15%, and cross-brand comparisons are meaningless; but trends on the same device are trustworthy. Dismissing it entirely isn't what the plan advises either."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/buddhism/prajna-day1.html",
+ "title": "佛经详解：般若智慧 — Day 1",
+ "page_en": "/buddhism/prajna-day1.en.html",
+ "title_en": "Buddhist Sutra Deep Dive: Prajñā Wisdom — Day 1",
+ "src_hash": "3908cca85cbb",
+ "questions": [
+  {
+   "id": "4227debc68",
+   "question": "按般若的读法，「色即是空，空即是色」最准确的意思是？",
+   "options": [
+    "物质世界是虚幻不实的，修行就是逐步远离、摆脱这些现象",
+    "色与空是修行的先后两个阶段：先如实观察现象，最后舍离现象、证入空无",
+    "空是现象背后另一层更真实的本体，要靠禅定超越现象去证得",
+    "现象没有独立不变的自性，而空就在现象之中，修行是在现象里看清它"
+   ],
+   "answer": 3,
+   "explanation": "「空」说的是缘起、无独立自性，不是虚无；紧跟的「空即是色」强调空不在别处，所以修行不是逃避现象。把它读成「物质是虚幻、要远离」正是最常见的误读。",
+   "question_en": "In the Prajñāpāramitā reading, what does \"form is emptiness, emptiness is form\" most accurately mean?",
+   "options_en": [
+    "The material world is illusory, so practice means gradually withdrawing from and escaping these phenomena",
+    "Form and emptiness are two successive stages: first observe phenomena as they are, then leave them behind and enter the void",
+    "Emptiness is a truer reality behind phenomena, reached by transcending them in deep meditation",
+    "Phenomena lack any fixed self-nature, yet emptiness is found right within them, so practice means seeing them clearly"
+   ],
+   "explanation_en": "\"Emptiness\" means dependent arising, the absence of independent essence, not nothingness. The second half, \"emptiness is form,\" insists emptiness is not elsewhere, so practice is not an escape from phenomena. Reading it as \"matter is illusion, so withdraw\" is exactly the common misreading."
+  },
+  {
+   "id": "384a30883c",
+   "question": "《金刚经》「应无所住而生其心」对心的要求是？",
+   "options": [
+    "止息心中升起的一切念头，让心长久保持在不起任何分别的空寂状态",
+    "对认定的目标全心投入、坚持到底，不被外界动摇",
+    "照常起心应物，只是不黏着，像镜子物来则照、物去不留",
+    "远离会引发执着的人和事，减少心与外境接触的机会"
+   ],
+   "answer": 2,
+   "explanation": "「住」是黏着，这句恰恰要「生其心」，只是不黏上去。把它理解成止息念头或回避外境，都漏掉了「生其心」这一半。",
+   "question_en": "What does the Diamond Sutra's line \"give rise to the mind without abiding anywhere\" ask of the mind?",
+   "options_en": [
+    "Stop every thought that arises and keep the mind lastingly in a still state free of any discrimination",
+    "Commit wholeheartedly to a chosen goal and hold to it, unmoved by outside influence",
+    "Engage with things as usual but without clinging, like a mirror that reflects what comes and keeps nothing",
+    "Stay away from people and things that provoke attachment, limiting the mind's contact with them"
+   ],
+   "explanation_en": "\"Abiding\" means sticking. The line explicitly says to give rise to the mind; it only asks that the mind not stick. Reading it as stopping thought or avoiding objects drops the \"give rise\" half."
+  },
+  {
+   "id": "7b02165400",
+   "question": "《金刚经》反复用「所谓佛法者，即非佛法」这类说一句拆一句的句式，用意是？",
+   "options": [
+    "说明佛法本身并不可靠，最终仍要回到个人的经验与判断",
+    "区分正统佛法与外道冒充的佛法，提醒信众时时辨别经义的真伪",
+    "这是梵文语法在汉译中留下的痕迹，本身并无特别含义",
+    "任何说法被抓成实有就成新执着，「空」「佛法」也不例外"
+   ],
+   "answer": 3,
+   "explanation": "般若的彻底性在于连自己的核心概念也不许被抓成实体，所以说一句就拆一句。它不是否定佛法、要人改信个人经验，而是防止「佛法」本身变成新的执着。",
+   "question_en": "Why does the Diamond Sutra keep using constructions like \"what is called the Buddha-dharma is not the Buddha-dharma\"?",
+   "options_en": [
+    "To show that the dharma is unreliable and that one must ultimately fall back on personal experience",
+    "To separate orthodox dharma from counterfeits and remind followers always to check the true meaning of scripture",
+    "It is a trace of Sanskrit grammar left in the Chinese translation, with no special meaning",
+    "Any teaching grasped as real becomes a new attachment, and that includes \"emptiness\" and \"dharma\" themselves"
+   ],
+   "explanation_en": "Prajñā's radicalism is that even its own key terms must not be grasped as things, so each statement is immediately taken apart. It doesn't reject the dharma in favor of personal experience; it keeps \"dharma\" itself from becoming another attachment."
+  }
+ ]
+}

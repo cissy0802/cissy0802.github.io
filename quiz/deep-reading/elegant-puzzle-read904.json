@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/elegant-puzzle-read904.html",
+ "title": "《一道优雅的难题》— 每日精读 Read 904",
+ "page_en": "/deep-reading/elegant-puzzle-read904.en.html",
+ "title_en": "An Elegant Puzzle — Deep Read 904",
+ "src_hash": "c447762a6ae2",
+ "questions": [
+  {
+   "id": "9fb1c2bc14",
+   "question": "你手上有 4 个新招聘名额：A 团队已经在溺水，B 团队就差一口气能上岸，C 团队运转良好。按拉尔森的建议应该怎么分？",
+   "options": [
+    "4 个都集中放进 B，把它推过临界点，缓过来后再去帮别的团队",
+    "主要放进 C，让最健康的团队腾出余力去做创新投入",
+    "4 个都放进 A，因为最危急、离沉没最近的团队最需要立刻补充人手",
+    "三个团队平均分配，避免任何一个团队觉得被区别对待"
+   ],
+   "answer": 0,
+   "explanation": "给溺水团队加人，新人要老人抽身来带，团队沉得更快（布鲁克斯定律）；匀着撒则谁都救不动。应该集中投放到就差一口气的团队。",
+   "question_en": "You have four new hires to place: team A is drowning, team B is one push from getting above water, team C is healthy. Per Larson, how should you allocate them?",
+   "options_en": [
+    "Put all four on B to push it past the tipping point, so it can later help the others",
+    "Put most of them on C so the healthiest team can free up capacity to innovate",
+    "Put all four on A, since the team in the deepest trouble needs help most urgently",
+    "Split them evenly across the three teams so no team feels treated differently"
+   ],
+   "explanation_en": "Adding people to a drowning team pulls veterans away to onboard them, sinking it faster (Brooks's law), and spreading people thin rescues nobody. Concentrate them on the team that's almost out."
+  },
+  {
+   "id": "a5935b1a27",
+   "question": "人人都想转岗、要名额、求晋升，资源却有限。「对着政策做事，别对着例外做事」主张的做法是？",
+   "options": [
+    "对每个请求都逐一深入了解背景与具体情况，再根据每个人的实际处境灵活处理",
+    "把这些请求统一交给人力资源部门处理，经理不要卷入其中",
+    "把条件和流程写成明文政策并默认照办，真要破例就当成罕见、有意识的决定",
+    "为了维护公平，所有超出现有安排的请求一律拒绝、不留余地"
+   ],
+   "answer": 2,
+   "explanation": "逐个开例外当下显得善良，却扩展不了、腐蚀公平、吃光时间；做法是立清晰的政策并守住，例外仍可以有，但要罕见且有意识。「一律拒绝」把例外的余地也取消了，不是文章的主张。",
+   "question_en": "Everyone wants transfers, headcount and promotions, but resources are limited. What does \"work the policy, not the exceptions\" recommend?",
+   "options_en": [
+    "Dig into each request individually and handle it flexibly based on that person's particular situation",
+    "Hand all such requests to HR so that managers stay out of them entirely",
+    "Write the criteria and process into an explicit policy and follow it by default, making any exception a rare, deliberate decision",
+    "To keep things fair, refuse every request that falls outside current arrangements, with no leeway"
+   ],
+   "explanation_en": "Case-by-case exceptions feel kind but don't scale, erode fairness and eat your calendar. Set a clear policy and hold it; exceptions can still happen, but rarely and deliberately. \"Refuse everything\" removes that room and isn't Larson's position."
+  },
+  {
+   "id": "231d9575c3",
+   "question": "一场迁移把 200 个服务里的 180 个迁到了新库，剩下 20 个一直没动。按拉尔森的看法，这场迁移交付了多少价值？",
+   "options": [
+    "已经足够，最难最刁钻的部分可以永久留在旧库，不值得再投入",
+    "大约九成：价值大体按已迁移服务所占的比例来计算，剩下的二十个以后可以慢慢再补",
+    "很少，只要旧模式还有残留就得同时维护新旧两套，想省的复杂度全卡在长尾里",
+    "价值很高，因为最积极的团队已经迁完，组织的技术方向已统一"
+   ],
+   "answer": 2,
+   "explanation": "只完成 90% 的迁移几乎交付不了承诺的价值，因为新旧并存、两头维护。所以收尾是最容易被低估的一步，要有人专门追着长尾清零。",
+   "question_en": "A migration has moved 180 of 200 services to the new library; the last 20 haven't budged. In Larson's view, how much value has it delivered?",
+   "options_en": [
+    "Enough already; the hardest leftovers can stay on the old library permanently and aren't worth more effort",
+    "About 90%, since value roughly tracks the share of services migrated, and the rest can follow gradually",
+    "Very little: as long as any of the old pattern remains you maintain both, and the promised simplification is stuck in the tail",
+    "A lot, because the most motivated teams are done and the organization's technical direction is now unified"
+   ],
+   "explanation_en": "A 90%-finished migration delivers little of its promised value, because old and new coexist and both must be maintained. That's why finishing is the most underestimated phase and someone has to chase the long tail to zero."
+  }
+ ]
+}

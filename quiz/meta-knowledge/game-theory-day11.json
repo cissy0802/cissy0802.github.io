@@ -1,0 +1,69 @@
+{
+ "page": "/meta-knowledge/game-theory-day11.html",
+ "title": "元知识详解：博弈论 — Day 11",
+ "page_en": "/meta-knowledge/game-theory-day11.en.html",
+ "title_en": "Meta Knowledge: Game Theory — Day 11",
+ "src_hash": "6b5fff5a4b2a",
+ "questions": [
+  {
+   "id": "5287368c81",
+   "question": "团队陷在「过度承诺→延期→再过度承诺」里：人人知道估算偏乐观，但谁先报保守估计谁先被边缘化。按纳什均衡的思路，怎样才能打破？",
+   "options": [
+    "由管理者亲自替每个人重新估算，取消个人估算的环节",
+    "等待有人主动带头报保守估计，其他人自然会跟进效仿",
+    "改变收益，比如公开记录估算与实际的对比，让准确成为被看见的能力",
+    "开会号召大家更诚实，强调团队利益高于个人表现"
+   ],
+   "answer": 2,
+   "explanation": "这是一个稳定的均衡，没人有动力单方面先退出，所以号召诚实没用、等人带头也等不来。要做的是改动收益那一格。",
+   "question_en": "A team is stuck in \"overcommit → slip → overcommit again\": everyone knows estimates are rosy, but whoever gives a cautious one first gets sidelined. Thinking in Nash equilibria, how do you break it?",
+   "options_en": [
+    "Have managers redo everyone's estimates personally and drop individual estimation",
+    "Wait for someone to lead by giving a cautious estimate; the others will naturally follow",
+    "Change the payoffs, e.g. publicly track estimate versus actual so accuracy becomes a visible skill",
+    "Call a meeting urging everyone to be more honest and to put team interest above personal performance"
+   ],
+   "explanation_en": "This is a stable equilibrium in which no one gains by deviating alone, so appeals to honesty fail and a volunteer never comes. You have to change the payoff in that cell."
+  },
+  {
+   "id": "de495a1eaa",
+   "question": "一战堑壕里对峙的士兵自发形成互不攻击的默契，军方用轮换部队把它打破了。为什么轮换有效？",
+   "options": [
+    "轮换让士兵得到休整、体力更充足，自然更有能力和意愿去作战",
+    "新来的部队没有见过敌人，对敌人的仇恨更强烈，更愿意主动发起进攻",
+    "同一批人长期对峙让战争成了重复博弈，轮换把它打回一次性博弈，合作就失去了基础",
+    "轮换让军官能更严密地监视士兵，违抗命令的士兵会受到惩罚"
+   ],
+   "answer": 2,
+   "explanation": "合作能在自利者之间涌现，前提是博弈重复且未来足够重要；轮换人为切断了未来，结构变了行为就跟着变，比宣传口号有效。",
+   "question_en": "In the WWI trenches, soldiers facing each other spontaneously stopped attacking; the army broke this by rotating units. Why did rotation work?",
+   "options_en": [
+    "Rotation let soldiers rest and recover, so they were naturally more able and willing to fight",
+    "Fresh units had never met the enemy, hated them more intensely and were more willing to attack",
+    "The same men facing off long-term made war a repeated game; rotation turned it back into a one-shot game, removing the basis for cooperation",
+    "Rotation let officers watch soldiers more closely, so anyone disobeying orders could be punished"
+   ],
+   "explanation_en": "Cooperation among self-interested players needs repetition and a future that matters; rotation cut off the future. Change the structure and behavior follows, more effectively than any slogan."
+  },
+  {
+   "id": "4ead1148c6",
+   "question": "次价拍卖中出价最高者中标，但只付第二高的价格。为什么这种规则下如实出价是最优策略？",
+   "options": [
+    "大家出价都很保守，如实出价就足以稳赢所有对手",
+    "拍卖方会核查出价是否真实，谎报出价的人会被取消竞拍资格",
+    "你付的价格由别人的出价决定，抬价或压价只改变你赢不赢，不会让你更划算",
+    "第二高价总是低于真实价值，所以中标者一定有利可图，不必再抬价"
+   ],
+   "answer": 2,
+   "explanation": "成交价不取决于你自己的出价，所以抬价只会让你在价格超过你估值时中标，压价只会让你错过本该赢的标。这就是激励相容：最优策略恰好是说实话。",
+   "question_en": "In a second-price auction, the highest bidder wins but pays the second-highest bid. Why is bidding your true value the optimal strategy?",
+   "options_en": [
+    "Everyone bids conservatively, so bidding your true value is enough to beat all rivals",
+    "The auctioneer checks whether bids are genuine, and anyone misreporting is disqualified",
+    "What you pay is set by others' bids, so shading up or down only changes whether you win, never making you better off",
+    "The second-highest price is always below true value, so the winner always profits and never needs to bid higher"
+   ],
+   "explanation_en": "Your price doesn't depend on your own bid, so overbidding only makes you win when the price exceeds your value, and underbidding only loses auctions you should have won. That's incentive compatibility: truth-telling is the best strategy."
+  }
+ ]
+}

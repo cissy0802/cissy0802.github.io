@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/iliad-read36.html",
+ "title": "《伊利亚特》— 每日精读 READ 36a",
+ "page_en": "/deep-reading/iliad-read36.en.html",
+ "title_en": "The Iliad — Deep Reading READ 36a",
+ "src_hash": "76b990ac4a68",
+ "questions": [
+  {
+   "id": "bfb81eb281",
+   "question": "阿伽门农夺走布里塞伊斯后，阿喀琉斯为什么暴怒到罢战？",
+   "options": [
+    "他早就想回家过平安长寿的日子，这次纠纷正好给了他退出的借口",
+    "他深爱布里塞伊斯，失去恋人的痛苦让他无心再为联军作战",
+    "他觊觎联军统帅之位，借这次冲突向阿伽门农的权威发起挑战",
+    "被当众夺走荣誉赏赐，等于宣布他不值那么多；在零和的荣誉体系里这是不能吞下的侮辱"
+   ],
+   "answer": 3,
+   "explanation": "在这个用战利品公开计价地位的世界里，geras 就是 timē 的实物；抢走它等于当众贬值。文章明确说他暴怒不是因为爱情。",
+   "question_en": "Why does Achilles rage and withdraw from battle after Agamemnon takes Briseis?",
+   "options_en": [
+    "He had long wanted to go home to a safe, long life, and the quarrel gave him an excuse to quit",
+    "He deeply loves Briseis, and losing her leaves him with no heart to fight for the Greeks",
+    "He covets supreme command and uses the conflict to challenge Agamemnon's authority",
+    "Publicly stripping his prize of honor declared him worth less, an insult he can't swallow in a zero-sum honor system"
+   ],
+   "explanation_en": "In a world that prices status publicly in spoils, the geras is timē made tangible, and taking it is a public devaluation. The article says outright that his fury is not about love."
+  },
+  {
+   "id": "14a295a489",
+   "question": "第九卷里重礼请不动阿喀琉斯，后来让他重返战场、明知必死也要出战的是什么？",
+   "options": [
+    "阿伽门农又追加了更多黄金和赏赐，最终满足了他对自己荣誉份额的全部要求",
+    "宙斯直接降下神谕命令他出战，他不敢违抗神的意志",
+    "他算清了不朽之名比长寿更划算，冷静地做出了理性的选择",
+    "挚友帕特罗克洛斯之死带来的悲恸，愤怒由此从受伤的自尊转为丧友之痛"
+   ],
+   "answer": 3,
+   "explanation": "同一个人，黄金请不动，却为一个死去的朋友连命也不要了。让他出战的不是荣誉、重礼或战略，而是丧友之痛，这是愤怒的一次质变。",
+   "question_en": "Rich gifts in Book 9 fail to move Achilles. What finally brings him back to battle, knowing it means his death?",
+   "options_en": [
+    "Agamemnon adds still more gold and gifts, finally meeting his demand for his share of honor",
+    "Zeus sends a direct command to fight, and he dares not defy the will of the gods",
+    "He calmly calculates that undying fame is worth more than a long life and makes the rational choice",
+    "Grief at the death of his friend Patroclus, which turns his rage from wounded pride into the pain of loss"
+   ],
+   "explanation_en": "Gold could not move him, yet for a dead friend he gives up his life. What sends him back is not honor, gifts or strategy but grief, a qualitative change in his anger."
+  },
+  {
+   "id": "0ac8aa87b6",
+   "question": "《伊利亚特》最终用什么收住阿喀琉斯的愤怒？",
+   "options": [
+    "希腊联军攻陷特洛伊、赢得战争，胜利终于补偿了他所受的屈辱",
+    "杀死赫克托耳、拖尸绕城之后，复仇已经完成，愤怒随之自然平息",
+    "普里阿摩斯跪求赎尸时，两人在「人都会死、都会失去所爱」上认出彼此，悲悯取代了怒火",
+    "诸神出面调停，命令他归还遗体，他只好服从并结束杀戮"
+   ],
+   "answer": 2,
+   "explanation": "拖尸辱骨时愤怒反而溢出了人的边界；真正让它熄灭的是普里阿摩斯的眼泪和共同的必死。全诗停在赫克托耳的葬礼，城破并不在诗中。",
+   "question_en": "What finally ends Achilles' rage in the Iliad?",
+   "options_en": [
+    "The Greeks sack Troy and win the war, and victory at last makes up for his humiliation",
+    "Killing Hector and dragging his body around the walls completes the revenge, so the anger naturally subsides",
+    "When Priam kneels to ransom his son's body, the two recognize each other in shared mortality and loss, and pity replaces fury",
+    "The gods intervene and order him to return the body, and he obeys and stops the killing"
+   ],
+   "explanation_en": "Desecrating Hector's body shows the rage overflowing human limits. What extinguishes it is Priam's tears and their shared mortality. The poem ends with Hector's funeral; the fall of Troy isn't in it."
+  }
+ ]
+}

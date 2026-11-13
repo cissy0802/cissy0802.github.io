@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/hamlet-read39.html",
+ "title": "《哈姆雷特》— 每日精读 Read 39a",
+ "page_en": "/deep-reading/hamlet-read39.en.html",
+ "title_en": "Hamlet — Deep Reading Read 39a",
+ "src_hash": "2948e68f39ad",
+ "questions": [
+  {
+   "id": "204fc51a3c",
+   "question": "哈姆雷特迟迟不杀克劳狄斯，文章认为最有力的解释是？",
+   "options": [
+    "他缺的是一个信得过的地面：在新教看来显形的亡魂可能是魔鬼，他被要求凭一句无法验证的话去弑君",
+    "他天生优柔寡断，思考压过行动，任何需要果断出手的事都会让他陷入犹豫",
+    "他害怕刺杀国王失败后被处死，出于自保一直在等待更安全的时机",
+    "克劳狄斯做了他潜意识里想做的事，杀叔叔就等于杀自己，所以下不了手"
+   ],
+   "answer": 0,
+   "explanation": "他在其他事上快得吓人，迟疑只针对这一刀。浪漫派的「思考压过行动」把戏读成了性格诊断，俄狄浦斯读法文章也说文本支撑薄弱。",
+   "question_en": "Why does Hamlet delay killing Claudius, according to what the article considers the strongest explanation?",
+   "options_en": [
+    "He lacks solid ground: in Protestant eyes a returning ghost may be a devil, and he's asked to kill a king on unverifiable word",
+    "He is by nature indecisive, thought overpowering action, so anything requiring decisiveness paralyzes him",
+    "He fears execution if the assassination fails and keeps waiting for a safer moment out of self-preservation",
+    "Claudius did what Hamlet unconsciously wished to do, so killing his uncle would mean killing himself"
+   ],
+   "explanation_en": "He is startlingly quick in everything else; the hesitation is only about this one blow. The Romantic \"thought over action\" reading turns the play into a character diagnosis, and the article calls the Oedipal reading thinly supported by the text."
+  },
+  {
+   "id": "d14a995767",
+   "question": "「思虑使我们全成了懦夫」（conscience does make cowards of us all）一句，按文章的读法，让人成为懦夫的是什么？",
+   "options": [
+    "对肉体死亡时剧烈痛苦的恐惧，人天生想逃避疼痛",
+    "思考本身：把事情想到底，就会把行动想没了",
+    "道德良知对杀人的禁止，让人不敢违背宗教戒律",
+    "缺乏足够的勇气，这是哈姆雷特个人性格上的弱点"
+   ],
+   "answer": 1,
+   "explanation": "conscience 兼有「良知」和「思虑、自我意识」两义，两义合起来才是这句的重量：使人成为懦夫的不是恐惧，是思考本身。而且独白通篇说「我们」，不是个人的性格缺陷。",
+   "question_en": "In the line \"conscience does make cowards of us all,\" what, on the article's reading, makes us cowards?",
+   "options_en": [
+    "Fear of the bodily pain of dying, since humans instinctively flee pain",
+    "Thinking itself: think a thing through to the end and you think the action away",
+    "Moral conscience forbidding killing, so one dares not break religious law",
+    "A lack of courage, which is Hamlet's personal character flaw"
+   ],
+   "explanation_en": "\"Conscience\" carries both \"moral sense\" and \"reflection, self-awareness,\" and the line's weight needs both: what makes cowards of us is not fear but thought itself. The speech also says \"we,\" not \"I,\" so it isn't a personal flaw."
+  },
+  {
+   "id": "5197951465",
+   "question": "第五幕哈姆雷特终于能动手，文章认为是什么变了？",
+   "options": [
+    "雷欧提斯当天就要血债血偿的冲劲让他深感羞愧，激起了他压抑已久的血气",
+    "他终于找到确凿证据验证了鬼魂的话，疑问彻底解决",
+    "他在墓地想通了复仇在道德上正当，于是下定了决心",
+    "他不再要求由自己来选定时机，从导演变成演员，「时机成熟就是一切」"
+   ],
+   "answer": 3,
+   "explanation": "他从未验证鬼魂，也从未想清楚该不该杀；他只是不再要求想通、不再自己挑时辰。这是一个反高潮的解：绕过了问题，而不是解决了它。",
+   "question_en": "In Act 5 Hamlet can finally act. What does the article say has changed?",
+   "options_en": [
+    "Laertes' urge to take revenge that very day shames him and stirs up his own blood",
+    "He has at last found hard proof that verifies the ghost, settling his doubts completely",
+    "In the graveyard he concludes that revenge is morally justified, and so he resolves to act",
+    "He stops insisting on choosing the moment himself, shifting from director to actor: \"the readiness is all\""
+   ],
+   "explanation_en": "He never verifies the ghost or settles whether to kill; he simply stops demanding certainty and stops picking the hour. It's an anticlimactic resolution: he goes around the question rather than answering it."
+  }
+ ]
+}

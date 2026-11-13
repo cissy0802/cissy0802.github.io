@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/geography-of-thought-read85.html",
+ "title": "《思维的版图》— 好书精读 Read 85",
+ "page_en": "/deep-reading/geography-of-thought-read85.en.html",
+ "title_en": "The Geography of Thought — Deep Reading Read 85",
+ "src_hash": "f2834db8a54e",
+ "questions": [
+  {
+   "id": "1f9d2001ca",
+   "question": "按尼斯贝特的框架，分析式思维与整体式思维最根本的区别在于？",
+   "options": [
+    "一方擅长严密的形式逻辑推理，另一方的抽象推理能力天生就比较弱",
+    "一方习惯用语言思考，另一方更习惯用图像和直觉思考",
+    "把因果安放在物体内部的属性上，还是安放在物体与周遭的关系里",
+    "一方偏好个人利益，另一方更愿意为集体利益牺牲自己"
+   ],
+   "answer": 2,
+   "explanation": "书中说两者不是聪明与笨的区别，而是「把因果安在哪里」：亚里士多德把下坠的原因放进石头的「重性」里，整体式则从相互作用解释。把差别读成逻辑能力高低，正是文章明确反对的误读。",
+   "question_en": "In Nisbett's framework, what is the most fundamental difference between analytic and holistic thinking?",
+   "options_en": [
+    "One is good at formal logic, while the other is innately weaker at abstract reasoning",
+    "One tends to think in words, while the other leans on images and intuition",
+    "Whether causes are located in an object's own properties or in its relations with its surroundings",
+    "One favors individual interest, while the other is readier to sacrifice for the group"
+   ],
+   "explanation_en": "The book says the difference is not smart versus dull but where causation is placed: Aristotle put the cause of falling inside the stone's \"gravity,\" while holistic thinking explains behavior through interaction. Reading it as a gap in logical ability is the misreading the article explicitly rejects."
+  },
+  {
+   "id": "df5e36079f",
+   "question": "为什么整体式思维的人更容易出现后见之明偏误（「我早就知道」）？",
+   "options": [
+    "他们更相信命运早已注定，因此会把任何结局都看作必然发生的事",
+    "集体文化里承认自己没料到会丢面子，所以人们往往倾向于事后声称自己早有预见",
+    "手里的因果网太大，任何结局都能接回某几条线索，于是什么结果都不算意外",
+    "整体式思维更关注背景，对故事主角的细节记得较少，回忆更容易被改写"
+   ],
+   "answer": 2,
+   "explanation": "文章给的机制是解释力：因果网越大，越能把任何结局说通，也就越不容易被证伪、越不会惊讶。面子压力听起来合理，但不是书中给的解释。",
+   "question_en": "Why are holistic thinkers more prone to hindsight bias (\"I knew it all along\")?",
+   "options_en": [
+    "They believe more strongly in fate, so they treat any outcome as something bound to happen",
+    "In collectivist cultures admitting you didn't foresee something costs face, so people claim foresight afterward",
+    "Their causal web is so large that any outcome can be traced back to some threads, so nothing seems surprising",
+    "Holistic attention goes to the background, so they recall the protagonist less well and memory is easily rewritten"
+   ],
+   "explanation_en": "The article's mechanism is explanatory power: a bigger causal web can make sense of any ending, so it is harder to falsify and less likely to produce surprise. Face-saving sounds plausible, but it is not the book's explanation."
+  },
+  {
+   "id": "aa86d23dcf",
+   "question": "关于这本书的实证基础，「多实验室 2 号」这类大规模复现项目给出的提醒是？",
+   "options": [
+    "复现结果显示差异来自基因，因此不能再说它可以随环境改变",
+    "书中的东西方差异几乎全部无法复现，整套理论已被证伪而放弃",
+    "不少经典效应本身能复现，但「文化会调节它」这一层往往很弱或测不出来",
+    "复现证实了东西方是两个几乎不重叠的人群，组间差异远远大于各自的组内差异"
+   ],
+   "answer": 2,
+   "explanation": "文章说这些差异是分布的平移、组内差异远大于组间差异，而大规模复现发现文化调节效应常常很弱，所以该当「部分被支持的纲领」读。说成全盘被证伪，同样读过了头。",
+   "question_en": "What caution do large replication projects such as Many Labs 2 add to this book's evidence?",
+   "options_en": [
+    "The replications showed the differences are genetic, so they can no longer be said to shift with environment",
+    "Nearly all of the book's East–West differences failed to replicate, and the theory has been abandoned",
+    "Many classic effects replicate, but the claim that culture moderates them is often weak or undetectable",
+    "They confirmed East and West are two barely overlapping populations, with between-group gaps exceeding within-group ones"
+   ],
+   "explanation_en": "The article stresses these are shifts in distributions, with within-group variation far larger than between-group, and that large replications often find cultural moderation weak. So the book should be read as a partly supported program; calling it wholly refuted overshoots the other way."
+  }
+ ]
+}

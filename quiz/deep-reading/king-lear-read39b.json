@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/king-lear-read39b.html",
+ "title": "《李尔王》— 每日精读 Read 39b",
+ "page_en": "/deep-reading/king-lear-read39b.en.html",
+ "title_en": "King Lear — Deep Reading Read 39b",
+ "src_hash": "2365a0b5b242",
+ "questions": [
+  {
+   "id": "bcb9f6ef41",
+   "question": "李尔要女儿们当众说「你有多爱我」，考狄利娅答「没有」。文章认为这一幕抓住的普遍错误是？",
+   "options": [
+    "考狄利娅过于骄傲倔强，只要她愿意说几句体面话，悲剧就完全可以避免",
+    "两个姐姐天性贪婪狠毒，李尔的错只是没能早一点看穿她们的本性",
+    "李尔年老昏聩，已经分辨不出真心和奉承，这是衰老带来的判断力下降",
+    "要求爱以可计量的形式交付——当众、按份额、能换土地；能这样交货的就一定不是爱"
+   ],
+   "answer": 3,
+   "explanation": "李尔不是在问爱，是在开拍卖。姐姐们交得出来，因为她们交的是话；考狄利娅交不出来，因为她交的是真东西。文章也明确反对「李尔只是老糊涂」的读法。",
+   "question_en": "Lear asks his daughters to declare publicly how much they love him, and Cordelia answers \"Nothing.\" What universal error does the article say this scene captures?",
+   "options_en": [
+    "Cordelia is too proud and stubborn; had she offered a few gracious words, the tragedy could have been avoided",
+    "The two elder sisters are greedy and cruel by nature, and Lear's only fault was not seeing through them sooner",
+    "Lear is senile and can no longer tell sincerity from flattery, a decline in judgment that comes with age",
+    "Demanding love in measurable form, public, portioned, exchangeable for land; whatever can be delivered that way isn't love"
+   ],
+   "explanation_en": "Lear isn't asking about love; he's holding an auction. The sisters can deliver because they deliver words; Cordelia can't because hers is the real thing. The article also rejects the \"Lear is just senile\" reading."
+  },
+  {
+   "id": "02fcd48896",
+   "question": "女儿们把李尔的随从从一百砍到零，问「一个也不需要」。李尔「别跟我讲需要」那段辩护的核心主张是？",
+   "options": [
+    "随从是他唯一的武力，没有了随从，他就再也无法夺回自己交出的权力",
+    "把人和畜生分开的恰恰是必需之外那点多余，只给必需品，人就跟畜生一样贱",
+    "他仍是国王，按照礼制本就该保有一百名骑士，女儿们根本无权削减他应得的待遇",
+    "女儿们的计算本身就不对，五十个随从的开销其实她们完全负担得起"
+   ],
+   "answer": 1,
+   "explanation": "女儿们的效率逻辑无懈可击，李尔回击的是这套逻辑本身：最卑贱的乞丐也有一点多余，那点没用的东西才是人还算个人物的凭据。",
+   "question_en": "His daughters cut Lear's retinue from a hundred to none: \"What need one?\" What is the core claim of his \"O, reason not the need\" defense?",
+   "options_en": [
+    "The retinue is his only armed force, and without it he can never take back the power he gave away",
+    "What separates humans from beasts is precisely the surplus beyond necessity; allow only necessities and human life is as cheap as a beast's",
+    "He is still king and by rights entitled to a hundred knights, so his daughters have no power to cut them",
+    "The daughters' arithmetic is simply wrong; they could easily afford the cost of fifty knights"
+   ],
+   "explanation_en": "The daughters' efficiency logic is airtight, so Lear attacks the logic itself: even the poorest beggar has something superfluous, and that useless extra is what still marks someone as a person."
+  },
+  {
+   "id": "f2c6e502da",
+   "question": "关于受苦，《李尔王》最终的立场，按文章的读法是？",
+   "options": [
+    "受苦让人看清真相，也为他换来了救赎：李尔最终与女儿和解，在安宁与满足中死去",
+    "受苦是上天对李尔骄傲的惩罚，善恶有报的秩序在结尾得到了恢复",
+    "受苦毫无意义，剧中人物从头到尾什么也没有学到，只是在空舞台上折腾",
+    "受苦确实让人看清，但看清并不带来回报：李尔学会同情与道歉后仍被夺走了女儿"
+   ],
+   "answer": 3,
+   "explanation": "文章说五幕证明道德教育是可能的，最后八十行证明它兑现不了。莎士比亚还亲手把旧版本的父女得胜改成双双惨死，不肯把「他至少明白了」写进结算单。",
+   "question_en": "On the article's reading, where does King Lear finally stand on suffering?",
+   "options_en": [
+    "Suffering reveals the truth and also earns redemption: Lear is reconciled with his daughter and dies at peace",
+    "Suffering is heaven's punishment for Lear's pride, and the order of just deserts is restored at the end",
+    "Suffering is meaningless; the characters learn nothing at all and merely thrash about on an empty stage",
+    "Suffering does make people see, but seeing brings no reward: Lear learns compassion and apology, then still loses his daughter"
+   ],
+   "explanation_en": "The article says five acts prove moral education is possible and the last eighty lines prove it pays nothing. Shakespeare even rewrote his sources, where father and daughter win, into both their deaths, refusing to enter \"at least he understood\" as compensation."
+  }
+ ]
+}

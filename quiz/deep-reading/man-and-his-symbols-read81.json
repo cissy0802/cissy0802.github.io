@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/man-and-his-symbols-read81.html",
+ "title": "《人及其象征》— 好书精读 Read 81",
+ "page_en": "/deep-reading/man-and-his-symbols-read81.en.html",
+ "title_en": "Man and His Symbols — Deep Reading 81",
+ "src_hash": "c7c3c6c2978c",
+ "questions": [
+  {
+   "id": "2af0c1306d",
+   "question": "有人说「梦见蛇就代表性欲」。按荣格在《人及其象征》里的立场，问题出在哪？",
+   "options": [
+    "解梦本身不可靠：梦只是睡眠中大脑的随机放电，没有含义",
+    "把象征当成了符号：象征没有固定译法，只能从这个人、这段处境去逼近",
+    "解释方向错了：蛇在集体无意识里固定代表智慧，而不是性欲",
+    "忽略了童年经历：梦里的蛇必须追溯到早年被压抑的具体创伤"
+   ],
+   "answer": 1,
+   "explanation": "符号可以一一翻译、译完没有剩余；象征指向说不尽的东西，所以梦没有字典。把蛇换成「固定代表智慧」，仍然是在查表。",
+   "question_en": "Someone says \"dreaming of a snake means sexual desire.\" From Jung's position in Man and His Symbols, what's wrong with this?",
+   "options_en": [
+    "Dream interpretation is unreliable in itself: dreams are random neural firing during sleep",
+    "It treats a symbol as a sign: a symbol has no fixed translation and can only be approached through this person and situation",
+    "It gets the meaning wrong: in the collective unconscious the snake stands for wisdom, not sexuality",
+    "It ignores childhood: a dream snake must be traced back to a specific repressed early trauma"
+   ],
+   "explanation_en": "A sign translates one-to-one with nothing left over; a symbol points to something never fully sayable, so there's no dream dictionary. Swapping in \"the snake always means wisdom\" is still a lookup table."
+  },
+  {
+   "id": "4c6d4baa71",
+   "question": "荣格用「晶体的轴系之于晶体」来比喻原型，意在说明？",
+   "options": [
+    "原型是一套固定的人物清单，如导师、反派，可以直接用来编写故事",
+    "原型像晶体一样坚硬不变，所以每个人梦中的同一原型都长得一模一样",
+    "人类从祖先那里继承了具体的记忆与神话故事，它们会几乎原样出现在后代的梦里",
+    "原型是无内容的形式与倾向，具体意象是它带着个人和文化印记的一次结晶"
+   ],
+   "answer": 3,
+   "explanation": "轴系本身没有物质形态，却预先决定会长出什么形状，而每颗晶体又各不相同。荣格反复否认继承的是具体记忆；把原型当成角色清单，也被文章称为把轴系当成了晶体。",
+   "question_en": "What is Jung's analogy of an archetype to \"the axial system of a crystal\" meant to convey?",
+   "options_en": [
+    "Archetypes are a fixed cast list, such as the mentor and the villain, that can be used directly to write stories",
+    "Archetypes are as hard and unchanging as crystals, so the same archetype looks identical in everyone's dreams",
+    "Humans inherit concrete memories and myths from their ancestors, which reappear almost intact in descendants' dreams",
+    "An archetype is form and tendency without content; each concrete image is one crystallization of it, marked by person and culture"
+   ],
+   "explanation_en": "The axial system has no material form yet predetermines what shape grows, and every actual crystal differs. Jung repeatedly denied that specific memories are inherited, and the article calls the screenwriter's cast list mistaking the axes for the crystal."
+  },
+  {
+   "id": "dda776a2e8",
+   "question": "按冯·弗朗茨所讲的个体化，下面哪种变化最符合它的方向？",
+   "options": [
+    "把性格中不体面的部分逐一改掉，让自己一步步越来越接近心中理想的样子",
+    "持续加强自律与效率，让意识中的自我牢牢掌控整个心灵",
+    "把职业角色经营得无懈可击，让社会形象和内在完全保持一致",
+    "把从小被压下去的攻击性和任性认领回来，人反而显得更「毛糙」"
+   ],
+   "answer": 3,
+   "explanation": "个体化追求的是完整，不是完美：完美靠删除，完整靠收编，所以人往往更毛糙而不是更光滑。「改掉缺点」恰是它要替换掉的默认剧本。",
+   "question_en": "In von Franz's account of individuation, which change best fits its direction?",
+   "options_en": [
+    "Correcting each unflattering trait one by one, step by step approaching the ideal self one holds in mind",
+    "Steadily increasing self-discipline so that the conscious ego firmly controls the whole psyche",
+    "Perfecting one's professional role so that public image and inner life match exactly",
+    "Reclaiming the aggression and willfulness suppressed since childhood, even if it leaves one \"rougher\""
+   ],
+   "explanation_en": "Individuation aims at wholeness, not perfection: perfection works by deletion, wholeness by reintegration, so people often become rougher rather than smoother. \"Fixing your flaws\" is the very script it replaces."
+  }
+ ]
+}
