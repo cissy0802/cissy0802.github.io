@@ -60,6 +60,7 @@
     'talk-deepread': { emoji: '🎤', zh: '演讲精读', en: 'Talk Deep-Read' },
     'nobel-prizes': { emoji: '🏅', zh: '诺奖精读', en: 'Nobel Prizes' },
     'podcast-deepread': { emoji: '🎧', zh: '播客精读', en: 'Podcast Deep-Read' },
+    'ai-dev-daily': { emoji: '🛠️', zh: 'AI 开发者日报', en: 'AI Dev Daily' },
     'leadership': { emoji: '🎯', zh: '领导力实践', en: 'Leadership' },
     'sales': { emoji: '🤝', zh: '销售实战', en: 'Sales' },
     'writing': { emoji: '✍️', zh: '写作与表达', en: 'Writing' },

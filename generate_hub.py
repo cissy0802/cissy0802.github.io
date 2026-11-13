@@ -53,6 +53,10 @@ CARDS = [
      "计算机 / 软件经典好书逐章精读——一章一页讲透核心概念与关键权衡，读这页≈读懂这一章。",
      "Great CS/software books, chapter by chapter — core concepts and key trade-offs, one chapter per page; read this page instead of the chapter.",
      "chapter-deepread", "tech"),
+    ("aidev", "🛠️", "AI 开发者日报", "AI Dev Daily",
+     "每晚一期：Anthropic、OpenAI 等一线团队的开发向动态——新工具、API 变化、带硬数字的工程实践；只放原帖出处，没有值得写的就不发。",
+     "Nightly: what frontier AI teams shipped for developers — new tools, API changes, engineering practice with hard numbers. Primary sources only; no filler on quiet days.",
+     "ai-dev-daily", "tech"),
     # 职场 · Career
     ("leadership", "🎯", "领导力实践", "Leadership",
      "1:1、反馈、难对话、招聘、coaching——具体话术与检查表，技术 leader 的处方性 craft。",
@@ -216,6 +220,7 @@ CSS_VARS = {
     "blogs":      ("#6ea8fe", "#5eead4"),
     "talks":      ("#5ee6a8", "#e8d46b"),
     "nobel":      ("#e8c26a", "#d9825b"),
+    "aidev":      ("#4fd1c5", "#63b3ed"),
     "podcasts":   ("#ff8a65", "#d96ba8"),
     "csbooks":    ("#4a90b0", "#2f6480"),
     "sysd":       ("#64c8ff", "#5eead4"),

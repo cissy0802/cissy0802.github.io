@@ -61,6 +61,7 @@
     'neuroscience': 1,
     'nobel-prizes': 1,
     'podcast-deepread': 1,
+    'ai-dev-daily': 1,
     'novel-deepread': 1,
     'parenting': 1,
     'personal-finance': 1,
