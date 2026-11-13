@@ -53,9 +53,9 @@ CARDS = [
      "计算机 / 软件经典好书逐章精读——一章一页讲透核心概念与关键权衡，读这页≈读懂这一章。",
      "Great CS/software books, chapter by chapter — core concepts and key trade-offs, one chapter per page; read this page instead of the chapter.",
      "chapter-deepread", "tech"),
-    ("aidev", "🛠️", "AI 开发者日报", "AI Dev Daily",
-     "每晚一期：Anthropic、OpenAI 等一线团队的开发向动态——新工具、API 变化、带硬数字的工程实践；只放原帖出处，没有值得写的就不发。",
-     "Nightly: what frontier AI teams shipped for developers — new tools, API changes, engineering practice with hard numbers. Primary sources only; no filler on quiet days.",
+    ("aidev", "🛠️", "AI-native 转型笔记", "AI-Native Transformation",
+     "先进 AI lab 和一线团队自己是怎么变成 AI-native 的——评审、组织、度量、agent 运维、护栏——按类别沉淀、每日修订，以及别的组织能借走什么。",
+     "How frontier AI labs and leading teams actually turned AI-native — review, org design, measurement, agent ops, guardrails — kept by category, revised daily, with what other orgs can borrow.",
      "ai-dev-daily", "tech"),
     # 职场 · Career
     ("leadership", "🎯", "领导力实践", "Leadership",
