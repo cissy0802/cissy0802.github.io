@@ -1,0 +1,69 @@
+{
+ "page": "/thinker-arena/debate.html?d=manager-or-ic",
+ "title": "辩论：该去带人，还是把手艺做深？",
+ "page_en": "/thinker-arena/debate.en.html?d=manager-or-ic",
+ "title_en": "Should you manage people, or go deeper into the craft?",
+ "src_hash": "63eef7e7e7a4",
+ "questions": [
+  {
+   "id": "92c35a227f",
+   "question": "按这场辩论的共识，判断一个带人的职位值不值得接，最该分头去查的是什么？",
+   "options": [
+    "自己性格是否外向、是否擅长社交与沟通",
+    "头衔升了几级、加薪幅度多大、手下会有多少人",
+    "决定权、目标与反馈、能否积累拿不走的本事",
+    "它是不是现在这个手艺岗位顺理成章的下一级"
+   ],
+   "answer": 2,
+   "explanation": "共识是带人和做手艺是两份工作，好坏不看头衔，看三个变量：对做什么、何时做、怎么做的决定权，目标与反馈，以及是否在积累别人拿不走的东西。「下一级台阶」的想法正是辩论否定的「同一份工作的两级」。",
+   "question_en": "By the debate's consensus, what should you check, one by one, to decide whether a people-management role is worth taking?",
+   "options_en": [
+    "Whether your personality is outgoing and you're good at socializing and communicating",
+    "How many levels the title jumps, the size of the raise, and how many reports you'll have",
+    "Real decision rights, clear goals with fast feedback, and whether you build what can't be taken away",
+    "Whether it is the natural next rung above your current hands-on role"
+   ],
+   "explanation_en": "The consensus is that managing and doing the craft are two different jobs; what makes one good is not the title but three variables: control over what, when and how, clear goals and feedback, and whether you're accumulating something no one can take. The 'next rung' idea is exactly the 'two levels of one job' view the debate rejects."
+  },
+  {
+   "id": "10b71bb3b2",
+   "question": "辩论总结指出，现实中多数人成为管理者的方式和讨论里设想的不同。按这一点，最该给自己装什么？",
+   "options": [
+    "一个警报：定期回看日历，问上次独自做完东西是何时",
+    "一份合同：升职当天就把薪酬和职级谈到最高",
+    "一条底线：先把手艺练到顶，再考虑要不要转去带人",
+    "一套评估：在转岗之前，先做一次完整的领导力与性格测评"
+   ],
+   "answer": 0,
+   "explanation": "总结说这个身份多半是被漂过去的：顶一次班、带两个实习生、成了大家都来问的人，回过神来已大半年没亲手做完过东西。漂移只朝协调一个方向走，所以比判据更该装的是一个定期检查的警报，而不是一次性的评估。",
+   "question_en": "The debate's summary notes that most people become managers differently from how the discussion imagined. Given that, what should you most install for yourself?",
+   "options_en": [
+    "An alarm: regularly review your calendar and ask when you last finished something on your own",
+    "A contract: negotiate pay and level as high as possible on the day you're promoted",
+    "A rule: max out your craft first, and only then consider moving into management",
+    "An assessment: take a full leadership and personality evaluation before switching roles"
+   ],
+   "explanation_en": "The summary says the role is usually drifted into, not chosen: covering for someone, taking on two interns, becoming the person everyone asks, until you realize you haven't finished anything yourself in months. Drift runs only toward coordination, so what you need more than criteria is a recurring alarm, not a one-off assessment."
+  },
+  {
+   "id": "53698adcab",
+   "question": "你在犹豫要不要转去带人，打算向几位前辈打听。按这场辩论的共识，最可靠的打听方式是？",
+   "options": [
+    "要他们一份真实的周历，数整块时间和被打断的次数",
+    "请他们根据对你的了解，判断你适不适合带人",
+    "问他们升职后整体是否更快乐、有没有后悔",
+    "多参考说「你会喜欢的」那几位，他们更了解这份工作"
+   ],
+   "answer": 0,
+   "explanation": "辩论的共识是别问感受，问日程：人对新处境的兴奋会被习惯化磨平，打听时又会自动放大好消息、把「我做得很痛苦」解释成对方不适合。日历上的整块时间和打断次数，比任何感受或适合度判断都准。",
+   "question_en": "You're weighing a move into management and plan to ask a few people who've done it. By the debate's consensus, what's the most reliable thing to ask for?",
+   "options_en": [
+    "A real week of their calendar, counting uninterrupted blocks and interruptions",
+    "Their judgment, based on knowing you, of whether you're suited to managing",
+    "Whether they're happier overall since the promotion and whether they regret it",
+    "Mainly the views of those who say 'you'll love it', since they know the job best"
+   ],
+   "explanation_en": "The consensus is to ask about schedules, not feelings: the thrill of a new role fades through habituation, and when asking around we inflate good news and explain away 'it's been miserable' as that person not being a fit. Counting focus blocks and interruptions on a real calendar beats any report of feelings or fit."
+  }
+ ]
+}

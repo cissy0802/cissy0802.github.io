@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/naval-ai-topic17.html",
+ "title": "Naval 专题 · AI 时代的 Naval：回到写代码",
+ "page_en": "/podcast-deepread/naval-ai-topic17.en.html",
+ "title_en": "Naval Series · Naval in the Age of AI: Back to Code",
+ "src_hash": "add9809963a9",
+ "questions": [
+  {
+   "id": "ccd489fcd6",
+   "question": "按这篇的梳理，Naval 认为代码人人都能写之后，价值主要转到了哪里？",
+   "options": [
+    "掌握最新的提示词技巧，以及别人包装好的工作流框架",
+    "能做出别人不会做的酷软件，并抢先发布出去",
+    "懂底层的知识、选对题的判断、为结果背书的担责",
+    "雇更多工程师，组建更大的软件团队来扩大规模"
+   ],
+   "answer": 2,
+   "explanation": "他给过三个答案：抽象会漏，懂底层的人才能补漏；选对题和选错题差的是无穷大；人正在变成验证者，为 AI 的产出背书。他明确说「我在做别人不会做的酷软件」不值得投资，也说自己不学提示词技巧。",
+   "question_en": "Per this overview, once anyone can write code, where does Naval think the value mainly shifts?",
+   "options_en": [
+    "Mastering the latest prompt tricks and other people's packaged workflow frameworks",
+    "Building cool software others can't build, and shipping it before anyone else",
+    "Knowing the layer below, judgment in picking problems, and accountability for results",
+    "Hiring more engineers and building bigger software teams to scale up"
+   ],
+   "explanation_en": "He gives three answers: abstractions leak and those who understand the layer below can patch them; picking the right problem versus the wrong one is an infinite difference; and people are becoming verifiers who vouch for AI output. He explicitly calls 'I build cool software others can't' uninvestable and says he doesn't learn prompt tricks."
+  },
+  {
+   "id": "d25097b600",
+   "question": "Naval 说自己不学任何提示词技巧和工作流框架。这篇文章怎么看这句话？",
+   "options": [
+    "这证明模型已经足够聪明了，完全不懂工程的人也能得到一模一样的产出",
+    "这说明他完全放弃了工作流，只靠一次次随手的单轮对话",
+    "这是因为让几个模型互相审代码，已足以弥补技巧上的不足",
+    "有前提：他懂计算机架构，能把需求讲精确，不学的只是包装好的技巧"
+   ],
+   "answer": 3,
+   "explanation": "文章指出他能用结构化英语把需求讲精确，是因为懂计算机架构；他搭的提交即审查、每天自动修 bug 本身就是讲究的工作流。他不学的是别人包装好的技巧，不是工程常识。他还观察到模型互审有严重的群体思维，并不管用。",
+   "question_en": "Naval says he doesn't learn any prompting techniques or workflow frameworks. How does the article read that claim?",
+   "options_en": [
+    "It proves models are now smart enough that non-engineers get the same output",
+    "It shows he has abandoned workflows entirely and relies on casual one-off prompts",
+    "It's because having several models review each other's code makes up for missing technique",
+    "It has a premise: he knows computer architecture and can specify precisely; he skips only packaged tricks"
+   ],
+   "explanation_en": "The article notes he can specify needs precisely in structured English because he understands computer architecture, and his setup — automatic review on commit, daily automated bug fixing — is itself a careful workflow. What he skips is other people's packaged tricks, not engineering sense. He also found that models reviewing each other suffer heavy groupthink."
+  },
+  {
+   "id": "67246a1a0e",
+   "question": "Naval 把判断 AI 能否创造的标准，从「追问它为什么」换成了「分布外」。文章对这个新标准提出了什么批评？",
+   "options": [
+    "分布外是机器学习术语，不能拿来讨论人类意义上的创造",
+    "这个新标准和 Deutsch 关于人是普遍解释者的理论直接相互矛盾",
+    "这个标准太宽松，让 AI 很容易就被认定为具有了创造力",
+    "照此定义，AI 每学会一样东西，那样东西就自动不算创造，难以证伪"
+   ],
+   "answer": 3,
+   "explanation": "吉卜力画风的讨论暴露了问题：一种风格被 AI 铺天盖地复制之后就进了分布，不再算艺术。这样 AI 每学会一样，那样就不算创造了，和他要求别人做「有风险、可证伪的预测」恰好相反。",
+   "question_en": "Naval switched his test for whether AI can create from 'ask it why' to 'out of distribution'. What criticism does the article raise about the new test?",
+   "options_en": [
+    "'Out of distribution' is a machine-learning term and can't apply to human creativity",
+    "The test directly contradicts Deutsch's theory of humans as universal explainers",
+    "The test is too loose, making it easy to declare that AI has become creative",
+    "By that definition, whatever AI learns automatically stops counting as creation, making it unfalsifiable"
+   ],
+   "explanation_en": "The Ghibli-style discussion exposed it: once AI floods the world with a style, it's in distribution and no longer counts as art. So each thing AI learns stops counting as creation — the opposite of the risky, falsifiable predictions he demands of others."
+  }
+ ]
+}

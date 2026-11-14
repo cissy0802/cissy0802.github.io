@@ -1,0 +1,69 @@
+{
+ "page": "/deep-research/agent-readme-deep.html",
+ "title": "给 Agent 看的 README:上下文文件是基建还是货物崇拜?(深入版) — BigCat Deep Research",
+ "page_en": "/deep-research/agent-readme-deep.en.html",
+ "title_en": "The README for Agents: Are Context Files Infrastructure or Cargo Cult? (Deep Dive) — BigCat Deep Research",
+ "src_hash": "1f3c0b30dea0",
+ "questions": [
+  {
+   "id": "b63a437455",
+   "question": "关于 AGENTS.md 这类给 agent 看的上下文文件，按文章对第一批对照研究的审计，唯一带统计检验、站得住的效应是什么？",
+   "options": [
+    "LLM 自动生成的文件会显著降低任务成功率",
+    "文件越短、指令越靠前，遵从率越高",
+    "带文件时任务成功率显著提升",
+    "带文件时完成耗时和输出 token 下降"
+   ],
+   "answer": 3,
+   "explanation": "Codex 配对实验测得中位耗时 -28.64%、输出 token -16.58%，Wilcoxon 检验 p<0.05，是唯一带统计检验的效应。成功率方向三项研究互相矛盾，LLM 生成文件降成功率的数字被方法学审计否决。",
+   "question_en": "For agent context files like AGENTS.md, after the article's audit of the first controlled studies, what is the only effect backed by a statistical test that holds up?",
+   "options_en": [
+    "LLM-generated files significantly lower success rates",
+    "Shorter files with instructions up top get more compliance",
+    "Significantly higher task success rates with the file",
+    "Lower completion time and fewer output tokens with the file"
+   ],
+   "explanation_en": "The paired Codex experiment found median time down 28.64% and output tokens down 16.58% with a Wilcoxon test at p<0.05 — the only effect with a statistical test. On success rates, three studies contradict each other, and the claim that LLM-generated files hurt success was vetoed by the methodology audit."
+  },
+  {
+   "id": "91572b5b9c",
+   "question": "一项 1,650 次会话的因子实验检验了上下文文件「怎么写」的民间智慧。它发现真正预测 agent 指令遵从率的是什么？",
+   "options": [
+    "文件的大小，以及指令在文件中的位置",
+    "任务类型，以及会话里已经生成了多少内容",
+    "单个文件还是多个文件的嵌套结构",
+    "指令是否用了 IMPORTANT 这类强调词"
+   ],
+   "answer": 1,
+   "explanation": "文件大小、指令位置、单文件还是嵌套、相邻文件矛盾四个结构变量都没有可检测的效应；预测遵从率的是任务类型，以及会话内衰减：每多生成一个函数，遵从几率约降 5.6%。指令在会话里的位置比在文件里的位置重要。",
+   "question_en": "A factorial experiment over 1,650 sessions tested folk wisdom about how to write context files. What actually predicted the agent's instruction compliance?",
+   "options_en": [
+    "The file's size, and where the instruction sits within the file",
+    "The task type, and how much had already been generated in the session",
+    "Whether it was a single file or a nested multi-file structure",
+    "Whether the instruction used emphasis words like IMPORTANT"
+   ],
+   "explanation_en": "None of the four structural variables — size, position, single versus nested files, contradictions in neighboring files — had a detectable effect. Compliance tracked task type and within-session decay: each additional function generated cut the odds by about 5.6%. Where an instruction sits in the session matters more than where it sits in the file."
+  },
+  {
+   "id": "a57429d057",
+   "question": "既然受控实验没找到文件大小对遵从率的效应，文章认为「上下文文件要写短」还有什么可靠理由？",
+   "options": [
+    "受控实验已证明文件越短，agent 就越听从其中的指令",
+    "长上下文会非均匀地退化，每一行都在挤占任务本身的上下文预算",
+    "文件越短，就越不容易被人注入恶意指令、成为攻击面",
+    "所有主流 agent 都会静默截断超过 200 行的上下文文件"
+   ],
+   "answer": 1,
+   "explanation": "文章把「短」的论证换成上下文预算与 context rot：长上下文非均匀退化有多源证实。它明确说「短了 agent 更听话」未获证实；200 行只是 Anthropic 的建议口径，硬截断的是 Codex 的 32 KiB 合计上限。",
+   "question_en": "Since the controlled experiment found no effect of file size on compliance, what sound reason does the article still give for keeping context files short?",
+   "options_en": [
+    "Controlled experiments have shown that shorter files make agents follow instructions better",
+    "Long contexts degrade unevenly, and every line eats into the task's own context budget",
+    "Shorter files are harder to inject malicious instructions into, shrinking the attack surface",
+    "All major agents silently truncate any context file longer than 200 lines"
+   ],
+   "explanation_en": "The article moves the case for brevity onto context budget and context rot: uneven degradation in long contexts is confirmed by multiple sources. It says plainly that 'shorter means more obedient' is unproven; 200 lines is only Anthropic's guidance, and the hard truncation is Codex's 32 KiB combined cap."
+  }
+ ]
+}

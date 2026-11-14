@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/working-memory-topic3.html",
+ "title": "Topic 3 · 工作记忆 — 神经科学",
+ "page_en": "/neuroscience/working-memory-topic3.en.html",
+ "title_en": "Topic 3 · Working Memory — Neuroscience",
+ "src_hash": "4a925f179529",
+ "questions": [
+  {
+   "id": "c208337974",
+   "question": "国际象棋高手扫一眼残局就能复盘，按这篇对工作记忆的解释，主要原因是什么？",
+   "options": [
+    "靠在心里默念复述，把每颗棋子的位置逐一记住",
+    "工作记忆的格数天生比常人多，能装下七八样以上的东西",
+    "长期训练让前额叶的持续放电更持久、不怕分心",
+    "把满盘棋子读成几个熟悉的阵型，每一格装得更满"
+   ],
+   "answer": 3,
+   "explanation": "工作记忆按组块而不是零件计数，容量约四格是死的，但每格能装多满取决于经验。高手不是格子更多，而是打包打得更狠，把棋子读成少数熟悉的阵型。",
+   "question_en": "A chess master can reconstruct an endgame after a glance. According to this explanation of working memory, why?",
+   "options_en": [
+    "They silently rehearse and memorize each piece's square one by one",
+    "Their working memory simply has more slots, holding seven or eight items",
+    "Years of training make their prefrontal persistent firing last longer",
+    "They read the pieces as a few familiar patterns, packing each slot fuller"
+   ],
+   "explanation_en": "Working memory counts chunks, not items: the roughly four slots are fixed, but how much each holds depends on experience. Experts don't have more slots; they chunk harder, reading the board as a few familiar configurations."
+  },
+  {
+   "id": "183ef59bd1",
+   "question": "更精细的记录发现，延迟期里神经元的放电有时会整个静下来、过一会儿又回来。这个现象支持哪种看法？",
+   "options": [
+    "前额叶在节能，记忆改由感觉区的持续放电来保存",
+    "放电一停记忆就散了，静默说明记忆在那一刻已被遗忘",
+    "静默期间记忆被整体转移进了长时记忆的仓库，所以不再需要维持",
+    "记忆可暂存在突触临时权重里，放电看不见，等输入扫过再显形"
+   ],
+   "answer": 3,
+   "explanation": "这正是「活动静默」说的依据：记忆不非得挂在放电上，可以短暂写进突触权重，像隐形墨水，一次输入扫过才重新显形。「放电停了就忘了」是经典持续放电说的推论，恰是这个现象让它遇到麻烦。",
+   "question_en": "Finer recordings show that delay-period firing sometimes goes completely quiet and later returns. Which view does this support?",
+   "options_en": [
+    "The prefrontal cortex is saving energy, and sensory areas take over with persistent firing",
+    "Once firing stops the memory is gone, so the silence means it was forgotten at that moment",
+    "During the silence the memory is moved wholesale into long-term storage and no longer needs upkeep",
+    "The memory can sit in short-term synaptic weights, invisible as spikes until an input revives it"
+   ],
+   "explanation_en": "This is the basis of the activity-silent view: memory needn't ride on firing but can be briefly written into synaptic weights, like invisible ink that reappears when an input sweeps over it. 'Silence means forgotten' follows from the classic persistent-firing view, which is exactly what this finding troubles."
+  },
+  {
+   "id": "17227eee3d",
+   "question": "有人认为，只要把 AI 的上下文窗口不断拉长，它就会越来越聪明。按这篇对工作记忆的讨论，问题出在哪？",
+   "options": [
+    "工作记忆容量与流体智力几乎无关，所以容量大小本来就不重要",
+    "窗口越长，token 打包就越差，同样的窗口反而装下更少的信息",
+    "容量只是台面大小，稀缺的是决定把什么摆上台、挡住无关信息的能力",
+    "长窗口会让缓存溢出，模型只能看到最早滑入窗口的那部分内容"
+   ],
+   "answer": 2,
+   "explanation": "文章承认工作记忆容量和流体智力相关度很高，但指出真正稀缺的是那个「指挥官」：挑重点、顶住无关信息。窗口再大，不会取舍、被废料塞满，一样办不成事。",
+   "question_en": "Some argue that simply extending an AI's context window will keep making it smarter. Based on this discussion of working memory, what's the flaw?",
+   "options_en": [
+    "Working memory capacity barely relates to fluid intelligence, so capacity never mattered much",
+    "Longer windows chunk tokens worse, so the same window actually holds less information",
+    "Capacity is just desk size; what's scarce is deciding what goes on it and blocking the irrelevant",
+    "A long window overflows the cache, so the model only sees what entered the window first"
+   ],
+   "explanation_en": "The article grants that working memory capacity correlates strongly with fluid intelligence, but says the scarce thing is the controller that picks what matters and fends off distraction. A bigger window filled with junk and no prioritization still gets nothing done."
+  }
+ ]
+}

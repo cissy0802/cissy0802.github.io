@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/power-pfeffer-read972.html",
+ "title": "《权力：为什么只为某些人所拥有》",
+ "page_en": "/deep-reading/power-pfeffer-read972.en.html",
+ "title_en": "Power: Why Some People Have It—and Others Don't",
+ "src_hash": "8da509c2f0ea",
+ "questions": [
+  {
+   "id": "ca01036437",
+   "question": "在菲佛《权力》的框架里，「把工作做好」对职业命运的作用应如何定位？",
+   "options": [
+    "几乎无用：绩效与晋升毫无关系，只需要经营关系",
+    "入场券：糟糕会害你，但好绩效远不够让你升上去",
+    "决定性因素：只要持续出色，迟早会被关键的人看见",
+    "可替代品：只要奉承到位，绩效差一些也完全无妨"
+   ],
+   "answer": 1,
+   "explanation": "菲佛说绩效是必要条件而非充分条件：糟糕的绩效会毁掉你，好绩效只是入场券，决定命运的是关键的人知道多少、怎么看你。「工作好就没用」是书里专门澄清的常见误读。",
+   "question_en": "In Pfeffer's Power, how should doing your job well be positioned with respect to your career?",
+   "options_en": [
+    "Nearly useless: performance has no link to promotion, only relationships do",
+    "A ticket in: poor work hurts you, but good work is far from enough to rise",
+    "Decisive: keep excelling and the people who matter will notice eventually",
+    "Replaceable: with enough flattery, weaker performance doesn't matter at all"
+   ],
+   "explanation_en": "Pfeffer treats performance as necessary but not sufficient: bad work can sink you, good work just gets you in the door, and what decides your fate is how much the key people know and what they think of you. 'Good work is useless' is a common misreading the book explicitly corrects."
+  },
+  {
+   "id": "1886d9ab06",
+   "question": "菲佛认为「公正世界信念」会在争取权力上害你。按书中说法，它的代价是什么？",
+   "options": [
+    "让人坐等奖励，并去学成功者自述的版本而非实际做法",
+    "让人过度争斗、互相拆台，最终侵蚀了整个组织内部的信任",
+    "让人低估绩效的作用，忽视了专业能力的持续积累",
+    "让人对他人的处境冷漠，失去同理心能带来的支持"
+   ],
+   "answer": 0,
+   "explanation": "第一重代价是以为好好干迟早被看到，于是不去经营关系和曝光；第二重是以为高位者都凭能力品德上去，于是去学赢家书写的谦逊真诚叙事，略过了争斗与结盟。过度争斗是批评者对这本书本身的担心，不是公正世界信念的后果。",
+   "question_en": "Pfeffer argues the just-world belief hurts you in the pursuit of power. According to the book, what does it cost you?",
+   "options_en": [
+    "You wait to be rewarded and copy successful people's polished self-accounts instead of what they did",
+    "You fight too much and undercut colleagues, eventually eroding trust within the organization",
+    "You underrate performance and neglect the steady building of professional skill",
+    "You grow indifferent to others' situations and lose the support empathy brings"
+   ],
+   "explanation_en": "First, you assume good work will get noticed and so neglect relationships and visibility; second, you assume people at the top got there through merit and virtue, so you study the winners' humble, authentic narratives and miss the fighting and alliance-building. Excessive infighting is what critics fear from the book itself, not a cost of the just-world belief."
+  },
+  {
+   "id": "e3b3891697",
+   "question": "按菲佛引用的网络研究，一个人在关系网中站在哪里最能带来影响力？",
+   "options": [
+    "认识的人数最多、交换过的名片最多的位置",
+    "在自己团队内部关系最紧密、最受大家信任的核心",
+    "组织图上头衔最高、汇报线最长的那个位置",
+    "站在两个彼此不往来的群体之间，同时连接两边"
+   ],
+   "answer": 3,
+   "explanation": "菲佛借伯特的「结构洞」理论：站在洞上的经纪人掌握两边的信息差、控制彼此的接触。他明确说位置比数量重要，与其在自己团队越来越熟，不如去连接两个不往来的部门；头衔也只是权力的来源之一。",
+   "question_en": "According to the network research Pfeffer cites, where in a network does a person gain the most influence?",
+   "options_en": [
+    "Wherever they know the most people and have swapped the most cards",
+    "At the tight, most trusted core of their own team's relationships",
+    "At the top of the org chart, with the longest chain of reports",
+    "Between two groups that don't otherwise connect, linking both sides"
+   ],
+   "explanation_en": "Pfeffer draws on Burt's structural holes: a broker spanning the hole controls the information gap and contact between both sides. He stresses position over numbers — rather than getting ever closer within your own team, connect two departments that don't talk — and a title is only one source of power."
+  }
+ ]
+}

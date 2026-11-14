@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/language-brain-topic7.html",
+ "title": "Topic 7 · 语言的大脑 — 神经科学",
+ "page_en": "/neuroscience/language-brain-topic7.en.html",
+ "title_en": "Topic 7 · The Language Brain — Neuroscience",
+ "src_hash": "f1f63bcf0fb6",
+ "questions": [
+  {
+   "id": "3689f62223",
+   "question": "一位严重失语、连完整句子都说不出的中风病人，仍能做对算术、会下棋。文章由此得出什么结论？",
+   "options": [
+    "他的内心独白仍在照常运转，思维依旧依赖语言",
+    "算术和下棋本质上也是一种语言能力的表现",
+    "他的布洛卡区一定完好，受损的只是韦尼克区",
+    "语言是专门的沟通工具，思考用的是另外的回路"
+   ],
+   "answer": 3,
+   "explanation": "语言网络只为有意义的语言点亮，做算术、听音乐时几乎不动；语言没了、思考照转，说明语言是沟通工具而不是思维本身。内心独白在文中更像思维的播报员，不是引擎。",
+   "question_en": "A stroke patient with severe aphasia, unable to form full sentences, can still do arithmetic and play chess. What does the article conclude from this?",
+   "options_en": [
+    "His inner monologue still runs, so his thinking still depends on language",
+    "Arithmetic and chess are themselves expressions of a kind of language ability",
+    "His Broca's area must be intact, and only Wernicke's area was damaged",
+    "Language is a specialized communication tool; thinking runs on other circuits"
+   ],
+   "explanation_en": "The language network lights up only for meaningful language and stays quiet for arithmetic or music; language gone, thinking intact, shows language is a communication tool, not thought itself. Inner speech, in the article, is the announcer, not the engine."
+  },
+  {
+   "id": "a3a8962900",
+   "question": "听到「他渴了，倒了一杯——袜子」，最后那个词会激起一记很大的 N400 脑波。这说明什么？",
+   "options": [
+    "大脑在检测语法错误，句子的句法越错，波就越大",
+    "大脑要等整句听完才开始理解，最后一个词负荷最重",
+    "这是视觉和听觉区在辨认生僻的词形时，额外产生的负荷信号",
+    "理解时大脑一路在猜下一个词，波的大小反映出乎意料的程度"
+   ],
+   "answer": 3,
+   "explanation": "N400 的大小几乎就是这个词有多出乎意料的刻度：大脑不被动收音，而是先猜再拿真实输入纠错。「袜子」在语法上没错，错的是它违背了预测，所以这不是语法检测。",
+   "question_en": "Hearing 'He was thirsty and poured a glass of… socks', the last word triggers a large N400 brain wave. What does this show?",
+   "options_en": [
+    "The brain is detecting grammar errors, and the worse the syntax, the bigger the wave",
+    "The brain only starts understanding after the full sentence, so the last word is heaviest",
+    "It's a load signal from sensory areas working to recognize an unfamiliar word form",
+    "The brain predicts each next word, and the wave's size tracks how surprising it is"
+   ],
+   "explanation_en": "N400 size is close to a gauge of how unexpected the word was: the brain doesn't just receive sound but predicts and then corrects with the actual input. 'Socks' is grammatically fine — it violates the prediction — so this isn't grammar checking."
+  },
+  {
+   "id": "ff60da3b46",
+   "question": "按 Mahowald 与 Fedorenko 对语言能力的划分，要判断一个说话流利的语言模型是否「会思考」，该考什么？",
+   "options": [
+    "覆盖能力：掌握的词汇有多少、能说多少种不同的语言",
+    "预测能力：猜下一个词有多准、内部活动与人脑语言网络有多吻合",
+    "功能能力：多步推理、用上真实世界常识、把话和现实对上",
+    "形式能力：语法是否正确、用词是否搭配、句子是否通顺"
+   ],
+   "answer": 2,
+   "explanation": "形式能力只测话像不像话，大脑把它和推理、算术、社会认知分给不同系统；模型的流利恰恰是形式，容易让人高估它的理解。猜词准、与脑活动对得齐说明计算层面有共享结构，但仍不等于会推理。",
+   "question_en": "Using Mahowald and Fedorenko's split of language ability, what should you test to judge whether a fluent language model can 'think'?",
+   "options_en": [
+    "Coverage: how large its vocabulary is and how many languages it can produce",
+    "Predictive skill: how well it guesses the next word and how closely it matches brain activity",
+    "Functional competence: multi-step reasoning, real-world knowledge, tying words to reality",
+    "Formal competence: correct grammar, natural word choice and smooth sentences"
+   ],
+   "explanation_en": "Formal competence only checks whether output sounds like language, and the brain assigns it to a different system from reasoning, math and social cognition; a model's fluency is form, which tempts us to over-credit understanding. Good next-word prediction and brain alignment show shared computational structure, not reasoning."
+  }
+ ]
+}

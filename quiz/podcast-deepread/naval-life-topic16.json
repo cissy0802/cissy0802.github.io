@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/naval-life-topic16.html",
+ "title": "Naval 专题 · 长期游戏：健康、关系与人生选择",
+ "page_en": "/podcast-deepread/naval-life-topic16.en.html",
+ "title_en": "Naval Series · The Long Game: Health, Relationships and Life Choices",
+ "src_hash": "afc5221af52f",
+ "questions": [
+  {
+   "id": "30a1b18c76",
+   "question": "按这篇对 Naval「长期游戏」的拆解，在哪种情形下这套复利与信任的逻辑最容易失灵？",
+   "options": [
+    "老搭档之间握手就成事，连合同都不细读",
+    "一步就赚够、换行业从零开始，或底盘被战争毁掉",
+    "只和少数人深交，不去广泛结识浅层的关系",
+    "合作双方都愿意原谅对方偶尔的失误，彼此留了余地"
+   ],
+   "answer": 1,
+   "explanation": "长期游戏要求对手不走、规则不变、桌子不塌：一票就能赚够的人会背叛，换行业人脉信用带不过去，底盘被毁复利就断。留原谅的余地、握手成事、深交少数人，都是他说长期游戏顺利运转时的样子。",
+   "question_en": "Per this breakdown of Naval's 'long-term games', when does the logic of compounding and trust most readily break down?",
+   "options_en": [
+    "When longtime partners close deals on a handshake without reading contracts",
+    "When one move pays enough, switching fields resets you, or war wrecks the base",
+    "When you go deep with a few people rather than collecting many shallow ties",
+    "When both partners are willing to forgive each other's occasional mistakes"
+   ],
+   "explanation_en": "Long-term games need the other player to stay, the rules to hold and the table not to collapse: someone who can win enough in one move will defect, switching industries leaves your network and credibility behind, and a destroyed base breaks the compounding. Forgiveness, handshake deals and a few deep ties are what the game looks like when it works."
+  },
+  {
+   "id": "4c93787179",
+   "question": "这篇认为 Naval 把钱、健康、平静和家串起来的那条链上，哪一环最弱？",
+   "options": [
+    "把自己的健康排在家庭之前，这与他的复利逻辑相互矛盾",
+    "说讲道德长期有回报，却又承认短期内不讲道德更划算",
+    "把「充满爱的家」当成独自能挣来的，忽略了家是退不出去的双人游戏",
+    "主张在有截止的时间框里反复试伴侣、工作和城市"
+   ],
+   "answer": 2,
+   "explanation": "他说心平静、钱赚到了，好关系自然会来，这等于把双人游戏当成单人游戏；他自己的长期游戏理论恰恰说复利要靠对方也留在桌边，而「吵一次就结束」放到有了孩子、退不出去的家里未必行得通。身体那一环反而被说成最扎实。",
+   "question_en": "This piece argues one link is weakest in the chain Naval draws from money to health, calm and family. Which?",
+   "options_en": [
+    "Ranking his own health above family, which contradicts his own logic of compounding",
+    "Saying ethics pays off long-term while admitting unethical behavior pays in the short run",
+    "Treating a loving home as something you can earn alone, ignoring that it's a two-player game you can't exit",
+    "Advising people to iterate on partner, work and city within a fixed time frame"
+   ],
+   "explanation_en": "He says that with a calm mind and money made, good relationships will follow — treating a two-player game as single-player. His own long-term-games theory says compounding needs the other side to stay at the table, and 'one fight and it's over' may not work in a family with kids you can't walk away from. The body link, by contrast, is called the most solid."
+  },
+  {
+   "id": "ea1ae8f47f",
+   "question": "按 Naval 对「退休」的定义，下面哪个人才算已经退休了？",
+   "options": [
+    "已经不上班了，却每天熬夜盯盘、为未来回报苦撑的人",
+    "仍在全力投入新公司，但不再为想象中的明天牺牲今天的人",
+    "六十五岁领到养老金停止工作，却天天为将来焦虑的人",
+    "被动收入刚好覆盖开销，仍为下一次升职咬牙忍耐的人"
+   ],
+   "answer": 1,
+   "explanation": "他把退休定义为不再为某个想象中的明天牺牲今天，今天本身就完整了；按这个定义退休和停止工作无关。他自己 2026 年说只算「最低限度地退休」，却比以往投入更多精力在新公司上。",
+   "question_en": "By Naval's definition of retirement, which of these people is actually retired?",
+   "options_en": [
+    "Someone no longer employed who stays up nightly watching markets, grinding for future returns",
+    "Someone pouring everything into a new company but no longer sacrificing today for an imagined tomorrow",
+    "Someone who stopped working at 65 on a pension yet worries about the future every day",
+    "Someone whose passive income just covers expenses but still grits their teeth for the next promotion"
+   ],
+   "explanation_en": "He defines retirement as no longer sacrificing today for some imaginary tomorrow — when today is complete in itself. On that definition retirement has nothing to do with stopping work; in 2026 he called himself only 'minimally retired' while putting more energy than ever into a new company."
+  }
+ ]
+}

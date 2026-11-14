@@ -1137,12 +1137,148 @@
     "de495a1eaa",
     "4ead1148c6"
    ]
+  },
+  "/thinker-arena/debate.html?d=abundance-and-decline": {
+   "t": "辩论：物质极度丰裕后，人会走向衰亡吗？",
+   "f": "thinker-arena/debate-abundance-and-decline.json",
+   "q": [
+    "c0e2b957ad",
+    "8269e9cb91",
+    "f8c5fbdfb1"
+   ]
+  },
+  "/thinker-arena/debate.html?d=manager-or-ic": {
+   "t": "辩论：该去带人，还是把手艺做深？",
+   "f": "thinker-arena/debate-manager-or-ic.json",
+   "q": [
+    "92c35a227f",
+    "10b71bb3b2",
+    "53698adcab"
+   ]
+  },
+  "/neuroscience/working-memory-topic3.html": {
+   "t": "Topic 3 · 工作记忆 — 神经科学",
+   "f": "neuroscience/working-memory-topic3.json",
+   "q": [
+    "c208337974",
+    "183ef59bd1",
+    "17227eee3d"
+   ]
+  },
+  "/podcast-deepread/amazon-vp-stack-ranking-pips-working-pod1.html": {
+   "t": "The Peterman Pod × Ethan Evans — 同一份数字，两种叙事",
+   "f": "podcast-deepread/amazon-vp-stack-ranking-pips-working-pod1.json",
+   "q": [
+    "bccca8cbb8",
+    "7da6b0bdf7",
+    "a18ebd85e4"
+   ]
+  },
+  "/deep-reading/power-pfeffer-read972.html": {
+   "t": "《权力：为什么只为某些人所拥有》",
+   "f": "deep-reading/power-pfeffer-read972.json",
+   "q": [
+    "ca01036437",
+    "1886d9ab06",
+    "e3b3891697"
+   ]
+  },
+  "/deep-research/agent-readme-deep.html": {
+   "t": "给 Agent 看的 README:上下文文件是基建还是货物崇拜?(深入版) — BigCat Deep Research",
+   "f": "deep-research/agent-readme-deep.json",
+   "q": [
+    "b63a437455",
+    "91572b5b9c",
+    "a57429d057"
+   ]
+  },
+  "/meta-knowledge/information-theory-day10.html": {
+   "t": "元知识详解：信息理论 — Day 10",
+   "f": "meta-knowledge/information-theory-day10.json",
+   "q": [
+    "98314b0475",
+    "e1b5999781",
+    "61ff65431d"
+   ]
+  },
+  "/chapter-deepread/ddia-ch03-storage-and-retrieval-book3.html": {
+   "t": "DDIA 第 3 章 · 存储与检索 — 专业书籍精读 Book 3",
+   "f": "chapter-deepread/ddia-ch03-storage-and-retrieval-book3.json",
+   "q": [
+    "c577e810c4",
+    "ba39c5146d",
+    "04efb13ac0"
+   ]
+  },
+  "/neuroscience/social-brain-topic9.html": {
+   "t": "Topic 9 · 社会脑与心智理论 — 神经科学",
+   "f": "neuroscience/social-brain-topic9.json",
+   "q": [
+    "68896bc76e",
+    "387ff82b1e",
+    "b405a93222"
+   ]
+  },
+  "/neuroscience/language-brain-topic7.html": {
+   "t": "Topic 7 · 语言的大脑 — 神经科学",
+   "f": "neuroscience/language-brain-topic7.json",
+   "q": [
+    "3689f62223",
+    "a3a8962900",
+    "ff60da3b46"
+   ]
+  },
+  "/meta-knowledge/economics-day8.html": {
+   "t": "元知识详解：经济学原理 — Day 8",
+   "f": "meta-knowledge/economics-day8.json",
+   "q": [
+    "53a6488194",
+    "d58c329a65",
+    "30c524952d"
+   ]
+  },
+  "/podcast-deepread/vitamin-d-expert-fastest-way-dementia-pod30.html": {
+   "t": "The Diary of a CEO × Roger Seheult — 维生素 D 只是晒太阳留下的记号",
+   "f": "podcast-deepread/vitamin-d-expert-fastest-way-dementia-pod30.json",
+   "q": [
+    "a4295ade35",
+    "e573f67d0d",
+    "2d55e9150b"
+   ]
+  },
+  "/podcast-deepread/naval-life-topic16.html": {
+   "t": "Naval 专题 · 长期游戏：健康、关系与人生选择",
+   "f": "podcast-deepread/naval-life-topic16.json",
+   "q": [
+    "30a1b18c76",
+    "4c93787179",
+    "ea1ae8f47f"
+   ]
+  },
+  "/deep-reading/confessions-read37.html": {
+   "t": "《忏悔录》— 每日精读 Read 37",
+   "f": "deep-reading/confessions-read37.json",
+   "q": [
+    "5c7034bfae",
+    "fc7661806f",
+    "7398b174df"
+   ]
+  },
+  "/podcast-deepread/naval-ai-topic17.html": {
+   "t": "Naval 专题 · AI 时代的 Naval：回到写代码",
+   "f": "podcast-deepread/naval-ai-topic17.json",
+   "q": [
+    "ccd489fcd6",
+    "d25097b600",
+    "67246a1a0e"
+   ]
   }
  },
  "aliases": {
   "/deep-research/choosing-a-major-plain.html": "/deep-research/choosing-a-major-deep.html",
   "/deep-research/junior-engineers-plain.html": "/deep-research/junior-engineers-deep.html",
   "/deep-research/ai-native-plain.html": "/deep-research/ai-native-deep.html",
-  "/deep-research/recursive-self-improvement-plain.html": "/deep-research/recursive-self-improvement-deep.html"
+  "/deep-research/recursive-self-improvement-plain.html": "/deep-research/recursive-self-improvement-deep.html",
+  "/deep-research/agent-readme-plain.html": "/deep-research/agent-readme-deep.html"
  }
 }

@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/social-brain-topic9.html",
+ "title": "Topic 9 · 社会脑与心智理论 — 神经科学",
+ "page_en": "/neuroscience/social-brain-topic9.en.html",
+ "title_en": "Topic 9 · The Social Brain & Theory of Mind — Neuroscience",
+ "src_hash": "4113f35f7876",
+ "questions": [
+  {
+   "id": "68896bc76e",
+   "question": "对「镜像神经元」，这篇文章给出的最站得住的评价是？",
+   "options": [
+    "它就是心智化网络的核心，专门负责追踪别人脑中的信念",
+    "动作共振是真的，但它不等于读心或共情，且多半由后天联结学习形成",
+    "它只在猴子身上被发现，人类身上至今没找到任何类似系统",
+    "它是共情和语言起源的生物学基础，自闭症正是镜像系统受损所导致的"
+   ],
+   "answer": 1,
+   "explanation": "文章说镜像放电本身是真的，但真正追踪别人信念的是另一套心智化网络，脑区都不一样；镜像特性很可能是「看」和「做」总同时出现而被联结起来的。「塑造文明的细胞」和破镜假说是被证据拽回地面的那套说法。",
+   "question_en": "What is the most defensible assessment of mirror neurons according to this article?",
+   "options_en": [
+    "They are the core of the mentalizing network, dedicated to tracking what others believe",
+    "The motor resonance is real, but it isn't mind-reading or empathy and likely arises mostly from associative learning",
+    "They were found only in monkeys, and no comparable system has ever been found in humans",
+    "They are the biological basis of empathy and language, and autism results from a damaged mirror system"
+   ],
+   "explanation_en": "The article says mirror firing is real, but tracking others' beliefs is done by the separate mentalizing network in different regions; mirror properties likely come from seeing and doing almost always co-occurring. 'Cells that built civilization' and the broken-mirror theory are the hype the evidence pulled back down."
+  },
+  {
+   "id": "387ff82b1e",
+   "question": "一位护士长期被病人的痛苦压得喘不过气、想要退缩。按 Tania Singer 的区分，更可持续的方向是什么？",
+   "options": [
+    "加强情绪共情，更深地体会病人正在经历的痛苦",
+    "降低认知共情，尽量少去推断病人此刻的心理状态",
+    "彻底压住所有的情绪反应，用冷漠来保护自己，免得被耗尽",
+    "从跟着一起痛，转向带暖意的关怀和想帮的劲，可以训练"
+   ],
+   "answer": 3,
+   "explanation": "Singer 把情绪共情走多了的「共情性痛苦」与「慈悲」分开：共情性痛苦让人耗竭退缩，慈悲是关心和想帮，走偏奖赏与亲和的另一套回路，而且短期慈心训练就能把人推过去。出路不是冷漠，也不是更深地一起痛。",
+   "question_en": "A nurse feels crushed by patients' suffering and wants to withdraw. By Tania Singer's distinction, what is the more sustainable direction?",
+   "options_en": [
+    "Deepen affective empathy and feel patients' pain even more fully",
+    "Dial down cognitive empathy and try not to infer patients' mental states",
+    "Suppress emotional responses entirely and use detachment as protection",
+    "Shift from hurting along with them to warm concern and an urge to help — which can be trained"
+   ],
+   "explanation_en": "Singer separates empathic distress, which comes from too much feeling-with and leads to burnout and withdrawal, from compassion — concern and an urge to help, running on a different reward- and affiliation-related route — and short compassion training can move people toward it. The answer is neither coldness nor deeper shared pain."
+  },
+  {
+   "id": "b405a93222",
+   "question": "一个人独处发呆时，脑子常自动回放对话、揣摩别人那句话什么意思。这与文中哪个发现最相符？",
+   "options": [
+    "镜像神经元在静息时会自发重放之前看到过的别人的动作",
+    "语言网络在静息时会不停运转，生成大量内心独白",
+    "前脑岛和前扣带在没有任务时会持续模拟自己的疼痛",
+    "读心用的心智化网络与静息时最活跃的默认模式网络高度重叠"
+   ],
+   "answer": 3,
+   "explanation": "文章指出心智化网络和发呆时最活跃的默认模式网络高度重叠，所以大脑一闲下来默认就在想人，社交推理更像大脑的底噪。另外几项把镜像系统、疼痛区或语言网络安到了这件事上，文中没有这样的说法。",
+   "question_en": "When someone sits idle, their mind often replays conversations and puzzles over what others meant. Which finding in the article fits this best?",
+   "options_en": [
+    "Mirror neurons spontaneously replay others' observed actions during rest",
+    "The language network keeps running at rest, generating lots of inner speech",
+    "The anterior insula and cingulate keep simulating one's own pain when idle",
+    "The mentalizing network heavily overlaps the default mode network active at rest"
+   ],
+   "explanation_en": "The article notes that the mentalizing network largely overlaps the default mode network most active when we zone out, so an idle brain defaults to thinking about people — social reasoning is the background hum. The other options attach this to the mirror system, pain regions or language network, which the article doesn't claim."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/meta-knowledge/information-theory-day10.html",
+ "title": "元知识详解：信息理论 — Day 10",
+ "page_en": "/meta-knowledge/information-theory-day10.en.html",
+ "title_en": "Meta Knowledge: Information Theory — Day 10",
+ "src_hash": "ce3f8ffdfde4",
+ "questions": [
+  {
+   "id": "98314b0475",
+   "question": "设 X 在 −1 到 1 之间均匀取值，Y = X²。下面哪个判断正确？",
+   "options": [
+    "两者相关系数接近 1，因为 Y 总是随着 X 的增大而增大",
+    "两者互信息为 0，因为它们的关系不是一条直线",
+    "两者相关系数为 0，但 Y 完全由 X 决定，互信息很高",
+    "两者相关系数为 0，所以可以认为两者相互独立"
+   ],
+   "answer": 2,
+   "explanation": "相关系数只看是否同涨同跌，对称的抛物线让它严格为 0；但知道 X 就完全知道 Y，互信息很高。「零相关等于独立」正是文中说不少风险模型栽进去的坑。",
+   "question_en": "Let X be uniform on −1 to 1 and Y = X². Which statement is correct?",
+   "options_en": [
+    "Their correlation is near 1, because Y increases as X increases",
+    "Their mutual information is 0, because the relationship isn't a straight line",
+    "Their correlation is 0, yet Y is fully determined by X, so mutual information is high",
+    "Their correlation is 0, so the two can be treated as independent"
+   ],
+   "explanation_en": "Correlation only captures moving together linearly, and the symmetric parabola makes it exactly 0; but knowing X tells you Y completely, so mutual information is high. 'Zero correlation means independence' is the trap the article says many risk models fell into."
+  },
+  {
+   "id": "e1b5999781",
+   "question": "按信道容量的规律，为什么 5G 主要去抢更宽的频谱，而不是单纯加大发射功率？",
+   "options": [
+    "加大功率会让噪声也同比例放大，信噪比根本不会改变",
+    "频谱越宽，需要的纠错编码越少，速度自然更快",
+    "容量随带宽成倍增长，信噪比翻倍却只让容量增加一点",
+    "只要功率足够大，就能让出错率直接降到零"
+   ],
+   "answer": 2,
+   "explanation": "容量公式里带宽翻倍容量翻倍，信噪比翻倍容量只增加一点点，所以抢频谱比堆功率划算。容量定理说的是速率不超过容量时存在让错误率趋近于 0 的编码，靠的是编码而不是功率。",
+   "question_en": "By the laws of channel capacity, why does 5G mainly go after wider spectrum rather than simply boosting transmit power?",
+   "options_en": [
+    "More power amplifies noise equally, so the signal-to-noise ratio never changes",
+    "Wider spectrum needs less error-correcting code, so it's naturally faster",
+    "Capacity doubles with bandwidth, but doubling signal-to-noise adds only a little",
+    "With enough power, the error rate can be driven straight down to zero"
+   ],
+   "explanation_en": "In the capacity formula, doubling bandwidth doubles capacity while doubling signal-to-noise adds only a little, so spectrum beats power. The theorem promises codes with vanishing error below capacity — the work is done by coding, not by power."
+  },
+  {
+   "id": "61ff65431d",
+   "question": "圆周率 π 的前一万亿位看上去像一串乱码。按柯尔莫哥洛夫复杂度，它的信息量如何？",
+   "options": [
+    "极低，因为一个很短的程序就能生成它",
+    "等于一万亿位乘以每一位所需的比特数",
+    "极高，因为数字序列看不出任何规律",
+    "无法定义，因为 π 是无限不循环的无理数"
+   ],
+   "answer": 0,
+   "explanation": "柯尔莫哥洛夫复杂度把信息量定义为能生成它的最短程序的长度；π 能用几百字符的小程序算出，所以复杂度极低。「看起来随机」不等于「真的随机」，这正是这个概念的要点。",
+   "question_en": "The first trillion digits of π look like noise. By Kolmogorov complexity, how much information do they contain?",
+   "options_en": [
+    "Very little, because a short program can generate them",
+    "A trillion times the bits needed for each single digit",
+    "A great deal, because the digits show no visible pattern",
+    "It's undefined, because π is an irrational number"
+   ],
+   "explanation_en": "Kolmogorov complexity measures information as the length of the shortest program that produces the object; π can be computed by a program of a few hundred characters, so its complexity is very low. Looking random is not being random — that's the point of the concept."
+  }
+ ]
+}

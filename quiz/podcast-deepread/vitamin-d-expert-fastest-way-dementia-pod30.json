@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/vitamin-d-expert-fastest-way-dementia-pod30.html",
+ "title": "The Diary of a CEO × Roger Seheult — 维生素 D 只是晒太阳留下的记号",
+ "page_en": "/podcast-deepread/vitamin-d-expert-fastest-way-dementia-pod30.en.html",
+ "title_en": "The Diary of a CEO × Roger Seheult — Vitamin D is just the mark sunlight leaves",
+ "src_hash": "e3043cb1703b",
+ "questions": [
+  {
+   "id": "a4295ade35",
+   "question": "疫情中入院时维生素 D 高的病人死得少，可给病人补维生素 D 几乎没用。按这期节目页的分析，这个现象能推出什么？",
+   "options": [
+    "这恰好证明了随阳光一起照进来的近红外光，才是真正的原因",
+    "这说明补充维生素 D 对任何疾病都没有任何好处",
+    "维生素 D 不太像是原因，但这本身证明不了原因是红外线",
+    "维生素 D 是原因，只是补充的剂量还远远不够大"
+   ],
+   "answer": 2,
+   "explanation": "干预一个记号而结局不动，说明记号不是原因，这个推理在流行病学上成立；但它只能排除维生素 D，不能证明原因就是红外线，排除嫌疑人不等于抓到真凶。Seheult 本人也每天补维生素 D，并引用了它降低自身免疫病风险的试验。",
+   "question_en": "In the pandemic, patients admitted with high vitamin D died less often, yet giving patients vitamin D barely helped. Per this episode page's analysis, what follows?",
+   "options_en": [
+    "It proves that near-infrared light arriving with sunlight is the real cause",
+    "It shows that vitamin D supplements offer no benefit for any condition",
+    "Vitamin D probably isn't the cause, but that alone doesn't show infrared light is",
+    "Vitamin D is the cause; the supplement doses were simply far too small"
+   ],
+   "explanation_en": "If intervening on a marker doesn't move the outcome, the marker isn't the cause — sound epidemiological reasoning. But it only rules out vitamin D; it doesn't establish infrared as the cause — ruling out a suspect isn't catching the culprit. Seheult himself takes vitamin D daily and cites a trial showing it cuts autoimmune disease risk."
+  },
+  {
+   "id": "e573f67d0d",
+   "question": "研究显示晒太阳越多死亡率越低，呈一条剂量梯度。被问「会不会其实是运动的功劳」时，用剂量反应来回应，按这期节目页的评价效果如何？",
+   "options": [
+    "毫无价值，观察性研究里出现的梯度通常只是统计伪影",
+    "足以确立因果关系，当年认定吸烟致癌靠的就是同样的证据",
+    "能排除运动的影响，因为只有真实的原因才会排出一条梯度",
+    "只能让纯属巧合变得不太可能，排除不了混杂：爱户外的人也常更爱运动"
+   ],
+   "answer": 3,
+   "explanation": "页面说这个回答只对了一半：剂量反应能降低巧合的可能，却回答不了混杂问题，因为越爱户外的人往往越爱运动、身体越好，混杂因素本身也会排出梯度。它没有否定剂量反应的价值，只是指出它不够。",
+   "question_en": "Studies show a dose gradient: more sun, lower mortality. Asked whether exercise might be the real driver, how well does a dose-response answer work, according to this episode page?",
+   "options_en": [
+    "It's worthless, since gradients in observational studies are usually statistical artifacts",
+    "It's enough to establish causation, since the same evidence once showed smoking causes cancer",
+    "It rules out exercise, because only a real cause can produce a gradient",
+    "It only makes pure coincidence less likely and can't rule out confounding: outdoorsy people tend to exercise more"
+   ],
+   "explanation_en": "The page calls it half right: dose-response makes coincidence less likely but doesn't answer the confounding question, since people who spend more time outdoors also tend to exercise more and be healthier, and a confounder can produce its own gradient. It doesn't dismiss dose-response, only says it isn't enough."
+  },
+  {
+   "id": "2d55e9150b",
+   "question": "被问到红光面罩值不值得用时，Seheult 用坏血病作比方给它划了界。他的意思是？",
+   "options": [
+    "红光设备会扰乱生物钟，对所有人都弊大于利",
+    "红光设备能完全替代户外晒太阳，可以放心留在室内",
+    "本来就晒够太阳的人，再加红光设备未必多出什么好处",
+    "红光设备只有配合维生素 D 补充剂一起用才有效"
+   ],
+   "answer": 2,
+   "explanation": "他说船上一群人得了坏血病，可你本来就吃很多蔬果，多吃一个柠檬也不会多出好处：红光可以用，但对已经晒够太阳的人边际收益有限。他的整体主张是设备和补充剂都替代不了阳光。",
+   "question_en": "Asked whether a red-light face mask is worth using, Seheult drew a line with a scurvy analogy. What did he mean?",
+   "options_en": [
+    "Red-light devices disrupt the body clock and do more harm than good for everyone",
+    "Red-light devices fully replace outdoor sun, so you can safely stay indoors",
+    "If you already get plenty of sun, adding a red-light device may not add much",
+    "Red-light devices only work when combined with vitamin D supplements"
+   ],
+   "explanation_en": "Like eating an extra lemon when you already eat lots of fruit and vegetables on a scurvy-ridden ship: red light is fine to use, but its marginal benefit is small for someone already getting enough sun. His broader view is that neither devices nor supplements replace sunlight."
+  }
+ ]
+}

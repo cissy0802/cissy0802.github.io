@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/amazon-vp-stack-ranking-pips-working-pod1.html",
+ "title": "The Peterman Pod × Ethan Evans — 同一份数字，两种叙事",
+ "page_en": "/podcast-deepread/amazon-vp-stack-ranking-pips-working-pod1.en.html",
+ "title_en": "The Peterman Pod × Ethan Evans — Same Numbers, Two Stories",
+ "src_hash": "3c3482f2b258",
+ "questions": [
+  {
+   "id": "bccca8cbb8",
+   "question": "一位工程师在会上总能把反对者辩倒，却渐渐被边缘化。按 Ethan Evans 对自己早年失败的复盘，最可能发生了什么？",
+   "options": [
+    "他的方案其实一直都是错的，组织最终用项目结果惩罚了他",
+    "经理嫉妒他的能力，在绩效评估里故意压低了他",
+    "对方不再跟他争，转去跟别人议论他，旁人没交情只点头",
+    "组织天然偏爱安静的人，任何有主张、敢争的人都会吃亏"
+   ],
+   "answer": 2,
+   "explanation": "Evans 总结的机制是：推得太狠，反对者会停止跟你说话、转而跟别人说你；而你没在其他人那里建立关系，就没人回头替你说话。他并不认为该当好好先生，反而说经理常先升那个闹着要升的人。",
+   "question_en": "An engineer always wins arguments in meetings yet is gradually sidelined. Based on Ethan Evans's post-mortem of his own early failures, what most likely happened?",
+   "options_en": [
+    "His proposals were actually always wrong, and the organization punished him through results",
+    "His manager envied his ability and deliberately marked him down in reviews",
+    "Opponents stopped arguing and talked about him to others, who just nodded along for lack of ties",
+    "Organizations naturally favor quiet people, so anyone who argues for a position loses out"
+   ],
+   "explanation_en": "Evans's mechanism: push too hard and opponents stop talking to you and start talking about you; with no relationships built elsewhere, nobody comes back to speak up for you. He doesn't advise being a pushover, and even says managers often promote the one loudly pushing first."
+  },
+  {
+   "id": "7da6b0bdf7",
+   "question": "你感觉上级正在给你攒 PIP 的材料。依这期节目里 Evans 的判断，哪种认识最贴近？",
+   "options": [
+    "公开表示要离职，经理为了留人通常会撤回 PIP",
+    "绩效没有客观读数，先讲故事者占上风；别指望 HR，处好或换经理",
+    "接受 PIP 并按计划改进，多数人都能借此翻身",
+    "拿出完整的工作数据和记录向 HR 申诉，客观数字最终会替你澄清"
+   ],
+   "answer": 1,
+   "explanation": "Evans 说软件工程的绩效没有哪样是真正客观的，同一组数字能讲成两个故事，先手设定了叙事；跟记仇的上级斗等于拿刀去枪战，HR 不会来救你。他还说被 PIP 的人很少翻身。",
+   "question_en": "You sense your manager is building a PIP case against you. Which view best matches Evans's judgment in this episode?",
+   "options_en": [
+    "Announce you're leaving, since managers usually withdraw a PIP to keep people",
+    "Performance has no objective reading and whoever tells the story first wins; don't count on HR — mend it or change managers",
+    "Accept the PIP and follow the plan, since most people turn things around that way",
+    "Take your full work data to HR, and the objective numbers will clear you in the end"
+   ],
+   "explanation_en": "Evans says nothing about software performance is truly objective; the same numbers support two stories and moving first sets the narrative. Fighting a grudge-holding boss is bringing a knife to a gunfight, and HR won't rescue you. He also says few people survive a PIP."
+  },
+  {
+   "id": "a18ebd85e4",
+   "question": "Evans 在 Appstore 那年对同事说「今年我会达成每一个目标，而它们毫无意义」。这句话揭示的结构是什么？",
+   "options": [
+    "Amazon 的目标定得太低，说明中层管理者的能力普遍不足",
+    "他在刻意怠工，用完成指标来掩盖自己没有真正努力",
+    "只要中间目标全部达成，业务最终自然会走在正确方向上",
+    "评级激励让人争取稳拿的目标，真正重要却不会做的方向被绕开"
+   ],
+   "answer": 3,
+   "explanation": "他说为了评级和薪酬要肯定能拿下的目标，为了公司好却需要不知道怎么做的目标；真正的方向是在 Android 上和 Google 竞争，他拼命争取不被这条考核。考人和考事的数字都离本该代表的东西有一段距离。",
+   "question_en": "In his Appstore year Evans told a colleague, 'I'll hit every goal this year, and they're meaningless.' What structure does this reveal?",
+   "options_en": [
+    "Amazon set its goals too low, showing that middle managers were broadly incompetent",
+    "He was deliberately slacking off, using met targets to hide that he wasn't really trying",
+    "As long as every intermediate goal is hit, the business will naturally end up heading the right way",
+    "Rating incentives push people toward safe goals and away from the vital ones nobody knows how to hit"
+   ],
+   "explanation_en": "He says that for his rating and pay he wants goals he can nail, while the company needs goals no one knows how to achieve; the real aim, competing with Google on Android, was one he fought not to be measured on. Metrics for people and for projects both sit at a distance from what they're meant to represent."
+  }
+ ]
+}

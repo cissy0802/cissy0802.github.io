@@ -1,0 +1,69 @@
+{
+ "page": "/chapter-deepread/ddia-ch03-storage-and-retrieval-book3.html",
+ "title": "DDIA 第 3 章 · 存储与检索 — 专业书籍精读 Book 3",
+ "page_en": "/chapter-deepread/ddia-ch03-storage-and-retrieval-book3.en.html",
+ "title_en": "DDIA Ch 3 · Storage and Retrieval — Books Deep-Read Book 3",
+ "src_hash": "d6ee9760cb5a",
+ "questions": [
+  {
+   "id": "c577e810c4",
+   "question": "一个系统最怕偶发的高分位延迟卡顿，还需要强事务支持。按 DDIA 第 3 章的取舍，哪种存储引擎更合适？",
+   "options": [
+    "B-tree：每个键只在一处、原地覆写，没有后台合并干扰",
+    "内存哈希索引：键都在内存里，范围查询同样很快",
+    "列式存储：同列数据易压缩，点查和事务都更快",
+    "LSM-tree：只追加的顺序写更快，读写延迟因此也一定更低"
+   ],
+   "answer": 0,
+   "explanation": "LSM 写吞吐高，但后台压实会抢磁盘带宽，造成 p99 延迟毛刺；B-tree 每键唯一位置，延迟更可预测，也天然好加锁、事务更顺。「LSM 一定更快」是本章点名的易错点。",
+   "question_en": "A system can least tolerate occasional tail-latency spikes and also needs strong transactions. By the trade-offs in DDIA Chapter 3, which storage engine fits better?",
+   "options_en": [
+    "B-tree: each key lives in one place, updated in place, with no background merging",
+    "In-memory hash index: all keys sit in memory, so range queries are fast as well",
+    "Column store: same-column data compresses well, making point lookups and transactions faster",
+    "LSM-tree: append-only sequential writes are faster, so latency is always lower too"
+   ],
+   "explanation_en": "LSM has higher write throughput, but background compaction competes for disk bandwidth and causes p99 spikes; a B-tree keeps each key in one place, giving more predictable latency and easier locking for transactions. 'LSM is always faster' is a misconception the chapter calls out."
+  },
+  {
+   "id": "ba39c5146d",
+   "question": "按 DDIA 第 3 章，Redis、VoltDB 这类纯内存数据库快，最主要是因为什么？",
+   "options": [
+    "它们只处理小于内存容量的数据，查找范围小",
+    "省掉了每次查询都要从磁盘读取数据的时间",
+    "它们改用 B-tree 结构，避开了 LSM 的压实",
+    "省掉了把内存数据结构编码成可落盘字节的开销"
+   ],
+   "answer": 3,
+   "explanation": "本章特意纠正常见理解：内存库快，大头不是省了读磁盘，而是省掉了为能落盘而把内存数据结构编码成字节的开销；有些内存库甚至能管理超过内存大小的数据集。",
+   "question_en": "According to DDIA Chapter 3, what is the main reason in-memory databases like Redis and VoltDB are fast?",
+   "options_en": [
+    "They only handle data smaller than RAM, so lookups cover less ground",
+    "They skip the time it takes to read data from disk on every query",
+    "They use B-trees instead, avoiding the compaction of LSM engines",
+    "They skip encoding in-memory structures into a form that can be written to disk"
+   ],
+   "explanation_en": "The chapter deliberately corrects the usual intuition: the big win is not avoiding disk reads but avoiding the overhead of encoding in-memory data structures into a disk-writable form; some in-memory databases can even manage datasets larger than RAM."
+  },
+  {
+   "id": "04efb13ac0",
+   "question": "老板要算「所有用户的平均年龄」，按本章，为什么专门的分析库要把数据按列存？",
+   "options": [
+    "按列存把整行塞进索引的叶子页，查到即得，不必再回表",
+    "只读需要的那一列，同列数据又很相似，能压得极小",
+    "按列存能让每个键只在一处，事务隔离更简单",
+    "按列存让单条记录的增删改更快，适合频繁更新"
+   ],
+   "answer": 1,
+   "explanation": "行式存储为了算一列平均值要把每一行整个读进来再扔掉大半；列式只读所需的列，且同列值相似、压缩率极高。代价恰恰是写入变麻烦，所以列存只适合批量导入，不适合频繁改动。把整行放进叶子页说的是聚簇索引。",
+   "question_en": "To compute 'average age of all users', why do dedicated analytics databases store data by column, per this chapter?",
+   "options_en": [
+    "Column storage puts whole rows in index leaf pages, so lookups never revisit the table",
+    "They read only the needed column, and similar values in it compress extremely well",
+    "Column storage keeps each key in one place, which simplifies transaction isolation",
+    "Column storage makes inserting and updating single rows faster, suiting frequent updates"
+   ],
+   "explanation_en": "Row storage must load every full row just to average one field and discard most of it; a column store reads only the needed column, and similar values compress very well. The cost is that writes get harder, so column stores suit bulk loading, not frequent updates. Putting whole rows in leaf pages describes a clustered index."
+  }
+ ]
+}

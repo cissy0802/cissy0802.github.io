@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/confessions-read37.html",
+ "title": "《忏悔录》— 每日精读 Read 37",
+ "page_en": "/deep-reading/confessions-read37.en.html",
+ "title_en": "Confessions — Deep Reading Read 37",
+ "src_hash": "2edf382a7432",
+ "questions": [
+  {
+   "id": "5c7034bfae",
+   "question": "按奥古斯丁「恶是善的缺乏」的看法，一个人作恶时究竟在做什么？",
+   "options": [
+    "被身上来自黑暗本原的物质所推动，那并不是真正的自己在作恶",
+    "刻意选择坏本身，因为恶是一种与善同样真实的力量",
+    "把某个较小的好排到第一位，意志从更高的好转向了更低的好",
+    "被环境和他人所迫，所以作恶的责任不在自己的意志"
+   ],
+   "answer": 2,
+   "explanation": "既然凡存在者就其存在而言都是好的，恶就不是一样东西而是缺口，账只能记回意志：作恶不是选了「坏」，而是把较小的好当成最高的好。「是我身上的黑暗物质」正是他抛弃的摩尼教二元论。",
+   "question_en": "On Augustine's view that evil is the privation of good, what is a person actually doing when they do wrong?",
+   "options_en": [
+    "Being driven by matter from a dark principle within, so it isn't truly them doing it",
+    "Deliberately choosing badness itself, since evil is a force as real as good",
+    "Ranking some lesser good first, the will turning from a higher good to a lower one",
+    "Being forced by circumstances and others, so the will bears no responsibility"
+   ],
+   "explanation_en": "Since whatever exists is good insofar as it exists, evil is not a thing but a gap, and the account falls back on the will: wrongdoing isn't choosing 'bad' but treating a lesser good as the highest. 'It was the dark matter in me' is the Manichaean dualism he abandoned."
+  },
+  {
+   "id": "fc7661806f",
+   "question": "奥古斯丁观察到：心命令手，手立刻就动；心命令心自己，它却抗命。他对此的诊断是？",
+   "options": [
+    "人心里有善恶两个意志，正在互相交战",
+    "身体的欲望比意志更强，压倒了理性的命令",
+    "意志本身是完整的，只是缺少足够的知识",
+    "同一个意志并不全然愿意，是一种不完整的意愿"
+   ],
+   "answer": 3,
+   "explanation": "他明确拒绝「两个意志一善一恶在打架」的说法，认为那还是摩尼教的老套路；命令的和被命令的是同一个心，它不服从是因为并不全然愿意，他称之为不完整的意愿。「求你赐我贞洁，但不要现在」就是这种状态。",
+   "question_en": "Augustine observed that when the mind commands the hand, it moves at once, but when the mind commands itself, it resists. What was his diagnosis?",
+   "options_en": [
+    "There are two wills in the heart, one good and one evil, at war",
+    "Bodily desire is stronger than the will and overrides reason's commands",
+    "The will itself is whole; it simply lacks enough knowledge",
+    "One and the same will does not fully will it — an incomplete willing"
+   ],
+   "explanation_en": "He explicitly rejects 'two wills, one good and one evil, fighting', seeing it as the old Manichaean move; the commander and the commanded are the same mind, which disobeys because it doesn't wholly will — an incomplete willing. 'Grant me chastity, but not yet' is that state."
+  },
+  {
+   "id": "7398b174df",
+   "question": "背诵一首熟悉的诗时，我们觉得它「很长」。按《忏悔录》卷十一，我们量的到底是什么？",
+   "options": [
+    "上帝在永恒中为万物预先定下的先后次序",
+    "诗句在外部世界里实际占据的那一段客观时间",
+    "已经不存在的过去与尚未存在的未来两者之和",
+    "这首诗在心里留下的印迹，也就是心灵被拉开的长度"
+   ],
+   "answer": 3,
+   "explanation": "过去已不在、未来还没有、现在没有厚度，所以时间只能在心里：只有记忆、注视、期待三种现在。背诗时期待一点点挪进记忆，我们量的从来不是事件，而是它在心里的印迹，他称之为心灵的延展。",
+   "question_en": "Reciting a familiar poem, we feel it is 'long'. According to Book XI of the Confessions, what are we actually measuring?",
+   "options_en": [
+    "The order of before and after that God set for all things in eternity",
+    "The objective stretch of time the verses occupy in the outside world",
+    "The sum of a past that no longer exists and a future not yet here",
+    "The impression the poem leaves in the mind — the length the mind is stretched"
+   ],
+   "explanation_en": "The past is gone, the future not yet, and the present has no width, so time must be in the mind: three presents — memory, attention, expectation. As you recite, expectation passes into memory; what we measure is never the event but its impression in the mind, which he calls the distension of the mind."
+  }
+ ]
+}

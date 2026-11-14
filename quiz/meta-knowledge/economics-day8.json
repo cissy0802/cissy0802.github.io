@@ -1,0 +1,69 @@
+{
+ "page": "/meta-knowledge/economics-day8.html",
+ "title": "元知识详解：经济学原理 — Day 8",
+ "page_en": "/meta-knowledge/economics-day8.en.html",
+ "title_en": "Meta-Knowledge Deep Dive: Economic Principles — Day 8",
+ "src_hash": "51d91d777eba",
+ "questions": [
+  {
+   "id": "53a6488194",
+   "question": "李嘉图的例子里，葡萄牙生产呢绒和葡萄酒所需工时都比英国少。按比较优势原理，两国应如何分工？",
+   "options": [
+    "葡萄牙两样都自己生产，英国没有可拿来交换的优势",
+    "两国各自生产两样东西，因为贸易只会让效率更高的那一方受损",
+    "葡萄牙专产呢绒，因为它在呢绒上比英国更有效率",
+    "葡萄牙专产葡萄酒、英国专产呢绒，各做机会成本更低的那样"
+   ],
+   "answer": 3,
+   "explanation": "比较优势看机会成本之比而非绝对生产率：葡萄牙虽然两样都更高效，但生产酒的机会成本更低，于是专精酒、英国专精呢绒，双方都获益。认为样样更强的一方无需分工，正是这一定理要反驳的直觉。",
+   "question_en": "In Ricardo's example, Portugal needs fewer labor hours than England for both cloth and wine. By comparative advantage, how should they specialize?",
+   "options_en": [
+    "Portugal makes both itself, since England has no advantage worth trading",
+    "Each makes both goods, since trade would only hurt the more efficient side",
+    "Portugal makes cloth, since it is more efficient than England at cloth",
+    "Portugal makes wine and England makes cloth, each doing what costs it less to give up"
+   ],
+   "explanation_en": "Comparative advantage depends on the ratio of opportunity costs, not absolute productivity: Portugal is better at both but gives up less to make wine, so it specializes in wine and England in cloth, and both gain. The idea that a party better at everything needn't trade is exactly the intuition the theorem overturns."
+  },
+  {
+   "id": "d58c329a65",
+   "question": "在一个二手车市场里，买方分不清好车和烂车。按阿克洛夫的柠檬市场模型，最终会发生什么？",
+   "options": [
+    "车主买车后不再爱护车辆，车况普遍变差，即道德风险",
+    "买方只肯出均价，好车主退出，剩下烂车，市场可能坍缩",
+    "卖方竞相降价，均价下降，但好车依然会留在市场上",
+    "买方愿意多付溢价，烂车主趁机获利，市场照常运转"
+   ],
+   "answer": 1,
+   "explanation": "买方按期望值只出均价，低于好车的真实价值，好车主退出；买方察觉后只肯付烂车价，市场一步步坍缩，这是交易前的逆向选择。买车后行为变化属于交易后的道德风险，是另一种问题。",
+   "question_en": "In a used-car market, buyers can't tell good cars from lemons. According to Akerlof's model, what eventually happens?",
+   "options_en": [
+    "Owners stop caring for cars after buying them and quality falls overall, which is moral hazard",
+    "Buyers offer only the average price, good-car owners leave, lemons remain, and the market can collapse",
+    "Sellers undercut each other, the average price falls, but good cars still stay on the market",
+    "Buyers pay a premium, lemon owners profit from it, and the market keeps running as usual"
+   ],
+   "explanation_en": "Buyers offer the expected value, below what good cars are worth, so good-car owners exit; once buyers notice, they pay only lemon prices and the market unravels — adverse selection before the trade. Behavior changing after purchase is moral hazard, a different problem."
+  },
+  {
+   "id": "30c524952d",
+   "question": "渔场、地下水这类资源，按萨缪尔森的物品分类以及奥斯特罗姆的研究，应当怎样理解？",
+   "options": [
+    "属于私人品，只要划清产权，市场自然能有效配置",
+    "属于纯公共品，市场必然失灵，只能由政府统一供给和管理",
+    "难以排他却有竞争性，易陷公地悲剧，但社区自定规则也能治理好",
+    "属于俱乐部品，只要设一道付费门槛就能被有效管理"
+   ],
+   "answer": 2,
+   "explanation": "渔场、地下水难排他、竞争性高，是公共池塘资源，容易公地悲剧；奥斯特罗姆在尼泊尔灌溉等案例中发现社区可以靠自定规则治理，打破了「非市场即政府」的二元对立。纯公共品是国防、灯塔这类竞争性低的东西。",
+   "question_en": "How should resources like fisheries and groundwater be understood, using Samuelson's classification of goods and Ostrom's research?",
+   "options_en": [
+    "Private goods, which markets will allocate efficiently once property rights are defined",
+    "Pure public goods, where markets must fail and only government can supply and manage them",
+    "Hard to exclude yet rivalrous, prone to the tragedy of the commons, but communities can govern them by their own rules",
+    "Club goods, which can be managed effectively just by putting up a paywall"
+   ],
+   "explanation_en": "Fisheries and groundwater are hard to exclude but rivalrous — common-pool resources prone to the tragedy of the commons; Ostrom found in cases like Nepalese irrigation that communities can govern them with self-made rules, breaking the market-or-state dichotomy. Pure public goods are low-rivalry things like defense and lighthouses."
+  }
+ ]
+}

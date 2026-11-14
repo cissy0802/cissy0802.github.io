@@ -1,0 +1,69 @@
+{
+ "page": "/thinker-arena/debate.html?d=abundance-and-decline",
+ "title": "辩论：物质极度丰裕后，人会走向衰亡吗？",
+ "page_en": "/thinker-arena/debate.en.html?d=abundance-and-decline",
+ "title_en": "Does material abundance lead to decline?",
+ "src_hash": "41cb93c38640",
+ "questions": [
+  {
+   "id": "c0e2b957ad",
+   "question": "一个围场里食水无限、空间也远没住满，鼠群却停止增长，末期雄鼠退缩到只吃喝睡和梳毛。按这场辩论的结论，这个实验最准确地是什么的模型？",
+   "options": [
+    "丰裕的模型：东西实在太多，让动物渐渐失去了奋斗的动力",
+    "封闭的模型：角色被占满、无法迁出，新一代找不到位置",
+    "奖赏过载的模型：刺激太强太易得，把快感基线压低",
+    "匮乏缺失的模型：没有饥饿与天敌，意义的燃料耗尽"
+   ],
+   "answer": 1,
+   "explanation": "辩论的结论是这个类比在流传中被掉了包：围场不缺食物也不缺空间，缺的是可当的角色，所以它是封闭而非丰裕的模型。把它读成「东西太多毁掉动物」，正是辩论要纠正的误读。",
+   "question_en": "In an enclosure with unlimited food and water and plenty of unused space, a mouse colony stopped growing, and late-stage males withdrew into eating, sleeping and grooming. By the debate's conclusion, what is this experiment most accurately a model of?",
+   "options_en": [
+    "Abundance: having too much drains the animals' drive to strive",
+    "Closure: roles are all taken, no one can leave, and newcomers find no place",
+    "Reward overload: stimuli so strong and easy they flatten the pleasure baseline",
+    "Missing scarcity: without hunger or predators, the fuel of meaning runs out"
+   ],
+   "explanation_en": "The debate concludes the analogy got swapped in retelling: the enclosure lacked neither food nor space but roles to fill, so it models closure, not abundance. Reading it as 'too much stuff ruins animals' is exactly the misreading the debate corrects."
+  },
+  {
+   "id": "8269e9cb91",
+   "question": "按这场辩论的读法，在今天的富裕社会里，最像实验中那些退缩雄鼠的，往往是哪类人？",
+   "options": [
+    "退休后失去工作角色、无事可做的老年人",
+    "被挡在门外、房子进不去岗位又碎的年轻人",
+    "物质最充裕、什么都不缺的最富裕阶层",
+    "被短视频和外卖喂过头、离不开刺激的重度用户"
+   ],
+   "answer": 1,
+   "explanation": "辩论把崩溃的原因落在位置不够而非东西太多，所以最像「美丽者」的是被挡在门外、找不到位置的年轻人，他们退出的是参与而不是消费。最富的人恰恰占着位置，不是这条曲线上的人。",
+   "question_en": "On the debate's reading, who in today's affluent societies most often resembles the withdrawn male mice?",
+   "options_en": [
+    "Retirees who have lost their work roles and have nothing left to do",
+    "Young people shut out: priced out of housing, stuck in fragmented jobs",
+    "The wealthiest class, who have the most material comfort and lack nothing",
+    "Heavy consumers overfed on short videos, delivery food and easy stimulation"
+   ],
+   "explanation_en": "The debate locates the collapse in too few positions, not too many goods, so the closest analogue is young people locked out of places to stand; what they withdraw from is participation, not consumption. The richest people actually hold positions and are not on this curve."
+  },
+  {
+   "id": "f8c5fbdfb1",
+   "question": "关于物质极度丰裕对人的影响，这场辩论全场没有分歧的共识是什么？",
+   "options": [
+    "低层需要满足后，人会自动转向更高的追求，丰裕本身就是解药",
+    "丰裕必然走向衰亡，唯一的出路是靠制度强行限制人们的消费",
+    "适度的匮乏和苦难是意义必需的燃料，丰裕社会应有意保留一些贫穷和艰难",
+    "丰裕取消了「为什么要站起来」的理由，把问题交还给人，却不替人回答"
+   ],
+   "answer": 3,
+   "explanation": "共识是丰裕取消的是理由而不是问题：它把「为何而活」从环境手里拿走退还给人。辩论明确说没有人替「匮乏使人高贵」辩护，所以靠保留贫穷来保住意义恰是被否定的立场；而「自动上升」也被批为一部并不存在的电梯。",
+   "question_en": "On the effect of extreme material abundance, what did every participant in the debate agree on?",
+   "options_en": [
+    "Once lower needs are met people automatically move to higher pursuits, so abundance is itself the cure",
+    "Abundance inevitably leads to decline, and the only way out is for institutions to forcibly curb consumption",
+    "Some scarcity and hardship is the necessary fuel of meaning, so affluent societies should deliberately keep some poverty",
+    "Abundance removes the ready-made reason to get up, handing the question back to people without answering it"
+   ],
+   "explanation_en": "The consensus is that abundance removes reasons, not problems: it takes 'why live' out of the environment's hands and returns it to the person. The debate notes nobody defended 'scarcity ennobles', so preserving poverty for meaning is a rejected position; the 'automatic ascent' view was attacked as an elevator that doesn't exist."
+  }
+ ]
+}
