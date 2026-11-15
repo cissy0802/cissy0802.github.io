@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/radical-acceptance-read984.html",
+ "title": "《全然接受》",
+ "page_en": "/deep-reading/radical-acceptance-read984.en.html",
+ "title_en": "Radical Acceptance",
+ "src_hash": "643fadbd8161",
+ "questions": [
+  {
+   "id": "e6e0a0c264",
+   "question": "一个人练了正念，能精准察觉「胸口发紧、在重播那句批评」，可每次都跟上一句「我怎么这么没出息」。按布拉克「两只翅膀」的说法，问题在哪？",
+   "options": [
+    "这是 RAIN 里正常的探究阶段，不需要做调整",
+    "正念还练得不够深，看得再清楚些自责就会消失",
+    "只有看清缺了慈悲，正念被用成了更精确的自我审判",
+    "只有慈悲缺了看清，他其实是在用笼统的自我安慰回避感受"
+   ],
+   "answer": 2,
+   "explanation": "只有看清没有慈悲，正念会变成冷冰冰的自我监控，看得越清骂得越准。缺看清的那一侧表现为笼统的「没事别想了」，与这个例子相反。",
+   "question_en": "Someone practicing mindfulness can precisely notice 'tight chest, replaying that criticism,' but always adds 'I'm so pathetic.' In Brach's 'two wings' image, what's wrong?",
+   "options_en": [
+    "This is the normal Investigate stage of RAIN and needs no adjustment",
+    "Their mindfulness isn't deep enough; seeing more clearly will end the self-blame",
+    "Clear seeing without compassion: mindfulness has become sharper self-judgment",
+    "Compassion without clear seeing: they're using self-soothing to dodge feelings"
+   ],
+   "explanation_en": "Clear seeing without compassion turns mindfulness into cold self-surveillance: the clearer you see, the more precisely you scold. Compassion without clear seeing looks like a vague 'it's fine, don't think about it,' the opposite of this case."
+  },
+  {
+   "id": "1492b3a4ca",
+   "question": "一个人身处一段伤害自己的关系，很害怕它结束。按布拉克对全然接受的界定，该怎么理解「接受」？",
+   "options": [
+    "先忍耐眼前的处境，等内心彻底平静、不再害怕之后再做任何决定",
+    "接受只适用于改变不了的事，关系能改变所以不适用",
+    "接受意味着先原谅对方，看见对方伤害背后同样的苦",
+    "接受的是自己的恐惧和痛苦这些内在体验，不等于要留在关系里"
+   ],
+   "answer": 3,
+   "explanation": "全然接受的对象是内在体验，而不是外在的一切行为和处境：接受「我害怕这段关系结束」不等于必须留在伤害你的关系里。「先忍耐」正是批评者担心的、把接受误用成忍耐。",
+   "question_en": "Someone is in a relationship that harms them and is terrified of it ending. Given how Brach defines radical acceptance, what does 'acceptance' mean here?",
+   "options_en": [
+    "Enduring the situation until they feel completely calm, then deciding",
+    "Acceptance applies only to unchangeable things; relationships can change, so it doesn't apply",
+    "Accepting means first forgiving the partner by seeing the suffering behind the harm",
+    "Accepting their own fear and pain as inner experience, not agreeing to stay"
+   ],
+   "explanation_en": "Radical acceptance targets inner experience, not every outer behavior or circumstance: accepting 'I'm afraid this will end' doesn't mean staying in a harmful relationship. 'Endure first' is precisely the misuse critics worry about, acceptance turned into putting up with it."
+  },
+  {
+   "id": "045223b265",
+   "question": "RAIN 的 N 在 2003 年《全然接受》里是「不认同」，后来布拉克把它改成「滋养」。她给的理由是什么？",
+   "options": [
+    "不认同容易触发创伤者的闪回和解离，所以被整个删除",
+    "学员探究时常缺少温暖，直接谈不认同容易变成理智上的抽离",
+    "滋养这个词更好记，更便于把练习推广给普通大众",
+    "不认同与佛教的无我教义相冲突，因而遭到了不少传统老师的批评"
+   ],
+   "answer": 1,
+   "explanation": "她发现很多人在探究时缺少足够的温暖，直接谈不认同会变成抽离，于是单列「滋养」，把不认同视为做完四步后自然落入的状态——它被挪到后面，并没有被删除。",
+   "question_en": "In the 2003 Radical Acceptance, the N in RAIN stood for Non-identification; Brach later changed it to Nurture. What reason did she give?",
+   "options_en": [
+    "Non-identification tended to trigger flashbacks in trauma survivors, so it was removed entirely",
+    "Students often lacked warmth while investigating, so non-identification became intellectual detachment",
+    "Nurture is easier to remember and makes the practice easier to popularize",
+    "Non-identification clashed with Buddhist no-self teachings and drew criticism from traditional teachers"
+   ],
+   "explanation_en": "She found many people lacked enough warmth when investigating, so jumping to non-identification turned into detachment; she added Nurture and treated non-identification as the natural result after the four steps. It was moved, not deleted."
+  }
+ ]
+}

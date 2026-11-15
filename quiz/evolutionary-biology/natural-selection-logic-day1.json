@@ -1,0 +1,69 @@
+{
+ "page": "/evolutionary-biology/natural-selection-logic-day1.html",
+ "title": "进化生物学 Day 1：自然选择的逻辑",
+ "page_en": "/evolutionary-biology/natural-selection-logic-day1.en.html",
+ "title_en": "Evolutionary Biology Day 1: The Logic of Natural Selection",
+ "src_hash": "1ac522906e78",
+ "questions": [
+  {
+   "id": "8a9e57abfd",
+   "question": "1977 年加拉帕戈斯大旱，小而软的种子先被吃光，大批地雀饿死，活下来的鸟喙明显更厚。这件事最准确的描述是什么？",
+   "options": [
+    "饥饿的鸟拼命去啃硬种子，喙越用越厚，并把厚喙传给了后代",
+    "厚喙鸟更强壮，所以把薄喙鸟赶出了食物最多的区域",
+    "干旱诱发了突变，幸存者的喙在这一代里长厚了",
+    "没有哪只鸟的喙变厚过，变的只是厚喙个体所占的比例"
+   ],
+   "answer": 3,
+   "explanation": "选择从不修改任何一个个体，它只改变比例。「越用越厚并遗传」是用进废退的误读；「适」也不是强壮，而是在当下环境里能留下几个后代。",
+   "question_en": "In the 1977 Galápagos drought, small soft seeds ran out first, most finches starved, and survivors had noticeably deeper beaks. What's the most accurate description?",
+   "options_en": [
+    "Hungry birds gnawed hard seeds until their beaks thickened, passing this on",
+    "Deep-beaked birds were stronger and drove thin-beaked ones from the best feeding areas",
+    "The drought induced mutations that deepened survivors' beaks within that generation",
+    "No bird's beak got deeper; only the share of deep-beaked birds changed"
+   ],
+   "explanation_en": "Selection never modifies an individual; it only shifts proportions. 'Beaks thickened through use and were inherited' is the use-and-disuse misreading, and 'fitness' isn't strength but expected offspring in the current environment."
+  },
+  {
+   "id": "a29c7d0a4d",
+   "question": "策略甲平均每年产 10 个后代，但每隔几年会颗粒无收；策略乙平均每年只产 6 个，但从不归零。在波动的环境里，长期看哪个占优？",
+   "options": [
+    "两者相当，长期结果只取决于各自的平均产出",
+    "乙，因为后代数是逐年相乘的，中间一个零就清空一切",
+    "甲，因为平均产出更高，长期累积下来的后代更多",
+    "取决于种群大小，种群越大越应该选择策略甲"
+   ],
+   "answer": 1,
+   "explanation": "波动奖励的不是平均产出高，而是从不归零：结果一年年乘起来，出现一个零前面全部清空。种子分好几年才发芽、虫卵分批孵化，都是主动压低平均值换取不会全军覆没。",
+   "question_en": "Strategy A averages 10 offspring a year but every few years produces none; Strategy B averages only 6 but never hits zero. In a fluctuating environment, which wins long-term?",
+   "options_en": [
+    "They're equal; long-run results depend only on average output",
+    "B, because offspring counts multiply year to year and a single zero wipes everything out",
+    "A, because its higher average output accumulates more offspring over time",
+    "It depends on population size; larger populations should favor A"
+   ],
+   "explanation_en": "Fluctuation rewards never hitting zero, not a high average: outcomes compound multiplicatively, so one zero erases everything. Staggered germination and batch hatching deliberately trade a lower average for avoiding total wipeout."
+  },
+  {
+   "id": "498c42396a",
+   "question": "有人抬杠：「适者生存是同义反复——谁活下来谁就是适者。」文章为什么认为这不成立？",
+   "options": [
+    "适应度可以在结果出来前，从结构和力学先测量并预测",
+    "因为适者生存只适用于动物，对植物并不成立",
+    "因为有些适应度高的个体也会因纯粹的运气而死掉",
+    "因为「适者生存」这句话是斯宾塞造的，并不是达尔文本人首先提出的"
+   ],
+   "answer": 0,
+   "explanation": "从喙的力学结构能先算出咬得开哪档种子，从翅膀反光能先算出被鸟发现的概率，先预测再看谁活下来，所以不是事后贴标签。这句话确实是斯宾塞造的，但这和是否同义反复无关。",
+   "question_en": "Someone objects: 'Survival of the fittest is a tautology: whoever survives is by definition the fittest.' Why does the piece reject this?",
+   "options_en": [
+    "Fitness can be measured and predicted from structure and mechanics before the outcome",
+    "Because survival of the fittest applies only to animals, not plants",
+    "Because some highly fit individuals still die from sheer bad luck",
+    "Because Spencer coined 'survival of the fittest,' not Darwin himself"
+   ],
+   "explanation_en": "Beak mechanics predict which seeds a bird can crack, and wing reflectance predicts detection by birds, so fitness is predicted first and then checked, not labeled after the fact. Spencer did coin the phrase, but that's irrelevant to the tautology charge."
+  }
+ ]
+}

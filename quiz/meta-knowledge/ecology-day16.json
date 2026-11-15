@@ -1,0 +1,69 @@
+{
+ "page": "/meta-knowledge/ecology-day16.html",
+ "title": "元知识详解：生态学 — Day 16",
+ "page_en": "/meta-knowledge/ecology-day16.en.html",
+ "title_en": "Meta Knowledge: Ecology — Day 16",
+ "src_hash": "8557c89323ce",
+ "questions": [
+  {
+   "id": "3385696ab5",
+   "question": "一种植物在没有竞争者的温室里能耐受的温湿度范围，比它在野外实际分布的范围宽得多。用生态位概念怎么解释？",
+   "options": [
+    "温室条件让它在短短几代之内快速适应，大大拓宽了耐受范围",
+    "基础生态位大于现实生态位，野外只占竞争者没挤掉的部分",
+    "温室测到的是现实生态位，野外分布才是基础生态位",
+    "野外的它主动只待在最优区间，以节省能量开销"
+   ],
+   "answer": 1,
+   "explanation": "基础生态位是理论上能占的全部，现实生态位是被竞争者挤压后实际占到的，总是更小。最后一项把两个概念的方向弄反了。",
+   "question_en": "A plant tolerates a much wider range of temperature and humidity in a competitor-free greenhouse than it actually occupies in the wild. How does the niche concept explain this?",
+   "options_en": [
+    "Greenhouse conditions let it adapt within a few generations, widening its tolerance",
+    "Its fundamental niche exceeds its realized niche; in the wild it holds only what competitors leave",
+    "The greenhouse measures the realized niche; the wild range is the fundamental niche",
+    "In the wild it deliberately stays in its optimal band to save energy"
+   ],
+   "explanation_en": "The fundamental niche is everything a species could occupy; the realized niche is what it actually holds after competitors squeeze it, and it's always smaller. The last option reverses the two concepts."
+  },
+  {
+   "id": "1d19ce2310",
+   "question": "美国西部一百年来全面扑灭每一场山火，最终迎来了破坏性极大的超级山火。按 Holling 的适应性循环，教训是什么？",
+   "options": [
+    "灭火本身没错，超级山火主要源于偶然的极端天气",
+    "山火是异常扰动，健康的生态系统应始终保持稳态",
+    "长期压制小扰动会累积脆弱性，崩溃时反而更剧烈",
+    "K 阶段最稳定、效率最高，管理目标应是尽量延长它"
+   ],
+   "answer": 2,
+   "explanation": "系统被保护得越久，可燃物和锁定的资源越多，释放阶段就越惨；原住民刻意的小烧反而避免了大崩。把 K 阶段当成理想状态去延长，正是这套理论要颠覆的直觉。",
+   "question_en": "For a century the American West suppressed every wildfire, and eventually faced devastating megafires. Under Holling's adaptive cycle, what's the lesson?",
+   "options_en": [
+    "Suppression was right; the megafires came mainly from freak extreme weather",
+    "Fire is an abnormal disturbance; a healthy ecosystem should stay in equilibrium",
+    "Suppressing small disturbances builds up fragility, making the eventual collapse worse",
+    "The K phase is the most stable and efficient, so management should prolong it"
+   ],
+   "explanation_en": "The longer a system is protected, the more fuel and locked-up resources accumulate, so the release phase hits harder; Indigenous cool burning avoided big collapses. Treating the K phase as an ideal to prolong is exactly the intuition the theory overturns."
+  },
+  {
+   "id": "350a4ecba8",
+   "question": "Paine 移走海岸岩石上的海星后，十几种生物在两年内消失。海星作为关键物种，靠什么维持了多样性？",
+   "options": [
+    "它是数量最多的物种，撑起了食物网的大部分生物量",
+    "它为那十几种生物直接提供了主要的食物来源",
+    "它压制最具竞争优势的贻贝，给弱势物种留出空间",
+    "它的分泌物改善了岩面环境，让其他生物能附着"
+   ],
+   "answer": 2,
+   "explanation": "关键物种常通过抑制最强的竞争者来给弱势物种留出生存空间；海星一走，贻贝霸占整个岩面。关键物种不靠数量或体积，像拱顶石一样体积不大却撑起结构。",
+   "question_en": "When Paine removed sea stars from a rocky shore, over a dozen other species vanished within two years. How had the sea star, as a keystone species, maintained diversity?",
+   "options_en": [
+    "By being the most abundant species, supplying most of the food web's biomass",
+    "By directly serving as the main food source for those dozen species",
+    "By keeping the dominant competitor, mussels, in check, leaving room for weaker species",
+    "By secreting substances that made the rock surface habitable for others"
+   ],
+   "explanation_en": "Keystone species often sustain diversity by suppressing the strongest competitor; without sea stars, mussels took over the entire rock face. A keystone matters through its structural role, not its numbers or size."
+  }
+ ]
+}

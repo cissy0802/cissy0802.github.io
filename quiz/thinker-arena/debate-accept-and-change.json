@@ -1,0 +1,69 @@
+{
+ "page": "/thinker-arena/debate.html?d=accept-and-change",
+ "title": "辩论：接纳自己和改变自己，能同时做到吗？",
+ "page_en": "/thinker-arena/debate.en.html?d=accept-and-change",
+ "title_en": "Can we accept ourselves and change ourselves at once?",
+ "src_hash": "e338bc6d6c86",
+ "questions": [
+  {
+   "id": "4c16739981",
+   "question": "按这场关于「接纳与改变」的辩论的共识，严厉地骂自己为什么推不动改变？",
+   "options": [
+    "苛责只对短期目标有用，时间一长就会让人陷入倦怠",
+    "苛责和接纳效果相近，关键在于个人的性格",
+    "苛责本身没错，只是批评得不够具体和及时",
+    "被苛责时人会进入防御和回避，学不进新东西"
+   ],
+   "answer": 3,
+   "explanation": "共识是：自我批评被大脑当成威胁，人会僵住、回避、找借口，学习无从发生；被如实看见时人才开始动。「短期有用、长期倦怠」听着合理，但共识认为苛责从一开始就锁住改变，并非先有效后失效。",
+   "question_en": "According to the consensus of this debate on self-acceptance versus change, why does harsh self-criticism fail to drive change?",
+   "options_en": [
+    "Self-criticism works for short-term goals but leads to burnout over time",
+    "Criticism and acceptance work about equally; it depends on personality",
+    "Criticism itself is fine; it just isn't specific or timely enough",
+    "Under attack, people get defensive and avoidant and can't learn anything new"
+   ],
+   "explanation_en": "The consensus: the brain processes self-criticism like a threat, so people freeze, avoid and rationalize, and no learning happens; change begins when one is accurately seen. 'Works short-term, burns out later' sounds reasonable, but the debate held that harshness blocks change from the start."
+  },
+  {
+   "id": "9cb08cf7b9",
+   "question": "失恋已经发生、自己忍不住反复查看对方动态、工作中常被上司当众羞辱——按辩论的结论，成熟的自我接纳会怎样对待这三件事？",
+   "options": [
+    "把三件事都当作自己的功课，从内心一并化解掉",
+    "先解决环境问题，个人的反应会随之自然消失",
+    "对事实停止争辩，对行为做小实验，对环境设边界或离开",
+    "先全部接纳，等情绪平复之后再决定要不要改变"
+   ],
+   "answer": 2,
+   "explanation": "结论把难题分成三层：不可逆的事实、可训练的行为、需要协商或离开的环境。把三层都吞回自己「修炼」，正是它警告的伤害——在有毒处境里一味修自己。",
+   "question_en": "A breakup has already happened, you keep checking your ex's social media, and your boss routinely humiliates you in public. Per the debate's conclusion, how does mature self-acceptance handle these three?",
+   "options_en": [
+    "Treat all three as inner work and dissolve them from within",
+    "Fix the environment first; the personal reactions will fade on their own",
+    "Stop arguing with the fact, experiment with the behavior, set boundaries with or leave the environment",
+    "Accept all three first, then decide whether to change once emotions settle"
+   ],
+   "explanation_en": "The conclusion sorts problems into three layers: irreversible facts, trainable behaviors, and environments to negotiate or leave. Swallowing all three as personal 'inner work' is exactly the harm it warns against: endlessly working on yourself in a toxic situation."
+  },
+  {
+   "id": "79e25ed204",
+   "question": "一个从小只听过苛责的人，靠意志力怎么也学不会接纳自己。按辩论指出的关键事实，更好的出路是什么？",
+   "options": [
+    "每天坚持写自我肯定日记，靠重复把接纳练成习惯",
+    "找一个能不急着评判、如实听自己说话的人相处",
+    "先把对自己的期望降下来，接纳会随之出现",
+    "独自冥想观照情绪，接纳本来就不依赖他人"
+   ],
+   "answer": 1,
+   "explanation": "辩论点出：接纳最初多半是从另一个人那里得到，然后才被学会，就像没听过一种语言的人很难自己发明它。所以该问「我能和谁这样相处」，而不是只在日记里独自练习。",
+   "question_en": "Someone who heard only harsh criticism growing up can't will themselves into self-acceptance. Given the key insight the debate surfaced, what is the better way forward?",
+   "options_en": [
+    "Write daily affirmations until acceptance becomes a habit",
+    "Spend time with someone who listens without rushing to judge",
+    "Lower your expectations of yourself and acceptance will follow",
+    "Meditate alone on your emotions; acceptance doesn't depend on others"
+   ],
+   "explanation_en": "The debate noted that acceptance is usually first received from another person and only then learned, much as no one invents a language they've never heard. So the question is who you can be with this way, not just what you write in a journal."
+  }
+ ]
+}

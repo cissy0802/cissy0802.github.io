@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/ref-body-budget.html",
+ "title": "参考 · 身体预算 — 神经科学",
+ "page_en": "/neuroscience/ref-body-budget.en.html",
+ "title_en": "Reference · The Body Budget — Neuroscience",
+ "src_hash": "0f423636e02e",
+ "questions": [
+  {
+   "id": "4b48bec776",
+   "question": "你从沙发上站起来之前，心率和血管张力就已经调好了。稳态应变（allostasis）和传统稳态（homeostasis）的关键区别在哪？",
+   "options": [
+    "稳态应变只在压力下才启动，平时的调节仍由稳态机制负责",
+    "稳态应变更精确，能把各项指标牢牢稳定在一个固定的设定点上",
+    "稳态应变调节的是情绪和心情，稳态调节的才是体温和血压这类生理指标",
+    "不在调什么，而在什么时候调：预判需求提前调，而非偏离后再拉回"
+   ],
+   "answer": 3,
+   "explanation": "两者的差别不在调什么，而在什么时候调：稳态是事后纠偏，稳态应变是事前拨款，靠不断地变来维持稳。站起来时若要等供血不足再升血压，人已经晕倒了。",
+   "question_en": "Before you even rise from the sofa, your heart rate and vascular tone have already adjusted. What's the key difference between allostasis and classic homeostasis?",
+   "options_en": [
+    "Allostasis kicks in only under stress; everyday regulation is still left to homeostasis",
+    "Allostasis is more precise, holding every variable tightly at one fixed set point",
+    "Allostasis regulates emotions, while homeostasis handles physiology like body temperature and blood pressure",
+    "Not what is regulated but when: anticipating needs in advance rather than correcting after a deviation"
+   ],
+   "explanation_en": "The difference isn't what gets regulated but when: homeostasis corrects after the fact, allostasis allocates in advance, staying stable by constantly changing. If blood pressure rose only after blood flow dropped, you'd already have fainted."
+  },
+  {
+   "id": "5a7a44c0c0",
+   "question": "熬了一夜、连着坐了几小时没吃饭，你看到伴侣忘了倒垃圾就大发雷霆。按身体预算的视角，最可能发生了什么？",
+   "options": [
+    "身体只给出不带标签的「难受、没劲」，大脑顺手抓了个人际理由",
+    "杏仁核这个情绪中枢失控，压过了前额叶的理性判断",
+    "对这段关系积压已久的不满，在极度疲惫时终于找到了出口暴露出来",
+    "发火完全正当，疲惫只是把一个真实的问题放大了"
+   ],
+   "answer": 0,
+   "explanation": "透支后的读数不带标签，大脑只能找手边的理由解释，这叫误归因：身体的账被记到了人的头上。文章还特意说明，管账的不是杏仁核或任何「情绪中枢」。所以发火前先花三十秒查一遍账。",
+   "question_en": "After an all-nighter and hours of sitting without food, you explode when your partner forgets the trash. From a body-budget view, what most likely happened?",
+   "options_en": [
+    "The body sent an unlabeled 'bad and drained' reading, and the brain grabbed an interpersonal reason",
+    "The amygdala, the emotion center, overrode the prefrontal cortex's reasoning",
+    "Long-suppressed resentment about the relationship finally surfaced through fatigue",
+    "The anger was fully justified; fatigue just amplified a real problem"
+   ],
+   "explanation_en": "An overdrawn budget produces an unlabeled reading, and the brain explains it with whatever is at hand: misattribution, the body's bill charged to a person. The piece also stresses that no amygdala or 'emotion center' keeps the books. Hence: check the account for thirty seconds before naming the feeling."
+  },
+  {
+   "id": "fa6a1e3ab7",
+   "question": "关于「身体预算」这个说法，文章特别提醒了它的哪一条边界？",
+   "options": [
+    "单靠皮质醇一项指标，就能测出剩余的身体预算有多少",
+    "没有能测出「余额」的读数，它是思考框架，不是诊断工具",
+    "它已被实验证明是错的，只剩下作为比喻的价值",
+    "稳态负荷指数已经统一标准化，能精确算出每天的余额"
+   ],
+   "answer": 1,
+   "explanation": "没有哪台仪器能告诉你今天还剩多少，稳态负荷指数是各家拼出来的、指标和加权并不统一。拿它当思考工具好用，当诊断或「今天难受的确切原因」就过头了；但它并没有被证明是错的。",
+   "question_en": "What limit on the 'body budget' idea does the piece specifically flag?",
+   "options_en": [
+    "Cortisol alone is enough to measure how much body budget remains",
+    "There's no readout of a 'balance'; it's a thinking framework, not a diagnostic tool",
+    "It has been experimentally disproven and survives only as a metaphor",
+    "The allostatic load index is now standardized and computes each day's balance precisely"
+   ],
+   "explanation_en": "No instrument tells you today's remaining balance, and allostatic load indices are assembled differently across studies. It's useful as a thinking tool but overreaches as a diagnosis or the exact cause of today's mood; it hasn't been disproven."
+  }
+ ]
+}

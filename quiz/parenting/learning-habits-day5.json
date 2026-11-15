@@ -1,0 +1,69 @@
+{
+ "page": "/parenting/learning-habits-day5.html",
+ "title": "育儿与教育：学业与学习习惯 — Day 5",
+ "page_en": "/parenting/learning-habits-day5.en.html",
+ "title_en": "Parenting: Schoolwork & Learning Habits — Day 5",
+ "src_hash": "befdd03ab890",
+ "questions": [
+  {
+   "id": "4b280a6a46",
+   "question": "孩子用合书自测的方法复习了一周，抱怨「感觉没学到什么，还不如看书」。按学习科学，怎么看这种感受？",
+   "options": [
+    "说明自测题太难了，应换成更简单的选择题降低难度",
+    "说明自测这种方法不适合这个孩子，应该换回他自己觉得顺手的重读",
+    "说明他还没理解内容，应先多读几遍再开始自测",
+    "这常常正是学得最好的时候，重读带来的流畅感是元认知错觉"
+   ],
+   "answer": 3,
+   "explanation": "大脑感觉的「流畅」和实际「留存」常是反向的：重读只唤起熟悉感，费力的提取才在加固记忆。换成简单的选择题等于换皮重读，恰是常见陷阱。",
+   "question_en": "After a week of reviewing by closing the book and self-testing, a child complains, 'I feel like I learned nothing; rereading was better.' Per learning science, how should we read this?",
+   "options_en": [
+    "It means the self-test is too hard; switch to easier multiple-choice questions",
+    "It shows self-testing doesn't suit this child; switch back to the rereading they prefer",
+    "It means they haven't understood yet; they should reread several times first",
+    "Often it's when learning is strongest; the fluency of rereading is a metacognitive illusion"
+   ],
+   "explanation_en": "Felt fluency and actual retention often run in opposite directions: rereading triggers familiarity, while effortful retrieval strengthens memory. Swapping in easy multiple-choice questions is just rereading in disguise, a classic pitfall."
+  },
+  {
+   "id": "00c6bb96e0",
+   "question": "关于用贴纸、奖状、零花钱奖励孩子，文章认为对哪类事最需要警惕？",
+   "options": [
+    "孩子本来就有点兴趣的事，如阅读、画画、音乐",
+    "孩子不喜欢却必须做的事，如倒垃圾、整理书包",
+    "只有金钱奖励有害，贴纸和奖状这类没有影响",
+    "所有事都一样，任何形式的奖励都应该完全避免"
+   ],
+   "answer": 0,
+   "explanation": "过度合理化效应：给本来有兴趣的活动发奖励，大脑会把它归类为「工作」，奖励一停兴趣也没了。对低兴趣的必做任务用奖励问题不大；经典实验里被削弱兴趣的幼儿拿的正是奖状。",
+   "question_en": "On rewarding kids with stickers, certificates or pocket money, for which kind of activity does the piece urge the most caution?",
+   "options_en": [
+    "Things the child already somewhat enjoys, like reading, drawing or music",
+    "Things the child dislikes but must do, like taking out trash or packing a bag",
+    "Only money is harmful; stickers and certificates have no effect",
+    "All activities equally; every kind of reward should be avoided"
+   ],
+   "explanation_en": "The overjustification effect: rewarding an already-interesting activity recasts it as 'work,' so interest vanishes when rewards stop. Rewards are fine for low-interest chores, and the classic study that undermined children's interest used certificates."
+  },
+  {
+   "id": "51d0394ccc",
+   "question": "孩子写作业时喊「妈妈，这题怎么做？」按文章对作业陪伴的建议，家长第一步该怎么回应？",
+   "options": [
+    "先给出答案，再让孩子对照着答案倒推理解思路",
+    "先问他试过什么、卡在哪一步，把思考的球还给他",
+    "马上坐过去把题讲清楚，免得孩子因受挫而泄气",
+    "让他先跳过这题，明天到学校再去问老师吧"
+   ],
+   "answer": 1,
+   "explanation": "家长一坐过去，孩子就把思考外包了，这是执行功能发育的反向训练。文章建议先让孩子说出试过什么、卡在哪，并区分「完全没看懂」和「看懂了不知下一步」。",
+   "question_en": "A child doing homework calls out, 'How do I do this one?' Per the piece's advice on homework involvement, what should a parent do first?",
+   "options_en": [
+    "Give the answer first, then have them work backward to the reasoning",
+    "Ask what they've tried and where they're stuck, handing the thinking back",
+    "Sit down right away and explain it clearly so they don't get discouraged",
+    "Tell them to skip it and ask the teacher at school tomorrow"
+   ],
+   "explanation_en": "Once a parent sits down, the child offloads the thinking, the reverse of training executive function. The piece advises having the child say what they tried and where they're stuck, and distinguishing 'understood nothing' from 'understood but don't know the next step.'"
+  }
+ ]
+}

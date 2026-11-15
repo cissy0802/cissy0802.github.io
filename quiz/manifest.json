@@ -1272,6 +1272,141 @@
     "d25097b600",
     "67246a1a0e"
    ]
+  },
+  "/neuroscience/spatial-navigation-topic5.html": {
+   "t": "Topic 5 · 空间导航与认知地图 — 神经科学",
+   "f": "neuroscience/spatial-navigation-topic5.json",
+   "q": [
+    "8471b97ade",
+    "c515e5e1a1",
+    "3e96995f92"
+   ]
+  },
+  "/thinker-arena/debate.html?d=accept-and-change": {
+   "t": "辩论：接纳自己和改变自己，能同时做到吗？",
+   "f": "thinker-arena/debate-accept-and-change.json",
+   "q": [
+    "4c16739981",
+    "9cb08cf7b9",
+    "79e25ed204"
+   ]
+  },
+  "/meta-knowledge/ecology-day16.html": {
+   "t": "元知识详解：生态学 — Day 16",
+   "f": "meta-knowledge/ecology-day16.json",
+   "q": [
+    "3385696ab5",
+    "1d19ce2310",
+    "350a4ecba8"
+   ]
+  },
+  "/neuroscience/free-energy-topic15.html": {
+   "t": "Topic 15 · 预测加工与自由能 — 神经科学",
+   "f": "neuroscience/free-energy-topic15.json",
+   "q": [
+    "3ca6771454",
+    "20815bad7a",
+    "46fd3ba197"
+   ]
+  },
+  "/deep-research/spec-driven-development-deep.html": {
+   "t": "Spec-driven development:AI 编程的新纪律,还是瀑布与 MDA 的第三次复活?(深入版) — BigCat Deep Research",
+   "f": "deep-research/spec-driven-development-deep.json",
+   "q": [
+    "cff1d8bd40",
+    "fb9cf3335c",
+    "65c668d9b0"
+   ]
+  },
+  "/leadership/leading-bigger-scope-day77.html": {
+   "t": "领导力 Day 77：scope 变大之后：放大自己，带资深的人，带 manager",
+   "f": "leadership/leading-bigger-scope-day77.json",
+   "q": [
+    "22c2f316e0",
+    "e59a972427",
+    "4d27d9a462"
+   ]
+  },
+  "/deep-reading/untethered-soul-read979.html": {
+   "t": "《不羁的灵魂》",
+   "f": "deep-reading/untethered-soul-read979.json",
+   "q": [
+    "0d30fabc5c",
+    "8b89f86f7e",
+    "1f9fd79270"
+   ]
+  },
+  "/thinker-arena/debate.html?d=identity-or-no-self": {
+   "t": "辩论：想改变自己，该先立身份还是先放下自我？",
+   "f": "thinker-arena/debate-identity-or-no-self.json",
+   "q": [
+    "54b2cebbf2",
+    "ea78717490",
+    "5003d4e726"
+   ]
+  },
+  "/deep-reading/radical-acceptance-read984.html": {
+   "t": "《全然接受》",
+   "f": "deep-reading/radical-acceptance-read984.json",
+   "q": [
+    "e6e0a0c264",
+    "1492b3a4ca",
+    "045223b265"
+   ]
+  },
+  "/thinker-arena/debate.html?d=work-that-changes-you": {
+   "t": "辩论：有些工作会把人改掉吗？",
+   "f": "thinker-arena/debate-work-that-changes-you.json",
+   "q": [
+    "63d9fefd9c",
+    "0ef876e3ed",
+    "15f97f4222"
+   ]
+  },
+  "/psychology/schema-standards-day63.html": {
+   "t": "心理学 Day 63：图式疗法与苛刻标准 — 做到了，为什么还是不够",
+   "f": "psychology/schema-standards-day63.json",
+   "q": [
+    "f41bc33912",
+    "23ada9132f",
+    "5e9be9af95"
+   ]
+  },
+  "/podcast-deepread/elon-who-topic33.html": {
+   "t": "Elon Musk 专题 · 读他之前：四个折扣",
+   "f": "podcast-deepread/elon-who-topic33.json",
+   "q": [
+    "d84c11dc44",
+    "397fc4587c",
+    "232eb6bff6"
+   ]
+  },
+  "/evolutionary-biology/natural-selection-logic-day1.html": {
+   "t": "进化生物学 Day 1：自然选择的逻辑",
+   "f": "evolutionary-biology/natural-selection-logic-day1.json",
+   "q": [
+    "8a9e57abfd",
+    "a29c7d0a4d",
+    "498c42396a"
+   ]
+  },
+  "/neuroscience/ref-body-budget.html": {
+   "t": "参考 · 身体预算 — 神经科学",
+   "f": "neuroscience/ref-body-budget.json",
+   "q": [
+    "4b48bec776",
+    "5a7a44c0c0",
+    "fa6a1e3ab7"
+   ]
+  },
+  "/parenting/learning-habits-day5.html": {
+   "t": "育儿与教育：学业与学习习惯 — Day 5",
+   "f": "parenting/learning-habits-day5.json",
+   "q": [
+    "4b280a6a46",
+    "00c6bb96e0",
+    "51d0394ccc"
+   ]
   }
  },
  "aliases": {
@@ -1279,6 +1414,7 @@
   "/deep-research/junior-engineers-plain.html": "/deep-research/junior-engineers-deep.html",
   "/deep-research/ai-native-plain.html": "/deep-research/ai-native-deep.html",
   "/deep-research/recursive-self-improvement-plain.html": "/deep-research/recursive-self-improvement-deep.html",
-  "/deep-research/agent-readme-plain.html": "/deep-research/agent-readme-deep.html"
+  "/deep-research/agent-readme-plain.html": "/deep-research/agent-readme-deep.html",
+  "/deep-research/spec-driven-development-plain.html": "/deep-research/spec-driven-development-deep.html"
  }
 }

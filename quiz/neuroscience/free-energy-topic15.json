@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/free-energy-topic15.html",
+ "title": "Topic 15 · 预测加工与自由能 — 神经科学",
+ "page_en": "/neuroscience/free-energy-topic15.en.html",
+ "title_en": "Topic 15 · Predictive Processing & Free Energy — Neuroscience",
+ "src_hash": "37fba9af4228",
+ "questions": [
+  {
+   "id": "3ca6771454",
+   "question": "按主动推理，你伸手去拿桌上的杯子，这个动作是怎么发生的？",
+   "options": [
+    "大脑先算好手臂轨迹，再把运动命令逐步下发给肌肉",
+    "大脑要等手真正碰到杯子后才更新模型，动作由感觉信号驱动",
+    "大脑先预测手已在杯子上，肌肉运动是在抹平这个预测误差",
+    "大脑先估计拿到杯子的奖励，奖励够大才启动动作"
+   ],
+   "answer": 2,
+   "explanation": "主动推理认为动作是被身体兑现的预言：大脑坚持「手在杯子上」，唯一能消除误差的就是让手真的移过去。「先算轨迹再发命令」正是它要取代的老看法。",
+   "question_en": "Under active inference, how does the act of reaching for a cup on the table come about?",
+   "options_en": [
+    "The brain computes the arm's trajectory, then sends motor commands to the muscles",
+    "The brain updates its model only after touching the cup; sensation drives the action",
+    "The brain predicts the hand is already on the cup; movement cancels the prediction error",
+    "The brain estimates the reward of getting the cup and acts if it's high enough"
+   ],
+   "explanation_en": "Active inference treats movement as a prophecy the body fulfills: the brain holds the belief 'my hand is on the cup,' and the only way to erase the error is to move the hand there. 'Plan the trajectory, then issue commands' is the old view it replaces."
+  },
+  {
+   "id": "20815bad7a",
+   "question": "既然自由能原理说生物要把「意外」压到最低，为什么生物不干脆躲进全黑全静的暗室躺一辈子？",
+   "options": [
+    "自由能原理只解释感知，不涉及生物待在哪里、做什么",
+    "会饿会闷的生物预期自己要觅食探索，躺在暗室本身就是大意外",
+    "暗室里感官信号太少，预测误差反而会变得最大，生物根本受不了",
+    "生物另有一套奖励系统，会把它从暗室里拉出来去觅食"
+   ],
+   "answer": 1,
+   "explanation": "答案是先验偏好：生物「预期中的自己」本就包含吃饭、探索，所以永远躺在暗室才是极大的意外。主动推理里没有单独的奖励，奖励被翻译成了先验偏好。",
+   "question_en": "If the free energy principle says organisms minimize surprise, why don't they just lie in a dark, silent room forever?",
+   "options_en": [
+    "The principle only explains perception, not where organisms go or what they do",
+    "Organisms expect to forage and explore, so lying in a dark room is itself a huge surprise",
+    "With so little sensory input, prediction error in a dark room actually becomes maximal",
+    "A separate reward system pulls the organism out of the room to find food"
+   ],
+   "explanation_en": "The answer is prior preferences: an organism's expected self already includes eating and exploring, so staying in the dark forever is the real surprise. Active inference has no separate reward; reward is recast as prior preference."
+  },
+  {
+   "id": "46fd3ba197",
+   "question": "自由能原理头上最大的问号是什么？",
+   "options": [
+    "几乎能套到任何自我维持的系统上，难以被实验证伪",
+    "它把意识当作可有可无的副产品，忽视了体验",
+    "它的数学和机器学习毫无关系，无法用于工程",
+    "它只能解释视觉，推广到行动、学习和稳态都缺乏依据"
+   ],
+   "answer": 0,
+   "explanation": "批评者指出细菌、火苗乃至石头都能被说成在最小化自由能，一个什么都能套的框架很难被单个实验掐死。它其实和变分自编码器最小化的自由能是同一个数学量，并非与机器学习无关。",
+   "question_en": "What is the biggest open criticism of the free energy principle?",
+   "options_en": [
+    "It fits almost any self-maintaining system, making it hard to falsify experimentally",
+    "It treats consciousness as a dispensable by-product and ignores experience",
+    "Its math has nothing to do with machine learning, so it can't be engineered",
+    "It only explains vision and has no basis for extending to action or homeostasis"
+   ],
+   "explanation_en": "Critics note that bacteria, flames, even rocks can be described as minimizing free energy, and a framework that fits everything is hard to refute with any single experiment. In fact its free energy is the same quantity VAEs minimize, so it isn't divorced from machine learning."
+  }
+ ]
+}

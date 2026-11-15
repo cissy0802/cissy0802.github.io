@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/elon-who-topic33.html",
+ "title": "Elon Musk 专题 · 读他之前：四个折扣",
+ "page_en": "/podcast-deepread/elon-who-topic33.en.html",
+ "title_en": "Elon Musk Series · Before You Read Him: Four Discounts",
+ "src_hash": "b22b8660da6e",
+ "questions": [
+  {
+   "id": "d84c11dc44",
+   "question": "Musk 给出的「某年实现某事」的时间表，文章建议怎么读？",
+   "options": [
+    "是对外宽松的承诺，内部目标其实更保守、留有余量",
+    "是故意误导市场的虚假承诺，最好完全忽略不予理会",
+    "是相当严谨的工程预测，延期多半是因为外部监管审批和供应链的拖累",
+    "首先是给团队和供应商的冲刺目标，当意图读比当预测读更有信息量"
+   ],
+   "answer": 3,
+   "explanation": "他自己说内部就该定最激进的时间表，因为日程像气体一样会膨胀；文章把它比作把内部更严的 SLO 直接当 SLA 公布出去。所以内部目标比对外承诺更激进，不是更保守。",
+   "question_en": "How does the piece suggest reading Musk's 'X will happen by year Y' timelines?",
+   "options_en": [
+    "As loose public commitments, with more conservative internal targets held in reserve",
+    "As deliberately misleading promises to the market that are best ignored entirely",
+    "As rigorous engineering forecasts that slip mostly because of regulatory delays",
+    "Mainly as sprint targets for his teams and suppliers; read as intent, not forecast, they say more"
+   ],
+   "explanation_en": "He says internal schedules should be as aggressive as conceivable because schedules expand like a gas; the piece likens this to publishing an internal SLO as the external SLA. So internal targets are more aggressive than public ones, not more conservative."
+  },
+  {
+   "id": "397fc4587c",
+   "question": "文章说 Musk 讲公司史时很少提「时代窗口」。Tesla 第一个全年盈利的 2020 年，账本上哪一点最能说明这个折扣？",
+   "options": [
+    "NASA 签下的大额货运合同为 Tesla 提供了主要现金流",
+    "Model 3 量产后单车毛利大幅提升，盈利几乎全靠工程效率",
+    "卖给其他车企的监管积分收入超过全年净利润，没有它就会亏损",
+    "垂直整合降低了电池成本，使利润在一年内迅速转正"
+   ],
+   "answer": 2,
+   "explanation": "2020 年净利润 7.21 亿美元，而法规逼出来的监管积分收入是 15.8 亿美元。NASA 的 16 亿美元合同救的是 2008 年的 SpaceX，不是 Tesla。",
+   "question_en": "The piece says Musk rarely mentions the 'window of the era' when telling company history. In 2020, Tesla's first full profitable year, what in the books best illustrates this discount?",
+   "options_en": [
+    "A large NASA cargo contract provided Tesla's main cash flow",
+    "Model 3 mass production raised per-car margins, so profit came almost entirely from engineering",
+    "Regulatory credit sales to other automakers exceeded net income; without them it would have lost money",
+    "Vertical integration cut battery costs and turned profit positive within a year"
+   ],
+   "explanation_en": "Net income was $721 million while regulation-created credit sales were $1.58 billion. The $1.6 billion NASA contract rescued SpaceX in 2008, not Tesla."
+  },
+  {
+   "id": "232eb6bff6",
+   "question": "关于 2018 年「资金已到位」的推文，Musk 说陪审团一致认定他无罪。按文章核查，那次裁决实际说明了什么？",
+   "options": [
+    "陪审团认定推文内容属实，只是发布的时机不太恰当",
+    "陪审团认定他当时确实已经拿到了私有化所需的资金",
+    "投资者没能证明受损；法官事先已认定推文不实且出于轻率",
+    "裁决证明 SEC 的指控根本不成立，当年的和解完全是被银行所逼"
+   ],
+   "answer": 2,
+   "explanation": "法官 Edward Chen 在开庭前已裁定推文不实且出于轻率，并要求陪审团照此看待；陪审团判的是投资者没能证明受损，不是推文为真。所以「有据，但说宽了」。",
+   "question_en": "On his 2018 'funding secured' tweet, Musk says a jury unanimously found him not liable. Per the piece's fact-check, what did that verdict actually establish?",
+   "options_en": [
+    "The jury found the tweet true but poorly timed",
+    "The jury found he really had secured the funding needed to take Tesla private",
+    "Investors failed to prove damages; the judge had already ruled the tweet false and reckless",
+    "It proved the SEC's charges baseless and that the settlement was forced by banks"
+   ],
+   "explanation_en": "Judge Edward Chen ruled before trial that the tweet was false and made recklessly, and instructed the jury accordingly; the jury found investors hadn't proven harm, not that the tweet was true. Hence: grounded, but overstated."
+  }
+ ]
+}

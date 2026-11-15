@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/spatial-navigation-topic5.html",
+ "title": "Topic 5 · 空间导航与认知地图 — 神经科学",
+ "page_en": "/neuroscience/spatial-navigation-topic5.en.html",
+ "title_en": "Topic 5 · Spatial Navigation & Cognitive Maps — Neuroscience",
+ "src_hash": "ffe796b3a0b3",
+ "questions": [
+  {
+   "id": "8471b97ade",
+   "question": "托尔曼发现，常走的路被堵死后，老鼠能立刻抄一条从没走过的近道直奔目标。这说明什么？",
+   "options": [
+    "它脑中存的是俯瞰全局的地图，而不是一串转弯口诀",
+    "位置细胞随着练习次数增加，覆盖了更多的空间",
+    "它靠目标处散发的气味一路追踪过去，不需要记路线",
+    "它把常走路线的转弯顺序记得特别牢，因而能倒推出近道"
+   ],
+   "answer": 0,
+   "explanation": "从没走过的近道无法靠死记路线得到，只能来自一张能看全局的认知地图。把动作顺序记得再牢，也推不出一条从没走过的路。",
+   "question_en": "Tolman found that when a familiar route was blocked, rats immediately took a shortcut they had never used. What does this show?",
+   "options_en": [
+    "They store a survey-style map of the whole space, not a turn-by-turn route",
+    "Their place cells multiply with practice and cover more of the space",
+    "They follow the scent of the goal and don't need to remember any route",
+    "They memorize the turn sequence so well they can work backward to a shortcut"
+   ],
+   "explanation_en": "A never-traveled shortcut can't come from a memorized route; it requires a cognitive map of the whole layout. No amount of route memorization yields a path you've never walked."
+  },
+  {
+   "id": "c515e5e1a1",
+   "question": "在一片没有任何地标的雪原上，你仍能估出自己走了多远。按大脑导航系统的分工，主要靠什么？",
+   "options": [
+    "边界细胞在空旷处也会持续放电，一步步记下已经走过的步数",
+    "网格细胞按移动的方向和距离给空间打刻度，不依赖地标",
+    "位置细胞锁定远处的地平线，把它当作唯一的地标",
+    "头朝向细胞把每一步的朝向直接换算成走过的距离"
+   ],
+   "answer": 1,
+   "explanation": "网格细胞不管有没有地标，只按往哪走、走了多远持续打刻度。头朝向细胞只提供方向，像指南针，不负责量距离。",
+   "question_en": "On a featureless snowfield you can still estimate how far you've walked. Given how the brain's navigation system divides the work, what mainly makes this possible?",
+   "options_en": [
+    "Border cells fire continuously in open terrain and tally the steps taken",
+    "Grid cells mark off space by direction and distance moved, with no need for landmarks",
+    "Place cells lock onto the distant horizon and use it as the sole landmark",
+    "Head direction cells convert each step's heading directly into distance covered"
+   ],
+   "explanation_en": "Grid cells keep scaling space by heading and distance traveled whether or not landmarks exist. Head direction cells act as a compass: they supply heading, not distance."
+  },
+  {
+   "id": "3e96995f92",
+   "question": "人在由鸟的脖子长短、腿长短构成的抽象概念空间里思考时，内嗅皮层出现了和走路时一样的六边形网格信号。这最可能说明什么？",
+   "options": [
+    "网格细胞只在真实行走时工作，抽象概念另有一套系统",
+    "大脑可能复用空间导航的坐标机制来组织抽象的关系",
+    "人在想抽象概念时，会在脑中想象鸟在空间里走动",
+    "鸟的身体特征本身恰好按六边形的规律分布排列"
+   ],
+   "answer": 1,
+   "explanation": "同一套六边形坐标既量真实路口的距离，也量概念之间的远近，提示空间是大脑组织各种关系时复用的脚手架。信号来自编码方式，不是因为人在想象画面或鸟的特征本身是六边形。",
+   "question_en": "When people reason in an abstract 'concept space' defined by birds' neck and leg lengths, the entorhinal cortex shows the same hexagonal grid signal seen during walking. What does this most likely suggest?",
+   "options_en": [
+    "Grid cells only work during real movement; concepts use a separate system",
+    "The brain may reuse its spatial navigation coordinates to organize abstract relations",
+    "People picture the birds physically walking around when they think about concepts",
+    "The birds' body features happen to be distributed in a hexagonal pattern"
+   ],
+   "explanation_en": "The same hexagonal code that measures distances between real places also measures distances between concepts, suggesting space is a scaffold the brain reuses for relations in general. The signal reflects the coding scheme, not imagery or a hexagonal property of birds."
+  }
+ ]
+}

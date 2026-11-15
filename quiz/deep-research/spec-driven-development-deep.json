@@ -1,0 +1,69 @@
+{
+ "page": "/deep-research/spec-driven-development-deep.html",
+ "title": "Spec-driven development:AI 编程的新纪律,还是瀑布与 MDA 的第三次复活?(深入版) — BigCat Deep Research",
+ "page_en": "/deep-research/spec-driven-development-deep.en.html",
+ "title_en": "Spec-Driven Development: A New Discipline for AI Coding, or the Third Resurrection of Waterfall and MDA? (Deep Dive) — BigCat Deep Research",
+ "src_hash": "db67d8c87464",
+ "questions": [
+  {
+   "id": "cff1d8bd40",
+   "question": "把规约从完整 docstring 逐级剥到裸签名，agent 成功率明显下降，补回即恢复。这类受控实验能支持什么结论？",
+   "options": [
+    "规约的增益随模型变强而消失，今天的模型已经不需要写规约了",
+    "题面信息越完整 agent 越成功，但没比较过完整 SDD 流程与写清的提示",
+    "走完 Spec Kit 式完整流程的 agent，显著优于直接动手实现的 agent",
+    "只有形式化规约才有增益，自然语言写的规约基本没有作用"
+   ],
+   "answer": 1,
+   "explanation": "这些消融改的都是「题面里有没有这段信息」，证明的是信息量有用；没有一项比较同样的信息用 SDD 七步流程还是写进一段提示。把它当作「SDD 流程有效」的证据，正是文章拆开的混引。",
+   "question_en": "Stripping a spec from a full docstring down to a bare signature sharply cuts an agent's success rate, and restoring it brings success back. What do such controlled ablations support?",
+   "options_en": [
+    "Spec gains vanish as models improve, so today's models no longer need specs",
+    "More complete task information helps agents, but they never compare full SDD workflows with a clear prompt",
+    "Agents that run a full Spec Kit-style workflow clearly outperform agents that implement directly",
+    "Only formal specs help; specs written in natural language have essentially no effect"
+   ],
+   "explanation_en": "These ablations vary only whether the information is present, so they show information helps; none compares the same information delivered via a seven-step SDD workflow versus a single prompt. Citing them as proof that SDD workflows work is the conflation the piece unpicks."
+  },
+  {
+   "id": "fb9cf3335c",
+   "question": "在形式数学基准上，机器验证器能保证「证明对得上陈述」，但两个独立团队逐题审计后仍发现大面积问题。问题出在哪？",
+   "options": [
+    "形式陈述本身常常与原题意图不符，验证器检查不到这一层",
+    "两个团队的审计结论互相矛盾，无法判断谁对谁错",
+    "很多题目太难形式化，只好留空跳过，导致基准的覆盖率明显不足",
+    "证明器存在漏洞，会把错误的证明当成正确的接受下来"
+   ],
+   "answer": 0,
+   "explanation": "验证器守得住「代码/证明 ⊢ 规约」，查不了「规约 = 意图」：大量形式陈述与原题不符，约 28% 甚至能被证明为假。两队判断高度一致，并非互相矛盾。",
+   "question_en": "On a formal math benchmark, the machine verifier guarantees each proof matches its statement, yet two independent teams auditing problem by problem still found widespread errors. Where was the problem?",
+   "options_en": [
+    "The formal statements often didn't match the original problems' intent, which the verifier can't check",
+    "The two teams' audits contradicted each other, so no one could tell who was right",
+    "Many problems were too hard to formalize and were left blank, hurting coverage",
+    "The prover had bugs that let it accept incorrect proofs as valid"
+   ],
+   "explanation_en": "A verifier can check 'proof ⊢ statement' but not 'statement = intent': many formal statements didn't match the originals, and about 28% could even be proven false. The two teams largely agreed rather than contradicting each other."
+  },
+  {
+   "id": "65c668d9b0",
+   "question": "一项覆盖 8.8 万个开源 PR 的研究常被当作「SDD 不降缺陷」的证据。按文章的复核，它实际测的是什么？",
+   "options": [
+    "PR 有没有引用工单号，样本里根本没有 SDD 工具的产出",
+    "作者亲手对照写两遍同一应用时的安全缺陷数量差异",
+    "用了 Spec Kit 的仓库与从没用过的仓库之间的缺陷率差异",
+    "规约写得越详细，PR 被合并的速度就会越快还是越慢"
+   ],
+   "answer": 0,
+   "explanation": "被判为「有 spec」的 PR 里 97.5% 只是引用了 issue 或工单号，样本中没有仓库提交 SDD 工具产出，所以它测的是工单纪律。「同一应用写两遍」是正方 73% 那个数字的来源，不是这项研究。",
+   "question_en": "A study of about 88,000 open-source PRs is often cited as evidence that SDD doesn't reduce defects. According to the article's audit, what did it actually measure?",
+   "options_en": [
+    "Whether a PR referenced a ticket number; the sample contained no SDD tool output",
+    "Security defects when one developer built the same app twice for comparison",
+    "The defect gap between repositories that used Spec Kit and those that didn't",
+    "Whether more detailed specs make PRs get merged faster or slower"
+   ],
+   "explanation_en": "97.5% of PRs classed as 'having a spec' merely referenced an issue or ticket, and no repository in the sample committed SDD tool output, so it measured ticket discipline. Building the same app twice is the source of the pro-SDD 73% figure, not this study."
+  }
+ ]
+}

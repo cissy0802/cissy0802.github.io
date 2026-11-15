@@ -1,0 +1,69 @@
+{
+ "page": "/leadership/leading-bigger-scope-day77.html",
+ "title": "领导力 Day 77：scope 变大之后：放大自己，带资深的人，带 manager",
+ "page_en": "/leadership/leading-bigger-scope-day77.en.html",
+ "title_en": "Leadership Day 77: Leading at a Bigger Scope",
+ "src_hash": "45addeb399ec",
+ "questions": [
+  {
+   "id": "22c2f316e0",
+   "question": "scope 变大后你不再待在细节里。要及早发现哪条工作流快出事，文章推荐看什么？",
+   "options": [
+    "每条工作流再配一位副负责人，双人负责更保险",
+    "所有设计评审都抄送给你，由你亲自逐份把关",
+    "盯紧各条工作流每周的红黄绿状态，一旦变红就立即亲自下场介入",
+    "每周各 DRI 给下个里程碑打的信心分趋势，下滑就去问"
+   ],
+   "answer": 3,
+   "explanation": "真正有用的信号在趋势里，等到变红已经晚了；从绿直接跳红还应当作报告失真处理。一条工作流配两个负责人，等于没人负责；审每一份设计会让你成为瓶颈。",
+   "question_en": "With a bigger scope you're no longer in the details. To spot early which workstream is heading for trouble, what does the piece recommend watching?",
+   "options_en": [
+    "Adding a co-owner to each workstream so two people share responsibility",
+    "Having every design review copied to you so you can vet each one yourself",
+    "Each workstream's red/yellow/green status, stepping in personally once it turns red",
+    "The trend in each DRI's weekly confidence score for the next milestone; ask when it drops"
+   ],
+   "explanation_en": "The useful signal is in the trend; by the time it's red it's too late, and a jump straight from green to red should be treated as a reporting failure. Two owners means no owner, and reviewing every design makes you the bottleneck."
+  },
+  {
+   "id": "e59a972427",
+   "question": "一位同级的资深工程师不同意你的技术方向，而这件事事后很容易回滚。按文章的做法，怎么处理？",
+   "options": [
+    "立刻一起去找上级裁决，避免在分歧上拖延时间",
+    "你负责优先级、取舍和承诺，所以由你拍板，他保留意见全力执行",
+    "先把争议冻结，等收集到更多数据之后再一起决定",
+    "先复述他的观点直到他认可，再让他按自己的方式试一个周期"
+   ],
+   "answer": 3,
+   "explanation": "分歧先复述对方观点；容易回滚的，让他按他的方式试一个周期并约好检查点；难回滚的才摊开谈、必要时一起找上级。对同级的人拿职位压人，这张牌每用一次就弱一分。",
+   "question_en": "A senior engineer at your level disagrees with your technical direction, and the decision is easy to reverse later. Per the piece, how should you handle it?",
+   "options_en": [
+    "Escalate to your manager together right away to avoid dragging it out",
+    "You own trade-offs and commitments, so you decide and they disagree and commit",
+    "Freeze the dispute until more data comes in, then decide together",
+    "Restate their view until they agree you've got it, then let them try their way for a cycle"
+   ],
+   "explanation_en": "First restate their view; if it's easy to reverse, let them try it for a cycle with an agreed checkpoint; only hard-to-reverse calls get hashed out openly and, if needed, escalated together. Pulling rank on peers weakens your authority each time you do it."
+  },
+  {
+   "id": "4d27d9a462",
+   "question": "你开始带一位 manager。skip-level 时，他团队的工程师抱怨他定的某个技术方案。你该怎么回应？",
+   "options": [
+    "把这条投诉记下来，留到 manager 的绩效评估时再体现",
+    "当场认同这个方案确实有问题，并答应他会亲自去找 manager 好好谈谈",
+    "谢谢他，问他跟 manager 聊过没有，再私下转给 manager 处理",
+    "直接给这位工程师一个替代方案，让他先按新方案推进"
+   ],
+   "answer": 2,
+   "explanation": "skip-level 只用来收集信号，不用来下指示；当场表态会一次打掉 manager 在团队里的威信，绕过他指挥他的人会造成两个老板。正确做法是让 manager 来处理，你只在他需要时帮忙。",
+   "question_en": "You've started managing a manager. In a skip-level, an engineer on their team complains about a technical approach the manager chose. How should you respond?",
+   "options_en": [
+    "Note the complaint and save it for the manager's performance review",
+    "Agree on the spot that the approach is flawed and promise to talk to the manager yourself",
+    "Thank them, ask if they've talked to the manager, then pass it to the manager privately",
+    "Give the engineer an alternative approach and have them proceed with it"
+   ],
+   "explanation_en": "Skip-levels are for gathering signal, not giving direction; siding with the engineer on the spot undercuts the manager's authority, and directing their people around them creates two bosses. Let the manager handle it and help only if asked."
+  }
+ ]
+}

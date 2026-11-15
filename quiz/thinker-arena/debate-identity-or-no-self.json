@@ -1,0 +1,69 @@
+{
+ "page": "/thinker-arena/debate.html?d=identity-or-no-self",
+ "title": "辩论：想改变自己，该先立身份还是先放下自我？",
+ "page_en": "/thinker-arena/debate.en.html?d=identity-or-no-self",
+ "title_en": "To change yourself: build an identity first, or let the self go?",
+ "src_hash": "6cd322ce5130",
+ "questions": [
+  {
+   "id": "54b2cebbf2",
+   "question": "有人想变得自律，于是每天早上对自己说「我是一个自律的人」。按这场关于「身份与无我」的辩论的共识，该怎么看？",
+   "options": [
+    "方向是对的，每天重复的正向身份标签能够直接驱动行为发生改变",
+    "顺序反了：身份感是反复行动之后的收据，宣言替代不了练习",
+    "应改用「我不是懒惰的人」这种否定句式，效果会更好",
+    "宣言有用，但需要配合想象成功的画面，才能真正见效"
+   ],
+   "answer": 1,
+   "explanation": "全场共识是改变靠重复的行为，不靠宣言，身份感受是结果不是原因。正向标签直接驱动改变恰是被否定的说法：贴上标签反而可能在第一次失手时反噬。",
+   "question_en": "Someone who wants to be disciplined tells themselves each morning, 'I am a disciplined person.' Per the consensus of this debate on identity versus no-self, how should we see this?",
+   "options_en": [
+    "It's the right idea; a positive identity label can directly drive behavior change",
+    "It's backwards: identity is the receipt for repeated action, and declarations can't replace practice",
+    "They should switch to 'I am not lazy'; negative phrasing works better",
+    "Declarations help, but only when paired with visualizing success"
+   ],
+   "explanation_en": "The consensus was that change comes from repeated behavior, not declarations; identity is the outcome, not the cause. The idea that a positive label directly drives change is what was rejected: labels can backfire at the first slip."
+  },
+  {
+   "id": "ea78717490",
+   "question": "辩论建议把「我是／我不是」这类句式换成「我在练／我还没」。主要理由是什么？",
+   "options": [
+    "进行时让大脑误以为事情已经在完成，从而提高自信",
+    "动词说法听起来更加谦虚，能明显减少周围人对你的反感和过高期待",
+    "名词标签把能力说成固定的「是或不是」，第一次失手就会反咬",
+    "标签本身无害，只是太早公开会给自己增加过大压力"
+   ],
+   "answer": 2,
+   "explanation": "正向标签把能力当成你「是」或「不是」的东西，喂养固定型思维，一次失败就像判决；「在练」承认现状又不把它当结论。重点不在谦虚或社交效果，而在把能力看成可变的。",
+   "question_en": "The debate recommends replacing 'I am / I'm not' statements with 'I'm practicing / not yet.' What's the main reason?",
+   "options_en": [
+    "The progressive tense tricks the brain into feeling it's already done, boosting confidence",
+    "Verb phrasing sounds humbler and lowers others' resentment and expectations",
+    "A noun label frames ability as fixed, so the first failure turns against you",
+    "Labels are harmless; announcing them too early just adds pressure"
+   ],
+   "explanation_en": "Positive labels treat ability as something you either are or aren't, feeding a fixed mindset, so a single failure feels like a verdict; 'practicing' admits where you are without making it final. The point isn't humility or social effect but seeing ability as changeable."
+  },
+  {
+   "id": "5003d4e726",
+   "question": "一个长期睡眠不足、还要照护家人的人，几次养成新习惯都失败了，于是认定「我就是没毅力」。按辩论结论，更务实的判断是什么？",
+   "options": [
+    "多半是可用能量被透支，应先降难度、补休息，让系统先能跑起来",
+    "说明之前的方法选错了，应该换一套要求更严格、步骤更完整的计划",
+    "说明这个愿望是借来的，应该干脆放弃改变自己的念头",
+    "应该先重新确立「我是有毅力的人」的身份认同，再重新出发"
+   ],
+   "answer": 0,
+   "explanation": "结论指出很多改变失败是把人格工程建在透支的身体上，最常见的误判就是把疲惫导致的失控解释成没毅力。愿望审计是另一道工序，不是对疲惫的诊断。",
+   "question_en": "Someone chronically short on sleep and caring for family has failed several times to build a new habit, and concludes 'I just lack willpower.' Per the debate's conclusion, what's the more practical diagnosis?",
+   "options_en": [
+    "Their energy is likely depleted; make it easier and rest more so the system can run",
+    "Their method was wrong; they need a stricter, more comprehensive plan",
+    "The goal was borrowed from others, so they should drop the idea of changing",
+    "They should first re-establish an identity as 'someone with willpower,' then start over"
+   ],
+   "explanation_en": "The conclusion notes many attempts fail because the self-improvement project is built on a depleted body, and the classic misreading is calling fatigue-driven lapses a lack of willpower. Auditing whose goal it is is a separate step, not a diagnosis of exhaustion."
+  }
+ ]
+}

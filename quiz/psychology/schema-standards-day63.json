@@ -1,0 +1,69 @@
+{
+ "page": "/psychology/schema-standards-day63.html",
+ "title": "心理学 Day 63：图式疗法与苛刻标准 — 做到了，为什么还是不够",
+ "page_en": "/psychology/schema-standards-day63.en.html",
+ "title_en": "Psychology Day 63: Schema Therapy & Unrelenting Standards — Why \"Done\" Never Feels Like Enough",
+ "src_hash": "fe4b62924bed",
+ "questions": [
+  {
+   "id": "f41bc33912",
+   "question": "一位工程师给自己定的标准很高，但做成后真心高兴，会按情况调目标，也睡得好、有时间陪家人。按苛刻标准图式的判别，应怎么看？",
+   "options": [
+    "更像认真而非图式，区别在和标尺的关系而非标尺多高",
+    "需要先把标准降下来，否则迟早会发展成图式",
+    "标准定得高，本身就是苛刻标准图式最核心、最典型的表现",
+    "只要标准明显高于同事平均，就应视为图式"
+   ],
+   "answer": 0,
+   "explanation": "四点判别（是规则不是目标、做到只松口气、代价已出现、底层是怕）同时成立才更像图式；他一条也不中。标准高不是问题，问题是标尺在用你。",
+   "question_en": "An engineer sets very high standards but feels genuinely happy on meeting them, adjusts goals as needed, sleeps well and has time for family. Using the test for the unrelenting standards schema, how should we see this?",
+   "options_en": [
+    "More like conscientiousness than a schema; what matters is the relationship to the bar, not its height",
+    "They need to lower the bar now, or it will eventually become a schema",
+    "High standards are themselves the core sign of the unrelenting standards schema",
+    "Any standard clearly above the team average should count as the schema"
+   ],
+   "explanation_en": "The schema fits when all four markers hold: a rule rather than a goal, relief instead of satisfaction, costs already showing, fear underneath. None applies here. High standards aren't the problem; the problem is when the bar is using you."
+  },
+  {
+   "id": "23ada9132f",
+   "question": "一个一直拼命打磨的人，某天突然草率交差，还高调宣称「我才不卷」。按图式疗法的应对风格，这最可能是什么？",
+   "options": [
+    "属于回避：他在躲开会触发图式的评判场合",
+    "属于顺从：他仍在照着图式的要求去做事",
+    "过度补偿：表面反着来，底下的苛刻规则一点没松",
+    "说明苛刻标准图式已经松动，他开始学会放过自己"
+   ],
+   "answer": 2,
+   "explanation": "Young 的三种应对里，过度补偿就是反着来——突然摆烂或宣称不在乎，规则只是被藏起来，并没有拆。回避的典型是拖延、不接难项目、不看反馈。只看行为，很容易把它认成图式松动。",
+   "question_en": "Someone who always polishes obsessively suddenly turns in sloppy work and loudly declares 'I'm not playing the rat race.' In schema therapy's coping styles, what is this most likely?",
+   "options_en": [
+    "Avoidance: steering clear of situations where they'd be judged",
+    "Surrender: still doing exactly what the schema demands",
+    "Overcompensation: acting the opposite while the harsh rule stays fully intact",
+    "A sign the schema is loosening and they're learning to go easy on themselves"
+   ],
+   "explanation_en": "Of Young's three coping styles, overcompensation means flipping to the opposite, slacking off or claiming not to care, while the rule is hidden, not dismantled. Avoidance looks like procrastinating, dodging hard projects, not reading feedback. Judging by behavior alone, it's easy to mistake this for the schema easing."
+  },
+  {
+   "id": "5e9be9af95",
+   "question": "一个有苛刻标准图式的人最近事情多到做不完，只好砍优先级，标准也松了下来。按文章，这算不算稳定的进步？",
+   "options": [
+    "不太算：超载逼出的松动事情一少容易弹回，且常先砍睡眠和关系",
+    "算进步：说明他已经找到并接受了「够好」的标准",
+    "算稳定的进步：行为已经先一步变了，情绪接下来自然会慢慢地跟上来",
+    "不算进步：只有情绪先发生变化，才算真正的改变"
+   ],
+   "answer": 0,
+   "explanation": "被迫放手的松动是真的，但依赖超载，事情一少就弹回；最先被判「不重要」的常是睡眠、运动和关系，那是图式在替你排优先级。行为先于情绪变化本身是正常的，但前提是选择放手。",
+   "question_en": "Someone with the unrelenting standards schema is so overloaded they must cut priorities, and their standards slacken. Per the article, is this stable progress?",
+   "options_en": [
+    "Not really: overload-driven slack rebounds when things calm down, and sleep and relationships often go first",
+    "Yes: it shows they've found and accepted a 'good enough' standard",
+    "Yes: behavior has changed first and feelings will gradually follow",
+    "No: only a change in feelings first counts as real change"
+   ],
+   "explanation_en": "Forced letting-go is real but depends on overload, so it snaps back once things ease; and what gets cut first as 'unimportant' is often sleep, exercise and relationships, which is the schema setting priorities. Behavior changing before feelings is normal, but only when the letting-go is chosen."
+  }
+ ]
+}

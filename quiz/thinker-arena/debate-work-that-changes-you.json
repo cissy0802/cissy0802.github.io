@@ -1,0 +1,69 @@
+{
+ "page": "/thinker-arena/debate.html?d=work-that-changes-you",
+ "title": "辩论：有些工作会把人改掉吗？",
+ "page_en": "/thinker-arena/debate.en.html?d=work-that-changes-you",
+ "title_en": "Do some jobs change who you are?",
+ "src_hash": "eb361111495f",
+ "questions": [
+  {
+   "id": "63d9fefd9c",
+   "question": "一位客服在岗几年后变得冷漠易怒，同事说「他本来就脾气差」。按这场关于「工作会不会把人改掉」的辩论，最一致的判断是什么？",
+   "options": [
+    "品格和工作各占一半，应先让他反思自身的性格问题",
+    "只要他是自愿留下的、薪酬也足够，这笔交易就是公平完整的",
+    "冷漠是专业化的必要代价，属正常现象，不必额外处理",
+    "这是把工作造成的变形当成个人品格问题，属于错误归因"
+   ],
+   "answer": 3,
+   "explanation": "全场最大的共识就是反对把这种变形当成个人品格问题。「自愿加薪酬足够就算交易完整」恰被结论驳回：适应会降低自我察觉，代价还常转嫁给没签合同的家人。",
+   "question_en": "A customer-service rep becomes cold and irritable after a few years on the job, and a coworker says, 'He was always bad-tempered.' Per this debate on whether jobs change people, what's the most agreed-upon judgment?",
+   "options_en": [
+    "It's half character, half job, so he should first reflect on his temperament",
+    "If he stays voluntarily and is paid enough, the bargain is fair and complete",
+    "Coldness is a necessary cost of professionalism and needs no attention",
+    "It misattributes a job-induced change to personal character"
+   ],
+   "explanation_en": "The debate's strongest consensus was against treating such changes as a character flaw. 'Voluntary and well paid means a complete bargain' is explicitly rejected: adaptation dulls self-awareness, and costs often fall on family who never signed anything."
+  },
+  {
+   "id": "0ef876e3ed",
+   "question": "外科医生要钝化对血的反应，接线员要在哭声里保持手稳——职业化本来就让某些正常反应失灵。按辩论的结论，真正该问的是什么？",
+   "options": [
+    "这个人的钝化是否已经到了需要离职的程度",
+    "这份工作会不会改变人，应尽量避免一切改变",
+    "这个人是否天生就适合这类高冲击的岗位",
+    "这份工作有没有教人下班后把那层钝化卸下来"
+   ],
+   "answer": 3,
+   "explanation": "把人改掉的机制也正是专业能力的来源，所以问题不是会不会改你，而是有没有教过你回来的路；各行都有进入状态的训练，却几乎没有对称的退出训练。",
+   "question_en": "Surgeons must blunt their reaction to blood; dispatchers must keep steady amid sobbing. Professionalism inherently disables some normal reactions. Per the debate's conclusion, what's the real question?",
+   "options_en": [
+    "Whether the person's numbing has reached the point where they should quit",
+    "Whether the job changes people at all, and how to avoid any change",
+    "Whether the person is naturally suited to high-impact roles like this",
+    "Whether the job teaches people how to shed that numbing after their shift"
+   ],
+   "explanation_en": "The mechanism that reshapes people is also the source of professional skill, so the issue isn't whether the job changes you but whether it taught you the way back; every field trains people in, almost none trains them out."
+  },
+  {
+   "id": "15f97f4222",
+   "question": "要判断一份工作是不是在伤人，辩论结论给出的更好标准是什么？",
+   "options": [
+    "看薪酬能否补偿，市场价格能够衡量这种损害",
+    "看变化能否在下班后关掉、会不会转嫁给身边的人",
+    "看本人是否还痛苦，不再痛苦就说明他已经适应良好了",
+    "看倦怠量表的得分，量表是最客观的判断依据"
+   ],
+   "answer": 1,
+   "explanation": "结论要问变化是否由你控制、能否局限在岗位内、有没有把成本转嫁给身边人，亲近者的观察也是证据。「不再痛苦」反而可能是最深的那种变形：麻木不会出现在任何量表上。",
+   "question_en": "To judge whether a job is harming someone, what better criterion does the debate's conclusion offer?",
+   "options_en": [
+    "Whether the pay compensates; market prices can measure the harm",
+    "Whether the change switches off after work and whether it spills onto those close to them",
+    "Whether the person suffers; no longer suffering means they've adapted well",
+    "Their burnout-scale score, the most objective measure available"
+   ],
+   "explanation_en": "The conclusion asks whether the change is under your control, stays within the role, and shifts costs onto people around you; loved ones' observations count as evidence. 'No longer suffering' may be the deepest change of all: numbness never shows up on a scale."
+  }
+ ]
+}
