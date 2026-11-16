@@ -1,0 +1,69 @@
+{
+ "page": "/parenting/music-enlightenment-day31.html",
+ "title": "育儿与教育：音乐启蒙 — Day 31",
+ "page_en": "/parenting/music-enlightenment-day31.en.html",
+ "title_en": "Parenting & Education: Music Enlightenment — Day 31",
+ "src_hash": "ec6caec92f0f",
+ "questions": [
+  {
+   "id": "a353e3680e",
+   "question": "一位家长想用「学钢琴能开发智力、提高成绩」来说服孩子坚持练琴。按音乐启蒙的循证观点，这个理由的问题在哪？",
+   "options": [
+    "迁移效应确实存在，但只在 12 个月前开始学才有效，错过窗口就不成立",
+    "功利理由会让孩子反感，但它在事实上是对的，换个说法就行",
+    "只要练够时长，音乐训练对数学和空间能力的提升是确定的，只是要很多年才显现",
+    "迁移接近于零，学琴的价值在情绪表达、纪律、合奏这些内在收获"
+   ],
+   "answer": 3,
+   "explanation": "元分析显示音乐训练向认知和学业的迁移接近于零，「莫扎特效应」也被夸大且难复制，所以「变聪明」既不诚实又会让学琴两头落空；真正的价值是内在的。把它说成「事实正确、只是说法不好」恰恰是文章反对的。",
+   "question_en": "A parent wants to keep a child practicing piano by arguing that it will boost intelligence and grades. According to the evidence-based view of music education, what is wrong with this reasoning?",
+   "options_en": [
+    "Transfer does exist, but only for children who start before 12 months; miss the window and it no longer applies",
+    "The utilitarian argument is factually right but off-putting to kids, so it just needs better framing",
+    "With enough hours, gains in math and spatial ability are reliable—they just take years to appear",
+    "Transfer from music training to cognition and academics is close to zero; the real value lies in intrinsic gains like emotional expression, discipline, and playing with others"
+   ],
+   "explanation_en": "Meta-analyses find near-zero far transfer from music training to cognition or school performance, and the 'Mozart effect' was overstated and hard to replicate. Selling music as a brain booster is both inaccurate and self-defeating; its value is intrinsic. Treating the claim as true-but-poorly-framed is exactly what the article rejects."
+  },
+  {
+   "id": "102431d2a0",
+   "question": "孩子说「今天不想练琴」。按自我决定论的思路，下面哪种回应最可能让练习长期持续？",
+   "options": [
+    "「今天就不练了，等你自己想练再说」——完全尊重孩子的意愿",
+    "「那就弹 5 分钟，挑你最喜欢的那段」——降低门槛、给选择、保持陪伴",
+    "「练完半小时就给你买想要的玩具」——用奖励先把习惯建立起来",
+    "「不练就别学了，钱都白花了」——让孩子明白坚持的代价"
+   ],
+   "answer": 1,
+   "explanation": "持久练习依赖自主感、胜任感和联结感：缩小任务、给孩子选择、大人在旁陪伴同时满足三者。物质奖励短期有效，却会引发过度合理化效应，撤掉奖励后兴趣反而下降；完全放任则丢掉了胜任感和小步坚持。",
+   "question_en": "A child says, 'I don't want to practice today.' Following self-determination theory, which response is most likely to sustain practice over the long run?",
+   "options_en": [
+    "'Then skip it today and practice whenever you feel like it'—fully respect the child's wishes",
+    "'Let's just play for 5 minutes—pick the part you like best'—lower the bar, offer choice, stay alongside",
+    "'Practice for half an hour and I'll buy you the toy you want'—use a reward to build the habit first",
+    "'If you won't practice, quit—we're wasting money'—make the cost of quitting clear"
+   ],
+   "explanation_en": "Lasting practice rests on autonomy, competence, and relatedness; shrinking the task, offering a choice, and staying close meets all three. Material rewards work briefly but trigger the overjustification effect, so interest drops once the reward is withdrawn. Simply dropping practice gives up the small, doable steps that build competence."
+  },
+  {
+   "id": "d565b0c49b",
+   "question": "关于婴儿对节拍的感知「窄化」到母文化，下面哪种理解最准确？",
+   "options": [
+    "窄化说明婴儿天生只能感知母文化的音乐，多元音乐环境没有作用",
+    "错过 12 个月的窗口后，孩子的节奏感和音乐性基本定型，之后再练也很难补救回来",
+    "窄化是早期没有上正式音乐课的后果，及早报班可以避免",
+    "有早期感知窗口，但只有绝对音感等少数能力依赖早年训练，音乐性终身可发展"
+   ],
+   "answer": 3,
+   "explanation": "婴儿 12 个月前能分辨多种文化的复杂节拍，之后会窄化，确实有一个感知窗口；但文章强调只有绝对音感等少数能力与早年训练强相关，音乐性终身可发展，错过婴幼儿期不是「过期作废」。",
+   "question_en": "Infants' perception of rhythm 'narrows' toward their native culture. Which interpretation of this finding is most accurate?",
+   "options_en": [
+    "Narrowing shows that infants are born able to perceive only their own culture's music, so diverse musical exposure does nothing",
+    "Once the 12-month window closes, a child's sense of rhythm and musicality are essentially fixed, and later practice can hardly make up for it",
+    "Narrowing results from not taking formal music lessons early, and enrolling in classes early prevents it",
+    "There is an early perceptual window, but only a few abilities such as absolute pitch depend strongly on early training; musicality itself can develop throughout life"
+   ],
+   "explanation_en": "Before 12 months, infants can distinguish complex meters from many cultures, and afterward this narrows, so an early window exists. But only a few abilities like absolute pitch are strongly tied to early training; musicality remains learnable for life, and missing infancy does not close the door."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/investing/howard-marks-day3.html",
+ "title": "投资经典：Howard Marks 周期论 — Day 3",
+ "page_en": "/investing/howard-marks-day3.en.html",
+ "title_en": "Investing Classics: Howard Marks on Cycles — Day 3",
+ "src_hash": "cce9716cc3e7",
+ "questions": [
+  {
+   "id": "c7e8e46559",
+   "question": "投资者判断市场已处于周期偏顶的位置：估值高、信用宽松、情绪亢奋。按 Howard Marks 的思路，最恰当的应对是什么？",
+   "options": [
+    "立刻清仓并做空，因为位置判断已经说明崩盘即将发生",
+    "温和降低组合风险，不赌拐点时间，幅度要扛得住看错",
+    "维持原有仓位不变，因为周期无法预测，判断位置没有意义",
+    "加大仓位赶上最后一段涨幅，等出现下跌信号再撤"
+   ],
+   "answer": 1,
+   "explanation": "Marks 区分「知道位置」和「预测时间」：可以判断此刻站在周期哪一段，但拐点何时到来不可知，钟摆还可能在极端停留多年。所以他的姿势是「调温度而非择时」，偏顶时温和减风险、偏底时温和加。把位置当成崩盘信号去大举反向操作，常在被证明对之前先被市场打垮。",
+   "question_en": "An investor judges that the market is late in the cycle: valuations are high, credit is loose, and sentiment is euphoric. Following Howard Marks, what is the most appropriate response?",
+   "options_en": [
+    "Sell everything and go short at once, since the cycle position shows a crash is imminent",
+    "Modestly reduce portfolio risk, accepting that the timing of the turn is unknowable and sizing the move so a wrong call is survivable",
+    "Leave positions unchanged, since cycles can't be predicted and judging position is meaningless",
+    "Add exposure to catch the final leg up, and get out once a downturn signal appears"
+   ],
+   "explanation_en": "Marks separates knowing where you are from predicting when things turn: you can judge your position in the cycle, but the timing is unknowable, and the pendulum can stay at an extreme for years. So he adjusts the temperature rather than timing the market—trimming risk modestly near tops and adding near bottoms. Treating position as a crash signal and making big contrarian bets often gets you wiped out before you're proven right."
+  },
+  {
+   "id": "b3b2e6b672",
+   "question": "按 Howard Marks 对风险的定义，下面哪种情况最符合他所说的「真正的风险」？",
+   "options": [
+    "一只股票每天价格上下波动很大，但公司基本面稳健，长期看并不会造成永久亏损",
+    "一项资产历史波动很低、价格平静，但结构上存在久期错配和客户高度集中",
+    "一项投资的预期回报很高，因此风险一定也很高",
+    "一只基金过去三年的标准差比同类高出一倍"
+   ],
+   "answer": 1,
+   "explanation": "Marks 反对把风险等同于波动率，风险是永久损失资本的概率；它在事前常被平静的价格掩盖，SVB 就是信用风险近零、却因存款集中和久期错配而倒下。高波动不等于会永久亏损；「高回报必然伴随高风险」也被他反驳：承担风险不必然带来高回报。",
+   "question_en": "By Howard Marks's definition of risk, which situation best fits what he calls real risk?",
+   "options_en": [
+    "A stock whose price swings wildly every day although the business is sound and won't suffer permanent loss",
+    "An asset with low historical volatility and calm prices that is structurally fragile because of duration mismatch and a highly concentrated client base",
+    "An investment with high expected returns, which must therefore carry high risk",
+    "A fund whose standard deviation over the past three years is double that of its peers"
+   ],
+   "explanation_en": "Marks rejects equating risk with volatility; risk is the probability of permanent capital loss, often hidden beforehand by calm prices. SVB held assets with near-zero credit risk yet failed because of concentrated deposits and duration mismatch. High volatility isn't permanent loss, and he also rejects the idea that bearing risk guarantees high returns."
+  },
+  {
+   "id": "8481554ac3",
+   "question": "按 Howard Marks 的「第二层思考」，下面哪种做法才算真正的第二层思考？",
+   "options": [
+    "大家都看好的股票就卖，大家都看空的就买",
+    "先弄清市场共识和价格已反映了什么，再找出自己与共识不同、且可证伪的具体理由",
+    "收集比别人更多的公开信息，信息越全判断越准",
+    "发现一家基本面优秀的好公司，就坚定买入长期持有"
+   ],
+   "answer": 1,
+   "explanation": "第二层思考要求同时满足两点：看法与共识不同，而且最终是对的；所以先要知道价格里已经包含了什么。机械地与大众反着做只是逆向，不是第二层思考，共识大多数时候是对的；「好公司就买」正是第一层思考的典型。",
+   "question_en": "Under Howard Marks's idea of 'second-level thinking,' which practice actually counts as second-level thinking?",
+   "options_en": [
+    "Sell whatever everyone likes and buy whatever everyone hates",
+    "First pin down the market consensus and what the price already reflects, then identify specific, falsifiable reasons your view differs",
+    "Gather more public information than others, since the more complete the data, the better the call",
+    "Find a fundamentally excellent company and buy it with conviction for the long term"
+   ],
+   "explanation_en": "Second-level thinking requires two things at once: a view that differs from consensus, and that view turning out to be right—so you must first know what the price already embeds. Mechanically doing the opposite of the crowd is mere contrarianism, and the consensus is usually right. 'It's a good company, buy it' is the textbook first-level thought."
+  }
+ ]
+}

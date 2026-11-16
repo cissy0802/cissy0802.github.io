@@ -1,0 +1,69 @@
+{
+ "page": "/parenting/talent-interest-day27.html",
+ "title": "育儿与教育：天赋与兴趣识别 — Day 27",
+ "page_en": "/parenting/talent-interest-day27.en.html",
+ "title_en": "Parenting & Education: Spotting Talent & Interest — Day 27",
+ "src_hash": "ef43ae476d55",
+ "questions": [
+  {
+   "id": "18076e84fe",
+   "question": "一位家长让孩子做了网上的多元智能测试，结果显示「空间型」，于是打算按这个结果安排孩子的学习方式。按文章的观点，哪种评价最恰当？",
+   "options": [
+    "方向对，但应该只发展孩子最强的那种智能，弱项交给其他人",
+    "测试结果可以参考，但要配合「视觉型/听觉型」学习风格测试才更准确",
+    "它是拓宽「聪明」定义的态度而非诊断工具，按类型定学法也没证据",
+    "这样做合理，多元智能理论已被心理测量学证实为彼此独立的能力"
+   ],
+   "answer": 2,
+   "explanation": "Gardner 理论的价值在于松动「会读书才算聪明」的偏见，但这些「智能」从未被证实彼此独立，更像启发性隐喻；由它衍生的学习风格说已被大量研究证伪。给孩子贴型号反而造出新的天花板，也会回避真实短板本该获得的支持。",
+   "question_en": "A parent has their child take an online multiple-intelligences test; it says 'spatial type,' and the parent plans to tailor how the child studies to that result. Which assessment fits the article best?",
+   "options_en": [
+    "Right idea, but the child should develop only the strongest intelligence and leave weak areas alone",
+    "The result is useful but should be paired with a visual/auditory learning-styles test for accuracy",
+    "Multiple intelligences is a mindset for widening what counts as smart, not a diagnostic; tailoring study methods to a type lacks evidence",
+    "That's sensible—psychometrics has confirmed these intelligences as independent abilities"
+   ],
+   "explanation_en": "Gardner's theory is valuable for loosening the 'only book-smart counts' bias, but these intelligences have never been shown to be independent—it works better as a heuristic metaphor. The learning-styles idea it spawned has been widely debunked. Labeling a child creates a new ceiling and sidesteps support a real weak spot deserves."
+  },
+  {
+   "id": "dcccedfbe5",
+   "question": "学了三个月钢琴的孩子说「没兴趣了」。按兴趣的「发展论」，这句话最可能意味着什么，该怎么回应？",
+   "options": [
+    "多半是新鲜感退去、进入枯燥期，可约定再认真试一段再决定",
+    "说明钢琴不是孩子的天生兴趣，应该尽快换项目去找真正的热情",
+    "说明孩子的天赋不在音乐，应换成更符合其智能类型的活动",
+    "说明孩子缺乏毅力，应当要求他无论如何坚持到考级"
+   ],
+   "answer": 0,
+   "explanation": "O'Keefe、Dweck 等人区分固定兴趣观和发展兴趣观：认为兴趣是等着被发现的人，一遇枯燥就以为「这不是真爱」而退缩；兴趣其实在小有胜任和关系滋养中慢慢长出来。所以先识别是否卡在从新鲜到熟练的必经枯燥期，而不是马上换，也不是无条件硬撑。",
+   "question_en": "After three months of piano, a child says, 'I'm not interested anymore.' Under the 'developmental' view of interest, what does this most likely signal, and how should the parent respond?",
+   "options_en": [
+    "Most likely the novelty has worn off and the dull fundamentals phase has begun; agree to give it a real try for a set period before deciding",
+    "It shows piano isn't the child's innate passion, so they should switch soon to find their true calling",
+    "It shows the child's talent lies elsewhere, so they should switch to an activity matching their intelligence type",
+    "It shows the child lacks grit and must be made to keep going through the graded exams no matter what"
+   ],
+   "explanation_en": "O'Keefe, Dweck, and colleagues contrast fixed and developmental theories of interest: people who think interests are waiting to be found retreat at the first boredom ('guess it's not my passion'). Interest actually grows through budding competence and supportive relationships, so first check whether the child is stuck in the inevitable stretch between novelty and fluency—rather than switching at once or forcing them on unconditionally."
+  },
+  {
+   "id": "9370f34e11",
+   "question": "出门前，孩子哭着说「我不想去游泳课了」。按「在节点决定，不在低谷决定」的原则，哪种回应最合适？",
+   "options": [
+    "接住情绪，按约上完本学期、期末再定，并问清是什么让他难受",
+    "坚持「说好的不许半途而废」，不问原因，必须去",
+    "当场让孩子自己决定从今天起还学不学，这样才算真正尊重他的自主",
+    "孩子都哭成这样了，当场答应不去，避免把关系搞僵"
+   ],
+   "answer": 0,
+   "explanation": "低谷时退出会强化「难就逃」，在学期末这类自然节点退出则保住了有始有终和选择权。但这不是一味硬撑：还要问清痛苦来源，若是长期毫无胜任感或被霸凌，就该支持退出。当场让孩子做去留决定看似尊重自主，其实还是在情绪最低谷做决定。",
+   "question_en": "Just before leaving, a child cries, 'I don't want to go to swim class anymore!' Under the principle 'decide at natural endpoints, not at emotional lows,' which response fits best?",
+   "options_en": [
+    "Acknowledge the feelings, keep the agreement to finish this term, let the child decide at term's end, and ask what's upsetting them",
+    "Insist 'we agreed, no quitting halfway' and send them without asking why",
+    "Let the child decide right now whether to keep going from today on—that's what truly respecting autonomy means",
+    "The child is in tears, so agree on the spot to quit rather than strain the relationship"
+   ],
+   "explanation_en": "Quitting at a low point reinforces 'when it's hard, run'; quitting at a natural endpoint like the end of term preserves follow-through and the child's choice. It isn't blind persistence, though: you still find out where the distress comes from, and if it's chronic incompetence or bullying, support quitting. Letting the child decide on the spot sounds autonomy-respecting but is still deciding at the emotional low."
+  }
+ ]
+}

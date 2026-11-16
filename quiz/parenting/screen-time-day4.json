@@ -1,0 +1,69 @@
+{
+ "page": "/parenting/screen-time-day4.html",
+ "title": "育儿与教育：屏幕时间与数字素养 — Day 4",
+ "page_en": "/parenting/screen-time-day4.en.html",
+ "title_en": "Parenting: Screen Time & Digital Literacy — Day 4",
+ "src_hash": "33ea4f23b754",
+ "questions": [
+  {
+   "id": "c5e99bc2bb",
+   "question": "一款标着「教育」的幼儿 APP，孩子需要不停点击屏幕，答对就弹出奖励动画和音效。按 Hirsh-Pasek 等人提出的「四支柱」，对它最恰当的评价是什么？",
+   "options": [
+    "点屏幕不等于主动动脑，奖励动画还在抢注意力，很可能不及格",
+    "有即时反馈就等于有应答性互动，可以替代和大人的对话",
+    "只要开发商宣称基于蒙特梭利理念，就可以放心使用",
+    "孩子一直在点击互动，说明它满足「主动」这一条，是好的教育 APP"
+   ],
+   "answer": 0,
+   "explanation": "四支柱要求主动动脑、持续投入但不被干扰、与已有知识有意义地连接、有社交互动。把「互动」当成「主动」是常见陷阱，机械点击本身是被动行为；弹窗和奖励动画是多巴胺钩子，违背「投入」一条。预设脚本的反馈也不是真人那种懂孩子当下想法的应答。",
+   "question_en": "A preschool app labeled 'educational' has the child tap the screen nonstop, with reward animations and sound effects for each right answer. Under Hirsh-Pasek and colleagues' 'four pillars,' what is the fairest assessment?",
+   "options_en": [
+    "Tapping isn't the same as active thinking, and the reward animations hijack attention, so it likely fails",
+    "Instant feedback amounts to contingent interaction and can replace conversation with an adult",
+    "As long as the developer says it's Montessori-based, it's safe to use",
+    "The child is constantly interacting, so it meets the 'active' pillar and is a good educational app"
+   ],
+   "explanation_en": "The four pillars call for active minds-on thinking, engagement without distraction, meaningful links to what the child knows, and social interaction. Mistaking 'interactive' for 'active' is a classic trap—mechanical tapping is passive—and pop-ups and reward animations are dopamine hooks that violate the engagement pillar. Scripted feedback also isn't the responsive back-and-forth of a real person."
+  },
+  {
+   "id": "236f16d65a",
+   "question": "大样本研究发现屏幕时间只能解释青少年福祉差异的约 0.4%。按文章的观点，家长从中最该得出什么结论？",
+   "options": [
+    "屏幕对孩子完全无害，可以彻底放弃管理",
+    "既然效应很小，屏幕时长多一些反而更好，因为它能增加孩子的社交联结",
+    "别只数时长，关注看什么、何时看、替代了什么，但极端使用仍要管",
+    "研究说明效应被低估了，应坚持零屏幕"
+   ],
+   "answer": 2,
+   "explanation": "效应量小说明「每天不能超过 X 小时」这种粗暴时长红线是错的杠杆，「屏幕」是个大杂烩，要看内容、时机和替代了什么活动。但这不等于放手不管：极端使用仍与睡眠、注意力和情绪问题强相关。所谓「适度略好」只针对一两个小时，不是越多越好。",
+   "question_en": "Large-sample research found screen time explains only about 0.4% of the variation in adolescent well-being. According to the article, what should parents mainly take from this?",
+   "options_en": [
+    "Screens are completely harmless, so parents can give up managing them",
+    "Since the effect is tiny, more screen time is actually better because it adds social connection for kids",
+    "Stop just counting minutes and focus on what is watched, when, and what it displaces—while still reining in extreme use of 5+ hours a day",
+    "The research shows the effect is underestimated, so stick to zero screens"
+   ],
+   "explanation_en": "A small effect size shows that crude caps like 'no more than X hours a day' are the wrong lever; 'screens' lump together very different things, so content, timing, and displacement matter more. But it isn't a license to stop managing: extreme use is still strongly linked to sleep, attention, and mood problems. The 'moderate is slightly better' finding is about an hour or two, not 'more is better.'"
+  },
+  {
+   "id": "0531cfb59e",
+   "question": "一个家庭每天都在为「还能看多久屏幕」吵架。按文章对家庭媒体计划的建议，哪种做法最可能奏效？",
+   "options": [
+    "每天根据孩子当天表现临时决定，听话就多看一会儿作为奖励",
+    "和孩子一起开家庭会议定规则、贴上冰箱，父母也遵守，定期复盘",
+    "由父母制定一份详尽的时长规则单方面宣布，违规就扣除第二天的屏幕时间",
+    "干脆不定规则，等孩子长大自然会学会自我控制"
+   ],
+   "answer": 1,
+   "explanation": "事先承诺比临场谈判有效，把规则变成一次性「立法」和环境设计；孩子参与制定的规则被当作自我承诺，遵守度更高，单方面强加则激发反抗。父母不遵守会让权威基础崩溃；把屏幕当奖惩会抬高它在孩子心中的位置。",
+   "question_en": "A family argues every day about how much longer the kids can use screens. Following the article's advice on a family media plan, which approach is most likely to work?",
+   "options_en": [
+    "Decide each day based on the child's behavior, granting extra time as a reward for being good",
+    "Hold a family meeting, set the rules together with the child, post them on the fridge, have parents commit to them too, and revisit them periodically",
+    "Parents draw up a detailed set of time rules and announce them, docking the next day's screen time for violations",
+    "Skip rules entirely and trust the child to learn self-control as they grow up"
+   ],
+   "explanation_en": "Precommitment beats in-the-moment bargaining, turning rules into a one-time 'legislative' act plus environmental design. Rules children help write feel like their own commitments and are followed more, whereas imposed rules provoke reactance. Parents who don't follow the rules undermine their authority, and using screens as reward or punishment inflates their importance to the child."
+  }
+ ]
+}

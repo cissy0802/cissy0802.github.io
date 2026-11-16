@@ -1407,6 +1407,141 @@
     "00c6bb96e0",
     "51d0394ccc"
    ]
+  },
+  "/parenting/music-enlightenment-day31.html": {
+   "t": "育儿与教育：音乐启蒙 — Day 31",
+   "f": "parenting/music-enlightenment-day31.json",
+   "q": [
+    "a353e3680e",
+    "102431d2a0",
+    "d565b0c49b"
+   ]
+  },
+  "/investing/life-philosophy-day30.html": {
+   "t": "投资经典：价值与人生哲学 — Day 30",
+   "f": "investing/life-philosophy-day30.json",
+   "q": [
+    "0463b91f00",
+    "f1994869a2",
+    "90caebba36"
+   ]
+  },
+  "/parenting/parenting-books-day29.html": {
+   "t": "育儿与教育：四本书里的前沿研究 — Day 29",
+   "f": "parenting/parenting-books-day29.json",
+   "q": [
+    "46137cf7d9",
+    "049d9301d5",
+    "802d70902b"
+   ]
+  },
+  "/parenting/emotion-day1.html": {
+   "t": "育儿与教育：情绪教养基础 — Day 1",
+   "f": "parenting/emotion-day1.json",
+   "q": [
+    "3b3c04a81d",
+    "53b9eda8a9",
+    "536c0dcaf2"
+   ]
+  },
+  "/parenting/talent-interest-day27.html": {
+   "t": "育儿与教育：天赋与兴趣识别 — Day 27",
+   "f": "parenting/talent-interest-day27.json",
+   "q": [
+    "18076e84fe",
+    "dcccedfbe5",
+    "9370f34e11"
+   ]
+  },
+  "/parenting/play-creativity-day8.html": {
+   "t": "育儿与教育：玩耍与创造力 — Day 8",
+   "f": "parenting/play-creativity-day8.json",
+   "q": [
+    "30adf30da5",
+    "aa5ece0f50",
+    "1dcc182f7d"
+   ]
+  },
+  "/investing/damodaran-day6.html": {
+   "t": "投资经典：Damodaran 估值 — Day 6",
+   "f": "investing/damodaran-day6.json",
+   "q": [
+    "c6494d20aa",
+    "e6931c01fd",
+    "d94ac06850"
+   ]
+  },
+  "/parenting/failure-education-day35.html": {
+   "t": "育儿与教育：失败与挫折教育 — Day 35",
+   "f": "parenting/failure-education-day35.json",
+   "q": [
+    "24c8e32d94",
+    "2dc36db4fc",
+    "9455429af5"
+   ]
+  },
+  "/investing/howard-marks-day3.html": {
+   "t": "投资经典：Howard Marks 周期论 — Day 3",
+   "f": "investing/howard-marks-day3.json",
+   "q": [
+    "c7e8e46559",
+    "b3b2e6b672",
+    "8481554ac3"
+   ]
+  },
+  "/parenting/school-choice-day10.html": {
+   "t": "育儿与教育：学校选择 — Day 10",
+   "f": "parenting/school-choice-day10.json",
+   "q": [
+    "9ad72fee51",
+    "bfbca22249",
+    "a4303f794a"
+   ]
+  },
+  "/parenting/family-rituals-day28.html": {
+   "t": "育儿与教育：家庭仪式与文化 — Day 28",
+   "f": "parenting/family-rituals-day28.json",
+   "q": [
+    "056f05f0c8",
+    "7f68717671",
+    "3e7e409213"
+   ]
+  },
+  "/investing/klarman-day5.html": {
+   "t": "投资经典：Klarman 与不确定性 — Day 5",
+   "f": "investing/klarman-day5.json",
+   "q": [
+    "1cec0e77ec",
+    "c915a93dbb",
+    "9dd57ecf93"
+   ]
+  },
+  "/parenting/screen-time-day4.html": {
+   "t": "育儿与教育：屏幕时间与数字素养 — Day 4",
+   "f": "parenting/screen-time-day4.json",
+   "q": [
+    "c5e99bc2bb",
+    "236f16d65a",
+    "0531cfb59e"
+   ]
+  },
+  "/deep-research/longevity-evidence-deep.html": {
+   "t": "长寿干预的证据分级:雷帕霉素、二甲双胍、NAD+、禁食(深入版) — BigCat Deep Research",
+   "f": "deep-research/longevity-evidence-deep.json",
+   "q": [
+    "86cbd513e3",
+    "7d4d45872a",
+    "fd3bc088f5"
+   ]
+  },
+  "/deep-research/learning-science-deep.html": {
+   "t": "学习科学的证据等级:哪些学习方法真的有效?(深入版) — BigCat Deep Research",
+   "f": "deep-research/learning-science-deep.json",
+   "q": [
+    "c3d27712c9",
+    "a9f722e5cd",
+    "75580bc109"
+   ]
   }
  },
  "aliases": {
@@ -1415,6 +1550,8 @@
   "/deep-research/ai-native-plain.html": "/deep-research/ai-native-deep.html",
   "/deep-research/recursive-self-improvement-plain.html": "/deep-research/recursive-self-improvement-deep.html",
   "/deep-research/agent-readme-plain.html": "/deep-research/agent-readme-deep.html",
-  "/deep-research/spec-driven-development-plain.html": "/deep-research/spec-driven-development-deep.html"
+  "/deep-research/spec-driven-development-plain.html": "/deep-research/spec-driven-development-deep.html",
+  "/deep-research/longevity-evidence-plain.html": "/deep-research/longevity-evidence-deep.html",
+  "/deep-research/learning-science-plain.html": "/deep-research/learning-science-deep.html"
  }
 }

@@ -1,0 +1,69 @@
+{
+ "page": "/parenting/school-choice-day10.html",
+ "title": "育儿与教育：学校选择 — Day 10",
+ "page_en": "/parenting/school-choice-day10.en.html",
+ "title_en": "Parenting & Education: School Choice — Day 10",
+ "src_hash": "bbe550e52757",
+ "questions": [
+  {
+   "id": "9ad72fee51",
+   "question": "某私立名校的升学率远高于附近公立学校。按教育经济学的研究，对这个差距最合理的解释是什么？",
+   "options": [
+    "说明学费与教学质量成正比，越贵的学校增值越大",
+    "说明公立学校教学方法落后，应尽量避开",
+    "主要是选择效应：生源本就更好，控制家庭背景后差距大幅缩小",
+    "主要来自学校更好的师资和硬件，同样的孩子读私立就能明显提升学业成绩"
+   ],
+   "answer": 2,
+   "explanation": "Coleman 报告发现家庭背景对学业的解释力远超学校间资源差异；后来的纵向研究控制家庭收入和早期能力后，读私立与更好的学业结果几乎无关。名校看得见的高升学率多半是生源筛选，不是学校的增值。",
+   "question_en": "A prestigious private school sends far more graduates to top universities than nearby public schools. According to education economics research, what is the most reasonable explanation for the gap?",
+   "options_en": [
+    "It shows tuition tracks teaching quality—the pricier the school, the more value it adds",
+    "It shows public schools teach with outdated methods and should be avoided where possible",
+    "Mostly a selection effect: admissions draw in well-resourced, education-focused families, and the gap shrinks sharply once family background is controlled for",
+    "Mostly better teachers and facilities, so the same child would clearly do better at a private school"
+   ],
+   "explanation_en": "The Coleman Report found family background explains far more of achievement than resource differences between schools, and later longitudinal research controlling for income and early ability found private schooling barely related to better outcomes. The visible success of elite schools is largely intake selection, not value added by the school."
+  },
+  {
+   "id": "bfbca22249",
+   "question": "两所幼儿园都挂着「蒙特梭利」的牌子。按文章的建议，家长判断哪所更好时最该看什么？",
+   "options": [
+    "实地观察真实的师生互动，比如老师怎样回应哭闹或冲突的孩子，以及执行的保真度",
+    "哪一所获得的蒙氏认证招牌更醒目、宣传更完整",
+    "哪一所学费更高，因为学费越高通常执行越到位",
+    "哪一所的教具更齐全、更昂贵"
+   ],
+   "answer": 0,
+   "explanation": "「蒙特梭利」不是注册商标，挂名不等于忠实执行，效果取决于保真度；而在各类教育研究里最稳健的预测变量是师生互动质量。所以要在工作日实地蹲点看老师如何对待不配合的孩子，学费高并不保证保真度高。",
+   "question_en": "Two preschools both call themselves 'Montessori.' According to the article, what should parents look at most when judging which is better?",
+   "options_en": [
+    "Observe real teacher–child interactions on site—such as how teachers respond to a crying or conflicted child—and how faithfully the method is implemented",
+    "Which one displays more prominent Montessori certification and more polished promotional materials",
+    "Which one charges higher tuition, since higher fees usually mean better implementation",
+    "Which one has the fuller, more expensive set of Montessori materials"
+   ],
+   "explanation_en": "'Montessori' isn't a trademark, so the label doesn't guarantee faithful implementation—and fidelity is what drives results. Across education research, the most robust predictor is the quality of teacher–child interaction. Hence the advice to visit on an ordinary weekday and watch how teachers handle an uncooperative child; high tuition doesn't guarantee fidelity."
+  },
+  {
+   "id": "a4303f794a",
+   "question": "一个家庭在考虑背上超额房贷买顶级学区房。按文章的证据，哪种权衡最站得住？",
+   "options": [
+    "邻里环境对孩子毫无长期影响，所以住哪里都一样",
+    "顶级与良好学区差距通常很小，长期财务高压却会拖累养育质量",
+    "学区排名直接衡量教学增值，排名越高孩子收益越大，值得不惜代价",
+    "只要买到学区房，家庭日常互动的影响就可以忽略"
+   ],
+   "answer": 1,
+   "explanation": "学校排名捕捉的大多是生源质量，顶级与良好学区的边际收益通常不大；父母长期经济压力却会通过情绪、争吵、陪伴减少伤害孩子。但邻里与同伴环境对长期结果确有影响，越早搬进机会更好的社区效果越明显，所以「住哪都一样」也不对。",
+   "question_en": "A family is considering taking on an oversized mortgage to buy into a top school district. Based on the article's evidence, which trade-off holds up best?",
+   "options_en": [
+    "Neighborhoods have no long-term effect on children, so it doesn't matter where you live",
+    "The academic gap between a top and a good district is usually small, while long-term financial strain lowers parenting quality and may cancel out the school's benefit",
+    "District rankings directly measure teaching value-added, so a higher rank means bigger gains and is worth any price",
+    "Once you've bought into the district, everyday family interaction no longer matters much"
+   ],
+   "explanation_en": "School rankings mostly capture intake quality, so the marginal gain from a top versus a good district is usually modest, whereas chronic financial stress hurts children through moods, conflict, and less time together. Still, neighborhood and peer environment do affect long-run outcomes—moving earlier to a higher-opportunity area helps—so 'it doesn't matter where you live' is wrong too."
+  }
+ ]
+}

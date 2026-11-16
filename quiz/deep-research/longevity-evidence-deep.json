@@ -1,0 +1,69 @@
+{
+ "page": "/deep-research/longevity-evidence-deep.html",
+ "title": "长寿干预的证据分级:雷帕霉素、二甲双胍、NAD+、禁食(深入版) — BigCat Deep Research",
+ "page_en": "/deep-research/longevity-evidence-deep.en.html",
+ "title_en": "Grading the Evidence on Longevity Interventions: Rapamycin, Metformin, NAD+, Fasting (Deep Dive) — BigCat Deep Research",
+ "src_hash": "4bdc1eb8bec4",
+ "questions": [
+  {
+   "id": "86cbd513e3",
+   "question": "常被引用的「雷帕霉素延长小鼠寿命 14%」，按长寿证据综述的拆解，问题出在哪里？",
+   "options": [
+    "这个数字是伪造的，雷帕霉素在小鼠身上并不能延长寿命",
+    "它是 90% 死亡年龄口径、600 日龄才开始给药，不是中位寿命增幅",
+    "它确实是中位寿命增幅，问题只在于实验只用了单一近交系小鼠",
+    "它来自人体临床试验，但被误当成小鼠数据引用"
+   ],
+   "answer": 1,
+   "explanation": "雷帕霉素在动物层的证据是四个干预里最强的，问题不在真假，而在口径：原文的 14% 是 90% 死亡年龄的增幅，起始时间已是暮年，引用时被当成中位寿命。综述强调这类滑坡不是造假，而是把一个数字从它成立的口径搬到不成立的口径；ITP 用的恰恰是四向杂种而非近交系。",
+   "question_en": "A widely cited claim says rapamycin extends mouse lifespan by 14%. According to the longevity-evidence review, what is wrong with how this figure is used?",
+   "options_en": [
+    "The number is fabricated; rapamycin doesn't actually extend mouse lifespan",
+    "It measures age at 90% mortality—a maximum-lifespan metric—with dosing started at 600 days, not a median lifespan gain; it's an endpoint slip",
+    "It really is a median lifespan gain; the only problem is that the study used a single inbred mouse strain",
+    "It comes from a human clinical trial but is misquoted as mouse data"
+   ],
+   "explanation_en": "Rapamycin has the strongest animal evidence of the four interventions; the issue isn't truth but framing. The original 14% is the gain in age at 90% mortality, with treatment starting in old age, yet it gets quoted as a median lifespan gain. The review stresses that such slips aren't fraud—they move a number from the frame where it holds to one where it doesn't. And the ITP mice are four-way crosses, not an inbred strain."
+  },
+  {
+   "id": "7d4d45872a",
+   "question": "英国一项研究曾报告「服用二甲双胍的糖尿病人比匹配的健康人活得更久」。后来威尔士 SAIL 数据库的分析对此最有价值的贡献是什么？",
+   "options": [
+    "证实了原结论，二甲双胍组在二十年随访中仍比健康对照活得更久",
+    "发现原研究的数据是伪造的，因此被撤稿",
+    "发现二甲双胍组和健康对照在任何时间窗口下都没有差别",
+    "发现二甲双胍组的生存优势在头三年存在、五年后反转，从而解释了原结论是短随访造成的假象"
+   ],
+   "answer": 3,
+   "explanation": "原结论来自中位随访约 2.4 年的模型外推，粗死亡率差异本身也不显著；丹麦数据给出相反方向。威尔士数据二十年口径下二甲双胍组生存时间只有对照的 82%，更关键的是在模拟研究窗口中重现了「头三年有优势、五年后反转」，对假象给出了机制解释。原论文至今也没有撤稿。",
+   "question_en": "A UK study once reported that diabetics taking metformin lived longer than matched non-diabetic controls. What was the most valuable contribution of the later analysis of Wales's SAIL database?",
+   "options_en": [
+    "It confirmed the original finding: the metformin group still outlived healthy controls over twenty years",
+    "It found the original study's data were fabricated, leading to a retraction",
+    "It found no difference between the metformin group and healthy controls in any time window",
+    "It found metformin's survival advantage exists for the first three years and reverses after five, explaining the original result as an artifact of short follow-up"
+   ],
+   "explanation_en": "The original claim was a model-based extrapolation from a median follow-up of about 2.4 years, and its crude mortality difference wasn't even significant; Danish data pointed the other way. Over twenty years, the Welsh metformin group's survival time was only 82% of controls'—but the key contribution was reproducing an advantage in the first three years that reverses after five across simulated study windows, giving a mechanism for the artifact. The original paper has not been retracted."
+  },
+  {
+   "id": "fd3bc088f5",
+   "question": "NIA 干预测试计划（ITP）在一轮新实验中，几个此前报告过约 8–12% 小幅延寿的化合物都没有再显著。按综述的判断，应如何解读？",
+   "options": [
+    "重测改了剂量或起始年龄且功效不足，不算复现失败；小效应命中本就脆弱",
+    "说明效应确实存在，这次不显著只是因为对照组鼠寿命太短",
+    "说明连金标准程序也复现不了自己的结果，所以 ITP 过去的所有结论都不可信",
+    "说明这些化合物此前的结果都是造假"
+   ],
+   "answer": 0,
+   "explanation": "综述撤回了「金标准复现不了自己」的写法：改了条件的阴性结果是另一个实验，而功效不足时「不显著」不等于「不存在」。ITP 的大效应命中（雷帕霉素、阿卡波糖、17α-雌二醇）复现得很稳，脆弱的是低于约 10% 检出下限的小命中，ITP 自己也承认它们可能是偶然。",
+   "question_en": "In a new round of the NIA Interventions Testing Program (ITP), several compounds that had previously shown small lifespan gains of roughly 8–12% were no longer significant. How does the review say this should be read?",
+   "options_en": [
+    "The retests changed dose or starting age and lacked power to detect the original effects, so they aren't replication failures; small hits sit at the power floor and are inherently fragile",
+    "It shows the effects are real, and this round failed only because the control mice died unusually early",
+    "It shows even the gold-standard program can't replicate itself, so none of the ITP's conclusions can be trusted",
+    "It shows the earlier results for these compounds were fabricated"
+   ],
+   "explanation_en": "The review retracts the line 'the gold standard can't replicate itself': a negative result under changed conditions is a different experiment, and with insufficient power, 'not significant' doesn't mean 'absent.' The ITP's large hits—rapamycin, acarbose, 17α-estradiol—replicate robustly; what's fragile are small hits below the roughly 10% detection floor, which the ITP itself concedes may be chance."
+  }
+ ]
+}

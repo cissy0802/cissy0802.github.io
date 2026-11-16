@@ -1,0 +1,69 @@
+{
+ "page": "/investing/klarman-day5.html",
+ "title": "投资经典：Klarman 与不确定性 — Day 5",
+ "page_en": "/investing/klarman-day5.en.html",
+ "title_en": "Investing Classics: Klarman & Uncertainty — Day 5",
+ "src_hash": "4b2102a7a36a",
+ "questions": [
+  {
+   "id": "1cec0e77ec",
+   "question": "一只股票市盈率只有 5 倍，远低于历史均值，但它的 ROIC 已连续五年下滑，自由现金流转负。按 Klarman 对价值陷阱的区分，应如何判断？",
+   "options": [
+    "无法判断，只要等足三到五年，任何低估都会被修复",
+    "只要管理层开始回购股票，就说明它是真正的价值",
+    "很可能是价值陷阱：便宜是因为内在价值本身在下滑",
+    "是典型的价值机会：市盈率越低安全边际越大，迟早会被市场重新认识"
+   ],
+   "answer": 2,
+   "explanation": "Klarman 区分两种便宜：市场暂时误判的是价值，内在价值本身在衰退的是陷阱。所以要看 ROIC、自由现金流、资本配置的方向，而不只是当下倍数；未来现金流持续下滑时，今天的低倍数其实并不便宜。高位回购恰恰是陷阱常见的资本错配信号。",
+   "question_en": "A stock trades at just 5 times earnings, far below its historical average, but its ROIC has fallen for five straight years and free cash flow has turned negative. Under Klarman's distinction around value traps, how should you judge it?",
+   "options_en": [
+    "Impossible to say—any undervaluation gets corrected if you wait three to five years",
+    "If management starts buying back shares, that proves it's real value",
+    "Likely a value trap: it's cheap because intrinsic value itself is declining, possibly faster than the discount",
+    "A classic value opportunity: the lower the P/E, the larger the margin of safety, and the market will eventually re-rate it"
+   ],
+   "explanation_en": "Klarman separates two kinds of cheap: a stock mispriced by a temporary market misjudgment is value; one whose intrinsic value is itself eroding is a trap. So look at the direction of ROIC, free cash flow, and capital allocation, not just today's multiple—if future cash flows keep shrinking, a low multiple today isn't cheap at all. Buybacks at high prices are, if anything, a classic misallocation signal in traps."
+  },
+  {
+   "id": "c915a93dbb",
+   "question": "按 Klarman 的观点，为什么使用杠杆会破坏一个原本「下行有限、上行开放」的非对称头寸？",
+   "options": [
+    "杠杆会让价格波动变小，从而掩盖真实价值",
+    "强平往往发生在最坏的时刻，杠杆会把非对称头寸变成对称甚至负偏",
+    "杠杆会降低预期收益，使上行空间变小",
+    "杠杆只增加交易成本，不改变头寸的风险结构"
+   ],
+   "answer": 1,
+   "explanation": "非对称的关键是下行被硬性条件锁住；而带杠杆时，一次下跌就可能被强制平仓，在最坏时刻斩掉头寸，下行不再有限。LTCM 用 25 倍杠杆做每笔上行只赚几个基点、下行可能亏光的负偏交易，败的是押注结构而不是看法。",
+   "question_en": "According to Klarman, why does leverage ruin a position that would otherwise have limited downside and open-ended upside?",
+   "options_en": [
+    "Leverage dampens price swings and so masks true value",
+    "Forced liquidation tends to hit at the worst moment, turning an asymmetric position symmetric or even negatively skewed",
+    "Leverage lowers expected returns, shrinking the upside",
+    "Leverage only adds trading costs without changing the position's risk structure"
+   ],
+   "explanation_en": "Asymmetry depends on the downside being locked in by hard conditions; with leverage, a drawdown can trigger forced liquidation at the worst possible time, so the downside is no longer limited. LTCM ran 25x leverage on negatively skewed trades—earning a few basis points on the upside while risking everything—and failed because of its bet structure, not its views."
+  },
+  {
+   "id": "9dd57ecf93",
+   "question": "按 Klarman 对现金仓位的看法，下面哪种说法最准确？",
+   "options": [
+    "只要市场看起来贵就应无限期持有现金，直到出现大跌",
+    "没有便宜机会时持现合理，它保留日后低价出手的能力，但长期持有会被通胀侵蚀",
+    "持有现金是预测市场顶部的工具，一旦判断即将崩盘，就应该把仓位全部转为现金",
+    "现金的零收益是纯粹的机会成本，长期投资者应始终保持满仓"
+   ],
+   "answer": 1,
+   "explanation": "Klarman 把现金看作写给自己的看涨期权，他不预测顶部，只在价格相对价值恶化到无法接受时减仓，依据是机会集而非市场点位。但他也强调耐心有边界：把持现等待变成永远等待，十年都在喊「市场太贵」会错失复利，高通胀下现金还会被侵蚀。",
+   "question_en": "Which statement best captures Klarman's view of holding cash?",
+   "options_en": [
+    "Whenever the market looks expensive, hold cash indefinitely until a big crash arrives",
+    "Holding cash makes sense when bargains are scarce because it preserves the ability to buy cheaply later—but it's not dogma, and long-term cash gets eaten by inflation",
+    "Cash is a tool for calling market tops: once you judge a crash is near, move the whole portfolio to cash",
+    "Cash's zero return is pure opportunity cost, so long-term investors should always stay fully invested"
+   ],
+   "explanation_en": "Klarman treats cash as a call option written to yourself. He doesn't forecast tops; he trims only when price relative to value becomes unacceptable, guided by the opportunity set rather than market levels. But patience has limits: turning 'waiting' into 'waiting forever,' calling the market too expensive for a decade, forfeits compounding, and high inflation erodes cash."
+  }
+ ]
+}

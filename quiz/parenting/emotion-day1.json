@@ -1,0 +1,69 @@
+{
+ "page": "/parenting/emotion-day1.html",
+ "title": "育儿与教育：情绪教养基础 — Day 1",
+ "page_en": "/parenting/emotion-day1.en.html",
+ "title_en": "Parenting: Foundations of Emotion Coaching — Day 1",
+ "src_hash": "e3a4375e7460",
+ "questions": [
+  {
+   "id": "3b3c04a81d",
+   "question": "孩子的积木倒了，大哭尖叫。按「情绪命名」的思路，家长第一句话最该怎么说？",
+   "options": [
+    "「下次搭底下宽一点就不会倒了。」",
+    "「你气坏了，对吧？花了好久搭的，一下子全倒了。」",
+    "「别哭了别哭了，我们再搭一次就好，这次一定更高。」",
+    "「你又在发脾气了，这样可不好。」"
+   ],
+   "answer": 1,
+   "explanation": "用语言准确说出孩子的情绪本身就能降温，相关研究发现标注情绪时杏仁核活动下降。急着给解决方案时孩子还在情绪里听不进去；「你又在发脾气」虽然也点出情绪，但那是评判，命名应该是描述。",
+   "question_en": "A child's block tower collapses and they burst into screaming tears. Following the 'name it to tame it' approach, what should the parent say first?",
+   "options_en": [
+    "'Next time make the bottom wider and it won't fall.'",
+    "'You're so mad, aren't you? You worked on that for ages and it all fell down.'",
+    "'Don't cry, don't cry—we'll build it again, even taller this time.'",
+    "'You're throwing a tantrum again, and that's not okay.'"
+   ],
+   "explanation_en": "Putting the child's feeling into accurate words is itself calming; research found that labeling emotions lowers amygdala activity. Jumping to solutions fails because the child is still flooded. 'You're throwing a tantrum again' names a feeling too, but as a judgment—labeling should describe, not condemn."
+  },
+  {
+   "id": "53b9eda8a9",
+   "question": "晚上该关 iPad 了，孩子还想看。哪种回应最符合权威型教养？",
+   "options": [
+    "今天先不管，等明天孩子心情好时再讲规则",
+    "先承认孩子想看完，再讲明关屏规则和理由，给一个有限选择",
+    "坚决要求立刻关掉，不做解释也不商量，规则就是规则，没得谈",
+    "看孩子这么想看，就再通融十分钟，避免冲突"
+   ],
+   "answer": 1,
+   "explanation": "权威型是高要求加高回应：温度和界限同时在场，再用有限选择给孩子自主感。只有规则没有温度是威权型，孩子学会服从但内化动机弱；只有温度没有界限是放任型，孩子学不会自我调节。",
+   "question_en": "It's time to turn off the iPad, but the child wants to keep watching. Which response best fits authoritative parenting?",
+   "options_en": [
+    "Let it slide tonight and explain the rule tomorrow when the child is in a better mood",
+    "Acknowledge that the child wants to finish, state the 8:30 screens-off rule and why, then offer a limited choice",
+    "Insist it goes off right now—no explanation, no negotiation; rules are rules",
+    "Since the child wants it so badly, allow ten more minutes to avoid a fight"
+   ],
+   "explanation_en": "Authoritative parenting means high demands plus high responsiveness: warmth and limits together, with a limited choice to preserve autonomy. Rules without warmth is authoritarian—children obey but internalize little; warmth without limits is permissive—children never learn to self-regulate."
+  },
+  {
+   "id": "536c0dcaf2",
+   "question": "孩子在超市哭闹打滚要买玩具。按 time-in 的做法，下面哪项描述正确？",
+   "options": [
+    "带孩子到安静处，答应买玩具让他尽快平静下来，回家再讲规则",
+    "到安静处陪着他，不讲道理也不答应要求，等情绪过去再谈",
+    "让孩子独自去角落冷静，等他想清楚了再回来认错",
+    "陪在孩子身边，趁他还在哭时耐心讲清楚为什么不能买"
+   ],
+   "answer": 1,
+   "explanation": "Time-in 的要点是共同调节：孩子失控时前额叶离线，需要借大人平静的神经系统降温，所以要陪着而不是孤立。陪伴不等于奖励，不合理的要求依然不满足；情绪没下来时讲道理也进不去。",
+   "question_en": "A child is wailing and thrashing on the supermarket floor, demanding a toy. Which description of the 'time-in' approach is correct?",
+   "options_en": [
+    "Take the child somewhere quiet and agree to buy the toy so they calm down fast, then explain the rule at home",
+    "Take the child somewhere quiet and stay with them—no lecturing and no giving in—then talk once the emotion has passed",
+    "Send the child to a corner alone to cool off and come back to apologize once they've thought it over",
+    "Stay beside the child and patiently explain, while they're still crying, why they can't have it"
+   ],
+   "explanation_en": "Time-in is about co-regulation: a dysregulated child's prefrontal cortex is offline, so they need to borrow a calm adult's nervous system rather than be isolated. Staying close is not a reward—the unreasonable demand still goes unmet—and reasoning doesn't land until the emotion subsides."
+  }
+ ]
+}

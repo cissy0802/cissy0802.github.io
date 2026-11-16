@@ -1,0 +1,69 @@
+{
+ "page": "/parenting/parenting-books-day29.html",
+ "title": "育儿与教育：四本书里的前沿研究 — Day 29",
+ "page_en": "/parenting/parenting-books-day29.en.html",
+ "title_en": "Parenting & Education: Frontier Research in Four Books — Day 29",
+ "src_hash": "59fc2b6583fd",
+ "questions": [
+  {
+   "id": "46137cf7d9",
+   "question": "一个孩子学了两年钢琴后说想换别的。按 Range 的思路，家长首先该弄清什么？",
+   "options": [
+    "孩子是真的不喜欢钢琴了，还是练到难处想躲开",
+    "新兴趣是否比钢琴更有利于升学，有利才同意换",
+    "两年的投入是否已经足够多，够多了就不该浪费",
+    "孩子是否已经错过了专精的最佳年龄，再换就来不及"
+   ],
+   "answer": 0,
+   "explanation": "Epstein 主张在规则多变的领域广泛采样有价值，但他也提醒「广泛采样」不等于「一遇困难就换」。所以关键是分辨换方向还是躲困难，两者处理方式不同；把 Range 当成随时可以放弃的挡箭牌是常见误读。",
+   "question_en": "After two years of piano, a child says they want to try something else. Following the logic of Range, what should the parent figure out first?",
+   "options_en": [
+    "Whether piano itself has lost its appeal or the child is dodging a hard stretch—the first is exploration, the second is avoidance",
+    "Whether the new interest helps more with school admissions, and only agree if it does",
+    "Whether two years is already a big enough investment that switching would waste it",
+    "Whether the child has already missed the best age to specialize, making a switch too late"
+   ],
+   "explanation_en": "Epstein argues broad sampling pays off in fast-changing domains, but sampling is not the same as quitting at the first difficulty. The key is telling a change of direction from an escape from difficulty, because each calls for a different response; using Range as a license to quit is a common misreading."
+  },
+  {
+   "id": "049d9301d5",
+   "question": "关于「一万小时定律」，下面哪种说法最符合原始研究者的立场？",
+   "options": [
+    "一万小时是精确门槛，少一点都不行，多了则收益递减",
+    "Ericsson 证明了任何领域只要练满一万小时，都能达到专家水平",
+    "这是对 Ericsson 的简化，关键是刻意练习的质量而非时长",
+    "练习时长与水平无关，成就主要由天赋决定"
+   ],
+   "answer": 2,
+   "explanation": "Gladwell 把 Ericsson 的研究压缩成「练满一万小时就能成」，Ericsson 本人公开反对：关键是刻意练习的质量，而且并非所有领域都适用。走到另一极端说练习与水平无关，同样不是原研究的结论。",
+   "question_en": "Which statement about the '10,000-hour rule' best reflects the position of the original researcher?",
+   "options_en": [
+    "10,000 hours is a precise threshold—any less won't do, and beyond it returns diminish",
+    "Ericsson showed that 10,000 hours of practice in any field produces expert-level performance",
+    "It oversimplifies Ericsson's research: what determines skill is the quality of deliberate practice, not the sheer pile of hours",
+    "Practice time has nothing to do with skill; achievement comes mainly from innate talent"
+   ],
+   "explanation_en": "Gladwell condensed Ericsson's work into 'put in 10,000 hours and you'll make it,' and Ericsson publicly objected: the quality of deliberate practice is what matters, and the pattern does not hold in every field. Swinging to 'practice doesn't matter' is not his conclusion either."
+  },
+  {
+   "id": "802d70902b",
+   "question": "孩子卡在一道难题前想放弃。按非认知能力研究的思路，哪种做法最能培养孩子的抗挫力？",
+   "options": [
+    "把题拆成小步，让孩子先做第一步，大人在旁边撑着",
+    "讲道理强调「坚持就是胜利」，让孩子明白毅力的重要",
+    "刻意多给孩子吃苦，用长期高压磨练韧性",
+    "先让孩子在坚毅量表上打分，找出短板再针对性训练"
+   ],
+   "answer": 0,
+   "explanation": "品格是在安全关系和「有人撑着熬过这一次难」的体验里长出来的，不是靠说教；长期高压不练韧性，只会损伤调节系统。把坚毅变成考核指标还会制造羞耻，而且 grit 的预测力经元分析并不比尽责性更强。",
+   "question_en": "A child is stuck on a hard problem and wants to give up. Following research on non-cognitive skills, which approach best builds resilience?",
+   "options_en": [
+    "Break the problem into small steps, let the child try the first one, and stay nearby for support",
+    "Lecture that 'perseverance wins' so the child understands why grit matters",
+    "Deliberately give the child more hardship, using sustained pressure to toughen them up",
+    "Have the child score themselves on a grit scale first, then train the weak spots"
+   ],
+   "explanation_en": "Character grows out of secure relationships and the experience of getting through a hard moment with someone backing you up—not out of lectures. Chronic pressure damages the stress-regulation system rather than building toughness, and turning grit into a metric breeds shame; meta-analyses also show grit predicts achievement no better than conscientiousness."
+  }
+ ]
+}

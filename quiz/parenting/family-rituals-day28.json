@@ -1,0 +1,69 @@
+{
+ "page": "/parenting/family-rituals-day28.html",
+ "title": "育儿与教育：家庭仪式与文化 — Day 28",
+ "page_en": "/parenting/family-rituals-day28.en.html",
+ "title_en": "Parenting & Education: Family Rituals & Culture — Day 28",
+ "src_hash": "b1f4f19e17c5",
+ "questions": [
+  {
+   "id": "056f05f0c8",
+   "question": "按 Fivush 与 Duke 对家族叙事「形状」的研究，下面哪种讲法最能培养孩子的韧性？",
+   "options": [
+    "「家里那些难事都过去了，就别提了，记住开心的就好。」",
+    "「我们家有过好日子也有过难关，但都一起挺过来了。」",
+    "「我们家从一无所有白手起家，一年比一年好。」",
+    "「我们家祖上很风光，后来家道中落，日子大不如前。」"
+   ],
+   "answer": 1,
+   "explanation": "震荡型叙事既如实承认难关，又示范了难关可以被熬过去，最养韧性。上升型听着励志，但孩子一遇挫败容易觉得给家族丢脸；下降型把无力与怨怼刻进孩子心里；只报喜不报忧，孩子学不到「难关可以扛过去」。",
+   "question_en": "According to Fivush and Duke's research on the 'shape' of family narratives, which way of telling the family story best builds a child's resilience?",
+   "options_en": [
+    "'The hard times are behind us, so let's not dwell on them—just remember the happy parts.'",
+    "'Our family has had good times and hard times; things got really tough, but we figured it out together and came through.'",
+    "'Our family started with nothing and built ourselves up, doing better every year.'",
+    "'Our ancestors were prominent, but the family fell on hard times and never recovered.'"
+   ],
+   "explanation_en": "The oscillating narrative admits that hardships were real while showing they can be weathered, and it does the most for resilience. The ascending story sounds inspiring, but a child who stumbles may feel they've shamed the family; the descending story instills helplessness and resentment; and telling only the good parts never teaches that hard times can be survived."
+  },
+  {
+   "id": "7f68717671",
+   "question": "按 Fiese 对「仪式」和「惯例」的区分，下面哪项最可能是仪式而不只是惯例？",
+   "options": [
+    "每天早上七点刷牙洗脸",
+    "每周五全家固定的披萨夜，孩子会提前盼着",
+    "每月按时交兴趣班的学费",
+    "每天晚饭后准时督促孩子坐下写作业，雷打不动"
+   ],
+   "answer": 1,
+   "explanation": "惯例是工具性的「做什么」，做完即忘；仪式带有象征意义和情感投入，会被记住、被期待，回答的是「我们是谁」。写作业、刷牙虽然同样规律、可预测，却没有这层情感与象征，所以只是惯例。",
+   "question_en": "Using Barbara Fiese's distinction between rituals and routines, which of these is most likely a ritual rather than just a routine?",
+   "options_en": [
+    "Brushing teeth and washing up at 7 a.m. every morning",
+    "A family pizza night every Friday that the child looks forward to all week",
+    "Paying the activity-class fees on time every month",
+    "Making sure the child sits down to homework right after dinner every night, without fail"
+   ],
+   "explanation_en": "A routine is instrumental—'what we do'—and forgotten once done; a ritual carries symbolic meaning and emotional investment, so it is remembered and anticipated, saying 'who we are.' Homework and toothbrushing are just as regular and predictable, but without that emotional and symbolic layer they remain routines."
+  },
+  {
+   "id": "3e7e409213",
+   "question": "研究发现，知道更多家族故事的孩子在自尊和韧性上得分更高。对这一发现，哪种解读最恰当？",
+   "options": [
+    "这证明讲家族故事能直接提升孩子的韧性，讲得越多、越频繁，孩子就越坚强",
+    "这说明家族故事无关紧要，真正起作用的只有学校教育",
+    "这说明只要讲家族的成功经历，孩子的自尊就会提高",
+    "相关而非因果，紧密的家庭本就更爱讲故事；值得讲，但别当提分公式"
+   ],
+   "answer": 3,
+   "explanation": "「你知道吗」量表的结果是相关研究：功能良好的家庭本来就更会讲故事，故事可能是连接的标志而非唯一原因。但讲故事几乎零成本，仍然值得做；只讲辉煌的成功叙事，反而可能让孩子一遇挫败更觉丢人。",
+   "question_en": "Research found that children who know more family stories score higher on self-esteem and resilience. Which interpretation of this finding is most appropriate?",
+   "options_en": [
+    "It proves that telling family stories directly raises resilience—the more often you tell them, the tougher the child",
+    "It shows that family stories don't matter and that only schooling makes a difference",
+    "It shows that telling stories of the family's successes is enough to raise a child's self-esteem",
+    "It's correlational, not causal—close-knit families tend to tell more stories anyway; storytelling is cheap and worth doing, but not a formula to boost scores"
+   ],
+   "explanation_en": "The 'Do You Know' scale findings are correlational: well-functioning families are more likely to tell stories in the first place, so the stories may be a marker of connection rather than its sole cause. Still, storytelling costs almost nothing and is worth doing—while telling only tales of glory may leave a struggling child feeling more ashamed."
+  }
+ ]
+}

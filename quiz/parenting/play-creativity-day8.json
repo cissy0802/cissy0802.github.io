@@ -1,0 +1,69 @@
+{
+ "page": "/parenting/play-creativity-day8.html",
+ "title": "育儿与教育：玩耍与创造力 — Day 8",
+ "page_en": "/parenting/play-creativity-day8.en.html",
+ "title_en": "Parenting & Education: Play & Creativity — Day 8",
+ "src_hash": "1d093fa9cd70",
+ "questions": [
+  {
+   "id": "30adf30da5",
+   "question": "在「自由游戏—引导游戏—直接教学」的连续谱上，引导游戏的特点是什么？",
+   "options": [
+    "成人布置环境、适时提问，主导权留给孩子",
+    "成人完全不在场，孩子自己决定一切",
+    "成人设定明确的学习目标，孩子按步骤完成并得到奖励",
+    "成人示范正确玩法，孩子模仿练习直到掌握"
+   ],
+   "answer": 0,
+   "explanation": "引导游戏介于自由游戏和直接教学之间：大人准备场景、偶尔提一个问题，然后把主导权还给孩子，对很多学习目标效果最好。一旦大人设定目标、示范「正确玩法」，就滑向了直接教学，夺走了孩子的主导权。",
+   "question_en": "On the continuum from free play through guided play to direct instruction, what characterizes guided play?",
+   "options_en": [
+    "Adults set up the environment and pose a question at the right moment, but the child stays in charge",
+    "Adults are entirely absent, and the child decides everything alone",
+    "Adults set explicit learning goals, and the child completes the steps and earns a reward",
+    "Adults demonstrate the correct way to play, and the child imitates until mastering it"
+   ],
+   "explanation_en": "Guided play sits between free play and direct instruction: adults prepare the setting and occasionally ask a question, then hand control back to the child—an approach that works best for many learning goals. Once adults set the goal or model the 'right way,' it slides into direct instruction and takes the lead away from the child."
+  },
+  {
+   "id": "aa5ece0f50",
+   "question": "孩子举起香蕉说「这是电话」，还常和想象中的朋友说话。家长担心孩子分不清真假。按假装游戏的研究，哪种看法最恰当？",
+   "options": [
+    "可以用会说话的电子玩具代替，让孩子的想象更接近真实",
+    "假装游戏本身无害，但想象中的朋友是社交能力不足的信号",
+    "健康的假装说明孩子分得清真假，这是在练反事实推理和视角转换",
+    "这说明孩子的认知还停留在混淆现实与想象的阶段，家长应及时纠正"
+   ],
+   "answer": 2,
+   "explanation": "假装需要在脑中操作不存在的东西（「假如这块积木是手机」），练的是反事实推理、视角转换和自控；想象中的朋友也很正常，且与更强的心智理论相关。电子玩具替孩子把「假装」做完了，反而剥夺想象空间。",
+   "question_en": "A child holds up a banana and says 'This is a phone,' and often talks to an imaginary friend. The parent worries the child can't tell real from pretend. Based on research on pretend play, which view fits best?",
+   "options_en": [
+    "Swap in talking electronic toys so the child's imagination stays closer to reality",
+    "Pretend play is harmless, but an imaginary friend signals weak social skills",
+    "Healthy pretending actually shows the child clearly separates reality from fiction; it exercises counterfactual reasoning and perspective-taking",
+    "It shows the child's thinking still confuses reality and imagination, so parents should correct it promptly"
+   ],
+   "explanation_en": "Pretending means manipulating things that aren't there ('what if this block were a phone'), which trains counterfactual reasoning, perspective-taking, and self-control. Imaginary friends are normal too and linked to stronger theory of mind. Electronic toys do the pretending for the child, shrinking the room for imagination."
+  },
+  {
+   "id": "1dcc182f7d",
+   "question": "按「玩具做得越少，孩子做得越多」的原则，哪种安排最可能让幼儿玩得更久、更专注？",
+   "options": [
+    "多买功能丰富、标着「益智」的电子玩具，玩法多才不会腻",
+    "只保留一件孩子最喜欢的玩具，其余全部收走",
+    "把所有玩具都摆出来，选择越多孩子越容易找到喜欢的",
+    "少量玩具定期轮换，多备积木、纸箱、布等开放材料"
+   ],
+   "answer": 3,
+   "explanation": "实验发现幼儿面对 4 个玩具时比 16 个玩得更久、更专注、更有创意，玩具太多注意力反而分散；开放性材料留给孩子大部分想象空间，而功能多的玩具多半只有单一玩法。少量加轮换不等于只剩一件，开放材料才是关键。",
+   "question_en": "Following the principle 'the less the toy does, the more the child does,' which setup is most likely to make a young child play longer and with more focus?",
+   "options_en": [
+    "Buy more feature-rich 'educational' electronic toys, since more modes means less boredom",
+    "Keep only the child's single favorite toy and put everything else away",
+    "Put out every toy—more choice makes it easier for the child to find something they like",
+    "Put out only a few toys at a time, rotate them, and keep plenty of open-ended materials like blocks, boxes, and cloth"
+   ],
+   "explanation_en": "In experiments, toddlers with 4 toys played longer, more attentively, and more creatively than with 16—too many toys scatter attention. Open-ended materials leave most of the imagining to the child, whereas feature-heavy toys usually allow just one way to play. Fewer toys with rotation isn't the same as a single toy; the open-ended materials are the point."
+  }
+ ]
+}

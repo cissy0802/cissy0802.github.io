@@ -1,0 +1,69 @@
+{
+ "page": "/investing/life-philosophy-day30.html",
+ "title": "投资经典：价值与人生哲学 — Day 30",
+ "page_en": "/investing/life-philosophy-day30.en.html",
+ "title_en": "Investing Classics: Money & the Well-Lived Life — Day 30",
+ "src_hash": "a1091398ef7c",
+ "questions": [
+  {
+   "id": "0463b91f00",
+   "question": "按 Kahneman 与 Deaton 把幸福拆成两把尺子的结论，下面哪种说法最准确？",
+   "options": [
+    "过了基本安全线，生活评价和日常情绪幸福感都不再随收入上升",
+    "生活评价随收入对数上升，情绪幸福感过门槛后趋平",
+    "两把尺子都与收入呈线性关系，只是情绪幸福感的斜率更小",
+    "收入越高日常情绪越好，但对人生整体的评价反而下降"
+   ],
+   "answer": 1,
+   "explanation": "2010 年的研究区分了生活评价（整体打分、靠比较驱动）和情绪幸福感（当下体验）：生活评价随收入的对数持续上升，情绪幸福感在门槛后趋平，所以「高收入买得到满意度，买不到幸福感」。把两者都说成过线后不再上升，混淆了两把尺子。",
+   "question_en": "Kahneman and Deaton split well-being into two measures. Which statement best captures their conclusion?",
+   "options_en": [
+    "Beyond a basic security line, neither life evaluation nor day-to-day emotional well-being rises with income",
+    "Life evaluation keeps rising with the log of income, while emotional well-being plateaus past a threshold",
+    "Both measures rise linearly with income; emotional well-being just has a gentler slope",
+    "Higher income improves daily mood but lowers people's evaluation of their lives overall"
+   ],
+   "explanation_en": "The 2010 study separated life evaluation (an overall, comparison-driven score) from emotional well-being (moment-to-moment experience). The former keeps climbing with log income; the latter levels off past a threshold—high income buys satisfaction, not happiness. Saying both stop rising conflates the two measures."
+  },
+  {
+   "id": "f1994869a2",
+   "question": "两个人都想实现 FIRE：甲年收入很高但只存 10%，乙收入中等但存 50%。按 FIRE 的算术，谁更早达到财务自由？",
+   "options": [
+    "乙，自由所需时间主要取决于储蓄率",
+    "无法判断，要看两人的投资收益率谁更高",
+    "甲，因为收入高，绝对储蓄额和复利基数都更大",
+    "两人差不多，因为所需本金都是各自年支出的 25 倍"
+   ],
+   "answer": 0,
+   "explanation": "目标本金是年支出的约 25 倍，而储蓄率同时决定每年存多少和需要覆盖多少开支，所以时间几乎只看储蓄率：存 10% 约需 40 年，存 50% 约需 17 年。甲虽然存的绝对额大，但开支也大，目标本金跟着变大。",
+   "question_en": "Two people pursue FIRE. A earns a very high income but saves 10%; B earns a moderate income but saves 50%. By FIRE arithmetic, who reaches financial independence first?",
+   "options_en": [
+    "B, because time to independence depends mainly on the savings rate and hardly at all on absolute income",
+    "Impossible to say without knowing whose investment returns are higher",
+    "A, because the higher income means a bigger savings pile and a larger base to compound",
+    "About the same, since both need roughly 25 times their own annual spending"
+   ],
+   "explanation_en": "The target is about 25 times annual spending, and the savings rate fixes both how much you save and how much spending you must cover, so the timeline hinges almost entirely on it: about 40 years at 10%, about 17 at 50%. A saves more in dollars, but A's higher spending raises the target too."
+  },
+  {
+   "id": "90caebba36",
+   "question": "Munger 说「幸福人生的第一条规则是低期望」。按他的本意，这里的「低期望」指向什么？",
+   "options": [
+    "压抑痛苦等负面情绪，遇到不幸时不去感受它",
+    "对世界的公平和他人的回报不抱过高预期，对自己工作的标准仍然苛刻",
+    "对自己的事业目标设得低一些，避免因达不到而失望",
+    "对投资回报预期保守，宁可少赚也不冒险"
+   ],
+   "answer": 1,
+   "explanation": "Munger 的低期望针对的是「世界欠我」的期待，他对工作本身近乎苛刻；把它用到事业标准上会变成平庸的借口。避免自怜也不是压抑情绪，而是区分「感受痛苦」与「反复供养痛苦」。",
+   "question_en": "Munger said the first rule of a happy life is low expectations. What did he actually mean the low expectations to apply to?",
+   "options_en": [
+    "Painful emotions, which should be suppressed rather than felt when misfortune strikes",
+    "Expectations of fairness from the world and of returns from other people—while keeping exacting standards for one's own work",
+    "One's own career goals, set low so that falling short does not disappoint",
+    "Investment returns, accepting smaller gains to avoid taking risk"
+   ],
+   "explanation_en": "Munger's low expectations target the sense that the world owes you; he held his own work to near-ruthless standards, and applying the rule to career ambitions turns it into an excuse for mediocrity. Avoiding self-pity is not suppressing feelings either—it means feeling pain without feeding it over and over."
+  }
+ ]
+}

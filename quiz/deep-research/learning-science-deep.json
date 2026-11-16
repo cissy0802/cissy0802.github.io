@@ -1,0 +1,69 @@
+{
+ "page": "/deep-research/learning-science-deep.html",
+ "title": "学习科学的证据等级:哪些学习方法真的有效?(深入版) — BigCat Deep Research",
+ "page_en": "/deep-research/learning-science-deep.en.html",
+ "title_en": "The Evidence Hierarchy of Learning Science: What Actually Works? (Deep Dive) — BigCat Deep Research",
+ "src_hash": "4adf357e3fc8",
+ "questions": [
+  {
+   "id": "c3d27712c9",
+   "question": "一份宣传材料说「课堂测验的效应量高达 g=0.61」。按学习科学证据综述的读数方法，最先应该追问什么？",
+   "options": [
+    "它跟什么对照组比：对无活动最大，对重读缩小，对其他精细加工可能已不显著",
+    "是否出自效应量排行榜，排行榜汇总的数字最可靠",
+    "样本量是否超过一万人，样本够大数字就可信",
+    "这个数字是否高于 Cohen 的「中等效应」标准 0.5，高于就说明效果显著"
+   ],
+   "answer": 0,
+   "explanation": "同一个「练习测验有效」，对无活动或填充任务 g=0.610，对重读缩到 0.330，对概念图等精细加工只剩 0.095 且不显著；宣传永远引第一个数。此外实验室尺度不能直接换算成课堂，最著名的排行榜本身也被指出有算术级错误，所以排行榜不是保险。",
+   "question_en": "A promotional brochure claims 'classroom quizzing has an effect size of g = 0.61.' Following the learning-science review's guide to reading numbers, what should you ask first?",
+   "options_en": [
+    "What it was compared against: the number is largest versus no-activity controls, shrinks versus rereading, and may be non-significant versus other elaborative strategies",
+    "Whether it comes from an effect-size league table, since aggregated rankings are the most reliable",
+    "Whether the sample exceeded ten thousand people, since a big enough sample makes the number trustworthy",
+    "Whether the number beats Cohen's 0.5 'medium effect' benchmark, which would prove the effect is meaningful"
+   ],
+   "explanation_en": "The same 'practice quizzing works' finding gives g = 0.610 against no-activity or filler controls, 0.330 against rereading, and just 0.095—non-significant—against elaborative strategies like concept mapping; promoters always quote the first. Lab-scale numbers also don't translate directly to classrooms, and the most famous effect-size league table has been shown to contain arithmetic errors, so rankings are no safeguard."
+  },
+  {
+   "id": "a9f722e5cd",
+   "question": "在 Roediger 与 Karpicke 的经典实验中，一组反复重读、一组做回忆测试。下面哪项最准确地描述了结果？",
+   "options": [
+    "测试组在 5 分钟后和一周后都明显胜过重读组，测试的好处立竿见影",
+    "5 分钟后重读组反而略胜，一周后测试组明显更好；而且读得最多的人最自信，实际记得最少",
+    "重读组一周后记得更多，因为读的遍数多得多",
+    "两组一周后记得一样多，但测试组更自信"
+   ],
+   "answer": 1,
+   "explanation": "测试的红利要延迟才显现：5 分钟后重读组 81% 反超测试组 75%，一周后却是测试组领先。同时努力的体感与学习的实效反向，读了 14 遍的组最自信、成绩最差，所以「学习时的表现」不等于学习。",
+   "question_en": "In Roediger and Karpicke's classic experiment, one group repeatedly reread a text while another took recall tests. Which statement best describes the results?",
+   "options_en": [
+    "The testing group clearly beat the rereading group both after 5 minutes and after a week; the benefit of testing is immediate",
+    "After 5 minutes the rereading group was slightly ahead, but after a week the testing group was clearly better—and those who read the most were the most confident yet remembered the least",
+    "The rereading group remembered more after a week because they read the text many more times",
+    "Both groups remembered equally after a week, but the testing group felt more confident"
+   ],
+   "explanation_en": "The testing benefit only emerges after a delay: at 5 minutes rereaders scored 81% versus 75% for testers, but a week later the testers led. Meanwhile, felt effort and actual learning ran in opposite directions—the group that read 14 times was the most confident and did the worst—so performance during study is not the same as learning."
+  },
+  {
+   "id": "75580bc109",
+   "question": "一位老师打算把所有科目的练习都改成交错练习（不同类型题目混在一起做），包括背英语单词。按综述对交错练习的评估，这个计划哪里有问题？",
+   "options": [
+    "交错练习只在实验室有效，一进真实课堂效应就消失",
+    "没有问题，交错练习在所有材料上都有大效应，越广泛使用越好",
+    "交错靠辨别易混类别起作用，背单词反而不如分块，且更耗时",
+    "交错练习适合词汇学习，但完全不适合数学"
+   ],
+   "answer": 2,
+   "explanation": "交错在数学和类别学习上很强，甚至是少有的进课堂不缩水的案例，但它有硬边界：机制是辨别类别差异，材料之间没有可混淆性时只剩成本；meta 分析显示说明文不显著、词汇学习反向，分块更好。教师还报告交错作业更耗时。",
+   "question_en": "A teacher plans to switch practice in every subject to interleaving—mixing different problem types together—including memorizing English vocabulary. According to the review's assessment of interleaving, what is wrong with this plan?",
+   "options_en": [
+    "Interleaving only works in the lab; its effect vanishes in real classrooms",
+    "Nothing—interleaving has large effects on every kind of material, so the broader the better",
+    "Interleaving works by forcing you to discriminate between easily confused categories; for vocabulary it actually does worse than blocking, and interleaved assignments take more time",
+    "Interleaving suits vocabulary learning but is entirely unsuitable for math"
+   ],
+   "explanation_en": "Interleaving is strong for math and category learning—one of the rare techniques that doesn't shrink when moved into classrooms—but it has hard limits. It works by making learners discriminate categories, so when materials aren't confusable, only the cost remains; a meta-analysis found no significant effect for expository text and a reversal for vocabulary, where blocking wins. Teachers also report interleaved homework takes longer."
+  }
+ ]
+}

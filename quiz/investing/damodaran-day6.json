@@ -1,0 +1,69 @@
+{
+ "page": "/investing/damodaran-day6.html",
+ "title": "投资经典：Damodaran 估值 — Day 6",
+ "page_en": "/investing/damodaran-day6.en.html",
+ "title_en": "Investing Classics: Damodaran on Valuation — Day 6",
+ "src_hash": "b337c945f3ed",
+ "questions": [
+  {
+   "id": "c6494d20aa",
+   "question": "一份 DCF 模型假设某公司永续增长率为 6%，而无风险利率只有 3%，并且模型里几乎没有再投资。按 Damodaran 的估值纪律，这个模型最根本的问题是什么？",
+   "options": [
+    "折现率选得太低了，只要把 WACC 调高到 12% 左右，就能把高增长的影响抵消掉",
+    "永续增长率偏低，成长型公司通常应假设更高的终值增长",
+    "永续增长超过无风险利率意味着公司终将大过经济，且增长没配再投资",
+    "DCF 本身不适合有增长的公司，应改用同行市盈率定价"
+   ],
+   "answer": 2,
+   "explanation": "Damodaran 的两条铁律：永续增长不能长期高于无风险利率（约等于名义 GDP 增速），否则公司最终比经济还大；增长不是免费的，高增长必须配高再投资。把不一致的假设塞进模型只会得到「精确的错误」，单靠调高折现率来抵消并没有修正这种不一致。",
+   "question_en": "A DCF model assumes a company's perpetual growth rate is 6% while the risk-free rate is 3%, and builds in almost no reinvestment. By Damodaran's valuation discipline, what is the model's most fundamental flaw?",
+   "options_en": [
+    "The discount rate is too low; raising the WACC to around 12% would offset the effect of the high growth",
+    "The perpetual growth rate is too low; growth companies should assume higher terminal growth",
+    "Perpetual growth above the risk-free rate implies the company eventually outgrows the whole economy, and the growth isn't backed by matching reinvestment",
+    "DCF doesn't suit growing companies; it should be priced off peer P/E ratios instead"
+   ],
+   "explanation_en": "Damodaran's two iron rules: perpetual growth can't exceed the risk-free rate (roughly nominal GDP growth) over the long run, or the firm ends up bigger than the economy; and growth isn't free—high growth requires high reinvestment. Stuffing inconsistent assumptions into a model yields 'precise wrongness,' and cranking up the discount rate to compensate doesn't fix the inconsistency."
+  },
+  {
+   "id": "e6931c01fd",
+   "question": "分析师说：「这只股票的市盈率比同行低三成，所以被低估了。」按 Damodaran 对相对估值的看法，这个推理最大的隐患是什么？",
+   "options": [
+    "相对估值在任何情况下都不可用，应完全以 DCF 取代",
+    "市盈率忽略了现金流，只要改用市销率就能得出可靠的内在价值",
+    "倍数只是标准化的价格，若整个板块都在泡沫里，「相对便宜」毫无安全可言",
+    "同行倍数总会在短期内回归均值，所以结论是对的，只是兑现的时间点还不确定"
+   ],
+   "answer": 2,
+   "explanation": "相对估值回答的是「相对同行定价合不合理」，而非「值多少」；它把市场的集体错误一并打包进来，2000 年的 Cisco 就是「相对同行合理」却跌去八成五。但 Damodaran 并不说相对估值一无是处，它适合快速筛选，问题在于把它当成价值。",
+   "question_en": "An analyst says, 'This stock's P/E is 30% below its peers, so it's undervalued.' From Damodaran's view of relative valuation, what is the biggest hidden flaw in this reasoning?",
+   "options_en": [
+    "Relative valuation is never usable and should be replaced entirely by DCF",
+    "P/E ignores cash flow; switching to price-to-sales would yield a reliable intrinsic value",
+    "Multiples are standardized prices that assume the market prices the whole peer group correctly; if the sector is in a bubble, being 'relatively cheap' offers no safety",
+    "Peer multiples always revert to the mean in the short run, so the conclusion is right—only the timing of the payoff is uncertain"
+   ],
+   "explanation_en": "Relative valuation answers 'is it priced reasonably versus peers,' not 'what is it worth,' and it bundles in the market's collective errors—Cisco in 2000 looked 'reasonable versus peers' and still fell more than 85%. Damodaran doesn't call relative valuation useless; it's good for quick screening. The problem is mistaking it for value."
+  },
+  {
+   "id": "d94ac06850",
+   "question": "一家公司营收高速增长，但它的再投资回报率（ROIC）长期低于资本成本。按 Damodaran 的框架，应如何看待它的增长？",
+   "options": [
+    "增长总是增加价值，只是贡献比高 ROIC 公司小一些",
+    "增长与价值无关，估值时应只看当期利润",
+    "只要营收增速够高，规模效应终会让增长创造价值，不必看 ROIC",
+    "这种增长在毁灭价值，增速越快毁得越快"
+   ],
+   "answer": 3,
+   "explanation": "预期增长等于再投资率乘以 ROIC，增长要靠投入资本换来；只有 ROIC 高于资本成本，增长才增加价值，否则越快越毁价值，WeWork 就是例子。早期 ROIC 暂时为负不一定是坏事，关键是再投资最终能否转化为高于资本成本的回报，而不是相信规模会自动解决问题。",
+   "question_en": "A company's revenue is growing fast, but its return on invested capital (ROIC) has stayed below its cost of capital for years. In Damodaran's framework, how should you view this growth?",
+   "options_en": [
+    "Growth always adds value; it just contributes less than at a high-ROIC company",
+    "Growth is irrelevant to value; valuation should consider only current earnings",
+    "If revenue growth is high enough, scale will eventually make it value-creating, so ROIC doesn't matter",
+    "The growth is destroying value, and the faster it grows the faster it destroys"
+   ],
+   "explanation_en": "Expected growth equals the reinvestment rate times ROIC, so growth is bought with capital. Only when ROIC exceeds the cost of capital does growth add value; otherwise faster growth destroys value faster, as WeWork showed. A temporarily negative ROIC early on isn't necessarily bad—the question is whether reinvestment eventually earns more than the cost of capital, not faith that scale will fix it."
+  }
+ ]
+}

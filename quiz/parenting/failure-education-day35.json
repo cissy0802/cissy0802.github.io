@@ -1,0 +1,69 @@
+{
+ "page": "/parenting/failure-education-day35.html",
+ "title": "育儿与教育：失败与挫折教育 — Day 35",
+ "page_en": "/parenting/failure-education-day35.en.html",
+ "title_en": "Parenting & Education: Failure & Frustration — Day 35",
+ "src_hash": "d362d2045cde",
+ "questions": [
+  {
+   "id": "24c8e32d94",
+   "question": "孩子做题卡住，说「你直接教我吧」。按「生产性失败」的研究，哪种做法最能加深孩子的概念理解？",
+   "options": [
+    "换一道更简单的题，先保住孩子的信心",
+    "立刻完整讲解正确步骤，避免孩子形成错误思路",
+    "先让孩子自己试，错了也行，挣扎之后再讲解",
+    "让孩子独自继续挣扎，不给后续讲解，靠自己悟出来"
+   ],
+   "answer": 2,
+   "explanation": "Kapur 的研究发现，先面对超出能力的问题、允许走弯路再教学，概念理解和迁移更强：挣扎激活了已有知识，暴露了哪里不懂，让孩子对随后的讲解格外敏感。但生产性失败不是放任，挣扎之后必须有引导，否则只剩挫败。",
+   "question_en": "A child stuck on a problem says, 'Just show me how.' According to research on productive failure, which approach best deepens conceptual understanding?",
+   "options_en": [
+    "Switch to an easier problem first to protect the child's confidence",
+    "Immediately walk through the correct steps so the child doesn't form wrong ideas",
+    "Let the child attempt a method on their own—mistakes are fine—and give the explanation after the struggle",
+    "Leave the child to keep struggling alone with no follow-up instruction, so they figure it out themselves"
+   ],
+   "explanation_en": "Kapur's research found that grappling with a problem beyond one's current ability, wrong turns included, before instruction yields stronger conceptual understanding and transfer: the struggle activates prior knowledge and exposes what you don't understand, making you alert to the key points when they're taught. But productive failure isn't neglect—the struggle must be followed by guidance, or all that's left is frustration."
+  },
+  {
+   "id": "2dc36db4fc",
+   "question": "孩子拼图反复拼不上，把整盒摔了。按「耐受窗口」的思路，此时最合适的做法是什么？",
+   "options": [
+    "鼓励他「再试试，这有什么好哭的」，借机磨练意志",
+    "把拼图收走，免得孩子再受挫",
+    "把难度降回孩子能承受的范围，比如先拿开几块，让他重新尝到掌控感",
+    "故意换一盒更难的拼图，让他早点习惯挫折"
+   ],
+   "answer": 2,
+   "explanation": "挑战落在窗口内孩子才能学习，已经超出窗口时他只会崩溃，什么也学不进；这时的失控是压力超载，不是不够坚强。把难度切回窗口边缘才有学习，收走拼图剥夺了机会，人为加码的挫败只会让窗口变窄。",
+   "question_en": "A child keeps failing at a jigsaw puzzle and finally hurls the whole box. Using the 'window of tolerance' idea, what is the best response?",
+   "options_en": [
+    "Urge them to 'try again, it's nothing to cry about,' as a chance to build willpower",
+    "Put the puzzle away so the child isn't frustrated again",
+    "Bring the difficulty back within what the child can handle—say, set some pieces aside—so they regain a sense of control",
+    "Deliberately switch to a harder puzzle so they get used to setbacks sooner"
+   ],
+   "explanation_en": "Children learn when a challenge sits inside their window; once they're pushed outside it, they melt down and can't take anything in—that loss of control is stress overload, not weak character. Scaling the task back to the edge of the window restores learning. Taking the puzzle away removes the opportunity, and manufactured frustration only narrows the window."
+  },
+  {
+   "id": "9455429af5",
+   "question": "孩子系不上鞋带急得发脾气。按「脚手架」的原则，哪种回应最好？",
+   "options": [
+    "给孩子选择：要我先慢慢示范一遍，还是你再试一次、我在旁边看着",
+    "默默帮他系好，赶时间时这样最省事也最体贴",
+    "告诉他自己想办法解决，大人一概不插手、不提示，才能真正培养独立",
+    "以后都买魔术贴的鞋，避开这个难题"
+   ],
+   "answer": 0,
+   "explanation": "脚手架是「刚好够」的支持，并随能力增长逐步撤除；把主动权留给孩子，大人在场提供最少的帮助。代劳的潜台词是「你自己做不到」，与更低的胜任感相关；完全撒手则走到另一个极端，连支持都撤掉了。",
+   "question_en": "A child can't tie their shoelaces and is getting upset. Following the principle of scaffolding, which response is best?",
+   "options_en": [
+    "Offer a choice: 'Should I show you slowly once, or do you want to try again while I watch?'",
+    "Quietly tie them yourself—when time is short, that's the most efficient and kind option",
+    "Tell them to work it out alone—adults staying completely out of it, with no hints, is what builds independence",
+    "Buy Velcro shoes from now on to sidestep the problem"
+   ],
+   "explanation_en": "Scaffolding means just enough support, withdrawn step by step as ability grows; the child keeps the initiative while the adult stays present with minimal help. Doing it for them implies 'you can't,' which is linked to lower competence. Stepping away entirely goes to the opposite extreme and pulls the support away too."
+  }
+ ]
+}
