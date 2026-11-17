@@ -1,0 +1,69 @@
+{
+ "page": "/parenting/math-enlightenment-day6.html",
+ "title": "育儿与教育：数学启蒙 — Day 6",
+ "page_en": "/parenting/math-enlightenment-day6.en.html",
+ "title_en": "Parenting: Early Math — Day 6",
+ "src_hash": "2af3c3110424",
+ "questions": [
+  {
+   "id": "c752e490aa",
+   "question": "以下哪种做法最能体现「数感」的含义？",
+   "options": [
+    "能从 1 流利地数到 100，并且背熟整张九九乘法表",
+    "用闪卡每天限时练口算，不断刷新答题速度纪录",
+    "把 7×8 想成 70−14，或琢磨 7 块巧克力有几种分法",
+    "要求孩子不扳手指、直接在脑中算出 10 以内加减"
+   ],
+   "answer": 2,
+   "explanation": "数感是对数量的表征与灵活分解，而不是会数数或算得快：有数感的孩子把 7×8 拆成 70−14，没有数感的只能死记，遇到新数就卡住。用闪卡练速度对数感无帮助还加剧焦虑；手指是大脑的扩展工作记忆，禁止扳手指反而拖累发育。",
+   "question_en": "Which activity best reflects what 'number sense' means?",
+   "options_en": [
+    "Counting fluently from 1 to 100 and having the whole times table memorized",
+    "Drilling mental arithmetic with timed flashcards daily to beat speed records",
+    "Thinking of 7×8 as 70−14, or working out how many ways 7 chocolates can be split",
+    "Requiring the child to do sums under 10 in their head without using fingers"
+   ],
+   "explanation_en": "Number sense is a representation of quantity and flexible decomposition, not counting or speed: a child with it breaks 7×8 into 70−14, while one without it can only memorize and stalls on new numbers. Timed flashcards don't build number sense and add anxiety; fingers act as extended working memory, so banning them holds development back."
+  },
+  {
+   "id": "6d3d65b918",
+   "question": "一位家长自己很怕数学，一辅导作业就紧张叹气。按 Beilock 团队关于数学焦虑代际传递的研究，更好的安排是？",
+   "options": [
+    "向孩子坦白「妈妈数学也不好」，让他知道考不好也没关系",
+    "把作业辅导交给伴侣或老师，自己改用轻松的数学游戏和聊天陪孩子",
+    "每天仔细检查孩子的数学作业，确保不留任何一个错误",
+    "增加陪写作业的时间，用更多的投入和耐心来弥补自己在数学上的短板"
+   ],
+   "answer": 1,
+   "explanation": "研究发现，父母数学焦虑高的孩子进步较慢，但只在父母频繁辅导时出现；不辅导反而没事。所以把辅导交出去不是放弃，而是分工。「我数学也不好」会被孩子接收为能力天生不可改；反复检查作业传递的是「妈妈对我数学很紧张」。",
+   "question_en": "A parent who is anxious about math tenses up and sighs whenever they help with homework. Based on Beilock's team's research on how math anxiety passes between generations, what's the better arrangement?",
+   "options_en": [
+    "Tell the child 'Mom's not good at math either,' so they know a bad grade is okay",
+    "Hand homework help to a partner or teacher, and connect with the child through relaxed math games and chat instead",
+    "Check the child's math homework carefully every day so that not a single mistake slips through",
+    "Spend more time sitting with homework, making up for one's own weakness in math through extra effort"
+   ],
+   "explanation_en": "The study found that children of math-anxious parents progressed more slowly, but only when those parents helped with homework often; without the helping, there was no effect. So it's a division of labor, not giving up. 'I'm bad at math too' tells the child ability is fixed, and constant checking signals 'Mom is nervous about my math.'"
+  },
+  {
+   "id": "9f33400a09",
+   "question": "家里做「Number Talks」心算对话时，孩子给出了一个错误答案。更合适的回应是？",
+   "options": [
+    "立即告诉他正确答案，并完整示范一遍最简便的标准算法，避免错误固化",
+    "请他再讲讲自己的思路，多半讲到一半他会自己发现错在哪",
+    "换一道更简单的题，先让他答对、建立信心再继续",
+    "请算得最快、最准的哥哥姐姐来示范一下正确做法"
+   ],
+   "answer": 1,
+   "explanation": "Number Talks 的目标不是答案，而是策略的多样性和数感的灵活性，最关键的一句是「你是怎么想的」。孩子答错时不纠正，而是让他讲思路，这本身就是学习。家长心里有「标准最优解」、只让算得快的人分享，都会让其他孩子学到「我不行」。",
+   "question_en": "During a home 'Number Talk,' the child gives a wrong answer. What's the better response?",
+   "options_en": [
+    "Tell them the right answer straight away and demonstrate the simplest standard method",
+    "Ask them to walk through their thinking again; halfway through they'll usually spot the mistake themselves",
+    "Switch to an easier problem so they get one right and build confidence before continuing",
+    "Ask the older sibling who is fastest and most accurate to show the correct way"
+   ],
+   "explanation_en": "Number Talks aim at a variety of strategies and flexible number sense, not the answer; the key question is 'How did you think about it?' Rather than correcting, let the child explain, which is itself the learning. A parent with a secret 'best method,' or letting only the fast kids share, teaches everyone else 'I'm not good at this.'"
+  }
+ ]
+}

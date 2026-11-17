@@ -1,0 +1,69 @@
+{
+ "page": "/investing/bonds-rates-day39.html",
+ "title": "投资经典：债券与利率 — Day 39",
+ "page_en": "/investing/bonds-rates-day39.en.html",
+ "title_en": "Investing Classics: Bonds & Rates — Day 39",
+ "src_hash": "96d132001b0e",
+ "questions": [
+  {
+   "id": "36d485b909",
+   "question": "2020 年有人买入票息不到 1% 的百年期国债，理由是「国债不会违约，所以很安全」。按久期的框架，这个想法错在哪？",
+   "options": [
+    "超长久期让价格对利率极度敏感，即使从不违约，利率上行也可能让价格腰斩",
+    "凸性对持有人有利，利率上行时能抵消掉大部分账面损失，所以风险其实很小",
+    "国债违约风险其实被低估了，长期限让政府违约的可能性大大增加",
+    "票息越低久期越短，所以这只债的问题在于回报太低而不是风险太大"
+   ],
+   "answer": 0,
+   "explanation": "久期是价格对利率的乘数：期限越长、票息越低，久期越大。零利率不消灭风险，只是把它挪进了久期——奥地利百年债在 2022 年加息中两年腰斩。凸性虽对持有人有利，但抵不过超长久期放大的下跌。",
+   "question_en": "In 2020 someone bought a 100-year government bond with a coupon under 1%, reasoning that 'governments don't default, so it's safe.' Using the duration framework, what's wrong with this?",
+   "options_en": [
+    "The extremely long duration makes the price hypersensitive to rates, so even without any default, rising rates can halve its value",
+    "Convexity favors the holder and offsets most losses when rates rise, so the risk is actually small",
+    "Sovereign default risk is actually underrated, and a long maturity greatly raises the odds of the government defaulting",
+    "A lower coupon means a shorter duration, so this bond's problem is low return rather than high risk"
+   ],
+   "explanation_en": "Duration is the multiplier between rate moves and price: longer maturity and lower coupon mean higher duration. Zero rates don't eliminate risk; they move it into duration. Austria's century bond halved in two years during the 2022 hikes. Convexity helps the holder but cannot offset losses magnified by ultra-long duration."
+  },
+  {
+   "id": "cf30ef280a",
+   "question": "收益率曲线刚刚出现倒挂。按这个信号的正确用法，投资者应该怎么理解它？",
+   "options": [
+    "它是很少说错方向的概率信号，但到衰退的时滞可达 6–24 个月，不能当择时指令",
+    "量化宽松压低了长端利率，因此如今的倒挂信号比过去更加精确可靠",
+    "倒挂说明市场预期央行未来还会继续加息，所以应该缩短债券的久期",
+    "倒挂本身会引发衰退，所以一出现倒挂就应该尽快清仓股票、转向现金"
+   ],
+   "answer": 0,
+   "explanation": "倒挂不是衰退的原因，而是市场对「紧缩已经过头、央行将被迫掉头」的集体判断。它很少说错方向，却几乎不告诉你日期：历史上倒挂后股市常还能涨一年以上；QE 人为压低长端期限溢价，反而让信号更难解读。",
+   "question_en": "The yield curve has just inverted. Used correctly, how should an investor read this signal?",
+   "options_en": [
+    "As a probabilistic signal that rarely gets the direction wrong, but with a 6–24 month lag to recession, so it is not a timing trigger",
+    "QE has pushed down long-term yields, which makes today's inversion signal more precise and reliable than before",
+    "Inversion means the market expects the central bank to keep hiking, so you should shorten your bond duration",
+    "Inversion itself causes recessions, so as soon as it appears you should sell stocks quickly and move to cash"
+   ],
+   "explanation_en": "Inversion doesn't cause recessions; it is the market's collective judgment that tightening has gone too far and the central bank will have to reverse. It rarely gets the direction wrong but almost never gives the date: stocks have often kept rising for a year or more afterward. QE suppresses the term premium on long yields, which makes the signal harder to read, not easier."
+  },
+  {
+   "id": "3fefe38dc3",
+   "question": "关于信用利差与投资时机，哪种判断最符合 Howard Marks 的思路？",
+   "options": [
+    "利差极窄说明市场普遍认为违约风险很低，这正是配置高收益债、获取稳定收益的好时机",
+    "利差极窄时补偿最薄、最危险；利差爆炸时补偿最厚，但要看违约周期走到哪一段",
+    "利差主要由央行政策利率决定，所以只要预测对了降息时点，就能判断高收益债的买点",
+    "利差越宽说明违约风险越大，所以利差扩大时应该回避高收益债，等利差收窄后再买"
+   ],
+   "answer": 1,
+   "explanation": "利差是市场为违约、流动性和风险厌恶开出的价码，决定盈亏的是付了什么价：同一批高收益债，250 基点是陷阱，2000 基点是机会。但宽利差不是免费午餐，衰退中常伴随真实违约上升，所以要结合违约周期判断，避免「接飞刀」。",
+   "question_en": "Regarding credit spreads and timing, which judgment best fits Howard Marks's thinking?",
+   "options_en": [
+    "Very tight spreads show the market sees little default risk, which makes it a good time to add high yield for steady income",
+    "Very tight spreads offer the thinnest compensation and are most dangerous; blown-out spreads pay the most, but you must check where the default cycle stands",
+    "Spreads are set mainly by the central bank's policy rate, so calling the timing of rate cuts tells you when to buy high yield",
+    "Wider spreads mean more default risk, so avoid high-yield bonds while spreads widen and buy once they tighten again"
+   ],
+   "explanation_en": "Spreads are the price the market charges for default, illiquidity, and risk aversion, and what decides the outcome is what you paid: the same junk bonds are a trap at 250 bp and an opportunity at 2,000 bp. Wide spreads aren't a free lunch, though; in recessions they come with real defaults, so you have to read the default cycle to avoid catching a falling knife."
+  }
+ ]
+}

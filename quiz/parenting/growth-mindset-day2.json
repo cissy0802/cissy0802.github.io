@@ -1,0 +1,49 @@
+{
+ "page": "/parenting/growth-mindset-day2.html",
+ "title": "育儿与教育：成长型心态 — Day 2",
+ "page_en": "/parenting/growth-mindset-day2.en.html",
+ "title_en": "Parenting: Growth Mindset — Day 2",
+ "src_hash": "62a59f1c12fa",
+ "questions": [
+  {
+   "id": "6daf5243d8",
+   "question": "孩子拿来一幅刚画好的画。按「表扬过程而非天赋」的建议，哪种说法最好？",
+   "options": [
+    "「画得真像，比班上其他小朋友画得都要好看！」",
+    "「不管画得怎么样，你都好努力，妈妈最喜欢了！」",
+    "「哇，你真是太有艺术天赋了，长大以后肯定能当个了不起的画家！」",
+    "「我注意到你在天空那里换了三种蓝色，是你自己试出来的吗？」"
+   ],
+   "answer": 3,
+   "explanation": "表扬过程要让孩子注意到自己做了什么具体决策，把成功归因于可控的策略。夸天赋会把自我价值和标签绑定；空洞的「你好努力」不真实、不具体，孩子反而觉得假；横向比较则把注意力引向结果和排名。",
+   "question_en": "A child brings over a picture they just finished. Following the advice to praise process rather than talent, which response is best?",
+   "options_en": [
+    "'It looks so real, way better than anyone else's in your class!'",
+    "'No matter how it turned out, you worked so hard, and I love it!'",
+    "'Wow, you're so artistically gifted, you'll definitely be a painter someday!'",
+    "'I noticed you used three different blues in the sky. Did you figure that out yourself?'"
+   ],
+   "explanation_en": "Process praise helps the child notice the specific choices they made and attributes success to controllable strategies. Praising talent ties self-worth to a label; empty 'you worked so hard' is neither true nor specific and comes across as fake; comparing with classmates points attention at results and rank."
+  },
+  {
+   "id": "f0241f768e",
+   "question": "以下哪种做法属于对「成长型心态」的误用？",
+   "options": [
+    "把它当成「不许放弃」的工具，要求孩子无论什么事都必须坚持到底",
+    "孩子比赛输了先抱一抱共情，等情绪平稳后再一起复盘是哪段出了问题",
+    "放学不问考了几分，而是问「今天遇到的最难一道题，你怎么搞定的？」",
+    "在饭桌上讲一件自己工作中没做好的事，说说学到了什么、下次怎么试"
+   ],
+   "answer": 0,
+   "explanation": "真正的成长型心态包括判断一件事是否值得继续投入的智慧，把它变成「不许放弃」的强迫是误用。用过程性问题代替分数、先共情再复盘、父母示范自己如何从失败中学习，都是文中推荐的做法。",
+   "question_en": "Which of the following is a misuse of 'growth mindset'?",
+   "options_en": [
+    "Using it as a 'never quit' rule and insisting the child must stick with everything to the end",
+    "After the child loses a match, hugging them first and reviewing what went wrong once they've calmed down",
+    "After school, instead of asking for the score, asking 'What was the hardest problem today, and how did you crack it?'",
+    "Telling the family at dinner about something you didn't do well at work, what you learned, and what you'll try next"
+   ],
+   "explanation_en": "A genuine growth mindset includes the judgment to decide whether something is worth continuing; turning it into a compulsory 'never give up' is a misuse. Replacing scores with process questions, empathizing before reviewing, and parents modeling how they learn from their own failures are all practices the article recommends."
+  }
+ ]
+}

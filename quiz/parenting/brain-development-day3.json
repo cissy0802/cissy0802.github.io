@@ -1,0 +1,69 @@
+{
+ "page": "/parenting/brain-development-day3.html",
+ "title": "育儿与教育：大脑发育与儿童行为 — Day 3",
+ "page_en": "/parenting/brain-development-day3.en.html",
+ "title_en": "Parenting: Brain Development & Children's Behavior — Day 3",
+ "src_hash": "c5bc23d710ee",
+ "questions": [
+  {
+   "id": "b91458d8b9",
+   "question": "7 岁孩子写作业写到一半，把铅笔摔出去喊「我不写了！」按 Siegel 的上脑/下脑模型，家长第一步该做什么？",
+   "options": [
+    "要求他先把铅笔捡回来并道歉，然后再讨论作业的问题",
+    "让他自己冷静，大人先离开房间，暂时不理他的情绪",
+    "先连接：说出他的情绪、坐到旁边陪着，等平静了再问卡在哪一步",
+    "立刻讲清作业的重要性，提醒他时间已经不多了、必须马上把它写完"
+   ],
+   "answer": 2,
+   "explanation": "情绪爆发时压力激素会生理性削弱前额叶的工作记忆和抑制控制，上脑「不在家」，这时讲道理或要求道歉都是要求一个无法响应的功能。规则是先连接、再引导，顺序倒了话术就失灵；连接需要陪伴，不是把孩子丢给他自己。",
+   "question_en": "Halfway through homework, a 7-year-old throws their pencil and shouts, 'I'm not doing this!' Under Siegel's upstairs/downstairs brain model, what should the parent do first?",
+   "options_en": [
+    "Have them pick up the pencil and apologize first, then talk about the homework",
+    "Let them calm down alone; the adult leaves the room and ignores the outburst for now",
+    "Connect first: name the feeling and sit with them, then once they've calmed, ask which step they're stuck on",
+    "Immediately explain why homework matters and remind them time is short and it must be finished now"
+   ],
+   "explanation_en": "During a meltdown, stress hormones physiologically impair the prefrontal cortex's working memory and inhibitory control; the upstairs brain is 'not home,' so reasoning or demanding an apology asks for a function that can't respond. The rule is connect before redirect, and reversing the order breaks everything. Connection means presence, not leaving the child alone."
+  },
+  {
+   "id": "547ffc8dba",
+   "question": "5 岁孩子在玩具店里因为不给买而大哭。家长蹲下来说「你真的很想要这个，对吧？很难过」，孩子渐渐平静。接下来关于买不买，哪种做法最符合文章的主张？",
+   "options": [
+    "趁他刚平静，把不买的五条理由完整讲清楚，让他心服口服",
+    "共情不等于妥协：承认他很想要，同时仍然坚持今天不买",
+    "既然已经共情了，就该满足一部分要求，比如买个小一点的",
+    "孩子前额叶还没发育好，这种时候适当迁就他是合理的"
+   ],
+   "answer": 1,
+   "explanation": "把「连接」误解成「妥协」是常见陷阱：可以接住他的难过，仍然坚持原则。孩子情绪刚落时 PFC 仍听不进长篇道理，真正训练前额叶的是回家冷静后聊「下次怎么办」。知道前额叶没长好也不等于放任，发育不等于不教。",
+   "question_en": "A 5-year-old sobs in a toy store because you won't buy something. You crouch down and say, 'You really want this, don't you? It's so hard,' and the child gradually calms. Now, about buying it, which approach best fits the article?",
+   "options_en": [
+    "While they've just calmed down, lay out all five reasons for not buying so they're fully convinced",
+    "Empathy isn't giving in: acknowledge how much they want it while still holding firm that you're not buying it today",
+    "Having empathized, you should meet them partway, for example by buying something smaller",
+    "Their prefrontal cortex isn't developed yet, so it's reasonable to give in a bit at moments like this"
+   ],
+   "explanation_en": "Mistaking connection for concession is a common trap: you can hold their sadness and still keep the limit. Right after a meltdown the PFC still can't take in a lecture; the real prefrontal training happens later at home, talking through what to do next time. Knowing the PFC is immature doesn't mean anything goes; development isn't a reason not to teach."
+  },
+  {
+   "id": "637ac542f2",
+   "question": "父母了解到前额叶是大脑最晚成熟的区域之后，哪种推论最合理？",
+   "options": [
+    "反复充当孩子的「外接前额叶」，并在他冷静的窗口里练习调节，直到他自己长出来",
+    "前额叶成熟要等到成年，所以对 10 岁和 4 岁孩子应该采用同样的期待",
+    "既然硬件还没长好，行为问题可以先不管，等孩子长大后自然就会好转",
+    "最好趁孩子情绪爆发、印象最深刻的时候讲道理，这样教育效果最好"
+   ],
+   "answer": 0,
+   "explanation": "共同调节先于自我调节：父母的工作不是惩罚未装好的硬件，而是充当外接 PFC，并在冷静窗口反复练习。因此放任不管是误用；情绪高峰讲道理是对牛弹琴；过度低估大孩子的能力也是另一种错，10 岁和 4 岁能做的事差很多。",
+   "question_en": "Once parents learn that the prefrontal cortex is the last brain region to mature, which conclusion is most reasonable?",
+   "options_en": [
+    "Repeatedly act as the child's 'external prefrontal cortex' and practice regulation in calm windows until they grow their own",
+    "Since the PFC matures only in adulthood, a 10-year-old and a 4-year-old should be held to the same expectations",
+    "Since the hardware isn't finished, behavior problems can be left alone and will improve on their own as the child grows",
+    "Reason with the child at the peak of an outburst, when the impression is strongest and the lesson sticks best"
+   ],
+   "explanation_en": "Co-regulation precedes self-regulation: the parent's job is not to punish unfinished hardware but to serve as an external PFC and practice in calm windows. So leaving it alone is a misreading; reasoning at the peak of a meltdown falls on deaf ears; and underestimating older children is its own mistake, since a 10-year-old can do far more than a 4-year-old."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/investing/value-investing-day4.html",
+ "title": "投资经典：价值投资基础 — Day 4",
+ "page_en": "/investing/value-investing-day4.en.html",
+ "title_en": "Investing Classics: Value Investing Foundations — Day 4",
+ "src_hash": "bc6c00d25909",
+ "questions": [
+  {
+   "id": "5cd2373b5b",
+   "question": "关于「安全边际」，哪种理解最符合 Graham 的本意？",
+   "options": [
+    "它是给估值误差和意外冲击留的缓冲，所需折扣随资产质量和确定性而变",
+    "低市盈率本身就构成安全边际，市盈率越低的股票就越安全",
+    "它是超额收益的主要来源，安全边际留得越大，最终赚得就越多",
+    "它是一个通用的折扣标准，比如不论什么公司统一按内在价值的七折买入就足够安全"
+   ],
+   "answer": 0,
+   "explanation": "安全边际像桥的承重设计：剩下的容量是给暴雨、地震、生锈准备的，不是让你超载多赚一点。它没有固定数字——稳定消费品公司约 25% 可能够，周期强、债务高的要 50% 以上。低 PE 可能反映真实风险，而能力圈之外的「便宜」只是无知。",
+   "question_en": "Which understanding of 'margin of safety' best matches Graham's intent?",
+   "options_en": [
+    "A buffer against valuation error and unexpected shocks, with the required discount varying by asset quality and certainty",
+    "A low P/E is itself a margin of safety, so the lower the P/E, the safer the stock",
+    "The main source of excess returns: the bigger the margin you leave, the more you end up making",
+    "A universal discount rule, such as always buying at 70% of intrinsic value, which is safe enough"
+   ],
+   "explanation_en": "A margin of safety is like a bridge's load rating: the spare capacity is for storms, earthquakes, and rust, not for overloading to earn a bit more. There's no fixed number: perhaps 25% for a stable consumer company, 50% or more for a cyclical, indebted one. A low P/E may reflect real risk, and 'cheap' outside your circle of competence is just ignorance."
+  },
+  {
+   "id": "d7ada5133e",
+   "question": "以极低的价格买下一家处于结构性衰退行业的公司（如 Buffett 早年买入的纺织厂），为什么仍可能是一笔坏投资？",
+   "options": [
+    "买价越低，市场就越难给出合理的重估，股价因此会长期停留在低位",
+    "时间是烂生意的敌人：公司在持续摧毁价值，买入时的折扣会被一年年吃掉",
+    "烟蒂股的换手率高、税务效率差，频繁交易的成本最终会抵消掉买入时的折扣",
+    "低价股的流动性普遍较差，等到真正需要卖出时很难按清算价成交"
+   ],
+   "answer": 1,
+   "explanation": "烟蒂股的回报封顶于「清算价 / 买入价 − 1」，前提是价值能被兑现；而在结构性衰退的行业里，公司本身在持续摧毁价值，再便宜的价格也救不了。Berkshire 纺织业务从 1962 年持有到 1985 年关闭亏损累累，与 See's Candies 的复利形成对照。",
+   "question_en": "Why can buying a company in a structurally declining industry at a rock-bottom price (like the textile mill Buffett bought early on) still be a bad investment?",
+   "options_en": [
+    "The lower the price paid, the harder it is for the market to re-rate the stock fairly, so it stays low for a long time",
+    "Time is the enemy of a poor business: it keeps destroying value, so the purchase discount gets eaten away year after year",
+    "Cigar butts involve high turnover and poor tax efficiency, and trading costs end up cancelling the discount",
+    "Cheap stocks are generally illiquid, so when you need to sell it's hard to get the liquidation price"
+   ],
+   "explanation_en": "A cigar butt's return is capped at liquidation value over purchase price minus one, and that assumes the value can be realized. In a structurally declining industry the business keeps destroying value, so no price is low enough. Berkshire's textile operation lost money from 1962 until it closed in 1985, in stark contrast to See's Candies' compounding."
+  },
+  {
+   "id": "4c22ea3491",
+   "question": "一家公司财报很漂亮：低市盈率、高股息、积极回购，但它所在的行业正被新技术颠覆、客户行为在变。按定性 × 定量矩阵，它最可能属于哪一类？",
+   "options": [
+    "价值毁灭",
+    "泡沫陷阱",
+    "价值陷阱",
+    "复利甜蜜区"
+   ],
+   "answer": 2,
+   "explanation": "定量强（数字好看）而定性弱（行业在衰退）就是价值陷阱，文中以 2014 年的 IBM 为例：Buffett 看到了财报数字的延续性，却没看到客户行为的变化。定性强而估值透支是泡沫陷阱，两者都强才是复利甜蜜区，两者都弱是价值毁灭。",
+   "question_en": "A company's financials look great: low P/E, high dividend, aggressive buybacks. But its industry is being disrupted by new technology and customer behavior is shifting. On the qualitative × quantitative matrix, where does it most likely fall?",
+   "options_en": [
+    "Value destruction",
+    "Bubble trap",
+    "Value trap",
+    "Compounding sweet spot"
+   ],
+   "explanation_en": "Strong quantitative data with weak qualitative fundamentals (a declining industry) is a value trap; the article cites IBM around 2014, where Buffett saw the continuity of the numbers but missed the change in customer behavior. Strong qualitative with an overstretched valuation is a bubble trap; strong on both is the compounding sweet spot; weak on both is value destruction."
+  }
+ ]
+}

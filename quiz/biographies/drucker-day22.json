@@ -1,0 +1,69 @@
+{
+ "page": "/biographies/drucker-day22.html",
+ "title": "人物传记 · Peter Drucker · Day 22",
+ "page_en": "/biographies/drucker-day22.en.html",
+ "title_en": "Biography · Peter Drucker · Day 22",
+ "src_hash": "089bb08b9192",
+ "questions": [
+  {
+   "id": "1bcbb4b0c6",
+   "question": "德鲁克的「反馈分析」(feedback analysis) 具体是怎么做的？",
+   "options": [
+    "定期向客户收集满意度反馈，用这些数据来校正公司的产品和服务方向",
+    "每做一个重要决定后，立即请同事和下属评议，根据他们的反馈及时修正方向和做法",
+    "每年年底回顾所有重大决定，总结做对了的经验，并在来年继续强化",
+    "重大决定前写下预期，9–12 个月后对照结果，看清自己哪类判断一贯准或错"
+   ],
+   "answer": 3,
+   "explanation": "反馈分析的关键是事先把预期写下、事后对账，把直觉变成可校准的能力——他说这方法学自耶稣会和加尔文教派。它对照的是自己的预期与结果，不是别人的评议，也不只总结成功：恰恰要看清自己在哪类判断上一贯失误。",
+   "question_en": "How exactly does Drucker's 'feedback analysis' work?",
+   "options_en": [
+    "Regularly collect customer satisfaction feedback and use the data to steer the company's products and services",
+    "After each decision, immediately ask colleagues and reports to review it, and adjust course based on their feedback",
+    "At year-end, review all major decisions, sum up what went right, and reinforce it the following year",
+    "Write down what you expect when making a key decision, then compare with actual results 9–12 months later to see which kinds of judgment you consistently get right or wrong"
+   ],
+   "explanation_en": "The point is to record expectations in advance and reconcile them afterward, turning intuition into a calibratable skill; he said he learned it from the Jesuits and Calvinists. It compares your own expectations with outcomes, not others' opinions, and it doesn't just collect successes: the aim is to see where your judgment reliably fails."
+  },
+  {
+   "id": "6aa96d2f00",
+   "question": "德鲁克问刚接掌通用电气的韦尔奇：「如果这桩业务你今天还没进入，你会进入吗？」这个例子最能说明他做顾问的什么特点？",
+   "options": [
+    "从员工和一线工人的感受出发，帮管理层发现组织内部的士气问题",
+    "只提问、不给答案，用一个问对的问题逼对方重新审视自己的业务假设",
+    "依靠大量行业数据和详尽的财务分析，为客户直接给出一份明确的业务重组方案",
+    "主张企业应专注核心业务，并直接建议客户退出所有亏损的部门"
+   ],
+   "answer": 1,
+   "explanation": "德鲁克说他作为顾问最大的本事是「无知，然后问几个问题」；这一问直接催生了韦尔奇「数一数二，否则退出」的战略，但战略是韦尔奇自己得出的。这呼应他的金句：真正危险的不是错误的答案，而是问错了问题。",
+   "question_en": "Drucker asked Jack Welch, newly in charge of GE: 'If you weren't already in this business, would you enter it today?' What does this best illustrate about his consulting style?",
+   "options_en": [
+    "He started from employees' and line workers' experience to help management uncover morale problems inside the organization",
+    "He asked rather than answered, using one well-chosen question to make the client re-examine their own business assumptions",
+    "He relied on extensive industry data and financial analysis to hand clients a clear restructuring plan",
+    "He held that firms should focus on core businesses and directly advised clients to exit every loss-making division"
+   ],
+   "explanation_en": "Drucker said his greatest strength as a consultant was 'to be ignorant and ask a few questions.' That one question led to Welch's 'number one or two, or get out' strategy, but Welch reached the strategy himself. It echoes his line that the truly dangerous thing is not the wrong answer but asking the wrong question."
+  },
+  {
+   "id": "1c5339bb53",
+   "question": "德鲁克 1954 年提出的「目标管理」(MBO) 后来遭遇了什么？",
+   "options": [
+    "本意是让员工参与设定目标、激发自主，却被异化成冷冰冰的考核工具",
+    "因为缺乏可量化的指标，在企业里推行困难，很快就被大多数公司放弃",
+    "被戴明吸收进全面质量管理体系，成为日本企业品质革命的核心工具",
+    "本意是严格考核绩效，后来被批评过于宽松、难以真正约束员工行为"
+   ],
+   "answer": 0,
+   "explanation": "MBO 原意是参与和自主，但在企业里被庸俗化为考核工具，戴明猛烈抨击它制造恐惧、扼杀协作，德鲁克晚年也淡化它。这正是坎贝尔定律：目标本是对话的起点，一挂上奖惩就成了被博弈的数字。",
+   "question_en": "What became of 'management by objectives' (MBO), which Drucker introduced in 1954?",
+   "options_en": [
+    "Meant to have employees help set goals and spark autonomy, it was turned into a cold appraisal tool",
+    "Lacking quantifiable metrics, it proved hard to implement and most companies soon dropped it",
+    "Deming folded it into total quality management, making it a core tool of Japan's quality revolution",
+    "Meant for strict performance appraisal, it was later criticized as too lax to really constrain behavior"
+   ],
+   "explanation_en": "MBO was meant to be participatory and autonomy-building, but companies vulgarized it into an appraisal tool. Deming attacked it for breeding fear and killing cooperation, and Drucker himself played it down later. It's Campbell's law in action: a goal meant to open a conversation becomes a number to be gamed once rewards and penalties are attached."
+  }
+ ]
+}

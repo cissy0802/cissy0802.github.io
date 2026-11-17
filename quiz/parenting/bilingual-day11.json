@@ -1,0 +1,69 @@
+{
+ "page": "/parenting/bilingual-day11.html",
+ "title": "育儿与教育：双语与多语养育 — Day 11",
+ "page_en": "/parenting/bilingual-day11.en.html",
+ "title_en": "Parenting & Education: Bilingual Parenting — Day 11",
+ "src_hash": "85d86feb369a",
+ "questions": [
+  {
+   "id": "912ab9a98c",
+   "question": "两个孩子学英文：甲 3 岁开始、5 岁中断；乙 7 岁开始、此后十年每天坚持互动输入。按语言习得的大样本证据，哪种判断最站得住？",
+   "options": [
+    "乙更可能更流利，预测最终流利度的是累积输入小时数而非起点",
+    "两人差不多，因为语法水平主要由天赋决定，与输入关系不大",
+    "甲更可能更流利，因为 7 岁前的语言关键期窗口一过就基本关闭了",
+    "甲口音更好、语法也更好，早开始在各方面都有不可逆的优势"
+   ],
+   "answer": 0,
+   "explanation": "Hartshorne 等对 67 万人的研究显示语法窗口到约 17 岁才显著关闭，起点和持续输入是两个变量，真正预测流利度的是累积小时数。「7 岁前一刀切」是对关键期假说的通俗化误读；口音窗口确实更早，但不等于全面不可逆。",
+   "question_en": "Child A starts English at 3 and stops at 5; Child B starts at 7 and keeps up daily interactive input for ten years. Based on large-sample evidence on language acquisition, which judgment holds up best?",
+   "options_en": [
+    "B is likely more fluent: cumulative hours of input, not the starting age, predict eventual fluency",
+    "They end up about the same, since grammar depends mainly on talent rather than input",
+    "A is likely more fluent, because the critical window essentially closes by age 7",
+    "A will have better accent and grammar, since an early start gives irreversible advantages across the board"
+   ],
+   "explanation_en": "Hartshorne et al.'s study of 670,000 people found the grammar-learning window doesn't close sharply until around 17. Starting early and sustained input are separate variables, and cumulative hours are what predict fluency. The 'before age 7 or never' idea is a popularized misreading of the critical-period hypothesis; the accent window does close earlier, but that is not a blanket irreversibility."
+  },
+  {
+   "id": "dbd814f5cd",
+   "question": "一个家庭严格执行「一人一语」(OPOL)，孩子却越来越只说多数语言、拒绝弱势语言。按双语养育的研究，最该调整的是什么？",
+   "options": [
+    "尊重孩子的选择先暂停弱势语言，等他大一点、自己有兴趣了再重新开始",
+    "保持平日不变，改为周末集中说弱势语言，用整块时间弥补平时的不足",
+    "更严格地执行 OPOL，孩子一混用两种语言就立即纠正，避免语言混乱",
+    "提高弱势语言占孩子清醒时间的比例，并把它绑在共读、和祖辈视频这类高情感价值的活动上"
+   ],
+   "answer": 3,
+   "explanation": "De Houwer 的调查显示 OPOL 下仍有约四分之一孩子只说多数语言；关键不在方法而在弱势语言的累积时长（低于约 20% 难以主动产出），并要刻意保护。混语是双语大脑的正常现象，不必紧张纠正；撤退会让弱势语言迅速消退，周末式策略输入量不够。",
+   "question_en": "A family strictly follows 'one parent, one language' (OPOL), yet the child increasingly speaks only the majority language and refuses the minority one. According to bilingual-parenting research, what most needs to change?",
+   "options_en": [
+    "Respect the child's choice and pause the minority language until they are older and interested on their own",
+    "Keep weekdays as they are and concentrate the minority language on weekends to make up for the shortfall",
+    "Enforce OPOL more strictly and correct the child immediately whenever they mix languages, to avoid confusion",
+    "Raise the minority language's share of the child's waking hours and tie it to emotionally rich activities like shared reading or video calls with grandparents"
+   ],
+   "explanation_en": "De Houwer found about a quarter of children in OPOL families still end up speaking only the majority language. What matters is cumulative exposure to the minority language (below roughly 20% it rarely becomes productive), and it has to be deliberately protected. Code-switching is normal for a bilingual brain; backing off lets the language fade fast; weekend-only strategies don't supply enough input."
+  },
+  {
+   "id": "85525a70f3",
+   "question": "关于让孩子坚持双语，哪种动机在证据上最稳、也最能长期维系孩子的意愿？",
+   "options": [
+    "双语能提升孩子的执行功能，这一优势已被多项大样本元分析反复证实",
+    "双语能提高孩子的智商，让他在学业竞争中跑得更快",
+    "双语让孩子能和只会这门语言的家人深谈，维系家庭与文化的连接",
+    "双语是未来升学和求职的硬通货，越早布局回报越高"
+   ],
+   "answer": 2,
+   "explanation": "「双语带来执行功能优势」在 Paap 等的大样本元分析中难以复制，拿它做卖点很不稳；而 Wong Fillmore 发现移民孩子失去母语后无法与祖辈深谈，语言流失就是关系流失。具体、不可替代的关系场景才是孩子主动学习的内在锚点。",
+   "question_en": "When it comes to keeping a child bilingual, which motivation is best supported by evidence and most likely to sustain the child's willingness over time?",
+   "options_en": [
+    "Improved executive function, an advantage repeatedly confirmed by large meta-analyses",
+    "A higher IQ that helps the child get ahead in academic competition",
+    "Being able to talk deeply with family members who only speak that language, keeping the family and cultural connection alive",
+    "A hard currency for future admissions and jobs, with higher payoff the earlier you invest"
+   ],
+   "explanation_en": "The claimed executive-function advantage has been hard to replicate in large meta-analyses such as Paap et al., so it is a shaky selling point. Wong Fillmore, by contrast, showed that immigrant children who lose their heritage language can no longer talk deeply with grandparents: language loss is relationship loss. A concrete, irreplaceable relationship is what anchors a child's own motivation."
+  }
+ ]
+}

@@ -1542,6 +1542,140 @@
     "a9f722e5cd",
     "75580bc109"
    ]
+  },
+  "/parenting/bilingual-day11.html": {
+   "t": "育儿与教育：双语与多语养育 — Day 11",
+   "f": "parenting/bilingual-day11.json",
+   "q": [
+    "912ab9a98c",
+    "dbd814f5cd",
+    "85525a70f3"
+   ]
+  },
+  "/parenting/introvert-extrovert-day41.html": {
+   "t": "育儿与教育：内向与外向儿童 — Day 41",
+   "f": "parenting/introvert-extrovert-day41.json",
+   "q": [
+    "55bf9beaf5",
+    "5a02556925",
+    "a3f7b09beb"
+   ]
+  },
+  "/investing/commodities-cycle-day41.html": {
+   "t": "投资经典：大宗商品周期 — Day 41",
+   "f": "investing/commodities-cycle-day41.json",
+   "q": [
+    "efdb2bc273",
+    "8efb64c23f",
+    "d18f94e219"
+   ]
+  },
+  "/investing/buffett-day1.html": {
+   "t": "投资经典：Buffett 核心原则 — Day 1",
+   "f": "investing/buffett-day1.json",
+   "q": [
+    "ff74f82aea",
+    "2a58fd5e1d",
+    "8b5905322f"
+   ]
+  },
+  "/investing/bonds-rates-day39.html": {
+   "t": "投资经典：债券与利率 — Day 39",
+   "f": "investing/bonds-rates-day39.json",
+   "q": [
+    "36d485b909",
+    "cf30ef280a",
+    "3fefe38dc3"
+   ]
+  },
+  "/parenting/social-skills-day26.html": {
+   "t": "育儿与教育：孩子的社交 — Day 26",
+   "f": "parenting/social-skills-day26.json",
+   "q": [
+    "81fbb191bc",
+    "17a5afb9e8",
+    "2dca35db2c"
+   ]
+  },
+  "/investing/value-investing-day4.html": {
+   "t": "投资经典：价值投资基础 — Day 4",
+   "f": "investing/value-investing-day4.json",
+   "q": [
+    "5cd2373b5b",
+    "d7ada5133e",
+    "4c22ea3491"
+   ]
+  },
+  "/parenting/reading-enlightenment-day7.html": {
+   "t": "育儿与教育：阅读启蒙 — Day 7",
+   "f": "parenting/reading-enlightenment-day7.json",
+   "q": [
+    "0b4c5840d0",
+    "0f00ae5c37",
+    "f5fcd0634b"
+   ]
+  },
+  "/parenting/math-enlightenment-day6.html": {
+   "t": "育儿与教育：数学启蒙 — Day 6",
+   "f": "parenting/math-enlightenment-day6.json",
+   "q": [
+    "c752e490aa",
+    "6d3d65b918",
+    "9f33400a09"
+   ]
+  },
+  "/investing/munger-day2.html": {
+   "t": "投资经典：Munger 思维 — Day 2",
+   "f": "investing/munger-day2.json",
+   "q": [
+    "9a80f1f5c7",
+    "59a7616f6c",
+    "4c79537896"
+   ]
+  },
+  "/parenting/critical-thinking-day36.html": {
+   "t": "育儿与教育：批判性思维启蒙 — Day 36",
+   "f": "parenting/critical-thinking-day36.json",
+   "q": [
+    "77dcd78101",
+    "6223e08529",
+    "06a934a699"
+   ]
+  },
+  "/parenting/brain-development-day3.html": {
+   "t": "育儿与教育：大脑发育与儿童行为 — Day 3",
+   "f": "parenting/brain-development-day3.json",
+   "q": [
+    "b91458d8b9",
+    "547ffc8dba",
+    "637ac542f2"
+   ]
+  },
+  "/parenting/growth-mindset-day2.html": {
+   "t": "育儿与教育：成长型心态 — Day 2",
+   "f": "parenting/growth-mindset-day2.json",
+   "q": [
+    "6daf5243d8",
+    "f0241f768e"
+   ]
+  },
+  "/biographies/drucker-day22.html": {
+   "t": "人物传记 · Peter Drucker · Day 22",
+   "f": "biographies/drucker-day22.json",
+   "q": [
+    "1bcbb4b0c6",
+    "6aa96d2f00",
+    "1c5339bb53"
+   ]
+  },
+  "/talk-deepread/de-waal-moral-animals-talk31.html": {
+   "t": "Frans de Waal ·《动物的道德行为》— 被扔回来的黄瓜：道德会不会比人类更老",
+   "f": "talk-deepread/de-waal-moral-animals-talk31.json",
+   "q": [
+    "a51f881065",
+    "8e4a0cfc0c",
+    "c6d44dd169"
+   ]
   }
  },
  "aliases": {

@@ -1,0 +1,69 @@
+{
+ "page": "/parenting/social-skills-day26.html",
+ "title": "育儿与教育：孩子的社交 — Day 26",
+ "page_en": "/parenting/social-skills-day26.en.html",
+ "title_en": "Parenting & Education: Your Child's Social World — Day 26",
+ "src_hash": "3517a48f69f0",
+ "questions": [
+  {
+   "id": "81fbb191bc",
+   "question": "5 岁的孩子回家说：「她今天不跟我玩了，她再也不是我朋友了。」按友谊发展阶段的研究，家长该怎么理解这句话？",
+   "options": [
+    "这说明对方在故意排挤他，家长应该尽快联系对方家长了解情况",
+    "这说明孩子缺乏同理心、太容易翻脸，需要尽早教他懂得珍惜和忠诚",
+    "这说明孩子的朋友太少、太依赖一个人，应该鼓励他去多交几个朋友",
+    "这符合低龄孩子「朋友＝此刻一起玩的人」的阶段特点，先接住失落，不必用成人的忠诚标准衡量"
+   ],
+   "answer": 3,
+   "explanation": "Selman 的友谊阶段建立在角色采择和心智理论的成熟上：低龄孩子「翻脸像翻书」不是无情，而是还没长出那块能力。用「真朋友应该不离不弃」要求他是发展错配；先接住情绪、再轻轻松开「友谊必须永恒」的执念。研究也显示深度比广度更预测幸福感。",
+   "question_en": "A 5-year-old comes home saying, 'She wouldn't play with me today, so she's not my friend anymore.' Based on research on stages of friendship, how should a parent read this?",
+   "options_en": [
+    "It shows the other child is deliberately excluding them, so the parent should contact that child's parents soon",
+    "It shows the child lacks empathy and turns on people too easily, so they should be taught to value loyalty early",
+    "It shows the child has too few friends and relies on one person, so they should be encouraged to make more",
+    "It fits a young child's stage where 'a friend is whoever plays with me right now'; acknowledge the disappointment without applying adult standards of loyalty"
+   ],
+   "explanation_en": "Selman's stages rest on the maturing of perspective-taking and theory of mind. A young child's quick 'not friends anymore' isn't coldness; the capacity just isn't there yet. Holding them to 'true friends never leave' is a developmental mismatch. Acknowledge the feeling first, then gently loosen the idea that friendship must be permanent. Depth of friendship, not breadth, better predicts well-being."
+  },
+  {
+   "id": "17a5afb9e8",
+   "question": "孩子说同学今天抢了他的玩具。问下来只发生过这一次，他喊「停」之后对方就停了。按区分冲突与欺凌的思路，家长更合适的做法是？",
+   "options": [
+    "教孩子下次直接打回去，让对方知道他不好惹、确立边界",
+    "把它当作普通冲突，陪孩子复盘，让他练习自己处理",
+    "让孩子从此远离这位同学，尽量减少和他的接触机会",
+    "立即去找老师和对方家长，防止事态进一步升级成欺凌"
+   ],
+   "answer": 1,
+   "explanation": "Olweus 的欺凌定义有三个特征：重复、蓄意、力量不对等。一次性、喊停就停的摩擦是普通冲突，应留给孩子练习解决；把它当欺凌会剥夺练习机会，家长越级出头还可能让孩子更孤立。「打回去」可以是最后手段，但不该是默认。",
+   "question_en": "A child says a classmate grabbed his toy today. On asking, it happened only this once, and the classmate stopped when he said 'stop.' Following the idea of telling conflict from bullying, what is the better response?",
+   "options_en": [
+    "Teach him to hit back next time so the other child knows he isn't an easy target and boundaries are set",
+    "Treat it as an ordinary conflict, go over what happened with the child, and let him practice handling it himself",
+    "Have him stay away from that classmate from now on and minimize contact",
+    "Go to the teacher and the other child's parents right away to stop it from escalating into bullying"
+   ],
+   "explanation_en": "Olweus defines bullying by three features: repeated, intentional, and an imbalance of power. A one-off incident that stopped on request is ordinary conflict, best left for the child to practice resolving. Treating it as bullying takes away that practice, and a parent stepping in over the child's head can leave him more isolated. Hitting back may be a last resort, never the default."
+  },
+  {
+   "id": "2dca35db2c",
+   "question": "孩子想加入别人的游戏，却总不敢上前。按「友谊教练」的研究，家长最有效的帮助是什么？",
+   "options": [
+    "教一套具体脚本：先旁观、找停顿问「我可以一起吗」，被拒时说「下一轮算我一个」",
+    "家长直接出面去跟那几个孩子说好，让他们先带上自己的孩子一起玩",
+    "鼓励他大方一点、主动一些，告诉他别人其实都很欢迎新朋友加入",
+    "多带他去人多的大型聚会和活动，让他在大群体里多见识、多锻炼"
+   ],
+   "answer": 0,
+   "explanation": "社交能力是一组可拆解、可练习的技能，孩子吃力多半是缺技能而非性格不好。「大方一点」是抽象词，孩子不知道具体做什么；替他社交剥夺了练习；而友谊往往在一对一中长出来，大群体并不更利于练成功。",
+   "question_en": "A child wants to join other kids' games but never dares to approach. According to research on 'friendship coaching,' what helps most?",
+   "options_en": [
+    "Teach a concrete script: watch first, wait for a pause to ask 'Can I play?', and if turned down say 'Count me in next round'",
+    "Have the parent go over and ask those kids directly to include their child in the game",
+    "Encourage him to be bolder and more outgoing, and reassure him that others actually welcome new friends",
+    "Take him to more big parties and crowded events so he gets exposure and practice in large groups"
+   ],
+   "explanation_en": "Social competence is a set of concrete, learnable skills; a struggling child usually lacks skills, not character. 'Be bolder' is abstract and the child doesn't know what to do with it; socializing on his behalf removes the practice; and friendships tend to grow one-on-one, so large groups aren't where practice succeeds most."
+  }
+ ]
+}

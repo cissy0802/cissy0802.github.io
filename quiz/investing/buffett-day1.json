@@ -1,0 +1,69 @@
+{
+ "page": "/investing/buffett-day1.html",
+ "title": "投资经典：Buffett 核心原则 — Day 1",
+ "page_en": "/investing/buffett-day1.en.html",
+ "title_en": "Investing Classics: Buffett's Core Principles — Day 1",
+ "src_hash": "3db2773b1179",
+ "questions": [
+  {
+   "id": "ff74f82aea",
+   "question": "按 Buffett 对「能力圈」的论述，对投资者最重要的是什么？",
+   "options": [
+    "只要长期持有、跟踪过某个行业，就可以算作在圈内",
+    "清楚知道圈子的边界并只在圈内下注，圈子的大小并不重要",
+    "圈子一经确定就固定不变，圈外领域应一概拒绝学习",
+    "不断扩大圈子，覆盖尽可能多的行业和公司，以免错过任何好机会"
+   ],
+   "answer": 1,
+   "explanation": "Buffett 1996 年信中说，圈子大小不重要，知道边界才至关重要；边界感是一道防御工事。把「持有过」当成「懂」是常见误用；能力圈也可以靠深度学习扩展（如用熟悉的消费品牌框架理解 Apple），用「圈外」为拒绝学习开脱同样不对。",
+   "question_en": "According to Buffett's idea of the 'circle of competence,' what matters most for an investor?",
+   "options_en": [
+    "Any industry you've held or followed for a long time counts as being inside your circle",
+    "Knowing exactly where the circle's boundary lies and betting only inside it; the circle's size matters little",
+    "Once set, the circle never changes, and areas outside it should never be studied",
+    "Constantly widening the circle to cover as many industries as possible so no opportunity is missed"
+   ],
+   "explanation_en": "In his 1996 letter Buffett said the size of the circle is not very important but knowing its boundaries is vital; that sense of boundary is a defense. Mistaking 'I've owned it' for 'I understand it' is a common misuse. The circle can be widened through deep study (e.g., understanding Apple through a familiar consumer-brand lens), so using 'outside my circle' as an excuse not to learn is also wrong."
+  },
+  {
+   "id": "2a58fd5e1d",
+   "question": "评估一家公司有没有真正的护城河，最核心的问题是什么？",
+   "options": [
+    "它目前的市场占有率是否在行业里排名第一",
+    "它当前的利润率是否处在自身历史的最高位",
+    "它最近几年的收入增速是否明显快于同行",
+    "对手为什么拿不走它的高回报，十年后它是否还能赚这么多"
+   ],
+   "answer": 3,
+   "explanation": "护城河回答的是「为什么对手不能轻易拿走你的利润」，看重的是回报的持久性：ROIC 25% 但年年被蚕食的公司，长期价值不如 ROIC 18% 但稳如磐石的公司。高市占率是结果不是原因，无壁垒的高增长最危险。",
+   "question_en": "When judging whether a company has a real moat, what is the central question?",
+   "options_en": [
+    "Is its current market share the largest in the industry?",
+    "Is its current profit margin at the highest level in its own history?",
+    "Has its revenue grown noticeably faster than its peers in recent years?",
+    "Why can't competitors take away its high returns, and will it still earn this much ten years from now?"
+   ],
+   "explanation_en": "A moat answers why rivals can't easily take your profits, and what counts is durability: a 25% ROIC eroding two points a year is worth less long-term than a rock-steady 18%. High market share is an outcome, not a cause, and fast growth without barriers is the most dangerous kind."
+  },
+  {
+   "id": "8b5905322f",
+   "question": "你持有的一只股票一个月内跌了 30%。按 Graham 和 Buffett 的「市场先生」思路，下一步该怎么想？",
+   "options": [
+    "价格下跌说明市场掌握了你不知道的信息，应先止损再说",
+    "波动率就是风险，应先减仓、降低组合的 Beta 再观察",
+    "价格大跌本身就是市场先生递来的礼物，应坚持按原计划逢跌加仓、越跌越买",
+    "先对照自己事先独立估出的内在价值区间，判断下跌是基本面变化还是情绪"
+   ],
+   "answer": 3,
+   "explanation": "市场先生的报价是选项不是义务，但利用他的前提是你已独立估算了内在价值；没有价值锚的人只会被他玩弄。「逢跌就买」是误用，基本面恶化时市场先生有时是对的（价值陷阱）。Buffett 恰恰反对用波动率衡量风险。",
+   "question_en": "A stock you own falls 30% in a month. Following Graham and Buffett's 'Mr. Market' idea, how should you think about the next step?",
+   "options_en": [
+    "A falling price means the market knows something you don't, so cut the loss first and think later",
+    "Volatility is risk, so trim the position and lower the portfolio's beta before watching further",
+    "A big price drop is itself a gift from the market, so stick to the plan and buy more the further it falls",
+    "Check it against the intrinsic-value range you estimated independently beforehand, and judge whether the drop reflects fundamentals or mood"
+   ],
+   "explanation_en": "Mr. Market's quotes are options, not obligations, but exploiting them presupposes that you've independently estimated intrinsic value; without that anchor he plays you instead. 'Buy every dip' is a misuse, since Mr. Market is sometimes right when fundamentals deteriorate (a value trap). Buffett explicitly rejects volatility as the measure of risk."
+  }
+ ]
+}

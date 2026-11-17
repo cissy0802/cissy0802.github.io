@@ -1,0 +1,69 @@
+{
+ "page": "/investing/munger-day2.html",
+ "title": "投资经典：Munger 思维 — Day 2",
+ "page_en": "/investing/munger-day2.en.html",
+ "title_en": "Investing Classics: Munger's Mind — Day 2",
+ "src_hash": "d3c5a82ac36b",
+ "questions": [
+  {
+   "id": "9a80f1f5c7",
+   "question": "关于 Munger 「逆向思考」的正确用法，哪种说法最贴切？",
+   "options": [
+    "持续想象各种可能的失败情境，保持高度警惕，这样就不会在牛市里被乐观情绪冲昏头脑",
+    "先确定自己的结论，再把反方的论点找出来逐条驳倒，以增强持仓信心",
+    "只要一笔投资存在理论上的破产路径，就应放弃，宁可错过也不冒险",
+    "列出失败路径，估计概率、评估代价，再看能否对冲，而不是用最坏情形否决一切"
+   ],
+   "answer": 3,
+   "explanation": "逆向是清醒不是悲观：每个投资都有理论破产路径，用 worst case 否决一切、把想象失败变成持续焦虑都是误用。正确姿势是结构化的：失败路径 → 概率 → 代价 → 对冲。LTCM 的问题恰恰是只研究如何赢、从不问什么会让自己一周蒸发 90%。",
+   "question_en": "Which statement best captures the proper use of Munger's 'invert, always invert'?",
+   "options_en": [
+    "Keep imagining every failure scenario and stay on high alert, so you never get carried away in a bull market",
+    "Settle on your conclusion first, then dig up the opposing arguments and knock them down to firm up conviction",
+    "If an investment has any theoretical path to ruin, pass on it; better to miss out than take the risk",
+    "List the paths to failure, estimate their probability and cost, and look for hedges, rather than letting the worst case veto everything"
+   ],
+   "explanation_en": "Inversion is clarity, not pessimism. Every investment has a theoretical path to ruin, so vetoing on the worst case or turning it into chronic anxiety are misuses. The right method is structured: failure paths, probabilities, costs, hedges. LTCM's problem was studying only how to win and never asking what could wipe out 90% in a week."
+  },
+  {
+   "id": "59a7616f6c",
+   "question": "一位投资者熟读了 Munger 的「人类误判心理学」，自信已能在决策时识别并避开这些偏误。按文中的观点，这种想法的问题在哪？",
+   "options": [
+    "他只读了 25 条中最常见的几条，需要把全部倾向都背熟，才能在关键时刻真正认出来",
+    "心理偏误对长期回报影响很小，与其研究偏误，不如把精力放在寻找更好的股票上",
+    "偏误主要影响散户，专业投资者经过训练后基本免疫，所以这种自信对他其实是合理的",
+    "知道偏误几乎不降低自身偏误，要靠检查表、决策日记、冷却期、反方同伴等制度来对抗"
+   ],
+   "answer": 3,
+   "explanation": "研究表明知晓偏误几乎不减少自身偏误的发生，把「认识偏误」当「已经免疫」本身就是过度自信。有效的是制度化对抗，而不是靠「我知道这是损失厌恶」的内心提醒；用偏误给别人贴标签（「散户都在 FOMO」）同样会落入陷阱。",
+   "question_en": "An investor has studied Munger's 'Psychology of Human Misjudgment' and is confident they can now spot and avoid these biases while deciding. According to the article, what's wrong with this?",
+   "options_en": [
+    "They've only read the most common few of the 25; they need to memorize every tendency to truly recognize them at critical moments",
+    "Psychological biases barely affect long-term returns, so effort is better spent finding better stocks than studying biases",
+    "Biases mainly affect retail investors; trained professionals are largely immune, so this confidence is actually justified",
+    "Knowing about biases barely reduces your own; they have to be countered with systems like checklists, decision journals, cooling-off periods, and devil's-advocate peers"
+   ],
+   "explanation_en": "Research shows that knowing about biases hardly reduces how often you fall for them; treating awareness as immunity is itself overconfidence. What works is institutionalized countermeasures, not an inner reminder that 'this is loss aversion.' Using bias labels on others ('retail is all FOMO') is another trap."
+  },
+  {
+   "id": "4c79537896",
+   "question": "Munger 的「二轨分析」里，客观分析（Track 1）和心理审计（Track 2）该如何分工？",
+   "options": [
+    "Track 2 主要用来检验 Track 1 的不利结论，看看是不是自己只是太过悲观",
+    "Track 1 主导买入逻辑，Track 2 主导仓位大小与持有耐心，且要贯穿整个持仓期",
+    "只要 Track 1 的数据足够扎实充分，Track 2 的心理审计就可以省去不做",
+    "Track 2 是买入前的一次性检查步骤，完成后就交给 Track 1 来跟踪持仓"
+   ],
+   "answer": 1,
+   "explanation": "Track 1 回答控制结果的客观因素，Track 2 审计情绪、社会影响、激励与记忆扭曲。用 Track 2 否定 Track 1 的不利结论是把心理审计用来合理化偏好；只跑 Track 1 会在牛市顶部用精美 DCF 买贵货；两轨都要在持仓全程反复跑。",
+   "question_en": "In Munger's 'two-track analysis,' how should objective analysis (Track 1) and the psychological audit (Track 2) divide the work?",
+   "options_en": [
+    "Track 2 is mainly for testing Track 1's unfavorable conclusions, to see whether you're just being too pessimistic",
+    "Track 1 drives the buy thesis, Track 2 governs position size and holding patience, and both run throughout the holding period",
+    "As long as Track 1's data is solid and thorough, the Track 2 psychological audit can be skipped",
+    "Track 2 is a one-off check before buying; after that, Track 1 takes over tracking the position"
+   ],
+   "explanation_en": "Track 1 addresses the objective factors that govern the outcome; Track 2 audits emotions, social influence, incentives, and memory distortions. Using Track 2 to dismiss Track 1's negative findings turns the audit into rationalization; running only Track 1 leads to buying expensive stocks at the top with a beautiful DCF; both tracks must be rerun throughout the holding."
+  }
+ ]
+}

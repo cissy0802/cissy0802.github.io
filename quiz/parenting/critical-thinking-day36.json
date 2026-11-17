@@ -1,0 +1,69 @@
+{
+ "page": "/parenting/critical-thinking-day36.html",
+ "title": "育儿与教育：批判性思维启蒙 — Day 36",
+ "page_en": "/parenting/critical-thinking-day36.en.html",
+ "title_en": "Parenting & Education: Critical Thinking — Day 36",
+ "src_hash": "6931062cc3ee",
+ "questions": [
+  {
+   "id": "77dcd78101",
+   "question": "孩子说：「小明就是个坏孩子。」按区分事实与观点的思路，家长最好怎么回应？",
+   "options": [
+    "认同他的感受，并提醒他以后离小明远一点，免得受到影响",
+    "告诉他每个人的看法都不一样，这种评价别人的事本来就没有对错之分",
+    "纠正他不能随便说别人坏，每个小朋友都有自己的优点",
+    "问他「坏孩子」是事实还是想法，小明具体做了什么让他这么觉得"
+   ],
+   "answer": 3,
+   "explanation": "幼儿倾向把所有陈述都当客观事实，父母用「这是事实还是你的想法」这类语言搭脚手架，孩子才学会给观点贴标签，并把笼统判断拆回具体事实。顺着认同是把观点当事实强化；而「什么都没有对错」走到了相对主义，事实是存在的。",
+   "question_en": "A child says, 'Xiao Ming is just a bad kid.' Following the idea of separating fact from opinion, how should a parent respond?",
+   "options_en": [
+    "Validate the feeling and remind them to keep away from Xiao Ming so they aren't influenced",
+    "Tell them everyone sees things differently, so there's no right or wrong in matters like this",
+    "Correct them that they mustn't call others bad, since every child has their own good points",
+    "Ask whether 'bad kid' is a fact or their opinion, and what exactly Xiao Ming did that made them feel that way"
+   ],
+   "explanation_en": "Young children tend to treat every statement as objective fact. When parents scaffold with language like 'Is that a fact or what you think?', children learn to label opinions and break sweeping judgments back down into specific facts. Agreeing reinforces opinion as fact; 'there's no right or wrong' slides into relativism, though facts do exist."
+  },
+  {
+   "id": "6223e08529",
+   "question": "孩子兴奋地转述：「同学说吃了这种糖能变聪明！」按「校准信任」的思路，家长最好怎么回应？",
+   "options": [
+    "告诉他网上和同学说的话大多不可信，以后听到什么都要多留个心眼",
+    "直接告诉他这是瞎说，不要相信同学的话",
+    "让他去问老师，老师怎么说就以老师的意见为准",
+    "和他一起想：怎么才能知道是不是真的？谁说的、有证据吗？"
+   ],
+   "answer": 3,
+   "explanation": "校准信任是按证据和来源决定信几分，把「信不信」转成「怎么查」。直接说「瞎说」给了结论却没给方法；把一切讲成不可信会养出犬儒而非明辨；只服从权威则会信错。校准也包括该信时要信。",
+   "question_en": "A child excitedly reports, 'My classmate says eating this candy makes you smarter!' Following the idea of 'calibrated trust,' how should a parent respond?",
+   "options_en": [
+    "Tell them most of what they hear online or from classmates can't be trusted, so stay wary",
+    "Tell them straight out it's nonsense and not to believe what classmates say",
+    "Have them ask the teacher, and take whatever the teacher says as the answer",
+    "Think it through together: how could we find out if it's true? Who said it, and is there evidence?"
+   ],
+   "explanation_en": "Calibrated trust means deciding how much to believe based on evidence and source, turning 'believe it or not' into 'how do we check.' Saying 'nonsense' hands over a conclusion without a method; treating everything as untrustworthy breeds cynicism rather than discernment; deferring to authority alone leads to believing the wrong things. Calibration also means believing when belief is warranted."
+  },
+  {
+   "id": "06a934a699",
+   "question": "看动画时插播玩具广告，5 岁的孩子喊「我要这个！」按早期媒介素养的思路，家长最好怎么做？",
+   "options": [
+    "指出这是广告，问他：做这个广告的公司最想让我们做什么？",
+    "马上换台或关掉，不让孩子接触到任何广告内容",
+    "跟他讲清楚这个玩具太贵、家里不买，然后赶紧转移他的注意力",
+    "告诉他广告里说的全是骗人的，以后都别相信"
+   ],
+   "answer": 0,
+   "explanation": "8 岁以下孩子难以区分广告与节目，也看不出说服意图，所以要给他装一个「谁做的、想让我干嘛」的提问滤镜。只堵不疏，孩子脱离监管后毫无抵抗力；把一切讲成骗人的，养出的是犬儒而不是明辨。",
+   "question_en": "A toy ad interrupts a cartoon and the 5-year-old shouts, 'I want that!' Following early media-literacy thinking, what should the parent do?",
+   "options_en": [
+    "Point out that it's an ad and ask: what does the company that made it most want us to do?",
+    "Change the channel or turn it off right away so the child isn't exposed to any ads",
+    "Explain that the toy is too expensive and you won't buy it, then distract them",
+    "Tell them everything ads say is a lie and never to believe them"
+   ],
+   "explanation_en": "Children under about 8 struggle to tell ads from programs and don't see the persuasive intent, so the goal is a habit of asking 'Who made this, and what do they want from me?' Blocking without teaching leaves kids defenseless once unsupervised; calling everything a lie breeds cynicism instead of discernment."
+  }
+ ]
+}

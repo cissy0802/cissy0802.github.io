@@ -1,0 +1,69 @@
+{
+ "page": "/investing/commodities-cycle-day41.html",
+ "title": "投资经典：大宗商品周期 — Day 41",
+ "page_en": "/investing/commodities-cycle-day41.en.html",
+ "title_en": "Investing Classics: The Commodity Cycle — Day 41",
+ "src_hash": "aaef3ed7e4e0",
+ "questions": [
+  {
+   "id": "efdb2bc273",
+   "question": "为什么大宗商品的高价往往会「自我毁灭」？",
+   "options": [
+    "高价吸引投机资金涌入，等资金获利撤离，价格就会回到原来的水平",
+    "高价刺激所有人同时扩产，但新产能要多年后才集中投产，时滞让价格放大式振荡",
+    "需求随经济周期大幅波动，而供给始终相对稳定，所以高价总会被需求下滑拉回",
+    "高价会迫使央行加息抑制通胀，利率上升最终把商品价格压下来"
+   ],
+   "answer": 1,
+   "explanation": "商品没有护城河，高利润会召来新供给；而铜矿从勘探到投产要 7–10 年，所有人同时增产、多年后同时释放，需求早已见顶，过剩把价格砸穿成本线，这就是蛛网模型。理解商品的第一课是看供给的斜率与时滞，而不只是需求故事。",
+   "question_en": "Why do high commodity prices tend to 'destroy themselves'?",
+   "options_en": [
+    "High prices attract speculative money, and once it takes profits and leaves, prices drift back to where they were",
+    "High prices prompt everyone to expand at once, but new capacity arrives years later all together, and the lag makes prices overshoot",
+    "Demand swings with the business cycle while supply stays steady, so falling demand always pulls high prices back",
+    "High prices force central banks to raise rates against inflation, and higher rates eventually push commodity prices down"
+   ],
+   "explanation_en": "Commodities have no moat, so high profits invite new supply. A copper mine takes 7–10 years from exploration to production; everyone expands at once and the capacity lands together after demand has peaked, driving prices below cost. That's the cobweb model. The first lesson in commodities is the slope and lag of supply, not just the demand story."
+  },
+  {
+   "id": "8efb64c23f",
+   "question": "想用商品期货或商品 ETF 对冲通胀，最需要读懂的「小字」是什么？",
+   "options": [
+    "需求过热、实际利率转正时商品表现最好，所以加息周期最适合加大商品配置比例",
+    "长期回报主要来自抵押品利息和展期收益，升水时展期会持续侵蚀回报；且它主要对冲供给冲击型的意外通胀",
+    "商品 ETF 长期能紧密跟随现货价格涨跌，所以只要判断对现货走势，就能获得相应的对冲效果",
+    "商品能对冲各种类型的通胀，不生息也没关系，适合作为长期复利的核心仓位一直持有"
+   ],
+   "answer": 1,
+   "explanation": "Gorton 与 Rouwenhorst 的研究是「商品抗通胀」的基石，但回报不来自现货上涨，而来自抵押品利息与展期收益；contango 下不断换月会侵蚀净值（如原油 ETF 年年缩水）。商品对冲的是供给冲击型通胀，需求过热、实际利率转正时未必占优，所以只宜作战术对冲。",
+   "question_en": "If you want to hedge inflation with commodity futures or commodity ETFs, what 'fine print' matters most?",
+   "options_en": [
+    "Commodities do best when demand overheats and real rates turn positive, so hiking cycles are the time to increase allocation",
+    "Long-run returns come mainly from collateral interest and roll yield, contango steadily erodes them, and the hedge works mainly against unexpected, supply-driven inflation",
+    "Commodity ETFs track spot prices closely over time, so if you call the spot price right you get the matching hedge",
+    "Commodities hedge every kind of inflation, and the lack of yield doesn't matter, so they make a good permanent core holding for compounding"
+   ],
+   "explanation_en": "Gorton and Rouwenhorst's study underpins the 'commodities hedge inflation' view, but the return comes from collateral interest and roll yield, not spot gains; rolling in contango erodes value, as oil ETFs showed year after year. Commodities hedge supply-shock inflation and may lag when demand overheats and real rates rise, so they fit as a tactical hedge."
+  },
+  {
+   "id": "d18f94e219",
+   "question": "买一家矿业公司的股票和直接买商品，最根本的区别在哪里？",
+   "options": [
+    "矿业股和商品一样不生息、不分红，所以长期来看两者回报相近，选哪个主要取决于交易和持有的便利程度",
+    "矿业股叠加了管理层往往在顶部扩产、底部收缩的资本配置周期，资本纪律常比商品价格更决定股东回报",
+    "矿业股只是商品价格的杠杆版本，看对了商品价格的方向，基本也就看对了这只股票的长期走势",
+    "矿业公司在高价时扩产是理性选择，能把周期顶部的利润锁定下来，因此股票的波动通常比商品更小"
+   ],
+   "answer": 1,
+   "explanation": "资本周期是高回报引来扩产、新产能再侵蚀回报；商品股同时承受价格与管理层顺周期决策的双重波动。嘉能可在 2011 年顶部上市、背上过多杠杆，2015 年股价蒸发近九成——不是铜不值钱，而是资本纪律缺失。反过来，低成本、逆周期配置资本的生产者能提供股息与成本优势，长期可能胜过直接持有商品。",
+   "question_en": "What is the most fundamental difference between buying a mining stock and buying the commodity itself?",
+   "options_en": [
+    "Like the commodity, mining stocks pay no yield or dividends, so long-run returns are similar and the choice comes down to trading convenience",
+    "Mining stocks add a capital-allocation cycle in which management tends to expand at the top and retrench at the bottom, so capital discipline often matters more than the commodity price",
+    "A mining stock is just a leveraged version of the commodity price, so getting the price direction right means getting the stock's long-run path right",
+    "Expanding when prices are high is rational for miners and locks in peak-cycle profits, so the stock is usually less volatile than the commodity"
+   ],
+   "explanation_en": "The capital cycle: high returns attract expansion, and the new capacity erodes returns. Miners carry both price swings and management's pro-cyclical decisions. Glencore listed near the 2011 peak with too much leverage and lost almost 90% by 2015, not because copper was worthless but for lack of capital discipline. Conversely, a low-cost producer that allocates counter-cyclically offers dividends and cost advantages and can beat holding the commodity."
+  }
+ ]
+}

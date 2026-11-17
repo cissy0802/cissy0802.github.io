@@ -1,0 +1,69 @@
+{
+ "page": "/parenting/reading-enlightenment-day7.html",
+ "title": "育儿与教育：阅读启蒙 — Day 7",
+ "page_en": "/parenting/reading-enlightenment-day7.en.html",
+ "title_en": "Parenting: Early Reading — Day 7",
+ "src_hash": "3811872716b8",
+ "questions": [
+  {
+   "id": "0b4c5840d0",
+   "question": "孩子读课文时字都认得、读得也顺，但读完说不出讲了什么。按「阅读简单观」，他卡在哪里、该怎么帮？",
+   "options": [
+    "卡在语言理解：补词汇和背景知识，放慢速度、多聊内容",
+    "卡在解码：回到字音规律，多做指读和认字练习",
+    "卡在流畅度：每天计时朗读，把阅读速度提上来",
+    "卡在识字量：继续扩大识字量，认的字够多了自然就能读懂"
+   ],
+   "answer": 0,
+   "explanation": "阅读理解 = 解码 × 语言理解，是乘法：任一项接近零阅读就接近零。字都认得却说不出大意，是理解那条腿弱，要补词汇与背景知识；读不顺但听得懂才是解码弱。只堆识字量正是「三四年级阅读滑坡」的来源。",
+   "question_en": "A child can recognize every character in a passage and reads it smoothly, but afterwards can't say what it was about. Under the 'Simple View of Reading,' where are they stuck and how do you help?",
+   "options_en": [
+    "Language comprehension: build vocabulary and background knowledge, slow down, and talk about the content",
+    "Decoding: go back to sound–symbol patterns and do more finger-pointing and word-recognition practice",
+    "Fluency: do timed reading aloud every day to push their reading speed up",
+    "Character count: keep expanding the number of characters they know, and understanding will follow"
+   ],
+   "explanation_en": "Reading comprehension = decoding × language comprehension, a product: if either is near zero, so is reading. Recognizing every word but missing the gist means the comprehension leg is weak, calling for vocabulary and background knowledge. Halting reading with good listening comprehension would be a decoding problem. Piling on word recognition alone is what produces the fourth-grade slump."
+  },
+  {
+   "id": "0f00ae5c37",
+   "question": "和孩子共读，读到小熊哭了。哪种做法最符合「对话式共读」(dialogic reading)？",
+   "options": [
+    "一口气流畅地把故事读完，不打断，让孩子沉浸在情节里",
+    "指着书里的「哭」字问孩子认不认得，顺便巩固识字",
+    "问「小熊好可怜，对不对？」，用这样的提问确认孩子一直在认真听",
+    "问「你猜小熊为什么哭？」，再扩展孩子的回答并请他复述一遍"
+   ],
+   "answer": 3,
+   "explanation": "对话式共读的价值在孩子开口产出：用 PEER 法提开放式问题、听他答、扩展他的话、再请他复述。「对不对」是封闭式问题，孩子只能答「嗯」；把共读变成识字考试会先杀死兴趣；只读不聊则停留在被动输入。",
+   "question_en": "Reading with a child, you reach the page where the little bear cries. Which approach best fits 'dialogic reading'?",
+   "options_en": [
+    "Read the whole story smoothly without stopping so the child stays immersed in the plot",
+    "Point to the word 'cry' and ask whether the child can read it, reinforcing word recognition",
+    "Ask 'The poor bear, isn't he sad?' to check that the child is listening closely",
+    "Ask 'Why do you think the bear is crying?', then expand on the child's answer and have them say it back"
+   ],
+   "explanation_en": "Dialogic reading works because the child produces language: with PEER you prompt with an open question, evaluate, expand on what they said, and have them repeat. 'Isn't he sad?' is closed and invites only 'yes'; turning reading into a word quiz kills interest first; reading straight through keeps the child in passive listening."
+  },
+  {
+   "id": "f5fcd0634b",
+   "question": "孩子已经能自己读桥梁书了。按关于流畅度和自主阅读的建议，亲子朗读接下来该怎么安排？",
+   "options": [
+    "改成每天由孩子计时朗读，家长记录速度，逢错及时纠正",
+    "逐步停掉亲子朗读，让他尽快养成完全独立阅读的习惯",
+    "只读和他分级水平刚好匹配的书，确保他每一本都能完全独立读懂",
+    "继续给他朗读高于其自读水平的书，让自主阅读和亲子朗读并行"
+   ],
+   "answer": 3,
+   "explanation": "流畅度靠大量、低压力、可重复的阅读长出来，不靠测速；计时和逢错必纠会把它练成表演。即便孩子能自读，仍要继续读高于其自读水平的书喂养词汇和理解，过早「断奶」会让理解输入断档；略高于水平的内容比「刚好够级别」更能拉动成长。",
+   "question_en": "A child can now read early chapter books on their own. Following the advice on fluency and independent reading, what should happen with reading aloud together?",
+   "options_en": [
+    "Switch to timed oral reading by the child each day, with the parent logging speed and correcting every error",
+    "Phase out reading aloud so they build the habit of fully independent reading as soon as possible",
+    "Read only books exactly matched to their reading level so they can understand each one independently",
+    "Keep reading aloud books above their independent level, running independent reading and read-alouds side by side"
+   ],
+   "explanation_en": "Fluency grows from lots of low-pressure, repeated reading, not from timing; stopwatches and correcting every slip turn it into a performance. Even once a child reads independently, reading aloud books above their level keeps feeding vocabulary and comprehension, and stopping too early cuts off that input. Material a bit above their level drives growth more than 'just right' levelled books."
+  }
+ ]
+}

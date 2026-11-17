@@ -1,0 +1,69 @@
+{
+ "page": "/parenting/introvert-extrovert-day41.html",
+ "title": "育儿与教育：内向与外向儿童 — Day 41",
+ "page_en": "/parenting/introvert-extrovert-day41.en.html",
+ "title_en": "Parenting & Education: Introverted and Extroverted Children — Day 41",
+ "src_hash": "e960892936ca",
+ "questions": [
+  {
+   "id": "55bf9beaf5",
+   "question": "关于「内向」和「害羞」的关系，哪种说法正确？",
+   "options": [
+    "内向的孩子本质上都怕被评判，只是有的表现得明显、有的不明显",
+    "外向的孩子从人群中获得能量，因此一般不会出现社交焦虑和害羞",
+    "两者是独立的维度：内向关乎能量从哪来，害羞关乎怕被评判，外向的孩子也可能害羞",
+    "两者在同一条轴上：害羞是内向程度更深的表现，越内向的孩子越害羞"
+   ],
+   "answer": 2,
+   "explanation": "内向是对低刺激、独处充电的偏好，害羞是社交情境中怕被评判的焦虑，两者可任意组合：有内向却自在的孩子，也有渴望融入却怕被拒绝的外向害羞孩子。把两者混成一条轴，会把安静的偏好当成要「克服」的问题，反而逼出真正的焦虑。",
+   "question_en": "Which statement correctly describes the relationship between introversion and shyness?",
+   "options_en": [
+    "Introverted children are all afraid of being judged at heart; some just show it more than others",
+    "Extroverted children draw energy from crowds, so they generally don't experience social anxiety or shyness",
+    "They are independent dimensions: introversion is about where energy comes from, shyness is fear of judgment, so an extroverted child can also be shy",
+    "They sit on one axis: shyness is a more extreme form of introversion, so the more introverted the child, the shyer"
+   ],
+   "explanation_en": "Introversion is a preference for low stimulation and recharging alone; shyness is anxiety about being judged in social situations. They combine freely: there are relaxed introverts and extroverts who long to join in but fear rejection. Collapsing them onto one axis turns a quiet preference into something to 'fix' and can create real anxiety."
+  },
+  {
+   "id": "5a02556925",
+   "question": "孩子僵在台边不肯上台表演。家长问下来，他说不是不想上，而是「有点紧张」。按区分偏好与恐惧的思路，更合适的回应是？",
+   "options": [
+    "尊重他的偏好：告诉他不上台也完全没关系，可以在台下帮老师做别的事",
+    "当场鼓励他别害羞、勇敢一点，一鼓作气上去，克服了就好了",
+    "给小步暴露：先在家演给家长看，下次只演给一个好朋友看，慢慢扩大",
+    "告诉他内向是天生的气质，这类场合以后都不必勉强自己参加"
+   ],
+   "answer": 2,
+   "explanation": "先分辨是偏好（不想）还是恐惧（紧张）：偏好要尊重，恐惧才用温和的小步暴露推进。「不上也没关系、在台下帮忙」是对偏好的正确回应，用在恐惧上等于放任回避；当众催促则把气质当缺点，易加重焦虑。",
+   "question_en": "A child freezes at the side of the stage and won't perform. When asked, they say it's not that they don't want to, they're 'a bit nervous.' Following the idea of distinguishing preference from fear, what is the better response?",
+   "options_en": [
+    "Respect the preference: say it's fine not to go on stage and they can help out backstage instead",
+    "Encourage them on the spot not to be shy and just go for it, since getting over it is what matters",
+    "Use small-step exposure: first perform at home for the parent, next time for just one good friend, and widen gradually",
+    "Tell them introversion is an inborn temperament, so they never need to push themselves in such settings"
+   ],
+   "explanation_en": "First tell preference ('I don't want to') from fear ('I'm nervous'). A preference deserves respect; fear calls for gentle, gradual exposure. 'It's fine, help backstage' is the right answer to a preference, but applied to fear it just enables avoidance. Pushing them publicly treats temperament as a flaw and tends to deepen the anxiety."
+  },
+  {
+   "id": "a3f7b09beb",
+   "question": "气质研究中的「适配度」(goodness of fit) 对父母意味着什么？",
+   "options": [
+    "用同一套理想孩子的标准要求孩子，让环境的压力逐渐磨平气质差异",
+    "为孩子的气质找到能发光的环境，并在他的节奏上引导，而不是把他改造成另一种人",
+    "气质是天生的，发展好坏早已注定，父母只需接纳、不必再施加推力",
+    "外向气质更适应现代社会，父母应尽早帮内向孩子培养出外向的性格"
+   ],
+   "answer": 1,
+   "explanation": "Thomas 与 Chess 指出，孩子发展得好不好取决于气质与环境、父母期待的匹配程度，而不是气质本身好坏。适配不是放任：用「他天生内向」当借口不给必要的社交技能和成长推力，同样是误用。",
+   "question_en": "What does 'goodness of fit' from temperament research mean for parents?",
+   "options_en": [
+    "Hold every child to the same ideal standard and let environmental pressure gradually wear down temperamental differences",
+    "Find environments where the child's temperament can shine and guide them at their own pace, rather than remaking them into someone else",
+    "Temperament is inborn and outcomes are already fixed, so parents need only accept it and add no further push",
+    "An extroverted temperament suits modern society better, so parents should cultivate extroversion in introverted children early"
+   ],
+   "explanation_en": "Thomas and Chess argued that how well a child develops depends on the match between temperament and environment, including parental expectations, not on whether the temperament is 'good.' Fit is not permissiveness: using 'they're just introverted' as an excuse to withhold social skills and gentle pushes is also a misreading."
+  }
+ ]
+}

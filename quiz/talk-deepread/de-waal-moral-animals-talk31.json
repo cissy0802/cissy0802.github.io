@@ -1,0 +1,69 @@
+{
+ "page": "/talk-deepread/de-waal-moral-animals-talk31.html",
+ "title": "Frans de Waal ·《动物的道德行为》— 被扔回来的黄瓜：道德会不会比人类更老",
+ "page_en": "/talk-deepread/de-waal-moral-animals-talk31.en.html",
+ "title_en": "Frans de Waal · Moral Behavior in Animals — The Thrown-Back Cucumber",
+ "src_hash": "012664db3997",
+ "questions": [
+  {
+   "id": "a51f881065",
+   "question": "卷尾猴看到隔壁换到葡萄后扔掉自己的黄瓜。批评者认为这不足以证明它厌恶不公，最关键的理由是什么？",
+   "options": [
+    "实验只用了 5 只雌性卷尾猴，样本实在太小，因此结果在统计上几乎完全没有意义",
+    "猴子扔黄瓜是为了引起实验员注意、多要食物，属于一种习得的讨要策略",
+    "卷尾猴本来就不爱吃黄瓜，扔掉它只是口味偏好的表现，与隔壁拿什么无关",
+    "扔掉黄瓜后隔壁照吃葡萄，差距反而更大，这更像看见更好的东西后对手里的失望"
+   ],
+   "answer": 3,
+   "explanation": "亨里奇指出，按不公平厌恶模型，猴子拒绝黄瓜让「我少一点」变成「我什么都没有」，分配更不平均了，结果与模型预测相矛盾；温则认为这只说明有更好的东西在场时会拒绝差的。样本小是事实，但核心争议是「比较邻居」还是「看见了更好的」；而它们本来乐意连换 25 次黄瓜。",
+   "question_en": "A capuchin throws away its cucumber after seeing its neighbor get a grape. Critics say this doesn't show an aversion to unfairness. What's their key reason?",
+   "options_en": [
+    "The study used only five female capuchins, a sample so small that the results are statistically meaningless",
+    "The monkey throws the cucumber to get the experimenter's attention and more food, a learned begging strategy",
+    "Capuchins simply dislike cucumber, so throwing it away is a taste preference unrelated to what the neighbor gets",
+    "After the cucumber is thrown away, the neighbor still eats its grape, so the gap grows; it looks more like disappointment after seeing something better"
+   ],
+   "explanation_en": "Henrich pointed out that under inequity-aversion models, refusing the cucumber turns 'I get less' into 'I get nothing,' making the split more unequal, which contradicts the model. Wynne argued it only shows animals reject the worse option when a better one is present. The small sample is real, but the core dispute is comparing with the neighbor versus seeing something better; and the monkeys happily traded for cucumbers 25 times in a row."
+  },
+  {
+   "id": "8e4a0cfc0c",
+   "question": "2017 年莱比锡团队的实验让食物分别由人和机器发放，并操纵同伴是否在场。结果最支持哪种解释？",
+   "options": [
+    "同伴在场时黑猩猩拒绝得明显更多，说明它们确实在和身旁的邻居比较各自的所得",
+    "无论人发还是机器发，黑猩猩都同样拒绝差食物，说明这只是口味上的挑剔",
+    "黑猩猩只在人发给差食物时更常拒绝，同伴在不在场无影响，气的是发食物的人",
+    "机器发食物时黑猩猩拒绝最多，因为它们无法从机器那里争取到更好的食物"
+   ],
+   "answer": 2,
+   "explanation": "二乘二设计把「比邻居」和「比这个人本可以怎么对我」分开了：从人手里拿到差食物才更常拒绝，从机器拿则不然，同伴在不在场没有区别。研究者称之为「社会失望」，抗议也冲着发食物的人，而不是冲着邻居。",
+   "question_en": "A 2017 Leipzig study had food delivered either by a human or by a machine, and varied whether a partner was present. Which interpretation do the results best support?",
+   "options_en": [
+    "Chimps refused clearly more when a partner was present, showing they really were comparing what each received",
+    "Chimps rejected the worse food equally whether a human or machine delivered it, showing it's just picky eating",
+    "Chimps refused more only when a human handed out the worse food, and a partner's presence made no difference: they were upset with the person delivering it",
+    "Chimps refused most when a machine delivered food, because they couldn't bargain with it for something better"
+   ],
+   "explanation_en": "The 2×2 design separated 'comparing with my neighbor' from 'comparing with how this person could have treated me': chimps refused more when a human gave them the worse food, not when a machine did, and the partner's presence made no difference. The researchers called it 'social disappointment,' and the protests were aimed at the person handing out food, not at the neighbor."
+  },
+  {
+   "id": "c6d44dd169",
+   "question": "到 2024 年元分析之后，德瓦尔「演化出来的道德」这套论证还剩下什么？",
+   "options": [
+    "研究纲领仍活着：合作、和解、安慰站得住，但「猴子懂公平」没站住",
+    "整套论证被推翻：元分析表明动物既不合作也不安慰，道德完全是人类文化的产物",
+    "只有卷尾猴被证实厌恶不公，黑猩猩和其他物种都没有，因此道德只在少数猴类中演化",
+    "论证得到全面证实：元分析在多数灵长类中都找到了显著的不公平厌恶效应"
+   ],
+   "answer": 0,
+   "explanation": "Ritov 等汇总 23 项研究、六万多次观察，在接受/拒绝任务里没有找到不公平厌恶的证据，「食物失望」的效应倒是显著。但动物会合作、会和好、会安慰，这些观察不是争论的靶心，「贴面理论」确实被推松了；只是最响亮的那块证据没有站住。",
+   "question_en": "After the 2024 meta-analysis, what remains of de Waal's argument for an 'evolved morality'?",
+   "options_en": [
+    "The program of finding precursors of morality in animals is alive, and cooperation, reconciliation, and consolation hold up, but 'monkeys understand fairness' did not",
+    "The whole argument collapsed: the meta-analysis showed animals neither cooperate nor console, so morality is purely a human cultural product",
+    "Only capuchins were shown to be inequity-averse while chimps and other species were not, so morality evolved only in a few monkeys",
+    "The argument was fully vindicated: the meta-analysis found significant inequity aversion across most primate species"
+   ],
+   "explanation_en": "Ritov et al. pooled 23 studies and over 60,000 observations and found no evidence of inequity aversion in accept/reject tasks, while 'food disappointment' had a clear effect. But cooperation, reconciliation, and consolation were never the target of the dispute, and the veneer theory really was loosened; it's the loudest piece of evidence that didn't hold up."
+  }
+ ]
+}
