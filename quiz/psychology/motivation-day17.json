@@ -1,0 +1,69 @@
+{
+ "page": "/psychology/motivation-day17.html",
+ "title": "心理学 Day 17：动机心理学 — 为什么奖励常常杀死热情",
+ "page_en": "/psychology/motivation-day17.en.html",
+ "title_en": "Psychology Day 17: The Psychology of Motivation — Why Rewards Often Kill Passion",
+ "src_hash": "043d4089afe6",
+ "questions": [
+  {
+   "id": "9b34665d2a",
+   "question": "按自我决定论，一名员工在做上级分配的任务，但她真心认同这件事的价值。她的动机属于哪一类？",
+   "options": [
+    "属于受控动机，因为任务是上级要求的，而不是她自己主动发起、自己选择的",
+    "属于外部调节，因为她最终是为了完成上级的考核",
+    "无法判断，因为自主需求只有在完全独立工作时才能得到满足",
+    "仍然是自主的，因为自主指意愿一致，而不是独立于他人或只做自己选的事"
+   ],
+   "answer": 3,
+   "explanation": "SDT 里的自主不等于独立或我行我素，而是「意愿一致」：即使在做别人要求的事，只要认同它、觉得是自己选的，依然是自主的。自主与关联也不冲突，一个人可以既深度依赖他人又高度自主。区分动机的关键是来自认同还是压力，而不是任务由谁提出。",
+   "question_en": "Under self-determination theory, an employee is doing a task her manager assigned, but she genuinely endorses its value. What kind of motivation is this?",
+   "options_en": [
+    "Controlled motivation, because her manager required the task rather than her initiating and choosing it",
+    "External regulation, because ultimately she's doing it to pass her manager's review",
+    "Impossible to say, since the need for autonomy can only be met when working fully independently",
+    "Still autonomous, because autonomy means volitional endorsement, not independence from others or doing only self-chosen things"
+   ],
+   "explanation_en": "In SDT, autonomy isn't independence or doing your own thing; it's volition—acting with endorsement. Even when doing what others ask, if you endorse it and experience it as your choice, you're autonomous. Autonomy and relatedness don't conflict either. What matters is whether motivation comes from endorsement or pressure, not who proposed the task."
+  },
+  {
+   "id": "7c58c880e5",
+   "question": "有人每天靠「不去健身我就是个失败者」逼自己坚持锻炼。按有机整合理论，这种动机最需要警惕的是什么？",
+   "options": [
+    "这是内在动机，因为驱动力来自他自己内心而不是外部奖励",
+    "这是外部调节，只要加上物质奖励就能升级为认同调节",
+    "这是内摄调节，常被误当成自律，其实脆弱且伴随焦虑，遇挫就容易崩塌",
+    "这已经是连续谱上最高级的整合调节，说明锻炼已经和他的自我认同完全融为一体、不再有冲突"
+   ],
+   "answer": 2,
+   "explanation": "靠内疚、羞耻、自尊绑架驱动自己是内摄调节：动力虽然「来自内心」，却是受控的，能逼出短期行动，代价是慢性焦虑。真正的进步是走向认同——「这是我照顾自己的方式」。来源在心里不等于自主，加奖励也不会让它变成认同。",
+   "question_en": "Someone forces himself to exercise daily with the thought \"If I skip the gym, I'm a failure.\" Under organismic integration theory, what is most worrying about this motivation?",
+   "options_en": [
+    "It's intrinsic motivation, since the drive comes from within him rather than from external rewards",
+    "It's external regulation, which can be upgraded to identified regulation simply by adding material rewards",
+    "It's introjected regulation—often mistaken for self-discipline but fragile and anxiety-laden, likely to collapse after a setback",
+    "It's already the highest form on the continuum, integrated regulation, showing exercise is fully part of his identity with no inner conflict"
+   ],
+   "explanation_en": "Driving yourself with guilt, shame, and self-worth threats is introjected regulation: it feels internal but is controlled, producing short-term action at the cost of chronic anxiety. Real progress is moving toward identification—\"this is how I take care of myself.\" Coming from inside doesn't make it autonomous, and adding rewards won't turn it into identification."
+  },
+  {
+   "id": "40f88ad29c",
+   "question": "按自我决定论的研究，家长想让孩子按时睡觉，哪种做法最接近「自主支持」？",
+   "options": [
+    "提醒孩子「爸妈为你付出这么多，你连早睡都做不到吗」",
+    "取消固定的睡觉时间，相信孩子的能动性，让他困了以后自己决定什么时候上床睡觉",
+    "保留睡觉时间的规则，同时给有限选择并讲理由，如「现在睡，还是刷牙听个故事再睡？」",
+    "用奖励贴纸换取按时上床，连续一周都做到就兑换一份他想要的礼物，以此建立好习惯"
+   ],
+   "answer": 2,
+   "explanation": "自主支持是给有意义的选择、讲理由、承认感受、降低压力，但它不等于放任：研究里最优的组合是「高结构 + 高自主支持」，规则和界限照样清晰。取消规则是没有结构的自由，反而让人焦虑；用奖惩夹逼和打内疚牌都属于控制型做法。",
+   "question_en": "Per self-determination research, a parent wants a child to go to bed on time. Which approach is closest to \"autonomy support\"?",
+   "options_en": [
+    "Remind the child, \"After all we do for you, you can't even go to bed early?\"",
+    "Drop the fixed bedtime, trust the child's agency, and let them decide when to go to bed once tired",
+    "Keep the bedtime rule but offer a limited choice with a reason, e.g. \"Sleep now, or brush teeth and hear a story first?\"",
+    "Trade reward stickers for being in bed on time, redeemable after a full week for a gift they want, to build the habit"
+   ],
+   "explanation_en": "Autonomy support means offering meaningful choices, giving reasons, acknowledging feelings, and minimizing pressure—but it isn't permissiveness: the best combination in research is high structure plus high autonomy support, with clear rules and limits. Dropping the rule is structureless freedom that breeds anxiety; carrot-and-stick rewards and guilt trips are both controlling."
+  }
+ ]
+}

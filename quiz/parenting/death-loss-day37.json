@@ -1,0 +1,69 @@
+{
+ "page": "/parenting/death-loss-day37.html",
+ "title": "育儿与教育：死亡与丧失教育 — Day 37",
+ "page_en": "/parenting/death-loss-day37.en.html",
+ "title_en": "Parenting & Education: Death & Loss — Day 37",
+ "src_hash": "064dcaa45925",
+ "questions": [
+  {
+   "id": "ddb2f30109",
+   "question": "孩子问「奶奶去哪了」，为什么不建议回答「奶奶睡着了」或「奶奶去很远的地方了」？",
+   "options": [
+    "这类说法太含糊，孩子会追问更多细节，让大人难以招架",
+    "年幼孩子会字面理解，可能怕睡觉或空等；而对死亡理解越完整，焦虑反而越低",
+    "孩子五岁以前根本无法理解死亡，所以说什么都没有区别",
+    "委婉语不符合大多数家庭的宗教信仰，孩子把它说出去之后，还可能在学校里被同学嘲笑"
+   ],
+   "answer": 1,
+   "explanation": "儿童约 5–7 岁才逐步建立成熟的死亡概念，此前会字面理解：说「睡着了」可能让他怕睡觉，说「走了」他会等她回来或觉得被抛弃。用「死了」这样的真词按他能懂的程度解释，研究发现理解越完整焦虑越低。年幼不等于说什么都一样，恰恰是字面理解让措辞格外要紧。",
+   "question_en": "When a child asks \"Where did Grandma go?\", why is it discouraged to answer \"Grandma is sleeping\" or \"Grandma went far away\"?",
+   "options_en": [
+    "Such phrases are vague, so the child will press for more details the adult can't handle",
+    "Young children take words literally and may fear sleep or keep waiting; and the fuller a child's understanding of death, the lower the anxiety",
+    "Children under five can't understand death at all, so it makes no difference what you say",
+    "Euphemisms clash with most families' religious beliefs, and a child repeating them may get teased by classmates at school"
+   ],
+   "explanation_en": "Children build a mature concept of death gradually around ages 5–7 and before that take words literally: \"sleeping\" can make them afraid of sleep, \"went away\" can make them wait or feel abandoned. Use a real word like \"died\" at their level; research finds fuller understanding goes with lower anxiety. Being young doesn't make wording irrelevant—literal thinking is exactly why it matters."
+  },
+  {
+   "id": "0028f88d30",
+   "question": "爷爷重病住院，家长想「别让孩子知道，免得吓着他」。按儿童丧亲研究，更好的做法是什么？",
+   "options": [
+    "完全不提，等孩子长大一些再告诉他，以免他过早承受压力",
+    "让孩子多陪伴和安慰难过的大人，借此学会坚强",
+    "坚持让孩子去医院拥抱、亲吻爷爷，哪怕他有些害怕，也要避免日后留下无法弥补的遗憾",
+    "用孩子能懂的话讲实情，把去不去探望、参不参加葬礼的选择交给他"
+   ],
+   "answer": 3,
+   "explanation": "被排除在外比被适度纳入制造更多焦虑：孩子的想象往往比现实更可怕，还常在信息真空里自责。Worden 的研究发现，事先被准备、被给予选择的孩子长期适应更好。强迫亲近害怕的病人，或让孩子反过来安慰大人，都是常见陷阱。",
+   "question_en": "Grandpa is seriously ill in hospital, and a parent wants to keep it from the child \"so they won't be scared.\" According to childhood bereavement research, what's the better approach?",
+   "options_en": [
+    "Say nothing until the child is older, so they don't carry the burden too early",
+    "Have the child spend time comforting the grieving adults, so they learn to be strong",
+    "Insist the child visit and hug and kiss Grandpa even if scared, to avoid an irreparable regret later",
+    "Tell the child the truth in words they understand, and let them choose whether to visit or attend the funeral"
+   ],
+   "explanation_en": "Being shut out creates more anxiety than being appropriately included: children's imaginations are often worse than reality, and in an information vacuum they tend to blame themselves. Worden's study found that children who were prepared and given choices adjusted better long-term. Forcing closeness with a frightening patient, or making the child comfort adults, are common pitfalls."
+  },
+  {
+   "id": "596313c6ea",
+   "question": "按「持续联结」理论，陪伴孩子度过亲人离世的哀伤，目标应该是什么？",
+   "options": [
+    "引导孩子按顺序走完否认、愤怒、讨价还价等哀伤阶段，最终接受现实、彻底告别",
+    "帮助孩子尽快放下，切断与逝者的情感联系，回到正常生活",
+    "把与逝者的关系转化为能一直带着的内在联结，比如记得、谈起、保留物件",
+    "鼓励孩子表现得坚强，少提逝者以免反复揭开伤口"
+   ],
+   "answer": 2,
+   "explanation": "持续联结理论颠覆了「最终要放手」的旧模型：哀伤的目标不是切断，而是重建一种新的、内化的关系。孩子哭一阵玩一阵的「跳水坑」式哀伤是健康的；强迫坚强会把悲伤压到地下，再以肚子疼、噩梦等形式冒出来。",
+   "question_en": "According to continuing bonds theory, what should be the goal when helping a child grieve a family member's death?",
+   "options_en": [
+    "Guide the child through the stages of grief—denial, anger, bargaining—in order, until they accept reality and say a final goodbye",
+    "Help the child let go quickly, cutting the emotional tie to the deceased and returning to normal life",
+    "Transform the relationship with the deceased into an inner bond the child can carry, through remembering, talking, and keeping objects",
+    "Encourage the child to be strong and mention the deceased less, so the wound isn't reopened"
+   ],
+   "explanation_en": "Continuing bonds theory overturned the old \"you must eventually let go\" model: grief aims not to sever the tie but to rebuild a new, internalized relationship. A child's \"puddle jumping\"—crying one moment, playing the next—is healthy; pressure to be strong pushes grief underground, where it resurfaces as stomachaches or nightmares."
+  }
+ ]
+}

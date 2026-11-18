@@ -1,0 +1,69 @@
+{
+ "page": "/philosophy/pragmatism-day37.html",
+ "title": "哲学经典详解：实用主义 · Day 37 — Philosophy",
+ "page_en": "/philosophy/pragmatism-day37.en.html",
+ "title_en": "Philosophy Classics: Pragmatism · Day 37 — Philosophy",
+ "src_hash": "13d8d6de5ba9",
+ "questions": [
+  {
+   "id": "41418572b4",
+   "question": "两个团队为一个概念该叫「平台」还是「中台」争了一下午。按皮尔士的实用准则，第一步应该做什么？",
+   "options": [
+    "让双方投票决定，因为概念的意义取决于多数人的用法",
+    "选那个让团队更有认同感、更能鼓舞士气的说法",
+    "先查阅权威定义和行业文献，确定哪个术语更符合这个事物的本质，再统一口径",
+    "问两种说法会导致哪些可观察的不同；举不出就说明这个区分是空的"
+   ],
+   "answer": 3,
+   "explanation": "实用准则说一个概念的全部意义就在于它可设想的实践效果：两个观念在一切可设想后果上无差别，就是同义。它是一台澄清意义的机器，把抽象争论翻译成「会观察到什么不同」。按「让人更舒服」来选，混淆的正是詹姆斯那条容易越过的线。",
+   "question_en": "Two teams spend an afternoon arguing whether something should be called a \"platform\" or a \"middle office.\" Applying Peirce's pragmatic maxim, what should they do first?",
+   "options_en": [
+    "Put it to a vote, since a concept's meaning depends on majority usage",
+    "Pick whichever label gives the team a stronger sense of identity and morale",
+    "First consult authoritative definitions and industry literature to see which term better fits the thing's essence, then standardize",
+    "Ask what observable differences each label would lead to; if they can't name any, the distinction is empty"
+   ],
+   "explanation_en": "The maxim holds that a concept's whole meaning lies in its conceivable practical effects: two ideas with no difference in any conceivable consequence are the same. It's a machine for clarifying meaning, translating abstract disputes into \"what would we observe differently?\" Choosing by what feels better conflates exactly the kinds of usefulness James's theory blurred."
+  },
+  {
+   "id": "1d691ddccf",
+   "question": "詹姆斯主张观念在经验中被证实、能引导顺利行动，才「被做成真」。这一理论最常被指出的风险是什么？",
+   "options": [
+    "它认为真理是观念与实在的静态符合，忽略了经验的变化",
+    "它把真理完全交给个人的良知判断，缺乏任何外部检验",
+    "它要求每个信念都必须先经过严格的科学实验验证才能接受，在日常生活中根本无法执行",
+    "混淆两种「有用」：让人心安的有用和预测得准的有用，前者并不担保为真"
+   ],
+   "answer": 3,
+   "explanation": "詹姆斯把「有用」直接等同于「为真」，却没区分心理安慰和预测准确。在算法专投喂舒适信念的时代，这条线尤其要守住。他恰恰反对静态符合论；把标准放在内在良知的是王阳明，而不是詹姆斯。",
+   "question_en": "James held that an idea \"is made true\" as experience verifies it and it guides action smoothly. What is the risk most often pointed out in this theory?",
+   "options_en": [
+    "It treats truth as a static correspondence between idea and reality, ignoring how experience changes",
+    "It hands truth entirely to personal conscience, with no external check at all",
+    "It requires every belief to pass rigorous scientific experiment before acceptance, which is simply impossible in daily life",
+    "It conflates two kinds of usefulness—what comforts us and what predicts accurately—and the first doesn't guarantee truth"
+   ],
+   "explanation_en": "James equated \"useful\" with \"true\" without separating psychological comfort from predictive accuracy—a line especially worth guarding when algorithms feed us comforting beliefs. He actually opposed the static correspondence theory, and anchoring the criterion in inner conscience is Wang Yangming's move, not James's."
+  },
+  {
+   "id": "438158d719",
+   "question": "王阳明的「知行合一」与美国实用主义都反对知行二分。二者最关键的分歧在哪里？",
+   "options": [
+    "「行」的标准落在哪：实用主义看外部经验后果，王阳明看内在良知的笃实",
+    "王阳明接受把人当作被动映照实在之镜子的旁观者知识论，实用主义则明确反对它",
+    "实用主义只关心道德问题，王阳明只关心认识论问题",
+    "实用主义认为应先知后行，王阳明认为应先行后知"
+   ],
+   "answer": 0,
+   "explanation": "两者共享同一个敌人——把人当作被动映照实在之镜子的旁观者知识论，都把真知系在行动上。分歧在锚点：一个向外问「行得通吗」，一个向内问「合良知吗」。「先知后行」是王阳明批评的朱熹立场，不是实用主义。",
+   "question_en": "Wang Yangming's \"unity of knowledge and action\" and American pragmatism both reject splitting knowing from doing. Where do they most fundamentally differ?",
+   "options_en": [
+    "In where the standard for action lies: pragmatism looks to external, verifiable consequences; Wang looks to the immediate earnestness of inner conscience",
+    "Wang accepts the spectator theory that treats the knower as a passive mirror of reality, while pragmatism explicitly rejects it",
+    "Pragmatism cares only about ethics, while Wang cares only about epistemology",
+    "Pragmatism says know first, then act; Wang says act first, then know"
+   ],
+   "explanation_en": "Both share one enemy—the spectator theory that treats the knower as a passive mirror of reality—and both tie genuine knowledge to action. They differ in the anchor: one asks outwardly \"does it work?\", the other inwardly \"does it accord with conscience?\" \"Know first, then act\" is Zhu Xi's position, which Wang attacked, not pragmatism's."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/book-recommendations/totalitarianism-evil-book59.html",
+ "title": "Issue 59：极权主义与政治之恶 — 一套体制如何建立、由谁执行、靠谁维持",
+ "page_en": "/book-recommendations/totalitarianism-evil-book59.en.html",
+ "title_en": "Issue 59: Totalitarianism & Political Evil — how it is built, who executes it, who keeps it standing",
+ "src_hash": "a35b7180400b",
+ "questions": [
+  {
+   "id": "e523089cae",
+   "question": "阿伦特用「平庸之恶」描述艾希曼，她的本意最接近哪一种？",
+   "options": [
+    "后果可以极其巨大，执行者身上却找不到相称的深度；问题在不思考而非愚蠢",
+    "恶其实很小很普通，体系中的大多数参与者因此都可以被理解，他们的责任也应当被免除",
+    "真正的恶只来自少数狂热信徒，普通官僚只是被骗的旁观者",
+    "艾希曼智力低下、办事无能，只是被上级随意摆布的工具"
+   ],
+   "answer": 0,
+   "explanation": "「平庸之恶」常被误读成「恶其实很小」，她的意思正相反：后果是天文数字级的，做出它的人却很空洞。她特意说明不思考不等于愚蠢——艾希曼办事很能干，只是从不与自己对话。她也坚持解释一个人如何变成这样，不等于免除他。",
+   "question_en": "When Arendt described Eichmann through the \"banality of evil,\" what did she most nearly mean?",
+   "options_en": [
+    "The consequences can be immense while the perpetrator shows no matching depth; the problem is thoughtlessness, not stupidity",
+    "Evil is actually small and ordinary, so most participants in the system can be understood and their responsibility excused",
+    "Real evil comes only from a few fanatics, while ordinary bureaucrats are deceived bystanders",
+    "Eichmann was unintelligent and incompetent, a tool his superiors moved around at will"
+   ],
+   "explanation_en": "The phrase is often misread as \"evil is minor,\" but she meant the opposite: the consequences were astronomical while the man who carried them out was hollow. She stressed that thoughtlessness isn't stupidity—Eichmann was a capable administrator who never held an inner dialogue with himself. And she insisted that explaining how someone became this way doesn't excuse him."
+  },
+  {
+   "id": "b5274b8ee9",
+   "question": "米沃什笔下的「Ketman」——外部彻底顺从、内心保留全部异议——最终的危险在哪里？",
+   "options": [
+    "它只适用于少数知识分子，普通人没有能力长期维持",
+    "伪装带来智力上的优越感让人停不下来，而演久了会长进角色里，分不清真我",
+    "伪装迟早会被当局识破，并招来比公开反对还要严厉得多的惩罚，因此注定无法长久维持",
+    "内心的异议会不断积累，最终必然爆发为公开的反抗"
+   ],
+   "answer": 1,
+   "explanation": "Ketman 有真实回报：每一次熟练的口是心非都像一次小胜，让人觉得自己没投降、只是在表演。米沃什最狠的判断是，它不是保存自我的技术，而是消耗自我的过程——演久了就分不清哪个是真的自己。这份「我很清醒」的感觉本身就是麻药。",
+   "question_en": "In Miłosz's account of \"Ketman\"—total outward conformity while privately keeping every disagreement—where does the ultimate danger lie?",
+   "options_en": [
+    "It only works for a few intellectuals; ordinary people can't sustain it for long",
+    "The pretense gives a sense of intellectual superiority that keeps people going, and after long enough they grow into the role and can't tell which self is real",
+    "The authorities eventually see through the pretense and punish it far more harshly than open dissent, so it can't last",
+    "The private dissent builds up and inevitably erupts into open rebellion"
+   ],
+   "explanation_en": "Ketman pays real rewards: each skillful act of doublespeak feels like a small victory, a sign you haven't surrendered but are only performing. Miłosz's sharpest point is that it isn't a technique for preserving the self but a process that consumes it—play the role long enough and you can't tell which self is real. The feeling of lucidity is itself the anesthetic."
+  },
+  {
+   "id": "f1325b7e67",
+   "question": "哈维尔笔下的蔬菜店老板在橱窗里贴上「全世界无产者，联合起来！」。按《无权者的权力》的分析，这张标语真正的功能是什么？",
+   "options": [
+    "表明他真诚信仰这套意识形态，愿意为之奉献",
+    "作为一种消极抵抗，用夸张得近乎滑稽的官方口号，在众目睽睽之下暗中讽刺当局",
+    "向周围的邻居施压，迫使他们也表现出同样的忠诚",
+    "传达「我服从，请放过我」，并给服从披上无私的外衣，好对自己隐瞒"
+   ],
+   "answer": 3,
+   "explanation": "老板并不关心无产者，标语的真实讯息是「我服从，所以请放过我」；如果让他贴「我害怕，所以无条件服从」，他会感到羞耻。标语替服从提供体面的说法。也正因为体制靠这种日常配合维持，冲突的界线穿过每一个人，摘下标语这样最小的拒绝才有不成比例的分量。",
+   "question_en": "Havel's greengrocer puts a \"Workers of the world, unite!\" sign in his shop window. According to The Power of the Powerless, what is the sign's real function?",
+   "options_en": [
+    "It shows he sincerely believes in the ideology and is willing to devote himself to it",
+    "A form of passive resistance, quietly mocking the authorities in plain sight with an almost comically overblown slogan",
+    "It pressures his neighbors into displaying the same loyalty",
+    "It says \"I obey, so leave me alone,\" while dressing that obedience in a selfless-looking cover so he can hide from himself what he's doing"
+   ],
+   "explanation_en": "The grocer doesn't care about the workers; the sign's real message is \"I obey, so leave me in peace.\" Asked to display \"I am afraid and therefore unquestioningly obedient,\" he'd be ashamed. The slogan supplies a dignified cover for compliance. Because the system rests on such everyday cooperation, the line of conflict runs through each person, and even taking the sign down carries outsized weight."
+  }
+ ]
+}

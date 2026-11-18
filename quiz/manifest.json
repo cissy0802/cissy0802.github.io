@@ -1676,6 +1676,141 @@
     "8e4a0cfc0c",
     "c6d44dd169"
    ]
+  },
+  "/super-individual/examples-over-rules-skill18.html": {
+   "t": "Skill 18 · 写作 Skill 的通用配方：样例 — Super Individual",
+   "f": "super-individual/examples-over-rules-skill18.json",
+   "q": [
+    "39fc4a4e53",
+    "68f1150b87",
+    "50a4cd61f8"
+   ]
+  },
+  "/super-individual/personal-infra-day23.html": {
+   "t": "Day 23 · Personal AI Infra — Super Individual",
+   "f": "super-individual/personal-infra-day23.json",
+   "q": [
+    "6e6d7742e7",
+    "e0311047d8",
+    "0032ae60c5"
+   ]
+  },
+  "/chapter-deepread/chaoseng-ch08-capital-one-adoption-book140.html": {
+   "t": "Chaos Engineering 第 8 章 · Capital One：在强监管行业落地 — 专业书籍精读 Book 140",
+   "f": "chapter-deepread/chaoseng-ch08-capital-one-adoption-book140.json",
+   "q": [
+    "bd239c15b5",
+    "291ca34390",
+    "c389e2b0b9"
+   ]
+  },
+  "/leadership/storytelling-day49.html": {
+   "t": "领导力 Day 49：讲故事的领导力",
+   "f": "leadership/storytelling-day49.json",
+   "q": [
+    "1d902b613b",
+    "1c7d0075b7",
+    "1e8cc98121"
+   ]
+  },
+  "/chapter-deepread/aposd-ch17-consistency-book181.html": {
+   "t": "A Philosophy of Software Design 第 17 章 · 一致性 — 专业书籍精读 Book 181",
+   "f": "chapter-deepread/aposd-ch17-consistency-book181.json",
+   "q": [
+    "e1ef16952c",
+    "72b8f95197",
+    "2fdf52aa3a"
+   ]
+  },
+  "/cs-papers-deepread/word2vec-paper4.html": {
+   "t": "Word2Vec — IT 论文精读 Paper 4",
+   "f": "cs-papers-deepread/word2vec-paper4.json",
+   "q": [
+    "208b386c58",
+    "b1e6a349c5",
+    "27e155fb70"
+   ]
+  },
+  "/mathematics/randomness-day37.html": {
+   "t": "随机性的数学 · Day 37 — Mathematics",
+   "f": "mathematics/randomness-day37.json",
+   "q": [
+    "5f82066eeb",
+    "252c893431",
+    "fa19490ec0"
+   ]
+  },
+  "/book-recommendations/totalitarianism-evil-book59.html": {
+   "t": "Issue 59：极权主义与政治之恶 — 一套体制如何建立、由谁执行、靠谁维持",
+   "f": "book-recommendations/totalitarianism-evil-book59.json",
+   "q": [
+    "e523089cae",
+    "b5274b8ee9",
+    "f1325b7e67"
+   ]
+  },
+  "/deep-reading/ficciones-read114.html": {
+   "t": "《虚构集》",
+   "f": "deep-reading/ficciones-read114.json",
+   "q": [
+    "ae39a5c19d",
+    "4eec055f87",
+    "63d37073d5"
+   ]
+  },
+  "/parenting/death-loss-day37.html": {
+   "t": "育儿与教育：死亡与丧失教育 — Day 37",
+   "f": "parenting/death-loss-day37.json",
+   "q": [
+    "ddb2f30109",
+    "0028f88d30",
+    "596313c6ea"
+   ]
+  },
+  "/philosophy/pragmatism-day37.html": {
+   "t": "哲学经典详解：实用主义 · Day 37 — Philosophy",
+   "f": "philosophy/pragmatism-day37.json",
+   "q": [
+    "41418572b4",
+    "1d691ddccf",
+    "438158d719"
+   ]
+  },
+  "/book-recommendations/time-many-faces-book29.html": {
+   "t": "Issue 29：时间的多副面孔 — 物理、大脑、故事与文学里的四种时间 | 好书推荐",
+   "f": "book-recommendations/time-many-faces-book29.json",
+   "q": [
+    "63d55faecb",
+    "04b6a76bfc",
+    "efe186e483"
+   ]
+  },
+  "/system-design/system-design-interview-day25.html": {
+   "t": "Day 25 · 系统设计面试 (System Design Interview) — System Design",
+   "f": "system-design/system-design-interview-day25.json",
+   "q": [
+    "31c742c3a8",
+    "97bdf7ab67",
+    "83cd5aa956"
+   ]
+  },
+  "/psychology/motivation-day17.html": {
+   "t": "心理学 Day 17：动机心理学 — 为什么奖励常常杀死热情",
+   "f": "psychology/motivation-day17.json",
+   "q": [
+    "9b34665d2a",
+    "7c58c880e5",
+    "40f88ad29c"
+   ]
+  },
+  "/novel-deepread/call-arms-novel5.html": {
+   "t": "呐喊 — 小说精读 No.5",
+   "f": "novel-deepread/call-arms-novel5.json",
+   "q": [
+    "5d87efbe69",
+    "b05886d8b7",
+    "08cbc7e1a2"
+   ]
   }
  },
  "aliases": {

@@ -1,0 +1,69 @@
+{
+ "page": "/super-individual/examples-over-rules-skill18.html",
+ "title": "Skill 18 · 写作 Skill 的通用配方：样例 — Super Individual",
+ "page_en": "/super-individual/examples-over-rules-skill18.en.html",
+ "title_en": "Skill 18 · Examples Over Rules — Super Individual",
+ "src_hash": "8c6347218c18",
+ "questions": [
+  {
+   "id": "39fc4a4e53",
+   "question": "在写作类 Skill 里放 before/after 样例，最主要解决的是什么问题？",
+   "options": [
+    "「简洁」「别营销腔」这类形容词，人和模型理解的取值范围不同，样例把范围钉死",
+    "模型不会遵守抽象规则，只有样例才会被执行，所以规则可以整体删掉",
+    "规则写得太长会撞到行数上限，用样例替换规则可以节省篇幅",
+    "样例越多模型越不容易过拟合，因此应尽量给每条规则都配满五对 before/after 样例"
+   ],
+   "answer": 0,
+   "explanation": "样例干掉的是「形容词没有取值」这个病：一对 before/after 让「简洁」有了可比对的验收标准。它不是用来取代规则的，规则负责给禁区命名、样例负责划界；而且样例本身最占篇幅，也会带来过拟合。",
+   "question_en": "What is the main problem that before/after examples solve in a writing Skill?",
+   "options_en": [
+    "Adjectives like \"concise\" or \"not salesy\" mean different ranges to you and the model; examples pin the range down",
+    "Models ignore abstract rules and only follow examples, so the rules can be dropped entirely",
+    "Long rule lists hit the line limit, so swapping rules for examples saves space",
+    "More examples reduce overfitting, so every rule should be filled out with five pairs"
+   ],
+   "explanation_en": "Examples cure the problem of adjectives having no concrete value: a before/after pair turns \"concise\" into something you can check against. They don't replace rules—rules name the forbidden zone, examples mark its boundary—and examples are actually the bulkiest part of a Skill and carry their own overfitting risk."
+  },
+  {
+   "id": "68f1150b87",
+   "question": "给每对 before/after 样例后面再加一行「Changes:（这次删了开场白和二元对比）」，主要作用是什么？",
+   "options": [
+    "压缩样例的 token 占用，让 SKILL.md 正文保持在 500 行以内",
+    "把 Input/Output 这类标签换成更自然的写法，防止模型连标签一起学走",
+    "让模型学到具体改动了什么，而不是从样例里归纳出「句子越短越好」这类错误规律",
+    "给人类审稿人留下修改记录，方便日后追溯这条样例是谁写的"
+   ],
+   "answer": 2,
+   "explanation": "只给 before/after，模型可能学成「短句好」；补上 Changes: 之后，它学到的是「删的是开场白和二元对比」，样例才变得可迁移。防止标签被学走是另一条提醒，和这一行无关；这一行也只会增加而不会减少篇幅。",
+   "question_en": "What does adding a \"Changes:\" line (e.g. \"removed opener and binary contrast\") after each before/after pair mainly accomplish?",
+   "options_en": [
+    "It cuts the token cost of examples so the SKILL.md body stays under 500 lines",
+    "It replaces literal Input/Output labels so the model doesn't copy the labels into its output",
+    "It tells the model what was actually changed, so it doesn't infer a wrong rule like \"shorter is better\"",
+    "It leaves an edit history for human reviewers to trace who wrote each example"
+   ],
+   "explanation_en": "With only before/after, the model may learn \"short sentences are good\"; the Changes line tells it the point was removing the opener and the binary contrast, which makes the example transferable. Avoiding copied labels is a separate tip, and this line adds length rather than saving it."
+  },
+  {
+   "id": "50a4cd61f8",
+   "question": "样例的三笔代价（过拟合、token、同化）里，为什么「同化」被认为最难对付？",
+   "options": [
+    "模型只在打磨过的那几个样例上表现好，换一篇稿子就完全失效",
+    "模型会把那段 After 当天花板，交付水平停在你写样例时的水平，而且不会报错",
+    "样例会和同时挂载的其他 Skill 规则互相冲突，导致每次输出的文风都不一样、难以复现",
+    "样例占用的 token 会随对话轮数不断累积，直到撞上上下文上限"
+   ],
+   "answer": 1,
+   "explanation": "同化的意思是模型优化的就是「像那段 After」，所以不会交出比它更好的句子；半年后你进步了，它还停在旧水平，而且一切看起来正常。唯一的办法是定期换样例。「换一篇就废」说的是过拟合，那一笔用 diverse 的样例和陌生任务测试就能缓解。",
+   "question_en": "Of the three costs of examples (overfitting, tokens, assimilation), why is assimilation considered the hardest to deal with?",
+   "options_en": [
+    "The model only does well on the few examples you polished and falls apart on a new draft",
+    "The model treats your After text as a ceiling, so output stays at the level you wrote it, with no error to warn you",
+    "Examples clash with rules from other Skills loaded at the same time, so the style shifts on every run and can't be reproduced",
+    "Example tokens accumulate with each conversation turn until they hit the context limit"
+   ],
+   "explanation_en": "Assimilation means the model optimizes for resembling your After, so it won't produce anything better; months later you've improved but it hasn't, and nothing looks wrong. The only remedy is to rotate examples periodically. Failing on a new draft is overfitting, which diverse examples and testing on unseen tasks can mitigate."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/chapter-deepread/chaoseng-ch08-capital-one-adoption-book140.html",
+ "title": "Chaos Engineering 第 8 章 · Capital One：在强监管行业落地 — 专业书籍精读 Book 140",
+ "page_en": "/chapter-deepread/chaoseng-ch08-capital-one-adoption-book140.en.html",
+ "title_en": "Chaos Engineering Ch 8 · Capital One: Chaos Engineering in a Regulated Industry — Book Deep Read 140",
+ "src_hash": "a6fe7c57ebad",
+ "questions": [
+  {
+   "id": "bd239c15b5",
+   "question": "一家银行的风控部门说：「我们受强监管，所以不能做混沌工程。」按 Capital One 的经验，更准确的回应是什么？",
+   "options": [
+    "监管要的是能扛住故障的证据，混沌实验恰好擅长产出它，只是要换一条先攒记录的路",
+    "监管机构禁止任何形式的故障注入，所以只能用年度灾备演练代替混沌工程",
+    "强监管环境里应该直接在生产环境小范围做实验，因为非生产环境得出的结论对审计没有任何价值",
+    "只要由外部团队做不打招呼的盲测，就能同时满足合规要求和混沌工程的目标"
+   ],
+   "answer": 0,
+   "explanation": "本章的核心命题是：监管不是混沌工程的反对者，而是证据的买家。路径是先在非生产做假设驱动实验、挂上流水线门禁、自动留痕，再拿记录换生产许可。非生产不是没价值，而是在攒许可；盲测像考试、一次性、知识留不住，只是起点。",
+   "question_en": "A bank's risk team says: \"We're heavily regulated, so we can't do chaos engineering.\" Based on Capital One's experience, what is the better response?",
+   "options_en": [
+    "Regulators want evidence that systems withstand failure, which chaos experiments are good at producing—you just take a path that builds records first",
+    "Regulators forbid any kind of fault injection, so annual disaster-recovery drills must substitute for chaos engineering",
+    "In regulated settings you should go straight to small production experiments, since non-production results are worthless to auditors",
+    "Unannounced blind tests run by an outside team satisfy both compliance and the goals of chaos engineering"
+   ],
+   "explanation_en": "The chapter's core claim: regulators aren't opponents of chaos engineering but buyers of evidence. The path is hypothesis-driven experiments in non-production, then pipeline gates with automatic audit trails, then using that record to earn production access. Non-production isn't worthless—it's how you earn permission; blind tests feel like exams, are one-off, and don't build knowledge."
+  },
+  {
+   "id": "291ca34390",
+   "question": "从「盲测」转向「混沌实验」，最根本的变化在哪里？",
+   "options": [
+    "注入故障的频率从每月一次降到每年一次，减少了对团队的打扰",
+    "改由更资深的中心团队统一出题和评分，测试结果因此更权威、也更适合直接交给审计",
+    "故障注入从生产环境整体挪到了测试环境，所以此后不再有任何真实的客户风险",
+    "假设由负责该系统的应用团队自己提出，实验可复跑，团队借此真正了解自己的系统"
+   ],
+   "answer": 3,
+   "explanation": "转折在于谁来提出假设：盲测是外部团队出题、被测团队像在考试，倾向辩解、知识也留不住；混沌实验由最懂系统的人自己写假设，可复跑，天然带着「假设—注入—观测—结论」的结构化记录。频率其实是往上走的，中心团队的终态是平台与教练而不是出题人。",
+   "question_en": "What is the most fundamental change when moving from blind resiliency testing to chaos experiments?",
+   "options_en": [
+    "Fault injection drops from monthly to yearly, reducing disruption to teams",
+    "A more senior central team now sets and grades all tests, making results more authoritative and better suited to hand straight to auditors",
+    "Faults move entirely from production to test environments, so there is no longer any real customer risk",
+    "The team that owns the system writes the hypothesis itself, the experiment is repeatable, and the team actually learns its system"
+   ],
+   "explanation_en": "The pivot is who proposes the hypothesis. Blind tests are set by an outside team, so the tested team feels examined, gets defensive, and retains little. Chaos experiments are written by the people who know the system best, are repeatable, and naturally produce a structured hypothesis–injection–observation–conclusion record. Frequency actually goes up, and the central team ends up as platform and coach, not examiner."
+  },
+  {
+   "id": "c389e2b0b9",
+   "question": "把混沌实验挂成 CI/CD 门禁后，如果这个实验时好时坏，为什么说它「比没有更糟」？",
+   "options": [
+    "审计员会因为结果不一致而拒绝认可之前所有的实验记录",
+    "不稳定的实验会直接在生产环境里引发真实事故，并且触发必须向监管机构上报的流程",
+    "团队很快会学会绕过它，而记录里仍写着「已验证」，给出虚假的安全证据",
+    "门禁会因此永远拦住所有版本，导致公司无法发布任何新功能"
+   ],
+   "answer": 2,
+   "explanation": "门禁上的实验必须稳定、可重复。时好时坏的实验几周内就会被团队绕过，但流水线记录仍显示「已验证」，比没有门禁更危险，因为它制造了虚假的证据。门禁实验跑在部署后、晋级前的非生产环境里，问题不在于直接摇出生产事故。",
+   "question_en": "Once a chaos experiment becomes a CI/CD gate, why is a flaky one said to be \"worse than none\"?",
+   "options_en": [
+    "Auditors will reject all previous experiment records because the results are inconsistent",
+    "An unstable experiment directly causes real production incidents and triggers mandatory reporting to regulators",
+    "Teams quickly learn to bypass it while the records still say \"verified,\" creating false evidence of safety",
+    "The gate will then block every release forever, so the company can't ship anything"
+   ],
+   "explanation_en": "Gate experiments must be stable and repeatable. A flaky one gets bypassed within weeks, yet the pipeline record still reads \"verified\"—worse than no gate because it manufactures false evidence. Gate experiments run in non-production after deploy and before promotion, so the issue isn't causing production incidents directly."
+  }
+ ]
+}

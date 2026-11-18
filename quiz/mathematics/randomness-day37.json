@@ -1,0 +1,69 @@
+{
+ "page": "/mathematics/randomness-day37.html",
+ "title": "随机性的数学 · Day 37 — Mathematics",
+ "page_en": "/mathematics/randomness-day37.en.html",
+ "title_en": "The Mathematics of Randomness · Day 37 — Mathematics",
+ "src_hash": "98e7ff4f844b",
+ "questions": [
+  {
+   "id": "5f82066eeb",
+   "question": "一维随机游走每步等概率向左或向右走一格。走了 10000 步之后，离起点的典型距离大约是多少？",
+   "options": [
+    "约 0 步，因为左右各半，正负会相互抵消",
+    "约 100 步：抵消的是方向不是距离，典型距离按步数的平方根增长",
+    "约 5000 步，因为平均只有一半的步子朝同一方向推进，另一半恰好互相抵消",
+    "约 10000 步，因为每一步都让你离开上一个位置"
+   ],
+   "answer": 1,
+   "explanation": "期望位置确实是 0，但 E[S_n²]=n，典型偏移是 √n：100 步约 10 步，10000 步约 100 步。「正负抵消回到原地」的直觉错在把方向的抵消当成了距离的抵消；径直走才是 n。",
+   "question_en": "In a one-dimensional random walk, each step goes left or right with equal probability. After 10,000 steps, roughly how far from the start is the walker typically?",
+   "options_en": [
+    "About 0 steps, since left and right moves cancel out",
+    "About 100 steps: what cancels is direction, not distance, and typical distance grows like the square root of the step count",
+    "About 5,000 steps, since on average half the steps push in one direction while the other half cancel out",
+    "About 10,000 steps, since every step moves you away from where you were"
+   ],
+   "explanation_en": "The expected position is 0, but E[S_n²] = n, so the typical displacement is √n: about 10 after 100 steps, about 100 after 10,000. The \"it all cancels\" intuition confuses cancellation of direction with cancellation of distance; walking straight would give n."
+  },
+  {
+   "id": "252c893431",
+   "question": "「鞅」作为公平赌局的数学定义，准确的含义是什么？",
+   "options": [
+    "每一轮输赢的概率相同，所以长期下来赌本一定回到初始值",
+    "赌本的数值始终保持不变，不会出现大的波动",
+    "只要采用合适的停止规则，比如输了就加倍下注、赢一次就收手，就能保证期望收益为正",
+    "给定全部历史，对下一轮赌本的最优预测就是当前值，历史里没有可利用的方向"
+   ],
+   "answer": 3,
+   "explanation": "鞅说的不是值不变——波动可以大到破产——而是趋势为零：E[X_{n+1}|F_n]=X_n。可选停时定理进一步说明，只要不能预知未来、下注受限，任何停止规则都改不了期望；倍投法几乎必然赢一块，代价是小概率连败里输掉天文数字，期望恰好抹平。",
+   "question_en": "What exactly does a martingale—the mathematical definition of a fair game—mean?",
+   "options_en": [
+    "Each round has equal odds of winning and losing, so the bankroll always returns to its starting value in the long run",
+    "The bankroll's value stays constant and never fluctuates much",
+    "With the right stopping rule—say, double after every loss and quit after one win—expected profit can be made positive",
+    "Given all the history so far, the best prediction of next round's bankroll is its current value; history holds no exploitable directional information"
+   ],
+   "explanation_en": "A martingale doesn't mean the value stays put—swings can be large enough to ruin you—it means zero drift: E[X_{n+1}|F_n] = X_n. The optional stopping theorem adds that, without foresight and with bounded bets, no stopping rule changes the expectation; doubling almost surely wins one unit but loses astronomically in the rare losing streak, exactly cancelling out."
+  },
+  {
+   "id": "fa19490ec0",
+   "question": "把一个 1000×1000 对称矩阵的每个元素都填上独立随机数，再求它的特征值，会看到什么？",
+   "options": [
+    "特征值稳定地落在一条半圆曲线下，换一批随机数也不变，且彼此排斥、均匀排开",
+    "只有维度很低时才会出现规律；维度越高，随机叠加越多，特征值就越接近均匀铺满整条实轴",
+    "特征值杂乱无章，每换一批随机数分布形状都完全不同",
+    "特征值像独立撒下的随机点一样成团扎堆，集中在零附近"
+   ],
+   "answer": 0,
+   "explanation": "这是 Wigner 半圆律：单个元素彻底无序，整体谱却是刚性的秩序，波动以 1/N 的量级消失，维度把随机熨平。特征值之间还相互排斥，不像独立随机点那样扎堆。高维反而让宏观量更可预测，这是测度集中的一种面孔。",
+   "question_en": "Fill every entry of a symmetric 1000×1000 matrix with independent random numbers and compute its eigenvalues. What do you see?",
+   "options_en": [
+    "The eigenvalues fall reliably under a semicircle that stays put with fresh random numbers, and they repel each other, spreading evenly",
+    "Patterns appear only in low dimensions; the higher the dimension, the more randomness piles up and the closer eigenvalues come to covering the real line uniformly",
+    "The eigenvalues are chaotic, and their distribution changes shape completely with each new batch of random numbers",
+    "The eigenvalues clump together near zero, like independently scattered random points"
+   ],
+   "explanation_en": "This is Wigner's semicircle law: each entry is pure disorder, yet the spectrum as a whole is rigidly ordered, with fluctuations vanishing at order 1/N—dimension irons out the randomness. Eigenvalues also repel one another rather than clumping like independent points. High dimension makes macroscopic quantities more predictable, one face of concentration of measure."
+  }
+ ]
+}

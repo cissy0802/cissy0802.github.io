@@ -1,0 +1,69 @@
+{
+ "page": "/leadership/storytelling-day49.html",
+ "title": "领导力 Day 49：讲故事的领导力",
+ "page_en": "/leadership/storytelling-day49.en.html",
+ "title_en": "Leadership Day 49: Storytelling Leadership",
+ "src_hash": "89927b9bc0f0",
+ "questions": [
+  {
+   "id": "1d902b613b",
+   "question": "用 And / But / Therefore 宣布一次痛苦的架构迁移时，「But」这一段最应该做到什么？",
+   "options": [
+    "直接宣布迁移的时间表和分工，避免讨论拖慢执行",
+    "详细铺陈历史背景和各方案对比，让团队自己得出必须迁移的结论",
+    "点明外部形势变了、为什么现在不能不改，把「敌人」指向形势而不是人",
+    "指出当初的选型是谁拍板的失误，让团队清楚认识到问题有多严重、必须由谁来负责"
+   ],
+   "answer": 2,
+   "explanation": "But 负责引入冲突、制造「为什么是现在」的紧迫感，缺了它变革就像领导拍脑袋；但敌人要指向形势，否定在场者的心血会激起防御。只铺背景是「只有 and」，只给时间表是「只有 therefore」，都是常见的翻车方式。",
+   "question_en": "When announcing a painful architecture migration with And / But / Therefore, what should the \"But\" part accomplish?",
+   "options_en": [
+    "Announce the migration schedule and assignments directly, so discussion doesn't slow execution",
+    "Lay out the full history and option comparisons so the team reaches the migration conclusion on its own",
+    "Show what changed in the environment and why it can't wait, casting circumstances—not people—as the enemy",
+    "Point out whose bad decision the original design was, so the team grasps how serious the problem is and who is accountable"
+   ],
+   "explanation_en": "The But introduces the conflict that creates urgency—\"why now\"—without which change looks like an arbitrary order. But the enemy should be circumstances; attacking the work of people in the room triggers defensiveness. All background is the \"and-only\" failure; just a schedule is the \"therefore-only\" failure."
+  },
+  {
+   "id": "1c7d0075b7",
+   "question": "按 Nancy Duarte 的愿景叙事结构，在半年启动会上讲新方向，哪种讲法最符合？",
+   "options": [
+    "用「我带大家打下这座山」的口吻，让团队看到领导者的决心和担当",
+    "逐条讲清每一个 OKR、里程碑和架构图，保证信息完整、不遗漏任何一个重点",
+    "只描绘一年后的美好图景，避免提现状的问题打击士气",
+    "在现状之痛和一年后的可能之间来回撑开落差，团队当主角、自己当导师"
+   ],
+   "answer": 3,
+   "explanation": "愿景是一个有张力的故事：在 what is 与 what could be 之间摆动，用落差让人想动身；主角是听众，领导者是导师。只讲彼岸没有痛，没人有动力离开沙发；自己当英雄会让听众在愿景里照见不到自己；念 roadmap 信息齐全却没人记得。",
+   "question_en": "Following Nancy Duarte's structure for vision narratives, which approach best fits a kickoff talk on new direction?",
+   "options_en": [
+    "Speak as \"I'll lead you up this mountain\" so the team sees the leader's resolve and ownership",
+    "Walk through every single OKR, milestone, and architecture diagram so not one important point is left out",
+    "Paint only the bright picture of a year from now, avoiding current problems so morale stays high",
+    "Swing between today's pain and what could be a year out to widen the gap, with the team as hero and yourself as mentor"
+   ],
+   "explanation_en": "A vision is a story with tension: oscillating between what is and what could be so the gap makes people want to move; the audience is the hero and the leader the mentor. Without present pain no one leaves the couch; casting yourself as hero leaves the audience no place in the story; reading the roadmap is complete but forgettable."
+  },
+  {
+   "id": "1e8cc98121",
+   "question": "向 VP 申请人手还技术债，只甩了一页延迟和工单数据，VP 点头后说「下季度再看」。按「数据 + 故事」的配方，最该怎么改？",
+   "options": [
+    "先讲一个具体的人在具体场景里的遭遇，再用聚合数据证明不是个案",
+    "挑一个最极端、最惨烈的个案来讲，冲击力越大，VP 就越难拒绝，也就越容易获批",
+    "补充更细的指标和同比曲线，让数据本身更有说服力",
+    "改为讲团队最近很累、士气很低，用情绪打动对方"
+   ],
+   "answer": 0,
+   "explanation": "纯数据让人理性认可但不感到痛，纯故事又像个人抱怨、撑不起决策。配方是先脸后数：一张脸让人在乎，一组数证明它不是挑出来的特例。用不具代表性的极端个案煽情短期有效，一旦被识破，可信度和以后的所有论证一起崩。",
+   "question_en": "You ask a VP for headcount to pay down tech debt with a page of latency and ticket data; the VP nods and says \"let's revisit next quarter.\" Following the data-plus-story recipe, what should you change?",
+   "options_en": [
+    "Open with one specific person's experience in a concrete moment, then use aggregate data to show it isn't isolated",
+    "Pick the single most extreme, harrowing case, since the bigger the shock, the harder it is for the VP to say no",
+    "Add finer-grained metrics and year-over-year charts so the data itself is more persuasive",
+    "Switch to describing how tired and demoralized the team is, to move the VP emotionally"
+   ],
+   "explanation_en": "Pure data earns rational agreement but no felt urgency; pure story sounds like a complaint and can't support a decision. The recipe is face first, numbers second: one face makes people care, the numbers prove it isn't cherry-picked. An unrepresentative extreme case works briefly but, once exposed, sinks your credibility for every future argument."
+  }
+ ]
+}

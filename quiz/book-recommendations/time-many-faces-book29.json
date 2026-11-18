@@ -1,0 +1,69 @@
+{
+ "page": "/book-recommendations/time-many-faces-book29.html",
+ "title": "Issue 29：时间的多副面孔 — 物理、大脑、故事与文学里的四种时间 | 好书推荐",
+ "page_en": "/book-recommendations/time-many-faces-book29.en.html",
+ "title_en": "Issue 29: The Many Faces of Time — four kinds of time, in physics, the brain, story and literature | Book Recommendations",
+ "src_hash": "ea309443ec90",
+ "questions": [
+  {
+   "id": "63d55faecb",
+   "question": "按 Alan Burdick《时间为什么飞逝》的说法，为什么童年显得漫长、中年显得飞快？",
+   "options": [
+    "中年人每天更忙碌，当下觉得时间不够用，回忆时也就觉得时间更短",
+    "大脑里有一个会随年龄增长而逐渐变慢的生物钟，中年时它的走速降低，所以外界的时间就显得更快",
+    "回顾中的时长取决于新异经验的密度：童年处处是第一次，中年的重复几乎不被记录",
+    "童年时神经系统处理速度更快，单位时间里能感知到更多帧画面"
+   ],
+   "answer": 2,
+   "explanation": "Burdick 强调大脑里没有单一的钟，时间感是现场构造的；而且当下的时间感和回顾的时间感常常相反——塞满新事的一天当下飞快、回顾却长。中年显得快，是因为重复把日子抹平、记忆里没有锚点，而不是因为忙。想让一段时光在回忆里变长，靠的是新鲜而不是悠闲。",
+   "question_en": "According to Alan Burdick's Why Time Flies, why does childhood seem long and middle age seem to fly by?",
+   "options_en": [
+    "Middle-aged people are busier, so time feels short in the moment and therefore in memory too",
+    "A biological clock in the brain gradually slows with age, so in middle age outside time seems to pass faster",
+    "Remembered duration depends on the density of novel experiences: childhood is full of firsts, while in middle age the brain automates repetition and barely records it",
+    "Children's nervous systems process faster, perceiving more frames per unit of time"
+   ],
+   "explanation_en": "Burdick stresses there's no single clock in the brain; time sense is constructed on the fly, and in-the-moment and retrospective time often diverge—a day packed with novelty flies by but feels long in memory. Middle age feels fast because repetition flattens days and leaves no memory anchors, not because of busyness. To make a stretch feel longer in memory, make it fresher, not more leisurely."
+  },
+  {
+   "id": "04b6a76bfc",
+   "question": "James Gleick 在《时间旅行》里对「时间旅行」这个念头提出了什么判断？",
+   "options": [
+    "时间旅行念头源于人们对永恒不变的现在的渴望，所以在技术停滞的时代最为流行",
+    "造机器穿越时间是 1895 年威尔斯发明的现代念头，这类故事处理的是焦虑与悔恨",
+    "时间旅行故事的价值主要在于提前探讨物理学上的可行性，其中不少设想后来被相对论部分证实",
+    "时间旅行是人类最古老的神话之一，从预言到轮回都是它的早期形态"
+   ],
+   "answer": 1,
+   "explanation": "Gleick 认为古人有预言、轮回和黄金时代的乡愁，却没有「造一台装置驶向未来」的想象；这个念头出现在人们第一次意识到未来会和现在剧烈不同的 19 世纪末。时间旅行故事从来不是关于物理，而是关于情绪。它诞生于加速变迁的年代，而非技术停滞的年代。",
+   "question_en": "What does James Gleick argue about the idea of time travel in Time Travel: A History?",
+   "options_en": [
+    "The idea arose from longing for an unchanging present, so it flourishes most in eras of technological stagnation",
+    "Traveling through time by machine is a modern idea invented by H.G. Wells in 1895, and such stories really deal with anxiety about the future and regret about the past",
+    "The value of time-travel stories lies mainly in exploring physical feasibility early, and several of their ideas were later partly confirmed by relativity",
+    "Time travel is one of humanity's oldest myths, with prophecy and reincarnation as early forms"
+   ],
+   "explanation_en": "Gleick notes that earlier cultures had prophecy, cycles, and nostalgia for a golden age, but never a device that drives into the future; the idea appeared in the late 19th century, when people first sensed the future would be radically unlike the present. Time-travel stories were never really about physics but about emotion—and they were born in an era of accelerating change, not stagnation."
+  },
+  {
+   "id": "efe186e483",
+   "question": "普鲁斯特在《追忆似水年华》中区分了两种记忆。按他的看法，哪种才能真正找回鲜活的过去？",
+   "options": [
+    "在梦中重现的记忆，因为它摆脱了理性的干扰",
+    "刻意、系统地反复回想得到的自主记忆，因为它最完整、最可靠，也最不容易走样",
+    "被气味、滋味偶然触发的非自主记忆，它把整段过去连同当年的情感带回来",
+    "借助日记和照片等外部记录重建的记忆，因为它不会随时间走样"
+   ],
+   "answer": 2,
+   "explanation": "刻意回想得到的是一份苍白、走样的事实清单；真正鲜活的过去封存在感官里，只等一把偶然的钥匙，比如浸在椴花茶里的玛德琳蛋糕。也因此，只存结论、丢掉情境的笔记再完整也唤不回当时；能做的是记下触发它的感官锚点。",
+   "question_en": "Proust distinguishes two kinds of memory in In Search of Lost Time. In his view, which one truly recovers the living past?",
+   "options_en": [
+    "Memory replayed in dreams, because it escapes the interference of reason",
+    "Voluntary memory, gained through deliberate, systematic recall, because it is the most complete, reliable, and least distorted",
+    "Involuntary memory, triggered by chance through smell or taste, which brings back a whole stretch of the past along with its feelings",
+    "Memory rebuilt from external records such as diaries and photos, because it doesn't distort over time"
+   ],
+   "explanation_en": "Deliberate recall yields a pale, distorted list of facts; the living past is sealed in the senses, waiting for a chance key—like the madeleine dipped in lime-blossom tea. That's why notes that keep conclusions but drop context can't bring a moment back, however thorough; what you can do is record the sensory anchor that triggered it."
+  }
+ ]
+}

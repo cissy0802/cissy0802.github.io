@@ -1,0 +1,69 @@
+{
+ "page": "/super-individual/personal-infra-day23.html",
+ "title": "Day 23 · Personal AI Infra — Super Individual",
+ "page_en": "/super-individual/personal-infra-day23.en.html",
+ "title_en": "Day 23 · Personal AI Infra — Super Individual",
+ "src_hash": "fa3e922cf002",
+ "questions": [
+  {
+   "id": "6e6d7742e7",
+   "question": "有人把 fallback 链里的降级模型也当作省钱手段：主模型偶尔报错时落到便宜模型，「反正还能省点钱」。按个人 AI 管线的设计原则，这样做的主要问题是什么？",
+   "options": [
+    "便宜模型的响应更慢，fallback 一触发就会让整条管线的延迟翻倍",
+    "OpenRouter 会按主模型的价格计费，降级之后的花费反而比一直直接用主模型更贵",
+    "成本路由和可用性兜底混在一起，provider 抖动时质量会悄悄下降而你察觉不到",
+    "fallback 链只能在同一家 provider 内配置，跨档降级会直接报错"
+   ],
+   "answer": 2,
+   "explanation": "成本路由是主动选便宜档，fallback 是被动兜底，两者是正交维度。把降级当成本优化，provider 一抖质量就跟着降，却因为「没报错」而不自知。OpenRouter 实际是按最终用上的模型计费，也不限制只在同家内降级。",
+   "question_en": "Someone treats the cheaper model in their fallback chain as a cost saver: when the main model errors, falling back to a cheap one \"saves a bit of money anyway.\" What is the main problem with this?",
+   "options_en": [
+    "Cheaper models respond more slowly, so triggering fallback doubles the pipeline's latency",
+    "OpenRouter bills at the primary model's rate, so falling back costs more than staying on the primary",
+    "It conflates cost routing with availability fallback, so quality silently drops whenever a provider is flaky",
+    "Fallback chains can only be configured within one provider, so cross-tier fallback throws an error"
+   ],
+   "explanation_en": "Cost routing is actively choosing a cheaper tier; fallback is a passive safety net—two orthogonal dimensions. Treating fallback as a cost lever means quality degrades whenever a provider hiccups, and you never notice because nothing errored. OpenRouter actually bills for the model that served the request and doesn't restrict fallback to one provider."
+  },
+  {
+   "id": "e0311047d8",
+   "question": "关于 provider 端的 prompt caching 和应用层的语义缓存，哪种说法是对的？",
+   "options": [
+    "前者命中时完全不调模型，所以风险更高；后者只复用前缀计算，几乎没有风险",
+    "前者复用前缀计算但每次仍真调模型；后者命中时完全不调模型，但阈值松了会答错",
+    "两者缓存的都是完整的问答对，区别只在于一个存在 provider 云端、一个存在本地机器上",
+    "前者适合强时效、高事实性的查询；后者因为按语义匹配，更适合每次内容都不同的任务"
+   ],
+   "answer": 1,
+   "explanation": "prompt cache 缓存的是逐字节一致的前缀，降的是每次调用的成本，但推理照常发生，几乎零风险；语义缓存缓存的是整个问答对，命中就直接返回旧答案，省得多，但阈值过松会把 2023 年财报的答案给 2024 年的问题。强时效查询恰恰不该上语义缓存。",
+   "question_en": "Which statement about provider-side prompt caching versus application-level semantic caching is correct?",
+   "options_en": [
+    "The former skips the model entirely on a hit, making it riskier; the latter only reuses prefix computation and is nearly risk-free",
+    "The former reuses computation for a stable prefix but still calls the model each time; the latter skips the model on a hit but answers wrongly if the similarity threshold is loose",
+    "Both cache full question–answer pairs; the only difference is that one lives on the provider's cloud and the other on your local machine",
+    "The former suits time-sensitive factual queries; the latter, matching by meaning, suits tasks whose content is new every time"
+   ],
+   "explanation_en": "Prompt caching stores a byte-identical prefix and lowers the cost per call, but inference still runs, so it's nearly risk-free. Semantic caching stores whole Q&A pairs and returns the old answer on a hit—bigger savings, but a loose threshold can hand the 2023 earnings answer to a 2024 question. Time-sensitive queries are exactly where semantic caching should be avoided."
+  },
+  {
+   "id": "0032ae60c5",
+   "question": "在个人 LLM gateway 后面，给每个 app 单独发一把带预算和模型白名单的 virtual key，而不是让所有 app 共用一把真 key，最关键的好处是什么？",
+   "options": [
+    "virtual key 的调用会走专用通道，比直接用真 key 延迟更低",
+    "某个 app 失控烧钱或泄露时只伤它自己的额度，能单独吊销，也能定位是哪个 app",
+    "有了 virtual key 之后就可以放心把真 key 直接写进各个 repo，不必再放在环境变量或 secret manager 里",
+    "virtual key 的预算在调用结算后才检查，因此绝对不会超出上限"
+   ],
+   "answer": 1,
+   "explanation": "分 key 的意义在隔离：一处失控或泄露只影响那一把 key 的额度，能单独吊销，也知道影响面多大。预算检查其实发生在调用前、按已记录的累计花费算，并发时仍可能冲过上限，所以不能当成绝对的墙；真 key 也始终只该存在 gateway 这一层。",
+   "question_en": "Behind a personal LLM gateway, what is the key benefit of issuing each app its own virtual key with a budget and model allowlist, instead of having all apps share one real key?",
+   "options_en": [
+    "Virtual-key calls go through a dedicated channel with lower latency than the real key",
+    "A runaway or leaked app only burns its own quota, can be revoked on its own, and you can tell which app caused the problem",
+    "With virtual keys you can safely commit the real key to each repo instead of keeping it in environment variables or a secret manager",
+    "Virtual-key budgets are checked after each call settles, so they can never be exceeded"
+   ],
+   "explanation_en": "The point of per-app keys is isolation: a runaway or leak affects only that key's quota, it can be revoked alone, and you know the blast radius. The budget is actually checked before the call against recorded spend, so concurrent requests can still overshoot—it's not an absolute wall. And the real key should only ever live in the gateway layer."
+  }
+ ]
+}

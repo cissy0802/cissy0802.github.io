@@ -1,0 +1,69 @@
+{
+ "page": "/system-design/system-design-interview-day25.html",
+ "title": "Day 25 · 系统设计面试 (System Design Interview) — System Design",
+ "page_en": "/system-design/system-design-interview-day25.en.html",
+ "title_en": "Day 25 · System Design Interview — System Design",
+ "src_hash": "244a9a33a95e",
+ "questions": [
+  {
+   "id": "31c742c3a8",
+   "question": "系统设计面试题是「设计 Twitter」，只有 45 分钟。哪种开场最能体现资深候选人的判断力？",
+   "options": [
+    "先澄清需求，主动提出只聚焦发推和 home timeline 两条最有取舍张力的路径，并征得同意",
+    "直接画出包含 CDN、Redis、Kafka 的完整架构图，节省时间留给深挖",
+    "尽量把搜索、广告、私信、trending、媒体转码等功能都列出来逐一设计，展示自己对整个系统的全面理解",
+    "只设计一个最简单的发帖 CRUD 服务，确保在时间内把它做到完美"
+   ],
+   "answer": 0,
+   "explanation": "开放题的第一动作是把题收敛成可设计的题：选 1–2 个有 trade-off 张力的核心功能讲透，深度永远优于广度，并给出理由征得 buy-in——这同时传递判断力和沟通信号。贪多会没有深度，直接堆组件像报菜名，只做 CRUD 又显得缺乏系统思维。",
+   "question_en": "The system design prompt is \"design Twitter,\" with 45 minutes. Which opening best signals senior-level judgment?",
+   "options_en": [
+    "Clarify requirements, then propose focusing only on posting and the home timeline—the paths with the most trade-off tension—explaining why and getting the interviewer's agreement",
+    "Immediately draw a full architecture with CDN, Redis, and Kafka to save time for the deep dive",
+    "List and design as many features as possible—search, ads, DMs, trending, media transcoding—to show a comprehensive grasp of the whole system",
+    "Design only the simplest post-CRUD service and make sure it's perfect within the time"
+   ],
+   "explanation_en": "The first move on an open problem is to turn it into a designable one: pick one or two core features with real trade-off tension and go deep—depth beats breadth—while giving reasons and getting buy-in, which signals both judgment and communication. Covering everything leaves no depth, stacking components is just naming dishes, and a bare CRUD service shows no systems thinking."
+  },
+  {
+   "id": "97bdf7ab67",
+   "question": "在系统设计面试中被问到消息队列选型，下面哪种回答最接近满分的 trade-off 表达？",
+   "options": [
+    "要支持 replay，所以选 Kafka 而非 RabbitMQ，代价是运维更复杂；不需要 replay 就改选后者",
+    "Kafka 和 RabbitMQ 各有各的优缺点，具体用哪个最好还是要看团队的偏好和熟悉程度",
+    "用 Kafka，因为它是业界最成熟、吞吐量最高、社区最活跃的消息队列，大厂基本都在用，选它不会出错",
+    "先用 Kafka 把系统跑起来，之后遇到具体问题再根据线上实际情况调整和替换"
+   ],
+   "answer": 0,
+   "explanation": "满分表达要包含约束、被淘汰的替代方案、选择的理由、付出的代价，最后再说约束一变会改选什么——最后这句是 staff 信号。只给结论是零信号；说「各有优缺点」没有做出决策；「先用再调」也没有讲清放弃了什么。",
+   "question_en": "Asked to choose a message queue in a system design interview, which answer comes closest to a top-scoring trade-off explanation?",
+   "options_en": [
+    "Because replay is needed, choose Kafka over RabbitMQ at the cost of heavier ops; without replay, switch to RabbitMQ",
+    "Kafka and RabbitMQ each have their pros and cons; which is best depends on the team's preferences and familiarity",
+    "Use Kafka, because it's the industry's most mature, highest-throughput queue with the most active community—nearly every big company uses it, so you can't go wrong",
+    "Start with Kafka to get things running, then adjust or swap it later based on real production issues"
+   ],
+   "explanation_en": "A top answer states the constraints, the rejected alternative, the reason for the choice, the cost paid, and finally what you'd pick if the constraints changed—that last part is the staff-level signal. A bare conclusion carries no signal, \"each has pros and cons\" makes no decision, and \"adjust later\" never says what you're giving up."
+  },
+  {
+   "id": "83cd5aa956",
+   "question": "面试官刚给设计题加了一个新约束：一致性要从最终一致改成强一致。此时怎样处理「出声推理」最合适？",
+   "options": [
+    "先说出一个结论稳住局面，之后发现不对再悄悄修改",
+    "保持沉默，直到在脑子里想出完整的最终方案为止，再一次性把正确答案讲给面试官听",
+    "立刻开口，边想边说，把每个闪过的念头都讲出来，避免冷场",
+    "先花 20–30 秒在白板上组织要点，形成有结构的小结论，再讲推理路径"
+   ],
+   "answer": 3,
+   "explanation": "出声推理的目的是暴露有结构的思考，不是填满每一秒沉默。面对新约束或硬问题，明确说「让我想 30 秒」再开口更显资深；语无伦次的流式输出反而暴露思路混乱。但全程沉默、只给答案又拿不到沟通分——沉默用来组织，出声用来呈现。",
+   "question_en": "The interviewer has just added a new constraint: consistency must change from eventual to strong. How should you handle \"thinking out loud\" at this point?",
+   "options_en": [
+    "Blurt out a conclusion to hold the floor, then quietly revise it later if it's wrong",
+    "Stay silent until you've worked out the complete final design in your head, then present the right answer all at once",
+    "Start talking immediately and voice every passing thought, so there's no awkward silence",
+    "Spend 20–30 seconds organizing points on the whiteboard into a small structured conclusion, then narrate the reasoning"
+   ],
+   "explanation_en": "Thinking aloud exists to expose structured thinking, not to fill every second. With a new constraint or hard question, saying \"let me think for 30 seconds\" and then speaking reads as more senior; a rambling stream of thoughts exposes confusion. But silence throughout with only a final answer forfeits communication credit—use silence to organize, speech to present."
+  }
+ ]
+}

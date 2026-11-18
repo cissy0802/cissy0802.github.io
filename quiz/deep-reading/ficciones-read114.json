@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/ficciones-read114.html",
+ "title": "《虚构集》",
+ "page_en": "/deep-reading/ficciones-read114.en.html",
+ "title_en": "Ficciones",
+ "src_hash": "5ab5ee4abee5",
+ "questions": [
+  {
+   "id": "ae39a5c19d",
+   "question": "博尔赫斯的巴别图书馆收藏了 25 个符号的所有可能排列，因此每一本真理之书都必然在某个书架上。为什么图书馆员最终走向绝望？",
+   "options": [
+    "图书馆是有限的，真理之书数量太少，几乎不可能被找到",
+    "图书馆员看不懂书中使用的古老文字，无法读出其中的真理",
+    "真书旁有无数只错一个字母的假书和反驳它的书，真理在场却无法辨认",
+    "图书馆里的书大多已被「净化者」成批销毁，而真理之书恰好就在被销毁的那一批里"
+   ],
+   "answer": 2,
+   "explanation": "同一个组合逻辑既保证真理之书存在，也保证它身边有无数几乎一样的伪本，以及证明它是假的书。什么都有等于什么都没有：知识本质上是排除错误的结果，价值在拒绝大部分，而不在拥有全部。净化者销毁的书也都有几乎一样的副本，毁不掉什么。",
+   "question_en": "Borges's Library of Babel contains every possible arrangement of 25 symbols, so every book of truth must be on some shelf. Why do the librarians end up in despair?",
+   "options_en": [
+    "The library is finite and holds so few true books that finding one is nearly impossible",
+    "The librarians can't read the ancient script the books are written in",
+    "Each true book sits beside countless near-copies off by one letter and books refuting it, so truth is present but indistinguishable from its counterfeits",
+    "Most of the library's books were destroyed in bulk by the \"purifiers,\" and the books of truth happened to be in that batch"
+   ],
+   "explanation_en": "The same combinatorial logic that guarantees the true book exists also guarantees countless near-identical fakes and books proving it false. Having everything equals having nothing: knowledge is fundamentally the elimination of error, so value lies in rejecting most things, not possessing all. Even the purifiers' destruction achieves nothing, since every destroyed book has near-identical copies."
+  },
+  {
+   "id": "4eec055f87",
+   "question": "《博闻强记的富内斯》里，少年富内斯拥有完美的知觉和记忆，却「什么也没想出来」。博尔赫斯借此表达的判断是什么？",
+   "options": [
+    "思考就是忘记差异、进行概括与抽象，遗忘是思考的前提而不是代价",
+    "思考依赖语言，富内斯失败是因为他没有发明出足够多的专名",
+    "完美记忆会让人陷入过度焦虑，情绪问题才是他无法思考的原因",
+    "记忆力越强的人越善于抽象，富内斯只是缺少系统的教育"
+   ],
+   "answer": 0,
+   "explanation": "富内斯无法理解为什么不同时刻、不同角度的狗都叫「狗」——他只有细节，没有概括。叙述者说「思考就是忘记差异」，抽象需要丢弃。他想给每块石头起专名，恰恰是病而不是解药；这对应机器学习里的过拟合。",
+   "question_en": "In \"Funes the Memorious,\" young Funes has perfect perception and memory yet \"thinks up nothing.\" What judgment does Borges convey through him?",
+   "options_en": [
+    "To think is to forget differences, to generalize and abstract; forgetting is a precondition of thought, not its price",
+    "Thinking depends on language, and Funes failed because he didn't invent enough proper names",
+    "Perfect memory causes extreme anxiety, and that emotional problem is why he can't think",
+    "People with stronger memories are better at abstraction; Funes merely lacked systematic education"
+   ],
+   "explanation_en": "Funes can't see why dogs seen at different moments and angles share the name \"dog\"—he has only particulars, no generalization. The narrator says to think is to forget differences; abstraction requires discarding. His plan to name every stone is the disease, not the cure—the literary twin of overfitting in machine learning."
+  },
+  {
+   "id": "63d37073d5",
+   "question": "在《〈吉诃德〉的作者皮埃尔·梅纳尔》中，梅纳尔一字不差地写出了《堂吉诃德》的几章，评论者却认为那是另一部作品。这篇小说想说明什么？",
+   "options": [
+    "只要作者足够努力地变成塞万提斯，就能重现原作的全部意义",
+    "文本不是装着意义的容器，意义产生于文本与作者、时代和读者的碰撞",
+    "经典作品的意义是固定的，任何重写都只能削弱它的价值",
+    "梅纳尔其实是抄袭者，评论者的赞美是对学术界盲目吹捧的讽刺"
+   ],
+   "answer": 1,
+   "explanation": "同一句「历史是真理之母」，出自 17 世纪的塞万提斯是修辞性颂扬，出自与威廉·詹姆斯同时代的梅纳尔，就成了「真理由历史生产」的惊人观点。意义不在字里，而在谁、何时、对谁说。梅纳尔恰恰放弃了「变成塞万提斯」的方案，嫌它太容易。",
+   "question_en": "In \"Pierre Menard, Author of the Quixote,\" Menard writes several chapters of Don Quixote word for word, yet the reviewer treats them as a different work. What is the story getting at?",
+   "options_en": [
+    "If an author tries hard enough to become Cervantes, the original's full meaning can be reproduced",
+    "A text isn't a container of meaning; meaning arises where the text meets its author, era, and readers",
+    "A classic's meaning is fixed, and any rewriting can only diminish its value",
+    "Menard is really a plagiarist, and the reviewer's praise satirizes academia's blind flattery"
+   ],
+   "explanation_en": "The same line, \"truth, whose mother is history,\" is rhetorical praise from 17th-century Cervantes but, from Menard—a contemporary of William James—a startling claim that history produces truth. Meaning lies not in the words but in who says them, when, and to whom. Menard in fact rejected the plan of becoming Cervantes as too easy."
+  }
+ ]
+}

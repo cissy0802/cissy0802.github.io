@@ -1,0 +1,69 @@
+{
+ "page": "/chapter-deepread/aposd-ch17-consistency-book181.html",
+ "title": "A Philosophy of Software Design 第 17 章 · 一致性 — 专业书籍精读 Book 181",
+ "page_en": "/chapter-deepread/aposd-ch17-consistency-book181.en.html",
+ "title_en": "A Philosophy of Software Design Ch 17 · Consistency — Book Deep-Read Book 181",
+ "src_hash": "80afd3e451aa",
+ "questions": [
+  {
+   "id": "e1ef16952c",
+   "question": "你接手一个代码库，发现自己有一种比现有约定略好一点的写法，但没时间把所有旧用法都改掉。按 Ousterhout 的观点该怎么做？",
+   "options": [
+    "照旧约定写，因为一致性带来的价值几乎总是大于这点改进",
+    "只在新写的代码里用新写法，旧代码就留着以后慢慢淘汰",
+    "把新写法写进风格指南，让之后的人自行选择两种之一",
+    "在新代码里用新写法，并加注释说明为什么和周围不同"
+   ],
+   "answer": 0,
+   "explanation": "「我有更好的点子」不足以引入不一致。只有新做法好到值得把所有旧用法一起更新、并真的全部更新时才该改；只在新处用新写法，系统就多了一种写法，读者要记两套。「新代码新写法、旧代码慢慢淘汰」正是本章点名的不一致来源。",
+   "question_en": "You inherit a codebase and have a way of doing something that's slightly better than the existing convention, but no time to update every old usage. What does Ousterhout recommend?",
+   "options_en": [
+    "Follow the existing convention, because the value of consistency almost always outweighs a small improvement",
+    "Use the new style only in new code and let the old code fade out over time",
+    "Add the new style to the style guide and let future developers choose either one",
+    "Use the new style in new code and add a comment explaining why it differs from its surroundings"
+   ],
+   "explanation_en": "\"I have a better idea\" isn't enough to justify inconsistency. Change a convention only if the new way is good enough to update every old usage—and you actually do it. Using it only in new places adds a second way readers must learn; \"new code new style, old code fades out\" is exactly the source of inconsistency the chapter warns about."
+  },
+  {
+   "id": "72b8f95197",
+   "question": "为什么说把两件行为其实不同的东西做成看起来一样（同名、同结构），可能比明显的不一致更糟？",
+   "options": [
+    "不同的东西共用名字会导致编译器无法区分，产生命名冲突",
+    "这样会让代码风格检查工具频繁报错，拖慢每一次提交流程，团队还得为此反复调整规则配置",
+    "读者需要学习的概念数量会变多，认知负担因此上升",
+    "一致性的价值在于「看起来像 X 就是 X」，虚假的一致让读者放心地错下去"
+   ],
+   "answer": 3,
+   "explanation": "读者正是依赖一致性来猜测代码含义的。不同的东西硬做成一样，读者以为它们一样、实际不一样，就会被误导。让不同的东西看起来也不同，代价反而是多学一个概念，但不会误导人。",
+   "question_en": "Why can making two things that actually behave differently look the same (same name, same structure) be worse than obvious inconsistency?",
+   "options_en": [
+    "Different things sharing a name prevents the compiler from telling them apart, causing name collisions",
+    "It makes style-checking tools flag errors constantly, slowing every commit and forcing the team to keep retuning the rule config",
+    "It increases the number of concepts readers must learn, raising cognitive load",
+    "Consistency's value rests on \"if it looks like X, it is X\"; false consistency lets readers go confidently wrong"
+   ],
+   "explanation_en": "Readers rely on consistency to guess what code does. Forcing different things to look alike makes readers believe they're the same when they aren't, which misleads them. Making different things look different does add a concept to learn, but it doesn't mislead anyone."
+  },
+  {
+   "id": "2fdf52aa3a",
+   "question": "一个服务里错误处理有三种写法：返回错误码、抛异常、返回空值。按本章分析，这种不一致最危险的后果是什么？",
+   "options": [
+    "读者按最熟悉的那种去猜，漏掉只返回空值的调用，错误被悄悄吞掉",
+    "新人会因为风格混乱而不愿意加入这个项目",
+    "代码在不同编译器下会产生不同的行为",
+    "三种机制同时存在会显著拖慢服务的运行速度，并让异常栈和监控日志变得难以阅读"
+   ],
+   "answer": 0,
+   "explanation": "不一致同时加重认知负担和「未知的未知」：读者每到一个函数都得先弄清它属于哪一派，更危险的是凭习惯猜错，比如以为会抛异常，结果它只返回空值，错误就被静默吞掉。问题在理解和正确性，而不在性能或编译器。",
+   "question_en": "A service handles errors three ways: returning error codes, throwing exceptions, and returning null. Per the chapter, what is the most dangerous consequence of this inconsistency?",
+   "options_en": [
+    "Readers guess based on the style they know best and miss a call that only returns null, so errors get silently swallowed",
+    "New hires are put off joining the project by the messy style",
+    "The code behaves differently under different compilers",
+    "Having three mechanisms at once significantly slows the service and makes stack traces and monitoring logs hard to read"
+   ],
+   "explanation_en": "Inconsistency worsens both cognitive load and unknown unknowns: readers must figure out which camp each function belongs to, and worse, they guess from habit—assume an exception will be thrown when the function just returns null—and the error vanishes silently. The problem is comprehension and correctness, not performance or compilers."
+  }
+ ]
+}

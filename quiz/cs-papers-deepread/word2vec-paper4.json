@@ -1,0 +1,69 @@
+{
+ "page": "/cs-papers-deepread/word2vec-paper4.html",
+ "title": "Word2Vec — IT 论文精读 Paper 4",
+ "page_en": "/cs-papers-deepread/word2vec-paper4.en.html",
+ "title_en": "Word2Vec — CS Papers Deep-Read Paper 4",
+ "src_hash": "83c5dcb15f90",
+ "questions": [
+  {
+   "id": "208b386c58",
+   "question": "Word2Vec 敢于砍掉隐藏层和非线性、把模型做到只剩「查表 + 点积」，背后的核心判断是什么？",
+   "options": [
+    "词向量质量的瓶颈在数据量而非模型复杂度，简单模型能吞下多得多的语料",
+    "当时的硬件不支持深层网络，只能退而求其次用浅层模型",
+    "隐藏层会过拟合小语料，去掉之后模型在任何规模的数据上都更准",
+    "非线性层会破坏词向量之间的线性关系，只有去掉它，训练出的向量才能支持 king − man + woman 这类算术"
+   ],
+   "answer": 0,
+   "explanation": "Mikolov 等押注「简单模型 × 海量数据」赢过「复杂模型 × 少量数据」：目标不是把语言模型做准，而是把向量学好，而向量质量对复杂度不敏感、对数据量敏感。模型越笨单步越快，才能用十几亿词喂饱。向量算术是训练后的意外之喜，不是砍层的动机。",
+   "question_en": "What core judgment allowed Word2Vec to drop the hidden layer and nonlinearity, reducing the model to a lookup plus a dot product?",
+   "options_en": [
+    "Embedding quality is bottlenecked by data volume, not model complexity, and a simple model can consume far more text",
+    "Hardware at the time couldn't run deep networks, so a shallow model was a fallback",
+    "Hidden layers overfit small corpora, so removing them makes the model more accurate at any data scale",
+    "Nonlinear layers destroy the linear relations between word vectors; only by removing them could the vectors support arithmetic like king − man + woman"
+   ],
+   "explanation_en": "Mikolov et al. bet that a simple model on massive data beats a complex model on little data: the goal was good vectors, not an accurate language model, and vector quality is insensitive to complexity but sensitive to data. A dumber model trains faster per step, so it can eat billions of words. Vector arithmetic was a happy surprise, not the reason for cutting layers."
+  },
+  {
+   "id": "b1e6a349c5",
+   "question": "Word2Vec 训练时只是做「遮住一个词让模型猜」，并没有人教它词义。为什么这样就能让意思相近的词在空间里靠近？",
+   "options": [
+    "模型会参考 WordNet 之类的词典，把同义词的向量拉到一起",
+    "训练语料里事先标注了同义词，模型在填空时顺带学会了它们",
+    "要把题答好，最省参数的办法就是让上下文分布相似的词共享相近的向量",
+    "点积运算本身会把拼写相近的词映射到相近的位置"
+   ],
+   "answer": 2,
+   "explanation": "这是自监督任务，没有人工标注，也不依赖词典。「猫」和「狗」总出现在相似语境里，共享相近坐标就能一份知识两用——语义不是被教出来的，而是被「预测要省力」逼出来的。模型也不看拼写，没见过的词连向量都没有。",
+   "question_en": "Word2Vec only plays \"hide a word and guess it\"; nobody teaches it meanings. Why does that make words with similar meanings end up close together?",
+   "options_en": [
+    "The model consults dictionaries like WordNet and pulls synonyms' vectors together",
+    "The training corpus is pre-annotated with synonyms, which the model picks up while filling blanks",
+    "The most parameter-efficient way to answer well is to give words with similar context distributions similar vectors",
+    "The dot product itself maps similarly spelled words to nearby positions"
+   ],
+   "explanation_en": "It's a self-supervised task with no human labels and no dictionary. Since \"cat\" and \"dog\" appear in similar contexts, giving them nearby coordinates lets one piece of knowledge serve both—meaning isn't taught, it's forced out by the pressure to predict efficiently. The model ignores spelling; unseen words don't even get a vector."
+  },
+  {
+   "id": "27e155fb70",
+   "question": "关于「king − man + woman ≈ queen」这类类比算术，后续研究提出了哪种批评？",
+   "options": [
+    "类比的例子是作者人工挑出来的漂亮个案，换到大规模测试集上准确率接近零",
+    "类比算术依赖隐藏层的非线性变换，后来的模型去掉隐藏层之后这一性质就随之消失了",
+    "评测排除了输入词，否则最近邻常是输入词本身；且其原理近似分解 PMI 矩阵",
+    "类比算术只在英语中成立，换成其他语言的语料就完全失效"
+   ],
+   "answer": 2,
+   "explanation": "标准评测会排除输入词，不排除的话很多题答案就是输入词自己；Levy & Goldberg 等还证明带负采样的 Skip-gram 隐式等价于分解 PMI 矩阵，并不比调好参的计数方法神秘多少。它在 19,544 题的测试集上确有可观准确率，而且 Word2Vec 本身就没有隐藏层。",
+   "question_en": "What criticism did later research raise about analogy arithmetic like \"king − man + woman ≈ queen\"?",
+   "options_en": [
+    "The analogies were attractive cases hand-picked by the authors, and accuracy on large test sets is near zero",
+    "Analogy arithmetic depends on the hidden layer's nonlinear transform, and the property vanished once later models removed it",
+    "Evaluation excludes the input words—otherwise the nearest neighbor is often an input word—and the method approximates factorizing a PMI matrix",
+    "Analogy arithmetic only works in English and fails completely on corpora in other languages"
+   ],
+   "explanation_en": "Standard evaluation excludes the input words; without that, many answers would just be an input word. Levy & Goldberg and others showed skip-gram with negative sampling implicitly factorizes a PMI matrix, so it's not much more mysterious than well-tuned count-based methods. It did score substantially on the 19,544-question test set, and Word2Vec has no hidden layer to begin with."
+  }
+ ]
+}

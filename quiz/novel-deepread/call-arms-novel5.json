@@ -1,0 +1,69 @@
+{
+ "page": "/novel-deepread/call-arms-novel5.html",
+ "title": "呐喊 — 小说精读 No.5",
+ "page_en": "/novel-deepread/call-arms-novel5.en.html",
+ "title_en": "Call to Arms — Novels, Deep-Read No.5",
+ "src_hash": "ccef0924d5e2",
+ "questions": [
+  {
+   "id": "5d87efbe69",
+   "question": "在《呐喊·自序》的「铁屋子」对话里，鲁迅最终决定动笔，依据的是哪一层道理？",
+   "options": [
+    "他相信只要喊得足够响，铁屋里的人终究都会醒来并合力砸开屋子",
+    "不是确信有人会醒，而是既然有人起来，就不能断言决没有毁坏铁屋的希望",
+    "他认为让人在痛苦中清醒死去，总比在睡梦中无痛地死去更有尊严",
+    "他判断铁屋其实早已有了裂缝，所以呐喊必然能够成功"
+   ],
+   "answer": 1,
+   "explanation": "钱玄同那句「你不能说决没有毁坏这铁屋的希望」的形状不是「一定有希望」，而是「你没有资格说一定没有」。书叫《呐喊》，是因为作者没能证明没人会醒，而不是他相信有人会醒。他也没有回答唤醒是不是加害，只是把喊的成本明码标价，然后照样喊。",
+   "question_en": "In the \"iron house\" exchange in the preface to Call to Arms, on what reasoning does Lu Xun finally decide to write?",
+   "options_en": [
+    "He believed that if he shouted loudly enough, everyone inside would eventually wake and smash the house together",
+    "Not confidence that anyone will wake, but that once a few have risen, one cannot claim there is no hope of breaking the iron house",
+    "He held that dying awake in agony is more dignified than dying painlessly in sleep",
+    "He judged that the iron house already had cracks, so the shout was bound to succeed"
+   ],
+   "explanation_en": "Qian Xuantong's point—\"you can't say there is no hope of destroying the iron house\"—isn't \"there is hope\" but \"you have no right to say there's none.\" The book is called Call to Arms because Lu Xun couldn't prove no one would wake, not because he believed someone would. He never settles whether waking people harms them; he names the cost of shouting and shouts anyway."
+  },
+  {
+   "id": "b05886d8b7",
+   "question": "《狂人日记》用一段文言小序包住白话日记，小序交代：病人早已痊愈，去某地候补做官了。这个结构在读完全篇后意味着什么？",
+   "options": [
+    "说明狂人的话其实只是被害妄想症的症状，作者借这段小序提醒读者不要把它当真",
+    "暗示狂人病好后会利用官职去推动他在日记里呼吁的改革",
+    "交代日记的来源以增加真实感，与小说的主题并无关系",
+    "喊出「吃人」的人被旧秩序收回：旧语言把新语言裹在里面，宣布它是病"
+   ],
+   "answer": 3,
+   "explanation": "读的时候小序像交代出处的套话；读完「救救孩子」再回头，意思全变：呐喊在中间，两头被合上，喊出真相的人痊愈了、做官了。外层文言、内层白话，是旧的把新的裹在里面并宣布它是病——第一篇现代小说把自己的处境写成了形式。",
+   "question_en": "A Madman's Diary wraps its vernacular diary in a classical-Chinese preface stating that the patient has long since recovered and gone off to await an official post. After reading the whole story, what does this structure signify?",
+   "options_en": [
+    "It shows the madman's words were really just symptoms of persecution delusion, and the preface warns readers not to take them seriously",
+    "It hints that, once cured, the madman will use his office to push the reforms his diary calls for",
+    "It explains where the diary came from to add realism and has nothing to do with the story's theme",
+    "The man who cried out \"cannibalism\" has been reclaimed by the old order—the old language wraps the new and declares it an illness"
+   ],
+   "explanation_en": "On first reading the preface looks like a routine note on sources; after \"Save the children…\" it reads entirely differently: the cry sits in the middle with both ends closed, and the man who spoke the truth is cured and becomes an official. Classical outside, vernacular inside—the old wraps the new and calls it sickness, so the first modern Chinese story turns its own predicament into form."
+  },
+  {
+   "id": "08cbc7e1a2",
+   "question": "《药》结尾，夏瑜坟顶上出现一圈整齐的红白花环。鲁迅自己后来如何交代这个花环？",
+   "options": [
+    "他说花环是夏瑜的革命同志悄悄献上的，意在向读者证明革命已经在民间扎下了根",
+    "他在《呐喊·自序》里承认，为顺应不主张消极的「将令」，用曲笔凭空添了花环",
+    "他从未解释花环，只说它的含义应由读者自行判断",
+    "他说花环是夏瑜母亲亲手所放，用来表现母爱的伟大"
+   ],
+   "answer": 1,
+   "explanation": "鲁迅在自序里明说「不恤用了曲笔」，在夏瑜坟上凭空添了一个花环，《明天》里也没写单四嫂子终于没能梦见儿子。他知道那圈花是假的还是放了，并且老实交代——同时又让乌鸦拒绝显灵，等于同时给出「有人记得」和「天不回应」。",
+   "question_en": "At the end of \"Medicine,\" a neat wreath of red and white flowers appears on Xia Yu's grave. How did Lu Xun himself later account for this wreath?",
+   "options_en": [
+    "He said Xia Yu's revolutionary comrades quietly placed it, to show readers the revolution had taken root among the people",
+    "In the preface to Call to Arms he admitted that, to follow the era's \"orders\" against pessimism, he used an indirect touch and added the wreath out of nowhere",
+    "He never explained it, saying only that readers should judge its meaning for themselves",
+    "He said Xia Yu's mother placed it herself, to show the greatness of a mother's love"
+   ],
+   "explanation_en": "In the preface Lu Xun says outright that he \"did not hesitate to use indirect touches,\" adding a wreath to Xia Yu's grave out of nowhere and not writing that the widow in \"Tomorrow\" failed to dream of her son. He knew the flowers were false, put them in anyway, and confessed it—while having the crow refuse to give a sign, offering both \"someone remembers\" and \"heaven doesn't answer.\""
+  }
+ ]
+}
