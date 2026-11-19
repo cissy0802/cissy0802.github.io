@@ -1,0 +1,69 @@
+{
+ "page": "/blog-deepread/ribbonfarm-blog4.html",
+ "title": "Venkatesh Rao · Ribbonfarm — 你得把世界压扁才看得懂它",
+ "page_en": "/blog-deepread/ribbonfarm-blog4.en.html",
+ "title_en": "Venkatesh Rao · Ribbonfarm — You Have to Flatten the World to Read It",
+ "src_hash": "4e608a8026d9",
+ "questions": [
+  {
+   "id": "47dd15f971",
+   "question": "Venkatesh Rao 从普鲁士「科学林业」中提炼出可读性（legibility）的失败模式。他在 James C. Scott 的基础上加的关键一步是什么？",
+   "options": [
+    "证明这种失败只属于高等现代主义的威权国家，民主社会的温和方案不会掉进去",
+    "把它从国家与意识形态的历史批判，推广成一种与时代和意识形态无关的人类思维基本失败模式，驱动它的是混乱引起的不安",
+    "主张只要充分听取现实、顺着人踩出的小路铺路，就能避免这种失败",
+    "论证简化本身是可以避免的，人应当学会面对复杂、拒绝任何归档"
+   ],
+   "answer": 1,
+   "explanation": "Rao 说这种失败模式用高等现代主义描述最容易，但其实与时代和意识形态无关，并且把它变成心理学：可读性平息了表面混乱激起的不安，人不是因为想控制才简化。他明确说「顺着小路铺路」这类温和方案不提供豁免权，也不认为简化可以避免。",
+   "question_en": "Venkatesh Rao draws a legibility failure mode from Prussian \"scientific forestry.\" What key step did he add beyond James C. Scott?",
+   "options_en": [
+    "He showed the failure belongs only to authoritarian high-modernist states, and that democracies' gentler approaches avoid it",
+    "He generalized it from a historical critique of states and ideology into a basic failure mode of human thought, independent of era and ideology, driven by the anxiety that apparent chaos provokes",
+    "He argued that listening closely to reality and paving the paths people already walk would prevent the failure",
+    "He argued that simplification is avoidable and that people should learn to face complexity and refuse to categorize anything"
+   ],
+   "explanation_en": "Rao says the failure mode is easiest to describe via high modernism but is actually time- and ideology-neutral, and he makes it psychological: legibility quells the anxiety of apparent chaos—we simplify because mess is uncomfortable, not out of a wish to control. He explicitly denies that gentle fixes like paving desire paths grant immunity, and he doesn't think simplification can be avoided."
+  },
+  {
+   "id": "d06a0e9353",
+   "question": "按《格瓦斯法则》，在组织底层「输家」这一层超额努力的人往往会被提拔进中层。原因是什么？",
+   "options": [
+    "输家已用自由换了工资、签的是亏本合同，超额努力等于把合同弄得更亏，暴露了自己不会为自己谈判",
+    "超额努力说明他看穿了游戏规则，组织把他当作未来的高层来培养",
+    "超额努力证明了他能力出众，组织按绩效公平地把最优秀的人往上提",
+    "超额努力让上级感到威胁，于是把他调离原岗位以减少竞争"
+   ],
+   "answer": 0,
+   "explanation": "Rao 说「输家」是经济学意义上的：拿长期经济自由换短期稳定，报酬与所创造的价值不相称，理性做法是只出最低限度的力。多交货的人暴露自己是「傻子」，被提进专门吸收后果的中层（糊涂人）。看穿游戏、被往顶层培养的，恰恰是那些清楚自己在做什么、出工不出力的人。",
+   "question_en": "Under the Gervais Principle, people who over-perform at the bottom \"Loser\" level tend to get promoted into middle management. Why?",
+   "options_en": [
+    "Losers have already traded freedom for a paycheck on a losing deal; over-delivering makes the deal worse and reveals they can't negotiate for themselves",
+    "Over-performance shows they've seen through the game, so the organization grooms them for the top",
+    "Over-performance proves exceptional ability, and the organization fairly promotes its best people on merit",
+    "Over-performance threatens their bosses, who move them out of the way to reduce competition"
+   ],
+   "explanation_en": "Rao uses \"Loser\" in an economic sense: trading long-term economic freedom for short-term stability, paid less than the value they create, so the rational move is minimal effort. Over-delivering marks you as an idiot and gets you promoted into the Clueless layer that absorbs consequences. Those who see through the game and get groomed for the top are the ones who coast knowingly."
+  },
+  {
+   "id": "55d8ebd737",
+   "question": "按 Rao 的「人造常态场」，一项新技术最可能以什么方式进入日常生活？",
+   "options": [
+    "依靠技术本身更先进而自然胜出，用户会主动抛弃旧的使用习惯",
+    "以体验上的巨大飞跃震撼用户，让人在第一次使用时就明确感到自己已经进入了未来",
+    "伪装成一件旧东西、尽量不改变用户体验，比如手机从电话而不是计算器演化而来",
+    "先在少数懂行的工程师中普及，再由他们向大众讲解新技术的全新用法"
+   ],
+   "answer": 2,
+   "explanation": "Rao 说成功的产品恰恰是那些不试图大幅移动用户体验的产品：客机把飞行限制成「一间会晃的候机室」，网页借用「文档」「页面」的隐喻，每代新技术都要先找一个旧隐喻当签证。「因为更先进而胜出」正是他否定的行业叙事。",
+   "question_en": "Under Rao's \"Manufactured Normalcy Field,\" how is a new technology most likely to enter everyday life?",
+   "options_en": [
+    "By being technically superior and winning on its own, with users eagerly dropping old habits",
+    "By stunning users with a dramatic leap in experience, so that from the first use people clearly feel they've arrived in the future",
+    "By disguising itself as something old and changing the user's experience as little as possible—the phone descends from the telephone, not the calculator",
+    "By spreading first among expert engineers, who then teach the public its entirely new uses"
+   ],
+   "explanation_en": "Rao argues successful products are precisely those that don't try to move the user experience much: airliners constrain flight into a \"shaking waiting room,\" web pages borrow the metaphor of documents and pages, and each new technology needs an old metaphor as its visa. \"It wins because it's better\" is the industry story he rejects."
+  }
+ ]
+}

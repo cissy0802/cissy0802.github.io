@@ -1,0 +1,69 @@
+{
+ "page": "/chapter-deepread/mlsdi-ch02-visual-search-system-book83.html",
+ "title": "ML 系统设计面试 第 2 章 · 视觉搜索系统 — 专业书籍精读 Book 83",
+ "page_en": "/chapter-deepread/mlsdi-ch02-visual-search-system-book83.en.html",
+ "title_en": "ML System Design Interview Ch 2 · Visual Search System — Books Deep-Read Book 83",
+ "src_hash": "7a24e840bbad",
+ "questions": [
+  {
+   "id": "d9b63be6d5",
+   "question": "设计十亿级图库的以图搜图时，有人提议训练一个二分类模型：输入两张图，输出「像 / 不像」。这个方案的致命问题是什么？",
+   "options": [
+    "二分类只能处理同一尺寸的图片，用户上传的图片尺寸不一，无法直接输入",
+    "二分类模型的准确率天然低于对比学习，必须换成更大的网络才能达到可用精度",
+    "每次查询都要对全库每张图做一次推理，十亿次推理在工程上不可行",
+    "二分类需要大量负样本，而图库中不相似的图片太少，训练数据不够"
+   ],
+   "answer": 2,
+   "explanation": "书里说这个方案的致命伤不在准确率，而在算力形状：查询时要和全库逐一配对推理。把问题改成表示学习后，全库离线各编码一次，查询只需 1 次推理加一次向量检索。把问题归结为准确率不够、换大模型，正好漏掉了这道题真正考的问题转化。",
+   "question_en": "For image search over a billion-image library, someone proposes a binary classifier that takes two images and outputs \"similar / not similar.\" What's the fatal flaw?",
+   "options_en": [
+    "Binary classifiers only accept fixed-size inputs, and user uploads vary in size, so they can't be fed in directly",
+    "Binary classifiers are inherently less accurate than contrastive learning, so only a much bigger network would reach usable accuracy",
+    "Every query would need an inference against every library image—a billion inferences, which is infeasible",
+    "Binary classification needs many negatives, and the library has too few dissimilar images to train on"
+   ],
+   "explanation_en": "The book says the fatal flaw isn't accuracy but the compute shape: every query must be paired with every library image. Reframed as representation learning, the library is encoded once offline and each query costs one inference plus a vector lookup. Blaming accuracy and reaching for a bigger model misses the problem reframing the chapter is really about."
+  },
+  {
+   "id": "7682b64bc4",
+   "question": "如果对比学习的正样本只靠数据增强来造（把查询图旋转、裁剪、调色当正样本），训出来的以图搜图系统会有什么问题？",
+   "options": [
+    "数据增强产生的样本量太少，模型无法收敛，必须配合人工标注才能训练",
+    "数据增强会引入大量噪声和误点，导致模型把不相干的图片拉得很近",
+    "学到的是同一张图的形变而非同一类东西，只会返回近似重复图",
+    "数据增强会造成曝光偏差，没被展示过的图永远拿不到正标签"
+   ],
+   "answer": 2,
+   "explanation": "数据增强免费且无限，但正样本始终是同一张图的形变，模型学到的「相似」就只是近似重复。噪声和曝光偏差是用户交互这一来源的代价，不是数据增强的，这两项把不同来源的风险混在了一起。",
+   "question_en": "If contrastive-learning positives come only from data augmentation (rotating, cropping and recoloring the query image), what goes wrong with the resulting image search system?",
+   "options_en": [
+    "Augmentation yields too few samples for the model to converge, so it must be combined with human labels to train at all",
+    "Augmentation injects lots of noise and misclicks, so the model pulls unrelated images close together",
+    "It learns distortions of the same image rather than the same kind of object, so it only returns near-duplicates",
+    "Augmentation causes exposure bias: images never shown to users can never earn positive labels"
+   ],
+   "explanation_en": "Augmentation is free and unlimited, but every positive is a distortion of the same picture, so the learned notion of similarity collapses to near-duplicates. Noise and exposure bias are the costs of using user interactions as positives, not augmentation—those options mix up the risks of different sources."
+  },
+  {
+   "id": "9740fcf89f",
+   "question": "以图搜图的离线评估，书里在 MRR、recall@k、precision@k、nDCG 和 mAP 中最后选了 mAP。下面哪条理由最准确？",
+   "options": [
+    "mAP 只看第一个命中项的排名，最贴合用户只点第一张图的行为",
+    "相关性二元时，mAP 既看命中多少也看命中项排得是否靠前",
+    "mAP 不需要任何人工标注，可以完全从用户点击日志中计算",
+    "mAP 能同时衡量召回率、延迟和内存，是 ANN 唯一需要报告的指标"
+   ],
+   "answer": 1,
+   "explanation": "书里逐个否掉其他指标：MRR 只用第一个命中、浪费后面的信息；recall@k 需要知道全库相关项总数，视觉相似里不可知；precision@k 不管顺序；nDCG 要分级真值，成本高。「只看第一个命中项」说的其实是 MRR，正是被否掉的那个。",
+   "question_en": "For offline evaluation of image search, the book weighs MRR, recall@k, precision@k, nDCG and mAP, and picks mAP. Which reason is most accurate?",
+   "options_en": [
+    "mAP looks only at the rank of the first hit, matching users who click only the first image",
+    "With binary relevance, mAP accounts both for how many hits there are and how high they rank",
+    "mAP needs no human labels at all and can be computed entirely from click logs",
+    "mAP captures recall, latency and memory at once, so it's the only metric ANN needs to report"
+   ],
+   "explanation_en": "The book rules the others out one by one: MRR uses only the first hit and wastes the rest; recall@k requires knowing the total number of relevant items, which is unknowable for visual similarity; precision@k ignores order; nDCG needs graded ground truth. \"Only the first hit\" describes MRR—the one that was rejected."
+  }
+ ]
+}

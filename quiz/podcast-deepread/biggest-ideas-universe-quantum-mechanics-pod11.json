@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/biggest-ideas-universe-quantum-mechanics-pod11.html",
+ "title": "Mindscape × Sean Carroll — 原子大部分是空的吗？物理学家至今说不准",
+ "page_en": "/podcast-deepread/biggest-ideas-universe-quantum-mechanics-pod11.en.html",
+ "title_en": "Mindscape × Sean Carroll — Are atoms mostly empty space? Physicists still can't say",
+ "src_hash": "5f6052472337",
+ "questions": [
+  {
+   "id": "b93eb98373",
+   "question": "按 Sean Carroll 的讲法，原子里电子的能量为什么只能取一组离散的值？",
+   "options": [
+    "因为自然在最底层就是像素化的，空间和能量本来就一格一格，量子力学只是如实反映了这一点",
+    "因为每次测量都会扰动电子，把它推到某个固定的能级上，不测量时能量本来是任意的",
+    "薛定谔方程本身是连续的，离散来自边界条件，就像两端钉住的吉他弦",
+    "因为玻尔规定了电子只能待在某些轨道上，这条规定至今仍是量子力学的基本公设"
+   ],
+   "answer": 2,
+   "explanation": "Carroll 强调量子性不是因为自然本身离散，而是在盒子里或原子核附近解波动方程时，得到的解恰好是一组离散解；自由空间里的电子可以有任何能量。「自然本来就是像素化的」正是他明确否定的误读。",
+   "question_en": "On Sean Carroll's account, why can an electron in an atom only take a discrete set of energies?",
+   "options_en": [
+    "Nature is pixelated at bottom, with space and energy coming in chunks, and quantum mechanics simply reflects that",
+    "Every measurement disturbs the electron and knocks it onto a fixed level; unmeasured, its energy could be anything",
+    "The Schrödinger equation is continuous; discreteness comes from boundary conditions, like a guitar string pinned at both ends",
+    "Bohr decreed that electrons may occupy only certain orbits, and that rule remains a basic postulate of quantum mechanics"
+   ],
+   "explanation_en": "Carroll stresses that quantumness doesn't come from nature being fundamentally discrete; solving the wave equation in a box or near a nucleus just happens to yield a discrete set of solutions, while a free electron can have any energy. \"Nature is pixelated\" is the very misreading he rejects."
+  },
+  {
+   "id": "d6bea8612f",
+   "question": "教科书（哥本哈根）诠释给出了测量时的三条规则：结果总是确定的、概率按玻恩规则算、测后波函数坍缩。Carroll 说的「测量问题」指的是什么？",
+   "options": [
+    "这些规则只在「测量」时启用，而什么算测量从未被定义：眼睛、摄像机、猫、单个原子算不算都说不清",
+    "测量时人的意识会直接改变波函数，而意识的物理机制尚未被找到",
+    "玻恩规则算出的概率和实验数据对不上，说明这三条规则本身有错",
+    "测量仪器的精度有限，永远无法同时精确测出电子的位置和动量"
+   ],
+   "answer": 0,
+   "explanation": "Carroll 说这三条规则在教科书里都有，本身没有争议，争议在于理论另加了一整套只在「测量」时启用的规则，却从没说清测量是什么。说规则和实验对不上是错的：它们预测得很好，问题出在定义而不是数据。",
+   "question_en": "The textbook (Copenhagen) interpretation gives three rules for measurement: you always get a definite result, probabilities follow the Born rule, and the wave function collapses afterward. What does Carroll mean by the \"measurement problem\"?",
+   "options_en": [
+    "These rules kick in only during a \"measurement,\" yet what counts as one has never been defined—an eye, a camera, a cat, a single atom?",
+    "A human mind directly alters the wave function during measurement, and the physical mechanism of mind hasn't been found",
+    "The probabilities from the Born rule don't match experimental data, showing the three rules are wrong",
+    "Instruments have limited precision, so an electron's position and momentum can never both be measured exactly"
+   ],
+   "explanation_en": "Carroll says the three rules are in every textbook and uncontroversial as such; the trouble is that the theory bolts on a separate set of rules for \"measurement\" without ever saying what measurement is. Claiming the rules clash with experiment is wrong—they predict superbly; the problem is definitional, not empirical."
+  },
+  {
+   "id": "b996a48582",
+   "question": "「原子大部分是空的吗？」按 Carroll 的讲法，这个问题为什么至今没有一致答案？",
+   "options": [
+    "因为原子核和电子的尺寸至今测不准，无法算出空的部分占多大比例",
+    "因为电子在不同元素中的轨道半径差异太大，没有一个适用于所有原子的统一答案",
+    "因为卢瑟福散射实验已经证明原子大部分是空的，只是部分物理学家拒绝接受",
+    "答案取决于波函数是否代表实在，而物理学家对此没有共识"
+   ],
+   "answer": 3,
+   "explanation": "Carroll 说，如果你相信波函数代表实在，就不会说原子大部分是空的，而会说它大部分是电子的波函数；但波函数是实在本身还是算概率的工具，物理学家至今没有共识。把问题归结为尺寸测不准，就把一个诠释问题误当成了测量精度问题。",
+   "question_en": "\"Is the atom mostly empty space?\" On Carroll's account, why is there still no agreed answer?",
+   "options_en": [
+    "Because the sizes of the nucleus and electron still can't be measured precisely, the empty fraction can't be computed",
+    "Because electron orbit radii differ so much across elements that no single answer fits every atom",
+    "Because Rutherford's scattering experiment proved atoms are mostly empty, though some physicists refuse to accept it",
+    "It depends on whether the wave function represents reality, and physicists don't agree on that"
+   ],
+   "explanation_en": "Carroll says that if you believe the wave function represents reality, you wouldn't call the atom mostly empty—it's mostly the electron's wave function; but whether the wave function is reality or a tool for computing probabilities remains unsettled. Blaming imprecise size measurements turns an interpretive question into a question of measurement precision."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/meta-knowledge/food-systems-day39.html",
+ "title": "元知识详解：农业与食物系统 — Day 39",
+ "page_en": "/meta-knowledge/food-systems-day39.en.html",
+ "title_en": "Meta Knowledge: Agriculture & Food Systems — Day 39",
+ "src_hash": "5e19d45d3864",
+ "questions": [
+  {
+   "id": "a26ec34c8c",
+   "question": "关于二十世纪中叶绿色革命的高产，哪种理解最贴近「双刃」的核心判断？",
+   "options": [
+    "它的代价主要是农药污染，只要改用有机农药，高产就能在原有能量结构下继续维持",
+    "它主要靠培育出光合效率更高的品种，让同样的阳光转化出更多粮食，因此几乎不增加额外的能源负担",
+    "它把农业的能量来源从免费的光合作用换成了需要持续买单的化石能源投入",
+    "它用机械替代了人力，真正的风险是农村劳动力过剩，而不是农业对外部能源的依赖"
+   ],
+   "answer": 2,
+   "explanation": "文章说绿色革命的本质是一笔交易：矮秆品种的高产建立在合成氮肥、机械、灌溉等化石能源投入上，现代食物体系每产 1 卡路里约耗 10 卡路里化石能源。把高产归功于「光合效率提高」恰好搞反了：产量跃升不是凭空而来，而是换了能量来源。",
+   "question_en": "Which reading best captures why the mid-20th-century Green Revolution is called a double-edged sword?",
+   "options_en": [
+    "Its main cost was pesticide pollution; switching to organic pesticides would let the high yields continue under the old energy structure",
+    "It mainly bred varieties with more efficient photosynthesis, turning the same sunlight into more grain with little extra energy burden",
+    "It swapped agriculture's energy source from free photosynthesis to fossil-fuel inputs that must be paid for continually",
+    "It replaced human labor with machines, so the real risk is rural labor surplus rather than dependence on outside energy"
+   ],
+   "explanation_en": "The piece frames the Green Revolution as a trade: high-yield varieties depend on synthetic nitrogen, machinery and irrigation—all embodied fossil energy—so the modern food system burns roughly 10 calories of fossil energy per food calorie. Crediting the gains to better photosynthesis gets it backwards: yields rose because the energy source was swapped, not because sunlight was used better."
+  },
+  {
+   "id": "e43f7e877d",
+   "question": "为什么长期大量施用化肥会让土壤「上瘾」，需要越来越多投入才能维持同样产量？",
+   "options": [
+    "作物会对化肥产生遗传上的耐受性，后代品种需要更高浓度才能被刺激生长",
+    "化肥中的盐分逐年累积，直接毒死作物根系，所以只能靠加大用量来抵消损伤",
+    "化肥的有效成分会被雨水快速冲走，每年必须补足流失的部分，这是纯粹的物理流失问题",
+    "作物被直接喂养后不再分泌光合产物给根际微生物，地下活体网络随之萎缩"
+   ],
+   "answer": 3,
+   "explanation": "文章的机制是植物约三分之一的光合产物会「贿赂」根际微生物，换取养分释放、抗病和保水；化肥短路了这套交换，作物不再向地下投资，有机质和菌根网络被耗竭，土壤的自身供养能力下降。把它说成雨水冲刷的物理流失，漏掉了这个生态关系被破坏的核心。",
+   "question_en": "Why does heavy long-term fertilizer use make soil \"addicted,\" needing ever more inputs to hold yields steady?",
+   "options_en": [
+    "Crops develop genetic tolerance to fertilizer, so later varieties need higher concentrations to be stimulated",
+    "Salts in fertilizer build up year after year and poison crop roots directly, so higher doses are needed to offset the damage",
+    "The active ingredients wash away quickly in rain, so each year's losses must be replaced; it's purely a matter of physical leaching",
+    "Once fed directly, crops stop exuding photosynthate to root-zone microbes, so the living underground network withers"
+   ],
+   "explanation_en": "Plants trade about a third of their photosynthate to rhizosphere microbes for nutrients, disease resistance and water retention. Fertilizer short-circuits that exchange: fed directly, crops stop investing underground, organic matter and mycorrhizal networks decline, and the soil's own capacity to supply the crop erodes. Calling it leaching misses the broken ecological relationship."
+  },
+  {
+   "id": "4882c30011",
+   "question": "疫情初期超市厕纸、面粉断货，按鞭梢效应的解释，主要原因是什么？",
+   "options": [
+    "全球工厂因停工真实减产了大半，货架空了反映的是实际产能的崩塌",
+    "零售商为了涨价故意压货，短缺是人为制造的市场操纵",
+    "每人只多买一点，这个波动沿供应链逆向层层放大成上游数倍订单",
+    "少数囤货者买走了绝大部分库存，只要限购这几个人，供应链本身就不会出现任何波动"
+   ],
+   "answer": 2,
+   "explanation": "文章说这些短缺多数时候并非真的没货，而是终端的小幅多买沿链放大：零售补库存、分销商加订单、生产商扩产能，信息延迟让波动越传越大，而准时制把缓冲库存压到近零。归因于真实产能崩塌，正是文章要纠正的直觉。",
+   "question_en": "Under the bullwhip-effect account, what mainly emptied shelves of toilet paper and flour early in the pandemic?",
+   "options_en": [
+    "Factories worldwide genuinely lost most of their output to shutdowns, so empty shelves reflected collapsed production capacity",
+    "Retailers deliberately withheld stock to raise prices, making the shortage a case of market manipulation",
+    "Each shopper bought a little extra, and that swing was amplified tier by tier upstream into multiples of normal orders",
+    "A handful of hoarders bought up most of the stock; rationing just those few would have left the supply chain itself entirely undisturbed"
+   ],
+   "explanation_en": "The piece says most of these shortages weren't real scarcity: a small uptick at the checkout was amplified upstream—retailers restock, distributors pad orders, producers expand—because each tier adds delay, and just-in-time logistics had stripped out the buffer inventory. Blaming a genuine production collapse is the intuition the article corrects."
+  }
+ ]
+}

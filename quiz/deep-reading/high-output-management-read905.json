@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/high-output-management-read905.html",
+ "title": "《High Output Management》",
+ "page_en": "/deep-reading/high-output-management-read905.en.html",
+ "title_en": "High Output Management",
+ "src_hash": "5acf79996f77",
+ "questions": [
+  {
+   "id": "733a1f949f",
+   "question": "一位新晋经理每天忙到深夜，亲手修掉了大量 bug，但团队整体产出平平。按格鲁夫的标准，该怎么评价这位经理？",
+   "options": [
+    "值得肯定：亲力亲为能给团队做榜样，个人贡献越大，经理越称职",
+    "无法判断：格鲁夫认为经理的价值主要体现在战略判断上，日常产出不是衡量标准",
+    "评价要看他修的 bug 是否关键：只要修的都是最重要的问题，个人产出就足以弥补团队平平",
+    "算失职：经理的产出是团队的产出，他把撬动全队的时间花在了一人份的活上"
+   ],
+   "answer": 3,
+   "explanation": "格鲁夫把经理重新定义为产出的放大器：经理的产出等于他团队加上受他影响的邻近团队的产出，亲手做的那部分几乎可以忽略。事事亲自上手、团队产出平平，等于浪费了高杠杆的时间。以「修的是不是关键 bug」开脱，仍然是在用个人产出给经理打分。",
+   "question_en": "A new manager works late every night and personally fixes lots of bugs, yet the team's overall output is mediocre. By Grove's standard, how should this manager be judged?",
+   "options_en": [
+    "As commendable: hands-on work sets an example, and the bigger the personal contribution, the better the manager",
+    "It can't be judged: Grove holds that a manager's value lies mainly in strategic judgment, not day-to-day output",
+    "It depends on whether the bugs were critical: if they were the most important problems, personal output makes up for the team's mediocrity",
+    "As falling short: a manager's output is the team's output, and this one spent team-lifting time on one person's worth of work"
+   ],
+   "explanation_en": "Grove redefines the manager as an output multiplier: managerial output equals the output of the team plus neighboring teams under one's influence, and the manager's own hands-on work is negligible. Doing everything yourself while the team stays flat squanders high-leverage time. Excusing it because the bugs were critical still grades the manager on individual output."
+  },
+  {
+   "id": "633f80d410",
+   "question": "一位下属表现不佳。按格鲁夫的思路，经理第一步应该做什么？",
+   "options": [
+    "先交给 HR 安排外部培训课程，经理自己专注于高杠杆的业务决策",
+    "先给他加薪或奖金，因为金钱是最直接、最持久的动力来源",
+    "先诊断他是「不能」还是「不愿」，再决定是该培训还是该激励",
+    "先对他充分放权，让他在更大的自主空间里自己找到状态"
+   ],
+   "answer": 2,
+   "explanation": "格鲁夫说撬动下属表现只有培训和激励两个把手，所以先要分清是能力问题还是动力问题，否则会拿错药。交给 HR 外包培训恰恰违背了他的主张：培训是杠杆率最高的事之一，必须经理亲自来；加薪则只在需求的低层次有效。",
+   "question_en": "A direct report is underperforming. Following Grove, what should the manager do first?",
+   "options_en": [
+    "Have HR arrange an outside training course, so the manager can focus on high-leverage business decisions",
+    "Give a raise or bonus first, since money is the most direct and lasting motivator",
+    "Diagnose whether it's a matter of \"can't\" or \"won't,\" then decide between training and motivating",
+    "Grant them broad autonomy first, so they can find their footing with more room to operate"
+   ],
+   "explanation_en": "Grove says a manager has only two levers on performance—training and motivation—so the first step is to tell an ability problem from a motivation problem, or you'll prescribe the wrong cure. Outsourcing training to HR contradicts him directly: training is among the highest-leverage things a manager does and must be done personally. Money works only at the lower levels of need."
+  },
+  {
+   "id": "f5c2b16b4e",
+   "question": "同一位工程师，对后端开发驾轻就熟，第一次负责与外部客户谈合同。按任务相关成熟度（TRM），经理在这件新任务上应采取什么风格？",
+   "options": [
+    "充分授权、只看结果，因为他是资深工程师，整体成熟度高，盯细节只会干扰",
+    "保持一贯的管理风格，因为好经理应当对所有人一视同仁、风格稳定",
+    "给结构和明确指令，偏「告诉他怎么做」，因为成熟度是按具体任务算的，他在这件事上是新手",
+    "先完全不管，让他在试错中自己学会谈判，这是培养成熟度最快的方式"
+   ],
+   "answer": 2,
+   "explanation": "TRM 是「任务相关」的：同一个人在 A 任务上很成熟，在 B 任务上可能是新手，此时放权就是放任。看他整体资深就充分授权，正是把个人成熟度和任务成熟度混为一谈；好经理要按对方在这件事上的档位换挡。",
+   "question_en": "An engineer who is highly fluent in backend development is negotiating a contract with an external client for the first time. Under task-relevant maturity (TRM), what style should the manager use for this new task?",
+   "options_en": [
+    "Delegate fully and watch only results, since they're a senior engineer with high overall maturity and close oversight would just interfere",
+    "Keep the same style as always, since a good manager treats everyone consistently with a stable approach",
+    "Provide structure and clear instructions, leaning toward telling them how, because maturity is assessed per task and they're a novice at this one",
+    "Stay hands-off entirely and let them learn negotiation by trial and error, the fastest way to build maturity"
+   ],
+   "explanation_en": "TRM is task-specific: someone mature at task A can be a beginner at task B, and delegating there amounts to abdication. Delegating because they're senior overall confuses personal seniority with task maturity; a good manager shifts gears according to the person's maturity on this particular task."
+  }
+ ]
+}

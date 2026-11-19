@@ -1,0 +1,69 @@
+{
+ "page": "/chapter-deepread/accelerate-ch10-employee-satisfaction-book123.html",
+ "title": "Accelerate 第 10 章 · 员工满意度、认同与投入 — 专业书籍精读 Book 123",
+ "page_en": "/chapter-deepread/accelerate-ch10-employee-satisfaction-book123.en.html",
+ "title_en": "Accelerate Ch 10 · Employee Satisfaction, Identity, and Engagement — Chapter Deep Read Book 123",
+ "src_hash": "959ba75c797e",
+ "questions": [
+  {
+   "id": "5e3a28a5a1",
+   "question": "按《Accelerate》第 10 章的模型，技术实践、员工体验和组织绩效之间的先后关系是怎样的？",
+   "options": [
+    "员工满意度主要由薪酬福利决定，与技术实践相互独立，各自影响绩效",
+    "公司业绩好了，员工心情随之变好，进而更愿意投入去改进技术实践",
+    "技术实践直接决定组织绩效，员工满意度只是绩效好的副产品，不在因果链条的中间",
+    "好的技术与管理实践在前，改变员工的认同与满意度，员工体验再预测组织绩效"
+   ],
+   "answer": 3,
+   "explanation": "本章把三段接成一条链：持续交付、精益管理等实践先改变人的工作体验，体验再预测组织绩效。书里特意说顺序不是反的——不是业绩好了大家才开心，而是折磨人的手工活同时在吃掉交付速度和人。",
+   "question_en": "In Chapter 10 of Accelerate, what is the ordering among technical practices, employee experience and organizational performance?",
+   "options_en": [
+    "Satisfaction is driven mainly by pay and perks, independent of technical practices, with each affecting performance separately",
+    "Strong results come first, lifting morale, which then makes people more willing to improve technical practices",
+    "Technical practices drive performance directly; satisfaction is merely a by-product of good results, not a link in the causal chain",
+    "Good technical and management practices come first, shaping identity and satisfaction, and employee experience in turn predicts organizational performance"
+   ],
+   "explanation_en": "The chapter links three stages: practices like continuous delivery and lean management change the work experience, and that experience predicts organizational performance. The authors stress the order isn't reversed—it's not that good results cheer people up, but that painful manual toil eats both delivery speed and people."
+  },
+  {
+   "id": "ec791b5327",
+   "question": "平台组把「手动部署」改成「开发者手动填工单、等平台组部署」，并称之为自动化。按本章的判据，这对工作满意度会有什么效果？",
+   "options": [
+    "会下降，因为一切自动化都会削弱工程师对系统的掌控感，满意度和自动化程度负相关",
+    "明显改善：只要发布频率不下降，任何形式的流程标准化都会提高满意度",
+    "基本没有改善：人只是从一个手工步骤挪到另一个，换了地方排队",
+    "明显改善：开发者不再亲手执行部署，重复劳动被转移出去，满意度自然上升"
+   ],
+   "answer": 2,
+   "explanation": "本章说自动化的价值在于把人从机器擅长的重复活上换下来，让人做需要判断的事；只是把手工步骤挪个地方，不会带来满意度改善。认为「不亲手做就是减负」忽略了满意度的支柱是能用上技能和有趁手的工具。",
+   "question_en": "A platform team replaces \"manual deploys\" with \"developers manually file a ticket and wait for the platform team to deploy,\" and calls it automation. By this chapter's criterion, what happens to job satisfaction?",
+   "options_en": [
+    "It drops, because all automation erodes engineers' sense of control, so satisfaction falls as automation rises",
+    "Clear improvement: as long as release frequency holds, any standardization of process raises satisfaction",
+    "Little or no improvement: people just move from one manual step to another and queue somewhere else",
+    "Clear improvement: developers no longer run deploys themselves, so the repetitive work is offloaded and satisfaction rises"
+   ],
+   "explanation_en": "The chapter says automation pays off by moving people off work machines do well and onto work that needs judgment; shifting a manual step elsewhere doesn't improve satisfaction. Treating \"not doing it by hand\" as relief misses that satisfaction rests on using one's skills and having the right tools."
+  },
+  {
+   "id": "35ed85a195",
+   "question": "一家公司打算把各团队的 eNPS 分数写进主管的季度考核。按本章的看法，这样做的主要问题是什么？",
+   "options": [
+    "eNPS 测的是客户满意度而非员工体验，放进内部考核属于用错了工具",
+    "这样做没有问题，eNPS 是领先指标，越早纳入考核越能推动改进",
+    "分数一挂钩考核就会被管理，不再测它原本要测的东西，应看趋势和分布",
+    "eNPS 的题目太多，季度发放会造成填答疲劳，应该改成一年一次"
+   ],
+   "answer": 2,
+   "explanation": "本章引 Goodhart 定律：eNPS 进了考核表，就会出现「帮忙打个 9 分」的私信，分数马上不真了。它适合当改进的方向盘，不适合当 KPI。说它题目太多恰好弄反了，eNPS 只有一个问题，便宜正是它能频繁发的原因。",
+   "question_en": "A company plans to put each team's eNPS score into managers' quarterly reviews. On this chapter's view, what's the main problem?",
+   "options_en": [
+    "eNPS measures customer satisfaction, not employee experience, so it's the wrong tool for internal reviews",
+    "Nothing is wrong: eNPS is a leading indicator, so building it into reviews early drives improvement",
+    "Once tied to managers' reviews the score gets gamed and stops measuring what it should; watch trends and distributions instead",
+    "eNPS has too many questions, so quarterly surveys cause fatigue; it should run once a year instead"
+   ],
+   "explanation_en": "The chapter invokes Goodhart's law: once eNPS is in the review, people get messages asking them to \"give us a 9,\" and the number stops being honest. It's a steering wheel for improvement, not a KPI. Saying it has too many questions gets it backwards—eNPS is a single question, which is exactly why it's cheap to run often."
+  }
+ ]
+}

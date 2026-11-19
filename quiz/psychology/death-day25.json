@@ -1,0 +1,69 @@
+{
+ "page": "/psychology/death-day25.html",
+ "title": "心理学 Day 25：死亡心理学 — 向死而生的科学",
+ "page_en": "/psychology/death-day25.en.html",
+ "title_en": "Psychology Day 25: The Psychology of Death — The Science of Living Toward Death",
+ "src_hash": "c8b0980345bd",
+ "questions": [
+  {
+   "id": "aa09b89e23",
+   "question": "按 Carstensen 的社会情绪选择理论，一个 25 岁的人得知自己下个月要移居远方，他的社交选择最可能怎样变化？为什么？",
+   "options": [
+    "更积极地结识新朋友、拓展人脉，因为年轻人的动机始终以获取新信息和向外扩展为主导",
+    "更倾向于独处，因为意识到分离会让人回避所有关系以减少离别的痛苦",
+    "基本不变，因为只有真正进入老年后，人的社交偏好才会转向深度关系",
+    "更偏向少数亲密的人，因为决定动机转向的是感知到的时间视野，而不是实际年龄"
+   ],
+   "answer": 3,
+   "explanation": "文章说关键变量是感知到的时间视野而不是年龄：只要让年轻人想象即将搬去远方，他们的选择就会像老年人一样偏向亲密的人。认为「只有老了才会转向」，正是把年龄误当成了原因。",
+   "question_en": "Under Carstensen's socioemotional selectivity theory, how is a 25-year-old who learns they'll move far away next month most likely to change their social choices, and why?",
+   "options_en": [
+    "They'll seek out new friends and contacts more actively, because young people's motivation is always dominated by new information and outward expansion",
+    "They'll withdraw into solitude, because awareness of separation makes people avoid all relationships to spare the pain of goodbyes",
+    "Little will change, because social preferences shift toward deep ties only once people actually reach old age",
+    "They'll favor a few close people, because what shifts motivation is the perceived time horizon, not chronological age"
+   ],
+   "explanation_en": "The piece says the key variable is perceived time horizon, not age: simply having young people imagine an impending move makes their choices resemble older adults', favoring intimates. Assuming the shift comes only with old age mistakes age for the cause."
+  },
+  {
+   "id": "c22a4c05f4",
+   "question": "一位丧亲的朋友说，自己有时能笑出来、专心处理工作，担心这说明自己「没走完哀伤的阶段」「在逃避」。按文中更有证据的模型，该怎么看？",
+   "options": [
+    "这是正常的：健康的哀伤在面向丧失与面向重建之间来回摆荡",
+    "这是逃避的信号：哀伤必须依次经过否认、愤怒、讨价还价、抑郁才能到达接受",
+    "这需要尽快寻求专业干预，因为能正常生活说明情绪被压抑，日后会更严重",
+    "这说明哀伤已经结束，之后不应再出现悲伤和思念，否则就是复发"
+   ],
+   "answer": 0,
+   "explanation": "Stroebe 与 Schut 的双过程模型认为，健康的哀伤在悲伤思念与处理生活之间摆荡；「五阶段」是被误用的神话，Kübler-Ross 描述的是临终者，且没有证据表明哀伤按固定顺序走。Bonanno 还发现韧性是最常见的反应，多数人不需要正式干预。",
+   "question_en": "A bereaved friend says they sometimes laugh and can focus on work, and worries this means they \"haven't finished the stages of grief\" and are \"in avoidance.\" By the better-supported model in the piece, how should this be seen?",
+   "options_en": [
+    "It's normal: healthy grief oscillates between loss-oriented and restoration-oriented states",
+    "It's a sign of avoidance: grief must pass through denial, anger, bargaining and depression in order before reaching acceptance",
+    "It calls for prompt professional help, since functioning normally means emotions are being suppressed and will worsen later",
+    "It means grieving is over, so any later sadness or longing would count as a relapse"
+   ],
+   "explanation_en": "Stroebe and Schut's dual process model holds that healthy grief swings between sorrow and getting on with life. The five stages are a misapplied myth—Kübler-Ross described the dying, not the bereaved, and there's no evidence grief follows a fixed order. Bonanno also found resilience is the most common response; most people need no formal intervention."
+  },
+  {
+   "id": "35c2d8cb2b",
+   "question": "有人读了「向死而生」，决定「假装明天就会死，所以今天拼命工作、多出成果」。按文中的判别标准，这更像什么？",
+   "options": [
+    "正是念死修行的目标：通过持续高强度的努力松动「我执」",
+    "更像死亡焦虑的缓冲在运作：把有限性塞回了靠成就撑起的自尊防御，而不是真正的死亡觉知",
+    "正是向死而生的本义：觉知有限后提高产出，说明注意力被成功校准到了当下",
+    "正是社会情绪选择理论预测的转向：时间有限时，人会转向追求未来回报"
+   ],
+   "answer": 1,
+   "explanation": "文中说「假装明天就死所以今天拼命卷」是对死亡觉察的扭曲，它回到了恐惧管理理论里的自尊防御。判别标准是：死亡觉察若让你更焦虑地追逐，多半是缓冲在运作；若让你更松、更敢拒绝、更在场，才是觉知在起效。时间有限时人恰恰会从未来回报转向情感意义。",
+   "question_en": "After reading about \"being-toward-death,\" someone resolves to \"live as if I'll die tomorrow, so work flat out and produce more today.\" By the article's test, what does this most resemble?",
+   "options_en": [
+    "The goal of maraṇasati practice: loosening attachment to self through sustained intense effort",
+    "A death-anxiety buffer at work: it stuffs finitude back into achievement-based self-esteem defense rather than genuine awareness of death",
+    "The true meaning of being-toward-death: awareness of finitude raises output, showing attention has been recalibrated to the present",
+    "Exactly the shift socioemotional selectivity predicts: when time is short, people turn toward future payoffs"
+   ],
+   "explanation_en": "The piece calls \"act as if you'll die tomorrow and grind harder today\" a distortion that slips back into the self-esteem buffer of terror management theory. Its test: if death awareness makes you chase more anxiously, a buffer is probably operating; if it makes you looser, readier to say no, more present, awareness is working. When time feels short, people actually shift from future payoffs to emotional meaning."
+  }
+ ]
+}

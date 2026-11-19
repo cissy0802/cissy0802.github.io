@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/inferiority-superiority-read28.html",
+ "title": "《自卑与超越》— 每日精读 Read 28",
+ "page_en": "/deep-reading/inferiority-superiority-read28.en.html",
+ "title_en": "What Life Should Mean to You — Deep Reading Read 28",
+ "src_hash": "d97eede1bb29",
+ "questions": [
+  {
+   "id": "0932f7a937",
+   "question": "一个人总是回避社交，说自己怕人。按阿德勒的目的论，该怎么理解这份「怕」？",
+   "options": [
+    "它是天生气质决定的，遗传与环境一旦定型，人就只能接受",
+    "它是童年创伤的必然结果，要先挖出那段经历才能理解和改变",
+    "它是性驱力被压抑后转化而成的症状，根源在潜意识里的欲望冲突",
+    "不问它由哪段过去造成，而问它服务于什么目的：比如让他名正言顺地躲开社交、不必冒被拒绝的险"
+   ],
+   "answer": 3,
+   "explanation": "阿德勒和弗洛伊德的根本分歧在于：不问「你因为什么变成这样」，而问「你想借此达成什么」。怕人可以是为了躲开社交和被拒绝的风险。把它归因于童年创伤、往回刨，正是阿德勒反对的因果论；他认为决定命运的不是经历本身，而是人给经历赋予的意义。",
+   "question_en": "Someone avoids social situations and says they're afraid of people. Under Adler's teleology, how should that fear be understood?",
+   "options_en": [
+    "It's set by inborn temperament; once heredity and environment have done their work, the person can only accept it",
+    "It's the inevitable result of childhood trauma, which must be dug up before it can be understood or changed",
+    "It's a symptom of repressed sexual drive, rooted in unconscious conflicts of desire",
+    "Instead of asking what past event caused it, ask what purpose it serves—for instance, a legitimate excuse to avoid socializing and the risk of rejection"
+   ],
+   "explanation_en": "Adler's core break with Freud: don't ask \"what made you this way?\" but \"what are you trying to achieve by it?\" Fear of people can serve to dodge socializing and rejection. Tracing it back to childhood trauma is the causal view Adler rejected; for him it's not the experience but the meaning we give it that shapes our lives."
+  },
+  {
+   "id": "90de7ed1a5",
+   "question": "按阿德勒的区分，「自卑感」和「自卑情结」的关系是什么？",
+   "options": [
+    "自卑感是少数童年不幸者才有的缺陷，自卑情结则是它发展到严重程度后的临床诊断",
+    "自卑感人人都有，是健康的引擎；自卑情结是被它压垮，并拿它当永久借口",
+    "自卑感会导致傲慢和攻击，自卑情结才会导致退缩，两者方向相反",
+    "两者是同一回事，只是自卑情结是更学术的说法，都应当尽早克服"
+   ],
+   "answer": 1,
+   "explanation": "阿德勒说「身为人就意味着感到自卑」，人人都从又小又弱的婴儿长起，自卑感是普遍的燃料；只有当人不再拿它当动力解决问题，而是被它压垮、当成「我天生就不行」的借口时，才变质成情结。把自卑感当成少数人的缺陷，正是他首先要拆掉的误会。",
+   "question_en": "In Adler's distinction, how does the inferiority feeling relate to the inferiority complex?",
+   "options_en": [
+    "Inferiority feelings are a defect found only in those with unlucky childhoods, and the complex is the clinical diagnosis once it becomes severe",
+    "Everyone has inferiority feelings, a healthy engine; the complex is being crushed by them and using them as a permanent excuse",
+    "Inferiority feelings lead to arrogance and aggression, while the complex leads to withdrawal, so they point in opposite directions",
+    "They're the same thing; \"complex\" is just the more technical term, and both should be overcome early"
+   ],
+   "explanation_en": "Adler held that to be human is to feel inferior: we all start as small, weak infants, so the feeling is universal fuel. It turns into a complex only when, instead of driving us to solve problems, it flattens us and becomes the excuse \"I'm just not capable.\" Treating the feeling as a defect of the unlucky few is the first misconception he dismantles."
+  },
+  {
+   "id": "5c065ad08c",
+   "question": "一个人处处要压人一头、逢人自夸、动辄发怒。按阿德勒的理论，最可能的解读是什么？",
+   "options": [
+    "这说明他真正克服了自卑，充分实现了阿德勒所说的「追求优越」",
+    "这说明他的社会兴趣过强，过于在意他人看法才变得咄咄逼人",
+    "这是健康的补偿，就像口吃者苦练成雄辩家一样，应当予以鼓励",
+    "这是优越情结：用装出来的高人一等盖住没被安抚的深层自卑，追求优越的劲拧向了凌驾他人而非贡献他人"
+   ],
+   "answer": 3,
+   "explanation": "阿德勒说越是张牙舞爪地表现优越，底下藏的自卑往往越深，攻击性常是恐惧的伪装。追求优越的劲本身是中性的，拧向贡献共同体越走越宽，拧向凌驾他人就走向孤立。把它当作实现了「追求优越」是全书最该纠正的误读：「超越」不是压过别人，而是超越只顾自己的小我。",
+   "question_en": "Someone must always one-up others, brags to everyone and flares up easily. Under Adler's theory, what's the most likely reading?",
+   "options_en": [
+    "Proof that he has truly overcome inferiority and fully realized what Adler meant by striving for superiority",
+    "A sign that his social interest is too strong—caring too much about others' opinions makes him combative",
+    "Healthy compensation, like a stutterer who trains to become a great orator, and it should be encouraged",
+    "A superiority complex: a show of being above others that covers deep, unsoothed inferiority, with the striving turned toward dominating others rather than contributing to them"
+   ],
+   "explanation_en": "Adler says the louder the display of superiority, the deeper the hidden inferiority—aggression often masks fear. The striving itself is neutral: aimed at contributing to the community it widens a life; aimed at rising above others it leads to isolation. Reading this as fulfilled striving is the book's key misreading—\"transcendence\" means rising above the self-absorbed ego, not over other people."
+  }
+ ]
+}

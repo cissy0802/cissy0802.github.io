@@ -1,0 +1,69 @@
+{
+ "page": "/world-religions/jainism-day11.html",
+ "title": "世界宗教 Day 11：耆那教",
+ "page_en": "/world-religions/jainism-day11.en.html",
+ "title_en": "World Religions Day 11: Jainism",
+ "src_hash": "ad3016c77cd9",
+ "questions": [
+  {
+   "id": "b3f8550cad",
+   "question": "在耆那教的解脱观里，「业」是什么、解脱靠什么？",
+   "options": [
+    "业是灵魂本身的幻象，体悟「无我」、看破灵魂并不实有就能解脱",
+    "业是因暴力与执著黏附到灵魂上的微细物质，解脱靠止住新业、磨掉旧业",
+    "业是记录善恶的抽象道德账目，解脱靠向创世神忏悔、祈求赦免累积下来的罪",
+    "业是前世命运的定数，人无法改变，只能通过虔信履责等待来世的好运"
+   ],
+   "answer": 1,
+   "explanation": "耆那教把业理解为像尘埃一样黏附灵魂的微细物质，宇宙没有造物主，所以解脱很「物理」：止住新业、磨掉旧业，靠正见、正知、正行三宝自己卸下业的重量。「无我」是佛教的主张，耆那教恰恰认为灵魂实有。",
+   "question_en": "In Jain thought, what is karma, and what brings liberation?",
+   "options_en": [
+    "Karma is an illusion of the self; realizing non-self and seeing that the soul isn't real brings liberation",
+    "Karma is subtle matter that sticks to the soul through violence and attachment; liberation means stopping new karma and wearing off the old",
+    "Karma is an abstract moral ledger of good and bad deeds; liberation comes from confessing to a creator god and asking pardon for accumulated sins",
+    "Karma is a fixed fate from past lives that can't be changed; one can only perform devotion and duty and wait for better fortune next life"
+   ],
+   "explanation_en": "Jainism treats karma as fine matter clinging to the soul like dust, and the cosmos has no creator, so liberation is almost physical: block new karma, shed the old, through the Three Jewels of right faith, knowledge and conduct—with no god to forgive. Non-self is the Buddhist teaching; Jainism holds the soul is real."
+  },
+  {
+   "id": "2a8aaab8cf",
+   "question": "有人批评耆那教的「多面论」（anekantavada）：既然真理有多个侧面，那就等于怎么说都对。按耆那的理解，这个批评错在哪里？",
+   "options": [
+    "多面论本来就主张没有客观真理，批评者只是误解了相对主义的正面价值",
+    "多面论要求在任何问题上都悬置判断、保持沉默，因此谈不上「怎么说都对」",
+    "多面论只适用于宗教问题，在日常事实判断上耆那教要求只接受唯一正确的说法",
+    "多面论承认有客观真理，只是它太丰富，单一视角只能捕捉一面，所以要求为判断标明视角，而不是放弃判断"
+   ],
+   "answer": 3,
+   "explanation": "盲人摸象的比喻里，象是真实存在的，摸腿和摸耳的人各见其一。相对主义说没有客观真理，多面论说有客观真理但无法被单一视角穷尽，「或许论」给每个论断加上「从某个角度看」，是一种认知谦逊，而不是取消是非。",
+   "question_en": "A critic says Jain anekantavada amounts to \"anything goes,\" since truth has many sides. On the Jain understanding, where does the critique go wrong?",
+   "options_en": [
+    "Anekantavada does deny objective truth; the critic simply misses the positive value of relativism",
+    "Anekantavada requires suspending judgment and staying silent on every question, so it can't be \"anything goes\"",
+    "Anekantavada applies only to religious questions; on everyday facts Jainism demands accepting a single correct account",
+    "Anekantavada holds there is an objective truth, just too rich for any single view to capture, so it asks you to label each judgment's standpoint rather than abandon judgment"
+   ],
+   "explanation_en": "In the blind men and the elephant, the elephant is real; each man grasps one part. Relativism says there's no objective truth; anekantavada says there is, but no single perspective exhausts it. Syadvada prefixes claims with \"from a certain standpoint\"—an epistemic humility, not the erasure of right and wrong."
+  },
+  {
+   "id": "0b0d32699c",
+   "question": "耆那教人口不到印度的千分之四，却高度集中于商贸、金融、珠宝、法律等行业。按这篇的解释，这种职业分布从何而来？",
+   "options": [
+    "耆那教教义把积累财富视为解脱的必要条件，因此鼓励信徒经商致富",
+    "历史上的统治者禁止耆那教徒拥有土地，迫使他们只能从事商业",
+    "耆那教积极传教，吸纳的主要是城市商人阶层，因而信徒天然集中于工商业",
+    "严守非暴力，回避耕田、渔猎、屠宰这类会伤及生灵的行当"
+   ],
+   "answer": 3,
+   "explanation": "因为耕田会伤及土中生灵，渔猎、屠宰更直接是杀生，耆那人历史上回避这些行业，转而深耕商贸金融，也因此成为识字率与人均财富最高、慈善最活跃的群体之一。说它积极传教吸纳商人是错的：耆那教几乎不主动劝人入教，靠世代传承延续。",
+   "question_en": "Jains are under 0.4% of India's population yet heavily concentrated in trade, finance, jewelry and law. By this article's account, where does that occupational pattern come from?",
+   "options_en": [
+    "Jain doctrine treats accumulating wealth as a precondition for liberation, so it encourages believers to get rich in business",
+    "Historical rulers barred Jains from owning land, forcing them into commerce",
+    "Jainism proselytized actively and mainly converted urban merchants, so its followers were naturally concentrated in business",
+    "Strict non-violence led them to avoid farming, fishing, hunting and butchery, which harm living beings"
+   ],
+   "explanation_en": "Plowing harms creatures in the soil, and fishing, hunting and butchery are outright killing, so Jains historically avoided them and built up trade and finance instead—becoming among India's most literate, wealthiest and most philanthropic groups. The proselytizing story is wrong: Jainism barely seeks converts and is sustained by inheritance across generations."
+  }
+ ]
+}

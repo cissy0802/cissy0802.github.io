@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/gut-brain-axis-topic33.html",
+ "title": "Topic 33 · 肠脑轴 — 神经科学",
+ "page_en": "/neuroscience/gut-brain-axis-topic33.en.html",
+ "title_en": "Topic 33 · The Gut-Brain Axis — Neuroscience",
+ "src_hash": "d535b9ac6ee4",
+ "questions": [
+  {
+   "id": "fcc8079a8b",
+   "question": "连接内脏和脑的迷走神经，最准确的角色定位是什么？",
+   "options": [
+    "它直接伸进肠腔品尝食物，把味道原样传给大脑",
+    "主要是一根遥控线：脑通过它向肠道下达放松、慢点消化之类的命令，肠子只是负责执行",
+    "上行和下行纤维各占一半，是一条对称的双向通道",
+    "主要是一条传感器总线：约八成纤维是从肠往脑走的感觉纤维，往下发命令的只占少数"
+   ],
+   "answer": 3,
+   "explanation": "文章说迷走神经约 80% 的纤维是往上走的感觉纤维，它主要不是遥控器而是传感器总线；而且它不直接接触肠腔，读的是管壁张力和上皮细胞递上来的化学信号。「脑先紧张、肠子执行」正是开头要纠正的直觉。",
+   "question_en": "What best describes the role of the vagus nerve linking the gut and the brain?",
+   "options_en": [
+    "It reaches directly into the gut lumen to taste food and pass the flavors straight to the brain",
+    "Mainly a remote-control line: the brain uses it to order the gut to relax or slow digestion, and the gut merely carries out the orders",
+    "An even split of upward and downward fibers, making it a symmetric two-way channel",
+    "Mainly a sensor bus: about 80% of its fibers carry signals up from gut to brain, and only a minority carry commands down"
+   ],
+   "explanation_en": "The piece says roughly 80% of vagal fibers are afferent, so it's a sensor bus more than a remote control; nor does it touch the lumen—it reads wall tension and chemical signals handed up by the epithelium. \"The brain gets nervous and the gut obeys\" is exactly the intuition the article overturns."
+  },
+  {
+   "id": "aad7162ad9",
+   "question": "「人体 90–95% 的血清素在肠道，所以养好肠道就能改善情绪。」按文章的分析，这个说法的问题在哪？",
+   "options": [
+    "问题只在比例被夸大了，实际是 60% 左右，但肠道血清素仍会直接进入大脑",
+    "前半句是真的，但肠道血清素过不了血脑屏障，和脑内血清素是两个池子",
+    "说法完全正确，大规模随机对照试验已证实调理肠道能稳定改善抑郁",
+    "前半句就是错的，肠道里的血清素其实只占全身的一小部分"
+   ],
+   "answer": 1,
+   "explanation": "文章说前提是真的、推论用错了地方：肠道血清素过不了血脑屏障。肠道确实能影响脑，但走的是迷走神经、免疫、代谢物、色氨酸分流这些通路，不是血清素直接上脑；益生菌改善情绪的试验汇总下来效应偏小，远没到「喝酸奶治抑郁」。",
+   "question_en": "\"90–95% of the body's serotonin is in the gut, so a healthy gut improves your mood.\" By the article's analysis, what's wrong with this claim?",
+   "options_en": [
+    "Only the percentage is inflated—it's closer to 60%—but gut serotonin still flows directly into the brain",
+    "The first half is true, but gut serotonin can't cross the blood-brain barrier; it's a separate pool from the brain's",
+    "The claim is entirely correct; large randomized trials have shown that gut care reliably improves depression",
+    "The first half is false; the gut actually holds only a small share of the body's serotonin"
+   ],
+   "explanation_en": "The premise is true but misapplied: gut serotonin doesn't cross the blood-brain barrier. The gut does influence the brain, but through the vagus, immune signals, microbial metabolites and tryptophan diversion—not by shipping serotonin upward. Probiotic mood trials show small, inconsistent effects, far from \"yogurt cures depression.\""
+  },
+  {
+   "id": "572f35c210",
+   "question": "肠易激综合征（IBS）查不出结构损伤，肚子却真疼。肠道导向催眠和认知行为治疗只作用于脑那一端，却对它有效。这说明了什么？",
+   "options": [
+    "催眠和认知行为治疗直接修复了肠壁的结构损伤",
+    "肠脑轴是双向的：IBS 的机制是内脏高敏感，从脑这头调整对内脏信号的处理，肠子那头的症状真的会缓解",
+    "这些疗法只是安慰剂效应，说明 IBS 不存在真实的生理机制",
+    "IBS 的疼痛是想象出来的，本质是心理问题，与肠道本身无关"
+   ],
+   "answer": 1,
+   "explanation": "国际标准已把这类病改称「脑-肠互动障碍」，机制是内脏高敏感：同样的肠内压力往上报的痛更响。从脑这头拧、肠子那头真的会松，体现的是这条轴的双向性。说疼痛是想象出来的就错了：文章明确说肚子是真疼，只是没有结构损伤。",
+   "question_en": "Irritable bowel syndrome shows no structural damage, yet the pain is real. Gut-directed hypnotherapy and CBT act only on the brain end, yet they work. What does this show?",
+   "options_en": [
+    "Hypnotherapy and CBT directly repair structural damage in the gut wall",
+    "The gut-brain axis runs both ways: IBS involves visceral hypersensitivity, and adjusting how the brain handles gut signals genuinely eases symptoms at the gut end",
+    "These therapies are mere placebo, showing IBS has no real physiological mechanism",
+    "IBS pain is imaginary—essentially a psychological problem unrelated to the gut itself"
+   ],
+   "explanation_en": "International criteria now classify it as a disorder of gut-brain interaction driven by visceral hypersensitivity: the same pressure in the gut gets reported upward as louder pain. Turning the dial at the brain end loosens the gut end—the axis is bidirectional. Calling the pain imaginary is wrong: the article stresses it is real, just without structural damage."
+  }
+ ]
+}

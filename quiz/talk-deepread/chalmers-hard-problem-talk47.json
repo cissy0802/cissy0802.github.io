@@ -1,0 +1,69 @@
+{
+ "page": "/talk-deepread/chalmers-hard-problem-talk47.html",
+ "title": "David Chalmers ·《How do you explain consciousness?》— 把大脑功能全解释完，还剩一个问题：为什么会有感觉",
+ "page_en": "/talk-deepread/chalmers-hard-problem-talk47.en.html",
+ "title_en": "David Chalmers · \"How do you explain consciousness?\" — explain everything the brain does, and why it feels like something is still left over",
+ "src_hash": "7829e3beb23f",
+ "questions": [
+  {
+   "id": "40a41199b9",
+   "question": "有人说：「神经科学迟早会像解释交通堵塞、飓风那样，把意识解释成大脑活动的涌现。」按查默斯的论证，这条路为什么填不上困难问题？",
+   "options": [
+    "意识只存在于语言之中，而交通堵塞和飓风不使用语言，因此两者没有可比性",
+    "大脑的神经元数量远超飓风中的分子，复杂度太高，目前的计算能力还不足以完成这种涌现建模",
+    "经典涌现解释的是行为，而行为全解释完，「为什么会有感受」仍是进一步的问题",
+    "涌现理论本身在物理学中已被证伪，所以不能拿来解释任何生物现象，包括意识"
+   ],
+   "answer": 2,
+   "explanation": "查默斯说还原解释给出的永远是结构、动力学和行为，同样的方法能解释我们怎么走路、说话、下棋，但这些在意识问题里本身就属于「简单问题」。问题不在复杂度或算力不够，而在于即使行为全部解释完，主观感受仍是多出来的那一截。",
+   "question_en": "Someone says: \"Neuroscience will eventually explain consciousness as emergent from brain activity, just as we explain traffic jams and hurricanes.\" On Chalmers's argument, why can't that close the hard problem?",
+   "options_en": [
+    "Consciousness exists only in language, and traffic jams and hurricanes don't use language, so the comparison fails",
+    "The brain has far more neurons than a hurricane has relevant variables, so we just lack the computing power to model its emergence yet",
+    "Classic emergence explains behavior, and once all behavior is explained, why any of it is felt remains a further question",
+    "Emergence itself has been refuted in physics, so it can't be used to explain any biological phenomenon, consciousness included"
+   ],
+   "explanation_en": "Chalmers argues that reductive explanation only ever yields structure, dynamics and behavior—the same tools explain walking, talking and playing chess, which are all \"easy problems.\" The obstacle isn't complexity or computing power: even with every behavior explained, subjective experience is left over."
+  },
+  {
+   "id": "66d62b5168",
+   "question": "查默斯在 TED 上用整合信息理论（IIT）支持「萨曼莎这样的 AI 很可能有意识」「一礼堂观众可能有集体意识」。这两个推论和 IIT 本身是什么关系？",
+   "options": [
+    "完全一致：这两个推论正是托诺尼和科赫在系统阐述 IIT 时给出的标准例子",
+    "正好相反：IIT 的提出者认为数字计算机和人群几乎都没有意识",
+    "IIT 支持 AI 有意识，但认为群体意识要等 Φ 的测量技术成熟后才能判断",
+    "IIT 只谈动物意识，对 AI 和群体完全没有表态，所以这两个推论既不被支持也不被反对"
+   ],
+   "answer": 1,
+   "explanation": "托诺尼与科赫 2015 年写道，数字计算机哪怕运行对人脑的忠实模拟也「几乎什么都体验不到」，人群或一堆沙子这样的聚合体也没有意识，并强调 IIT 不像泛心论那样认为一切都有意识。台上这两个推论来自查默斯自己更宽的「信息即意识」直觉，不是 IIT 的结论。",
+   "question_en": "In his TED talk Chalmers used Integrated Information Theory (IIT) to back the claims that an AI like Samantha is probably conscious and that an auditorium could have a collective consciousness. How do those claims relate to IIT itself?",
+   "options_en": [
+    "They match it exactly: these are the standard examples Tononi and Koch give when laying out IIT",
+    "They contradict it: IIT's founders hold that digital computers and crowds have next to no consciousness",
+    "IIT supports AI consciousness but holds that group consciousness can't be judged until Φ can be measured",
+    "IIT addresses only animal consciousness and is silent on AI and groups, so these claims are neither supported nor contradicted"
+   ],
+   "explanation_en": "Tononi and Koch wrote in 2015 that digital computers, even running faithful brain simulations, would experience next to nothing, and that aggregates such as crowds or sand heaps aren't conscious—unlike panpsychism, IIT says not everything is conscious. The two stage examples come from Chalmers's own broader information-equals-consciousness intuition, not from IIT."
+  },
+  {
+   "id": "c9e9bf4367",
+   "question": "查默斯 1995 年的框架把「认知系统对信息的整合」列为简单问题。由此看，即使 IIT 的 Φ 和意识程度完全对得上，它在困难问题上最多算什么？",
+   "options": [
+    "对错觉论的证明，因为它显示所谓意识不过是信息处理",
+    "一项否证泛心论的证据，因为它只在高度整合的系统里找到意识",
+    "一条桥接定律：说明整合信息伴随着意识，但不解释为什么会伴随感受",
+    "对困难问题的完整解答，因为它把主观意识还原成了一个可以计算的数学量"
+   ],
+   "answer": 2,
+   "explanation": "信息整合本身在查默斯的清单上属于功能，是简单问题；所以 Φ 再准，也只是一条不再往下解释的「整合信息伴随意识」的连接规律。把它当作对困难问题的解答，正是查默斯自己警告的「调包」：开头谈主观性，最后解释的却是功能。",
+   "question_en": "Chalmers's 1995 framework lists \"the integration of information by a cognitive system\" among the easy problems. Given that, even if IIT's Φ tracked degrees of consciousness perfectly, what would it amount to on the hard problem?",
+   "options_en": [
+    "Proof of illusionism, since it shows that so-called consciousness is just information processing",
+    "Evidence against panpsychism, since it finds consciousness only in highly integrated systems",
+    "A bridging law: integrated information goes with consciousness, without explaining why it is accompanied by experience",
+    "A complete answer to the hard problem, since it reduces subjective consciousness to a computable mathematical quantity"
+   ],
+   "explanation_en": "Integrating information is a function, so on Chalmers's own list it's an easy problem; however accurate Φ is, it can only be a brute correlation law—integrated information accompanies consciousness. Treating it as solving the hard problem is exactly the bait-and-switch Chalmers warned about: open with subjectivity, end up explaining function."
+  }
+ ]
+}

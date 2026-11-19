@@ -1811,6 +1811,141 @@
     "b05886d8b7",
     "08cbc7e1a2"
    ]
+  },
+  "/meta-knowledge/food-systems-day39.html": {
+   "t": "元知识详解：农业与食物系统 — Day 39",
+   "f": "meta-knowledge/food-systems-day39.json",
+   "q": [
+    "a26ec34c8c",
+    "e43f7e877d",
+    "4882c30011"
+   ]
+  },
+  "/talk-deepread/chalmers-hard-problem-talk47.html": {
+   "t": "David Chalmers ·《How do you explain consciousness?》— 把大脑功能全解释完，还剩一个问题：为什么会有感觉",
+   "f": "talk-deepread/chalmers-hard-problem-talk47.json",
+   "q": [
+    "40a41199b9",
+    "66d62b5168",
+    "c9e9bf4367"
+   ]
+  },
+  "/chapter-deepread/accelerate-ch10-employee-satisfaction-book123.html": {
+   "t": "Accelerate 第 10 章 · 员工满意度、认同与投入 — 专业书籍精读 Book 123",
+   "f": "chapter-deepread/accelerate-ch10-employee-satisfaction-book123.json",
+   "q": [
+    "5e3a28a5a1",
+    "ec791b5327",
+    "35ed85a195"
+   ]
+  },
+  "/deep-reading/high-output-management-read905.html": {
+   "t": "《High Output Management》",
+   "f": "deep-reading/high-output-management-read905.json",
+   "q": [
+    "733a1f949f",
+    "633f80d410",
+    "f5c2b16b4e"
+   ]
+  },
+  "/podcast-deepread/boris-cherny-grew-his-career-building-pod15.html": {
+   "t": "The Peterman Pod × Boris Cherny — 只造人们已经在做的事",
+   "f": "podcast-deepread/boris-cherny-grew-his-career-building-pod15.json",
+   "q": [
+    "e355347012",
+    "0c4b4ad2ff",
+    "836cf45606"
+   ]
+  },
+  "/world-religions/jainism-day11.html": {
+   "t": "世界宗教 Day 11：耆那教",
+   "f": "world-religions/jainism-day11.json",
+   "q": [
+    "b3f8550cad",
+    "2a8aaab8cf",
+    "0b0d32699c"
+   ]
+  },
+  "/novel-deepread/beloved-novel88.html": {
+   "t": "宠儿 — 小说精读 No.88",
+   "f": "novel-deepread/beloved-novel88.json",
+   "q": [
+    "57a6cedb26",
+    "274e08948a",
+    "5647c62f70"
+   ]
+  },
+  "/chapter-deepread/mlsdi-ch02-visual-search-system-book83.html": {
+   "t": "ML 系统设计面试 第 2 章 · 视觉搜索系统 — 专业书籍精读 Book 83",
+   "f": "chapter-deepread/mlsdi-ch02-visual-search-system-book83.json",
+   "q": [
+    "d9b63be6d5",
+    "7682b64bc4",
+    "9740fcf89f"
+   ]
+  },
+  "/podcast-deepread/biggest-ideas-universe-quantum-mechanics-pod11.html": {
+   "t": "Mindscape × Sean Carroll — 原子大部分是空的吗？物理学家至今说不准",
+   "f": "podcast-deepread/biggest-ideas-universe-quantum-mechanics-pod11.json",
+   "q": [
+    "b93eb98373",
+    "d6bea8612f",
+    "b996a48582"
+   ]
+  },
+  "/blog-deepread/ribbonfarm-blog4.html": {
+   "t": "Venkatesh Rao · Ribbonfarm — 你得把世界压扁才看得懂它",
+   "f": "blog-deepread/ribbonfarm-blog4.json",
+   "q": [
+    "47dd15f971",
+    "d06a0e9353",
+    "55d8ebd737"
+   ]
+  },
+  "/art-aesthetics/jazz-improvisation-day6.html": {
+   "t": "艺术与审美：爵士与即兴",
+   "f": "art-aesthetics/jazz-improvisation-day6.json",
+   "q": [
+    "3e6e15ea75",
+    "86a3c917d3",
+    "2759ca05e7"
+   ]
+  },
+  "/neuroscience/gut-brain-axis-topic33.html": {
+   "t": "Topic 33 · 肠脑轴 — 神经科学",
+   "f": "neuroscience/gut-brain-axis-topic33.json",
+   "q": [
+    "fcc8079a8b",
+    "aad7162ad9",
+    "572f35c210"
+   ]
+  },
+  "/psychology/death-day25.html": {
+   "t": "心理学 Day 25：死亡心理学 — 向死而生的科学",
+   "f": "psychology/death-day25.json",
+   "q": [
+    "aa09b89e23",
+    "c22a4c05f4",
+    "35c2d8cb2b"
+   ]
+  },
+  "/talk-deepread/solzhenitsyn-world-split-apart-talk10.html": {
+   "t": "Aleksandr Solzhenitsyn ·《一个分裂的世界》— 他们等他赞美自由世界，他在雨里说：你们失去了勇气",
+   "f": "talk-deepread/solzhenitsyn-world-split-apart-talk10.json",
+   "q": [
+    "27622cbd24",
+    "a14d56edf7",
+    "f28c1c99ed"
+   ]
+  },
+  "/deep-reading/inferiority-superiority-read28.html": {
+   "t": "《自卑与超越》— 每日精读 Read 28",
+   "f": "deep-reading/inferiority-superiority-read28.json",
+   "q": [
+    "0932f7a937",
+    "90de7ed1a5",
+    "5c065ad08c"
+   ]
   }
  },
  "aliases": {

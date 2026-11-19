@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/boris-cherny-grew-his-career-building-pod15.html",
+ "title": "The Peterman Pod × Boris Cherny — 只造人们已经在做的事",
+ "page_en": "/podcast-deepread/boris-cherny-grew-his-career-building-pod15.en.html",
+ "title_en": "The Peterman Pod × Boris Cherny — Build only what people already do",
+ "src_hash": "124123d052bb",
+ "questions": [
+  {
+   "id": "e355347012",
+   "question": "按 Boris Cherny 的「潜在需求」原则，下面哪种做法最可能找到下一个值得做的产品？",
+   "options": [
+    "先设想一种用户从未做过、但理论上很有价值的新行为，再投入强力推广去培养这个新习惯",
+    "观察用户已经在把现有工具硬用成什么样子，再为这股已有的意图修一个更顺手的出口",
+    "调研竞争对手刚发布了什么功能，迅速跟进以免失去市场份额",
+    "请用户填写问卷说出他们希望拥有的功能，然后按票数排序开发"
+   ],
+   "answer": 1,
+   "explanation": "Cherny 说你永远没法让人去做一件他们还没在做的事，只能找到已有意图并引导它，例子是群组被大量用来买卖东西，于是有了 Marketplace；Claude Code 被数据科学家和销售拿去用，也被他看作下一个产品的信号。「培养一个全新习惯」正是这条原则否定的做法。",
+   "question_en": "Under Boris Cherny's \"latent demand\" principle, which approach is most likely to surface the next product worth building?",
+   "options_en": [
+    "Imagine a valuable behavior users have never engaged in, then invest in heavy promotion to build that new habit",
+    "Watch what users are already forcing existing tools to do, then build a smoother outlet for that existing intent",
+    "Track what competitors just launched and follow fast so as not to lose market share",
+    "Survey users about the features they wish they had, then build in order of votes"
+   ],
+   "explanation_en": "Cherny says you can never get people to do something they don't already do—you can only find existing intent and channel it. His example is Groups being used heavily for buying and selling, which led to Marketplace; data scientists and salespeople adopting Claude Code is, to him, the same kind of signal. Cultivating a brand-new habit is exactly what the principle rules out."
+  },
+  {
+   "id": "0c4b4ad2ff",
+   "question": "Claude Code 早期并不好用，Cherny 自己也只用它写一成左右的代码，团队却继续投入。支撑这个决定的判断是什么？",
+   "options": [
+    "先把自动补全这类成熟功能做到极致，等市场验证后再扩展到更大的目标",
+    "AI 写代码的质量已经足够好，问题只在用户还不习惯，需要时间培养",
+    "别为今天的模型造，要为六个月后的模型造，押注模型进步的斜率",
+    "早期产品不好用是正常的，只要投入更多工程师打磨界面，体验就会追上来"
+   ],
+   "answer": 2,
+   "explanation": "他当时的经理要求「为六个月后的模型造」，代价是半年做一个暂时不好用的产品；直到 Claude 4 发布，它才突然能用，他一半代码交给了它。把它理解为「模型已经够好、只差用户习惯」与他自己的说法相反：他认为模型写代码整体还不算好。",
+   "question_en": "Early on Claude Code wasn't very usable—Cherny himself wrote only about a tenth of his code with it—yet the team kept investing. What judgment underpinned that?",
+   "options_en": [
+    "Perfect mature features like autocomplete first, then expand to bigger goals once the market validates them",
+    "AI coding quality was already good enough; users just weren't used to it yet and needed time",
+    "Build not for today's model but for the one six months out, betting on the slope of model progress",
+    "Early products are always rough; putting more engineers on polishing the interface would bring the experience up"
+   ],
+   "explanation_en": "His manager pushed him to build for the model six months from now, at the cost of spending half a year on a product that didn't yet work well; when Claude 4 arrived it suddenly became usable and he handed it half his code. Reading it as \"the model was already good, users just needed to adapt\" contradicts him: he says models are still not great at coding overall."
+  },
+  {
+   "id": "836cf45606",
+   "question": "资深工程师主张一次大规模数据迁移，Cherny 不同意。按他讲的这段经历，他是怎么让后续的反对有分量的？",
+   "options": [
+    "绕过这位工程师，去找更高层的经理拍板，避免正面冲突",
+    "先照做、做完审计证明多此一举，再让同一位工程师亲手撤回，靠做事攒下信任",
+    "在迁移开始前写长文公开论证方案错误，争取多数人站到自己一边",
+    "凭技术负责人的职位直接否决方案，用头衔确立自己的判断权威"
+   ],
+   "answer": 1,
+   "explanation": "Cherny 先「不同意但执行」，花半年到一年做完迁移，审计发现原字段本来就够用，再让做迁移的同一位工程师撤回，对方反而更信任他。他明确说没有头衔的公司里信任要靠做事去挣，经理头衔有时反而让信任更难挣，所以靠职位否决与他的经验相反。",
+   "question_en": "A senior engineer pushed for a large data migration that Cherny disagreed with. In his telling, how did he make his later objections carry weight?",
+   "options_en": [
+    "He went around the engineer to a higher-level manager for a decision, avoiding direct confrontation",
+    "He went along with it, had an audit show it was unnecessary, then had the same engineer undo it—earning trust through the work",
+    "He published a long write-up before the migration arguing it was wrong, rallying a majority to his side",
+    "He vetoed it outright from his position as tech lead, using the title to establish his authority"
+   ],
+   "explanation_en": "Cherny disagreed but committed, spent six months to a year on the migration, found in the audit that the original field had sufficed, and then had the same engineer roll it back—after which that engineer trusted him more. He says that in title-less companies trust must be earned by doing, and a manager title can even make it harder, so a veto by rank runs against his lesson."
+  }
+ ]
+}

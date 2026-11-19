@@ -1,0 +1,69 @@
+{
+ "page": "/art-aesthetics/jazz-improvisation-day6.html",
+ "title": "艺术与审美：爵士与即兴",
+ "page_en": "/art-aesthetics/jazz-improvisation-day6.en.html",
+ "title_en": "Art & Aesthetics: Jazz & Improvisation",
+ "src_hash": "d09f4c137f13",
+ "questions": [
+  {
+   "id": "3e6e15ea75",
+   "question": "关于爵士即兴的「自由」，哪种理解最准确？",
+   "options": [
+    "它的本质是摆脱一切规则，乐手凭当下感觉随意演奏，所以每次都不一样",
+    "它主要考验乐手的速度和技巧，音符越密集越能体现即兴水平",
+    "它只存在于独奏者身上，贝斯、鼓和钢琴只是按固定模式伴奏的背景",
+    "它建立在极严格的框架上：固定的和弦走向、小节数和调式，越懂规矩越能在规矩里玩出新意"
+   ],
+   "answer": 3,
+   "explanation": "文中说即兴恰恰建立在严格的框架和多年苦练之上，比如蓝调十二小节永远按 I→IV→V 走，框架越固定，上面的即兴越自由。说背后的乐手只是伴奏机器也不对：他们在随时回应独奏者，即兴本身是一场对话。",
+   "question_en": "Which understanding of the \"freedom\" in jazz improvisation is most accurate?",
+   "options_en": [
+    "Its essence is escaping all rules, with players following their feelings in the moment, which is why every take differs",
+    "It mainly tests speed and technique: the denser the notes, the better the improvisation",
+    "It belongs only to the soloist; bass, drums and piano just play fixed background patterns",
+    "It rests on a strict framework—fixed chord changes, bar counts and modes—and the better you know the rules, the more inventively you can play within them"
+   ],
+   "explanation_en": "The piece says improvisation rests on strict structure and years of practice—a twelve-bar blues always runs I→IV→V, and the more fixed the frame, the freer the playing on top. Treating the rhythm section as background machines is also wrong: they respond to the soloist constantly, making improvisation a conversation."
+  },
+  {
+   "id": "86a3c917d3",
+   "question": "swing 的摇摆感主要从哪里来？",
+   "options": [
+    "严格把每拍等分，并像进行曲那样强调第一、三拍",
+    "演奏得刻意不准、随意拖拍，让节奏听上去松散随性",
+    "它是一种特定的老派舞曲风格，只要用大乐队编制演奏就会产生",
+    "把一拍的两半弹成前长后短的不均等节奏，并把重音放在第二、四拍上，底下的节奏仍然稳如磐石"
+   ],
+   "answer": 3,
+   "explanation": "文中把 swing 拆成「长短不均 + 重音后移」：「哒———哒」前长后短，劲儿放在第二、四拍。它听起来松，其实只有极精准的乐手才能把节奏稳稳地往后靠一点点；把它理解为「随意不准」恰好弄反了。它也不是某种曲风，而是一种可以出现在任何音乐里的节奏感觉。",
+   "question_en": "Where does swing's lilt mainly come from?",
+   "options_en": [
+    "Dividing each beat exactly evenly and stressing beats one and three, as in a march",
+    "Playing deliberately imprecisely and dragging the beat at will, so the rhythm sounds loose and casual",
+    "It's a particular old-fashioned dance style that appears whenever a big band plays",
+    "Splitting each beat unevenly, long then short, and accenting beats two and four, while the underlying pulse stays rock-steady"
+   ],
+   "explanation_en": "The piece breaks swing into uneven subdivision plus a shifted accent: a long-short \"daaa-da\" with the weight on two and four. It sounds relaxed, but only very precise players can lay back on the beat that steadily—calling it sloppy gets it backwards. Nor is it a genre; it's a rhythmic feel that can show up in any music."
+  },
+  {
+   "id": "2759ca05e7",
+   "question": "Miles Davis 后期转向「调式爵士」（modal jazz），让音乐长时间停在一个调式上、少换和弦。按文中的说法，这带来了什么？",
+   "options": [
+    "和弦少了，独奏空间反而更大，配合他的留白，让每个音更有分量",
+    "和弦少了，旋律变得单调，所以他必须吹得更快更密来填补这些空白",
+    "这样能更准确地还原蓝调的十二小节结构，让作品更传统",
+    "这是为了降低演奏难度，让技巧一般的乐手也能参与即兴"
+   ],
+   "answer": 0,
+   "explanation": "文中说和弦少了，独奏的空间反而大了，像从拥挤的街巷走进空旷的原野；Miles 的了不起在于吹得「省」，留白让每个吹出来的音都有重量。「必须吹得更快更密来填补空白」与他少即是多的美学正好相反。",
+   "question_en": "Later in his career Miles Davis moved toward modal jazz, lingering on one mode with few chord changes. According to the piece, what did that achieve?",
+   "options_en": [
+    "Fewer chords opened more room for soloing, which with his use of silence gave each note more weight",
+    "Fewer chords made the melody monotonous, so he had to play faster and denser to fill those gaps",
+    "It more faithfully reproduced the twelve-bar blues structure, making the music more traditional",
+    "It lowered the difficulty, letting less skilled players join in the improvising"
+   ],
+   "explanation_en": "The piece says fewer chords meant more space for the soloist—like stepping from crowded alleys into an open field—and Miles's genius lay in economy: leaving silence gives every note he plays weight. \"Playing faster and denser to fill the gaps\" is the opposite of his less-is-more aesthetic."
+  }
+ ]
+}
