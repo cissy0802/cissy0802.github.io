@@ -1,0 +1,69 @@
+{
+ "page": "/history/body-history-day56.html",
+ "title": "历史：身体的历史 — Day 56",
+ "page_en": "/history/body-history-day56.en.html",
+ "title_en": "History: A History of the Body — Day 56",
+ "src_hash": "60919b614318",
+ "questions": [
+  {
+   "id": "b8b4a9ac63",
+   "question": "1829 年维莱尔梅把法国各省的纳税额和因身高不足免役的比例对照，得出了什么结论？",
+   "options": [
+    "决定身高地区差的主要是纬度和气候：越靠南的省，年轻人越矮",
+    "身高与贫富无关，征兵档案的测量误差太大，无法得出地区差异",
+    "决定身高地区差的主要是贫困：越穷的省，被判太矮的年轻人越多",
+    "决定身高地区差的主要是血统：不同「种族」来源的省份身高不同"
+   ],
+   "answer": 2,
+   "explanation": "当时的主流解释是气候与「种族」，维莱尔梅用一条近乎单调的关系推翻了它：贫困才是关键，身体第一次成了可比较的经济指标。这套为凑兵员定的尺子，后来也成了检验「总量增长是否落到人身上」的方法。",
+   "question_en": "In 1829 Villermé matched each French department's tax receipts against its share of young men exempted for being too short. What did he conclude?",
+   "options_en": [
+    "Latitude and climate mainly drove regional height differences: the farther south, the shorter the young men",
+    "Height was unrelated to wealth; conscription records were too error-prone to show any regional pattern",
+    "Poverty mainly drove regional height differences: the poorer the department, the more young men were too short",
+    "Ancestry mainly drove regional height differences: departments of different \"racial\" origin differed in height"
+   ],
+   "explanation_en": "The prevailing explanations were climate and \"race,\" and Villermé overturned them with a nearly monotonic relationship: poverty was what mattered, making the body a comparable economic indicator for the first time. A rule meant to fill army ranks became a way to test whether aggregate growth reaches people's bodies."
+  },
+  {
+   "id": "ccb470efbc",
+   "question": "鲍嘉兰与盖茨走访近一千八百名高龄乡村女性后发现，缠足在哪里最早退场？",
+   "options": [
+    "天足会和维新派宣传最密集、反缠足话语传播最广的地方",
+    "机制纱线和洋布最先进来、家庭手工纺织收入垮掉的地方",
+    "1928 年内政部禁令颁布后，警察检查力度最大的地方",
+    "1902 年劝戒缠足懿旨下达后，地方官执行最严格的地方"
+   ],
+   "answer": 1,
+   "explanation": "她们发现缠足的分布与女孩的久坐手工劳动高度重合：手工纺织收入一垮，缠脚就从投资变成纯负担，风俗才塌。清初的禁令下过却无果，说明仅靠政令与倡导不够；当然也有批评者认为经济解释低估了民族主义话语的动员力。",
+   "question_en": "After interviewing nearly 1,800 elderly rural women, Laurel Bossen and Hill Gates found that footbinding disappeared earliest where?",
+   "options_en": [
+    "Where anti-footbinding societies and reformers campaigned hardest and the message spread widest",
+    "Where machine-spun yarn and factory cloth arrived first and household hand-textile income collapsed",
+    "Where police inspections were most intense after the 1928 Interior Ministry ban",
+    "Where local officials enforced the 1902 imperial edict discouraging footbinding most strictly"
+   ],
+   "explanation_en": "They found footbinding tracked girls' sedentary handicraft labor: once hand-spinning income collapsed, binding turned from an investment into a pure burden, and the custom fell. Early Qing bans had already failed, showing decrees and advocacy alone weren't enough, though critics argue the economic account underrates nationalist mobilization."
+  },
+  {
+   "id": "e8c7af1d93",
+   "question": "1977 年 504 条款占楼抗议带来的「真正转折」，放到团队管理里最贴切的应用是哪一个？",
+   "options": [
+    "先查清成员表现不佳的个人原因，再决定是否需要调岗或者安排培训",
+    "对表现不佳的成员给予更多同情和宽容，但不改变团队现有的任何流程",
+    "为表现不佳的成员单独设一套简化流程，与其他人分开管理以免拖累整体",
+    "把「他就是不行」改写成「流程没给他留接口」，可做的事随之多出一整类"
+   ],
+   "answer": 3,
+   "explanation": "转折在概念上：问题从「这个人有缺陷」被改写成「这栋楼没有坡道」，责任方一换，解法空间就扩张了。单独设一套简化流程正是当年被否决的「隔离但平等」方案的翻版；只给同情或只查个人原因，问题仍挂在人身上。",
+   "question_en": "The real turning point of the 1977 Section 504 sit-in was conceptual. Which application to managing a team fits it best?",
+   "options_en": [
+    "First pin down each struggling member's personal reasons, then decide on a transfer or training",
+    "Show struggling members more sympathy and patience, while leaving every existing team process unchanged",
+    "Give struggling members their own simplified process, managed separately so they don't drag down the rest",
+    "Rewrite \"he just can't do it\" as \"the process leaves him no interface,\" which opens up a whole new class of fixes"
+   ],
+   "explanation_en": "The shift was from \"this person is defective\" to \"this building has no ramp\"; moving responsibility expanded the space of solutions. A separate simplified track mirrors the rejected separate-but-equal alternative, and sympathy alone or digging into personal causes still locates the problem in the person."
+  }
+ ]
+}

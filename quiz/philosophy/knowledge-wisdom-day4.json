@@ -1,0 +1,69 @@
+{
+ "page": "/philosophy/knowledge-wisdom-day4.html",
+ "title": "哲学经典详解：知识与智慧 · Day 4 — Philosophy",
+ "page_en": "/philosophy/knowledge-wisdom-day4.en.html",
+ "title_en": "Philosophy Classics: Knowledge and Wisdom · Day 4 — Philosophy",
+ "src_hash": "05315fb5bf16",
+ "questions": [
+  {
+   "id": "d15d1086d2",
+   "question": "康德的「哥白尼革命」主张的是什么？",
+   "options": [
+    "对象符合心智的认识结构而非相反，所以人能确知现象、够不到物自体",
+    "认识要尽量符合外部对象，凡与对象不符的观念都应作为偏见被剔除掉",
+    "只要观察足够细致、仪器足够精密，人最终就能直接认识事物本身的样子",
+    "一切知识都源自经验，心智是一块白板，时间、空间与因果都是从观察中归纳出来的"
+   ],
+   "answer": 0,
+   "explanation": "康德把方向反过来：时间、空间和范畴是心智的先天形式，世界经它们过滤后才成为现象。所以现象界能被确知，物自体在结构之外永远够不到。他说一切知识都从经验开始，但并非一切知识都源自经验，白板说正是他要推翻的。",
+   "question_en": "What does Kant's \"Copernican revolution\" claim?",
+   "options_en": [
+    "Not that cognition conforms to objects but that objects conform to the mind's structure, so we can know phenomena but never the thing-in-itself",
+    "That cognition should match external objects as closely as possible, discarding any idea that fails to match as prejudice",
+    "That with careful enough observation and precise enough instruments, we can eventually know things as they are in themselves",
+    "That all knowledge derives from experience; the mind is a blank slate, and space, time and causality are generalized from observation"
+   ],
+   "explanation_en": "Kant reversed the direction: space, time and the categories are a priori forms of the mind, and the world becomes phenomena only after passing through them. So phenomena can be known with certainty while the thing-in-itself lies forever outside. He held that all knowledge begins with experience but not all of it arises from experience; the blank slate is what he overturned."
+  },
+  {
+   "id": "118b4582f2",
+   "question": "禅宗「不立文字」应当怎样理解？",
+   "options": [
+    "认为语言能完整表达实相，只是禅师们为了保守秘传才选择不写下来",
+    "不否定文字本身，而否定文字的自足性：语言是指月之指，真知要落在直接体验里",
+    "主张彻底抛弃经书和语言，因为文字会污染心性，所以修行者不该读经讲经",
+    "认为只要把经文读得足够透彻、背得足够熟练，就能自然证悟般若真知"
+   ],
+   "answer": 1,
+   "explanation": "「不立文字」不是反智：六祖自己也讲经。它对治的是「我读过它＝我懂得它＝我活出了它」的执念；文字指向月亮，但本身不是月亮，执着于指头就看不到月亮。",
+   "question_en": "How should the Chan (Zen) principle of \"not establishing words\" be understood?",
+   "options_en": [
+    "It holds that language can fully express reality, and masters simply chose not to write it down to keep the teaching secret",
+    "It doesn't reject words as such but their self-sufficiency: language is a finger pointing at the moon, and real insight lies in direct experience",
+    "It calls for abandoning scripture and language altogether, since words defile the mind and practitioners shouldn't read or teach sutras",
+    "It holds that reading the sutras thoroughly and memorizing them well enough will by itself bring awakening to wisdom"
+   ],
+   "explanation_en": "Not establishing words isn't anti-intellectual; the Sixth Patriarch himself expounded sutras. It targets the conviction that having read something equals understanding it equals living it; words point at the moon but are not the moon, and clinging to the finger means never seeing the moon."
+  },
+  {
+   "id": "edd437cd30",
+   "question": "康德说物自体永远不可知，禅宗却说可以「见性」。按文章的分析，两者是什么关系？",
+   "options": [
+    "完全一致：禅宗的见性就是康德所说的用范畴认识现象，只是换了一套宗教词汇来表达",
+    "不是正面冲突：两者都认为概念够不到实相，分歧只在禅宗主张还有一条非概念的直接体证之路",
+    "康德驳倒了禅宗：既然物自体不可知，见性只能是一种先验幻象，可以从逻辑上排除",
+    "正面冲突：康德认为概念能把握实相，禅宗则认为只有放下概念才能把握，两者必有一错"
+   ],
+   "answer": 1,
+   "explanation": "康德封死的是概念之路，禅宗同意语言与概念够不到实相，但主张还有一条放下能所对立的体证之路。所以两者是在同一堵墙前分手：康德证明墙在哪里并守在墙内，禅宗声称墙外有路，那条路无法被论证，只能被走。",
+   "question_en": "Kant says the thing-in-itself is forever unknowable, yet Chan says one can \"see one's nature.\" On the piece's analysis, how do the two relate?",
+   "options_en": [
+    "They agree entirely: seeing one's nature is just Kant's knowing phenomena through the categories, restated in religious vocabulary",
+    "They don't directly clash: both hold that concepts can't reach reality, and differ only in that Chan claims a non-conceptual path of direct realization",
+    "Kant refutes Chan: since the thing-in-itself is unknowable, seeing one's nature can only be a transcendental illusion, ruled out by logic",
+    "They clash head-on: Kant holds concepts can grasp reality while Chan holds only dropping concepts can, so one of them must be wrong"
+   ],
+   "explanation_en": "Kant closes the conceptual road; Chan agrees that language and concepts can't reach reality but claims a path of direct realization beyond the subject-object split. They part ways at the same wall: Kant shows where it stands and works inside it, while Chan claims a path beyond it that can't be argued for, only walked."
+  }
+ ]
+}

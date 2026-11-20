@@ -1,0 +1,49 @@
+{
+ "page": "/neuroscience/ref-cortical-microcircuit.html",
+ "title": "参考 · 皮层分层与微回路 — 神经科学",
+ "page_en": "/neuroscience/ref-cortical-microcircuit.en.html",
+ "title_en": "Reference · Cortical Layers & Microcircuit — Neuroscience",
+ "src_hash": "955963415d34",
+ "questions": [
+  {
+   "id": "fe3840fc5b",
+   "question": "研究者只知道一条皮层间连接的终止层：它落在 L4，而 L1 和 L5/6 几乎没有。按分层规则，这条连接更可能是什么？",
+   "options": [
+    "前馈连接，从层级较低的区域送往较高的区域",
+    "丘脑发出的调制性输入，主要用于调节注意",
+    "反馈连接，从层级较高的区域送回较低的区域",
+    "同一区域内的横向连接，不分层级的上下"
+   ],
+   "answer": 0,
+   "explanation": "Felleman 和 Van Essen 正是用落点来定层级：前馈从 L2/3 出发、终止在 L4；反馈从深层出发、避开 L4，落在 L1 和 L5/6。丘脑的调制性输入落在 L1，本地横向连接最密的是 L2/3。",
+   "question_en": "All a researcher knows about a corticocortical connection is where it ends: in L4, with almost nothing in L1 or L5/6. By the laminar rule, what is it most likely to be?",
+   "options_en": [
+    "A feedforward connection, from a lower-level area to a higher-level one",
+    "A modulatory input from the thalamus, mainly used to regulate attention",
+    "A feedback connection, from a higher-level area back to a lower one",
+    "A lateral connection within one area, with no up or down in the hierarchy"
+   ],
+   "explanation_en": "Felleman and Van Essen used termination layers to build the hierarchy: feedforward projections start in L2/3 and end in L4, while feedback starts in deep layers, avoids L4, and lands in L1 and L5/6. Modulatory thalamic input lands in L1, and local lateral connections are densest in L2/3."
+  },
+  {
+   "id": "0ab100018a",
+   "question": "关于皮层锥体细胞的两头，下列哪个说法正确？",
+   "options": [
+    "顶端树突只接收抑制性输入，作用是给细胞降噪，兴奋性的前馈与反馈都只落在基底树突上",
+    "基底树突收本地与前馈输入，顶端在 L1 接反馈；顶端被强驱动时细胞转为连放",
+    "基底树突在 L1 接住反馈，顶端树突收本地和前馈输入；两路输入在胞体处简单相加后统一输出",
+    "顶端和基底树突收的都是前馈输入，只是距离胞体远近不同，所以两头之间没有功能上的分工"
+   ],
+   "answer": 1,
+   "explanation": "基底树突短而密，围在胞体旁收本地与前馈输入；顶端树突伸到 L1 展开，接远处反馈。两头不是简单相加：顶端被足够强地驱动时会转成连放，下游借此读出「上面那一路刚才有没有说话」。也有中间神经元专门压顶端，但顶端并非只收抑制。",
+   "question_en": "Which statement about the two ends of a cortical pyramidal cell is correct?",
+   "options_en": [
+    "Apical dendrites receive only inhibitory input to denoise the cell, while excitatory feedforward and feedback both land on basal dendrites",
+    "Basal dendrites take local and feedforward input, apical dendrites receive feedback in L1, and strong apical drive switches the cell from single spikes to bursts",
+    "Basal dendrites receive feedback in L1, apical dendrites take local and feedforward input, and the two streams simply sum at the soma",
+    "Both apical and basal dendrites take feedforward input and differ only in distance from the soma, so the two ends have no division of labor"
+   ],
+   "explanation_en": "Basal dendrites are short and dense around the soma, collecting local and feedforward input; the apical dendrite reaches L1 and fans out to receive long-range feedback. The two don't just add up: strong enough apical drive switches the cell to bursting, so downstream cells can tell whether the top-down stream just spoke. Some interneurons do target the apical tuft, but it isn't inhibitory-only."
+  }
+ ]
+}

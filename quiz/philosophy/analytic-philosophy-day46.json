@@ -1,0 +1,69 @@
+{
+ "page": "/philosophy/analytic-philosophy-day46.html",
+ "title": "哲学经典详解：分析哲学与逻辑实证 · Day 46 — Philosophy",
+ "page_en": "/philosophy/analytic-philosophy-day46.en.html",
+ "title_en": "Philosophy Classics: Analytic Philosophy & Logical Positivism · Day 46 — Philosophy",
+ "src_hash": "26ae0765ced0",
+ "questions": [
+  {
+   "id": "253dc9821c",
+   "question": "弗雷格指出「晨星是晨星」没有信息，「晨星是暮星」却是一项天文发现。按他的区分，为什么？",
+   "options": [
+    "「晨星」与「暮星」原本指称两个不同的天体，后来的观测才证明它们其实是同一个对象",
+    "后一句里两个词的字面不同，听者需要更多时间处理，因此主观上感觉更有信息量",
+    "两者都指称金星，但给出对象的方式不同，信息就在意义的差别里",
+    "前一句是逻辑真理，后一句是经验命题，而只有经验命题才具有意义，逻辑命题都无意义"
+   ],
+   "answer": 2,
+   "explanation": "弗雷格把语义劈成指称（所指的对象）和意义（对象被给予的方式）。两个名字指称都是金星，意义不同，所以等同陈述才有认知价值。说它们原本指称两个天体，就把意义和指称的区分搞混了。",
+   "question_en": "Frege noted that \"the morning star is the morning star\" is empty, while \"the morning star is the evening star\" was an astronomical discovery. By his distinction, why?",
+   "options_en": [
+    "The two terms originally referred to two different bodies, and only later observation showed they were in fact one object",
+    "The second uses two different words, so listeners need longer to process it and it feels more informative",
+    "Both terms refer to the same object, Venus, but present it in different ways; the information lies in the difference of sense",
+    "The first is a logical truth and the second an empirical claim, and only empirical claims have meaning at all"
+   ],
+   "explanation_en": "Frege split meaning into reference (the object designated) and sense (the mode of presentation). Both names refer to Venus but differ in sense, which is why the identity statement has cognitive value. Saying they first referred to two bodies confuses sense with reference."
+  },
+  {
+   "id": "ae58f21f46",
+   "question": "公孙龙「白马非马」的论证，按文章的解读，主张的是什么？",
+   "options": [
+    "名称和事物毫无关系，所以任何「是」或「不是」的判断都同样成立",
+    "白马不属于马这个类，因为颜色让它在本质上成了另一种动物",
+    "颜色比形状更根本，因此命名时应当先命色、再命形才算正确",
+    "二者作为概念不同一：马命形，白马命形加色，内涵外延都不同"
+   ],
+   "answer": 3,
+   "explanation": "这是一记概念手术：他说的是概念之「非」，不是说白马不属于马。「马」是一个类，「白马」是这个类的子集，二者内涵与外延皆异。把它读成白马不算马，正是常见的「诡辩」误解。",
+   "question_en": "On the piece's reading, what does Gongsun Long's \"a white horse is not a horse\" actually claim?",
+   "options_en": [
+    "That names have nothing to do with things, so any judgment of \"is\" or \"is not\" holds equally well",
+    "That white horses don't belong to the class of horses, because color makes them a different kind of animal in essence",
+    "That color is more fundamental than shape, so correct naming must name the color before the shape",
+    "That \"white horse\" and \"horse\" are not the same concept: one names shape, the other shape plus color, differing in intension and extension"
+   ],
+   "explanation_en": "It is conceptual surgery: he asserts a non-identity of concepts, not that white horses fall outside the class of horses. \"Horse\" is a class and \"white horse\" a subset of it, so they differ in both intension and extension. Reading it as \"white horses aren't horses\" is the usual sophistry misreading."
+  },
+  {
+   "id": "84d2120dca",
+   "question": "卡尔纳普拿海德格尔的「无在无化」开刀。按可证实原则，这句话属于哪一类？",
+   "options": [
+    "无认知意义的伪命题：语法完美，却没有任何可被经验检验的内容",
+    "逻辑必然的命题：它像数学定理一样，仅凭定义就为真",
+    "深刻的真命题：它表达了科学方法暂时还无法触及的真理",
+    "错误的命题：它的内容与经验事实相矛盾，可以被观察证伪"
+   ],
+   "answer": 0,
+   "explanation": "可证实原则认为陈述的意义就是它被经验证实的方法；既非逻辑必然、又原则上不可检验的句子不是错，而是无意义。卡尔纳普说形而上学表达的是生命情调，本该交给艺术，却穿上了陈述真理的外衣。",
+   "question_en": "Carnap took aim at Heidegger's \"the Nothing nothings.\" Under the verification principle, what kind of statement is it?",
+   "options_en": [
+    "A cognitively meaningless pseudo-statement: grammatically perfect, with no empirically testable content",
+    "A logically necessary statement: like a theorem, it is true by its definitions alone",
+    "A profound true statement: it expresses a truth that scientific method cannot yet reach",
+    "A false statement: its content contradicts the empirical facts and could be refuted by observation"
+   ],
+   "explanation_en": "The verification principle says a statement's meaning is its method of empirical test; a sentence that is neither logically necessary nor testable in principle is not false but meaningless. Carnap held that metaphysics expresses an attitude toward life, which belongs to art, dressed up as a claim to truth."
+  }
+ ]
+}

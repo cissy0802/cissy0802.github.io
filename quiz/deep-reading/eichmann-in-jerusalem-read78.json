@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/eichmann-in-jerusalem-read78.html",
+ "title": "《艾希曼在耶路撒冷》— 好书精读 Read 78",
+ "page_en": "/deep-reading/eichmann-in-jerusalem-read78.en.html",
+ "title_en": "Eichmann in Jerusalem — Deep Reading Read 78",
+ "src_hash": "04d069fcdd15",
+ "questions": [
+  {
+   "id": "c828aeba86",
+   "question": "阿伦特所说的「平庸之恶」，下列哪种理解最准确？",
+   "options": [
+    "人人都可能成为艾希曼，因此责任应由全体德国人共同承担",
+    "艾希曼智力平庸、不太聪明，所以他看不清自己每天在做的事会带来什么后果",
+    "「平庸」形容的是作恶者其人没有深度，不是罪行轻微，她仍主张判他死刑",
+    "恶在那个时代很普遍，人人都在做，所以执行者的责任应当相应减轻"
+   ],
+   "answer": 2,
+   "explanation": "平庸指在他身上找不到仇恨或信念的深井，不是说罪行情有可原；阿伦特拆掉「恶魔」解释，是为了让责任落回一个具体的人。她反对集体罪责，认为人人有罪等于无人有罪；她也明说艾希曼并不愚蠢，他缺的是思考而不是智力。",
+   "question_en": "Which reading of Arendt's \"banality of evil\" is most accurate?",
+   "options_en": [
+    "Anyone could become Eichmann, so responsibility should be shared by all Germans collectively",
+    "Eichmann was of mediocre intelligence and simply couldn't see the consequences of what he did",
+    "\"Banal\" describes the perpetrator's lack of depth, not a lesser crime, and she still argued he should hang",
+    "Evil was so common at the time that everyone took part, so the perpetrators' responsibility should be reduced"
+   ],
+   "explanation_en": "\"Banal\" means there was no well of hatred or conviction to find in him, not that the crime was excusable; Arendt dismantled the \"monster\" explanation so that responsibility would land on a specific person. She rejected collective guilt, since where all are guilty no one is, and she stated plainly that Eichmann was not stupid: what he lacked was thinking, not intelligence."
+  },
+  {
+   "id": "b054595b98",
+   "question": "纳粹内部规定用「最终解决」「特殊处理」代替「杀害」「灭绝」。按阿伦特的分析，这套语言规则真正的作用是什么？",
+   "options": [
+    "对执行者保密：大多数参与者正是靠这些代号，才一直不知道被运走的人会被杀",
+    "对外掩人耳目：主要是为了让盟国和中立国查不到灭绝计划的证据",
+    "切断信息通往良知的线：参与者知道人会死，但这些词不接通「谋杀」",
+    "提高行政效率：统一术语让各部门公文规范，减少调度时的沟通错误"
+   ],
+   "answer": 2,
+   "explanation": "阿伦特强调这不只是委婉语：参与者完全清楚运走的人会死，这不是秘密。被切断的不是信息，而是信息与良知之间的连接，像给运转的机器换掉仪表标签，读数照旧，却再没有读数让你按停止键。",
+   "question_en": "Nazi offices were required to say \"final solution\" or \"special treatment\" instead of \"killing\" or \"extermination.\" On Arendt's analysis, what did these language rules really do?",
+   "options_en": [
+    "They kept the perpetrators in the dark: most participants didn't know the deportees would be killed, thanks to the code words",
+    "They hid the program from outsiders: the main goal was to keep the Allies and neutral states from finding evidence",
+    "They cut the wire from information to conscience: participants knew people would die, but the words never connected to what \"murder\" means",
+    "They made the bureaucracy efficient: standard terms kept paperwork uniform and cut errors in scheduling transports"
+   ],
+   "explanation_en": "Arendt insists this was more than euphemism: participants fully knew the deportees would die; it was no secret. What got severed was not information but its link to conscience, like relabeling every gauge on a running machine: the readings stay accurate, but none of them ever prompts you to hit the stop button."
+  },
+  {
+   "id": "42a545a535",
+   "question": "为什么阿伦特认为「凭良心做事」挡不住第三帝国那样的恶？",
+   "options": [
+    "良心只管私人生活，政治领域应当完全交给法律，守法就不会出错",
+    "良心本身足够可靠，问题只是当时的人受教育太少，没学会如何去倾听自己的良心",
+    "人在命令面前只能服从，良心再强也无法改变一个小齿轮的行为",
+    "良心多是社会共识的回声，会随社会翻转；挡得住的是具体情境中的判断力"
+   ],
+   "answer": 3,
+   "explanation": "日常道德靠一个隐含假设：做了这事周围的体面人会谴责我。社会翻转后这个回声也翻转，良心反而催人把工作做漂亮。教育挡不住（万湖会议桌旁坐满博士），法律也挡不住（法律被改造成了帮凶）；她还否认成年人政治里有「服从」，只有支持。",
+   "question_en": "Why did Arendt think \"following your conscience\" could not stop evil on the scale of the Third Reich?",
+   "options_en": [
+    "Conscience governs only private life; politics should be left wholly to law, and obeying the law cannot go wrong",
+    "Conscience is reliable enough; the problem was that people then were too poorly educated to learn how to listen to it",
+    "Under orders people can only obey, so no conscience, however strong, can change what a small cog does",
+    "Conscience is largely an echo of social consensus and flips when society flips; what holds is judgment in the concrete case"
+   ],
+   "explanation_en": "Everyday morality rests on an assumption that decent people around me would condemn this. When society inverts, that echo inverts too, and conscience urges you to do the job well. Education didn't stop it (the Wannsee table was full of PhDs), nor did law (law became an accomplice); and she denied that adults in politics merely obey, since obedience is support."
+  }
+ ]
+}

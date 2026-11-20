@@ -1,0 +1,69 @@
+{
+ "page": "/chapter-deepread/fosa-ch04-architecture-characteristics-defined-book211.html",
+ "title": "FoSA 第 4 章 · 架构特征定义：「-ility」们到底指什么 — 专业书籍精读 Book 211",
+ "page_en": "/chapter-deepread/fosa-ch04-architecture-characteristics-defined-book211.en.html",
+ "title_en": "FoSA Ch 4 · Architecture Characteristics Defined: What the -ilities Actually Mean — Book Deep Read 211",
+ "src_hash": "7e6f803b880f",
+ "questions": [
+  {
+   "id": "26408b8d42",
+   "question": "按 FoSA 第 4 章的三条判据，下面哪一项应当升格为架构特征？",
+   "options": [
+    "界面要好看统一，所有页面的配色、字体和按钮样式保持一致",
+    "接入第三方支付处理方，开发时按照常规的安全编码习惯来格外小心地处理",
+    "系统要支持用户在订单完成后七天内申请退款并原路退回款项",
+    "自己处理支付，需要把支付隔离成一个独立的模块或服务来专门防护"
+   ],
+   "answer": 3,
+   "explanation": "架构特征要同时满足：非领域的设计考量、影响结构、对成败关键。自建支付需要专门的结构来隔离，才过得了第二条；接第三方只需常规谨慎，不改变骨架；退款是领域需求；界面好看是设计问题，不改结构。",
+   "question_en": "By the three criteria in Chapter 4 of Fundamentals of Software Architecture, which of these should be promoted to an architecture characteristic?",
+   "options_en": [
+    "Keeping the interface attractive and uniform, with consistent colors, fonts and buttons on every page",
+    "Integrating a third-party payment processor and handling it with the usual careful secure-coding habits",
+    "Letting users request a refund within seven days of an order and returning the money the way it came",
+    "Processing payments in-house, which calls for isolating payments in its own module or service for dedicated protection"
+   ],
+   "explanation_en": "A characteristic must be a non-domain design consideration, affect structure, and be critical to success. In-house payments need dedicated structure to isolate them, so they pass the structural test; a third-party processor needs only normal care and leaves the skeleton unchanged; refunds are a domain requirement; looks are a design matter."
+  },
+  {
+   "id": "e726b93988",
+   "question": "一家高频交易公司的需求文档里一个字都没提延迟。按本章的观点，架构师该怎么对待低延迟？",
+   "options": [
+    "把它当作隐式特征，靠领域知识识别出来并为之设计，即使文档没写",
+    "既然需求没写就不算架构特征，等业务方明确提出后再纳入设计",
+    "把它归入横切特征，和安全、合规一样交给统一的网关去处理",
+    "把它当作上线后的质量属性，等压测发现瓶颈再针对性地调优"
+   ],
+   "answer": 0,
+   "explanation": "隐式特征很少被写出来却是成功所必需；书里正是拿高频交易举例：那里每个系统都要为低延迟设计，差几毫秒就是钱。所以架构师需要领域知识去「听出」它；骨架几乎不能事后补，等上线再调优已经晚了。",
+   "question_en": "A high-frequency trading firm's requirements say nothing at all about latency. According to this chapter, how should the architect treat low latency?",
+   "options_en": [
+    "As an implicit characteristic, identified through domain knowledge and designed for even though no document states it",
+    "As not an architecture characteristic, since it isn't written down; add it once the business asks for it explicitly",
+    "As a cross-cutting characteristic, handed to a shared gateway just like security and compliance",
+    "As a post-launch quality attribute, tuned once load testing reveals where the bottlenecks are"
+   ],
+   "explanation_en": "Implicit characteristics are rarely written down yet essential to success, and the book uses exactly this example: in high-frequency trading every system must be designed for low latency because milliseconds are money. That's why architects need domain knowledge to hear them; the skeleton can hardly be retrofitted after launch."
+  },
+  {
+   "id": "fc17429133",
+   "question": "架构评审上，团队列出 12 个「都很关键」的架构特征，希望每一个都做到最好。本章会怎么评价？",
+   "options": [
+    "特征互相牵制、各添复杂度，只挑少数关键的求「最不坏」，并让架构易改",
+    "应按 ISO 质量模型把 12 个都拆成子项逐一达标，就能得到真正最优的架构",
+    "列得越全越安全，漏掉一个特征的代价远高于多支持一个，所以 12 个都应保留",
+    "只要选对了技术栈，各个特征之间就不会冲突，可以同时把每一个都做到最好"
+   ],
+   "answer": 0,
+   "explanation": "本章最常被引用的话是：别追求最好的架构，要追求最不坏的。安全会拖累性能，像直升机的操纵杆动一个牵动其余；特征贪多会得到臃肿的通用怪物。既然很难一次选对，就让架构易于修改，降低选错的代价。",
+   "question_en": "At an architecture review the team lists 12 \"all critical\" characteristics and wants every one maximized. How would this chapter respond?",
+   "options_en": [
+    "Characteristics pull against each other and each adds complexity; pick a few that matter, aim for least worst rather than best, and keep the architecture easy to change",
+    "Break all 12 into sub-characteristics per the ISO quality model and meet each one to reach a truly optimal architecture",
+    "The more complete the list the safer; missing a characteristic costs far more than supporting an extra one, so keep all 12",
+    "With the right technology stack the characteristics won't conflict, so every one of them can be maximized at once"
+   ],
+   "explanation_en": "The chapter's best-known line: never aim for the best architecture, aim for the least worst. Security drags on performance, like helicopter controls where moving one moves the rest, and wanting everything yields a bloated generic design. Since getting it right the first time is hard, make the architecture easy to change so a wrong choice costs less."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/tsmc-founder-morris-chang-pod38.html",
+ "title": "Acquired × 张忠谋 — 接下苹果，只接一半",
+ "page_en": "/podcast-deepread/tsmc-founder-morris-chang-pod38.en.html",
+ "title_en": "Acquired × Morris Chang — Take Apple, but only half",
+ "src_hash": "29b41d3ff869",
+ "questions": [
+  {
+   "id": "58a637d871",
+   "question": "按张忠谋在访谈里给出的裁员规则，哪种情况下不该裁员？",
+   "options": [
+    "遣散费低于这批人一整年的薪水，因为这时裁员在账面上就是一笔实打实的净省钱",
+    "公司已经连续两个季度营收下滑，因为这说明需求再也回不来了",
+    "预计一年内需求回升、还得把人招回来，因为遣散约半年薪水加培训至少半年",
+    "被裁对象是考评最差的一批人，因为绩效差的人留下来只会拖累团队"
+   ],
+   "answer": 2,
+   "explanation": "张忠谋的账是：遣散通常要付半年左右薪水，培养一个人又至少半年，一年内要招回就两头亏。他还反对按绩效裁人，因为七百个差评出自七百个主管，本身就主观；半导体有摩尔定律撑着，需求总会回来。",
+   "question_en": "By the layoff rule Morris Chang lays out in the interview, when should a company not lay people off?",
+   "options_en": [
+    "When severance costs less than a full year of their salaries, because then the layoff saves money on paper",
+    "When revenue has fallen for two straight quarters, because that shows the demand is never coming back",
+    "When demand should recover within a year and you'd rehire, since severance is about six months' pay and training takes at least six",
+    "When the people cut are the lowest-rated performers, because keeping weak performers only drags the team down"
+   ],
+   "explanation_en": "Chang's arithmetic: severance usually runs about half a year's pay and training a replacement takes at least half a year, so rehiring within a year loses on both ends. He also opposed performance-based cuts because 700 bad ratings come from 700 subjective supervisors, and in semiconductors Moore's law means demand returns."
+  },
+  {
+   "id": "f89193bb10",
+   "question": "台积电面对苹果 20 纳米订单时只接了需求的一半。节目对这个「一半」的分析是什么？",
+   "options": [
+    "台积电当时筹不到足够的资金扩产，又不愿发债或增发新股，只能先接一半",
+    "学习曲线主张吃下全部产量，但全接等于拿公司存亡去赌一个客户的销量预测，一半是两者的折中",
+    "苹果开出的 40% 毛利率低于台积电的 45%，接一半是为了守住整体毛利率",
+    "为了保住股息，台积电只能把资本支出砍半，订单也就只能接下一半"
+   ],
+   "answer": 1,
+   "explanation": "按学习曲线，产量越大成本降得越快，应该整单吃下；可苹果的预测差个百分之五到十，整个节点的利润就没了。钱其实是靠发公司债筹的，股息也没砍；毛利率之争张忠谋当时没接话，问题核心在节点取舍和风险。",
+   "question_en": "Facing Apple's 20 nm order, TSMC took only half the requested volume. How does the episode explain that \"half\"?",
+   "options_en": [
+    "TSMC couldn't raise enough money to expand and refused to issue bonds or new shares, so it could only take half",
+    "The learning curve says take all the volume, but taking it all bets the company on one customer's forecast; half splits the difference",
+    "Apple's offered 40% gross margin was below TSMC's 45%, so taking half protected the company's overall margin",
+    "To keep paying its dividend, TSMC had to halve capital spending, which meant taking only half the order"
+   ],
+   "explanation_en": "By the learning curve, more volume drives cost down faster, so you'd take the whole order; but if Apple's forecast missed by 5–10%, the node's entire profit would vanish. The money was in fact raised through corporate bonds and the dividend was kept; Chang let the margin remark pass, and the real issue was node risk."
+  },
+  {
+   "id": "dd3d918198",
+   "question": "Tim Cook 对张忠谋说「英特尔根本不懂怎么做代工」。张忠谋自己怎么理解这句话？",
+   "options": [
+    "说的是制程：英特尔的工艺当时已经落后台积电好几代，造不出苹果要的芯片",
+    "说的是服务：客户的要求有的近乎荒唐，台积电学会了每一个都客气回应，英特尔从不这样",
+    "说的是价格：英特尔的代工报价远高于台积电，苹果算下来无法接受这笔成本",
+    "说的是利益冲突：英特尔自己也设计芯片，会和代工客户抢生意，客户因此不敢下单"
+   ],
+   "answer": 1,
+   "explanation": "主持人把这句话解读为利益冲突，张忠谋当场表示不同意：他认为 Cook 说的是服务与信任，并举例说他认识的台湾 PC 厂商没有一个喜欢英特尔。代工的核心能力在于怎样对待客户，而不只是会不会和客户竞争。",
+   "question_en": "Tim Cook told Morris Chang that \"Intel doesn't know how to be a foundry.\" How did Chang himself interpret the remark?",
+   "options_en": [
+    "As about process technology: Intel's manufacturing was already generations behind TSMC and couldn't make Apple's chips",
+    "As about service: some customer requests are nearly absurd, TSMC learned to answer each one courteously, and Intel never did",
+    "As about price: Intel's foundry quotes were far above TSMC's, and Apple found the cost unacceptable",
+    "As about conflict of interest: Intel designs its own chips and would compete with foundry customers, so they won't order"
+   ],
+   "explanation_en": "The hosts read the remark as conflict of interest, and Chang disagreed on the spot: he took Cook to mean service and trust, noting that none of the Taiwanese PC makers he knew liked Intel. A foundry's core skill is how it treats customers, not merely whether it competes with them."
+  }
+ ]
+}

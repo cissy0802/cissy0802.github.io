@@ -1946,6 +1946,140 @@
     "90de7ed1a5",
     "5c065ad08c"
    ]
+  },
+  "/leadership/orchestra-conductor-day64.html": {
+   "t": "领导力 Day 64：乐团指挥与协作隐喻",
+   "f": "leadership/orchestra-conductor-day64.json",
+   "q": [
+    "cc3f9ecf33",
+    "38c8b8f539",
+    "d18711367d"
+   ]
+  },
+  "/cs-papers-deepread/chubby-paper20.html": {
+   "t": "The Chubby Lock Service（Chubby 锁服务）— IT 论文精读 Paper 20",
+   "f": "cs-papers-deepread/chubby-paper20.json",
+   "q": [
+    "d1a7b2947d",
+    "8b06c0c7ef",
+    "b048712a4c"
+   ]
+  },
+  "/ai-ml/graph-ml-day37.html": {
+   "t": "AI/ML 详解：图机器学习 — Day 37",
+   "f": "ai-ml/graph-ml-day37.json",
+   "q": [
+    "c1959d8331",
+    "0dbd0bd876",
+    "0a815a1053"
+   ]
+  },
+  "/deep-reading/eichmann-in-jerusalem-read78.html": {
+   "t": "《艾希曼在耶路撒冷》— 好书精读 Read 78",
+   "f": "deep-reading/eichmann-in-jerusalem-read78.json",
+   "q": [
+    "c828aeba86",
+    "b054595b98",
+    "42a545a535"
+   ]
+  },
+  "/super-individual/context-eng-day2.html": {
+   "t": "Day 2 · Context Engineering — Super Individual",
+   "f": "super-individual/context-eng-day2.json",
+   "q": [
+    "97dbbe00f2",
+    "872f937de0",
+    "cc05217ac6"
+   ]
+  },
+  "/parenting/sex-education-day19.html": {
+   "t": "育儿与教育：性教育与身体 — Day 19",
+   "f": "parenting/sex-education-day19.json",
+   "q": [
+    "e4a815bea0",
+    "2056a3f161",
+    "a6f4333e59"
+   ]
+  },
+  "/chapter-deepread/fosa-ch04-architecture-characteristics-defined-book211.html": {
+   "t": "FoSA 第 4 章 · 架构特征定义：「-ility」们到底指什么 — 专业书籍精读 Book 211",
+   "f": "chapter-deepread/fosa-ch04-architecture-characteristics-defined-book211.json",
+   "q": [
+    "26408b8d42",
+    "e726b93988",
+    "fc17429133"
+   ]
+  },
+  "/deep-reading/social-contract-read44.html": {
+   "t": "《社会契约论》— 好书精读 Read 44",
+   "f": "deep-reading/social-contract-read44.json",
+   "q": [
+    "6ba13070fa",
+    "67c6546500",
+    "8e633fef71"
+   ]
+  },
+  "/history/body-history-day56.html": {
+   "t": "历史：身体的历史 — Day 56",
+   "f": "history/body-history-day56.json",
+   "q": [
+    "b8b4a9ac63",
+    "ccb470efbc",
+    "e8c7af1d93"
+   ]
+  },
+  "/podcast-deepread/tsmc-founder-morris-chang-pod38.html": {
+   "t": "Acquired × 张忠谋 — 接下苹果，只接一半",
+   "f": "podcast-deepread/tsmc-founder-morris-chang-pod38.json",
+   "q": [
+    "58a637d871",
+    "f89193bb10",
+    "dd3d918198"
+   ]
+  },
+  "/philosophy/analytic-philosophy-day46.html": {
+   "t": "哲学经典详解：分析哲学与逻辑实证 · Day 46 — Philosophy",
+   "f": "philosophy/analytic-philosophy-day46.json",
+   "q": [
+    "253dc9821c",
+    "ae58f21f46",
+    "84d2120dca"
+   ]
+  },
+  "/cs-papers-deepread/alexnet-paper3.html": {
+   "t": "AlexNet — IT 论文精读 Paper 3",
+   "f": "cs-papers-deepread/alexnet-paper3.json",
+   "q": [
+    "09e9ef0ca8",
+    "836690ce51",
+    "d9936fff71"
+   ]
+  },
+  "/philosophy/knowledge-wisdom-day4.html": {
+   "t": "哲学经典详解：知识与智慧 · Day 4 — Philosophy",
+   "f": "philosophy/knowledge-wisdom-day4.json",
+   "q": [
+    "d15d1086d2",
+    "118b4582f2",
+    "edd437cd30"
+   ]
+  },
+  "/chapter-deepread/sre-ch21-handling-overload-book33.html": {
+   "t": "SRE 第 21 章 · 处理过载 — 专业书籍精读 Book 33",
+   "f": "chapter-deepread/sre-ch21-handling-overload-book33.json",
+   "q": [
+    "f7a4f7d441",
+    "1096f329c6",
+    "c85629071a"
+   ]
+  },
+  "/neuroscience/ref-cortical-microcircuit.html": {
+   "t": "参考 · 皮层分层与微回路 — 神经科学",
+   "f": "neuroscience/ref-cortical-microcircuit.json",
+   "q": [
+    "fe3840fc5b",
+    "0ab100018a"
+   ]
   }
  },
  "aliases": {

@@ -1,0 +1,69 @@
+{
+ "page": "/ai-ml/graph-ml-day37.html",
+ "title": "AI/ML 详解：图机器学习 — Day 37",
+ "page_en": "/ai-ml/graph-ml-day37.en.html",
+ "title_en": "AI/ML Explained: Graph Machine Learning — Day 37",
+ "src_hash": "675165eb3160",
+ "questions": [
+  {
+   "id": "c1959d8331",
+   "question": "有人把 GCN 从 2 层堆到 20 层，指望每个节点看到更远的邻域，结果节点分类效果明显变差。最直接的原因是什么？",
+   "options": [
+    "过度平滑：聚合跑太多轮后各节点表示趋同，彼此难以区分",
+    "层数一多，求和聚合就对邻居顺序敏感了，结果随输入顺序变化",
+    "GCN 的边权重随层数增加被训练得越来越大，梯度随之爆炸",
+    "邻居数量不一导致张量形状不固定，深层时无法对齐计算"
+   ],
+   "answer": 0,
+   "explanation": "消息传递每层都对真实邻居做平均或求和，跑太多轮信息像墨水在水里扩散均匀，所有节点长得一样，所以 GNN 通常只用 2–4 层。GCN 的边权重由度数固定、不随训练变化；求和、平均对顺序不敏感，与层数无关。",
+   "question_en": "Someone stacks a GCN from 2 layers to 20, hoping each node sees a wider neighborhood, and node classification gets clearly worse. What is the most direct cause?",
+   "options_en": [
+    "Over-smoothing: after too many rounds of aggregation, node representations converge and become indistinguishable",
+    "With many layers, sum aggregation becomes sensitive to neighbor order, so outputs change with input order",
+    "GCN edge weights are trained larger with each added layer until the gradients explode",
+    "Nodes have different numbers of neighbors, so tensor shapes stop lining up once the network gets deep"
+   ],
+   "explanation_en": "Each message-passing layer averages or sums over real neighbors; after too many rounds information diffuses evenly like ink in water and every node looks the same, which is why GNNs usually stay at 2–4 layers. GCN edge weights are fixed by node degree and aren't trained, and sum or mean aggregation is order-invariant at any depth."
+  },
+  {
+   "id": "0dbd0bd876",
+   "question": "在一张同质性很强（邻居大多同类）、结构信息已经足够的图上，GAT 和 GCN 该怎么选？",
+   "options": [
+    "GCN 往往够用，GAT 多出的注意力反而可能过拟合；邻居差异大时才值得用",
+    "两者结果必然相同，因为同质图上注意力系数会自动收敛到按度数归一化的权重",
+    "应该改用 node2vec，因为同质图上节点特征没有信息量，只有结构才有用",
+    "GAT 一定更好，因为它的权重是学出来的，结构信息越充分，注意力越能发挥作用"
+   ],
+   "answer": 0,
+   "explanation": "GCN 按度数固定权重、一视同仁地平均，GAT 为每个邻居动态算注意力，代价是算力。文章明确反对「GAT 永远更强」：在同质图上 GCN 足够，注意力可能过拟合。选模型看数据特性，不看谁更新。",
+   "question_en": "On a strongly homophilous graph (neighbors are mostly the same class) where structure already carries enough signal, how should you choose between GAT and GCN?",
+   "options_en": [
+    "GCN is often fast and good enough, and GAT's extra attention may overfit; attention pays off when neighbor importance varies widely",
+    "They must give identical results, since attention coefficients converge to degree-normalized weights on such graphs",
+    "Switch to node2vec, because node features carry no information on homophilous graphs and only structure matters",
+    "GAT is always better because its weights are learned, and richer structure gives attention more to work with"
+   ],
+   "explanation_en": "GCN uses fixed, degree-based weights and averages neighbors evenly; GAT computes a weight per neighbor at extra compute cost. The piece explicitly rejects \"GAT always wins\": on homophilous graphs GCN suffices and attention can overfit. Pick the model by the data, not by which is newer."
+  },
+  {
+   "id": "0a815a1053",
+   "question": "一个社交产品每天新增大量用户，需要立刻为新用户生成节点向量。按直推与归纳的区分，哪种做法合适？",
+   "options": [
+    "用 node2vec 并把 q 调小偏向 DFS，这样就能覆盖还没出现的节点",
+    "用 node2vec 预先算好所有节点的向量，新用户来时直接查表取用",
+    "用 GCN 固定的度数权重，因为权重不随训练变化，新节点自然适用",
+    "用 GraphSAGE 学一个聚合函数，新用户来了用其邻居现场算出向量"
+   ],
+   "answer": 3,
+   "explanation": "node2vec 是直推式，为训练时见过的节点查表取向量，新节点查不到就得整图重训；GraphSAGE 存的是「怎么算」而不是算好的结果，属于归纳式，适合动态图。p、q 只调游走偏好，解决不了新节点问题。",
+   "question_en": "A social app adds many users every day and needs embeddings for new users right away. Given the transductive-versus-inductive distinction, which approach fits?",
+   "options_en": [
+    "Use node2vec with a small q to bias walks toward DFS, so the walks also cover nodes that don't exist yet",
+    "Precompute every node's vector with node2vec and look new users up in that table when they arrive",
+    "Use GCN's fixed degree-based weights; since they aren't trained, they apply to new nodes automatically",
+    "Train GraphSAGE to learn an aggregation function, then compute a new user's vector from their neighbors on the spot"
+   ],
+   "explanation_en": "node2vec is transductive: it looks up vectors for nodes seen in training, so a new node means retraining the whole graph. GraphSAGE stores how to compute a vector rather than the vectors themselves, which makes it inductive and suited to dynamic graphs. Tuning p and q only changes the walk bias and doesn't solve new nodes."
+  }
+ ]
+}

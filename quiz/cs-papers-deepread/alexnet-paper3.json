@@ -1,0 +1,69 @@
+{
+ "page": "/cs-papers-deepread/alexnet-paper3.html",
+ "title": "AlexNet — IT 论文精读 Paper 3",
+ "page_en": "/cs-papers-deepread/alexnet-paper3.en.html",
+ "title_en": "AlexNet — CS Papers Deep-Read Paper 3",
+ "src_hash": "8fdcb44d8140",
+ "questions": [
+  {
+   "id": "09e9ef0ca8",
+   "question": "AlexNet 在 2012 年胜出，它的核心贡献最准确的描述是什么？",
+   "options": [
+    "把 CNN、ReLU、GPU、Dropout 等已有要素凑齐，首次在百万级图像上训通大而深的网络",
+    "首次提出了 ReLU 激活函数，并从理论上证明了深层网络为什么比浅层网络更有效",
+    "首次发明了卷积神经网络，用卷积核滑过整张图的方式取代了此前所有的全连接网络",
+    "设计了一套比 SIFT、HOG 更精巧的手工特征，再交给 SVM 分类，从而大幅降低错误率"
+   ],
+   "answer": 0,
+   "explanation": "文章说得很诚实：AlexNet 没有全新理论，CNN 来自 LeCun，ReLU 也非首创，它的功劳是把零件组装起来并在规模上跑通，是一场数据、算力与工程的胜利。它恰恰抛弃了手工特征，让网络自己学；为何有效至今也缺少充分的理论解释。",
+   "question_en": "What is the most accurate description of AlexNet's core contribution in 2012?",
+   "options_en": [
+    "Combining existing pieces (CNNs, ReLU, GPU training, dropout, data augmentation) to train a large deep network on a million natural images for the first time",
+    "Introducing the ReLU activation function and proving theoretically why deep networks outperform shallow ones",
+    "Inventing the convolutional neural network, replacing all earlier fully connected networks with kernels that slide across the image",
+    "Designing hand-crafted features more refined than SIFT or HOG and feeding them to an SVM, cutting the error rate sharply"
+   ],
+   "explanation_en": "The piece is candid: AlexNet brought no new theory. CNNs came from LeCun and ReLU wasn't new either; its achievement was assembling the parts and making them work at scale, a victory of data, compute and engineering. It discarded hand-crafted features in favor of learned ones, and why it works still lacks a full theoretical account."
+  },
+  {
+   "id": "836690ce51",
+   "question": "AlexNet 把激活函数从 tanh 换成 ReLU，训练快了约 6 倍。原因是什么？",
+   "options": [
+    "ReLU 是线性函数，整个网络因此等价于一层，参数量大幅减少、训练自然更快",
+    "ReLU 能起到正则化作用，压住过拟合，使模型在更少的训练轮数内达到收敛",
+    "ReLU 把一半单元的输出随机置零，减少了每一步的计算量，所以每轮训练更快",
+    "ReLU 正区间不饱和、梯度恒为 1；tanh 两端饱和、梯度趋零，深了就学不动"
+   ],
+   "answer": 3,
+   "explanation": "tanh 和 sigmoid 在输入很大或很小时曲线压平、梯度趋零，深网络收敛极慢；ReLU 负的归零、正的原样输出，正区间永不饱和。随机置零一半单元是 Dropout 的做法；网络若真是线性的，再多层也只等于一层，正是需要非线性激活的原因。",
+   "question_en": "AlexNet replaced tanh with ReLU and trained about six times faster. Why?",
+   "options_en": [
+    "ReLU is linear, so the whole network collapses to one layer with far fewer parameters, which naturally trains faster",
+    "ReLU acts as a regularizer that curbs overfitting, letting the model converge in fewer training epochs",
+    "ReLU randomly zeroes half the units' outputs, cutting the computation per step so each epoch runs faster",
+    "ReLU doesn't saturate for positive inputs and keeps a gradient of 1, while tanh saturates at both ends and its gradient vanishes in deep nets"
+   ],
+   "explanation_en": "tanh and sigmoid flatten out for large or small inputs and their gradients approach zero, so deep networks converge very slowly; ReLU zeroes negatives and passes positives unchanged, never saturating on the positive side. Randomly zeroing half the units is dropout, and a truly linear network would collapse to one layer, which is exactly why a nonlinearity is needed."
+  },
+  {
+   "id": "d9936fff71",
+   "question": "AlexNet 在训练时随机把全连接层一半单元的输出置零（Dropout），目的是什么？",
+   "options": [
+    "模拟图像中的遮挡和噪声，相当于对训练图片做了一次数据增强",
+    "逼网络别依赖少数单元的「小圈子」，学出稳健冗余的特征，压住过拟合",
+    "让网络在推理时也只用一半单元，以加快上线后的识别速度",
+    "减少一半的计算量，让 6000 万参数的网络能塞进两块 3GB 的显卡"
+   ],
+   "answer": 1,
+   "explanation": "6000 万参数极易把训练集背下来；Dropout 每次前向换一批单元缺席，逼每个单元离开固定搭档也有用，相当于低成本地平均海量子网络。拆到两块 GPU 是显存所迫的工程妥协，和 Dropout 无关；数据增强是另一招，靠翻转、平移和调色扩充样本。",
+   "question_en": "Why did AlexNet randomly zero half the outputs of its fully connected units during training (dropout)?",
+   "options_en": [
+    "To simulate occlusion and noise in images, which amounts to a form of data augmentation on the training set",
+    "To stop the network from relying on small cliques of units, forcing robust, redundant features and curbing overfitting",
+    "So the network would also use only half its units at inference time, speeding up recognition after deployment",
+    "To halve the computation so the 60-million-parameter network would fit on two 3 GB graphics cards"
+   ],
+   "explanation_en": "With 60 million parameters the net could easily memorize the training set; dropout benches a different set of units on each pass, so each unit must be useful without fixed partners, like cheaply averaging many subnetworks. Splitting across two GPUs was a memory-driven compromise unrelated to dropout, and data augmentation was a separate technique using flips, shifts and color jitter."
+  }
+ ]
+}

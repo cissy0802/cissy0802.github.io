@@ -1,0 +1,69 @@
+{
+ "page": "/chapter-deepread/sre-ch21-handling-overload-book33.html",
+ "title": "SRE 第 21 章 · 处理过载 — 专业书籍精读 Book 33",
+ "page_en": "/chapter-deepread/sre-ch21-handling-overload-book33.en.html",
+ "title_en": "SRE Ch 21 · Handling Overload — Book Deep-Read 33",
+ "src_hash": "934dce168781",
+ "questions": [
+  {
+   "id": "f7a4f7d441",
+   "question": "一个服务的容量写着「能扛 10k QPS」。按 SRE 书第 21 章，这种度量方式的问题在哪？",
+   "options": [
+    "请求成本可差一两个数量级，流量组成一变就失准，应按 CPU 等资源定容量",
+    "QPS 只统计成功的请求，漏掉了被拒绝的那部分，所以总会低估服务真实承受的负载",
+    "QPS 无法按客户拆分，所以没法做每客户配额，应改用连接数作为容量单位",
+    "QPS 是滞后指标，看见它涨的时候队列早已排了很久，应改用响应延迟来定容量"
+   ],
+   "answer": 0,
+   "explanation": "按主键查 3 条记录和扫 500 个分片的聚合都算「1 个 query」，吃的算力完全不同；昨天量的上限今天就可能失效。Google 默认盯 CPU：GC 让内存压力也表现为 CPU，而且 CPU 可压缩，不够时只是变慢，给脱载留出反应时间。滞后的是延迟，不是 QPS。",
+   "question_en": "A service's capacity is stated as \"handles 10k QPS.\" According to Chapter 21 of the SRE book, what's wrong with measuring it that way?",
+   "options_en": [
+    "Request costs can differ by one or two orders of magnitude and the traffic mix drifts, so capacity should be set by resource use such as CPU",
+    "QPS counts only successful requests and misses rejected ones, so it always underestimates the load the service really bears",
+    "QPS can't be split per client, which rules out per-client quotas, so capacity should be expressed in connection counts",
+    "QPS is a lagging indicator, so by the time it rises the queue has already built up; capacity should be set by response latency"
+   ],
+   "explanation_en": "A primary-key read of three rows and an aggregation over 500 shards each count as one query yet cost wildly different compute, and yesterday's limit may not hold today. Google watches CPU by default: GC turns memory pressure into CPU use, and CPU is compressible, slowing down rather than crashing, which buys time for shedding. Latency is the lagging signal, not QPS."
+  },
+  {
+   "id": "1096f329c6",
+   "question": "客户端自适应节流按 max(0, (requests − K×accepts)/(requests+1)) 在本地丢请求。这个设计为什么特意让丢弃概率永远到不了 1？",
+   "options": [
+    "如果概率能到 1，被本地拒掉的请求就不会计入 requests，客户端会误以为压力已消失",
+    "概率到 1 会让 K 失去意义，K 取 2 时公式在数学上本来就无法超过 0.5",
+    "客户端始终要漏一点请求出去，用来探测后端恢复没有，accepts 一回升节流就自动松开",
+    "后端需要持续收到请求才能维持连接保活，否则长连接会被负载均衡器断开"
+   ],
+   "answer": 2,
+   "explanation": "这是两个精髓细节之一：总漏一点出去是客户端探测恢复的唯一途径，不需要任何人手工解除节流。另一个细节是被本地拒掉的请求照样计入 requests，这和概率能不能到 1 是两回事。K 越小越激进，但公式结果仍可逼近 1。",
+   "question_en": "Adaptive client throttling drops requests locally with probability max(0, (requests − K×accepts)/(requests+1)). Why is it designed so the drop probability never reaches 1?",
+   "options_en": [
+    "Because at 1, locally rejected requests would stop counting toward requests, and the client would think the pressure had gone away",
+    "Because reaching 1 would make K meaningless; with K set to 2 the formula mathematically can never exceed 0.5",
+    "So the client always lets a trickle through to probe whether the backend has recovered; once accepts rise, throttling eases on its own",
+    "Because the backend must keep receiving requests to keep connections alive, or the load balancer will drop long-lived connections"
+   ],
+   "explanation_en": "This is one of two key details: letting a little traffic through is the client's only way to detect recovery, so no one has to lift the throttle by hand. The other detail, that locally rejected requests still count toward requests, is a separate point. A smaller K is more aggressive, but the formula can still approach 1."
+  },
+  {
+   "id": "c85629071a",
+   "question": "后端返回过载错误时，发现整个数据中心都在大面积过载。按本章的规则，调用方该怎么做？",
+   "options": [
+    "立刻换一个健康的任务重试，最多尝试 3 次，用完再把失败向上抛",
+    "不在本层换任务重试，把错误一路上抛给调用方，由它决定降级还是放弃",
+    "先触发自动扩容，等新实例就绪后再把所有失败的请求重放一遍",
+    "加大退避间隔后持续重试，直到某个任务恢复，以保证请求最终成功"
+   ],
+   "answer": 1,
+   "explanation": "只有少数任务过载时换个健康任务重试才对；普遍过载时重试只是把问题搬个位置。三层各重试 3 次就是 27 倍放大，所以还需要重试预算和「过载别重试」的标记。自动扩容是分钟级的，救不了秒级尖峰，新实例预热还可能加重下游。",
+   "question_en": "A backend returns overload errors, and it turns out the whole datacenter is broadly overloaded. Under this chapter's rules, what should the caller do?",
+   "options_en": [
+    "Retry right away on a healthy task, up to three attempts, and only then pass the failure upward",
+    "Not retry on another task at this layer, but pass the error up to its caller to decide whether to degrade or give up",
+    "Trigger autoscaling first, then replay all the failed requests once the new instances are ready",
+    "Keep retrying with longer backoff until some task recovers, so the request eventually succeeds"
+   ],
+   "explanation_en": "Retrying on a healthy task is right only when a few tasks are overloaded; under widespread overload, retrying just moves the problem. Three layers retrying three times each is 27x amplification, which is why retry budgets and an explicit don't-retry signal exist. Autoscaling takes minutes, can't absorb second-scale spikes, and warming new instances can add load downstream."
+  }
+ ]
+}

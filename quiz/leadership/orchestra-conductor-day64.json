@@ -1,0 +1,69 @@
+{
+ "page": "/leadership/orchestra-conductor-day64.html",
+ "title": "领导力 Day 64：乐团指挥与协作隐喻",
+ "page_en": "/leadership/orchestra-conductor-day64.en.html",
+ "title_en": "Leadership Day 64: The Conductor Metaphor",
+ "src_hash": "050192a2d8ee",
+ "questions": [
+  {
+   "id": "cc3f9ecf33",
+   "question": "你带的团队从 8 人涨到 20 人，每个决定都要拉会、你成了所有信息的中转站。按「指挥」隐喻，最该先做的是什么？",
+   "options": [
+    "加开每日站会，把每个跨组依赖都拉进会里，确保信息不在任何一环丢失",
+    "彻底放手让各组自组织，不设统一目标，以免你的意图压制团队的自主性",
+    "规定所有 PR 和跨组决定都要你点头，用你一个人的判断保证节奏一致",
+    "给一个人人背得出的季度主旋律，让各组自行对齐，撞车才升级到你"
+   ],
+   "answer": 3,
+   "explanation": "指挥的起拍是一次性的共享信号：清晰的主旋律让团队自同步，你退回去听哪里不同步。加会和逐项审批都是在当交通警察，把自己变成瓶颈；完全不给节拍也不是指挥，团队会各奏各的。",
+   "question_en": "Your team grows from 8 to 20 and every decision now needs a meeting, with you as the relay for all information. Using the conductor metaphor, what should you do first?",
+   "options_en": [
+    "Add daily stand-ups and pull every cross-team dependency into a meeting so nothing gets lost along the way",
+    "Let the teams self-organize completely with no shared goal, so your intent never overrides their autonomy",
+    "Require your sign-off on every PR and cross-team call so your judgment alone keeps the tempo consistent",
+    "Set one quarterly theme everyone can recite, let teams align against it themselves, and escalate to you only on collisions"
+   ],
+   "explanation_en": "A conductor's downbeat is a single shared signal: a clear theme lets the team self-synchronize while you step back and listen for drift. More meetings or approving everything turns you into a traffic cop and a bottleneck; giving no beat at all isn't conducting either."
+  },
+  {
+   "id": "38c8b8f539",
+   "question": "你同时带一个维护核心支付平台的组和一个探索全新 AI 功能的组。按爵士与古典两种协作模式的区分，怎样管最合适？",
+   "options": [
+    "两组都用爵士模式，因为即兴更能激发创新，支付组也需要更快地迭代上线",
+    "按成员资历分：资深的人给即兴空间，新人一律照总谱执行，与项目性质无关",
+    "支付组用严格流程求零失误，探索组只给目标和节奏、放手即兴",
+    "两组统一用同一套敏捷流程，避免团队觉得双标，也方便用同一套 KPI 横向比较"
+   ],
+   "answer": 2,
+   "explanation": "古典模式适合已知怎么做、失误代价高且不可逆的场；爵士模式适合没人知道答案、可试可逆的探索。用错场就是灾难：给探索组塞总谱扼杀创新，让支付组即兴是拿用户的钱赌；统一一套规矩或一套 KPI 正是文章点名的错误。",
+   "question_en": "You lead one team maintaining a core payments platform and another exploring a brand-new AI feature. Using the jazz-versus-classical distinction, how should you run them?",
+   "options_en": [
+    "Run both in jazz mode, since improvisation drives innovation and payments also needs to ship faster",
+    "Split by seniority instead: senior people get room to improvise, newcomers follow the score, whatever the project",
+    "Payments gets a strict, score-like process aimed at zero errors; exploration gets a goal, a cadence and room to improvise",
+    "Run both teams on one shared agile process so nobody sees a double standard and the same KPIs compare them"
+   ],
+   "explanation_en": "Classical mode fits work that is known, precise, and costly or irreversible to get wrong; jazz mode fits open, reversible exploration. Using the wrong mode is the disaster: a score smothers exploration, and improvising on payments gambles with users' money. One process or one KPI set for both is exactly the mistake the piece names."
+  },
+  {
+   "id": "d18711367d",
+   "question": "「指挥不发声、让别人有力量」这条原则，什么情况下照做反而是失职？",
+   "options": [
+    "女性 leader 担心被看作没有技术判断力时，应先亲自独奏证明自己",
+    "台上的人能力还没到位时，比如新人需要更多示范和更细的谱",
+    "会议陷入沉默时，leader 不立刻给出解法就会浪费所有人的时间",
+    "团队已经成熟、能自己产出结论时，leader 继续退后会显得缺位"
+   ],
+   "answer": 1,
+   "explanation": "放权是对已具备能力者的信任移交，不是对所有人一律撒手：对新人不发声就是失职，要按成熟度切换。会上卡住时文章恰恰主张先给结构而不是答案；对女性 leader 的建议是让指挥动作可见，而不是抢着独奏。",
+   "question_en": "When does following \"the conductor makes no sound; empower others\" become a dereliction of duty?",
+   "options_en": [
+    "When a woman leader worries she'll seem technically weak, so she should solo first to prove herself",
+    "When the players aren't capable yet, such as newcomers who need more demonstration and a more detailed score",
+    "When a meeting goes silent, because not handing over a solution right away wastes everyone's time",
+    "When the team is mature and reaches conclusions alone, because stepping back further looks like absence"
+   ],
+   "explanation_en": "Delegation is handing trust to people who can already play; it is not letting go of everyone. Staying silent with newcomers is a failure, so the style must shift with maturity. When a meeting stalls the piece says to offer structure rather than answers, and its advice to women leaders is to make the conducting visible, not to grab the solo."
+  }
+ ]
+}

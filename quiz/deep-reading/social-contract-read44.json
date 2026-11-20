@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/social-contract-read44.html",
+ "title": "《社会契约论》— 好书精读 Read 44",
+ "page_en": "/deep-reading/social-contract-read44.en.html",
+ "title_en": "The Social Contract — Deep Reading Read 44",
+ "src_hash": "c3ef90c04e72",
+ "questions": [
+  {
+   "id": "6ba13070fa",
+   "question": "卢梭为什么反对一切党派和有组织的利益集团？",
+   "options": [
+    "派系会严重拖慢公民集会的决策速度，让政府始终无法及时执行人民通过的法律",
+    "派系成员共用一本账，私利不再互相抵消，投票算出的只是最大派系的私意",
+    "公意就是多数票的结果，而派系让少数人有了阻挡多数的手段",
+    "派系代表的是穷人的利益，会威胁到有产者受共同体保护的财产"
+   ],
+   "answer": 1,
+   "explanation": "公意是私利噪音互相抵消后剩下的共同方向；一旦出现派系，派系内部不再各算各的账，噪音被放大成合唱，抵消机制失灵。卢梭明确区分公意与多数票，多数票只是在没有派系等条件下探测公意的手段。",
+   "question_en": "Why did Rousseau oppose all parties and organized interest groups?",
+   "options_en": [
+    "Factions slow the assembly's decisions so much that government can't carry out the laws the people pass in time",
+    "Faction members share one ledger, so private interests stop canceling out and the vote yields only the largest faction's private will",
+    "The general will is simply the majority vote, and factions give a minority a way to block the majority",
+    "Factions speak for the poor and so threaten the property that the community is meant to protect"
+   ],
+   "explanation_en": "The general will is what remains once private biases cancel each other out; within a faction members no longer reckon separately, the noise becomes an amplified chorus, and the canceling fails. Rousseau sharply separated the general will from a majority count, which is only a way to detect it when conditions such as the absence of factions hold."
+  },
+  {
+   "id": "67c6546500",
+   "question": "某城邦的公民大会全票通过一项规定：只对某一个行会的成员加征特别税。按卢梭对「法律」的定义，这项规定是什么？",
+   "options": [
+    "是法律，只要那个行会的成员也参与了这次投票就成立",
+    "不是法律，只是一道命令，因为它的对象是特定的一部分人",
+    "是法律，但违反了权利清单，应当交由法院审查后撤销",
+    "是法律，因为它由全体公民亲自表决、而且是全票通过的"
+   ],
+   "answer": 1,
+   "explanation": "卢梭的法律定义极窄：只有全体对全体作出的规定才叫法律，一旦对象是某个人或某群人，它就只是命令。他不写权利清单，而是用「必须对所有人一样」的形式要求来防滥用，所以全票通过也改变不了它的性质。",
+   "question_en": "A city's citizens' assembly unanimously passes a rule imposing a special tax on members of one guild only. By Rousseau's definition of law, what is this rule?",
+   "options_en": [
+    "A law, so long as the guild's own members also took part in the vote",
+    "Not a law but merely a decree, because its object is one particular group of people",
+    "A law, but one that violates the bill of rights and should be struck down by a court",
+    "A law, because every citizen voted on it in person and it passed unanimously"
+   ],
+   "explanation_en": "Rousseau's definition of law is very narrow: only a rule made by all and applying to all counts; once its object is a particular person or group, it is merely a decree. He wrote no bill of rights and relied instead on the formal requirement of applying to everyone alike, so unanimity doesn't change what the rule is."
+  },
+  {
+   "id": "8e633fef71",
+   "question": "卢梭认为一切政府都会退化。他给出的原因和对策是什么？",
+   "options": [
+    "政府是契约的一方，人民违约时政府有权收回授权；对策是为政府订立第二份契约，写明双方的义务",
+    "政府由少数精英组成，必然比人民更懂公意；对策是赋予政府代表人民立法的权力，以免人民受蒙蔽",
+    "个别意志强于团体意志、更强于公意，政府天然侵蚀主权；对策是定期集会，重新表决政府形式与人选",
+    "政府退化源于人民道德败坏；对策是取消选举，交由一位不占职位的立法者长期执政"
+   ],
+   "answer": 2,
+   "explanation": "卢梭把政府视为主权者雇来的执行机构，不是契约的一方；官员离自己越近的账越算得清，所以政府持续扩张。他开的药是定期、雷打不动的集会，只问两件事。主权不可代表，立法者也是起草制度后就离场、不掌权的角色。",
+   "question_en": "Rousseau held that every government degenerates. What cause and remedy did he give?",
+   "options_en": [
+    "Government is a party to the contract and may revoke its mandate when the people breach it; the remedy is a second contract spelling out both sides' duties",
+    "Government is made of an elite that naturally knows the general will better than the people; the remedy is letting it legislate on the people's behalf so they aren't misled",
+    "Particular wills beat the corporate will, which beats the general will, so government erodes sovereignty; the remedy is fixed assemblies that re-vote on the form of government and on who holds office",
+    "Degeneration comes from the people's moral corruption; the remedy is abolishing elections and letting a lawgiver without office rule indefinitely"
+   ],
+   "explanation_en": "Rousseau saw government as an agent the sovereign hires to execute laws, not a party to the contract; officials reckon their own interests most clearly, so government keeps expanding. His remedy is fixed, unconditional assemblies asking just two questions. Sovereignty cannot be represented, and the lawgiver drafts institutions and leaves without holding power."
+  }
+ ]
+}

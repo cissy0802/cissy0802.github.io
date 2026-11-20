@@ -1,0 +1,69 @@
+{
+ "page": "/super-individual/context-eng-day2.html",
+ "title": "Day 2 · Context Engineering — Super Individual",
+ "page_en": "/super-individual/context-eng-day2.en.html",
+ "title_en": "Day 2 · Context Engineering — Super Individual",
+ "src_hash": "7d8bd0ff9a53",
+ "questions": [
+  {
+   "id": "97dbbe00f2",
+   "question": "一个已经跑了几十轮的长会话里，你想让模型从现在起遵守一条新约束。按文章的建议，放在哪里最可能被注意到？",
+   "options": [
+    "写进 system prompt 顶部，因为模型每次都会优先重读 system",
+    "在最近一次 user turn 里复述这条约束，紧挨着当前问题",
+    "插到中间的参考文档旁边，让约束和相关材料挨在一起",
+    "不必复述，换一个 context window 更大的模型就能记住"
+   ],
+   "answer": 1,
+   "explanation": "模型不会主动「重读」system，它只是在每个 token 上做一次 attention，而首尾位置注意力最高、中段会塌陷。所以新指令要在最近的 user turn 里复述；窗口更长不等于有效注意力更长。",
+   "question_en": "Dozens of turns into a long session, you want the model to follow a new constraint from now on. Following the piece's advice, where is it most likely to be noticed?",
+   "options_en": [
+    "Write it at the top of the system prompt, since the model rereads the system first",
+    "Restate it in the latest user turn, right next to the current question",
+    "Insert it among the reference docs in the middle, beside the related material",
+    "No need to restate it; a model with a bigger context window will remember it"
+   ],
+   "explanation_en": "Models don't go back and reread the system prompt; they just attend per token, and attention is strongest at the start and end and sags in the middle. So restate new instructions in the most recent user turn; a longer window is not a longer effective attention span."
+  },
+  {
+   "id": "872f937de0",
+   "question": "一个 RAG 系统用固定 512-token 切块，效果不好，团队已经换了两次 embedding 模型仍没起色。文章认为下一步最该改什么？",
+   "options": [
+    "按语义边界切块，给每块加上原文上下文前缀，再配 BM25 与 rerank",
+    "放弃检索，把整批文档直接塞进百万 token 的上下文窗口里让模型通读",
+    "继续换更大的 embedding 模型，并把向量库迁移到检索速度更快的产品上",
+    "把 top-k 从 5 加到 50，让更多 chunk 进入 prompt，靠模型自己挑出答案"
+   ],
+   "answer": 0,
+   "explanation": "文章的判断是：RAG 的上限由 chunk 边界、chunk 上下文和检索融合决定，embedding 模型在合理选择下只差几个百分点。固定大小切会切断转折句，缺上下文的 chunk 无从消歧。把一切塞进长窗口又会撞上中段塌陷，召回更多也一样会把关键信息埋进中段。",
+   "question_en": "A RAG system uses fixed 512-token chunks and performs poorly; the team has swapped embedding models twice with no improvement. What does the piece say to change next?",
+   "options_en": [
+    "Chunk on semantic boundaries and prefix each chunk with its context in the source document, then add BM25 and reranking",
+    "Drop retrieval and put the whole corpus into a million-token context window for the model to read through",
+    "Keep upgrading to a larger embedding model and migrate the vector store to a faster retrieval product",
+    "Raise top-k from 5 to 50 so more chunks reach the prompt and let the model pick out the answer itself"
+   ],
+   "explanation_en": "The piece argues that RAG's ceiling is set by chunk boundaries, chunk context, and retrieval fusion, while a reasonable embedding choice moves results only a few percent. Fixed-size chunks split sentences mid-thought, and contextless chunks can't be disambiguated. Stuffing everything into a long window, or retrieving far more, runs straight into the mid-context sag."
+  },
+  {
+   "id": "cc05217ac6",
+   "question": "给一个长跑的 coding agent 设计历史压缩（compaction），哪种做法最符合文章的经验？",
+   "options": [
+    "只保留最近 N 轮的滑动窗口，最简单可靠，早期约束会自然体现在后续对话里",
+    "每一轮都触发压缩，让上下文始终保持最短，从而最大化注意力的集中度",
+    "按固定 key 压成结构化摘要，代码、路径和标识符一律保留原文",
+    "让模型自由总结全部旧对话，连代码片段也一并概括，压缩率越高越省 token"
+   ],
+   "answer": 2,
+   "explanation": "压缩的 schema 比算法重要：固定 key 让下一轮能直接引用禁止事项，比自由总结稳得多。代码被总结掉之后 agent 还得再要原文；每轮都压会把缓存打掉、反而涨成本，应设滞回阈值；滑动窗口会丢掉早期约束。",
+   "question_en": "You're designing history compaction for a long-running coding agent. Which approach best matches the piece's lessons?",
+   "options_en": [
+    "Keep only a sliding window of the last N turns; it's simplest, and early constraints will carry forward naturally",
+    "Compact on every turn so the context always stays as short as possible and attention stays maximally focused",
+    "Compress into a fixed-key structured summary (goal, decisions, artifacts, open questions, forbidden) and keep code, paths and identifiers verbatim",
+    "Let the model freely summarize all old turns, code snippets included, since a higher compression ratio saves more tokens"
+   ],
+   "explanation_en": "The schema matters more than the algorithm: fixed keys let the next turn cite the forbidden list directly, which is far sturdier than a free-form summary. Summarized code just gets requested again; compacting every turn destroys the cache and raises costs, so use hysteresis; a sliding window drops early constraints."
+  }
+ ]
+}

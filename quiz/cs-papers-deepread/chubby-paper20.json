@@ -1,0 +1,69 @@
+{
+ "page": "/cs-papers-deepread/chubby-paper20.html",
+ "title": "The Chubby Lock Service（Chubby 锁服务）— IT 论文精读 Paper 20",
+ "page_en": "/cs-papers-deepread/chubby-paper20.en.html",
+ "title_en": "The Chubby Lock Service — CS Papers Deep-Read Paper 20",
+ "src_hash": "59abae602428",
+ "questions": [
+  {
+   "id": "d1a7b2947d",
+   "question": "Chubby 的作者为什么选择把 Paxos 做成一个锁服务，而不是发给各团队一个共识库？",
+   "options": [
+    "库方案会让各团队拿到强制锁，而服务只能提供建议锁，从而避免误伤数据",
+    "锁服务能把每次读写都经过 Paxos 投票，所以性能比任何库内实现的共识都更高",
+    "共识库无法在 5 台机器上运行，只有集中的服务才能凑够过半数所需的副本",
+    "单机原型加一把锁、一个小文件就能补上高可用，还顺带能登记谁是主"
+   ],
+   "answer": 3,
+   "explanation": "论文的理由很实在：开发者早期不为高可用设计，锁服务让他们事后少量改动就补上；选出主之后还需要一个可靠的地方登记与通告，库不提供；副本成本也被大量客户端摊薄。Chubby 优先的是可用与可靠而非性能，Paxos 只在服务内部跑。",
+   "question_en": "Why did Chubby's designer package Paxos as a lock service rather than handing teams a consensus library?",
+   "options_en": [
+    "A library would give teams mandatory locks, while a service offers only advisory ones and so avoids corrupting data",
+    "A lock service runs every read and write through a Paxos vote, so it outperforms any library implementation of consensus",
+    "A consensus library cannot run on five machines; only a central service can gather enough replicas for a majority",
+    "A single-machine prototype gains high availability from just a lock and a small file, plus a place to record who the master is"
+   ],
+   "explanation_en": "The paper's reasons are practical: developers rarely design for availability up front, and a lock service lets them add it later with minimal changes; after electing a master they also need a reliable place to publish the result, which a library doesn't give; and replica costs are shared across many clients. Chubby prioritizes availability and reliability over performance, and Paxos runs only inside the service."
+  },
+  {
+   "id": "8b06c0c7ef",
+   "question": "进程 A 持锁去写存储，中途因 GC 卡住，锁过期后被 B 拿走；随后 A 早先发出的写请求才到达存储。Chubby 的哪个机制专门用来识破它？",
+   "options": [
+    "客户端缓存失效：主先通知所有缓存作废，A 的写请求因此被自动丢弃",
+    "序列号：令牌里带每次换主就加一的世代号，存储服务据此拒绝过期令牌",
+    "主租约：租约期内其余副本不另选新主，所以 A 的锁不会被 B 拿到",
+    "KeepAlive 宽限期：A 在宽限期内重连，会话延续后它的写请求就合法了"
+   ],
+   "answer": 1,
+   "explanation": "迟到的旧消息要靠序列号治：持锁者把令牌随请求发给存储，存储校验后拒绝旧令牌；不便改造的存储则用 lock-delay 退而求其次。缓存失效保证的是读不脏，主租约防的是 Chubby 自己的脑裂，都管不到外部存储收到的迟到写。",
+   "question_en": "Process A holds a lock and writes to storage, stalls in GC, its lock expires and B takes it; then A's earlier write finally arrives. Which Chubby mechanism exists to catch this?",
+   "options_en": [
+    "Cache invalidation: the master first tells every cache to drop the entry, so A's write is discarded automatically",
+    "Sequencers: the token carries a generation number bumped on each new master, so storage rejects stale tokens",
+    "The master lease: other replicas won't elect a new master during the lease, so B can never take A's lock",
+    "The KeepAlive grace period: A reconnects within it, the session continues, and its write becomes valid again"
+   ],
+   "explanation_en": "Late messages are handled by sequencers: the holder sends the token with its request and storage rejects outdated ones; lock-delay is the weaker fallback for storage that can't be modified. Cache invalidation keeps reads fresh and the master lease prevents split-brain inside Chubby; neither touches a late write reaching an outside store."
+  },
+  {
+   "id": "b048712a4c",
+   "question": "Chubby 只用 5 台副本就能服务数以万计的客户端，最主要靠的是什么？",
+   "options": [
+    "锁粗粒度、一持有就是几小时，加上缓存与主动失效把读挡在本地",
+    "每个客户端都参与 Paxos 投票，共识的计算负担被摊到了数万台机器上",
+    "写操作不必等过半数副本落盘，主收到后立即返回，因此吞吐很高",
+    "客户端缓存采用定时过期，偶尔读到旧数据换来了主几乎零的读负载"
+   ],
+   "answer": 0,
+   "explanation": "整个设计赌的是读远多于写、锁很稀疏：粗粒度锁让抢锁稀少，缓存加主动失效让读既不脏又不打到主，RPC 流量大多是 KeepAlive。客户端从不碰共识，写也必须过半数落盘；定时过期是 DNS 的做法，Chubby 的缓存是严格一致的。",
+   "question_en": "What mainly lets a five-replica Chubby cell serve tens of thousands of clients?",
+   "options_en": [
+    "Coarse-grained locks held for hours, plus client caches with active invalidation that keep almost all reads local",
+    "Every client takes part in the Paxos vote, so the work of consensus is spread across tens of thousands of machines",
+    "Writes don't wait for a majority of replicas to persist; the master acknowledges at once, so throughput is high",
+    "Client caches expire on a timer, accepting occasional stale reads in exchange for near-zero read load on the master"
+   ],
+   "explanation_en": "The design bets that reads vastly outnumber writes and locks are rare: coarse locks keep acquisitions sparse, and caching with active invalidation keeps reads fresh without hitting the master, so most RPCs are KeepAlives. Clients never touch consensus, writes still need a majority on disk, and timed expiry is DNS's approach; Chubby's cache is strictly consistent."
+  }
+ ]
+}

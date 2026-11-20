@@ -1,0 +1,69 @@
+{
+ "page": "/parenting/sex-education-day19.html",
+ "title": "育儿与教育：性教育与身体 — Day 19",
+ "page_en": "/parenting/sex-education-day19.en.html",
+ "title_en": "Parenting & Education: Body & Sexuality — Day 19",
+ "src_hash": "f655686bb8b1",
+ "questions": [
+  {
+   "id": "e4a815bea0",
+   "question": "亲戚想抱孩子、亲一下，孩子往后躲。按「身体自主」的原则，家长最好怎么做？",
+   "options": [
+    "批评孩子没礼貌，但承诺下次再遇到同样情况就由他自己决定",
+    "先让孩子配合亲一下照顾长辈面子，事后再私下告诉他可以拒绝",
+    "替孩子撑腰，提议换成击掌或挥手，不要求他为了礼貌忍受接触",
+    "不介入，让孩子和亲戚自己去协商解决，免得家长显得过度保护孩子"
+   ],
+   "answer": 2,
+   "explanation": "被反复要求「为了礼貌」忍受不想要的接触，孩子学到的是「我的拒绝不算数」，这正是侵害的温床。所以要当场支持孩子的拒绝、提供替代方式，也可以事先和亲友打招呼；先配合再补救，传递的仍是身体不归自己。",
+   "question_en": "A relative wants to hug and kiss your child, and the child pulls back. Following the principle of body autonomy, what should a parent do?",
+   "options_en": [
+    "Scold the child for being rude, but promise that next time they can decide for themselves",
+    "Have the child go along with the kiss to spare the relative's feelings, then tell them privately later that they may refuse",
+    "Back the child up and suggest a high-five or a wave instead, without asking them to put up with contact to be polite",
+    "Stay out of it and let the child and relative work it out, so you don't come across as overprotective"
+   ],
+   "explanation_en": "A child repeatedly made to endure unwanted contact \"to be polite\" learns that their no doesn't count, which is fertile ground for abuse. So support the refusal on the spot and offer an alternative; you can also brief relatives beforehand. Complying first and repairing later still teaches that their body isn't theirs."
+  },
+  {
+   "id": "2056a3f161",
+   "question": "孩子照镜子问：「我是不是太胖了？」哪种回应最符合文章的建议？",
+   "options": [
+    "趁机讲清哪些食物不健康、吃了会胖，帮他从小尽早建立正确的饮食观念",
+    "夸他「最近瘦了真好看」，用正面评价来提升他的身材自信",
+    "先问他是怎么想的，再把焦点从外观转向身体能跑能跳的功能与感受",
+    "立刻安慰「哪有，你瘦着呢」，先把孩子的担心打消掉再说"
+   ],
+   "answer": 2,
+   "explanation": "「你瘦着呢」否认了孩子的感受，还暗示胖就是不好；给食物贴道德标签、夸「瘦了真好看」，都在强化身材即价值。文章建议先探问，再把身体话语转向功能与健康，家长自己也别当着孩子贬低身材。",
+   "question_en": "Looking in the mirror, a child asks, \"Am I too fat?\" Which response best fits the piece's advice?",
+   "options_en": [
+    "Use the moment to explain which foods are unhealthy and fattening, building good eating habits",
+    "Praise them, \"You've slimmed down and look great,\" to boost their body confidence with positive feedback",
+    "Ask what's making them think that, then shift the focus from appearance to what their body can do and how it feels",
+    "Reassure them right away, \"No way, you're slim,\" to put the worry to rest first"
+   ],
+   "explanation_en": "\"You're slim\" dismisses the feeling and implies fat is bad; moral labels on food and praise for losing weight both reinforce that looks equal worth. The piece suggests asking first, then turning body talk toward function and health, with parents also not running down bodies in front of the child."
+  },
+  {
+   "id": "a6f4333e59",
+   "question": "从小教孩子用阴茎、外阴等解剖学正确名称，而不是「下面」「那里」，文章给出的关键理由是什么？",
+   "options": [
+    "昵称本身不雅，用正确名称是在培养孩子文明礼貌的说话习惯",
+    "主要为了让孩子提前掌握生物课的相关知识，上学后理解生殖系统更轻松",
+    "正确名称能让孩子更早对性产生兴趣，从而自然地减少好奇心",
+    "降低羞耻感，并让孩子在遭遇不当接触时能清楚报告，陈述也更可信"
+   ],
+   "answer": 3,
+   "explanation": "儿童保护研究建议用正确名称有两个原因：把身体当普通事实来谈，孩子才敢提问和求助；能准确说出部位的孩子更可能清楚报告侵害，调查中也更可信。含糊的昵称造成沟通障碍，正是侵害者可利用的。",
+   "question_en": "Why does the piece recommend teaching children anatomically correct names like penis and vulva instead of \"down there\"?",
+   "options_en": [
+    "Nicknames are crude, so correct names build polite, civilized speaking habits in the child",
+    "Mainly so children learn biology early and find the reproductive system easier once school covers it",
+    "Correct names spark earlier interest in sex, which then naturally lowers the child's curiosity",
+    "It reduces shame and lets a child report inappropriate touching clearly, with more credible testimony"
+   ],
+   "explanation_en": "Child-protection research gives two reasons: treating the body as ordinary fact makes children willing to ask and seek help, and children who can name body parts precisely report abuse more clearly and are more credible in investigations. Vague nicknames create a communication gap that abusers exploit."
+  }
+ ]
+}
