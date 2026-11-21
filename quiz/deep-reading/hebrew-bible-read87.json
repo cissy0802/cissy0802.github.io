@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/hebrew-bible-read87.html",
+ "title": "《希伯来圣经》— 好书精读 Read 87",
+ "page_en": "/deep-reading/hebrew-bible-read87.en.html",
+ "title_en": "The Hebrew Bible — Deep Reading Read 87",
+ "src_hash": "5be4a8da18bf",
+ "questions": [
+  {
+   "id": "ae8f15c1cb",
+   "question": "公元前 586 年国破、圣殿被毁之后，以色列人对失败的解释与古代近东的通例有何不同？",
+   "options": [
+    "他们认为神暂时离开了圣殿，只要重建神像、恢复献祭，神就会回来护佑",
+    "不是神输给了对方的神，而是我们违了约；神因此成了连巴比伦都只是其工具的普世之神",
+    "他们按照通例改拜了战胜者的神，后来才在流亡途中把旧神重新奉为本民族的神",
+    "他们把失败归因于国王个人的罪过而与百姓无关，共同体的信仰因而毫发无损、照旧"
+   ],
+   "answer": 1,
+   "explanation": "古代通例是「我的国被灭＝我的神输了，改拜赢家」；他们反着来，宁可认自己有罪，也不承认神被打败，这一步把部族神逼成了统管万国的神。这套解释是跟整个共同体签约的集体责任，不是只怪国王；禁像传统下也不存在重建神像这回事。",
+   "question_en": "After the kingdom fell and the Temple was destroyed in 586 BCE, how did the Israelites' explanation of defeat differ from the usual pattern in the ancient Near East?",
+   "options_en": [
+    "They believed God had temporarily left the Temple and would return once the divine image was rebuilt and sacrifices resumed",
+    "Rather than concluding their god had lost to the victor's god, they said they had broken the covenant, so their God came to be seen as universal, with even Babylon merely his instrument",
+    "They followed custom and adopted the victor's gods, only later restoring their old god as the national deity in exile",
+    "They blamed the king's personal sins alone, leaving the people blameless and the community's faith untouched"
+   ],
+   "explanation_en": "The usual logic was 'my nation fell, so my god lost — switch to the winner's'. They reversed it, preferring to confess guilt rather than admit God was defeated, and this turned a tribal god into the God of all nations. The covenant was with the whole community, so responsibility was collective, not just the king's; and with images forbidden there was no divine statue to rebuild."
+  },
+  {
+   "id": "9d0a8f58bd",
+   "question": "希伯来圣经中的先知，其控告的重点通常是什么？",
+   "options": [
+    "百姓献祭不够丰厚、守节不够严格，必须加倍虔诚，才能平息神的怒气",
+    "百姓照常守节献祭，却压榨穷人、欺凌孤儿寡妇，违背了约中的公义",
+    "预告未来具体会发生哪些灾难和年份，让国王提前做好军事准备",
+    "揭露外邦帝国的罪恶，号召以色列人起来反抗巴比伦与亚述"
+   ],
+   "answer": 1,
+   "explanation": "先知不是算命，而是拿着约的条款上门「公诉」；他们骂的几乎从不是「不够虔诚」，而是「很虔诚却压榨穷人」——阿摩司说神厌恶节期与祭物，惟愿公平如大水滚滚。挨骂最惨的永远是以色列自己。",
+   "question_en": "In the Hebrew Bible, what is usually the main charge the prophets bring?",
+   "options_en": [
+    "The people's sacrifices are too meagre and their festivals too lax, and they must redouble their piety to calm God's anger",
+    "The people are pious, keeping feasts and sacrifices, yet they exploit the poor and wrong orphans and widows, breaching the covenant's demands for justice",
+    "They forecast specific coming disasters and their dates so the king can prepare militarily",
+    "They expose the sins of foreign empires and call Israel to rise up against Babylon and Assyria"
+   ],
+   "explanation_en": "The prophets are not fortune-tellers but prosecutors reading out the covenant's breached terms. Their charge is almost never 'you are not pious enough' but 'you are pious and you grind down the poor' — Amos has God despise the feasts and offerings and demand that justice roll down like waters. The harshest condemnation is always of Israel itself."
+  },
+  {
+   "id": "b45d6d2995",
+   "question": "《约伯记》的结局为什么被认为在宗教正典中十分罕见？",
+   "options": [
+    "约伯因为质问神而受到惩罚，警示信徒不可对神的公义提出异议",
+    "神没回答「为什么是我」，却判为神辩护的朋友不如当面质问神的约伯说得对",
+    "神向约伯详细解释了受苦是为了考验他的忠诚，并且保证日后会加倍补偿他的损失",
+    "约伯最终承认了自己隐藏的罪而重获福分，证实了守约蒙福、违约受祸的报应论"
+   ],
+   "answer": 1,
+   "explanation": "约伯的三个朋友用标准报应论劝他认罪，他坚持无辜并要求神出庭；神从旋风中只摊开宇宙的浩大，不解释原因，然后说朋友们议论神不如约伯说的是。正统派输了、质问者赢了，经典由此保存了对自身主流神学的反驳。",
+   "question_en": "Why is the ending of the Book of Job considered so rare in a religious canon?",
+   "options_en": [
+    "Job is punished for questioning God, warning believers never to challenge divine justice",
+    "God never answers 'why me', yet rules that the friends who defended him with retribution theology spoke less rightly than Job, who challenged him to his face",
+    "God explains in detail that the suffering was a test of loyalty and promises double compensation",
+    "Job finally confesses a hidden sin and is restored, confirming that keeping the covenant brings blessing and breaking it brings harm"
+   ],
+   "explanation_en": "Job's three friends urge him with standard retribution theology to confess; he insists on his innocence and demands that God appear. God speaks from the whirlwind only about the vastness of creation, explaining nothing, then says the friends have not spoken of him as rightly as Job. The orthodox lose and the questioner wins — the canon preserves a rebuttal of its own mainstream theology."
+  }
+ ]
+}

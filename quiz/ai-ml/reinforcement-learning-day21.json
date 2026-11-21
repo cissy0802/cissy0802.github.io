@@ -1,0 +1,69 @@
+{
+ "page": "/ai-ml/reinforcement-learning-day21.html",
+ "title": "AI/ML 详解：强化学习 — Day 21",
+ "page_en": "/ai-ml/reinforcement-learning-day21.en.html",
+ "title_en": "AI/ML Explained: Reinforcement Learning — Day 21",
+ "src_hash": "d5df52842a86",
+ "questions": [
+  {
+   "id": "c62cd4ba4c",
+   "question": "为什么说 Q-Learning 是 off-policy（离策略）的？",
+   "options": [
+    "更新用 max 学贪心策略，实际却用带随机探索的 ε-greedy 采样",
+    "它直接调整策略网络的参数，而不是先建价值表再挑动作",
+    "它不需要环境给出奖励，只靠状态之间的转移就能学到价值",
+    "它每次更新只用当前策略刚刚采集到的数据，旧数据用完之后就直接丢弃"
+   ],
+   "answer": 0,
+   "explanation": "Bellman 更新里的 max Q(s',a') 对应贪心最优动作，但采样时大概率走当前最优、小概率随机试，学的策略和走的策略可以不同，所以叫离策略。直接调策略参数、只用当前策略刚采的数据，是策略梯度（on-policy）的特征。",
+   "question_en": "Why is Q-learning called off-policy?",
+   "options_en": [
+    "Its update uses max over the next state's actions, learning the greedy policy, while the agent actually explores with a randomized ε-greedy policy",
+    "It adjusts the parameters of a policy network directly instead of building a value table and picking actions from it",
+    "It needs no rewards from the environment and learns values from state transitions alone",
+    "Each update uses only data just collected by the current policy, discarding old data after use"
+   ],
+   "explanation_en": "The max Q(s',a') term in the Bellman update corresponds to the greedy action, but data is gathered by mostly exploiting and occasionally exploring at random, so the policy being learned differs from the one being followed. Adjusting policy parameters directly and using only fresh on-policy data are traits of policy gradient methods."
+  },
+  {
+   "id": "d5d2047029",
+   "question": "Actor-Critic 用优势 A = Q(s,a) − V(s) 替代策略梯度中的原始回报 G。这样做的好处是什么？",
+   "options": [
+    "用少量偏差换取方差下降，因而训练更快但最终策略会略偏离最优",
+    "有了 Critic 的即时评分，Actor 和 Critic 就一定能稳定收敛，不会发散",
+    "它让算法变成 off-policy，可以像 Q-Learning 一样反复使用旧数据",
+    "基线 V(s) 只依赖状态，减去它不改变梯度的期望，却让信号有正有负、方差大幅下降"
+   ],
+   "answer": 3,
+   "explanation": "减去只依赖状态、不依赖动作的基线是无偏的，「+100」这类看不出好坏的回报变成「+5 / −3」这样对比鲜明的信号，这是 RL 里的免费午餐。它并不引入偏差；文中也强调加了 Critic 不一定更稳，两者互为目标可能双双发散。",
+   "question_en": "Actor-Critic replaces the raw return G in the policy gradient with the advantage A = Q(s,a) − V(s). What does this buy?",
+   "options_en": [
+    "It trades a little bias for lower variance, so training is faster but the final policy drifts slightly from optimal",
+    "With the Critic's immediate scores, Actor and Critic are guaranteed to converge stably and never diverge",
+    "It makes the algorithm off-policy, so old data can be reused as in Q-learning",
+    "The baseline V(s) depends only on the state, so subtracting it leaves the expected gradient unchanged while making the signal centred and sharply cutting variance"
+   ],
+   "explanation_en": "Subtracting a baseline that depends on the state but not the action is unbiased; an uninformative '+100' becomes a contrasting '+5 / −3', one of RL's free lunches. It introduces no bias, and the piece stresses that adding a Critic doesn't guarantee stability — each provides the other's moving target, and both can diverge."
+  },
+  {
+   "id": "a852e893fe",
+   "question": "PPO 的 clip 目标（ε = 0.2）如何防止策略一步更新过猛？",
+   "options": [
+    "把新旧策略的概率比夹在 0.8 到 1.2 之间，超出部分不再有额外收益",
+    "把梯度的范数裁剪在固定阈值以内，防止数值爆炸",
+    "把优势值裁剪到 ±0.2 以内，让好坏动作的信号都变弱",
+    "用二阶约束严格保证每次更新都单调改进，因此一定收敛"
+   ],
+   "answer": 0,
+   "explanation": "概率比想提到旧的 1.5 倍？收益按 1.2 倍封顶，再激进也没额外好处；外层 min 取悲观下界，双向都不许跨太远。它只用一阶梯度、是启发式约束，没有 TRPO 那样的单调改进保证——这正是文中点名的误区。",
+   "question_en": "How does PPO's clipped objective (ε = 0.2) keep a policy update from being too aggressive?",
+   "options_en": [
+    "It clamps the new-to-old probability ratio to between 0.8 and 1.2, so moving beyond that earns nothing extra and there is no incentive to take a big step",
+    "It clips the gradient norm to a fixed threshold to prevent numerical blow-up",
+    "It clips the advantage values to within ±0.2, weakening the signal for both good and bad actions",
+    "It uses a second-order constraint that strictly guarantees each update is a monotonic improvement, so it must converge"
+   ],
+   "explanation_en": "Want to push an action's probability to 1.5× the old one? The gain is capped at 1.2×, so extra aggressiveness pays nothing; the outer min takes a pessimistic bound, limiting moves in both directions. It uses only first-order gradients and is a heuristic, with none of TRPO's monotonic-improvement guarantee — the very misconception the piece calls out."
+  }
+ ]
+}

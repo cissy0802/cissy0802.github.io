@@ -1,0 +1,69 @@
+{
+ "page": "/book-recommendations/innovation-curve-book11.html",
+ "title": "Issue 11：创新的曲线 — 新东西如何从无到有、从边缘到主流 | 好书推荐",
+ "page_en": "/book-recommendations/innovation-curve-book11.en.html",
+ "title_en": "Issue 11: The Innovation Curve — How New Things Get Born and Cross to Mainstream | Book Recommendations",
+ "src_hash": "b54e7b9339df",
+ "questions": [
+  {
+   "id": "1d60774121",
+   "question": "一款产品有一批热情的早期用户，但主流客户迟迟不动。按 Moore《跨越鸿沟》，该怎么做？",
+   "options": [
+    "继续打磨核心功能，等产品足够成熟，主流客户自然会跟上",
+    "加大营销预算，直接面向整个主流市场广撒网，尽快把产品的覆盖面和知名度做大",
+    "把早期用户热情的推荐信广泛展示给主流客户，用他们的口碑打动市场",
+    "切到一个痛点尖锐、圈子紧密的极小细分，用完整产品做到垄断，造出同行参考"
+   ],
+   "answer": 3,
+   "explanation": "早期采用者买愿景，务实派买参考，要看同行已在用，这是个人风险管理，不是产品要求；梦想家的推荐在务实派眼里恰是危险信号。解法是缩小到一个细分做成完整产品（功能+培训+集成+案例+售后），再按「保龄球瓶」推进。从一开始瞄准整个主流市场正是多数公司死的原因。",
+   "question_en": "A product has enthusiastic early adopters, but mainstream customers won't budge. According to Moore's Crossing the Chasm, what should you do?",
+   "options_en": [
+    "Keep polishing the core features; once the product is mature enough, the mainstream will follow",
+    "Raise the marketing budget and target the whole mainstream market at once to expand reach quickly",
+    "Showcase the early adopters' enthusiastic testimonials widely to mainstream buyers and let their praise win the market",
+    "Deliberately narrow to one tiny segment with acute pain and tight word of mouth, deliver the whole product to dominate it, create the peer references pragmatists need, then knock over adjacent segments"
+   ],
+   "explanation_en": "Early adopters buy a vision; pragmatists buy references and want to see peers already using it — personal risk management, not a product requirement — and a visionary's endorsement actually reads as a warning to them. The fix is to narrow to one segment and supply the whole product (features, training, integrations, case studies, support), then advance like bowling pins. Aiming at the whole mainstream from the start is why most companies die."
+  },
+  {
+   "id": "3a735e4c25",
+   "question": "按 Christensen《创新者的窘境》，一家成功的大公司要应对颠覆性技术，关键做法是什么？",
+   "options": [
+    "设立有独立成本结构、独立客户和独立损益表的小组织去自我颠覆",
+    "在主营业务内部挂牌成立创新部门，按主营业务的毛利和 NPV 标准考核",
+    "撤换傲慢僵化的管理层，引入更有远见的 CEO 重整战略",
+    "更深入地访谈现有最好的客户，按他们的需求规划下一代产品"
+   ],
+   "answer": 0,
+   "explanation": "巨头被颠覆不是因为变笨，而是听最好的客户、按 NPV 排项目、保护毛利这些理性流程每一道都会枪毙寒酸的低端新货。现任客户正是把公司拉向高端的人；用母体财务标尺考核的「创新部门」本质上仍在母体内部。",
+   "question_en": "According to Christensen's The Innovator's Dilemma, what is the key move for a successful incumbent facing a disruptive technology?",
+   "options_en": [
+    "Set up a small unit with its own cost structure, its own customers and its own P&L to disrupt itself, not judged by the parent's financial yardsticks",
+    "Launch an innovation department inside the core business, evaluated on the core business's margin and NPV targets",
+    "Replace an arrogant, rigid management team with a more visionary CEO to reset strategy",
+    "Interview its best current customers more deeply and plan the next generation around their needs"
+   ],
+   "explanation_en": "Incumbents fall not from stupidity but because rational processes — listening to the best customers, ranking projects by NPV, protecting margins — each kill the humble low-end newcomer. Current customers are exactly who pull the firm upmarket, and an 'innovation unit' measured by the parent's financials is still inside the parent."
+  },
+  {
+   "id": "5538561ce1",
+   "question": "Dropbox 早期只在 Hacker News 发了一段「假装能用」的演示视频，并没有造出产品。按《精益创业》，这次 MVP 验证的是什么？",
+   "options": [
+    "视频营销比传统广告更便宜，可以作为长期的获客渠道",
+    "团队确实有能力造出可靠的文件同步软件，证明所选的技术路线是可行的",
+    "用户对产品界面和交互细节的偏好，以便后续打磨功能",
+    "足够多的人确实苦于多设备同步、想要这样的东西——比能否造出来更危险的假设"
+   ],
+   "answer": 3,
+   "explanation": "MVP 不是简陋的小产品，而是以最低成本检验最危险假设的实验装置。Dropbox 的视频不证明技术可行，而是用注册量暴涨证明需求真实存在；把 MVP 当成「先做个简陋版本」是把实验误当成了产品步骤。",
+   "question_en": "Early on, Dropbox posted only a demo video on Hacker News that pretended the product worked, without building it. In Lean Startup terms, what did this MVP test?",
+   "options_en": [
+    "Whether video marketing is cheaper than traditional ads and could serve as a long-term acquisition channel",
+    "Whether the team could build reliable file-sync software, confirming the technical approach was feasible",
+    "Users' preferences about interface and interaction details, to guide later feature polishing",
+    "Whether enough people truly struggled with syncing across devices and wanted such a thing — a riskier assumption than whether it could be built"
+   ],
+   "explanation_en": "An MVP isn't a crude little product but an experiment that tests the riskiest assumption at the lowest cost. Dropbox's video proved nothing technical; the surge in sign-ups showed the demand was real. Treating an MVP as 'build a rough version first' mistakes an experiment for a product step."
+  }
+ ]
+}

@@ -2080,6 +2080,141 @@
     "fe3840fc5b",
     "0ab100018a"
    ]
+  },
+  "/world-religions/bahai-day18.html": {
+   "t": "世界宗教 Day 18：巴哈伊信仰",
+   "f": "world-religions/bahai-day18.json",
+   "q": [
+    "62be03ce4b",
+    "0a148c4157",
+    "18cb8ffc19"
+   ]
+  },
+  "/writing/chinese-writing-day19.html": {
+   "t": "写作与表达：中文写作的隐疾 — Day 19",
+   "f": "writing/chinese-writing-day19.json",
+   "q": [
+    "93a539146c",
+    "606e36d368",
+    "749aa6de74"
+   ]
+  },
+  "/art-aesthetics/sculpture-and-space-day14.html": {
+   "t": "艺术与审美：雕塑与空间",
+   "f": "art-aesthetics/sculpture-and-space-day14.json",
+   "q": [
+    "61e9b995a2",
+    "5050897b4a",
+    "2f50a4e18d"
+   ]
+  },
+  "/mathematics/discrete-math-day15.html": {
+   "t": "离散数学 · Day 15 — Mathematics",
+   "f": "mathematics/discrete-math-day15.json",
+   "q": [
+    "8b11de593f",
+    "9b58017a53",
+    "dcea844e1d"
+   ]
+  },
+  "/deep-reading/imagined-communities-read132.html": {
+   "t": "《想象的共同体》",
+   "f": "deep-reading/imagined-communities-read132.json",
+   "q": [
+    "9f35f7b13a",
+    "465b8c0da7",
+    "9fb54846ae"
+   ]
+  },
+  "/mathematics/mechanism-design-day57.html": {
+   "t": "数学与博弈设计 · Day 57 — Mathematics",
+   "f": "mathematics/mechanism-design-day57.json",
+   "q": [
+    "e5dadbdb41",
+    "453951bfe5",
+    "aac9eeb9f4"
+   ]
+  },
+  "/deep-reading/hebrew-bible-read87.html": {
+   "t": "《希伯来圣经》— 好书精读 Read 87",
+   "f": "deep-reading/hebrew-bible-read87.json",
+   "q": [
+    "ae8f15c1cb",
+    "9d0a8f58bd",
+    "b45d6d2995"
+   ]
+  },
+  "/sociology-anthropology/can-we-trust-social-science-day36.html": {
+   "t": "社会学与人类学 Day 36：社会科学还能相信吗",
+   "f": "sociology-anthropology/can-we-trust-social-science-day36.json",
+   "q": [
+    "0fc9c52533",
+    "c695853d89",
+    "621f2763d0"
+   ]
+  },
+  "/ai-ml/reinforcement-learning-day21.html": {
+   "t": "AI/ML 详解：强化学习 — Day 21",
+   "f": "ai-ml/reinforcement-learning-day21.json",
+   "q": [
+    "c62cd4ba4c",
+    "d5d2047029",
+    "a852e893fe"
+   ]
+  },
+  "/deep-reading/antifragile-read26.html": {
+   "t": "《反脆弱》",
+   "f": "deep-reading/antifragile-read26.json",
+   "q": [
+    "eb5c7473cb",
+    "a30ade289b",
+    "bd1a6e82f4"
+   ]
+  },
+  "/book-recommendations/innovation-curve-book11.html": {
+   "t": "Issue 11：创新的曲线 — 新东西如何从无到有、从边缘到主流 | 好书推荐",
+   "f": "book-recommendations/innovation-curve-book11.json",
+   "q": [
+    "1d60774121",
+    "3a735e4c25",
+    "5538561ce1"
+   ]
+  },
+  "/leadership/cross-cultural-leadership-day48.html": {
+   "t": "领导力 Day 48：跨文化领导",
+   "f": "leadership/cross-cultural-leadership-day48.json",
+   "q": [
+    "5ae5476fc4",
+    "1bb3ddb98d",
+    "58b87da1ca"
+   ]
+  },
+  "/blog-deepread/parentdata-blog29.html": {
+   "t": "Emily Oster · ParentData — 「没有任何剂量被证明是安全的」是一句逻辑错误，不是一个科学结论",
+   "f": "blog-deepread/parentdata-blog29.json",
+   "q": [
+    "d2f4d030a3",
+    "f7fa4cd5cd",
+    "2328628ea9"
+   ]
+  },
+  "/deep-reading/willpower-instinct-read909.html": {
+   "t": "《自控力》— 每日精读 Read 909",
+   "f": "deep-reading/willpower-instinct-read909.json",
+   "q": [
+    "a0548c2c78",
+    "d37e700cfe",
+    "4cfaa2e952"
+   ]
+  },
+  "/talk-deepread/loftus-false-memory-talk25.html": {
+   "t": "Elizabeth Loftus ·《你的记忆有多可靠？》— 记忆像维基百科，谁都能改",
+   "f": "talk-deepread/loftus-false-memory-talk25.json",
+   "q": [
+    "0d3b8b1a1c",
+    "06c29b8fef",
+    "2e3f83f479"
+   ]
   }
  },
  "aliases": {

@@ -1,0 +1,69 @@
+{
+ "page": "/art-aesthetics/sculpture-and-space-day14.html",
+ "title": "艺术与审美：雕塑与空间",
+ "page_en": "/art-aesthetics/sculpture-and-space-day14.en.html",
+ "title_en": "Art & Aesthetics: Sculpture & Space",
+ "src_hash": "391d6d16c681",
+ "questions": [
+  {
+   "id": "61e9b995a2",
+   "question": "亨利·摩尔的卧像身上常挖出大洞，让风景从人体中间穿过去。从「体量与负空间」的角度，这些洞应怎样理解？",
+   "options": [
+    "这是作品尚未完成的标记，艺术家刻意让观众用想象补全缺失的身体",
+    "这是材料在露天环境中长期风化剥落的结果，后来被艺术家接受为作品的一部分",
+    "这是为了减轻青铜铸件的重量、方便运输和户外安装而做的工艺处理",
+    "空隙是作品精心设计的一部分，负空间在这里甚至成了主角，和实体一样被创作"
+   ],
+   "answer": 3,
+   "explanation": "负空间指形体之间的空隙，它不是「没东西的地方」，而是和实体一样被讲究的部分；摩尔把这一点做到极致，「空」成了主角。把洞看成工艺减重或「未完成」都是把空隙当作被动的缺失。",
+   "question_en": "Henry Moore's reclining figures often have large holes that let the landscape pass through the body. In terms of mass and negative space, how should these holes be read?",
+   "options_en": [
+    "They mark the work as unfinished, inviting viewers to complete the missing body in imagination",
+    "They result from outdoor weathering, which the artist later accepted as part of the piece",
+    "They are a technical measure to lighten the bronze casting for transport and outdoor installation",
+    "The voids are a deliberately designed part of the work; here negative space even becomes the protagonist, shaped as carefully as the solid"
+   ],
+   "explanation_en": "Negative space is the gaps between forms — not 'where nothing is' but something designed as carefully as the solid; Moore pushed this to the extreme, making the void the main subject. Reading the holes as weight reduction or as 'unfinished' treats the voids as passive absences."
+  },
+  {
+   "id": "5050897b4a",
+   "question": "罗丹在作品上故意留下手指按压和凿痕、表面坑洼不平。这一做法标志着雕塑的什么转向？",
+   "options": [
+    "从模仿外形走向表达内在：情绪不靠脸上的表情，而从粗粝的肌理和整个身体里渗出来",
+    "从表达内在回到模仿外形：粗糙表面让光影更接近真实皮肤的质感",
+    "这是铸造技术受限的结果，罗丹本希望达到古典的光滑效果，只是那个时代的工艺做不到",
+    "从古典的戏剧化瞬间转向永恒克制的姿态，用平静的表面压住动作"
+   ],
+   "answer": 0,
+   "explanation": "古典追求光滑如真人皮肤，罗丹却让情绪从粗粝表面渗出，「不完成感」本身成了表现力，这是现代雕塑从模仿外形到表达内在的转身。认为越光滑逼真越高级正是文中点名的误区。",
+   "question_en": "Rodin deliberately left finger marks and chisel traces on his surfaces, leaving them pitted and rough. What turn in sculpture does this mark?",
+   "options_en": [
+    "From imitating outward form to expressing the inner life: emotion seeps out of the rough texture and the whole body rather than the facial expression",
+    "From expressing inner life back to imitating form: the rough surface makes light behave more like real skin",
+    "It reflects limits of casting technology; Rodin wanted classical smoothness but the craft of his time couldn't deliver it",
+    "From the classical dramatic moment toward eternal restraint, using a calm surface to hold the motion in check"
+   ],
+   "explanation_en": "Classical sculpture sought skin-like smoothness; Rodin let emotion emerge from rough surfaces, so the sense of incompleteness itself became expressive — modern sculpture's turn from imitating form to expressing interiority. Believing smoother and more lifelike is always better is the misconception the piece names."
+  },
+  {
+   "id": "2f50a4e18d",
+   "question": "走进一件大型装置，待了一会儿仍然毫无感觉。按文中的看法，比较成熟的态度是什么？",
+   "options": [
+    "找到最佳拍照角度把全貌记录下来，回家对照资料慢慢理解它描绘的是什么",
+    "先给它时间、走动起来；仍没感觉就诚实承认，但别把「我没感觉」等同于「它没东西」",
+    "既然自己毫无感觉，说明作品是在故弄玄虚，「这我也能做」就是对它最诚实的评价",
+    "没有感觉说明自己修养不够，应先读策展说明，学会该有的反应再表态"
+   ],
+   "answer": 1,
+   "explanation": "装置常要待一阵、走动起来才显现；「我没感觉」是正当的个人反馈，「它没东西」是更大的判断，要谨慎。「这我也能做」和「是我没文化、假装懂」是两个方向的误区，找拍照点、问它像什么也不是看装置的方式。",
+   "question_en": "You walk into a large installation, stay a while, and still feel nothing. According to the piece, what is the more mature response?",
+   "options_en": [
+    "Find the best photo angle to capture the whole, then study at home what it is meant to depict",
+    "Give it time and move around; if you still feel nothing, say so honestly, but keep 'I felt nothing' separate from 'there's nothing there' and leave room for what you don't yet grasp",
+    "Feeling nothing shows the work is pretentious, and 'I could have made this' is the most honest verdict on it",
+    "Feeling nothing means you lack cultivation; read the curator's text first and learn the proper reaction before judging"
+   ],
+   "explanation_en": "Installations often reveal themselves only after some time and movement; 'I felt nothing' is a legitimate personal response, while 'it has nothing' is a bigger claim that needs care. 'I could do that' and 'I'm just uncultured, so I'll pretend' are opposite traps, and hunting for photo spots or asking what it depicts misses how installations work."
+  }
+ ]
+}

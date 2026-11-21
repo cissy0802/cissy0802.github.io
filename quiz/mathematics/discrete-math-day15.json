@@ -1,0 +1,69 @@
+{
+ "page": "/mathematics/discrete-math-day15.html",
+ "title": "离散数学 · Day 15 — Mathematics",
+ "page_en": "/mathematics/discrete-math-day15.en.html",
+ "title_en": "Discrete Mathematics · Day 15 — Mathematics",
+ "src_hash": "7116afe5a68f",
+ "questions": [
+  {
+   "id": "8b11de593f",
+   "question": "有人质疑：数学归纳法的归纳步先假设 P(k) 成立，这不就是偷偷假设了要证的结论吗？正确的回应是什么？",
+   "options": [
+    "只要验证的前几个情形都成立，归纳假设就有了经验依据，因此不算循环论证",
+    "归纳步证的是「若 P(k) 则 P(k+1)」这条传递规则，并不断言 P(k) 为真；配合基础步才落地",
+    "归纳步本身已经足够，基础步只是形式上的补充，去掉也不影响结论",
+    "质疑成立，所以归纳法只能算启发式论证，严格的证明还需要逐个验证足够多的具体情形"
+   ],
+   "answer": 1,
+   "explanation": "归纳假设假设的是「某一张倒了」，要证的是「它撞倒下一张」，是传递而非结论；基础步保证第一张倒，两步合起来才覆盖全部自然数。基础步不能省，「所有马同色」的假证明正是链条在某处断开。",
+   "question_en": "Someone objects: the inductive step assumes P(k) is true — isn't that sneaking in the very conclusion we want to prove? What is the right reply?",
+   "options_en": [
+    "Once the first few cases are verified, the hypothesis has empirical backing, so the argument isn't circular",
+    "The inductive step proves the transfer rule 'if P(k) then P(k+1)' without asserting P(k); together with the base case, the chain gets anchored",
+    "The inductive step is enough on its own; the base case is a formality that can be dropped without harm",
+    "The objection stands, so induction is only heuristic, and a rigorous proof still needs enough individual cases checked"
+   ],
+   "explanation_en": "The hypothesis assumes 'some domino falls' in order to show 'it knocks over the next one' — a transfer, not the conclusion. The base case makes the first domino fall, and only both steps together cover every natural number. The base case can't be dropped; the fake proof that 'all horses are the same colour' is a chain that breaks somewhere."
+  },
+  {
+   "id": "9b58017a53",
+   "question": "在当前数据上，算法 A（O(n²)）跑 3 毫秒，算法 B（O(n)）跑 10 毫秒。按大 O 的思路，应如何判断？",
+   "options": [
+    "毫秒数说明不了扩展时的命运，数据够大时 B 必然反超 A",
+    "A 更快，而实践中常数因子才是决定性的，大 O 只是理论上的近似",
+    "两者都是多项式时间，属于同一复杂度档次，选哪个都差不多",
+    "大 O 衡量的是算法在当前硬件上的速度，所以应该以实测的 3 毫秒为准"
+   ],
+   "answer": 0,
+   "explanation": "大 O 丢掉常数和低阶项，只看数据翻倍时时间怎么变：O(n) 的算法配慢常数，只要 n 够大，长远仍会碾压 O(n²)。它量的是「扩展时会不会撞墙」，不是此刻多快。",
+   "question_en": "On today's data, algorithm A (O(n²)) takes 3 ms and algorithm B (O(n)) takes 10 ms. Thinking in Big-O terms, what is the right judgement?",
+   "options_en": [
+    "Those millisecond figures say little about how they scale; for large enough data B will overtake A, because growth rate matters more than constants",
+    "A is faster, and in practice constant factors are what decide; Big-O is only a theoretical approximation",
+    "Both are polynomial and in the same complexity class, so it hardly matters which you choose",
+    "Big-O measures an algorithm's speed on current hardware, so the measured 3 ms is what counts"
+   ],
+   "explanation_en": "Big-O drops constants and lower-order terms and asks how time changes as data doubles: an O(n) algorithm with a worse constant will still crush an O(n²) one once n is large enough. It measures whether you'll hit a wall as you scale, not how fast things are right now."
+  },
+  {
+   "id": "dcea844e1d",
+   "question": "一副洗乱的牌里，「第 i 张停在原位」这些事件彼此相关，为什么仍能简单算出平均有 1 张停在原位？",
+   "options": [
+    "因为停在原位的张数服从二项分布，直接套用二项分布的期望公式",
+    "因为牌数足够多时这些事件近似相互独立，可以直接当作独立事件来计算概率",
+    "因为可以用归纳法对牌数施归纳，逐步推出精确的概率分布",
+    "期望的线性性不要求独立：拆成每张牌的指示变量，各自求期望再相加"
+   ],
+   "answer": 3,
+   "explanation": "E[X+Y]=E[X]+E[Y] 无论 X、Y 是否独立都成立，所以相关性再复杂，拆成小块各自求期望再相加就够了，每张牌贡献 1/n，总和为 1。把它当成近似独立或二项分布都是误用了独立性。",
+   "question_en": "In a shuffled deck, the events 'card i stays in its original position' are correlated. Why can we still easily find that on average exactly one card stays put?",
+   "options_en": [
+    "The number of fixed cards follows a binomial distribution, so the binomial mean formula applies directly",
+    "With enough cards these events are approximately independent, so they can be treated as independent",
+    "Induction on the number of cards gives the exact probability distribution step by step",
+    "Linearity of expectation doesn't require independence: write the total as a sum of indicator variables, take each expectation, and add"
+   ],
+   "explanation_en": "E[X+Y] = E[X] + E[Y] holds whether or not X and Y are independent, so however tangled the correlations, you can split the count into pieces and add their expectations: each card contributes 1/n, totalling 1. Treating the events as roughly independent or binomial misuses independence."
+  }
+ ]
+}

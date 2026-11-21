@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/willpower-instinct-read909.html",
+ "title": "《自控力》— 每日精读 Read 909",
+ "page_en": "/deep-reading/willpower-instinct-read909.en.html",
+ "title_en": "The Willpower Instinct — Deep Read 909",
+ "src_hash": "6161a6280641",
+ "questions": [
+  {
+   "id": "a0548c2c78",
+   "question": "节食的人多吃了一块披萨，心想「反正今天已经毁了」，干脆把整盒吃光。按《自控力》，破戒之后怎样做最有助于回到正轨？",
+   "options": [
+    "第二天少吃一顿把热量补回来，让账面重新平衡",
+    "狠狠地批评自己没有毅力、太软弱，让强烈的内疚感成为下次忍住诱惑的动力",
+    "接受今天已经失败的事实，明天再严格地重新开始，今天剩下的时间就不必再管",
+    "像对待犯错的朋友那样待自己：谁都会这样，不代表完蛋，然后回到目标"
+   ],
+   "answer": 3,
+   "explanation": "这是「去他的」效应：拖垮人的不是第一次破戒，而是之后的自责；研究显示自我批评削弱自控，自我关怀让人恢复更快、再犯更少。自我关怀替换的是自责，不是标准；「今天毁了、明天重来」正是效应本身，用少吃一顿抵账则是道德账本的思路。",
+   "question_en": "A dieter eats one extra slice of pizza, thinks 'today's ruined anyway', and finishes the whole box. According to The Willpower Instinct, what helps most to get back on track after a lapse?",
+   "options_en": [
+    "Skip a meal tomorrow to make up the calories and rebalance the books",
+    "Criticize yourself harshly for lacking willpower so the guilt fuels restraint next time",
+    "Accept that today has failed and restart strictly tomorrow, so there's no need to bother for the rest of today",
+    "Treat yourself as you would a friend who slipped up — everyone does this and it doesn't mean you're doomed — then calmly return to the goal"
+   ],
+   "explanation_en": "This is the 'what-the-hell effect': what drags you down isn't the first lapse but the self-blame that follows. Research shows self-criticism weakens self-control, while self-compassion speeds recovery and reduces relapse. Self-compassion replaces self-blame, not standards; 'ruined today, restart tomorrow' is the effect itself, and offsetting with a skipped meal is moral-ledger thinking."
+  },
+  {
+   "id": "d37e700cfe",
+   "question": "「今天去健身了，所以我配吃这块蛋糕」。按《自控力》，这种道德许可该怎么破解？",
+   "options": [
+    "把每天的好行为和坏行为都记下来，确保账面上好的多于坏的",
+    "给自己设定一条明确的奖励规则，例如每健身三次，才允许吃一次甜点作为奖励",
+    "别盯「挣了多少信用分」，改盯「当初为什么要这么做」，进步和目标是同一件事",
+    "干脆不再奖励自己，靠更强的意志力把所有诱惑都忍住"
+   ],
+   "answer": 2,
+   "explanation": "道德许可的机制是把自控当成道德账本：好行为攒信用分，再拿去抵坏行为，可身体和存款不认这本账。解药是盯住「为什么」而不是「挣了多少分」。定奖励规则、记好坏账本仍是在用同一本账；硬忍则回到了文中说的「用错了力」。",
+   "question_en": "'I worked out today, so I've earned this cake.' According to The Willpower Instinct, how do you defuse this moral licensing?",
+   "options_en": [
+    "Log every good and bad behaviour daily and make sure the good outweighs the bad",
+    "Set a clear reward rule, such as one dessert for every three workouts",
+    "Shift attention from 'how much credit have I earned' to 'why did I want to do this', seeing today's progress and the long-term goal as the same thing rather than entries that offset each other",
+    "Stop rewarding yourself altogether and resist every temptation with stronger willpower"
+   ],
+   "explanation_en": "Moral licensing treats self-control as a moral ledger — good deeds earn credit that pays for bad ones — but your body and bank account don't honour that ledger. The remedy is to focus on 'why', not 'how much credit'. Reward rules and good-versus-bad logs still run the same ledger, and gritting your teeth is the 'wrong kind of effort' the book warns about."
+  },
+  {
+   "id": "4cfaa2e952",
+   "question": "刷信息流刷到空虚却停不下来。按《自控力》对多巴胺的解释，原因是什么？",
+   "options": [
+    "刷手机耗尽了当天有限的意志力额度，前额叶的能量用光了，所以才刹不住车",
+    "多巴胺是快乐分子，每一条内容都带来一点快乐，快乐累积起来让人停不下来",
+    "多巴胺驱动「想要、去追」而非「喜欢、满足」，拽住你的是下一条可能更好的承诺",
+    "信息流内容太丰富，大脑需要时间消化，所以会一直往下看"
+   ],
+   "answer": 2,
+   "explanation": "多巴胺常被误称为快乐分子，其实它负责让你去追，用「奖赏的承诺」拽着你，不保证追到之后满足。所以要学会分辨承诺和真实的满足。「意志力额度耗尽」依赖的是复现大多失败的自我损耗框架。",
+   "question_en": "You keep scrolling a feed even though it leaves you feeling empty. According to The Willpower Instinct's account of dopamine, why?",
+   "options_en": [
+    "Scrolling has used up the day's willpower allowance, so the prefrontal cortex is out of power and can't brake",
+    "Dopamine is the pleasure molecule; each post delivers a bit of pleasure, and the accumulated pleasure keeps you going",
+    "Dopamine drives wanting and pursuit, not liking and satisfaction; what keeps you going is the promise that the next item might be good",
+    "Feeds are so rich in content that the brain needs time to digest it, so you keep reading"
+   ],
+   "explanation_en": "Dopamine is often mislabelled the pleasure molecule; it actually makes you chase, pulling you along with a 'promise of reward' and no guarantee of satisfaction once you get there. Hence the advice to tell the promise apart from actual satisfaction. 'Using up the willpower allowance' rests on the ego-depletion framework, which has largely failed to replicate."
+  }
+ ]
+}

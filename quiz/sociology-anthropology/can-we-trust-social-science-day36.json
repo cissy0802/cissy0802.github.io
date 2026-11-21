@@ -1,0 +1,69 @@
+{
+ "page": "/sociology-anthropology/can-we-trust-social-science-day36.html",
+ "title": "社会学与人类学 Day 36：社会科学还能相信吗",
+ "page_en": "/sociology-anthropology/can-we-trust-social-science-day36.en.html",
+ "title_en": "Sociology & Anthropology Day 36: Can We Trust Social Science?",
+ "src_hash": "662880c26bd4",
+ "questions": [
+  {
+   "id": "0fc9c52533",
+   "question": "要比较两个国家居民的自评健康，怎样才能让「很好/好/一般/差」这类自评真正可比？",
+   "options": [
+    "把四档改成十档量表，选项越细，不同人勾选的含义就越一致",
+    "把问卷翻译得更准确，确保两国被试读到的选项字面意思完全一致",
+    "扩大样本量、把结果精确到小数点后更多位，统计误差变小了，数字自然就可比了",
+    "让所有人给同几个虚构人物打分，用打分差估出各人尺子的差别，再校正自评"
+   ],
+   "answer": 3,
+   "explanation": "喀拉拉与比哈尔的例子说明，报告「有病」取决于你把什么状态认作病，尺子长在本地、随经验漂移，不是谁在说谎。King 等人的修法是固定的虚构案例：大家对同一案例打分的差就是尺子的差。精度、译文和档位都不解决「是不是同一把尺子」。",
+   "question_en": "To compare self-rated health ('very good / good / fair / poor') across two countries, what makes such self-ratings genuinely comparable?",
+   "options_en": [
+    "Replace the four categories with a ten-point scale, since finer options make everyone's ticks mean the same thing",
+    "Translate the questionnaire more carefully so both groups read options with exactly the same literal meaning",
+    "Enlarge the sample and report more decimal places; with smaller statistical error the numbers become comparable",
+    "Have everyone rate the same few fictional people, use the differences in those ratings to estimate each person's yardstick, and correct the self-ratings accordingly"
+   ],
+   "explanation_en": "The Kerala–Bihar case shows that reporting illness depends on what you recognize as illness; the yardstick is local and drifts with experience, and nobody is lying. King and colleagues' fix uses fixed vignettes: differences in rating the same invented case are differences in yardsticks. Precision, translation and finer scales don't address whether people hold the same ruler."
+  },
+  {
+   "id": "c695853d89",
+   "question": "「搬向机会」实验：2007 年的报告没发现成年人收入效应，2016 年追踪发现幼年搬家的孩子成年后收入高出三成。这组结果最该带走的教训是什么？",
+   "options": [
+    "只要随机化做得足够好，第一次测量就能给出最终答案，根本没有必要再做长期追踪",
+    "邻里效应确实被夸大了，2016 年的结果只是税务数据带来的偶然波动",
+    "2007 年的研究者读错了数据，抽签随机化在早期就出了问题",
+    "「效应」必须说清对谁、多久之后、量哪个结果，否则连能判对错的说法都不算"
+   ],
+   "answer": 3,
+   "explanation": "同一个实验、同一批人、随机化一点没变，变的只有量什么、量谁、隔多久量：成年人收入无效应，幼年搬家的孩子二十多年后收入显著更高，青少年时搬家的反而略负。这不是谁读错了，而是「效应」这个词本身不完整。",
+   "question_en": "In Moving to Opportunity, the 2007 report found no effect on adult earnings, while 2016 follow-up found children who moved young earned about 30% more as adults. What is the key lesson?",
+   "options_en": [
+    "With good randomization, the first measurement gives the final answer and long-term follow-up is unnecessary",
+    "Neighbourhood effects really were overstated; the 2016 result is just noise from the tax data",
+    "The 2007 researchers misread the data, and the lottery randomization broke down early on",
+    "An 'effect' must specify for whom, how long afterwards and which outcome; otherwise it isn't even a claim that can be right or wrong"
+   ],
+   "explanation_en": "Same experiment, same people, randomization untouched — only what was measured, on whom and when changed: no effect on adult earnings, a large gain for children who moved young, a slightly negative estimate for those who moved as teenagers. Nobody misread anything; the word 'effect' is simply incomplete on its own."
+  },
+  {
+   "id": "621f2763d0",
+   "question": "WEIRD 问题的头号例子「木匠世界假说」（缪勒-莱尔错觉的跨文化差异）在 2025 年被重新审视后几乎站不住。这该怎么理解？",
+   "options": [
+    "WEIRD 问题不因此为假：自我反省用的证据同样会错，反省也要被检验",
+    "木匠世界假说被推翻，恰恰证明视觉错觉完全由文化环境塑造",
+    "这说明跨文化研究整体不可信，心理学应当只研究本国样本以避免误差",
+    "WEIRD 问题原来是虚构的，心理学以西方大学生为样本得出的结论可以放心推广到全人类"
+   ],
+   "answer": 0,
+   "explanation": "Amir 与 Firestone 发现这种错觉在动物、其他感官、先天失明者身上也出现，原始数据的跨文化相关也不一致。但这不推翻 WEIRD 问题：最后通牒博弈在十五个小社会里的差异才是更硬的证据。窄样本的坏处是不知道结论管到哪儿为止。",
+   "question_en": "The flagship example of the WEIRD problem — the 'carpentered world' explanation of cross-cultural differences in the Müller-Lyer illusion — was found in 2025 to be almost certainly wrong. How should this be read?",
+   "options_en": [
+    "It doesn't make the WEIRD problem fake: a discipline examining itself uses equally fallible evidence, so the self-examination must be checked too, and stronger evidence lies elsewhere",
+    "Overturning the carpentered-world hypothesis proves that visual illusions are entirely shaped by cultural environment",
+    "It shows cross-cultural research as a whole is unreliable, so psychology should study only domestic samples",
+    "The WEIRD problem was imaginary, so findings from Western undergraduates can safely be generalized to all humans"
+   ],
+   "explanation_en": "Amir and Firestone found the illusion in animals, in other senses and in congenitally blind people, and the original cross-cultural correlations were inconsistent. That doesn't overturn the WEIRD problem: the ultimatum-game differences across fifteen small-scale societies are firmer evidence. The harm of a narrow sample is not knowing how far a conclusion reaches."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/mathematics/mechanism-design-day57.html",
+ "title": "数学与博弈设计 · Day 57 — Mathematics",
+ "page_en": "/mathematics/mechanism-design-day57.en.html",
+ "title_en": "The Mathematics of Fair Design · Day 57 — Mathematics",
+ "src_hash": "36adbc0c880a",
+ "questions": [
+  {
+   "id": "e5dadbdb41",
+   "question": "「无嫉妒分配」的判据是什么？",
+   "options": [
+    "每个人用自己的价值尺度衡量，都至少拿到总价值的 1/n",
+    "每个人用自己的价值尺度衡量，都觉得自己那块不比任何别人那块少",
+    "按一把客观的尺度衡量，每个人分到的份额大小完全相同",
+    "按所有人价值尺度的平均值来衡量，没有谁分到的那块明显大于别人"
+   ],
+   "answer": 1,
+   "explanation": "无嫉妒是 μ_i(A_i) ≥ μ_i(A_j)：比较的两块在变，尺子始终是 i 自己那把。这里没有客观尺子，偏好不同反而让双方都觉得拿了大半。「至少 1/n」是更弱的比例公平，n≥3 时无嫉妒蕴含比例，反之不成立。",
+   "question_en": "What is the criterion for an envy-free division?",
+   "options_en": [
+    "Each person, measuring by their own valuation, gets at least 1/n of the total value",
+    "Each person, measuring by their own valuation, judges their piece to be worth at least as much as anyone else's",
+    "Measured by one objective standard, every person receives a piece of exactly the same size",
+    "Measured by the average of everyone's valuations, no one's piece is noticeably larger than another's"
+   ],
+   "explanation_en": "Envy-freeness is μ_i(A_i) ≥ μ_i(A_j): the pieces being compared change, but the yardstick is always i's own. There is no objective ruler, and differing tastes let both parties feel they got the bigger share. 'At least 1/n' is the weaker proportionality condition; for n ≥ 3 envy-freeness implies it, not the reverse."
+  },
+  {
+   "id": "453951bfe5",
+   "question": "在第二价格拍卖中，如实报出自己的估值为什么是占优策略？",
+   "options": [
+    "因为卖家会设置保留价，谎报估值会被保留价识别出来并受罚",
+    "因为只要其他所有竞拍者都如实出价，你如实出价才是对他们的最优回应",
+    "因为付的是第二高价，总比自己的出价便宜，所以应当尽量出高价以确保中标",
+    "出价只决定你赢不赢，不决定你付多少；压价会错过该赢的标，抬价会赢下亏本的标"
+   ],
+   "answer": 3,
+   "explanation": "成交价由别人的出价决定，把「谁得到」和「付多少」解耦，撒谎就没有着力点。占优策略意味着不论别人怎么出价说真话都不比撒谎差，并不依赖别人诚实；故意抬高出价会在价格高于估值时赢下亏本的标。",
+   "question_en": "Why is bidding your true value a dominant strategy in a second-price auction?",
+   "options_en": [
+    "Because the seller sets a reserve price that detects and penalizes misreported values",
+    "Because as long as everyone else bids truthfully, truthful bidding is your best response",
+    "Because you pay the second-highest price, which is always below your own bid, so you should bid as high as possible to make sure you win",
+    "Your bid only decides whether you win, not what you pay; shading down only loses auctions you should win, and bidding up only wins ones that lose you money"
+   ],
+   "explanation_en": "The price is set by others' bids, so 'who gets it' is decoupled from 'how much they pay' and lying has no leverage. A dominant strategy means truth-telling is never worse whatever others do — it doesn't rely on others being honest; overbidding wins items at a price above your value."
+  },
+  {
+   "id": "aac9eeb9f4",
+   "question": "某地住院医师匹配中，偏远医院总有空缺。有人提议换一种同样稳定的匹配算法来填满它们。按稳定匹配理论，这能做到吗？",
+   "options": [
+    "不能：所有稳定匹配里被匹配的是同一批人，换机制只改变谁配谁，改不了谁落单",
+    "不能：因为延迟接受已经是对所有人都最优的匹配，其他稳定匹配只会更差",
+    "能：延迟接受只对申请方最优，换成对接受方最优的稳定匹配就能消除落单",
+    "能：改由医院一方发起申请，就能得到对医院最有利的稳定匹配，空缺也就随之填满了"
+   ],
+   "answer": 0,
+   "explanation": "农村医院定理：所有稳定匹配中被匹配的人完全相同，所以只要坚持稳定性，偏远医院的空缺不会因为换算法而填上。换申请方确实会改变谁拿到更好的对象，但不改变谁落单；延迟接受只对申请方最优，对接受方是最差的。",
+   "question_en": "In a residency match, rural hospitals always have unfilled slots. Someone proposes switching to a different stable matching algorithm to fill them. According to matching theory, can this work?",
+   "options_en": [
+    "No: every stable matching matches exactly the same set of people, so switching stable mechanisms changes who is paired with whom, not who goes unmatched",
+    "No: because deferred acceptance is already optimal for everyone, and any other stable matching can only be worse",
+    "Yes: deferred acceptance is optimal only for the proposing side, so choosing the receiver-optimal stable matching removes the unmatched slots",
+    "Yes: letting the hospitals propose yields the hospital-optimal stable matching, which fills the vacancies"
+   ],
+   "explanation_en": "The rural hospitals theorem says every stable matching leaves the same agents matched, so as long as you insist on stability, switching algorithms won't fill those slots. Changing which side proposes does shift who gets better partners, but not who is unmatched; deferred acceptance is best for proposers and worst for receivers."
+  }
+ ]
+}

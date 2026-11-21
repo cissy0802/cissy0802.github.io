@@ -1,0 +1,69 @@
+{
+ "page": "/leadership/cross-cultural-leadership-day48.html",
+ "title": "领导力 Day 48：跨文化领导",
+ "page_en": "/leadership/cross-cultural-leadership-day48.en.html",
+ "title_en": "Leadership Day 48: Cross-Cultural Leadership",
+ "src_hash": "17b9a6bc8ed5",
+ "questions": [
+  {
+   "id": "5ae5476fc4",
+   "question": "给一位不熟悉的海外同事提负面反馈，拿不准对方是高语境还是低语境时，默认策略是什么？为什么？",
+   "options": [
+    "先偏含蓄、私下说，再按反应加直白；对高语境的人太直白会真伤关系",
+    "先用英语书面写清楚，语言通了，沟通规则自然一致",
+    "按对方国籍对照文化维度表，直接套用该国的沟通方式即可",
+    "先直接、公开、说清楚，因为直白是最高效的专业沟通，含蓄只会让人漏掉重点"
+   ],
+   "answer": 0,
+   "explanation": "两种错误的代价不对称：对低语境的人太含蓄只是啰嗦，对高语境的人太直白会真伤关系，所以先含蓄再调整。按国籍套维度是把群体平均当个体判决；英语流利不等于同一套语境编码。",
+   "question_en": "You need to give negative feedback to an overseas colleague you don't know well and can't tell whether they are high- or low-context. What is the default strategy, and why?",
+   "options_en": [
+    "Start indirect and private, then add directness based on their reaction; too indirect with a low-context person merely seems wordy, too blunt with a high-context person can truly damage the relationship",
+    "Write it clearly in English; once the language is shared, the communication rules will be the same",
+    "Look up their nationality on a cultural-dimensions chart and apply that country's style directly",
+    "Start direct, public and explicit, because bluntness is the most efficient professional style and indirectness just makes people miss the point"
+   ],
+   "explanation_en": "The two errors cost unequally: excess indirectness with a low-context person is just wordiness, while excess bluntness with a high-context person genuinely hurts the relationship, so begin indirect and adjust. Applying dimensions by nationality treats a group average as an individual verdict, and fluent English doesn't mean shared context codes."
+  },
+  {
+   "id": "1bb3ddb98d",
+   "question": "视频会上你讲完一个有风险的方案，问「有问题吗？」，来自高权力距离文化的成员全程沉默。比较好的做法是什么？",
+   "options": [
+    "你先清楚表明自己的立场，给大家一个明确的方向再讨论",
+    "把沉默视为共识，按计划推进，节省大家的时间",
+    "改用书面文档评论期、1:1 私下问、授权一人唱反调，自己最后表态",
+    "当场点名问「你怎么一直不说话？」，鼓励他们像其他同事那样当众公开挑战你"
+   ],
+   "answer": 2,
+   "explanation": "高权力距离文化里，下级不公开质疑上级是「尊重」，沉默不是共识，而是你没给对制度。当众逼问只会让人更不安；最高级别的人先开口会定调、压掉下面的空间，所以老板应最后表态。",
+   "question_en": "On a video call you present a risky plan and ask 'Any concerns?'; team members from high power-distance cultures stay silent. What is the better approach?",
+   "options_en": [
+    "State your own position clearly first so everyone has a firm direction before discussing",
+    "Treat the silence as consensus and proceed as planned to save everyone's time",
+    "Move to a written doc with a 24-hour comment window, ask privately in 1:1s, explicitly assign someone to argue the other side, and state your own view last",
+    "Call on them right there — 'Why aren't you saying anything?' — to encourage them to push back openly like the others"
+   ],
+   "explanation_en": "In high power-distance cultures, not challenging a superior publicly is respect; silence isn't agreement but a sign you haven't built the right mechanism. Putting people on the spot makes them more uneasy, and when the most senior person speaks first it sets the tone and closes the space, so the boss should speak last."
+  },
+  {
+   "id": "58b87da1ca",
+   "question": "你按美式习惯宣布了一个架构决定，阿姆斯特丹团队却在决定后继续拉会辩论。按 Erin Meyer 的「大写 D / 小写 d」，这该怎么理解和处理？",
+   "options": [
+    "这是不服从，应强调「已经决定了，执行就好」，避免重开讨论",
+    "荷兰人属于高语境文化，决定后继续辩论是在委婉地表达不满，你应该私下去安抚",
+    "自上而下文化的决定本来就是大写 D，荷兰团队不了解规则，培训一下即可",
+    "共识文化里决定前的辩论是正当程序；应事先写明谁拍板、怎么定、何时锁定"
+   ],
+   "answer": 3,
+   "explanation": "共识型（日、荷）决策慢、靠全员输入，一旦定下就是难改的承诺；自上而下型（美、中）是老板快速拍板、可随时重议的小写 d。你跳过他们的程序，他们觉得你独断，你觉得他们抗命。解法是把决策规则显性化。荷兰属低语境文化，自上而下的决定才是小写 d。",
+   "question_en": "Following American habit, you announce an architecture decision, but the Amsterdam team keeps calling meetings to debate it afterwards. Using Erin Meyer's 'big D / small d', how should you read and handle this?",
+   "options_en": [
+    "It's insubordination; stress that 'it's decided, just execute' to avoid reopening the discussion",
+    "The Dutch are a high-context culture, so continued debate is an indirect sign of displeasure that you should soothe privately",
+    "Top-down decisions are inherently big-D; the Dutch team just doesn't know the rules and needs training",
+    "In consensus cultures, debate before deciding is legitimate process and only then becomes a hard-to-change big-D commitment; state upfront who decides, by what method, and when it locks"
+   ],
+   "explanation_en": "Consensus cultures (Japan, the Netherlands) decide slowly with everyone's input, and once settled it's a firm commitment; top-down cultures (US, China) let the boss decide fast, a small-d decision open to revision. Skip their process and they see you as autocratic while you see them as defiant. The fix is to make the decision rules explicit. The Netherlands is low-context, and it's top-down decisions that are small-d."
+  }
+ ]
+}

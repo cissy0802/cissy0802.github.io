@@ -1,0 +1,69 @@
+{
+ "page": "/talk-deepread/loftus-false-memory-talk25.html",
+ "title": "Elizabeth Loftus ·《你的记忆有多可靠？》— 记忆像维基百科，谁都能改",
+ "page_en": "/talk-deepread/loftus-false-memory-talk25.en.html",
+ "title_en": "Elizabeth Loftus · \"How reliable is your memory?\" — Memory is a Wikipedia page anyone can edit",
+ "src_hash": "eeb5da22eafc",
+ "questions": [
+  {
+   "id": "0d3b8b1a1c",
+   "question": "Loftus 用「记忆像维基百科」概括的那个机制，至今被认为站得最稳。它具体是什么？",
+   "options": [
+    "事后接收的信息会混进原始记忆，整合之后人就分不清某个细节从哪来",
+    "在高压下形成的记忆格外深刻准确，比平静状态下形成的记忆要可靠得多",
+    "创伤记忆会被整段压抑多年，之后再通过心理治疗被完整而准确地找回来",
+    "记忆像录像一样会随时间褪色，越久远的事件丢失的细节越多"
+   ],
+   "answer": 0,
+   "explanation": "误导信息效应：事后信息混入原始记忆，之后只剩一个「记忆」，来源查不回来。Loftus 研究的恰恰不是遗忘；美军模拟审讯研究说明高压下记忆照样能被改写；「压抑后找回」正是记忆战争中她所质疑的一方。",
+   "question_en": "Loftus summed up a mechanism as 'memory is like a Wikipedia page', and it is still considered the most solid part of her work. What exactly is it?",
+   "options_en": [
+    "Information received after an event blends into the original memory, and once integrated, people can't tell where a given detail came from",
+    "Memories formed under high stress are especially vivid and accurate, more reliable than calm ones",
+    "Traumatic memories can be repressed whole for years and then fully recovered through therapy",
+    "Memory fades over time like a recording, so older events lose more detail"
+   ],
+   "explanation_en": "The misinformation effect: post-event information merges into the original memory, leaving a single 'memory' whose sources can't be traced. Loftus studies not forgetting but its opposite; the military interrogation study shows memories formed under stress can still be rewritten; and 'repressed then recovered' is the side she challenged in the memory wars."
+  },
+  {
+   "id": "06c29b8fef",
+   "question": "按 2017 年 Wixted 与 Wells 关于目击信心的综述，Steve Titus 案中最该被陪审团听见的是什么？",
+   "options": [
+    "受害者情绪激动、细节丰富的庭上证词，说明她的记忆真实可靠、值得采信",
+    "两次说法都不重要，因为目击者的信心在任何条件下都说明不了真假",
+    "受害者在庭上说的「我绝对确定就是他」——高信心的指认通常都相当准确",
+    "受害者第一次看照片列队时说的「这张最像」——低信心的初次指认是危险信号"
+   ],
+   "answer": 3,
+   "explanation": "在规范条件下（第一次、未受污染、列队公平、当场记录信心），初次指认的信心很有信息量：高信心的初次指认相当准确，低信心的容易出错；条件一旦不干净，后来的高信心也靠不住。这收窄了「信心说明不了什么」的说法，同时说明 Titus 案的红灯在第一句。",
+   "question_en": "According to Wixted and Wells's 2017 review of eyewitness confidence, what should the jury in the Steve Titus case most have heard?",
+   "options_en": [
+    "The victim's emotional, detailed testimony, showing the memory was genuine and reliable",
+    "Neither statement matters, since eyewitness confidence says nothing about accuracy under any conditions",
+    "The victim's courtroom statement, 'I'm absolutely positive that's the man' — high-confidence identifications are usually accurate",
+    "The victim's words at the first photo lineup, 'That one's the closest' — a low-confidence initial identification is a red flag"
+   ],
+   "explanation_en": "Under clean conditions — first, uncontaminated identification, fair lineup, no administrator influence, confidence recorded on the spot — initial confidence is informative: high-confidence first IDs are fairly accurate and low-confidence ones error-prone, while later confidence under contaminated conditions can't be trusted. This narrows 'confidence means nothing' and shows the red flag in Titus's case was the first statement."
+  },
+  {
+   "id": "2e3f83f479",
+   "question": "2023 年「商场走失」复制研究按编码得出 35% 的假记忆率，被试自认记得的只有 14%，另一项重读访谈稿的分析推算约 4%。这组分歧说明了什么？",
+   "options": [
+    "事后信息能扭曲记忆已无争议；争的是整段假记忆多常见、多完整，及「记得」怎么定义",
+    "复制研究证实约四分之一的比例可以推广到一般人群，争议已经平息",
+    "只要被试本人说不记得，就说明暗示性的问话对他们的记忆根本没有产生任何影响",
+    "复制研究失败了，假记忆植入已被证伪，原实验的结论应当撤回"
+   ],
+   "answer": 0,
+   "explanation": "复制研究的编码结果比原版还高，但被试本人的判断和逐字重读都给出低得多的数字。双方都承认假记忆会发生，争的是频率与完整度；原作者当年就说比例不能推广，研究只是「存在性证明」。",
+   "question_en": "A 2023 replication of 'lost in the mall' coded 35% of participants as having false memories, yet only 14% said they remembered, and a reanalysis of the transcripts put it near 4%. What does this disagreement show?",
+   "options_en": [
+    "That post-event information can distort memory is no longer disputed; the fight is over how common and complete whole false memories are, and researchers and participants define 'remembering' very differently",
+    "The replication confirmed that roughly a quarter generalizes to the population, so the dispute is settled",
+    "If participants say they don't remember, suggestive questioning had no effect on their memory at all",
+    "The replication failed, false memory implantation has been disproven, and the original conclusion should be retracted"
+   ],
+   "explanation_en": "The replication's coded rate exceeded the original, but participants' own judgements and the transcript reread give far lower figures. Both sides agree false memories happen; they dispute frequency and completeness. The original authors themselves said the rate couldn't be generalized and the study was an existence proof."
+  }
+ ]
+}

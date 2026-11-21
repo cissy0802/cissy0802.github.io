@@ -1,0 +1,69 @@
+{
+ "page": "/writing/chinese-writing-day19.html",
+ "title": "写作与表达：中文写作的隐疾 — Day 19",
+ "page_en": "/writing/chinese-writing-day19.en.html",
+ "title_en": "Writing & Expression: The Hidden Ailments of Chinese Prose — Day 19",
+ "src_hash": "93e2ecd6f211",
+ "questions": [
+  {
+   "id": "93a539146c",
+   "question": "按「可证伪测试」，如何判断周报里的「我们将持续提升用户体验、狠抓落实」？",
+   "options": [
+    "反面没人会主张，等于没说，应改写成谁、做什么、何时完成、怎么验证",
+    "它只要补上「高度重视」等更有力的修饰，读者就会感到团队的决心",
+    "它的问题在于不够凝练，换成「兹、特此」一类文言词收紧句子就能解决",
+    "它态度积极、措辞得体，在组织环境里属于安全的写法，只要不出现翻译腔就可以保留"
+   ],
+   "answer": 0,
+   "explanation": "可证伪测试是把一句话反过来说：没人会主张「降低用户体验、敷衍了事」，原句就等于没说，需要换成具体动作。以为套话「安全」是文中点名的误区，「兹、特此」这类假文言也只是另一种八股。",
+   "question_en": "Applying the 'falsifiability test', how should you judge a status-report line like 'We will keep improving user experience and drive execution hard'?",
+   "options_en": [
+    "Nobody would argue for its opposite, so it carries no information; rewrite it as who does what, by when, and how it will be checked",
+    "It just needs stronger modifiers like 'highly prioritize' so readers sense the team's resolve",
+    "Its problem is a lack of concision; tightening it with faux-classical formulas would fix it",
+    "It is positive and appropriately worded, a safe choice in an organization, and fine to keep as long as there's no translationese"
+   ],
+   "explanation_en": "The test is to flip the sentence: no one would advocate 'worsen user experience and slack off', so the original says nothing and should become concrete actions. Treating boilerplate as 'safe' is a misconception the piece names, and faux-classical formulas are just another kind of boilerplate."
+  },
+  {
+   "id": "606e36d368",
+   "question": "「我们对该方案进行了讨论，并对其细节作出了优化」，按「万能动词」原则应怎样修改？",
+   "options": [
+    "删掉句中所有的「的」和「对」，改成「我们进行讨论方案，作出优化细节」",
+    "换一个更精确、更正式的搭配动词：「我们对该方案开展了深入讨论，并对其细节实施了优化」",
+    "保留原句，因为「进行」「作出」让表达显得正式专业，适合书面汇报",
+    "把被压成名词的动作还原成动词、删掉空壳动词：「我们讨论了这个方案，并优化了细节」"
+   ],
+   "answer": 3,
+   "explanation": "「进行、作出」是空洞的万能动词，真正的动作被埋进名词「讨论」「优化」里，即 Helen Sword 说的僵尸名词；修法只有一步：名词变回动词，删掉空壳。换成「开展、实施」只是换了个空壳，以为「进行」显得专业是文中点名的误区。",
+   "question_en": "How should 'We conducted a discussion of the plan and made optimizations to its details' be revised under the 'empty verbs' principle?",
+   "options_en": [
+    "Strip out every particle and preposition so it reads 'We conducted discuss plan, made optimize details'",
+    "Swap in more precise support verbs: 'We carried out a discussion of the plan and implemented optimizations to its details'",
+    "Keep it, since 'conduct' and 'make' sound formal and professional, right for a written report",
+    "Turn the buried nouns back into verbs and drop the empty verbs: 'We discussed the plan and optimized the details'"
+   ],
+   "explanation_en": "Empty verbs like 'conduct' and 'make' (in Chinese, jinxing and zuochu) carry no meaning; the real actions are buried in the nouns 'discussion' and 'optimization' — Helen Sword's zombie nouns. The fix is one step: restore the verb and delete the shell. Swapping in 'carry out' or 'implement' just changes the shell, and thinking such verbs sound professional is a misconception the piece calls out."
+  },
+  {
+   "id": "749aa6de74",
+   "question": "「文白相济」主张向文言借什么、不借什么？",
+   "options": [
+    "借文言的正式感，用「兹、特此、谨、望周知」这类词，让通知显得庄重而又凝练有分量",
+    "借文言的典故与生僻字，越密集越能体现作者的修养和文字功力",
+    "借文言的凝练与节奏，比如在最需要回味处用一个四字格，不借它的腔调和公文式虚饰",
+    "什么都不借，现代白话应当彻底摆脱文言，越接近口语大白话越好"
+   ],
+   "answer": 2,
+   "explanation": "文白相济是用文言的简洁、音节为现代意思服务，借筋骨不借行头。「兹、特此」这类假文言被明确称为另一种八股，堆典故掉书袋是另一误区；文中也说白话不必是大白话。",
+   "question_en": "What does 'blending classical and vernacular' say to borrow from classical Chinese, and what not to borrow?",
+   "options_en": [
+    "Borrow its formality, using stock formulas like 'hereby' and 'be it known' to make a notice sound solemn and compact",
+    "Borrow its allusions and rare characters; the denser they are, the more cultivated the writer appears",
+    "Borrow its concision and rhythm, such as a four-character phrase where resonance matters most, but not its airs or bureaucratic ornament",
+    "Borrow nothing: modern vernacular should break with classical Chinese entirely and be as colloquial as possible"
+   ],
+   "explanation_en": "The idea is to let classical concision and cadence serve modern meaning — borrowing the bones, not the costume. Faux-classical formulas like 'hereby notify' are explicitly called another kind of boilerplate, piling on allusions is another trap, and the piece says vernacular need not be flat colloquial speech."
+  }
+ ]
+}

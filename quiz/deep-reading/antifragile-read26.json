@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/antifragile-read26.html",
+ "title": "《反脆弱》",
+ "page_en": "/deep-reading/antifragile-read26.en.html",
+ "title_en": "Antifragile",
+ "src_hash": "3fb9f7aa528a",
+ "questions": [
+  {
+   "id": "eb5c7473cb",
+   "question": "塔勒布说可以「不预测就检测脆弱」。具体看什么？",
+   "options": [
+    "看对波动的非线性反应：同样总量的冲击，集中一次比分散多次伤害大得多就是脆弱",
+    "看系统过去是否长期平稳没出过事，记录越干净说明越安全",
+    "请专家预测下一次大冲击的时间和规模，再看系统能否承受",
+    "看系统的平均负荷是否低于设计容量，只要平均值留有充足余量，就说明它不脆弱"
+   ],
+   "answer": 0,
+   "explanation": "脆弱是对波动的凹反应：一次十米的摔远惨过十次一米的摔，交通拥堵对车流量也是凹的。平均数在非线性世界里会撒谎；「长期平稳＝安全」正是火鸡问题；而靠预测恰恰是塔勒布说做不到的事。",
+   "question_en": "Taleb says you can detect fragility without predicting anything. What exactly do you look at?",
+   "options_en": [
+    "The system's nonlinear response to variation: if the same total shock hurts far more when it arrives all at once than spread out, the response is concave and the system is fragile",
+    "Whether the system has run smoothly for a long time without incident; the cleaner the record, the safer it is",
+    "Have experts forecast the timing and size of the next big shock, then check whether the system can withstand it",
+    "Whether the system's average load sits below its design capacity; a margin on the average shows it isn't fragile"
+   ],
+   "explanation_en": "Fragility is a concave response to volatility: one ten-metre fall is far worse than ten one-metre falls, and traffic delay is concave in traffic volume. Averages lie in a nonlinear world; 'long calm means safe' is the turkey problem; and forecasting is exactly what Taleb says can't be done."
+  },
+  {
+   "id": "a30ade289b",
+   "question": "杠铃策略为什么要掐掉「中等风险」的中间地带？",
+   "options": [
+    "中间地带的风险收益比最高，掐掉它是为了降低整体波动、换来一条更加平稳的收益曲线",
+    "安全一头锁死输不起的部分、冒险小头敞开上行；中等风险常是藏着尾部巨亏的伪装",
+    "两头各放一半资金，可以让组合的平均风险恰好落在中等水平，比直接买中等资产更分散",
+    "杠铃的目标是最大化预期收益，极端资产的平均回报总是高于中等资产"
+   ],
+   "answer": 1,
+   "explanation": "杠铃把八九成放进几乎零波动的地方、一两成押在可能归零但上行几十倍的东西：下行封死、上行敞开，整体是凸的。被评为「稳健」的中间资产（如次贷危机里的 AAA 债券）往往藏着尾部风险。它不是五五开，也不是为了平滑收益或追求平均回报。",
+   "question_en": "Why does the barbell strategy cut out the 'medium-risk' middle?",
+   "options_en": [
+    "The middle has the best risk–reward ratio, and cutting it reduces overall volatility in exchange for a smoother return curve",
+    "The very safe end locks away what you can't afford to lose and the small very risky end leaves the upside open, while medium risk is often disguised high risk hiding uncounted tail losses",
+    "Putting half in each extreme lands the portfolio's average risk exactly at a medium level, more diversified than buying medium assets directly",
+    "The barbell aims to maximize expected return, since extreme assets always average higher returns than medium ones"
+   ],
+   "explanation_en": "The barbell puts 80–90% where volatility is near zero and 10–20% into bets that may go to zero but could return many times over: capped downside, open upside, a convex whole. 'Safe' middle assets — like AAA mortgage bonds in the subprime crisis — often hide tail risk. It isn't a 50/50 split, nor about smoothing returns or chasing average return."
+  },
+  {
+   "id": "bd1a6e82f4",
+   "question": "按塔勒布基于凹凸非对称性的判据，医疗干预在什么情况下划算？",
+   "options": [
+    "病重到不干预就会出大事时；对小毛病干预是凹风险，长期是亏的",
+    "只要最新研究支持某种疗法，就应该尽快采用",
+    "任何情况都不该干预，应完全信任身体的自愈能力",
+    "越早干预越好，任何小毛病都要及时处理掉，才能防止它慢慢发展成大病"
+   ],
+   "answer": 0,
+   "explanation": "医源性伤害说明干预本身有代价：小病上干预的收益有限、出错的代价可能很大，是凹的；只有不干预必死时才翻成凸。这不是反医学——误读中提到，把它读成拒绝必要治疗是危险的；追最新疗法则正是他批评的「新奇癖」。",
+   "question_en": "By Taleb's criterion based on the asymmetry of convex and concave payoffs, when is medical intervention worth it?",
+   "options_en": [
+    "When the condition is serious enough that not intervening would be disastrous; intervening in minor ailments is a concave bet — small occasional help, occasional big harm — that loses over time",
+    "Whenever the latest research supports a treatment, it should be adopted as soon as possible",
+    "Never: one should trust the body's capacity to heal itself completely",
+    "The earlier the better, since treating minor problems promptly keeps them from becoming major"
+   ],
+   "explanation_en": "Iatrogenics means intervention has its own costs: on minor ailments the gain is small and the potential error large — a concave payoff — and only when non-intervention is fatal does it flip to convex. This isn't anti-medicine; the piece warns that reading it as refusing necessary treatment is dangerous, and chasing the newest treatment is the 'neomania' he criticizes."
+  }
+ ]
+}

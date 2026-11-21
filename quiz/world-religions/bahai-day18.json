@@ -1,0 +1,69 @@
+{
+ "page": "/world-religions/bahai-day18.html",
+ "title": "世界宗教 Day 18：巴哈伊信仰",
+ "page_en": "/world-religions/bahai-day18.en.html",
+ "title_en": "World Religions Day 18: The Bahá'í Faith",
+ "src_hash": "77f701177a15",
+ "questions": [
+  {
+   "id": "62be03ce4b",
+   "question": "巴哈伊信仰的「渐进启示」如何看待摩西、佛陀、耶稣、穆罕默德与巴哈欧拉之间的关系？",
+   "options": [
+    "同一序列上的显示者：灵性教诲不变，社会律法随时代更新，巴哈欧拉也不是最后一位",
+    "巴哈欧拉是众先知的封印，前面各位的启示都是在为他铺路，此后不会再有新的显示者出现",
+    "各宗教教义本质上完全等价，所以信徒可以同时保留原来的宗教身份、混合信奉多种宗教",
+    "显示者都是神的道成肉身，因而每一位所说的律法都永久有效、不会更新"
+   ],
+   "answer": 0,
+   "explanation": "渐进启示把各位显示者看成同一位教师面向不同时代的连续课程：灵性教诲不变，律法制度因时而设，巴哈欧拉之后至少一千年还会有下一位。「封印」恰是伊斯兰主流对穆罕默德的定位，也是它不接受巴哈伊的原因；「各教等价可混信」是常见误解。",
+   "question_en": "How does the Bahá'í doctrine of progressive revelation see the relationship between Moses, the Buddha, Jesus, Muhammad and Bahá'u'lláh?",
+   "options_en": [
+    "They are Manifestations in one series: the spiritual teachings stay constant, the social laws are renewed for each age, and Bahá'u'lláh is not the last",
+    "Bahá'u'lláh is the seal of the prophets; the earlier revelations prepared for him and no Manifestation will come after",
+    "All religions are doctrinally equivalent, so believers may keep their old religious identity and practise a blend",
+    "Each Manifestation is God incarnate, so every law any of them gave remains binding forever"
+   ],
+   "explanation_en": "Progressive revelation treats the Manifestations as successive lessons from one teacher to different ages: spiritual teachings persist, laws and institutions change, and another Manifestation is expected no sooner than a thousand years after Bahá'u'lláh. The 'seal of the prophets' is mainstream Islam's claim about Muhammad and the very reason it rejects the Bahá'í Faith; 'all religions are the same, mix freely' is a common misreading."
+  },
+  {
+   "id": "0a148c4157",
+   "question": "印度巴哈伊机构报出约 200 万信徒，人口普查却只有几千人自报为巴哈伊。最合理的解释是什么？",
+   "options": [
+    "两把尺子不同：一个数名册上签过入教声明的人，一个数普查时自报这个宗教的人",
+    "大批信徒受到迫害后不敢在人口普查中表明身份，所以普查结果严重低估了真实人数",
+    "教会机构为了扩大影响而系统性地夸大人数，普查数字才是真实规模",
+    "大多数人入教后不久又集体退出，名册没有及时更新，两边统计年份也不同"
+   ],
+   "answer": 0,
+   "explanation": "落差不是谁在说谎，而是名册登记与自我申报两种口径的差别；普查员按姓名归类宗教、入教又不改名，进一步拉大差距。因受迫害而隐瞒身份更像伊朗的情形，原文对印度的解释是统计口径。",
+   "question_en": "Bahá'í institutions in India report about two million members, while the national census counts only a few thousand self-identified Bahá'ís. What best explains the gap?",
+   "options_en": [
+    "The two figures use different yardsticks: one counts people who signed a declaration and remain on the rolls, the other counts people who name the religion themselves at the census",
+    "Many believers hide their identity in the census for fear of persecution, so the census badly undercounts",
+    "The institutions systematically inflate their numbers for influence, and the census shows the true size",
+    "Most converts soon left en masse, the rolls were never updated, and the two counts come from different years"
+   ],
+   "explanation_en": "The gap is not a matter of anyone lying but of registration versus self-report; census takers in rural India often assign religion by name, and converts do not change their names. Hiding for fear of persecution fits Iran better; for India the explanation is the counting method."
+  },
+  {
+   "id": "18cb8ffc19",
+   "question": "巴哈伊与新教都反对教阶制，结果一个几乎没有分支，一个分出无数教派。关键区别在哪里？",
+   "options": [
+    "巴哈伊保留了一个世袭的神职阶层来裁定教义，新教彻底取消了任何形式的神职",
+    "巴哈伊把权威交给写定的继承文本和选举出的九人合议，新教则推向个人良心与经文",
+    "巴哈伊历史短、人口少，还没来得及分裂；新教只是因为传播时间更长、地域更广才分出了教派",
+    "巴哈伊允许每位信徒自行定义教义，分歧都在私人层面消化，不会公开分裂"
+   ],
+   "answer": 1,
+   "explanation": "巴哈伊废除神职后，把解释权写进「圣约」的继承链，事务交给无提名、无竞选选出的九人合议，另立权威者被判为违约者；代价是解释弹性小、个人缺少制度化异议渠道。它没有任何神职阶层，也不允许个人把自己的理解当作权威教义推行。",
+   "question_en": "Both the Bahá'í Faith and Protestantism rejected clerical hierarchy, yet one has almost no sects and the other has countless. What is the key difference?",
+   "options_en": [
+    "The Bahá'í Faith kept a hereditary priesthood to rule on doctrine, while Protestantism abolished every form of clergy",
+    "The Bahá'í Faith vests authority in a written line of succession and elected nine-member councils, while Protestantism pushed authority to individual conscience and scripture",
+    "The Bahá'í Faith is younger and smaller and simply hasn't had time to split; Protestantism just spread for longer",
+    "The Bahá'í Faith lets each believer define doctrine personally, so disagreements stay private and never become public splits"
+   ],
+   "explanation_en": "Having abolished clergy, the Bahá'í Faith wrote interpretive authority into the Covenant's line of succession and handed affairs to nine-member bodies elected without nominations or campaigning; anyone setting up a rival authority is declared a Covenant-breaker. The cost is less interpretive flexibility and no institutional channel for dissent. There is no clergy at all, and individuals may not promote their own understanding as authoritative."
+  }
+ ]
+}

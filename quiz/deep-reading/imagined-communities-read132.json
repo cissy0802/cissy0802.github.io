@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/imagined-communities-read132.html",
+ "title": "《想象的共同体》",
+ "page_en": "/deep-reading/imagined-communities-read132.en.html",
+ "title_en": "Imagined Communities",
+ "src_hash": "24f225bca3e2",
+ "questions": [
+  {
+   "id": "9f35f7b13a",
+   "question": "安德森说民族是「想象的共同体」，他与把民族的「发明」等同于「捏造」的看法有什么不同？",
+   "options": [
+    "民族是古老族群在近代被唤醒了自我意识，「想象」指的是重新发现已有的认同",
+    "民族是精英为了统治目的而捏造的虚假意识，「想象」就是要揭穿它背后并不存在真实的共同体",
+    "民族的想象一旦发生便不再需要维护，所以它比宗教、亲属这类纽带更稳固",
+    "任何大过面对面村庄的共同体都只能靠想象存在，共同体的区别不在真伪，而在被想象的方式"
+   ],
+   "answer": 3,
+   "explanation": "安德森同意民族是现代发明，但批评把「发明」悄悄等同于「捏造」，仿佛背后还有一个真共同体可以对照；他要问的是人们用报纸、地图、日历等什么具体手段去想象。「精英骗局」与「古老民族被唤醒」恰是他两头都否定的说法。",
+   "question_en": "Anderson calls the nation an 'imagined community'. How does this differ from the view that treats the 'invention' of nations as 'fabrication'?",
+   "options_en": [
+    "Nations are ancient peoples whose self-awareness was awakened in modern times, and 'imagined' means rediscovering an existing identity",
+    "The nation is a false consciousness fabricated by elites to rule, and 'imagined' exposes that no real community stands behind it",
+    "Once a nation has been imagined it no longer needs maintaining, which makes it sturdier than religious or kinship ties",
+    "Any community larger than a face-to-face village can exist only through imagination; communities differ not by being genuine or false but by the style in which they are imagined"
+   ],
+   "explanation_en": "Anderson agrees nations are modern inventions but faults the slide from 'invention' to 'fabrication', as if a genuine community lay behind it for comparison; his question is what concrete means — newspapers, maps, calendars — people use to imagine it. 'Elite hoax' and 'ancient nation awakened' are the two positions he rejects."
+  },
+  {
+   "id": "465b8c0da7",
+   "question": "西属美洲独立时没有成为一个大国，而是沿着殖民行政区的边界碎成十几个国家。安德森如何解释？",
+   "options": [
+    "安第斯山脉等地理屏障阻断了交通往来，各地区被险峻的地形彼此隔开，只能各自建国",
+    "西班牙王室有意分而治之，在独立之前就为每个地区分别培养了各自的民族意识",
+    "仕途被封顶在本行政区内，同行者都是本区人，加上本地小报，行政区就被想成了祖国",
+    "各地区说着不同的语言和方言，语言的边界自然而然地划出了后来国家的边界"
+   ],
+   "answer": 2,
+   "explanation": "这些新国家和宗主国说同一种语言，语言解释不了它们。安德森借「朝圣」概念：美洲出生的克里奥尔官员几乎升不到马德里，一辈子在同一行政区里流动，共同被封顶的命运让他们把这块地方想成「我们的」，殖民者画的行政线于是成了想象的边界。",
+   "question_en": "At independence, Spanish America did not become one large state but broke into a dozen countries along colonial administrative lines. How does Anderson explain this?",
+   "options_en": [
+    "Geographic barriers such as the Andes cut off travel, so each region was isolated by terrain and had to found its own state",
+    "The Spanish crown deliberately divided and ruled, cultivating a separate national consciousness in each region before independence",
+    "Creole careers were capped within their own administrative unit, their fellow travellers were all from that unit, and with local newspapers the unit came to be imagined as the homeland",
+    "The regions spoke different languages and dialects, and linguistic boundaries naturally drew the national borders"
+   ],
+   "explanation_en": "These new states spoke the same language as the metropole, so language can't explain them. Borrowing the idea of pilgrimage, Anderson notes that American-born creole officials almost never rose to Madrid and spent their careers circulating within one unit; their shared ceiling made them imagine that territory as 'ours', so colonial administrative lines became imagined borders."
+  },
+  {
+   "id": "9fb54846ae",
+   "question": "安德森认为报纸对想象民族最关键的是什么？",
+   "options": [
+    "头版日期把不相干的新闻并列为「今天」，读者确信无数陌生人此刻在读同样的东西",
+    "报纸让读者第一次见到远方同胞的照片和名字，从而真正认识了彼此",
+    "报纸记录民族的古老历史，让读者看到同胞跨越几百年的连续传承",
+    "社论有计划地宣传民族主义观点，报社编辑部是自上而下塑造民族意识的指挥中心所在"
+   ],
+   "answer": 0,
+   "explanation": "报纸凭「都发生在今天」把旱灾、议会、谋杀放在同一页，读报成了「晨祷」式的群众仪式，体现的是同质、空洞的「与此同时」。文中强调这一切没有人刻意策划，民族是印刷资本主义的意外结果；读者也恰恰不知道其他读者是谁。",
+   "question_en": "According to Anderson, what is the most important thing a newspaper does for imagining the nation?",
+   "options_en": [
+    "The date on the front page binds unrelated stories together as 'today', and each reader is confident thousands of strangers are reading the same thing right now",
+    "It shows readers photos and names of distant compatriots for the first time, so they actually get to know one another",
+    "It records the nation's ancient history, showing readers an unbroken lineage of compatriots across centuries",
+    "Its editorials systematically promote nationalist views, making the newsroom the command centre of national consciousness"
+   ],
+   "explanation_en": "The paper puts a drought, a parliamentary debate and a murder on one page simply because they all happened 'today'; reading it becomes a mass ceremony like a 'morning prayer', expressing homogeneous, empty time and 'meanwhile'. Anderson stresses no one planned this — the nation was an unintended result of print capitalism — and readers precisely do not know who the others are."
+  }
+ ]
+}

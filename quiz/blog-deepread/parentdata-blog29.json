@@ -1,0 +1,69 @@
+{
+ "page": "/blog-deepread/parentdata-blog29.html",
+ "title": "Emily Oster · ParentData — 「没有任何剂量被证明是安全的」是一句逻辑错误，不是一个科学结论",
+ "page_en": "/blog-deepread/parentdata-blog29.en.html",
+ "title_en": "Emily Oster · ParentData — \"no amount has been proven safe\" is a logic error, not a finding",
+ "src_hash": "74932b13e402",
+ "questions": [
+  {
+   "id": "d2f4d030a3",
+   "question": "Emily Oster 为什么认为「没有任何剂量的酒精被证明是安全的」是一句逻辑错误？",
+   "options": [
+    "它把「没被证明安全」当成「被证明不安全」，把价值判断说成了科学结论",
+    "因为这句话过于保守，产科医生应当改为给孕妇推荐一个具体的、可执行的安全剂量",
+    "因为孕期饮酒的研究都是观察研究，所以关于酒精的任何结论都不可信",
+    "因为研究已经证明少量饮酒对胎儿是安全的，所以孕妇可以放心少量饮酒"
+   ],
+   "answer": 0,
+   "explanation": "这句话是一条决策规则伪装成的科学结论。她同时给出机制理由：肝脏把酒精变成有毒的乙醛，慢喝来得及代谢、暴饮才跟不上，所以「暴饮有害」推不出「少量有害」。但她并没有说「所以可以喝」，也明确写了大量饮酒有害无疑。",
+   "question_en": "Why does Emily Oster call 'No amount of alcohol has been proven safe' a logical error?",
+   "options_en": [
+    "It slides from 'not proven safe' to 'proven unsafe', presenting a value judgement about how cautious to be under uncertainty as if it were a scientific finding",
+    "Because the phrase is too conservative, and obstetricians should instead recommend a specific safe dose",
+    "Because studies of drinking in pregnancy are all observational, so no conclusion about alcohol can be trusted",
+    "Because research has proven light drinking safe for the fetus, so pregnant women can drink a little without worry"
+   ],
+   "explanation_en": "The phrase is a decision rule dressed up as a scientific conclusion. She also gives a mechanism: the liver turns alcohol into toxic acetaldehyde, which slow drinking can clear and bingeing overwhelms, so 'binge drinking is harmful' doesn't imply 'light drinking is harmful'. But she does not conclude 'so drink', and she says plainly that heavy drinking is harmful."
+  },
+  {
+   "id": "f7fa4cd5cd",
+   "question": "观察研究发现孕期大量喝咖啡的女性流产率更高。Oster 指出的那个混杂因素是怎样起作用的？",
+   "options": [
+    "孕吐预示妊娠健康又让人喝不下咖啡，还在大量喝的人往往没孕吐、本就风险偏高",
+    "流产后的女性更容易回忆起自己喝过很多咖啡，造成回忆偏差",
+    "喝咖啡多的孕妇通常年龄更大，年龄才是推高流产率的真正原因",
+    "孕期咖啡因的代谢变慢，即使少量咖啡也会在体内不断蓄积，所以实际剂量被严重低估了"
+   ],
+   "answer": 0,
+   "explanation": "孕吐同时影响两边：它预示妊娠更健康，又让人喝不下咖啡，于是咖啡与流产之间的相关可能整条都是孕吐画出来的。这不是技术小瑕疵，而是足以把结论翻过来的混杂。",
+   "question_en": "Observational studies find higher miscarriage rates among pregnant women who drink a lot of coffee. How does the confounder Oster points to work?",
+   "options_en": [
+    "Nausea signals a healthy pregnancy and also makes coffee hard to stomach, so those still drinking lots of coffee tend to have little nausea and a higher baseline miscarriage risk",
+    "Women who miscarry are more likely to recall drinking a lot of coffee, creating recall bias",
+    "Heavy coffee drinkers tend to be older, and age is what really raises the miscarriage rate",
+    "Caffeine metabolism slows in pregnancy, so even small amounts accumulate and the dose is underestimated"
+   ],
+   "explanation_en": "Nausea affects both sides: it signals a healthier pregnancy and makes coffee unpalatable, so the whole coffee–miscarriage correlation may be drawn by nausea. This isn't a minor technical flaw but a confounder able to reverse the conclusion."
+  },
+  {
+   "id": "2328628ea9",
+   "question": "有人说「我的直觉是送日托更适合我们家」。Oster 会怎样看待这类「直觉」？",
+   "options": [
+    "直觉是大脑对已有证据的无意识整合，相当于一种快速而可靠的专业判断，值得信赖",
+    "直觉是扎根很深的价值，比数据更可靠，所以在做决定时应当优先于任何证据",
+    "直觉不可靠，正确做法是让数据替你做出最终决定",
+    "它本质是偏好，说成偏好后就能和费用、通勤等一起称重，也可能被新信息推翻"
+   ],
+   "answer": 3,
+   "explanation": "她拒绝「该听数据还是听直觉」这个前提：数据不该发号施令，直觉也不该。「直觉」听起来像不可反驳的王牌，换成「偏好」就成了可以和成本一起权衡的量。让数据替你决定同样被她否定——第三问「你该怎么选」本来就属于你。",
+   "question_en": "Someone says, 'My gut feeling is that day care is right for our family.' How would Oster view this kind of 'gut feeling'?",
+   "options_en": [
+    "Gut feeling is the brain's unconscious synthesis of evidence, a kind of rapid expert judgement",
+    "Gut feeling is a deep-rooted value, more reliable than data, and should take priority over evidence",
+    "Gut feeling is unreliable, so the right move is to let the data make the final decision for you",
+    "It's essentially a preference; once called that, it can be weighed against cost, waiting lists and commute time, and new information can overturn it"
+   ],
+   "explanation_en": "She rejects the premise of 'data or gut': data shouldn't boss you around, and neither should your gut. 'Gut feeling' sounds like an unbeatable trump card; call it a preference and it becomes something to weigh against costs. Letting data decide is also rejected — the third question, what you should choose, belongs to you."
+  }
+ ]
+}
