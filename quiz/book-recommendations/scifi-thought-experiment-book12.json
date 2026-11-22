@@ -1,0 +1,69 @@
+{
+ "page": "/book-recommendations/scifi-thought-experiment-book12.html",
+ "title": "Issue 12：科幻里的中国与未来 — 把一个变量推到极限 | 好书推荐",
+ "page_en": "/book-recommendations/scifi-thought-experiment-book12.en.html",
+ "title_en": "Issue 12: China and the Future in Science Fiction — push one variable to its limit | Book Recommendations",
+ "src_hash": "40f9a5491822",
+ "questions": [
+  {
+   "id": "136b1156aa",
+   "question": "《三体》的黑暗森林推演里，哪两个零件咬合在一起，使「先发制人」成为唯一理性选择？",
+   "options": [
+    "资源稀缺让文明必然开战，光速限制让沟通失败",
+    "猜疑链让你无法信任对方，技术爆炸让你无法等待",
+    "生存本能压倒道德，弱小文明总会被强者吞并",
+    "智子封锁了科学进步，降维打击让防御失去意义"
+   ],
+   "answer": 1,
+   "explanation": "两条公理之下，第一个零件是猜疑链：隔着光年无法确认对方善恶，也无法确认对方如何判断你，善意无法被证明；第二个是技术爆炸：弱小文明可能短期跃迁反超，「现在没威胁」毫无保证。猜疑链让你无法信任，技术爆炸让你无法等待，两者一咬合才推出先发制人。",
+   "question_en": "In the dark forest reasoning of The Three-Body Problem, which two components lock together to make a preemptive strike the only rational choice?",
+   "options_en": [
+    "Resource scarcity makes war inevitable; the speed of light makes communication fail",
+    "Chain of suspicion means you cannot trust; technological explosion means you cannot wait",
+    "Survival instinct overrides morality; weak civilizations are always swallowed by strong ones",
+    "Sophons block scientific progress; dimensional strikes make any defense pointless"
+   ],
+   "explanation_en": "Under the two axioms, the first component is the chain of suspicion: across light-years you cannot know whether the other is benign, nor how it judges you, so goodwill cannot be proved. The second is technological explosion: a weak civilization may leap ahead quickly, so \"no threat now\" guarantees nothing. Suspicion rules out trust, explosion rules out waiting, and together they yield the first strike."
+  },
+  {
+   "id": "3c439a6cf0",
+   "question": "这篇推荐认为把黑暗森林逻辑直接搬到现实合作与竞争中，最大的问题在哪里？",
+   "options": [
+    "黑暗森林已被天文学观测证伪，因此没有任何参考价值",
+    "现实常是重复博弈或有第三方担保，信任能被逐步建立",
+    "现实中暴露信息从不带来风险，公开总是最优的策略",
+    "现实中的对手通常比较弱小，所以根本不需要隐藏自己"
+   ],
+   "answer": 1,
+   "explanation": "文章说黑暗森林是逻辑自洽的思想实验，不是被验证的宇宙学，它的前提是一次性博弈加沟通成本无穷。现实里只要还会再见面或有第三方能担保，猜疑链就能被部分打破，主动暴露以建立可信承诺恰恰是人类的办法。但它也没说公开总是对的，每次公开都该是算过账的选择。",
+   "question_en": "According to this book guide, what is the biggest problem with carrying dark forest logic straight into real-world cooperation and competition?",
+   "options_en": [
+    "The dark forest has been falsified by astronomical observation, so it has no value",
+    "Real life is often a repeated game or has third-party guarantees, so trust can be built over time",
+    "Disclosing information in real life never carries risk, so openness is always optimal",
+    "Real-world rivals are usually weak, so there is no need to hide yourself at all"
+   ],
+   "explanation_en": "The guide calls the dark forest a self-consistent thought experiment, not verified cosmology, resting on a one-shot game with infinite communication cost. Where parties will meet again or a third party can vouch, the chain of suspicion can be partly broken, and disclosing to build credible commitments is how humans do it. It does not say openness is always right either: each disclosure should be a calculated choice."
+  },
+  {
+   "id": "514fc06b45",
+   "question": "这篇推荐怎样概括韩松《地铁》这类科幻的方法？",
+   "options": [
+    "当作照见当下的暗镜：把已存在的加速与异化拧到极致",
+    "当作硬科幻的思想实验：只改一个物理定律再严密推演",
+    "当作望向未来的望远镜：严谨推演技术的下一步走向",
+    "当作逃离现实的出口：为读者提供解谜和反转的快感"
+   ],
+   "answer": 0,
+   "explanation": "文章说韩松把科幻当成照现实的暗镜而不是望向未来的望远镜，他写的不是「未来会怎样」，而是「当下已经如此，只是我们假装没看见」。他的叙事刻意「反爽」，没有英雄、没有解谜快感、没有最终真相，让读者停在无解的状态里。",
+   "question_en": "How does this book guide characterize the method of science fiction like Han Song's Subway?",
+   "options_en": [
+    "As a dark mirror on the present, twisting existing acceleration and alienation to the extreme",
+    "As a hard-SF thought experiment, changing one physical law and reasoning it through strictly",
+    "As a telescope pointed at the future, rigorously projecting technology's next steps",
+    "As an escape from reality, giving readers the pleasure of puzzles and plot twists"
+   ],
+   "explanation_en": "The guide says Han Song uses science fiction as a dark mirror on reality rather than a telescope on the future: not \"what the future will be\" but \"this is already how things are; we just pretend not to see.\" His storytelling is deliberately unsatisfying — no heroes, no puzzle-solving payoff, no final truth — leaving readers stuck in the unresolved."
+  }
+ ]
+}

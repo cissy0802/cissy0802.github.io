@@ -1,0 +1,69 @@
+{
+ "page": "/health-longevity/palliative-care-day44.html",
+ "title": "健康长寿 Day 44 — 姑息与临终医学",
+ "page_en": "/health-longevity/palliative-care-day44.en.html",
+ "title_en": "Health & Longevity Day 44 — Palliative & End-of-Life Medicine",
+ "src_hash": "46dac05033cc",
+ "questions": [
+  {
+   "id": "54ab0a4016",
+   "question": "一位刚确诊转移性肺癌、仍在接受化疗的患者，医生建议同时接入姑息照护团队。按这篇文章，这意味着什么？",
+   "options": [
+    "主要为家属提供心理支持，与患者本人的治疗无关",
+    "医生判断治疗已无望，转入预期生存不足半年的阶段",
+    "与抗癌治疗并行，控制症状、对齐治疗目标，越早越好",
+    "需要先停掉化疗，因为姑息与积极治疗只能二选一"
+   ],
+   "answer": 2,
+   "explanation": "文章的关键区分是：姑息照护面向任何严重疾病、任何病程，可与治愈性治疗并行；预期生存不足六个月、不再追求治愈的临终关怀只是它的末段。早期介入能少做无效侵入性治疗、更早控制疼痛谵妄抑郁。把姑息当成放弃治疗，是文中第一条误区。",
+   "question_en": "A patient just diagnosed with metastatic lung cancer, still on chemotherapy, is advised to bring in a palliative care team as well. According to the article, what does this mean?",
+   "options_en": [
+    "It mainly offers psychological support to the family and has nothing to do with the patient's treatment",
+    "The doctor has judged treatment hopeless, moving to the stage of under six months to live",
+    "It runs alongside cancer treatment to manage symptoms and align goals, and earlier is better",
+    "Chemotherapy must stop first, because palliative and active treatment are either-or"
+   ],
+   "explanation_en": "The article's key distinction: palliative care is for any serious illness at any stage and can run alongside curative treatment; hospice, for expected survival under six months when cure is no longer pursued, is only its last segment. Early involvement means fewer futile invasive treatments and earlier control of pain, delirium and depression. Equating palliative care with giving up is the article's first misconception."
+  },
+  {
+   "id": "3ce1f06e51",
+   "question": "晚期癌痛的镇痛，这篇文章强调的核心给药原则是什么？",
+   "options": [
+    "按时规律给药让血药浓度稳在阈值之上，另设爆发痛速效剂量",
+    "先用弱药忍一忍，把强阿片留到最后阶段才开始使用",
+    "一开始就给足最高剂量，之后再根据副作用逐步减量",
+    "等痛了再给药，并尽量拉长给药间隔，以免过早产生耐受和成瘾"
+   ],
+   "answer": 0,
+   "explanation": "文章说癌痛常是持续性的，核心是按时给药而非痛了才给，让血药浓度维持在镇痛阈值之上，不在剧痛与药效间坐过山车，并另设约日总量 10–15% 的爆发痛剂量。临终镇痛中真正的成瘾极为罕见，「留着后面用」没有道理，镇痛不足本身会加重抑郁、谵妄。",
+   "question_en": "For pain in advanced cancer, what core dosing principle does the article stress?",
+   "options_en": [
+    "Dose by the clock to keep blood levels above the threshold, plus a separate fast-acting breakthrough dose",
+    "Tough it out on weak drugs first and save strong opioids until the very last stage",
+    "Start at the highest dose right away, then reduce step by step according to side effects",
+    "Give medication only when pain appears, stretching the intervals to avoid early tolerance and addiction"
+   ],
+   "explanation_en": "The article says cancer pain is usually continuous, so the core rule is dosing by the clock rather than on demand, keeping blood levels above the analgesic threshold instead of riding a roller coaster between agony and relief, with a breakthrough dose of about 10–15% of the daily total. True addiction in end-of-life pain control is very rare; saving drugs for later makes no sense, and undertreatment itself worsens depression and delirium."
+  },
+  {
+   "id": "38ce092499",
+   "question": "既然预立医疗指示写得再细也无法预见所有情境，文章认为它最重要的价值在哪里？",
+   "options": [
+    "把每一种可能的情境都逐条写清，越细越能约束医生",
+    "主要用于减少医疗开支，避免家庭承担昂贵的抢救费",
+    "指定懂你价值观的代理人处理灰色地带，并逼出那次对话",
+    "让法律替家属做决定，家属从此不必再参与讨论"
+   ],
+   "answer": 2,
+   "explanation": "文章说正因无法穷举，指定代理人往往比书面清单更重要：懂你价值观的人能在具体情境中灵活判断，清单只能覆盖预设场景，理想是清单划底线、代理人处理灰色地带。文件的核心价值不在条款，而在它逼出了那次对话。",
+   "question_en": "Since an advance directive, however detailed, cannot foresee every situation, where does the article locate its most important value?",
+   "options_en": [
+    "Spelling out every possible scenario one by one, since more detail binds the doctors more tightly",
+    "Mainly cutting medical costs, so the family avoids paying for expensive resuscitation",
+    "Naming a proxy who knows your values to handle gray areas, and forcing that conversation to happen",
+    "Letting the law decide for the family, so relatives no longer need to take part in discussions"
+   ],
+   "explanation_en": "The article argues that because no list can be exhaustive, naming a proxy often matters more than the written checklist: someone who understands your values can judge the actual situation, while a list covers only foreseen cases; ideally the list sets the floor and the proxy handles gray areas. The document's core value lies less in its clauses than in the conversation it forces."
+  }
+ ]
+}

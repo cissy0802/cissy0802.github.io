@@ -1,0 +1,69 @@
+{
+ "page": "/chapter-deepread/accelerate-ch08-product-development-book122.html",
+ "title": "Accelerate 第 8 章 · 产品开发 — 专业书籍精读 Book 122",
+ "page_en": "/chapter-deepread/accelerate-ch08-product-development-book122.en.html",
+ "title_en": "Accelerate Ch 8 · Product Development — Chapter Deep Read Book 122",
+ "src_hash": "917ff47c9cc4",
+ "questions": [
+  {
+   "id": "800e8a9320",
+   "question": "一个团队拿到了不经外部批准就能修改规格的权力，但他们的看板只到「已上线」，也没有渠道收集客户反馈。按《Accelerate》第 8 章的看法，最可能的结果是什么？",
+   "options": [
+    "自主权会被流水线的瓶颈抵消，团队速度基本不会有变化",
+    "决策搬到了信息最多的位置，交付与组织绩效都会随之提升",
+    "做得更快，但方向仍靠猜，只是更快地造出没人要的东西",
+    "四项实践彼此独立，先落地自主这一项也能拿到它那份收益"
+   ],
+   "answer": 2,
+   "explanation": "这一章强调团队自主改规格必须配着价值流可见和客户反馈一起用：自主是放大器，没有这两样兜着，它只把局部最优加速。「决策搬到信息最多的位置」是自主的理由，但前提是团队真能看到客户那一端的信息。",
+   "question_en": "A team gains the right to change specifications without outside approval, but its board stops at \"deployed\" and it has no channel for customer feedback. According to Accelerate, chapter 8, what is the most likely outcome?",
+   "options_en": [
+    "The autonomy gets cancelled out by pipeline bottlenecks, so the team's speed barely changes",
+    "Decisions move to where information is richest, so delivery and organizational performance both rise",
+    "It moves faster, but direction is still guesswork, so it just builds unwanted things sooner",
+    "The four practices are independent, so adopting autonomy alone still yields its own share of benefit"
+   ],
+   "explanation_en": "The chapter insists that team autonomy over specs only works alongside value-stream visibility and customer feedback: autonomy is an amplifier, and without those two it just accelerates local optimization. \"Moving decisions to where the information is\" is the rationale, but it assumes the team can actually see the customer end."
+  },
+  {
+   "id": "0c76476521",
+   "question": "某团队把一个大功能拆成十个小 PR 逐个合并，但仍然等到季度末才一起交付给客户。按这一章对「小批量」的定义，应该怎么评价？",
+   "options": [
+    "做到了一半，部署频率提升了，只是客户反馈还没跟上",
+    "反馈周期一点没变，因为批量指的是交付给客户的价值单元",
+    "已经做到了小批量，因为每一个代码变更都控制在了合理的规模",
+    "比真正的小批量更稳妥，因为集中发布降低了变更失败率"
+   ],
+   "answer": 1,
+   "explanation": "本章的批量是交付给客户的价值单元，判据是一周之内能做完并交出去。切成十个 PR 却攒到季度末上线，只在代码评审那一层受益，拿到真实反馈的次数仍是一次。小 PR 是代码层面的同一原则，但不等于产品层面的小批量。",
+   "question_en": "A team splits a big feature into ten small PRs merged one by one, but still ships everything to customers together at quarter's end. By this chapter's definition of small batches, how should this be judged?",
+   "options_en": [
+    "It is halfway there: deployment frequency went up, and only customer feedback has yet to catch up",
+    "The feedback cycle hasn't changed at all, because batch size means the unit of value delivered to customers",
+    "It already achieves small batches, since every code change has been kept to a reasonable size",
+    "It is safer than true small batches, because releasing together lowers the change failure rate"
+   ],
+   "explanation_en": "In this chapter a batch is the unit of value delivered to customers, judged by whether it can be finished and shipped within a week. Ten PRs released together at quarter's end help only at the code-review level; the team still gets one round of real feedback. Small PRs are the same principle at the code level, not product-level small batches."
+  },
+  {
+   "id": "ea034e133a",
+   "question": "一家公司花大力气建好了 CI/CD 流水线，一天能部署很多次，但「做什么」仍由委员会每季度定一次。按这一章「互为因果」的结构，会发生什么？",
+   "options": [
+    "部署频率上升会让规格更早定死，从而减少中途返工的浪费",
+    "四大指标改善就足以带动组织绩效，产品决策方式影响不大",
+    "交付效能提升后，产品侧的做法会自然而然地跟着变好",
+    "新买来的产能被季度决策节奏吃掉，单边改造会被弹回去"
+   ],
+   "answer": 3,
+   "explanation": "本章发现技术实践与产品实践是双向关系：交付快才试得起，产品侧按周验证又逼着工程侧继续变强。只上流水线不改决策权，十次部署也买不到任何东西，产能会被季度节奏吃掉。它并不说产品侧会自动跟上。",
+   "question_en": "A company invests heavily in a CI/CD pipeline and can deploy many times a day, but a committee still decides what to build once a quarter. Given the chapter's two-way causal structure, what happens?",
+   "options_en": [
+    "Higher deployment frequency locks specs in earlier, reducing the waste of mid-course rework",
+    "Better Four Key Metrics are enough to lift organizational performance; product decisions matter little",
+    "Once delivery performance improves, product-side practices naturally get better on their own",
+    "The new capacity is swallowed by the quarterly decision cycle; one-sided change snaps back"
+   ],
+   "explanation_en": "The chapter finds a reciprocal relationship: fast delivery makes experiments affordable, and weekly product validation pushes engineering to keep improving. Upgrading the pipeline without changing decision rights means ten deploys a day buy nothing; the capacity is eaten by the quarterly rhythm. It does not claim the product side catches up automatically."
+  }
+ ]
+}

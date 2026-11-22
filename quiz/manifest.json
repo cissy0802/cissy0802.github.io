@@ -2215,6 +2215,139 @@
     "06c29b8fef",
     "2e3f83f479"
    ]
+  },
+  "/chapter-deepread/accelerate-ch08-product-development-book122.html": {
+   "t": "Accelerate 第 8 章 · 产品开发 — 专业书籍精读 Book 122",
+   "f": "chapter-deepread/accelerate-ch08-product-development-book122.json",
+   "q": [
+    "800e8a9320",
+    "0c76476521",
+    "ea034e133a"
+   ]
+  },
+  "/history/military-beyond-war-day45.html": {
+   "t": "历史：战争之外的军事史 — Day 45",
+   "f": "history/military-beyond-war-day45.json",
+   "q": [
+    "537b67183e",
+    "7fd99b0ac6",
+    "7887559d28"
+   ]
+  },
+  "/novel-deepread/old-man-sea-novel66.html": {
+   "t": "老人与海 — 小说精读 No.66",
+   "f": "novel-deepread/old-man-sea-novel66.json",
+   "q": [
+    "53286a396d",
+    "95c4378674"
+   ]
+  },
+  "/evolutionary-biology/endosymbiosis-day12.html": {
+   "t": "进化生物学 Day 12：内共生与真核革命",
+   "f": "evolutionary-biology/endosymbiosis-day12.json",
+   "q": [
+    "b6fa055aa9",
+    "a6f9da9102",
+    "b131e7ba3b"
+   ]
+  },
+  "/thinker-arena/debate.html?d=grieving-a-loss": {
+   "t": "辩论：失去至亲，只能等时间冲淡吗？",
+   "f": "thinker-arena/debate-grieving-a-loss.json",
+   "q": [
+    "a1e82747ab",
+    "ea47d855fc",
+    "37a88cef71"
+   ]
+  },
+  "/deep-reading/amusing-ourselves-read25.html": {
+   "t": "《娱乐至死》",
+   "f": "deep-reading/amusing-ourselves-read25.json",
+   "q": [
+    "4b468ee915",
+    "c999e9bcb1",
+    "1297923fad"
+   ]
+  },
+  "/sociology-anthropology/social-stratification-day11.html": {
+   "t": "社会学与人类学 Day 11：社会分层",
+   "f": "sociology-anthropology/social-stratification-day11.json",
+   "q": [
+    "3d2ac1e15b",
+    "8a96e94fa8",
+    "c63ea982a3"
+   ]
+  },
+  "/writing/poetry-craft-day31.html": {
+   "t": "写作与表达：诗的技艺 — Day 31",
+   "f": "writing/poetry-craft-day31.json",
+   "q": [
+    "4f15a5a52b",
+    "3e62516f3a",
+    "2ae58ca104"
+   ]
+  },
+  "/health-longevity/palliative-care-day44.html": {
+   "t": "健康长寿 Day 44 — 姑息与临终医学",
+   "f": "health-longevity/palliative-care-day44.json",
+   "q": [
+    "54ab0a4016",
+    "3ce1f06e51",
+    "38ce092499"
+   ]
+  },
+  "/chapter-deepread/fosa-ch14-event-driven-architecture-book221.html": {
+   "t": "FoSA 第 14 章 · 事件驱动架构：中介还是代理，异步换来的速度与失控 — 专业书籍精读 Book 221",
+   "f": "chapter-deepread/fosa-ch14-event-driven-architecture-book221.json",
+   "q": [
+    "0423da5073",
+    "64debde4c0",
+    "3519f6f641"
+   ]
+  },
+  "/psychology/personality-change-day21.html": {
+   "t": "心理学 Day 21：人格能否改变 — 稳定的证据，与可变的证据",
+   "f": "psychology/personality-change-day21.json",
+   "q": [
+    "fd51fefec7",
+    "b286d04dd5",
+    "f5e3614b32"
+   ]
+  },
+  "/psychology/perfectionism-day10.html": {
+   "t": "心理学 Day 10：完美主义与拖延 — 你不是懒，是在逃避一种情绪",
+   "f": "psychology/perfectionism-day10.json",
+   "q": [
+    "e204385b08",
+    "5dcc12819d",
+    "d05f7b6252"
+   ]
+  },
+  "/book-recommendations/scifi-thought-experiment-book12.html": {
+   "t": "Issue 12：科幻里的中国与未来 — 把一个变量推到极限 | 好书推荐",
+   "f": "book-recommendations/scifi-thought-experiment-book12.json",
+   "q": [
+    "136b1156aa",
+    "3c439a6cf0",
+    "514fc06b45"
+   ]
+  },
+  "/world-religions/protestantism-day5.html": {
+   "t": "世界宗教 Day 5：新教",
+   "f": "world-religions/protestantism-day5.json",
+   "q": [
+    "3fd28aaab3",
+    "add9c13d44"
+   ]
+  },
+  "/sociology-anthropology/durkheim-social-facts-day2.html": {
+   "t": "社会学与人类学 Day 2：涂尔干与社会事实",
+   "f": "sociology-anthropology/durkheim-social-facts-day2.json",
+   "q": [
+    "5c04a8be30",
+    "5514f41a7c",
+    "9f2ebe8356"
+   ]
   }
  },
  "aliases": {

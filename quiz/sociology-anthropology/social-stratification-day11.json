@@ -1,0 +1,69 @@
+{
+ "page": "/sociology-anthropology/social-stratification-day11.html",
+ "title": "社会学与人类学 Day 11：社会分层",
+ "page_en": "/sociology-anthropology/social-stratification-day11.en.html",
+ "title_en": "Sociology & Anthropology Day 11: Social Stratification",
+ "src_hash": "ffce52cd2c5a",
+ "questions": [
+  {
+   "id": "3d2ac1e15b",
+   "question": "甲和乙这个月到手收入一样多：甲按小时结算，乙拿年薪、有晋升梯子、生病时有缓冲。按 Goldthorpe 等人的阶级图式，怎么看两人？",
+   "options": [
+    "属于同一阶级，因为阶级按一段时期的收入档位来划分",
+    "属于不同阶级，因为两人的钱按不同的雇佣关系逻辑到账",
+    "无法判断，要先看两人的财富存量，存量才决定阶级",
+    "无法判断，要先比较两人的职业在职业声望量表上的排名高低"
+   ],
+   "answer": 1,
+   "explanation": "EGP 图式不按收入排高低，而按雇佣关系分类：服务关系买的是长期忠诚和判断力，给年薪、晋升和缓冲；劳动契约按时按件两清。阶级不是收入档位，是钱按什么逻辑到账，所以同样月入的两人遇上一场大病就会分岔。声望和财富是文中另外两把尺，量的是别的东西。",
+   "question_en": "A and B take home the same amount this month: A is paid by the hour, B has a salary, a promotion ladder and a cushion when ill. Under the class schema of Goldthorpe and colleagues, how do they compare?",
+   "options_en": [
+    "The same class, because class is defined by income bracket over a given period",
+    "Different classes, because their money arrives under different employment-relation logics",
+    "Undecidable until you see their stock of wealth, since wealth determines class",
+    "Undecidable until you compare where their jobs rank on the prestige scale"
+   ],
+   "explanation_en": "The EGP schema sorts by employment relation, not income: a service relationship buys long-term loyalty and judgment and pays with salary, promotion and a cushion; a labour contract is settled by the hour or piece. Class is the logic by which money arrives, which is why two people with the same monthly pay diverge after one illness. Prestige and wealth are the article's other two rulers, measuring different things."
+  },
+  {
+   "id": "8a96e94fa8",
+   "question": "1980 年代美国代际收入弹性的估计约为 0.2，显得社会相当流动。Solon 1992 年指出旧算法的问题在哪？",
+   "options": [
+    "单年收入混着大量偶然波动，会把估计值系统性地拉向零",
+    "80 年代的美国确实更加流动，是后来流动性才真的变差了",
+    "税务记录漏报了富人收入，使父子差距被人为放大",
+    "样本太小，估计值随机地忽高忽低，所以结论不可靠"
+   ],
+   "answer": 0,
+   "explanation": "单年收入里有奖金特别好、生了场病这类偶然波动，用带噪音的尺子当自变量，相关系数会被系统性地拉向 0。Solon 改用五年平均后估计值从约 0.3 升到约 0.4。关键在于噪音不是随机地偏，它有固定方向，所以「社会挺流动」的结论有一部分是测量误差造的。",
+   "question_en": "In the 1980s US estimates of intergenerational income elasticity were around 0.2, making society look quite mobile. What problem with the old method did Solon point out in 1992?",
+   "options_en": [
+    "Single-year income carries a lot of transitory noise, which systematically pulls the estimate toward zero",
+    "America really was more mobile in the 1980s, and mobility only truly declined later on",
+    "Tax records under-reported the rich, artificially inflating the gap between fathers and sons",
+    "The samples were too small, so the estimates bounced randomly up and down and could not be trusted"
+   ],
+   "explanation_en": "One year's income includes chance swings — a big bonus, an illness — and a noisy regressor biases the correlation systematically toward zero. Averaging five years raised the estimate from about 0.3 to about 0.4. The point is that the noise is not random in direction: it flattens the relationship, so part of the \"mobile society\" verdict was measurement error."
+  },
+  {
+   "id": "c63ea982a3",
+   "question": "两个人争论「现在还有没有希望」：一个说三十岁收入超过父母的比例从 1940 年生人的约九成跌到 1980 年生人的约五成；另一个说出身与终点的相对位置关系几十年几乎没动。按这篇文章，谁对？",
+   "options": [
+    "都不对，通勤区之间差了近三倍，全国数字没有意义",
+    "后者对，前者的数据被单年收入的噪音系统性地压低了",
+    "两人都对，一个量的是绝对流动，另一个量的是相对流动",
+    "前者对，后者混淆了个案与率，用个别成功者冒充了规律"
+   ],
+   "answer": 2,
+   "explanation": "Chetty 等人的数据显示相对流动（谁跟谁换位）几十年几乎没动，绝对流动（是不是过得比父母好）腰斩。日常那场争论两边常常各握着其中一个数，而两个数都是对的。通勤区差异说明全国一个数太粗，但不等于全国数字没有意义。",
+   "question_en": "Two people argue over whether there is still hope: one says the share earning more than their parents at thirty fell from about 90% for those born in 1940 to about 50% for those born in 1980; the other says the link between origin and destination has barely moved in decades. According to the article, who is right?",
+   "options_en": [
+    "Neither: commuting zones differ nearly threefold, so national figures mean nothing",
+    "The second: the first's figures are biased downward by single-year income noise",
+    "Both: one is measuring absolute mobility, the other relative mobility",
+    "The first: the second confuses cases with rates, passing off a few successes as a pattern"
+   ],
+   "explanation_en": "Chetty and colleagues found relative mobility (who swaps places with whom) has barely changed for decades while absolute mobility (doing better than one's parents) halved. The everyday argument usually has each side holding one of the two numbers, and both numbers are true. Regional gaps show a single national number is coarse, not that it is meaningless."
+  }
+ ]
+}

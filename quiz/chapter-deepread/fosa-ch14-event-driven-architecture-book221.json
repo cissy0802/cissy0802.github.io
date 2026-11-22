@@ -1,0 +1,69 @@
+{
+ "page": "/chapter-deepread/fosa-ch14-event-driven-architecture-book221.html",
+ "title": "FoSA 第 14 章 · 事件驱动架构：中介还是代理，异步换来的速度与失控 — 专业书籍精读 Book 221",
+ "page_en": "/chapter-deepread/fosa-ch14-event-driven-architecture-book221.en.html",
+ "title_en": "FoSA Chapter 14 · Event-Driven Architecture: Mediator or Broker, Speed vs Control — Book Deep Read 221",
+ "src_hash": "b2c257b5795c",
+ "questions": [
+  {
+   "id": "0423da5073",
+   "question": "一条下单流程要求：支付失败时能立刻发现、停下流程、记录状态，修好后从断点重启。按 FoSA 第 14 章，应该选哪种事件驱动拓扑？",
+   "options": [
+    "代理拓扑：给支付事件多加几个订阅者，就能自动重试",
+    "代理拓扑：它的容错评分最高，单个处理器失败不会连坐其他处理器",
+    "中介拓扑：中心调度者持有流程状态，能停下并从断点重启",
+    "两种都做不到，必须退回同步的请求模型逐步调用"
+   ],
+   "answer": 2,
+   "explanation": "真正的选择是工作流由谁掌控。代理拓扑没人掌控整个工作流：支付处理器崩溃时没人知道流程卡住了，也无法从头重跑。中介拓扑由中介持有流程状态，支付失败时能停下、记录、修好后从断点重启。代理的高容错指处理器互不连坐，不等于能恢复流程。",
+   "question_en": "An order flow must detect a payment failure immediately, halt, record its state, and restart from that point once fixed. Per chapter 14 of Fundamentals of Software Architecture, which event-driven topology fits?",
+   "options_en": [
+    "Broker topology: add a few more subscribers to the payment event and retries happen automatically",
+    "Broker topology: it scores highest on fault tolerance, so one failing processor doesn't drag down the rest",
+    "Mediator topology: a central coordinator holds workflow state and can halt and resume from the failure point",
+    "Neither can do it; you must fall back to the synchronous request model and call each step in turn"
+   ],
+   "explanation_en": "The real choice is who controls the workflow. In the broker topology no one does: if the payment processor crashes no one knows the flow is stuck, and it cannot be rerun. In the mediator topology the mediator holds state, so on payment failure it can stop, record, and restart from where it broke. The broker's high fault tolerance means processors don't fail together, not that the workflow can be recovered."
+  },
+  {
+   "id": "64debde4c0",
+   "question": "把发评论改成异步后，接口从几秒缩短到几十毫秒就返回「已收到」。按这一章，这次改动提升了什么？",
+   "options": [
+    "响应性和性能都提升了，因为同步等待被彻底消除",
+    "提升的是性能；后台检查和写库也因此一起变快了",
+    "提升的是响应性；整件事真正做完的时间并没有变短",
+    "提升的是可靠性；消息进了队列就保证不会再丢失"
+   ],
+   "answer": 2,
+   "explanation": "书里正是用发评论举例，并特意强调这提升的是响应性（用户多快拿到回应），不是性能（整件事多快真正做完）。整体处理时间往往还因多了网络跳和排队而变长。消息不丢要靠持久化队列、客户端确认等专门手段，不是异步自带的。",
+   "question_en": "After posting a comment is made asynchronous, the endpoint returns \"received\" in tens of milliseconds instead of several seconds. According to the chapter, what did this change improve?",
+   "options_en": [
+    "Both responsiveness and performance, because synchronous waiting was eliminated",
+    "Performance; the background checks and database writes got faster along with it",
+    "Responsiveness; the time for the whole job to actually finish did not get shorter",
+    "Reliability; once a message is on the queue it is guaranteed never to be lost"
+   ],
+   "explanation_en": "The book uses exactly this comment example and stresses that it improves responsiveness (how fast the user hears back), not performance (how fast the work truly completes). Total processing time often grows because of extra network hops and queuing. Not losing messages requires persistent queues, client acknowledgment and the like; asynchrony does not provide it by itself."
+  },
+  {
+   "id": "3519f6f641",
+   "question": "交易系统用工作流事件模式处理坏消息：消费者把它委托给工作流处理器，修好后重新投回原队列。书中指出这会带来什么问题，怎么应对？",
+   "options": [
+    "修好的消息排到了后面会乱序，要把同一账户后续消息先暂存，修复后再一起处理",
+    "修复过程要人工介入太慢，要改为同步请求-应答，让发送方等结果",
+    "工作流处理器会成为单点瓶颈，要改成在原地重试直到这条消息成功",
+    "坏消息会被反复重投形成死循环，要设最大重试次数，超过次数的消息就直接丢弃掉"
+   ],
+   "answer": 0,
+   "explanation": "书点出的连带坑是：修好重投的消息排到了后面，同一账户的后续消息可能先被处理，顺序被打乱。交易系统例子里的对策是把同一账户出错之后的消息按到达顺序暂存，等修复完成再一起处理。这个模式的要点恰恰是消费者不卡在原地重试，修不好的才送仪表盘交人工。",
+   "question_en": "A trading system handles bad messages with the workflow event pattern: the consumer delegates them to a workflow processor, which repairs them and puts them back on the original queue. What problem does the book say this creates, and how is it handled?",
+   "options_en": [
+    "Repaired messages land at the back and arrive out of order, so later messages for that account are held until the repair completes",
+    "Manual repair is too slow, so switch to synchronous request-reply and make the sender wait for the result",
+    "The workflow processor becomes a single bottleneck, so switch to retrying in place until the message succeeds",
+    "Bad messages get resubmitted endlessly in a loop, so set a maximum retry count and discard anything beyond it"
+   ],
+   "explanation_en": "The book's caveat is that a repaired message goes to the back of the queue, so later messages for the same account may be processed first, breaking order. In the trading example the remedy is to hold that account's subsequent messages in arrival order until the fix is done, then process them together. The pattern's whole point is that consumers do not get stuck retrying in place; only unfixable messages go to a dashboard for people."
+  }
+ ]
+}

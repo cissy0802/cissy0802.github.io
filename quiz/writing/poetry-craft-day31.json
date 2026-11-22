@@ -1,0 +1,69 @@
+{
+ "page": "/writing/poetry-craft-day31.html",
+ "title": "写作与表达：诗的技艺 — Day 31",
+ "page_en": "/writing/poetry-craft-day31.en.html",
+ "title_en": "Writing & Expression: The Craft of Poetry — Day 31",
+ "src_hash": "ac405ea0bd98",
+ "questions": [
+  {
+   "id": "4f15a5a52b",
+   "question": "文中用认知心理学的生成效应来说明留白为何有力：自己补出来的东西记得更牢。它同时由此推出了留白的什么限制？",
+   "options": [
+    "生成效应只对诗歌有效，所以商务写作里不该使用留白",
+    "读者自己补出的结论往往不被信任，所以要再补一句总结",
+    "留白越多读者参与越深，所以应当尽量把所有结论都留给读者自己",
+    "读者补错了也会记得牢，所以留白必须精确，缝只能留一道"
+   ],
+   "answer": 3,
+   "explanation": "文章说生成效应证明的是记得牢，不是信得过：读者补错了同样会记得牢。所以留白必须是精确地省略，不是含糊其辞，你心里那个字必须先在，才谈得上不写它。留得越多越好恰恰是它要防的方向。",
+   "question_en": "The article cites the generation effect — people remember better what they fill in themselves — to explain why leaving things unsaid works. What limit on leaving things out does it draw from the same effect?",
+   "options_en": [
+    "The generation effect only works for poetry, so business writing should not leave things unsaid",
+    "Readers tend to distrust conclusions they reached themselves, so a summary line should be added",
+    "The more you leave out, the deeper readers engage, so conclusions should be left to them wherever possible",
+    "A reader who fills the gap wrongly will remember it just as well, so the omission must be precise and narrow"
+   ],
+   "explanation_en": "The article notes that the generation effect proves memorability, not trustworthiness: a reader who fills the gap wrongly remembers the error just as firmly. So leaving out must be precise omission, not vagueness; the word you leave unwritten has to exist in your mind first. \"The more left out the better\" is exactly the direction it warns against."
+  },
+  {
+   "id": "3e62516f3a",
+   "question": "写作中给自己设约束（字数上限、只放一句话的 slide）可以逼出创造，但也可能退化成八股。文章给的分界线是什么？",
+   "options": [
+    "约束是否足够严格，越严苛越能逼出好作品，太宽松的约束才会僵化",
+    "约束是否出自古典格律传统，自创的规则更容易沦为空洞模板",
+    "约束是否还在逼你取舍、帮你思考，而不是满足它本身成了目的",
+    "约束是否被团队里的所有人共同遵守，各行其是时才会出问题"
+   ],
+   "answer": 2,
+   "explanation": "文章说分界在于约束服务于谁：逼你做取舍、把想法磨利时它是杠杆；当凑字数、套模板、为对仗扭曲意思成了目的，它就是八股。健康的约束是难而有意义，僵死的约束是易而无意义。人人套同一个模板，正是它举的退化例子。",
+   "question_en": "Setting yourself constraints in writing (a word limit, one sentence per slide) can force creativity, but can also decay into formula. What dividing line does the article give?",
+   "options_en": [
+    "Whether the constraint is strict enough, since harsher rules force better work and only loose ones ossify",
+    "Whether the constraint comes from classical verse tradition, since home-made rules decay into templates more easily",
+    "Whether the constraint still forces trade-offs and helps you think, rather than satisfying it becoming the goal",
+    "Whether everyone on the team follows the constraint together, since trouble only starts when people diverge"
+   ],
+   "explanation_en": "The article says the line is whom the constraint serves: when it forces choices and sharpens ideas it is leverage; when padding to a count, fitting a template or twisting meaning for parallelism becomes the point, it is formula. Healthy constraints are hard and meaningful; dead ones are easy and meaningless. Everyone using the same template is its own example of decay."
+  },
+  {
+   "id": "2ae58ca104",
+   "question": "在设计文档里写「这个系统像一只漏水的桶」，生动好记。按文章的看法，这类意象在技术写作里该放在哪里？",
+   "options": [
+    "意象比数字更容易被记住，所以论证的关键处也应优先用意象",
+    "技术文档要求无歧义，所以任何意象都不该出现在设计文档里",
+    "意象只适合放在结尾留白，让读者自己推出该采取什么措施",
+    "用意象点燃动机、引人读下去，正文论证要回到漏率这样的数字"
+   ],
+   "answer": 3,
+   "explanation": "文章在「推到边界」里说，意象的力量在唤起共同经验，但技术文档要的是无歧义，「漏水的桶」不能替代漏率的数字。规律是用意象点燃动机，用数字承载论证：开头一个画面让人想读下去，正文回到精确，位置搞反就是灾难。它没有说技术文档完全不能用意象。",
+   "question_en": "Writing \"this system is like a leaky bucket\" in a design document is vivid and memorable. Where does the article say such imagery belongs in technical writing?",
+   "options_en": [
+    "Images are remembered better than numbers, so the key points of the argument should also lead with imagery",
+    "Technical documents require zero ambiguity, so no imagery of any kind belongs in a design document",
+    "Imagery belongs only in the closing gap, letting readers infer for themselves what action to take",
+    "Use the image to spark interest and draw readers in, while the argument itself rests on numbers like the leak rate"
+   ],
+   "explanation_en": "In its closing reflections the article says imagery works by evoking shared experience, but technical documents need precision, and a leaky bucket cannot replace the leak rate. The rule: images to spark motivation, numbers to carry the argument — an opening picture to draw readers in, then back to precision; reversing them is a disaster. It does not ban imagery from technical writing outright."
+  }
+ ]
+}

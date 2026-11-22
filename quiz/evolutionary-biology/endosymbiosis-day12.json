@@ -1,0 +1,69 @@
+{
+ "page": "/evolutionary-biology/endosymbiosis-day12.html",
+ "title": "进化生物学 Day 12：内共生与真核革命",
+ "page_en": "/evolutionary-biology/endosymbiosis-day12.en.html",
+ "title_en": "Evolutionary Biology Day 12: Endosymbiosis and the Complex Cell",
+ "src_hash": "90392491a36b",
+ "questions": [
+  {
+   "id": "b6fa055aa9",
+   "question": "内共生学说悬了几十年，最后让它站住、进入教科书的关键是什么？",
+   "options": [
+    "2020 年培养出宿主古菌，才最终为争论画上句号",
+    "DNA 测序把线粒体放进了细菌族谱的确定位置",
+    "电镜下积累了更多形态证据，审稿人终被说服",
+    "鞭毛也源自细菌被证实，带动了整套学说被接受"
+   ],
+   "answer": 1,
+   "explanation": "文章说形态上的「像」永远可以有第二种解释，比如两层膜也可能是细胞自己的膜折进来形成的。翻案靠的是一种新测量：测序后线粒体稳稳落在 α-变形菌里，这个答案不依赖它看起来像什么。鞭毛那条至今未获支持，宿主是古菌的说法也还在检验中。",
+   "question_en": "Endosymbiotic theory was contested for decades. What finally settled it and put it in the textbooks?",
+   "options_en": [
+    "Culturing the host archaeon in 2020 is what finally brought the argument to an end",
+    "DNA sequencing placed mitochondria at a definite spot on the bacterial family tree",
+    "More morphological evidence piled up under the electron microscope until reviewers gave in",
+    "Confirmation that flagella also came from bacteria carried the whole theory to acceptance"
+   ],
+   "explanation_en": "The article stresses that looking like a bacterium always admits a second reading; two membranes could come from the cell's own infolding. The deadlock broke on a new measurement: sequencing placed mitochondria firmly among the alphaproteobacteria, an answer that does not depend on appearances. The flagella claim has found no support, and the archaeal host is still being tested."
+  },
+  {
+   "id": "a6f9da9102",
+   "question": "线粒体的大部分基因已经丢失或搬进细胞核，只留下几十个。按文中介绍的 Allen 的解释，为什么偏偏是这几十个没搬走？",
+   "options": [
+    "它们搬家的速率最低，只是还没来得及搬过去",
+    "它们调控产能的电子流，调整必须就地立刻完成",
+    "它们只在母系遗传时才需要，所以必须留在原处",
+    "它们编码的蛋白分子太大，在细胞质造好后运不进线粒体内部"
+   ],
+   "answer": 1,
+   "explanation": "留下的基因多半管同一件事：盯着膜上那条产能的电子流、随时按状态调整。Allen 认为这类调整要就地立刻做完，信号送到细胞核再等指令回来就来不及了。文章同时注明这个解释还没定论。烟草实验说明搬家至今仍在高频发生，并不支持「只是还没来得及」。",
+   "question_en": "Most mitochondrial genes have been lost or moved to the nucleus, leaving a few dozen. On Allen's explanation as presented in the article, why did these particular genes stay?",
+   "options_en": [
+    "Their transfer rate is the lowest, so they simply haven't had time to move yet",
+    "They control the energy-producing electron flow, and those adjustments must be made on the spot",
+    "They are needed only for maternal inheritance, so they have to remain in place",
+    "The proteins they encode are too large to be shipped into the mitochondrion once made"
+   ],
+   "explanation_en": "The retained genes mostly govern one thing: monitoring and adjusting the electron flow across the energy membrane. Allen argues such adjustments must happen locally and immediately; a round trip to the nucleus would be too slow. The article flags this as unsettled. The tobacco experiment shows transfer still happening often, which does not fit \"just hasn't moved yet.\""
+  },
+  {
+   "id": "b131e7ba3b",
+   "question": "Lane 和 Martin 提出复杂细胞让每个基因分到的能量大了几个数量级，所以才养得起大基因组。按这篇文章，现在该怎样对待这个说法？",
+   "options": [
+    "当作已被证实的结论，只是倍数还有争议",
+    "当作已被烟草基因搬家实验证实的推论",
+    "当作已被古菌培养实验否定的旧假说",
+    "当作未决问题放着，不拿它去推其他结论"
+   ],
+   "answer": 3,
+   "explanation": "2015 年 Lynch 和 Marinov 用另一套核算反驳说这个能量差距不存在，真正卡住细菌的是群体和随机漂变。两边口径不同，至今没有双方都接受的测量，文章明说这条只能记成「未决」，别拿它去推别的结论。古菌培养和烟草实验回答的是别的问题。",
+   "question_en": "Lane and Martin proposed that complex cells give each gene orders of magnitude more energy, which is what makes large genomes affordable. According to the article, how should this claim be treated now?",
+   "options_en": [
+    "As an established result, with only the size of the factor in dispute",
+    "As an inference confirmed by the tobacco gene-transfer experiment",
+    "As an old hypothesis refuted by the culturing of the archaeon",
+    "As an open question, not used as a premise for other conclusions"
+   ],
+   "explanation_en": "In 2015 Lynch and Marinov used different accounting to argue the energy gap does not exist and that population size and drift limit bacteria. The two sides measure differently, and no measurement both accept has separated them, so the article says to file it as unresolved and not build other conclusions on it. The archaeon culture and the tobacco experiment address other questions."
+  }
+ ]
+}

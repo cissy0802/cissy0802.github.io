@@ -1,0 +1,49 @@
+{
+ "page": "/novel-deepread/old-man-sea-novel66.html",
+ "title": "老人与海 — 小说精读 No.66",
+ "page_en": "/novel-deepread/old-man-sea-novel66.en.html",
+ "title_en": "The Old Man and the Sea — Novels, Deep-Read No.66",
+ "src_hash": "6499d65ede83",
+ "questions": [
+  {
+   "id": "53286a396d",
+   "question": "小说结尾，游客把那根脊骨看成「漂亮的鲨鱼尾巴」。这篇精读认为这一笔的力量从哪里来？",
+   "options": [
+    "来自落差：这件事的全部重量只在经历者和那个孩子心里",
+    "来自反转：暗示老人三天的搏斗或许只是他的一场幻觉",
+    "来自讽刺：作者借游客的无知，谴责现代人的轻浮、冷漠与傲慢",
+    "来自预言：暗示男孩将来也会被这个世界同样地误解"
+   ],
+   "answer": 0,
+   "explanation": "文章明说这一刀的力量来自落差，不来自谴责：游客不是蠢人也不是坏人，只是路过、不知道。一件事的全部重量只存在于经历它的人和看着他的孩子心里，对世界其余部分它是等着被潮水带走的垃圾。读成对游客的讽刺，正是文章排除的读法。",
+   "question_en": "At the end of the novel a tourist mistakes the skeleton for a \"beautiful shark's tail.\" Where does this close reading say the moment's force comes from?",
+   "options_en": [
+    "From the gap: the full weight of the event lives only in the man who lived it and the boy",
+    "From a twist: it hints that the old man's three-day struggle may have been a hallucination",
+    "From satire: the author uses the tourist's ignorance to condemn modern shallowness and arrogance",
+    "From prophecy: it hints that the boy too will one day be misunderstood by the world"
+   ],
+   "explanation_en": "The essay says the cut works through contrast, not condemnation: the tourists are neither stupid nor bad, just passing through and unaware. The whole weight of the event exists only for the man who lived it and the boy watching him; to everyone else it is refuse waiting for the tide. Reading it as satire of the tourist is exactly what the essay rules out."
+  },
+  {
+   "id": "95c4378674",
+   "question": "你在一件很可能拿不出结果的事上坚持了很久，想用「人可以被毁灭，但不能被打败」来判断要不要继续。这篇精读给出的分界线是什么？",
+   "options": [
+    "用它鼓励自己是意义，用它要求别人一起坚持多半是在说教",
+    "用它解释已发生的事是意义，用它决定未发生的事多半是不肯改",
+    "结果尚可挽回时它是意义，结果无法挽回时它多半只是安慰",
+    "已经付出的代价越大越有资格这样说，代价不大时多半只是一句口号"
+   ],
+   "answer": 1,
+   "explanation": "文章在问题一末尾给出的分界线是：看你是在用这句话解释已经发生的事，还是在用它决定还没发生的事——解释过去是意义，决定未来往往是不肯改。怀疑的一方指出，这句话会把结果开除出评价体系、失去纠错能力，所以不能拿来替未来的决定开许可证。",
+   "question_en": "You've persisted for a long time at something that may well never pay off, and you want to use \"a man can be destroyed but not defeated\" to decide whether to continue. What dividing line does this close reading offer?",
+   "options_en": [
+    "Used to encourage yourself, it gives meaning; used to make others keep going, it is usually preaching",
+    "Used to explain what has happened, it gives meaning; used to decide what hasn't, it is usually refusal to change",
+    "While the outcome can still be saved it gives meaning; once it can't, it is usually just consolation",
+    "The more you have already paid, the more right you have to say it; otherwise it is usually a slogan"
+   ],
+   "explanation_en": "At the end of its first question the essay draws the line this way: are you using the line to explain what already happened, or to decide what has not yet happened? The former is meaning; the latter is often refusal to change. The skeptical side notes that the phrase expels results from evaluation and loses the ability to correct course, so it should not license future decisions."
+  }
+ ]
+}

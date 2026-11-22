@@ -1,0 +1,69 @@
+{
+ "page": "/psychology/perfectionism-day10.html",
+ "title": "心理学 Day 10：完美主义与拖延 — 你不是懒，是在逃避一种情绪",
+ "page_en": "/psychology/perfectionism-day10.en.html",
+ "title_en": "Psychology Day 10: Perfectionism & Procrastination — You're Not Lazy, You're Avoiding a Feeling",
+ "src_hash": "8fe9fb2a0df7",
+ "questions": [
+  {
+   "id": "e204385b08",
+   "question": "两位同事对自己的要求一样高。一位做到 80 分会觉得「还能改进，挺好」，另一位做到 80 分就觉得「我不够好，会被看穿」。按这篇文章，谁更可能陷入拖延和倦怠，为什么？",
+   "options": [
+    "两人都不会，因为高标准本身就是抵御拖延的保护因素",
+    "前者，因为满足于 80 分说明他的标准已经开始下滑",
+    "后者，因为风险来自对失误的担忧那一束，而不是标准本身",
+    "两人一样，因为风险的大小完全由个人标准定得多高来决定"
+   ],
+   "answer": 2,
+   "explanation": "文章把完美主义拆成追求卓越的高标准和对失误的担忧两束，决定它有害与否的不是标准多高，而是担忧那一束有多重。高标准低担忧是适应性的卓越追求；高标准高担忧才是最危险的一格，与抑郁、倦怠、拖延挂钩。",
+   "question_en": "Two colleagues hold themselves to equally high standards. At 80% one thinks \"could be better, but good,\" the other thinks \"I'm not good enough and I'll be found out.\" According to the article, who is more prone to procrastination and burnout, and why?",
+   "options_en": [
+    "Neither, because high standards are themselves a protective factor against procrastination",
+    "The first, because settling for 80% shows their standards are already starting to slip",
+    "The second, because the risk comes from concern over mistakes, not from the standard itself",
+    "Both equally, because the level of risk is set by how high one's personal standards are"
+   ],
+   "explanation_en": "The article splits perfectionism into high personal standards and concern over mistakes; what makes it harmful is not how high the standards are but how heavy the concern is. High standards with low concern is adaptive striving; high standards with high concern is the riskiest quadrant, linked to depression, burnout and procrastination."
+  },
+  {
+   "id": "5dcc12819d",
+   "question": "一个人换了三款时间管理 App、排满了日历，重要任务还是一拖再拖。按这篇文章，原因最可能是什么？",
+   "options": [
+    "他还没找到适合自己的工具，换一款更好的 App 就能改善",
+    "他低估了任务所需时间，需要学习更准确地估算工期",
+    "他本质上就是懒，需要更严格的自我批评来逼自己行动",
+    "拖延是用回避即时修复情绪，问题在自我调节，不在时间规划"
+   ],
+   "answer": 3,
+   "explanation": "文章说拖延不是懒，也不是时间管理差，而是任务勾起负面情绪后，用回避换来立刻的轻松，让短期心情压过长期目标。它是自我调节的失败，不是时间规划的失败，所以再买日历 App 也没用。更多自我批评只会增加负面情绪，火上浇油。",
+   "question_en": "Someone has tried three time-management apps and filled their calendar, yet still keeps putting off important tasks. According to the article, what is the most likely reason?",
+   "options_en": [
+    "They haven't found the right tool yet; switching to a better app would make a difference",
+    "They underestimate how long tasks take and need to learn to estimate durations more accurately",
+    "They are fundamentally lazy and need harsher self-criticism to push themselves into action",
+    "Procrastination repairs mood through avoidance; the problem is self-regulation, not time planning"
+   ],
+   "explanation_en": "The article says procrastination is neither laziness nor poor time management: a task stirs up a bad feeling, and avoidance buys instant relief, letting short-term mood beat long-term goals. It is a failure of self-regulation, not of scheduling, so another calendar app won't help. More self-criticism only adds negative emotion and feeds the cycle."
+  },
+  {
+   "id": "d05f7b6252",
+   "question": "一个学生在大考前一晚故意打游戏到凌晨，考完常说「我根本没复习」。按这篇文章，这种行为最可能在保护什么？",
+   "options": [
+    "保护学习效率，因为截止压力下的突击复习表现往往更好",
+    "保护与同伴的关系，避免被同学看成只会读书的书呆子",
+    "保护身体免受过度压力，这是大脑在考前自动启动的健康放松机制",
+    "保护「我其实可以」的自我形象，让失败能归因于障碍而非能力"
+   ],
+   "answer": 3,
+   "explanation": "这是自我设妨碍：担心失败会暴露能力不足时，人会预先制造可甩锅的障碍，失败了就能说「我没认真」而非「我不行」。燃料是把自我价值绑在表现上。文章还专门指出「我在压力下表现更好」多半是幸存者偏差加自我设妨碍的合理化。",
+   "question_en": "A student deliberately games until 2 a.m. the night before a major exam and afterwards often says \"I didn't study at all.\" According to the article, what is this behavior most likely protecting?",
+   "options_en": [
+    "Study efficiency, because last-minute cramming under deadline pressure tends to work better",
+    "Relationships with peers, avoiding being seen by classmates as someone who only studies",
+    "The body from excessive stress, as a healthy relaxation mechanism the brain switches on automatically",
+    "The self-image of \"I could have done it,\" letting failure be blamed on the obstacle rather than ability"
+   ],
+   "explanation_en": "This is self-handicapping: when people fear failure will expose a lack of ability, they set up an obstacle in advance so failure can be blamed on \"I didn't try\" rather than \"I'm not good enough.\" Its fuel is tying self-worth to performance. The article also notes that \"I work better under pressure\" is mostly survivorship bias plus self-handicapping rationalization."
+  }
+ ]
+}

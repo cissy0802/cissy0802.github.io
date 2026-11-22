@@ -1,0 +1,49 @@
+{
+ "page": "/world-religions/protestantism-day5.html",
+ "title": "世界宗教 Day 5：新教",
+ "page_en": "/world-religions/protestantism-day5.en.html",
+ "title_en": "World Religions Day 5: Protestantism",
+ "src_hash": "e7e743f95064",
+ "questions": [
+  {
+   "id": "3fd28aaab3",
+   "question": "新教没有教宗、没有统一教会，却成了全球南方增长最快的基督教形态。文章怎样解释这一点？",
+   "options": [
+    "去中心化让任何一群信徒都能自办教会、本地化，无需中枢批准",
+    "统一的传教组织集中调配资源，使它比天主教扩张得更快、更有效率",
+    "它的神学门槛更高，吸引了受过良好教育的新兴中产阶级",
+    "它与当地政权结成稳定同盟，借助国家力量推行皈依"
+   ],
+   "answer": 0,
+   "explanation": "文章说去中心化恰恰是它的适应力所在：不需要罗马批准，任何一群信徒就能用本地语言讲道、按本地文化敬拜；五旬节派把圣灵的直接经验置于中心，绕开了繁复的神学门槛，在资源有限的地区也能扎根。它靠可无限复制的「原则+文本」蔓延，与天主教靠中枢维系是两种策略。",
+   "question_en": "Protestantism has no pope and no unified church, yet it has become the fastest-growing form of Christianity in the Global South. How does the article explain this?",
+   "options_en": [
+    "Decentralization lets any group of believers found and localize a church without central approval",
+    "A unified missionary body allocates resources centrally, letting it expand more efficiently than Catholicism",
+    "Its higher theological bar attracts a well-educated rising middle class",
+    "It forms stable alliances with local governments and uses state power to drive conversions"
+   ],
+   "explanation_en": "The article argues decentralization is its adaptability: with no need for Rome's approval, any group can preach in the local language and worship in local style; Pentecostalism puts direct experience of the Spirit at the center and bypasses heavy theology, so it takes root where resources are scarce. It spreads through an endlessly copyable principle plus text, a different survival strategy from Catholicism's central hub."
+  },
+  {
+   "id": "add9c13d44",
+   "question": "文章说「唯独圣经」既带来解放，又带来无尽的分裂。分裂的根源是什么？",
+   "options": [
+    "新教取消了洗礼，使不同教会之间失去了共同的入教仪式",
+    "宗教改革者刻意鼓励分立，以削弱罗马教廷的政治影响力",
+    "各地的圣经译本互不相同，正是翻译上的差异直接造成了教义上的对立",
+    "人人可读可解而没有公认的最终裁断者，重大分歧便可能长出新宗派"
+   ],
+   "answer": 3,
+   "explanation": "把最终权威从教会移交给圣经、并主张人人可读可解，推动了识字、翻译与良心自由；但同一枚硬币的另一面是，一旦没有公认的最高裁断者，每一次对经文的重大分歧都可能长出一个新宗派。自由与碎片化同源。新教并没有取消洗礼，它保留洗礼与圣餐两件圣礼。",
+   "question_en": "The article says sola scriptura brought both liberation and endless division. What is the root of the division?",
+   "options_en": [
+    "Protestantism abolished baptism, so different churches lost a shared rite of initiation",
+    "The Reformers deliberately encouraged splits in order to weaken the political influence of the papacy",
+    "Bible translations differ from place to place, and translation differences directly caused doctrinal conflicts",
+    "Everyone may read and interpret, with no accepted final arbiter, so major disagreements can spawn new denominations"
+   ],
+   "explanation_en": "Moving final authority from the church to scripture and holding that anyone can read and interpret it drove literacy, translation and freedom of conscience; the other side of the coin is that with no accepted supreme arbiter, every major disagreement over the text can grow a new denomination. Freedom and fragmentation share a source. Protestantism did not abolish baptism; it keeps baptism and communion as its two sacraments."
+  }
+ ]
+}

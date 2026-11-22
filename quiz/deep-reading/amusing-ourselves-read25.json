@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/amusing-ourselves-read25.html",
+ "title": "《娱乐至死》",
+ "page_en": "/deep-reading/amusing-ourselves-read25.en.html",
+ "title_en": "Amusing Ourselves to Death",
+ "src_hash": "8c2277cc29e9",
+ "questions": [
+  {
+   "id": "4b468ee915",
+   "question": "下面两档节目：一档是纯搞笑的综艺，观众都知道只是消遣；另一档把总统候选人辩论包装成真人秀，按「上镜感」打分。波兹曼会怎样评价？",
+   "options": [
+    "两者同样有害，因为电视娱乐本身就会麻痹观众",
+    "综艺更有害，因为它占走了观众本可读书的时间",
+    "辩论秀更好，因为它至少让更多人关注了政治",
+    "综艺无伤大雅，把辩论做成秀才是真正的危险"
+   ],
+   "answer": 3,
+   "explanation": "波兹曼从不反对娱乐本身，他明说纯娱乐节目无伤大雅，电视做这类事做得相当好。他的靶子是电视把本不该娱乐化的新闻、政治、宗教、教育也做成了娱乐——问题不在于电视提供娱乐，而在于一切都以娱乐的方式呈现。把本书读成反对看电视，是最大的误读。",
+   "question_en": "Two programs: one is pure comedy that viewers know is just for fun; the other packages a presidential debate as a reality show scored on how candidates look on camera. How would Postman judge them?",
+   "options_en": [
+    "Both are equally harmful, because TV entertainment itself numbs its viewers",
+    "The comedy is worse, because it eats time viewers could have spent reading",
+    "The debate show is better, because it at least gets more people into politics",
+    "The comedy is harmless; turning the debate into a show is the real danger"
+   ],
+   "explanation_en": "Postman never opposes entertainment as such; he says plainly that junk TV is harmless and that television does it well. His target is television turning news, politics, religion and education into entertainment — the problem is not that TV entertains but that everything is presented as entertainment. Reading the book as anti-TV is its most common misreading."
+  },
+  {
+   "id": "c999e9bcb1",
+   "question": "按波兹曼的分析，电报（早于电视）给公共话语带来的最根本的改变是什么？",
+   "options": [
+    "让新闻必须配上主播和片头音乐，才能抢到受众越来越短的注意力",
+    "让图像第一次取代文字，成为公共话语中占主导地位的表达方式",
+    "大量你无法据以行动的远方信息涌入，「知道」从此和「有用」分了家",
+    "让政府能更有效地审查和隐瞒消息，公众因此失去了获取真相的可靠渠道"
+   ],
+   "answer": 2,
+   "explanation": "波兹曼说电报第一次让信息与行动脱钩，并用「信息-行动比」来量：千里之外与你无关的事件源源不断涌来，你动容却什么也做不了，信息退化成消费品，还带来去语境化的碎片。审查与隐瞒是奥威尔式的担忧；图像取代文字、主播和配乐则是后来照片与电视的事。",
+   "question_en": "According to Postman, what was the most fundamental change the telegraph (before television) brought to public discourse?",
+   "options_en": [
+    "It forced news to come with anchors and theme music to win audiences' shrinking attention",
+    "It let images replace print for the first time as the dominant form of public expression",
+    "A flood of distant information you could not act on, so that knowing came apart from being useful",
+    "It let governments censor and conceal news more effectively, cutting the public off from the truth"
+   ],
+   "explanation_en": "Postman says the telegraph first severed information from action, measured by the information-action ratio: a stream of distant, irrelevant events moves you but leaves nothing to do, so information becomes a commodity, and it arrives as decontextualized fragments. Censorship is Orwell's fear; images overtaking print, anchors and music came later with photography and television."
+  },
+  {
+   "id": "1297923fad",
+   "question": "波兹曼把麦克卢汉的「媒介即讯息」推进成「媒介即隐喻」「媒介即认识论」。推进的那一步说的是什么？",
+   "options": [
+    "媒介的内容常被扭曲，所以要先核实信息再判断真假",
+    "媒介本身比它承载的内容更重要，真正改变社会的是媒介",
+    "不同媒介适合不同内容，严肃话题应该回到书面讨论",
+    "主导媒介悄悄决定了一个文化凭什么认定一件事为真"
+   ],
+   "answer": 3,
+   "explanation": "「媒介本身比内容更重要」是麦克卢汉原句的意思，波兹曼在此之上再进一步：一个文化认定什么算真理的标准，是被它主导的媒介决定的——同一句谚语在口传部落里是判案依据，在法庭上是笑话。他要你先问这个媒介天生偏爱哪一种真理，而不只是问信息真不真。",
+   "question_en": "Postman pushed McLuhan's \"the medium is the message\" further, into \"the medium is the metaphor\" and media as epistemology. What does that extra step claim?",
+   "options_en": [
+    "Media content is often distorted, so information must be verified before judging it true",
+    "The medium matters more than the content it carries; media are what really change society",
+    "Different media suit different content, so serious topics should return to written debate",
+    "The dominant medium quietly decides on what grounds a culture counts something as true"
+   ],
+   "explanation_en": "\"The medium matters more than its content\" is what McLuhan's line already meant; Postman goes further: a culture's very criteria for truth are set by its dominant medium — a proverb that settles a dispute in an oral tribe is a joke in a courtroom. He wants you to ask which kind of truth a medium favors, not just whether a given message is true."
+  }
+ ]
+}

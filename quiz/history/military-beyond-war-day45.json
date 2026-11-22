@@ -1,0 +1,69 @@
+{
+ "page": "/history/military-beyond-war-day45.html",
+ "title": "历史：战争之外的军事史 — Day 45",
+ "page_en": "/history/military-beyond-war-day45.en.html",
+ "title_en": "History: Military History Beyond Battle — Day 45",
+ "src_hash": "ac4aea6d163c",
+ "questions": [
+  {
+   "id": "537b67183e",
+   "question": "1592 年闲山岛海战之后，困在平壤的日军攻势为何停摆？",
+   "options": [
+    "龟船击沉了运兵船队，日军前线兵力因此严重不足",
+    "李舜臣的水军随后登陆作战，在陆上正面击溃了日军的主力",
+    "明军抢在海战之前进入朝鲜，切断了日军的陆上退路",
+    "失去制海权后水军无法沿西海岸北运，前线粮弹断了供应"
+   ],
+   "answer": 3,
+   "explanation": "秀吉的方案是水陆并进，水军沿西海岸运粮弹是整个战略成立的前提。闲山岛一战后日本水军放弃北运，补给改走陆路，平壤的小西部粮弹俱缺、攻势停摆——战线是被饿短的，不是被打退的。明军攻平壤是 1593 年正月的事，在攻势停摆之后。",
+   "question_en": "Why did the Japanese offensive stuck at Pyongyang stall after the Battle of Hansan Island in 1592?",
+   "options_en": [
+    "Turtle ships sank the troop convoys, leaving the front lines badly short of soldiers",
+    "Yi Sun-sin's forces landed and defeated the main Japanese army head-on in a land battle",
+    "Ming troops entered Korea before the naval battle and cut the Japanese line of retreat over land",
+    "With control of the sea lost, the navy could no longer ship supplies up the west coast, so the front ran out of food and ammunition"
+   ],
+   "explanation_en": "Hideyoshi's plan relied on army and navy advancing together, with the navy carrying supplies up the west coast. After Hansan the Japanese navy gave up that route, supplies shifted overland, and Konishi's force at Pyongyang ran short and stalled: the front was starved shorter, not beaten back. The Ming assault on Pyongyang came in early 1593, after the stall."
+  },
+  {
+   "id": "7fd99b0ac6",
+   "question": "明治日本海军靠改伙食基本消灭了脚气病，陆军却拒绝跟进，日俄战争中因此死亡约 2.7 万人。这一案例被总结出的核心教训是什么？",
+   "options": [
+    "细菌学范式当时已遭普遍质疑，陆军坚持它纯粹是出于个人固执",
+    "有效但讲不出机制的证据，最容易被当时最成功的理论驳回",
+    "高木已经证明了白米缺乏硫胺素，但陆军出于派系之争隐瞒",
+    "海军的对照实验样本太小，统计上本来就不足以说服陆军"
+   ],
+   "answer": 1,
+   "explanation": "高木拿得出筑波号的对照结果，却交不出病原和机制；陆军与东京帝大正处在「一病一菌」细菌学的黄金期，便斥之为无理论的经验。范式越成功，越有能力驳回范式外的证据。硫胺素要到 1910 年才被分离，高木不可能证明它；而细菌学当时正当红，并未遭普遍质疑。",
+   "question_en": "Meiji Japan's navy virtually eliminated beriberi by changing rations, but the army refused to follow and lost about 27,000 men to it in the Russo-Japanese War. What is the core lesson drawn from this case?",
+   "options_en": [
+    "Germ theory was already widely doubted, so the army held to it purely out of personal stubbornness",
+    "Evidence that works but cannot explain its mechanism is the easiest to dismiss with the most successful theory of the day",
+    "Takaki had already proved white rice lacked thiamine, but the army hid it out of factional rivalry",
+    "The navy's controlled voyage was too small a sample, so it was statistically unable to convince the army"
+   ],
+   "explanation_en": "Takaki had the Tsukuba comparison but no pathogen and no mechanism; the army and Tokyo Imperial University, at the height of one-disease-one-germ bacteriology, dismissed it as empiricism without theory. The more successful a paradigm, the better it can reject evidence from outside it. Thiamine was not isolated until 1910, so Takaki could not have proved it, and germ theory was then at its peak, not in doubt."
+  },
+  {
+   "id": "7887559d28",
+   "question": "罐头在 1810 年前后发明并供应英国海陆军，开罐器却要到 1855–1858 年才出现，此前罐头靠凿子和锤子打开。作者从这个细节得出什么判断？",
+   "options": [
+    "要等巴斯德解释清原理，罐头才可能被大规模推广",
+    "技术外溢的速度由配套决定，而不是由发明本身决定",
+    "早期马口铁罐太薄，本来就用不着专门的开罐工具",
+    "军方订单优先占用了产能，拖慢民用普及，外溢因此推迟了几十年"
+   ],
+   "answer": 1,
+   "explanation": "作者说「军事技术外溢」最常见的误读是把外溢想得很快：罐头太贵、太重、打不开，没有立刻改变战争。发明决定上限，配套决定日程。文中还认为军需恰恰是唯一愿意为「不腐烂」付溢价的买家，是军方订单让这种方法没有停在奢侈品。",
+   "question_en": "Canned food was invented around 1810 and supplied to the British army and navy, yet the can opener appeared only in 1855–1858; until then cans were opened with chisels and hammers. What does the author conclude from this detail?",
+   "options_en": [
+    "Canning could only be adopted widely once Pasteur had explained why it worked",
+    "How fast a technology spreads is set by its supporting pieces, not by the invention itself",
+    "Early tin cans were thin enough that no dedicated opening tool was ever needed",
+    "Military orders slowed civilian adoption, delaying the spillover by several decades"
+   ],
+   "explanation_en": "The author says the common misreading of military spillover is to imagine it as fast: cans were too expensive, too heavy and hard to open, and did not change warfare at once. Invention sets the ceiling; supporting pieces set the schedule. The piece also argues the military was the one buyer willing to pay a premium for food that did not rot, so its orders kept the method from staying a luxury."
+  }
+ ]
+}

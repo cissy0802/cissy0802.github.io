@@ -1,0 +1,69 @@
+{
+ "page": "/sociology-anthropology/durkheim-social-facts-day2.html",
+ "title": "社会学与人类学 Day 2：涂尔干与社会事实",
+ "page_en": "/sociology-anthropology/durkheim-social-facts-day2.en.html",
+ "title_en": "Sociology & Anthropology Day 2: Durkheim and Social Facts",
+ "src_hash": "d4a602756e23",
+ "questions": [
+  {
+   "id": "5c04a8be30",
+   "question": "统计显示新教徒多的地区自杀率更高。按文章对生态谬误的提醒，下面哪种推断不成立？",
+   "options": [
+    "由此推断差异可能与社会条件有关",
+    "由此推断两类地区的自杀率不同",
+    "由此推断自杀的人多半是新教徒",
+    "由此推断需要再查登记口径的影响"
+   ],
+   "answer": 2,
+   "explanation": "生态谬误指群体层面的相关不能直接搬到个体层面：新教徒多的地区自杀率高，不意味着自杀者多半是新教徒，高自杀率也可能来自这些地区的天主教少数派。地区之间率不同、可能与社会条件有关、要查登记口径（荷兰死亡登记研究就是这么做的），都是对率本身的合理推断。",
+   "question_en": "Statistics show higher suicide rates in regions with more Protestants. Given the article's warning about the ecological fallacy, which inference does NOT hold?",
+   "options_en": [
+    "That the difference may be related to social conditions",
+    "That suicide rates differ between the two kinds of region",
+    "That most people who die by suicide are Protestants",
+    "That the effect of death-registration practices should be checked"
+   ],
+   "explanation_en": "The ecological fallacy is applying a group-level correlation to individuals: high rates in Protestant regions don't mean most suicides are Protestants; the excess could come from the Catholic minority there. That rates differ, that social conditions may be involved, and that registration practices should be checked (as the Dutch death-record study did) are all reasonable inferences about the rates themselves."
+  },
+  {
+   "id": "5514f41a7c",
+   "question": "涂尔干注意到，经济突然繁荣时自杀率也会上升。他用「失范」怎样解释这一点？",
+   "options": [
+    "繁荣期社会规则突然变多，个人被过度管制而窒息",
+    "繁荣拉大了贫富差距，落后者的嫉妒和怨恨随之加剧",
+    "繁荣期工作强度骤增，过度劳累使身心健康全面恶化",
+    "剧变打碎了衡量「多少算够」的外部尺子，欲望失去刻度"
+   ],
+   "answer": 3,
+   "explanation": "失范说的是人的欲望没有内在的停止点，让它停下来的是一把由周围人共同维持的外部尺子。剧烈变动不论朝哪个方向都会打碎这把尺子，旧参照系失效、新的还没长出来，欲望没有上限也就无法被满足。让人垮掉的不是穷，是失去了衡量「够了」的办法。失范是规范缺失，不是规则过多。",
+   "question_en": "Durkheim noticed that suicide rates also rise during sudden economic booms. How did he explain this with \"anomie\"?",
+   "options_en": [
+    "Social rules multiply suddenly in a boom, and individuals are suffocated by over-regulation",
+    "Booms widen the gap between rich and poor, intensifying envy and resentment among those left behind",
+    "Work intensity surges in booms, and overwork damages physical and mental health across the board",
+    "Violent change shatters the external yardstick of \"how much is enough,\" leaving desire without a scale"
+   ],
+   "explanation_en": "Anomie means desire has no internal stopping point; what stops it is an external yardstick maintained collectively by those around you. Violent change in either direction shatters it: the old reference frame fails before a new one grows, so desire has no ceiling and can never be satisfied. What breaks people is not poverty but losing the means to judge \"enough.\" Anomie is an absence of norms, not too many rules."
+  },
+  {
+   "id": "9f2ebe8356",
+   "question": "公司里有一条没写进制度、却人人遵守的潜规则（比如下班后必须秒回消息）。你想改掉它。按文章对社会事实的分析，最可能有效的做法是什么？",
+   "options": [
+    "把新做法写进制度文档，因为社会事实存在于书面规定里",
+    "自己带头不再遵守，用个人示范慢慢影响身边的同事",
+    "私下逐个找同事谈心，等说服的人足够多了，这条规则自然就会松动",
+    "制造一个所有人同时看见的公开事件，让大家对彼此的预期一次翻面"
+   ],
+   "answer": 3,
+   "explanation": "社会事实是自我维持的均衡：每个人遵守是因为预期别人会遵守。私下说服几乎无效，被说服的人仍预期别人没被说服，于是照旧；独自偏离的成本也由偏离者一个人承担。真正管用的是一个公开的、所有人同时看见的事件，让预期一次性翻面。文章还说文化恰恰没写进制度文档，所以改它比改流程难。",
+   "question_en": "Your company has an unwritten rule everyone follows, such as replying instantly to messages after hours. You want to end it. Based on the article's analysis of social facts, what is most likely to work?",
+   "options_en": [
+    "Write the new practice into the policy documents, since social facts live in written rules",
+    "Stop following it yourself and lead by example, gradually influencing the colleagues around you",
+    "Talk to colleagues privately one by one; once enough are persuaded, the rule will loosen by itself",
+    "Create a public event everyone sees at the same time, so expectations about each other flip at once"
+   ],
+   "explanation_en": "A social fact is a self-sustaining equilibrium: each person conforms because they expect others to. Private persuasion barely works, since each persuaded person still expects the rest to conform; going it alone means bearing the cost of deviation by yourself. What works is a public event everyone sees at once, flipping expectations in one go. The article also notes culture lives precisely outside written policy, which is why it is harder to change than process."
+  }
+ ]
+}

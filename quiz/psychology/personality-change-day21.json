@@ -1,0 +1,69 @@
+{
+ "page": "/psychology/personality-change-day21.html",
+ "title": "心理学 Day 21：人格能否改变 — 稳定的证据，与可变的证据",
+ "page_en": "/psychology/personality-change-day21.en.html",
+ "title_en": "Psychology Day 21: Can Personality Change — The Evidence for Stability, and for Change",
+ "src_hash": "7ed7d2f539cd",
+ "questions": [
+  {
+   "id": "fd51fefec7",
+   "question": "有人说：「研究都说人格很稳定，所以我天生内向，改不了。」按这篇文章，这句话错在哪里？",
+   "options": [
+    "稳定的是相对排名：你可以整体变外向，同时仍比多数人内向",
+    "稳定性只在三十岁前成立，三十岁后人格会变得更容易改变",
+    "研究其实表明人格并不稳定，童年以后的排序基本都会被重新洗牌",
+    "内向属于基因决定的部分，确实难改，但其他特质都能改"
+   ],
+   "answer": 0,
+   "explanation": "文章说「人格很稳定」和「人格在变」可以同时为真：排序稳定性问你相对同龄人的位置变不变，均值变化问整个人群往哪移动。排序稳定说的是相对位置，你可以整体变外向而仍比多数人内向；而且稳定性随年龄上升，0.74 也从未到 1.0。",
+   "question_en": "Someone says: \"Research shows personality is stable, so I'm born introverted and can't change.\" According to the article, what's wrong with this?",
+   "options_en": [
+    "What's stable is relative rank: you can become more extraverted overall while staying more introverted than most",
+    "Stability only holds before thirty; after thirty, personality actually becomes easier to change",
+    "Research actually shows personality is unstable, with rank orders largely reshuffled after childhood",
+    "Introversion belongs to the genetically fixed part and is hard to change, though other traits can change"
+   ],
+   "explanation_en": "The article says \"personality is stable\" and \"personality changes\" can both be true: rank-order stability asks whether your position relative to peers holds, mean-level change asks where the whole population moves. Rank stability concerns relative position, so you can become more extraverted overall and still be more introverted than most; and stability rises with age, peaking near 0.74, never 1.0."
+  },
+  {
+   "id": "b286d04dd5",
+   "question": "一个人想变得更开放、更敢尝试新事物，打算「等年纪大一些自然就成熟了」。按成熟原则，这个想法的问题是什么？",
+   "options": [
+    "自然成熟主要推向尽责、宜人和情绪稳定，不会自动让人更开放",
+    "自然成熟反而会让人更外向冒险，开放性却会随年龄迅速下降",
+    "自然成熟只在青春期发生，成年以后人格的均值就不再变化了",
+    "成熟原则只在西方样本中成立，跨文化数据并不支持这条规律"
+   ],
+   "answer": 0,
+   "explanation": "成熟原则说几乎所有人随年龄变得更尽责、更宜人、更情绪稳定，20–40 岁变化最快、跨文化一致；但它只朝成熟方向走，不会自动让人更开放或更外向。想变得更开放、更敢冒险，得靠主动干预。",
+   "question_en": "Someone wants to become more open and adventurous and plans to \"just wait until I'm older and naturally more mature.\" Under the maturity principle, what's the problem?",
+   "options_en": [
+    "Natural maturation mainly pushes toward conscientiousness, agreeableness and emotional stability, not openness",
+    "Natural maturation actually makes people more extraverted and daring, while openness falls rapidly with age",
+    "Natural maturation happens only in adolescence; after adulthood mean levels of personality stop changing",
+    "The maturity principle holds only in Western samples; cross-cultural data do not support it"
+   ],
+   "explanation_en": "The maturity principle says nearly everyone becomes more conscientious, agreeable and emotionally stable with age, fastest between 20 and 40 and consistently across cultures; but it moves only in that direction and does not make anyone more open or extraverted on its own. Becoming more open or daring takes deliberate intervention."
+  },
+  {
+   "id": "f5e3614b32",
+   "question": "按这篇文章，持久的人格改变通常按什么顺序发生？",
+   "options": [
+    "先立下明确的改变目标并保持决心，行为和特质就会随之调整",
+    "先等待一次重大生活事件打破旧模式，之后再开始练习新行为",
+    "先想清楚并确立新的身份认同，再让行为去配合这个新的自我",
+    "先反复改变具体的状态行为，特质随之移动，身份叙事最后跟上"
+   ],
+   "answer": 3,
+   "explanation": "文章说持久改变走自下而上的路：先改具体、可重复的状态行为，状态累积成特质（特质是状态的密度分布），行为攒够后身份叙事才更新并反过来稳固行为。只立目标不行动几乎不变；先想清楚我是谁再行动，正是它指出的顺序颠倒。",
+   "question_en": "According to the article, in what order does lasting personality change usually happen?",
+   "options_en": [
+    "First set a clear goal for change and keep your resolve; behavior and traits then adjust accordingly",
+    "First wait for a major life event to break the old patterns, then start practicing new behaviors",
+    "First work out and adopt a new identity, then bring your behavior into line with that new self",
+    "Repeatedly change concrete state-level behaviors first; the trait shifts, and the identity story catches up last"
+   ],
+   "explanation_en": "The article describes change as bottom-up: alter concrete, repeatable state behaviors first; states accumulate into traits (a trait is a density distribution of states); once enough behavior builds up, the identity narrative updates and in turn stabilizes it. Goals without action barely change anything, and figuring out who you are before acting is the reversed order it warns against."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/thinker-arena/debate.html?d=grieving-a-loss",
+ "title": "辩论：失去至亲，只能等时间冲淡吗？",
+ "page_en": "/thinker-arena/debate.en.html?d=grieving-a-loss",
+ "title_en": "After losing someone close, can we only wait for time to dull it?",
+ "src_hash": "6c0232e317cc",
+ "questions": [
+  {
+   "id": "a1e82747ab",
+   "question": "围绕「失去至亲，只能等时间冲淡吗？」，这场讨论最后的共识是什么？",
+   "options": [
+    "只要给哀伤足够长的时间，它就会自己慢慢淡去，不必刻意去做什么",
+    "只要及时改掉「这不该发生」的判断，痛苦就能在当下放下",
+    "冲淡哀伤的不是时间本身，而是时间里发生的学习、重建与陪伴",
+    "哀悼的目标是把情感从逝者身上完全收回，转去爱新的人"
+   ],
+   "answer": 2,
+   "explanation": "共识是时间只是容器：大脑在一次次落空里更新预测、哀悼是一份工作、礼与在场的人托住你，痛可以变轻，爱未必需要消失。「把情感完全收回」是被提出者自己修正掉的早期观点，最后落点是联结可以换个地方保留；「只靠改判断就能放下」也没有成为共识。",
+   "question_en": "On the question \"After losing someone close, can we only wait for time to dull the pain?\", what consensus did the discussion reach?",
+   "options_en": [
+    "Given enough time, grief fades on its own, so there is no need to do anything in particular",
+    "Once you drop the judgment that \"this should not have happened,\" the pain can be let go right away",
+    "It is not time itself that eases grief but what happens within it: learning, rebuilding and company",
+    "The aim of mourning is to withdraw all feeling from the dead and redirect it toward someone new"
+   ],
+   "explanation_en": "The consensus is that time is only a container: the brain updates its predictions through repeated absence, mourning is work, and ritual and people's presence hold you up; the pain can lighten while the love need not vanish. Fully withdrawing attachment was an early view revised by the person who proposed it, ending in keeping the bond in a new form; letting go just by changing a judgment did not become the consensus."
+  },
+  {
+   "id": "ea47d855fc",
+   "question": "母亲生前包揽全家缴费、亲戚联络和周末那顿饭。她去世半年后，女儿仍天天在这些空出来的位置上「撞一下」。按这场讨论的结论，最该做的是什么？",
+   "options": [
+    "尽量回避与这些事相关的场景，减少每天被触发的次数",
+    "列出她以前管的事，逐项决定自己学、交给谁，还是干脆不做",
+    "先把这些事全部搁置，等对她的思念处理好了，再回头去慢慢安排",
+    "等到周年祭的仪式之后再处理，以免过早切断与她的联结"
+   ],
+   "answer": 1,
+   "explanation": "结论点出被忽略的第二重丧失：逝者在生活里占着的那些位置。双过程模型把这叫恢复导向的任务，学会他会的事、重排日程、接手或分掉角色，这部分时间帮不了，必须动手做。把它搁置或回避，只会让空位一直空着撞人。",
+   "question_en": "A mother used to handle all the family's bills, the contact with relatives and the weekend dinner. Six months after her death, her daughter still runs into these empty roles every day. Following the discussion's conclusion, what is the most useful thing to do?",
+   "options_en": [
+    "Avoid situations connected to these tasks as much as possible, to cut down daily triggers",
+    "List the things she used to handle and decide for each: learn it, hand it to someone, or drop it",
+    "Set all of these aside for now and come back to them once the longing itself has been worked through",
+    "Wait until after the first-anniversary ritual, so as not to cut the bond with her too early"
+   ],
+   "explanation_en": "The conclusion names an overlooked second loss: the roles the dead person filled in daily life. The dual process model calls this restoration-oriented work — learning what they did, rearranging routines, taking over or sharing their roles — and time does not do it for you. Shelving or avoiding it leaves the empty slots to keep hurting."
+  },
+  {
+   "id": "37a88cef71",
+   "question": "一个人亲历了亲人车祸后的抢救，之后反复闪回、做噩梦，不敢看照片，也去不了墓地。按这场讨论的结论，应当怎样理解和应对？",
+   "options": [
+    "这是在逃避哀悼，应鼓励他多谈逝者、多看照片，逼自己尽快正式告别",
+    "这是依恋系统在等逝者回来，只要坚持日常作息，地图会随时间自己更新",
+    "这可能是创伤与哀伤缠在一起，先稳住睡眠与安全感，再在专业支持下接近记忆",
+    "这是延长哀伤障碍的典型表现，应当先等满一年，再去评估是否需要接受专门的治疗"
+   ],
+   "answer": 2,
+   "explanation": "结论区分了创伤反应与单纯的思念：死亡突然、暴力或亲历抢救时，闪回、噩梦、回避现场是另一种机制。此时不宜一概解释成逃避哀悼，也不要贸然强迫反复回忆，否则「多谈逝者」这条通常有益的建议会让人再次被淹没。",
+   "question_en": "Someone witnessed the resuscitation after a relative's car crash and now has repeated flashbacks and nightmares, cannot look at photos and cannot visit the grave. Following the discussion's conclusion, how should this be understood and handled?",
+   "options_en": [
+    "It is avoidance of mourning: encourage talking about the dead and looking at photos to force a proper goodbye soon",
+    "It is the attachment system waiting for the dead to return: keep a daily routine and the map will update over time",
+    "Trauma may be tangled with grief: first stabilize sleep and safety, then approach the memories with professional support",
+    "It is a classic sign of prolonged grief disorder: wait a full year before assessing whether specialist treatment is needed"
+   ],
+   "explanation_en": "The conclusion separates trauma responses from plain longing: after a sudden or violent death or a witnessed resuscitation, flashbacks, nightmares and avoidance run on a different mechanism. They should not be read as avoiding grief, and forcing repeated recall is unwise; otherwise the usually helpful advice to talk about the dead can overwhelm the person again."
+  }
+ ]
+}
