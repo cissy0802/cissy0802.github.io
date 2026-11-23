@@ -1,0 +1,69 @@
+{
+ "page": "/personal-finance/credit-system-day6.html",
+ "title": "个人理财 · Day 6 · 信用体系（美国）",
+ "page_en": "/personal-finance/credit-system-day6.en.html",
+ "title_en": "Personal Finance · Day 6 · The Credit System (US)",
+ "src_hash": "f83bd723ef63",
+ "questions": [
+  {
+   "id": "b86e41b8d3",
+   "question": "有人为省事想关掉自己最早办的那张、已不常用的无年费信用卡。按 FICO 的计算方式，这样做通常会怎样？",
+   "options": [
+    "小幅降分：总额度减少抬高利用率，几年后还拉低平均账龄",
+    "会提高分数：账户越少，信用档案越干净",
+    "没有影响：不用的卡不进入信用评分",
+    "会提高分数：少一张卡就少一分被盗用的风险，评分会奖励这一点"
+   ],
+   "answer": 0,
+   "explanation": "关卡砍掉总可用额度，信用利用率（已用÷总额度）随之上升，而利用率占 30%；若干年后平均账龄也被拉低。除非它有高年费，一般留着、偶尔小额消费并自动还清更划算；要关就先关新的。",
+   "question_en": "Someone wants to close their oldest credit card, a no-fee card they rarely use, just to simplify. Given how FICO works, what usually happens?",
+   "options_en": [
+    "The score dips slightly: less total credit raises utilization, and years later the average account age falls",
+    "The score rises: fewer accounts make for a cleaner credit file",
+    "Nothing: unused cards don't count toward the score",
+    "The score rises: the reduced fraud risk is rewarded by the scoring model"
+   ],
+   "explanation_en": "Closing the card cuts total available credit, so utilization (used ÷ available), worth 30% of the score, goes up; some years later the average age of accounts drops too. Unless it carries a hefty fee, it's better to keep it alive with an occasional small, auto-paid charge — and if you must close one, close a newer card."
+  },
+  {
+   "id": "cabe589d56",
+   "question": "一个人用 2% 返现卡大量消费、每月只还最低额，觉得自己「在赚积分」。按文中的算法，他的真实处境是？",
+   "options": [
+    "背着约 22% 年利率的余额，净亏约 20 个百分点",
+    "只要不逾期，背余额和全额还款的成本差不多",
+    "只要返现比例高于 1%，长期看总能把利息赚回来",
+    "背一点余额才能养出信用分，所以这些利息相当于买高分的费用"
+   ],
+   "answer": 0,
+   "explanation": "返现是发卡行从商户手续费和背余额者付的利息里返的诱饵；2% 返现对上 20–24% 的 APR，积分连零头都补不上。养信用只需按时全额还清，背余额并不加分，利用率看的是账单日快照。",
+   "question_en": "Someone spends heavily on a 2% cash-back card and pays only the minimum each month, believing they're 'earning rewards'. By the article's math, what's really going on?",
+   "options_en": [
+    "They carry a balance at about 22% APR, netting a loss of roughly 20 points — the rewards are playing them",
+    "As long as they never miss a payment, carrying a balance costs about the same as paying in full",
+    "As long as cash back exceeds 1%, it will cover the interest in the long run",
+    "Carrying a balance builds credit, so the interest is the price of a higher score"
+   ],
+   "explanation_en": "Rewards are bait funded by merchant fees and by interest from people who carry balances; 2% back against a 20–24% APR doesn't come close. Building credit only requires paying on time and in full — carrying a balance earns no points, and utilization is a statement-date snapshot."
+  },
+  {
+   "id": "6ce50cb331",
+   "question": "在美国，想防止别人冒用你的身份开信用账户，哪种做法防护最强？",
+   "options": [
+    "每年从官方网站免费拉一次信用报告，核对陌生账户",
+    "购买付费信用监控服务，有异常时及时收到告警",
+    "尽量少用信用卡，保持信用档案简单",
+    "在三大征信局分别开启免费的信用冻结"
+   ],
+   "answer": 3,
+   "explanation": "冻结是事前上锁：任何人（包括你自己）都无法用你的信息开新账户，自 2018 年起三家都免费。监控和查报告只是事后发现，很多付费监控卖的正是你本可以免费做的事。",
+   "question_en": "In the US, what offers the strongest protection against someone opening credit accounts in your name?",
+   "options_en": [
+    "Pulling your free credit reports once a year from the official site to check for unknown accounts",
+    "Paying for a credit-monitoring service that alerts you to unusual activity",
+    "Using credit cards as little as possible to keep your file simple",
+    "Placing a free credit freeze at each of the three bureaus, lifting it temporarily when you need to apply"
+   ],
+   "explanation_en": "A freeze locks the door in advance: no one, including you, can open new credit with your information, and since 2018 it's free at all three bureaus. Monitoring and report checks only detect after the fact, and many paid monitoring services sell what you could do for free."
+  }
+ ]
+}

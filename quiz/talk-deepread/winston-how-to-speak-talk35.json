@@ -1,0 +1,69 @@
+{
+ "page": "/talk-deepread/winston-how-to-speak-talk35.html",
+ "title": "Patrick Winston ·《How to Speak》— 天赋那一项很小",
+ "page_en": "/talk-deepread/winston-how-to-speak-talk35.en.html",
+ "title_en": "Patrick Winston · How to Speak — The T Is Very Small",
+ "src_hash": "8d8495b4b703",
+ "questions": [
+  {
+   "id": "82abecd731",
+   "question": "Patrick Winston 在《How to Speak》里说，提问后要等七秒，这是「标准」等待时间。回到等待时间研究的原始来源，实际情况是？",
+   "options": [
+    "测的是小学科学课：老师平均只等一秒，拉到三到五秒更好",
+    "原研究认为等待会让课堂冷场，建议老师尽快自己给出答案",
+    "原研究在大学讲堂测得最佳等待正是七秒，Winston 准确转述了它",
+    "原研究发现等待越久越好，七秒只是一个保守的下限"
+   ],
+   "answer": 0,
+   "explanation": "Mary Budd Rowe 分析的是小学科学课录音：老师提问后平均约等一秒，训练后拉到三到五秒，学生回答更长、更主动。七秒在课上没有出处，这是 Winston 顺手挂上的数字普遍比原始研究说得满的一例。",
+   "question_en": "In 'How to Speak', Patrick Winston says to wait seven seconds after asking a question — the 'standard' wait time. What does the original wait-time research actually show?",
+   "options_en": [
+    "It studied elementary science classes: teachers waited about one second, and stretching it to three to five improved answers",
+    "It found waiting kills momentum and advised teachers to supply the answer quickly",
+    "It measured an optimal wait of exactly seven seconds in university lectures, which Winston reported accurately",
+    "It found that longer is always better, with seven seconds as a conservative minimum"
+   ],
+   "explanation_en": "Mary Budd Rowe analyzed recordings of elementary science lessons: teachers waited about a second on average, and when trained to wait three to five seconds, students gave longer and more spontaneous answers. Seven seconds has no source in the talk — one of several figures Winston stated more strongly than the research does."
+  },
+  {
+   "id": "959415b988",
+   "question": "按 Winston 的建议，一场求职报告的最后一页幻灯片应该放什么、最后一句话又该怎么说？",
+   "options": [
+    "最后一页写「贡献」呼应开头；结尾不说谢谢，而是向听众致敬",
+    "最后一页写「问题与讨论」；结尾总结时再把全部要点念一遍",
+    "最后一页写「结论」，概括主要发现；结尾说「谢谢聆听」以示礼貌",
+    "最后一页放合作者名单以示公平；结尾用一个笑话收住"
+   ],
+   "answer": 0,
+   "explanation": "「结论」多是正确但没人在乎的话，人们在乎的是你做了什么；合作者名单让人觉得你的那份工作被除以了一千，应放在第一页致谢。说「谢谢聆听」暗示大家熬到现在全凭礼貌，是一步弱棋；他自己以「我很高兴你们来了」向听众致敬。",
+   "question_en": "Following Winston's advice, what should the last slide of a job talk say, and how should the final words go?",
+   "options_en": [
+    "Title it 'Contributions', echoing the steps listed at the start; don't end with thanks — salute the audience instead",
+    "Title it 'Questions and Discussion'; end by reading through all the key points again",
+    "Title it 'Conclusions' summarizing the findings; end with 'thank you for listening' to be polite",
+    "Show the list of collaborators to be fair; end with a joke"
+   ],
+   "explanation_en": "'Conclusions' are usually true things nobody cares about — people care what you did; a collaborator list makes your share look divided by a thousand, so acknowledge collaborators on the first slide. 'Thank you for listening' implies people stayed only out of politeness, a weak move; Winston himself ended by saying he was glad they came."
+  },
+  {
+   "id": "3da265275d",
+   "question": "「手写笔记比键盘更好」的著名研究在直接复制中没站住。这对 Winston 课堂上禁止开电脑的规矩意味着什么？",
+   "options": [
+    "复制失败证明用电脑记笔记反而更好，应当鼓励开电脑",
+    "他的规矩随之失去了依据，因为它从头到尾建立在手写优于键盘之上",
+    "他的理由本是分心和干扰旁人，不是记笔记方式，这条仍有支持",
+    "复制失败说明电脑对课堂学习毫无影响，开不开都一样"
+   ],
+   "answer": 2,
+   "explanation": "Winston 讲的理由是人只有一个语言处理器、会让周围人分心、会干扰讲者。Sana 等人 2013 年的实验显示，坐在开小差的电脑后面的学生测验正确率从 73% 降到 56%。复制失败只是说按记笔记方式区分差异很小且不显著，并不说明电脑无害——他的规矩比他的理由走得远，而理由本身没倒。",
+   "question_en": "The famous finding that longhand notes beat laptop notes didn't hold up in a direct replication. What does that mean for Winston's ban on open laptops in his lecture?",
+   "options_en": [
+    "The failed replication proves laptop note-taking is better, so laptops should be encouraged",
+    "His rule loses its basis, since it rested entirely on handwriting beating typing",
+    "His reason was never note-taking method but distraction of oneself and neighbors, which still has experimental support",
+    "The failed replication shows laptops have no effect on classroom learning either way"
+   ],
+   "explanation_en": "Winston's reasons were that people have one language processor, that laptops distract neighbors, and that they rattle the speaker. In Sana et al. (2013), students seated behind multitasking laptops scored 56% versus 73%. The replication found only a small, non-significant difference by note-taking method — not that laptops are harmless. His rule has spread further than his reasons, but the reasons still stand."
+  }
+ ]
+}

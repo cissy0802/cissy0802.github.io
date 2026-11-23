@@ -1,0 +1,69 @@
+{
+ "page": "/art-aesthetics/how-to-look-at-architecture-day9.html",
+ "title": "艺术与审美：建筑怎么看",
+ "page_en": "/art-aesthetics/how-to-look-at-architecture-day9.en.html",
+ "title_en": "Art & Aesthetics: How to Look at Architecture",
+ "src_hash": "f21ccc05aa72",
+ "questions": [
+  {
+   "id": "eae2b4f4e8",
+   "question": "有人说「看一座建筑，拍一张漂亮的正面照就够了」。按「建筑是用脚和身体读的」这一看法，这种做法漏掉了什么？",
+   "options": [
+    "建筑师在图纸上给每个房间设定的功能分区",
+    "建筑的绝对尺寸，越高大越能体现艺术价值",
+    "立面装饰的精细程度，以及外墙所用材料是否足够昂贵",
+    "人走进、穿过时依次展开的空间序列，如先压后放"
+   ],
+   "answer": 3,
+   "explanation": "建筑是「时间的艺术」，真正的艺术在走进去、穿过去的过程里发生——低矮门廊接豁然开朗的大厅，身体先于大脑感到。立面只是封面；贵材料、一味求大也都被文章明确列为误区。",
+   "question_en": "Someone says one good photo of a building's façade is enough to appreciate it. If architecture is read with your feet and body, what does that miss?",
+   "options_en": [
+    "The functional zoning the architect assigned to each room on the plans",
+    "The building's absolute size, since bigger means greater artistic value",
+    "How finely the façade is ornamented and how costly its materials are",
+    "The sequence of spaces that unfolds as you walk in and through, such as compression followed by release"
+   ],
+   "explanation_en": "Architecture is an art of time: it happens as you move through it, as when a low porch gives way to a soaring hall and the body feels it before the mind does. The façade is just the cover, and expensive materials and sheer size are both named as misconceptions."
+  },
+  {
+   "id": "b16ee31293",
+   "question": "许多神圣空间宁可整体昏暗，只在关键处放一束光。按「光是建筑的材料」这一思路，这样做的道理是？",
+   "options": [
+    "受当时的建造技术所限开不了大窗，昏暗只是不得已的结果",
+    "昏暗能让人看不清结构，从而掩盖建造上的粗糙",
+    "采光越暗越节能，神圣空间更讲究朴素节俭",
+    "明暗配合能引导脚步和情绪，留暗让那束光更有力量"
+   ],
+   "answer": 3,
+   "explanation": "建筑里的光讲究怎么进来、什么形状、和暗怎么搭：通道做暗、圣坛做亮，人就被光「领着」往前走。处处通亮往往最没气氛；哥特教堂靠飞扶壁恰恰开出了大片花窗，说明昏暗并非技术无奈。",
+   "question_en": "Many sacred spaces stay mostly dim and place a single shaft of light where it matters. If light is treated as a building material, why do this?",
+   "options_en": [
+    "Builders of the time couldn't make large windows, so dimness was simply unavoidable",
+    "Dimness hides the structure so that rough construction goes unnoticed",
+    "Dimmer spaces save energy, and sacred buildings favor frugality",
+    "Pairing dark and light steers your steps and emotions; the darkness makes that one beam far more powerful"
+   ],
+   "explanation_en": "What matters is how light enters, its shape, and how it plays against darkness: a dark passage and a bright altar lead you forward. Uniform brightness usually kills atmosphere, and Gothic builders used flying buttresses precisely to open huge windows, so dimness wasn't a technical limitation."
+  },
+  {
+   "id": "e5ae48b535",
+   "question": "哥特教堂的飞扶壁、中国木构的斗栱，常被当作建筑最好看的部分。这体现了看建筑的哪条原则？",
+   "options": [
+    "真正的好建筑应把受力构件都藏起来，只露出光洁平整的表面",
+    "结构为受力而生，诚实地露出来，本身就成了装饰和美",
+    "贵重材料和繁复雕饰，是建筑之美的主要来源",
+    "装饰与结构各管各的，好看的部分往往与承重无关"
+   ],
+   "answer": 1,
+   "explanation": "飞扶壁把屋顶的侧推力引到地面，墙才敢开大窗；斗栱把屋檐重量传下来，同时极有韵律。它们本来都为受力而生，却成了最好看的地方——「结构变成了装饰」。文章也明确反对「贵材料＝好建筑」。",
+   "question_en": "The flying buttresses of Gothic cathedrals and the dougong brackets of Chinese timber buildings are often their most beautiful features. Which principle does this illustrate?",
+   "options_en": [
+    "Good buildings should hide their load-bearing members behind smooth, clean surfaces",
+    "Structure born of load-bearing needs, honestly exposed, becomes ornament and beauty in itself",
+    "Precious materials and elaborate carving are the main source of architectural beauty",
+    "Ornament and structure are separate; the beautiful parts usually have nothing to do with support"
+   ],
+   "explanation_en": "Flying buttresses carry the roof's outward thrust to the ground so walls can open into vast windows; dougong transfer the eaves' weight while forming a rhythmic pattern. Both exist for structural reasons yet became the most beautiful parts — structure as ornament. The piece explicitly rejects the idea that expensive materials make good architecture."
+  }
+ ]
+}

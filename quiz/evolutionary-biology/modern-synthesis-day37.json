@@ -1,0 +1,69 @@
+{
+ "page": "/evolutionary-biology/modern-synthesis-day37.html",
+ "title": "进化生物学 Day 37：现代综合与扩展综合",
+ "page_en": "/evolutionary-biology/modern-synthesis-day37.en.html",
+ "title_en": "Evolutionary Biology Day 37: The Modern Synthesis and Its Extensions",
+ "src_hash": "e3707a3d46e0",
+ "questions": [
+  {
+   "id": "a3723019db",
+   "question": "群体遗传学（现代综合）能把变异比例的变化算得又准又经得起检验，最关键的原因是什么？",
+   "options": [
+    "它不打开「基因怎么长成身体」这个盒子，只算比例变化",
+    "它证明了突变总是朝着生物需要的方向出现",
+    "它先在野外用大量实验确认了颗粒遗传，再据此推导出公式",
+    "它把发育过程写进方程，从而能预测哪些形态会出现"
+   ],
+   "answer": 0,
+   "explanation": "现代综合像算城市人口不必懂盖房子：正因为不碰发育那一层，比例层才算得清，这是它力量的来源也是代价。把发育写进方程恰恰是扩展综合想做而它没做的事；Fisher 1918 是数学论证，实验确认在很多年后。",
+   "question_en": "Why could population genetics (the Modern Synthesis) model changes in variant frequencies so accurately and testably?",
+   "options_en": [
+    "It treated the route from gene to body as a box it never had to open, tracking only frequencies",
+    "It showed that mutations reliably arise in the direction an organism needs",
+    "It first confirmed particulate inheritance through extensive field experiments, then derived its equations",
+    "It built developmental processes into its equations, so it could predict which forms would arise"
+   ],
+   "explanation_en": "Like projecting a city's population without knowing how any house was built, the synthesis gained its precision by leaving development out. Building development into the equations is what the extended synthesis wants, not what the Modern Synthesis did; Fisher's 1918 result was mathematical, with empirical confirmation coming much later."
+  },
+  {
+   "id": "9e8dc34043",
+   "question": "2014 年《自然》上关于是否需要「扩展演化综合」的同页对垒，双方真正的分歧在哪里？",
+   "options": [
+    "身体这辈子获得的特征能否直接遗传给后代",
+    "发育偏向、可塑性等四样现象在自然界里究竟是否真实存在",
+    "自然选择是否仍是造出适应的一种重要力量",
+    "那四样现象是选择作用的材料，还是自身携带演化方向"
+   ],
+   "answer": 3,
+   "explanation": "反对方明确承认那四样现象是真的，双方也都不主张拉马克式遗传；争的是账怎么记——算作材料还是算作原因。正因为争的是「什么算原因」，这场争论有一部分不是再做一个实验就能判决的。",
+   "question_en": "In the 2014 Nature point-counterpoint over an extended evolutionary synthesis, what was the real disagreement?",
+   "options_en": [
+    "Whether traits acquired during an organism's life can be passed directly to offspring",
+    "Whether developmental bias, plasticity and the like actually occur in nature",
+    "Whether natural selection is still an important force in producing adaptation",
+    "Whether developmental bias, plasticity and the like are merely material for selection or are themselves sources of direction"
+   ],
+   "explanation_en": "The skeptics explicitly accepted that all four phenomena are real, and neither side revived Lamarck. The dispute was about bookkeeping — input versus cause — which is why part of it cannot be settled by running another experiment."
+  },
+  {
+   "id": "29d6432f2a",
+   "question": "按「可塑性优先」的思路，一个新形态由环境触发、而非由单个突变带来，这个先后顺序为什么要紧？",
+   "options": [
+    "新形态一出现就是一大群，不易被运气抹掉，选择立刻有材料",
+    "可塑性总是加速演化，因为它绕过了选择这一步",
+    "触发出的形态无需群体里有任何可遗传的差异，就能被永久固定下来",
+    "环境触发的形态会被身体写回基因，因此传得比突变更快"
+   ],
+   "answer": 0,
+   "explanation": "突变出的新样子起初只长在一个个体身上，随机漂变就能抹掉它；可塑性触发的新样子一出场就是一群。传下去的始终是基因，并没有把后天的样子写回；而且可塑性也能刹车（行为惰性），固定还需要群体里有关于触发门槛的可遗传差异。",
+   "question_en": "Under the plasticity-first view, why does it matter that a new form is induced by the environment rather than produced by a single mutation?",
+   "options_en": [
+    "An induced form appears in many individuals at once, so drift is unlikely to erase it and selection has material immediately",
+    "Plasticity always speeds evolution because it bypasses selection",
+    "An induced form can become permanently fixed without any heritable variation",
+    "An induced form gets written back into the genes by the body, so it spreads faster than a mutation"
+   ],
+   "explanation_en": "A mutant form starts in one individual and drift can wipe it out; an induced form arrives in numbers. What is inherited is still genes — nothing acquired is written back — and plasticity can also brake evolution (behavioral inertia); fixation still requires heritable variation in the induction threshold."
+  }
+ ]
+}

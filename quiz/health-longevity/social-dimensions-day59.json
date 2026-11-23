@@ -1,0 +1,69 @@
+{
+ "page": "/health-longevity/social-dimensions-day59.html",
+ "title": "健康长寿 Day 59 — 健康的社会维度",
+ "page_en": "/health-longevity/social-dimensions-day59.en.html",
+ "title_en": "Longevity Day 59 — The Social Dimension of Health",
+ "src_hash": "aa2dbac6e067",
+ "questions": [
+  {
+   "id": "8c72fb7d71",
+   "question": "孤独（主观感知）和社会隔离（客观联系少）各自独立预测死亡。这个区分对干预意味着什么？",
+   "options": [
+    "社交媒体上联系人足够多，就能弥补线下联结的不足",
+    "独处本身就有害，应尽量减少一个人待着的时间",
+    "光增加社交次数未必有效，要瞄准被理解、被需要的主观感受",
+    "只要不是一个人独居，孤独带来的那部分健康风险就基本可以排除"
+   ],
+   "answer": 2,
+   "explanation": "独居者未必孤独，人群中也可能孤独，所以干预要针对「感知到的联结」而不是通讯录长度。高质量独处是恢复，不等于孤独；被动刷屏反而升高孤独感。",
+   "question_en": "Loneliness (subjective) and social isolation (objective) each independently predict mortality. What does this distinction imply for interventions?",
+   "options_en": [
+    "Having enough contacts on social media can make up for missing in-person connection",
+    "Solitude itself is harmful, so time spent alone should be minimized",
+    "Simply adding more social contact may not help; the target is the felt quality of being understood and needed",
+    "As long as you don't live alone, the health risk of loneliness is essentially ruled out"
+   ],
+   "explanation_en": "People who live alone are not necessarily lonely, and one can be lonely in a crowd, so interventions should aim at perceived connection rather than contact counts. Good solitude is restorative, not loneliness, and passive scrolling actually raises loneliness."
+  },
+  {
+   "id": "7baabc5e95",
+   "question": "Whitehall 研究发现，英国公务员中连次高职级的死亡率也高于最高职级。这条逐级递增的梯度说明了什么？",
+   "options": [
+    "高职级者能获得更好、更及时的医疗服务，这是梯度的主要来源",
+    "梯度主要由低职级者吸烟等不良个人习惯造成",
+    "收入一旦超过温饱线，健康就不再随地位变化",
+    "绝对贫困解释不了，相对地位与控制感本身就会改变生理"
+   ],
+   "answer": 3,
+   "explanation": "次高层级并不穷，却仍比最高层级差，排除了「绝对贫困」的单一解释；Marmot 认为核心是「高要求—低控制」的慢性压力。医疗只解释约一到两成健康结局，把梯度归给医疗或个人习惯都抓错了重点。",
+   "question_en": "The Whitehall study found that even British civil servants in the second-highest grade had higher mortality than those in the top grade. What does this stepwise gradient show?",
+   "options_en": [
+    "Better access to medical care at higher grades is the main source of the gradient",
+    "The gradient is mainly driven by unhealthy habits such as smoking in lower grades",
+    "Once income passes subsistence level, health no longer varies with status",
+    "Absolute poverty can't explain it; relative status and sense of control themselves change physiology"
+   ],
+   "explanation_en": "The second-highest grade is not poor, yet fares worse than the top, which rules out absolute deprivation as the sole explanation; Marmot points to the chronic stress of high demand and low control. Medical care explains only about 10–20% of health outcomes, so blaming the gradient on care or personal habits misses the point."
+  },
+  {
+   "id": "1dc95c8f80",
+   "question": "蓝区的极端长寿记录被指与出生登记缺失、养老金欺诈相关。对想借鉴蓝区的人，更合理的做法是？",
+   "options": [
+    "既然原始数据可疑，蓝区的各项生活方式就都不必理会了",
+    "先找出蓝区共同的那种超级食物，再长期补充",
+    "把蓝区当假设来源，只采纳有独立证据支撑的成分",
+    "认定蓝区长寿主要来自当地人群的特殊基因"
+   ],
+   "answer": 2,
+   "explanation": "一个动人的「长寿村」叙事不等于因果证据；正确姿势是当灵感和假设，再回到像地中海饮食（PREDIMED）这种有硬证据的单项成分上落地。数据存疑不等于其中每个成分都没用，而蓝区本来就不是靠单一食物或基因。",
+   "question_en": "Extreme-longevity records in the Blue Zones have been linked to missing birth registrations and pension fraud. What is the more sensible way to learn from them?",
+   "options_en": [
+    "Since the underlying data are dubious, ignore all of the Blue Zone lifestyle practices",
+    "First identify the shared Blue Zone superfood, then supplement with it long-term",
+    "Treat the Blue Zones as a source of hypotheses and adopt only components with independent evidence",
+    "Conclude that Blue Zone longevity mainly reflects special local genes"
+   ],
+   "explanation_en": "A compelling 'village of centenarians' story is not causal evidence; use it as inspiration, then build on components with hard evidence such as the Mediterranean diet in PREDIMED. Dubious records don't mean every component is useless, and the Blue Zone story was never about a single food or gene."
+  }
+ ]
+}

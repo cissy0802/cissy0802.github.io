@@ -2348,6 +2348,141 @@
     "5514f41a7c",
     "9f2ebe8356"
    ]
+  },
+  "/evolutionary-biology/modern-synthesis-day37.html": {
+   "t": "进化生物学 Day 37：现代综合与扩展综合",
+   "f": "evolutionary-biology/modern-synthesis-day37.json",
+   "q": [
+    "a3723019db",
+    "9e8dc34043",
+    "29d6432f2a"
+   ]
+  },
+  "/health-longevity/social-dimensions-day59.html": {
+   "t": "健康长寿 Day 59 — 健康的社会维度",
+   "f": "health-longevity/social-dimensions-day59.json",
+   "q": [
+    "8c72fb7d71",
+    "7baabc5e95",
+    "1dc95c8f80"
+   ]
+  },
+  "/podcast-deepread/jensen-ai-future-topic45.html": {
+   "t": "黄仁勋专题 · 工作、风险与未来",
+   "f": "podcast-deepread/jensen-ai-future-topic45.json",
+   "q": [
+    "d2717a6dad",
+    "299ce62f38",
+    "5843717621"
+   ]
+  },
+  "/art-aesthetics/how-to-look-at-architecture-day9.html": {
+   "t": "艺术与审美：建筑怎么看",
+   "f": "art-aesthetics/how-to-look-at-architecture-day9.json",
+   "q": [
+    "eae2b4f4e8",
+    "b16ee31293",
+    "e5ae48b535"
+   ]
+  },
+  "/novel-deepread/2666-novel62.html": {
+   "t": "2666 — 小说精读 No.62",
+   "f": "novel-deepread/2666-novel62.json",
+   "q": [
+    "630b62ba73",
+    "63abf85f34",
+    "9569b6963d"
+   ]
+  },
+  "/meta-knowledge/forecasting-calibration-day68.html": {
+   "t": "元知识详解：预测与校准 — Day 68",
+   "f": "meta-knowledge/forecasting-calibration-day68.json",
+   "q": [
+    "b8f0fc7e9d",
+    "eb9115eaf5",
+    "2237a61a93"
+   ]
+  },
+  "/investing/acquisitions-day29.html": {
+   "t": "投资经典：企业购并案例 — Day 29",
+   "f": "investing/acquisitions-day29.json",
+   "q": [
+    "c9734fc2e2",
+    "6b821770ef",
+    "e9284013e7"
+   ]
+  },
+  "/neuroscience/ref-serotonin-system.html": {
+   "t": "参考 · 血清素系统 — 神经科学",
+   "f": "neuroscience/ref-serotonin-system.json",
+   "q": [
+    "40a06a05e7",
+    "4f270a448c",
+    "0f481706a5"
+   ]
+  },
+  "/evolutionary-biology/human-evolution-day16.html": {
+   "t": "进化生物学 Day 16：人类的演化",
+   "f": "evolutionary-biology/human-evolution-day16.json",
+   "q": [
+    "ef08ba0ef5",
+    "e4964259f7",
+    "b791542431"
+   ]
+  },
+  "/personal-finance/credit-system-day6.html": {
+   "t": "个人理财 · Day 6 · 信用体系（美国）",
+   "f": "personal-finance/credit-system-day6.json",
+   "q": [
+    "b86e41b8d3",
+    "cabe589d56",
+    "6ce50cb331"
+   ]
+  },
+  "/complexity-science/measuring-complexity-topic41.html": {
+   "t": "复杂度到底怎么量 — 纯随机和纯有序，都不复杂 · 复杂性科学 T41",
+   "f": "complexity-science/measuring-complexity-topic41.json",
+   "q": [
+    "41916461a0",
+    "3ca8444d33",
+    "7705b3b223"
+   ]
+  },
+  "/book-recommendations/indian-thought-book37.html": {
+   "t": "Issue 37：印度思想 — 撕掉\"精神性东方\"的标签，思想的真实形状 | 好书推荐",
+   "f": "book-recommendations/indian-thought-book37.json",
+   "q": [
+    "5e55e8eb04",
+    "7599b3c168",
+    "d43207a99e"
+   ]
+  },
+  "/talk-deepread/winston-how-to-speak-talk35.html": {
+   "t": "Patrick Winston ·《How to Speak》— 天赋那一项很小",
+   "f": "talk-deepread/winston-how-to-speak-talk35.json",
+   "q": [
+    "82abecd731",
+    "959415b988",
+    "3da265275d"
+   ]
+  },
+  "/leadership/decision-frameworks-day74.html": {
+   "t": "领导力 Day 74：职场常用的判断框架",
+   "f": "leadership/decision-frameworks-day74.json",
+   "q": [
+    "7a11d29e30",
+    "17912a4fda",
+    "2d2290851b"
+   ]
+  },
+  "/blog-deepread/dan-wang-blog31.html": {
+   "t": "Dan Wang · danwang.co — 技术不写在图纸上，它长在人手上；而一个国家可以把手外包掉，然后忘记自己曾经会做什么",
+   "f": "blog-deepread/dan-wang-blog31.json",
+   "q": [
+    "629667b303",
+    "fc33acb96d",
+    "871911d159"
+   ]
   }
  },
  "aliases": {

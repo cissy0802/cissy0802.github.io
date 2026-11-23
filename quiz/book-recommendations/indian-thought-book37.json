@@ -1,0 +1,69 @@
+{
+ "page": "/book-recommendations/indian-thought-book37.html",
+ "title": "Issue 37：印度思想 — 撕掉\"精神性东方\"的标签，思想的真实形状 | 好书推荐",
+ "page_en": "/book-recommendations/indian-thought-book37.en.html",
+ "title_en": "Issue 37: Indian Thought — the real shape beneath the \"spiritual East\" label | Book Recommendations",
+ "src_hash": "99f81c7e41f6",
+ "questions": [
+  {
+   "id": "5e55e8eb04",
+   "question": "《薄伽梵歌》里，阿周那面对要与亲族开战而扔下弓。克里希那「业瑜伽」的回答核心是什么？",
+   "options": [
+    "只在确信结果会好的时候才行动，以免造成痛苦",
+    "适当降低投入，这样结果不好时也不至于太失望",
+    "全力去做该做的事，同时松开对成败与回报的执取",
+    "既然真我不生不灭，行动就没有意义，应当退隐去修行"
+   ],
+   "answer": 2,
+   "explanation": "「你对行动本身有权，但对行动的果实无权」：放弃行动是懦弱，也不可能；痛苦的根源是把心系在结果上。它要的不是少做，而是更投入地做、把行动当供奉而非交易，借此把入世责任和出世解脱缝到一起。",
+   "question_en": "In the Bhagavad Gita, Arjuna drops his bow rather than fight his own kin. What is the core of Krishna's answer, karma yoga?",
+   "options_en": [
+    "Act only when you're sure the outcome will be good, so as to avoid causing suffering",
+    "Scale back your effort so that a bad outcome won't disappoint you too much",
+    "Do what you must with full effort while letting go of attachment to success, failure and reward",
+    "Since the true self is never born and never dies, action is pointless; withdraw into renunciation"
+   ],
+   "explanation_en": "'You have a right to your actions, never to their fruits': giving up action is cowardice and impossible anyway; suffering comes from binding the mind to outcomes. The point is not to do less but to act more wholeheartedly, as offering rather than transaction, joining worldly duty to liberation."
+  },
+  {
+   "id": "7599b3c168",
+   "question": "阿马蒂亚·森在《惯于争鸣的印度人》里反对把印度只读成「精神性东方」，他的核心理由是什么？",
+   "options": [
+    "奥义书等精神性经典是后人伪托的，并不代表真正的印度思想",
+    "这砍掉了好辩说理的另一半，而公开论辩正是民主的本土根基",
+    "精神性与理性互不相容，印度只能二者择一",
+    "印度的民主完全来自英国殖民的制度移植，与本土传统无关"
+   ],
+   "answer": 1,
+   "explanation": "森承认精神性的印度是真的，但只这样读，既是东方学误读，也会被宗教民族主义拿去用单一的「印度性」压制多元。顺世论、当众诘问圣者的甘尔吉、阿育王与阿克巴的宽容与辩论，都说明民主接得上本土「以说理解决分歧」的老根，而非纯粹舶来品。",
+   "question_en": "In The Argumentative Indian, Amartya Sen rejects reading India solely as the 'spiritual East'. What is his central reason?",
+   "options_en": [
+    "The Upanishads and other spiritual classics were later forgeries that don't represent genuine Indian thought",
+    "It cuts away India's equally deep tradition of argument, reasoning and heterodoxy — the native soil of Indian democracy",
+    "Spirituality and reason are incompatible, so India must choose one",
+    "Indian democracy was entirely transplanted by British colonial rule and has no native roots"
+   ],
+   "explanation_en": "Sen grants that spiritual India is real, but reading India only that way is both an Orientalist distortion and a tool for religious nationalists to impose a single 'Indianness'. The Cārvāka materialists, Gārgī questioning sages in public, Ashoka's and Akbar's tolerance and debates show democracy connects to an indigenous habit of settling disputes by reasoning, rather than being purely imported."
+  },
+  {
+   "id": "d43207a99e",
+   "question": "温迪·多尼格说她的书是「印度教徒的一部历史，而非那部历史」。这句话要表达的核心主张是什么？",
+   "options": [
+    "印度教的历史资料太少，任何人都只能写出一部不完整的历史",
+    "印度教的梵文经典大多是伪作，应以民间传说取而代之",
+    "印度教本质上是一种情欲宗教，正统叙事刻意掩盖了这一点",
+    "从来没有单一纯净的印度教，所谓正统是后来修剪出来的"
+   ],
+   "answer": 3,
+   "explanation": "她要把镜头转向被婆罗门、梵文经典、男性精英中心叙事噤声的女性、达利特与民间，恢复复数而彼此矛盾的印度教。她并不否认经典，而是逆着经典的纹理读；情欲视角是她的方法之一，也被批评为以论带史，但不是这句话的主张。",
+   "question_en": "Wendy Doniger calls her book 'a history of the Hindus, not the history'. What core claim does this phrase express?",
+   "options_en": [
+    "Sources on Hindu history are so scarce that anyone can write only an incomplete history",
+    "Most Sanskrit scriptures of Hinduism are forgeries and should be replaced by folk traditions",
+    "Hinduism is essentially an erotic religion, which orthodox accounts deliberately conceal",
+    "There never was a single, pure Hinduism; 'orthodoxy' was trimmed into shape later, especially under colonialism and nationalism"
+   ],
+   "explanation_en": "She turns the lens toward those silenced by Brahmin-, Sanskrit- and elite-male-centered narratives — women, Dalits, folk traditions — to recover a plural, self-contradictory Hinduism. She doesn't reject the classics but reads them against the grain; her erotic and psychoanalytic lens is a method (and criticized as projection), not the claim of this phrase."
+  }
+ ]
+}

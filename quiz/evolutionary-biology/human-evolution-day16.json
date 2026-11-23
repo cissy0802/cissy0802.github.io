@@ -1,0 +1,69 @@
+{
+ "page": "/evolutionary-biology/human-evolution-day16.html",
+ "title": "进化生物学 Day 16：人类的演化",
+ "page_en": "/evolutionary-biology/human-evolution-day16.en.html",
+ "title_en": "Evolutionary Biology Day 16: Human Evolution",
+ "src_hash": "308e6ce8163e",
+ "questions": [
+  {
+   "id": "ef08ba0ef5",
+   "question": "那张「从弓背的猿到直立的人」的排队图，在「站起来」和「脑子变大」的关系上画错了什么？",
+   "options": [
+    "站起来与脑子变大同步推进，每一步都相互促进",
+    "脑子先变大，祖先变聪明后才学会站起来走路",
+    "直立行走其实出现得比图上晚得多，是脑子变大之后才有的产物",
+    "走路定型时脑子仍与黑猩猩相当，两百多万年后才变大"
+   ],
+   "answer": 3,
+   "explanation": "约 366 万年前的莱托里脚印已有足弓、大脚趾并排，露西的骨盆和膝盖已适合走路，脑子却只有四百多毫升。排队图把「后来发生」画成了「一起发生」，两者之间隔着两百多万年。",
+   "question_en": "The famous 'march of progress' image, from stooped ape to upright human, gets what wrong about standing up and brain enlargement?",
+   "options_en": [
+    "Standing upright and brain growth advanced in lockstep, each step reinforcing the other",
+    "Brains grew first, and ancestors learned to walk upright once they got smarter",
+    "Upright walking arose much later than shown, as a consequence of bigger brains",
+    "Upright walking was established while brains were still chimp-sized; brains only began growing over two million years later"
+   ],
+   "explanation_en": "The 3.66-million-year-old Laetoli footprints show an arch and an in-line big toe, and Lucy's pelvis and knee were built for walking, yet her brain was just over 400 ml. The picture draws 'later' as 'at the same time'; the gap between the two exceeds two million years."
+  },
+  {
+   "id": "e4964259f7",
+   "question": "人类演化回头看像一条从古到今的直线。为什么说这是一种误读？",
+   "options": [
+    "化石太少，其实每个时期确实只有一种人，只是我们找不全过渡类型",
+    "直线是对的，只是各物种接替的年代被估计得太早",
+    "别的支系都断了才剩一条；约六万年前至少五种人并存且有混血",
+    "因为智人更聪明，必然取代其他人种，所以直线描述大体正确"
+   ],
+   "answer": 2,
+   "explanation": "尼安德特人、丹尼索瓦人、弗洛勒斯人、吕宋人与智人曾并存，非洲之外的人至今带着一到二成的尼安德特人基因（百分之一到二）。分岔断掉后，唯一的幸存者回头看就像主干——幸存名单不是优秀名单；「我们更聪明所以赢了」几乎没有直接证据。",
+   "question_en": "Looking back, human evolution resembles a single line from past to present. Why is this a misreading?",
+   "options_en": [
+    "Fossils are scarce, but each era really did have only one kind of human; we just haven't found all the transitional forms",
+    "The line is correct; it's just that the succession dates have been estimated too early",
+    "It looks like a line only because the other branches died out; about 60,000 years ago at least five kinds of human coexisted and interbred",
+    "Since Homo sapiens was smarter, it inevitably replaced the others, so the line is broadly right"
+   ],
+   "explanation_en": "Neanderthals, Denisovans, Homo floresiensis and the Luzon species overlapped with Homo sapiens, and people outside Africa still carry 1–2% Neanderthal DNA. Once the branches are cut, the survivor looks like the trunk in hindsight — a survivor list is not an excellence list — and 'we won because we were smarter' has little direct evidence."
+  },
+  {
+   "id": "b791542431",
+   "question": "直立人牙齿变小、肠道相对变短等变化约在 190 万年前出现，而最早被广泛接受的用火证据约在 100 万年前。对「食物在体外加工过」这条解释，比较负责任的态度是？",
+   "options": [
+    "肠道缩短把能量让给大脑的跨物种证据已经很充分，用火时间并不重要",
+    "线索有力但时间接不上，应把缺口摆明，而且加工未必靠火",
+    "既然解剖变化指向 190 万年前，就可以推定那时已经在用火",
+    "时间对不上就说明这条解释是错的，应该放弃"
+   ],
+   "answer": 1,
+   "explanation": "加热能让食物省嚼、好吸收，生食者调查也显示纯生食很难维持体重；但近百万年的空档不该拿推断去填。2016 年实验显示，用石器切肉、捶块茎也能大幅减少咀嚼。至于「肠道让位给脑」，跨上百种哺乳动物的比较并没找到它预言的此消彼长。",
+   "question_en": "Homo erectus's smaller teeth and relatively shorter gut appear around 1.9 million years ago, while the oldest widely accepted evidence of fire is about 1 million years old. What is the responsible stance toward the idea that food was processed outside the body?",
+   "options_en": [
+    "Cross-species evidence that the gut shrank to fund the brain is already solid, so the date of fire hardly matters",
+    "The clue is strong but the timing doesn't join up; keep the gap in view, and note that processing needn't have meant fire",
+    "Since the anatomy points to 1.9 million years ago, we can infer fire was in use by then",
+    "The mismatch shows the explanation is wrong and should be abandoned"
+   ],
+   "explanation_en": "Heat makes food easier to chew and digest, and raw-food surveys show how hard it is to keep weight on raw diets, but a gap of nearly a million years shouldn't be filled by inference. A 2016 experiment showed that slicing meat and pounding tubers with stone tools also cuts chewing substantially. As for gut-for-brain, a comparison across over a hundred mammal species didn't find the predicted trade-off."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/leadership/decision-frameworks-day74.html",
+ "title": "领导力 Day 74：职场常用的判断框架",
+ "page_en": "/leadership/decision-frameworks-day74.en.html",
+ "title_en": "Leadership Day 74: Decision Frameworks for Everyday Work",
+ "src_hash": "662a47c5c975",
+ "questions": [
+  {
+   "id": "7a11d29e30",
+   "question": "一项季度权限审计，做得再出色回报也有限，但一旦出问题代价很大。按回报—代价矩阵，这类事该怎么处理？",
+   "options": [
+    "两头都不确定就先砍掉，等出了问题再说",
+    "代价大就要做到出色，投入团队最强的人",
+    "刚好达标但要稳：定 owner、自动化、设预警",
+    "回报有限就应付一下，把全部精力留给那些回报高的事"
+   ],
+   "answer": 2,
+   "explanation": "回报低、做砸代价高的事落在「刚好达标，但必须稳」那一格。「应付一下」是常见错误：把「够用」当成「不管」，平时没事、一出问题就是大事；而要做到出色的是回报高的事，比如答应客户的性能优化。",
+   "question_en": "A quarterly access audit offers little upside even if done brilliantly, but going wrong would be very costly. Under the payoff–cost matrix, how should it be handled?",
+   "options_en": [
+    "Since both are uncertain, cut it and deal with problems if they arise",
+    "Since the cost of failure is high, make it excellent and assign the strongest people",
+    "Aim for just meeting the bar, but reliably: assign an owner, automate what you can, set alerts before deadlines",
+    "Since the payoff is low, do the bare minimum and save all effort for high-payoff work"
+   ],
+   "explanation_en": "Low payoff plus high failure cost belongs in the 'good enough, but solid' box. Doing the bare minimum is the classic mistake of treating 'good enough' as 'ignore it' — fine until the one time it's a disaster; excellence is reserved for high-payoff work like the performance fix promised to a customer."
+  },
+  {
+   "id": "17912a4fda",
+   "question": "一个团队花两周争内部看板用哪个图表库，同一周却在十分钟的会上定下对外 API 的字段命名、第二天发给了三个合作方。问题出在哪？",
+   "options": [
+    "两件事都该快速决定，开会讨论本身就是浪费",
+    "问题在于两件事都没有指定唯一的负责人，跟决定的快慢其实无关",
+    "门弄反了：图表库可撤回该快定，对外 API 难改该慢定",
+    "两件事都该慢下来，任何技术决定都要充分评审"
+   ],
+   "answer": 2,
+   "explanation": "先问决定做错了能不能撤回：图表库随时可换，是双向门；对外 API 有人接入后很难改，是单向门。组织的慢常来自拿单向门的流程对待双向门，而真正的单向门反而被随手定了。",
+   "question_en": "A team spends two weeks arguing over which charting library to use for an internal dashboard, yet in the same week settles an external API's field names in a ten-minute meeting and ships them to three partners the next day. What went wrong?",
+   "options_en": [
+    "Both should have been decided fast; meetings themselves are the waste",
+    "The problem was the lack of a designated owner, not the speed of decisions",
+    "The door types were swapped: the library is reversible and should be decided fast; the API is hard to change once adopted and deserved a slow premortem",
+    "Both should have been slowed down; every technical decision needs a full review"
+   ],
+   "explanation_en": "First ask whether a wrong decision can be undone: the charting library can be swapped anytime (a two-way door), while an external API is hard to change once partners integrate (a one-way door). Organizations often slow down by treating two-way doors with one-way-door process — and then rush the real one-way doors."
+  },
+  {
+   "id": "2d2290851b",
+   "question": "发布前两周，工程师坚持先重写一个老模块，PM 坚持绝不延期，两人僵持不下。按「先问为什么要，再谈要什么」，第一步该做什么？",
+   "options": [
+    "把双方立场翻译成背后的利益，再找两头都满足的做法",
+    "先按期发布，重写的事以后再说，免得双方冲突进一步升级",
+    "让职级更高的人直接拍板，尽快结束争论",
+    "各让一步，把发布推迟一周、重写一半"
+   ],
+   "answer": 0,
+   "explanation": "立场是「我要什么」，利益是「我为什么要」。工程师要的是不再每周被故障叫醒，PM 要的是守住对大客户的承诺；于是按期发布、把故障最多的接口放到开关后面、下个迭代重写，两边都满足。机械折中或搁置只是在立场上比耐力。",
+   "question_en": "Two weeks before a release, an engineer insists on first rewriting an old module, while the PM insists there will be no delay. Following 'interests before positions', what is the first step?",
+   "options_en": [
+    "Translate each side's position into the interests behind it, then look for an option that serves both",
+    "Ship on time and defer the rewrite indefinitely to keep the conflict from escalating",
+    "Have someone more senior make the call to end the argument quickly",
+    "Split the difference: delay a week and rewrite half the module"
+   ],
+   "explanation_en": "A position is what you want; an interest is why you want it. The engineer wants to stop being paged every week; the PM wants to keep a promise to a key customer. So ship on time, put the most failure-prone endpoints behind flags, and rewrite them next iteration. Splitting the difference or shelving it is just a contest of positions."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/blog-deepread/dan-wang-blog31.html",
+ "title": "Dan Wang · danwang.co — 技术不写在图纸上，它长在人手上；而一个国家可以把手外包掉，然后忘记自己曾经会做什么",
+ "page_en": "/blog-deepread/dan-wang-blog31.en.html",
+ "title_en": "Dan Wang · danwang.co — Technology isn't written on the blueprint; it lives in people's hands, and a country can outsource those hands and forget what it once knew how to make",
+ "src_hash": "75d744608443",
+ "questions": [
+  {
+   "id": "629667b303",
+   "question": "2009 年，美国发现自己做不出氢弹里一种代号 Fogbank 的材料了。按 Dan Wang 的「流程知识」概念，最根本的原因是什么？",
+   "options": [
+    "美国已缺少生产这种材料所需的先进设备，只能转而向外国采购",
+    "工艺从未完整写下，只存在于做它的人身上，人退休就没了",
+    "国会削减了经费，相关工厂被迫关闭而无法复产",
+    "设计图纸在冷战结束后被销毁，只能从头重新设计"
+   ],
+   "answer": 1,
+   "explanation": "图纸还在，丢的是写不下来的手感。流程知识只存在于正在干这件事的人身上，它不像资本那样慢慢折旧，而是要么在、要么没了；政府只能花几百万美元把手艺重学一遍。",
+   "question_en": "In 2009 the US found it could no longer make a hydrogen-bomb material code-named Fogbank. Under Dan Wang's concept of process knowledge, what was the root cause?",
+   "options_en": [
+    "The US lacked the advanced equipment needed and had to buy it abroad",
+    "The key process had never been fully written down; it lived only in the people doing it, and they had retired",
+    "Congress cut funding, forcing the relevant plants to close permanently",
+    "The blueprints were destroyed after the Cold War, forcing a redesign from scratch"
+   ],
+   "explanation_en": "The designs still existed; what was lost was know-how that can't be written down. Process knowledge exists only in people actively doing the work, so it doesn't depreciate gradually like capital — it's either there or gone, and the government had to spend millions relearning it."
+  },
+  {
+   "id": "fc33acb96d",
+   "question": "有人主张：把制造外包出去，只保留设计与研发，本国就留住了最值钱的部分。Dan Wang 会怎样反驳？",
+   "options": [
+    "只要专利和图纸在本国手里，技术就不会流失",
+    "制造业工作本身具有特殊的道德价值，外包本身就是错误",
+    "切断了制造反馈给设计的回路，不碰工业流程就设计不好自动化",
+    "比较优势理论早已证明外包对双方都有利，所以这个主张完全正确"
+   ],
+   "answer": 2,
+   "explanation": "他把工具和知识产权看作培养人的里程碑，而非目的：搬走的不是低端环节，是学习回路的下半截，而且产出没掉、账面上看不出亏损。美国几乎不造高端工业机器人就是证据。他明确说不认为制造业有特殊道德价值，并反复攻击用比较优势为外包辩护。",
+   "question_en": "Someone argues that by offshoring manufacturing and keeping only design and R&D, a country retains the most valuable part. How would Dan Wang push back?",
+   "options_en": [
+    "As long as patents and blueprints stay at home, no technology is lost",
+    "Manufacturing work has a special moral value, so offshoring is wrong in itself",
+    "It severs the loop by which making things feeds back into designing them; engineers without exposure to industrial processes can't design automation well",
+    "Comparative advantage proves offshoring benefits both sides, so the argument is entirely correct"
+   ],
+   "explanation_en": "He treats tools and IP as milestones in training people, not ends in themselves: offshoring removes the lower half of the learning loop, and since output doesn't fall, the loss is invisible on the books. America's near-absence from advanced industrial robotics is his evidence. He explicitly denies manufacturing has special moral value and repeatedly attacks comparative advantage as a justification."
+  },
+  {
+   "id": "871911d159",
+   "question": "Dan Wang 主张把「确定的乐观」算作人力资本的一项。这里的「确定的乐观」要求的是什么？",
+   "options": [
+    "笼统地相信未来总会变好，比如把钱投进指数基金耐心等待",
+    "相信未来一定是愉快的，拒绝一切悲观的想象",
+    "对技术未来如何不同于今天有具体图景，不必是愉快的",
+    "相信只要政策条件对了，一国固有的创新能力自然会涌出来"
+   ],
+   "answer": 2,
+   "explanation": "「确定」指有具体图景，「不确定」只是笼统相信会变好；他特意强调关键是有没有图景，不是图景美不美。「政策对了创新就会涌出」正是他批评的把创新能力当固定存量的看法；他也承认这个论证有循环之嫌，因为乐观大概是增长的内生变量。",
+   "question_en": "Dan Wang argues that 'definite optimism' should count as a form of human capital. What does definite optimism require?",
+   "options_en": [
+    "A general belief that things will get better, like putting money in an index fund and waiting",
+    "A belief that the future will surely be pleasant, rejecting all pessimistic imagination",
+    "A clear, concrete vision of how the technological future will differ from today — not necessarily a cheerful one",
+    "A belief that a country's innate innovative capacity will flow once policy conditions are right"
+   ],
+   "explanation_en": "'Definite' means having a concrete picture; 'indefinite' is a vague faith in improvement. He stresses that what matters is having a vision at all, not whether it's pleasant. 'Get policy right and innovation will flow' is the fixed-stock view of innovative capacity he rejects; he also concedes the argument is circular, since optimism is probably endogenous to growth."
+  }
+ ]
+}

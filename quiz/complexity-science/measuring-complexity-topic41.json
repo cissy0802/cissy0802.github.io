@@ -1,0 +1,69 @@
+{
+ "page": "/complexity-science/measuring-complexity-topic41.html",
+ "title": "复杂度到底怎么量 — 纯随机和纯有序，都不复杂 · 复杂性科学 T41",
+ "page_en": "/complexity-science/measuring-complexity-topic41.en.html",
+ "title_en": "Measuring complexity — neither pure order nor pure randomness · Complexity Science T41",
+ "src_hash": "91b855dbaa22",
+ "questions": [
+  {
+   "id": "41916461a0",
+   "question": "香农熵和柯尔莫哥洛夫复杂度作为「复杂度」的尺子，在同一个地方翻了车。是哪里？",
+   "options": [
+    "它们都把满分发给完全有序的东西，比如一页全是字母 A",
+    "它们都只能用于通信工程，无法用于生物或社会系统",
+    "它们都无法区分看起来随机和真的随机，比如圆周率的小数位",
+    "它们都把满分发给完全随机的东西，比如一串抛硬币的结果"
+   ],
+   "answer": 3,
+   "explanation": "熵的排序是乱码 > 有意义文本 > 纯重复；真正随机的串没有比照抄更短的描述，柯氏复杂度也最高。可我们想说的「复杂」应在两端都低分。柯氏复杂度恰恰修好了「看起来随机 vs 真的随机」——圆周率几行程序就能生成。",
+   "question_en": "Shannon entropy and Kolmogorov complexity, used as measures of complexity, fail in the same place. Where?",
+   "options_en": [
+    "Both give the top score to things that are perfectly ordered, such as a page of nothing but A",
+    "Both apply only to communications engineering, not to biological or social systems",
+    "Both fail to distinguish what looks random from what is random, such as the digits of π",
+    "Both give the top score to things that are purely random, such as a string of coin flips"
+   ],
+   "explanation_en": "Entropy ranks gibberish above prose above repetition, and a truly random string has no description shorter than itself, so its Kolmogorov complexity is maximal too — yet what we mean by complex should score low at both ends. Kolmogorov complexity actually does separate 'looks random' from 'is random': π's digits come from a few lines of code."
+  },
+  {
+   "id": "3ca8444d33",
+   "question": "同事抱怨一份日志「复杂得看不懂」。你用 gzip 一压，它只剩原来的 5%；换一份压不动的。这两个结果分别能说明什么？",
+   "options": [
+    "压得动说明它很复杂，因为里面信息量大；压不动说明它简单",
+    "压不动就证明它确实复杂，应当投入更多人手去处理",
+    "压得动说明复杂只是重复；压不动只说明还没证明它简单",
+    "两种结果都证明不了什么，压缩率和复杂度毫无关系"
+   ],
+   "answer": 2,
+   "explanation": "压缩率是柯氏复杂度的上界：压得动就证明存在更短的描述，「复杂」是重复，该去重而不是加人。但柯氏复杂度不可计算，压不动只代表你还没找到更短的描述，这个检验只在一个方向有效。",
+   "question_en": "A colleague complains a log file is 'too complex to follow'. You gzip it and it shrinks to 5% of its size; another file won't compress. What do these two results tell you?",
+   "options_en": [
+    "The first is highly complex because it holds lots of information; the second is simple",
+    "The second proves it really is complex and deserves more people working on it",
+    "The first is mostly repetition; the second only shows you haven't yet proven it simple",
+    "Neither proves anything, since compression has nothing to do with complexity"
+   ],
+   "explanation_en": "Compression gives an upper bound on Kolmogorov complexity: if it compresses, a shorter description exists and the 'complexity' is repetition — dedupe it rather than add staff. But Kolmogorov complexity is uncomputable, so failure to compress only means you haven't found a shorter description; the test works in one direction only."
+  },
+  {
+   "id": "7705b3b223",
+   "question": "一套跑了十年的祖传流程，其中几十条规则都能对上一次具体事故。按「逻辑深度」的视角，推倒重写它的真实成本主要是什么？",
+   "options": [
+    "重新踩一遍那些坑、换回积累的反馈所需的时间",
+    "几乎为零，因为规则的最短描述并不长",
+    "把规则重新写成代码的时间，规则写得越短就越便宜",
+    "取决于文档有多长，文档越长重建越难"
+   ],
+   "answer": 0,
+   "explanation": "逻辑深度问的是从最短描述跑出这个东西要多少步：描述可以很短，但里面压着一段无法回放的计算，只能重跑一遍。说不出几条规则来历的流程才是浅的，重写成本约等于写代码的时间；它的价值与篇幅大小无关。",
+   "question_en": "A decade-old legacy process has dozens of rules, each traceable to a specific incident. From the perspective of logical depth, what is the real cost of rewriting it from scratch?",
+   "options_en": [
+    "The time to step on all those landmines again and regain that accumulated feedback, often an order of magnitude more",
+    "Nearly nothing, since the shortest description of the rules isn't long",
+    "The time to re-code the rules, which is cheap if they are short",
+    "It depends on how long the documentation is; the longer it is, the harder to rebuild"
+   ],
+   "explanation_en": "Logical depth asks how many steps it takes to run from the shortest description to the object: the description can be short while the object embodies computation that can't be replayed, only rerun. A process whose rules have no traceable origins is shallow, and rewriting costs little more than coding; depth has nothing to do with size."
+  }
+ ]
+}

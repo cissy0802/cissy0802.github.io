@@ -1,0 +1,69 @@
+{
+ "page": "/novel-deepread/2666-novel62.html",
+ "title": "2666 — 小说精读 No.62",
+ "page_en": "/novel-deepread/2666-novel62.en.html",
+ "title_en": "2666 — Novels, Deep-Read No.62",
+ "src_hash": "924793113052",
+ "questions": [
+  {
+   "id": "630b62ba73",
+   "question": "波拉尼奥《2666》从头到尾没有查出边境连环杀女案的凶手。按一种对这部小说的解读，这样处理的用意是什么？",
+   "options": [
+    "作者在书完成前去世，凶手的身份来不及写出",
+    "给出凶手就暗示「抓住他就结束了」，而这里的恶是许多零件叠成的",
+    "作者想留下一个悬念，好让读者自己推理出真凶就是狱中的克劳斯·哈斯",
+    "作者认为真实案件已经破了，没有必要在小说里重复"
+   ],
+   "answer": 1,
+   "explanation": "按「阿尔钦博托原则」，学者的虚荣、警察的懒、工厂压成本、政客要选票，每样都不足以杀人，退开看却是一张脸；给出凶手，这张脸就变回一堆零件。「未完成」确实是一项争议，但不给凶手是贯穿五部的结构设计，而现实中的华雷斯城案件也长期未破。",
+   "question_en": "Roberto Bolaño's 2666 never identifies the killer behind the border femicides. On one reading of the novel, what is the point of leaving it unsolved?",
+   "options_en": [
+    "Bolaño died before finishing the book, so the killer's identity was never written",
+    "Naming a killer would imply that catching him ends it, when the evil here is an arrangement built from many small parts",
+    "Bolaño wanted readers to deduce for themselves that Klaus Haas is the real killer",
+    "Bolaño considered the real cases already solved, so there was no need to repeat it in fiction"
+   ],
+   "explanation_en": "Under the 'Arcimboldo principle', vanity, police laziness, factory cost-cutting and politicians' vote-seeking are each harmless up close but form a face from a distance; naming a killer would break the face back into parts. Whether the book is unfinished is a real debate, but withholding the killer is a structural design across all five parts, and the real Juárez killings largely went unsolved."
+  },
+  {
+   "id": "63abf85f34",
+   "question": "《2666》第四部用三百多页、几乎同一句式罗列一百多名被杀女工。对这种写法，哪种理解最贴合它的设计？",
+   "options": [
+    "它用重复让每个受害者都打动读者，使同情随人数不断放大",
+    "把读者的疲劳变成论据：开始跳读死者，正是那座城市对她们做的事",
+    "它是作者在堆积未及删减的调查材料，属于未完成稿的痕迹",
+    "它模仿警方档案的格式，目的是让读者像侦探一样从细节里一步步推出凶手"
+   ],
+   "answer": 1,
+   "explanation": "目录体让读者亲身经历从逐字读到扫读的麻木，同时每段留一个不肯被格式吃掉的细节在麻木时扎一下。这种麻木也呼应心理麻木的研究：受害者变多，同情并不随之放大，甚至变弱。",
+   "question_en": "Part four of 2666 lists over a hundred murdered women across some three hundred pages in nearly identical sentences. Which reading best fits what this form is designed to do?",
+   "options_en": [
+    "It uses repetition so each victim moves the reader, making sympathy grow with every case",
+    "It turns the reader's fatigue into an argument: once you start skimming the dead, you are doing what the city did to them",
+    "It is unedited research material piled up, a trace of an unfinished draft",
+    "It mimics police files so readers can deduce the killer from the details like detectives"
+   ],
+   "explanation_en": "The catalogue form makes readers live through the slide from careful reading to skimming, while each entry keeps one detail that refuses the format and pricks you mid-numbness. This matches research on psychic numbing: as victims multiply, compassion does not scale up and may even shrink."
+  },
+  {
+   "id": "9569b6963d",
+   "question": "《2666》开头，两位文学教授在伦敦街头把出租车司机踢到不动，嘴里一边供应理由：为朋友、为被压迫的妇女、为文明。这一场在全书主题上演示了什么？",
+   "options": [
+    "这是一场正当防卫，作者借此为学者们的行为辩护",
+    "暴力从不缺理由，人文教养也可能只产出更精致的辩解",
+    "它说明伦敦的种族冲突是全书暴力的真正根源",
+    "受过高等教育的人一旦被冒犯，往往会比普通人更冲动、更失控"
+   ],
+   "answer": 1,
+   "explanation": "自由间接引语贴着施暴者的脑子走，让读者一边看到皮鞋落下、一边听见人道主义词汇源源不断。先用一百多页让读者喜欢他们，再让他们施暴，逼出全书的追问：读最好的书，到底让人变好了没有。",
+   "question_en": "Early in 2666, two literature professors kick a London cab driver until he stops moving, all the while supplying reasons — for their friend, for oppressed women, for civilization. What does this scene demonstrate about the book's themes?",
+   "options_en": [
+    "It is self-defense, and Bolaño uses it to vindicate the scholars",
+    "Violence never lacks reasons — restraint does; humanistic culture may only produce more refined self-justification",
+    "It shows that racial conflict in London is the true root of the book's violence",
+    "Highly educated people are more impulsive than others once they feel insulted"
+   ],
+   "explanation_en": "Free indirect speech tracks the attackers' minds, so we see the shoes land while hearing a steady stream of humanitarian language. Having made us like them for a hundred pages, Bolaño forces the book's question: does reading the best books make anyone better?"
+  }
+ ]
+}

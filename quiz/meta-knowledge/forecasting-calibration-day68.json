@@ -1,0 +1,69 @@
+{
+ "page": "/meta-knowledge/forecasting-calibration-day68.html",
+ "title": "元知识详解：预测与校准 — Day 68",
+ "page_en": "/meta-knowledge/forecasting-calibration-day68.en.html",
+ "title_en": "Meta-Knowledge: Forecasting & Calibration — Day 68",
+ "src_hash": "d7cac2faf52e",
+ "questions": [
+  {
+   "id": "b8f0fc7e9d",
+   "question": "一位分析师上个月有一次报「90% 会发生」的事最后没发生。按校准的标准，该如何评价他？",
+   "options": [
+    "一次落空说明不了什么，要看他所有「90%」的兑现率",
+    "这次失误已证明他过度自信，应把今后的置信度一律下调",
+    "只要他多数预测的方向说对了，就说明他校准良好",
+    "说明他应改为更多地报 50%，这样才不会再错"
+   ],
+   "answer": 0,
+   "explanation": "校准看的是频率对齐：所有「90%」里只兑现六成才是系统性过度自信，一次落空可能只是那剩下的一成。永远报 50% 虽然能完美校准，却不提供任何决策信息，布莱尔评分会惩罚这种躲闪。",
+   "question_en": "Last month an analyst said one event was 90% likely, and it didn't happen. By the standard of calibration, how should we judge them?",
+   "options_en": [
+    "One miss proves little; check whether about 90% of everything they called at 90% came true",
+    "This miss proves overconfidence, so all their future confidence levels should be lowered",
+    "As long as most of their calls pointed the right way, they are well calibrated",
+    "It shows they should say 50% more often so they stop being wrong"
+   ],
+   "explanation_en": "Calibration is about frequencies: only if their 90% calls come true about 60% of the time is there systematic overconfidence; a single miss may be the expected one in ten. Always saying 50% can be perfectly calibrated but carries no decision value, and the Brier score penalizes that hedging."
+  },
+  {
+   "id": "eb9115eaf5",
+   "question": "甲对每件事都报 50%，从不「翻车」；乙敢报 85% 或 15%，偶尔栽大跟头。按布莱尔评分的思路，通常谁更好、为什么？",
+   "options": [
+    "乙更好：评分也奖励分辨力，甲虽安全却没提供可用信息",
+    "甲更好：完美校准是好预测的唯一标准，甲做到了",
+    "甲更好：评分只惩罚自信地错，甲从未自信地错过",
+    "乙更好：评分只看你敢不敢把话说死，与结果对错其实无关"
+   ],
+   "answer": 0,
+   "explanation": "布莱尔评分可拆成校准、分辨力和事件固有不确定性。永远躲在 50% 能校准却毫无分辨力；评分同时惩罚过度自信和这种懦弱。它当然看结果——报 90% 却没发生要罚 0.81。",
+   "question_en": "Forecaster A always says 50% and never 'blows up'; forecaster B commits to 85% or 15% and occasionally takes a big hit. By the logic of the Brier score, who usually does better, and why?",
+   "options_en": [
+    "B: the score also rewards resolution, and A, though safe, provides no information anyone can act on",
+    "A: perfect calibration is the sole criterion of a good forecast, and A achieves it",
+    "A: the score only punishes confident errors, and A never makes one",
+    "B: the score only rewards boldness, regardless of whether forecasts come true"
+   ],
+   "explanation_en": "The Brier score decomposes into calibration, resolution and inherent uncertainty. Hiding at 50% can be calibrated but has zero resolution, and the score penalizes that timidity as well as overconfidence. It certainly depends on outcomes — saying 90% for something that doesn't happen costs 0.81."
+  },
+  {
+   "id": "2237a61a93",
+   "question": "给一个新技术项目排期，按参考类预测的做法，第一步应该是什么？",
+   "options": [
+    "先把需求拆解到最细，逐项估工时后加总",
+    "先查同类项目实际耗时的基率，再按本次情况温和调整",
+    "先找一个与本项目最相似的成功案例，照它的实际工期来排",
+    "先听最了解项目的核心成员的判断，以他为准"
+   ],
+   "answer": 1,
+   "explanation": "外部视角先锚在同类事件的历史统计上，再用眼前证据微调，顺序不能颠倒。自下而上拆解是内部视角，越投入越系统性乐观；只挑一个成功案例则丢掉了同类项目的失败分布。",
+   "question_en": "When scheduling a new technical project using reference class forecasting, what should come first?",
+   "options_en": [
+    "Break the requirements down to the finest level, estimate each piece and add them up",
+    "Look up the base rate of how long comparable past projects actually took, then adjust modestly for specifics",
+    "Find the single most similar successful project and copy its timeline",
+    "Defer to the judgment of the team member who knows the project best"
+   ],
+   "explanation_en": "The outside view anchors on the historical statistics of the reference class and only then adjusts for case-specific evidence; the order matters. Bottom-up decomposition is the inside view, which grows more optimistic the more invested you are, and picking one success story discards the distribution of failures."
+  }
+ ]
+}

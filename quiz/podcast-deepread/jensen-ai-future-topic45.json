@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/jensen-ai-future-topic45.html",
+ "title": "黄仁勋专题 · 工作、风险与未来",
+ "page_en": "/podcast-deepread/jensen-ai-future-topic45.en.html",
+ "title_en": "Jensen Huang Series · Work, Risk and the Future",
+ "src_hash": "906e3539c603",
+ "questions": [
+  {
+   "id": "d2717a6dad",
+   "question": "按黄仁勋「工作的目的 vs 任务」这一区分，哪类岗位最可能被 AI 整个自动化掉？",
+   "options": [
+    "日常工作里打字和说话占了大半的岗位，比如公司 CEO",
+    "需要大量写代码的岗位，比如软件工程师",
+    "任务本身就是全部工作内容的岗位，比如电话客服",
+    "需要高学历、专业门槛很高的岗位，比如放射科医生"
+   ],
+   "answer": 2,
+   "explanation": "他的区分是：AI 自动化的是任务，目的不变；只有任务就是全部的岗位才可能整个消失。放射科医生的目的是诊断，读片只是任务；CEO 的任务多是打字说话，他却说自己比以前更忙。",
+   "question_en": "Under Jensen Huang's distinction between a job's purpose and its tasks, which jobs are most likely to be automated away entirely?",
+   "options_en": [
+    "Jobs dominated by typing and talking, such as a CEO's",
+    "Jobs that involve writing lots of code, such as software engineers",
+    "Jobs whose tasks are the whole job, such as call-center customer service",
+    "Jobs with high educational and professional barriers, such as radiologists"
+   ],
+   "explanation_en": "In his framing, AI automates tasks while the purpose remains, so only jobs where the task is the entire job can vanish outright. A radiologist's purpose is diagnosis and reading scans is just a task; a CEO's tasks are mostly typing and talking, yet he says he is busier than ever."
+  },
+  {
+   "id": "299ce62f38",
+   "question": "「你不会被 AI 抢走工作，会被用 AI 的人抢走」这句话三年里改了几版。从「AI 会不会减少工作」这个问题看，它的关键局限是什么？",
+   "options": [
+    "它的数据依据来自放射科，无法推广到其他行业",
+    "它不回答岗位总量会不会减少，只把结构问题换成个人建议",
+    "它把 AI 描述成有意志的竞争者，混淆了软件与人",
+    "它最早的版本断言没有任何人会因 AI 失业，后来才被迫修正"
+   ],
+   "answer": 1,
+   "explanation": "无论前半句怎么松、后半句怎么紧，这句话都只告诉单个求职者先去用 AI，对总量问题一字不答。最早在 Acquired 的版本反而说得最谨慎，明确说净增长不保证个人不被解雇。",
+   "question_en": "Jensen Huang's line 'you won't lose your job to AI, you'll lose it to someone who uses AI' shifted across several versions over three years. Regarding whether AI reduces jobs overall, what is its key limitation?",
+   "options_en": [
+    "Its evidence comes from radiology and can't be generalized to other fields",
+    "It never says whether total employment will shrink; it swaps a structural question for individual advice",
+    "It portrays AI as a willful competitor, conflating software with people",
+    "Its earliest version claimed no one would lose a job to AI, and it was later forced to retreat"
+   ],
+   "explanation_en": "However the first half loosened and the second half hardened, the line only tells an individual job seeker to start using AI and is silent on aggregate jobs. The earliest version, on Acquired, was actually the most cautious, noting that net job growth doesn't guarantee any one person won't be laid off."
+  },
+  {
+   "id": "5843717621",
+   "question": "美国放射科医生人数 2010 到 2022 年确实增长了。这组数据对黄仁勋的「读片自动化→多看病人→多雇医生」飞轮说明了什么？",
+   "options": [
+    "它说明影像需求已经见顶，效率提升只会带来裁员",
+    "它推翻了他的说法：按人口折算，放射科医生实际在减少",
+    "它直接证实了飞轮：AI 普及之后，医院对放射科医生的招聘明显加速",
+    "人数确在涨，但早于 AI 普及，作者归因于流失与老龄化"
+   ],
+   "answer": 3,
+   "explanation": "Malhotra 等人的数据显示人数涨了 12%、按人口折算小幅上升，但增长早于 AI 普及，作者把缺口归给人员流失和老龄化带来的影像需求，摘要没提 AI。飞轮是他的解释，数据既没证实也没推翻它。",
+   "question_en": "US radiologist numbers did rise from 2010 to 2022. What does this data say about Jensen Huang's flywheel — automated reading, more patients, more radiologists hired?",
+   "options_en": [
+    "It shows imaging demand has peaked, so efficiency gains will only bring layoffs",
+    "It refutes him: per capita, the number of radiologists actually fell",
+    "It directly confirms the flywheel: radiology hiring clearly accelerated after AI spread",
+    "The growth is real but predates AI; the authors attribute it to attrition and aging"
+   ],
+   "explanation_en": "Malhotra et al. found a 12% rise and a slight per-capita increase, but the growth predates widespread AI, and the authors attribute the shortage to attrition and aging-driven imaging demand without mentioning AI. The flywheel is his interpretation; the data neither confirms nor refutes it."
+  }
+ ]
+}

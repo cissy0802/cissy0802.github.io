@@ -1,0 +1,69 @@
+{
+ "page": "/investing/acquisitions-day29.html",
+ "title": "投资经典：企业购并案例 — Day 29",
+ "page_en": "/investing/acquisitions-day29.en.html",
+ "title_en": "Investing Classics: Acquisition Case Studies — Day 29",
+ "src_hash": "8d874e765f5b",
+ "questions": [
+  {
+   "id": "c9734fc2e2",
+   "question": "Buffett 说「用公道价买伟大公司，远胜于用便宜价买平庸公司」。下面哪种做法其实误用了这条原则？",
+   "options": [
+    "认定某公司伟大，于是不管估值多高都买入",
+    "买入护城河清晰、能长期高回报再投资的公司，价格合理即可",
+    "买入前检查当前价格隐含的未来增长假设是否现实",
+    "对一家便宜但价值不增长的公司保持警惕，担心折价永不收敛"
+   ],
+   "answer": 0,
+   "explanation": "「公道价」不是「任何价」：1999 年许多人以「伟大公司」之名为科技股付出了永远收不回的价格，伟大公司买贵了也要十年才能填平。警惕便宜的平庸公司、检查隐含增长假设，都是这条原则的正确用法。",
+   "question_en": "Buffett said it's far better to buy a wonderful company at a fair price than a fair company at a wonderful price. Which of the following actually misuses this principle?",
+   "options_en": [
+    "Buying a company at any valuation because you've decided it is wonderful",
+    "Buying a firm with a clear moat that can reinvest at high returns, as long as the price is reasonable",
+    "Checking whether the growth assumptions implied by today's price are realistic before buying",
+    "Being wary of a cheap company whose value doesn't grow, in case the discount never closes"
+   ],
+   "explanation_en": "A fair price is not any price: in 1999 many paid unrecoverable prices for tech stocks in the name of 'great companies', and even a great company bought too dear can take a decade to catch up. Avoiding cheap mediocre firms and checking implied growth are correct applications."
+  },
+  {
+   "id": "6b821770ef",
+   "question": "一家股价暴跌的公司看起来很便宜。按 GEICO 1976 年的困境反转思路，决定能否买入的关键问题是什么？",
+   "options": [
+    "核心盈利机制受损了，还是只是财务或管理出了问题",
+    "市场情绪是否已经悲观到了极点",
+    "它的股价相对几年前的历史高点，是否已经跌得足够深",
+    "它过去是否曾是行业里的知名龙头"
+   ],
+   "answer": 0,
+   "explanation": "困境反转的核心是诊断而不是抄底：GEICO 直销的低成本护城河没坏，坏的是准备金和扩张，换了管理层就可修。Kodak、Sears 也曾是知名龙头、跌得很惨，但主业经济性本身在崩塌，接了就是飞刀。",
+   "question_en": "A company's stock has collapsed and looks cheap. Following Buffett's 1976 GEICO turnaround logic, what is the key question in deciding whether to buy?",
+   "options_en": [
+    "Whether its core earning mechanism is damaged, or only its balance sheet and management",
+    "Whether market sentiment has reached maximum pessimism",
+    "Whether the price has fallen far enough from its historical peak",
+    "Whether it was once a well-known industry leader"
+   ],
+   "explanation_en": "A turnaround bet rests on diagnosis, not bottom-fishing: GEICO's low-cost direct-selling moat was intact, while its reserves and overexpansion were fixable with new management. Kodak and Sears were also famous names that fell hard, but their core economics were collapsing — catching falling knives."
+  },
+  {
+   "id": "e9284013e7",
+   "question": "Buffett 称 Dexter 鞋业是他做过最糟的交易。除了护城河被进口鞋摧毁，让这笔错误格外昂贵的原因是什么？",
+   "options": [
+    "他在亏损后不断追加资金，试图挽救这家公司",
+    "他用自家股票而非现金支付，送出的股权此后持续复利",
+    "他借了大量债务完成收购，利息拖垮了 Berkshire",
+    "他没做尽职调查、只凭一次握手成交，结果买到了财务造假的公司"
+   ],
+   "answer": 1,
+   "explanation": "约 4.33 亿美元的 Berkshire 股票到 2014 年值约 57 亿美元：现金支付的错误是有限的，股票支付的错误是复利的。「握手成交、不做审计」说的是 Nebraska Furniture Mart，那笔恰恰是成功案例。",
+   "question_en": "Buffett called Dexter Shoe his worst deal. Besides imports destroying its moat, what made this mistake so especially costly?",
+   "options_en": [
+    "He kept pouring more money in after losses, trying to rescue the company",
+    "He paid in his own company's stock rather than cash, and the shares he gave away kept compounding",
+    "He financed the deal with heavy debt, and the interest dragged down Berkshire",
+    "He skipped due diligence and closed on a handshake, buying a company with fraudulent books"
+   ],
+   "explanation_en": "About $433 million in Berkshire stock was worth roughly $5.7 billion by 2014: a cash mistake is bounded, a stock-paid mistake compounds. The handshake deal without an audit was Nebraska Furniture Mart — a success story."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/ref-serotonin-system.html",
+ "title": "参考 · 血清素系统 — 神经科学",
+ "page_en": "/neuroscience/ref-serotonin-system.en.html",
+ "title_en": "Reference · Serotonin System — Neuroscience",
+ "src_hash": "80dc9e7884cf",
+ "questions": [
+  {
+   "id": "40a06a05e7",
+   "question": "有人问：「这个人的血清素是高了还是低了？」为什么只问这一句，很难推出血清素对他意味着什么？",
+   "options": [
+    "血清素主要储存在肠道，测出来的量和脑内完全无关",
+    "血清素会直接命令下游神经元放电，量的高低就是效果本身",
+    "作用取决于结合哪种受体，十几种受体的效果可以相反",
+    "血清素只负责睡眠和食欲，与情绪行为无关"
+   ],
+   "answer": 2,
+   "explanation": "意思是受体给的：5-HT1A 多为抑制，5-HT2A 是兴奋性的，5-HT3 甚至是快速离子通道。肠道确有九成血清素且几乎过不了血脑屏障，但这不是「高低说明不了效果」的原因；血清素作为调质，改变的是下游的反应方式，不直接命令放电。",
+   "question_en": "Someone asks, 'Is this person's serotonin high or low?' Why does that question alone tell us little about what serotonin is doing for them?",
+   "options_en": [
+    "Serotonin is mostly stored in the gut, so measured levels have nothing to do with the brain",
+    "Serotonin directly commands downstream neurons to fire, so its level is the effect itself",
+    "Serotonin's effect depends on which receptor it binds, and its dozen-plus receptors can have opposite effects",
+    "Serotonin only governs sleep and appetite and has no bearing on behavior or mood"
+   ],
+   "explanation_en": "The meaning comes from the receptor: 5-HT1A is mostly inhibitory, 5-HT2A excitatory, and 5-HT3 is even a fast ion channel. The gut does hold about 90% of the body's serotonin, but that isn't why levels are uninformative; as a neuromodulator serotonin changes how neurons respond rather than commanding them to fire."
+  },
+  {
+   "id": "4f270a448c",
+   "question": "SSRI 几小时内就能让突触间隙里的血清素升高，病人却往往要两三周才见好。这个时间差最能说明什么？",
+   "options": [
+    "关键不在补足血清素，而在随后慢慢发生的受体与突触适应",
+    "SSRI 其实是安慰剂，两三周后的好转只是病情自然缓解",
+    "药物需要两三周才能穿过血脑屏障进入大脑",
+    "抑郁的根源就是血清素过低，只是要补到足量需要一段时间"
+   ],
+   "answer": 0,
+   "explanation": "堵住转运体、堆高血清素这一步很快就完成了，所以疗效多半来自下游较慢的变化：受体密度、神经营养因子、突触重塑。这也与「抑郁＝血清素低」的故事不符；但这不等于 SSRI 无效，疗效要靠临床试验回答。",
+   "question_en": "SSRIs raise synaptic serotonin within hours, yet patients often take two to three weeks to improve. What does this lag most strongly suggest?",
+   "options_en": [
+    "The therapeutic effect lies not in topping up serotonin but in slower downstream receptor and synaptic adaptations",
+    "SSRIs are really placebos, and improvement after a few weeks is just natural remission",
+    "The drug needs two to three weeks to cross the blood–brain barrier",
+    "Depression is caused by low serotonin; it just takes time to restore adequate levels"
+   ],
+   "explanation_en": "Blocking the transporter and raising serotonin happens quickly, so the benefit likely comes from slower downstream changes in receptor density, neurotrophic factors and synaptic remodeling. That doesn't fit the 'low serotonin' story, but it doesn't mean SSRIs don't work — efficacy is a question for clinical trials."
+  },
+  {
+   "id": "0f481706a5",
+   "question": "如果用一句话概括血清素在行为上管的事，下面哪种说法更接近动物与人类数据的综合图景？",
+   "options": [
+    "大脑的快乐开关，血清素越多越快乐",
+    "驱动人去追求奖励，是「要不要去拿」",
+    "专管恐惧记忆的形成，与别的无关",
+    "调节耐心与刹车，是「要不要再等等」"
+   ],
+   "answer": 3,
+   "explanation": "血清素更像在管一组关于时间与代价的参数：耐心等待、行为抑制、对厌恶的敏感度以及基础节律，而不是情绪的音量。「要不要去拿」常被用来概括多巴胺，正好与之对照。",
+   "question_en": "If you had to sum up in one line what serotonin governs behaviorally, which comes closest to the combined animal and human evidence?",
+   "options_en": [
+    "A happiness switch: more serotonin, more happiness",
+    "Driving the pursuit of reward — 'should I go get it?'",
+    "Specifically forming fear memories, and nothing else",
+    "Regulating patience and braking — 'should I wait a bit longer?'"
+   ],
+   "explanation_en": "Serotonin looks more like a set of parameters about time and cost — waiting, behavioral inhibition, aversion sensitivity and basic rhythms — than a volume knob for mood. 'Should I go get it?' is how dopamine is often summarized, which is the contrast being drawn."
+  }
+ ]
+}
