@@ -1,0 +1,69 @@
+{
+ "page": "/novel-deepread/unbearable-lightness-being-novel70.html",
+ "title": "不能承受的生命之轻 — 小说精读 No.70",
+ "page_en": "/novel-deepread/unbearable-lightness-being-novel70.en.html",
+ "title_en": "The Unbearable Lightness of Being — Novels, Deep-Read No.70",
+ "src_hash": "3f760b3f6722",
+ "questions": [
+  {
+   "id": "9954a4b47b",
+   "question": "按昆德拉在《不能承受的生命之轻》里对「媚俗」（kitsch）的定义，判断一种感动是否属于媚俗，关键看什么？",
+   "options": [
+    "是否有很多人同时被感动，个人的私下感动不算媚俗",
+    "看是否来自极权政治的宣传，善意的公共行动和民间的集体感动则与媚俗无关",
+    "看有没有「第二滴眼泪」：为「被感动的自己真好」再感动一次",
+    "是否趣味低下，比如地摊上的塑料天使和廉价装饰"
+   ],
+   "answer": 2,
+   "explanation": "媚俗不是趣味差，而是一种取景方式：划掉不体面的部分，留下让人感动的画面；让它成为媚俗的是第二滴眼泪。昆德拉认为极权是媚俗的完成形态，而「伟大的进军」一部把同样的检验用在善意的一边：媚俗不分左右。",
+   "question_en": "By Kundera's definition of kitsch in The Unbearable Lightness of Being, what is the key test for whether an emotion is kitsch?",
+   "options_en": [
+    "Whether many people are moved at once; private, individual emotion doesn't count",
+    "Whether it comes from totalitarian propaganda; well-meaning public action and collective feeling have nothing to do with kitsch",
+    "Whether there's a \"second tear\": being moved again by how nice it is that you are moved",
+    "Whether it reflects poor taste, like plastic angels and cheap trinkets"
+   ],
+   "explanation_en": "Kitsch isn't bad taste but a way of framing: deleting whatever is unacceptable and leaving a picture to be moved by; what makes it kitsch is the second tear. Kundera sees totalitarianism as kitsch perfected, and the \"Grand March\" part applies the same test to the well-meaning side: kitsch belongs to no single camp."
+  },
+  {
+   "id": "122dcd6a5c",
+   "question": "托马斯先拒签政权要的悔过声明，后来又拒签异议者的特赦请愿书。按文中的解读，这两次拒绝合起来揭示了什么？",
+   "options": [
+    "托马斯是彻底的反体制英雄，第二次拒签是为了保护儿子",
+    "这说明在高压之下一切政治立场都同样没有意义，所以任何行动都毫无价值",
+    "昆德拉真正的对手不是制度，而是「姿态」本身",
+    "托马斯其实暗中同情政权，只是不愿公开表态"
+   ],
+   "answer": 2,
+   "explanation": "第一次拒绝的是政权，第二次拒绝的是反对政权的人，理由两次一样：那张纸救不了人，只让签字的人显得像个人物。这把全书从政治小说里拔了出来。文中也把反方讲得很强：拒绝姿态本身可能是成本最低的姿态，所以它并没有宣布行动一概无价值。",
+   "question_en": "Tomas refuses to sign the regime's retraction, and later refuses to sign the dissidents' amnesty petition. According to the reading, what do the two refusals together reveal?",
+   "options_en": [
+    "Tomas is a thoroughgoing anti-regime hero, and his second refusal is to protect his son",
+    "Under oppression all political positions are equally meaningless, so any action is worthless",
+    "Kundera's real adversary is not the regime but the gesture itself",
+    "Tomas secretly sympathizes with the regime but won't say so publicly"
+   ],
+   "explanation_en": "The first refusal offends the regime, the second its opponents, for the same reason both times: the paper saves no one and only makes the signer look like somebody. This lifts the book out of the political novel. The piece also puts the opposing case strongly, that refusing gestures may itself be the cheapest gesture, so it does not declare all action worthless."
+  },
+  {
+   "id": "878b71aa74",
+   "question": "托马斯把回布拉格的决定称作「非此不可」，后来却想起这份「命运」的地基是六次巧合。小说在这件事上的立场更接近哪一种？",
+   "options": [
+    "人生只有一次所以毫无分量，选择回不回布拉格并无区别",
+    "命运早已注定，六次巧合只是命运显现的信号",
+    "既然地基是巧合，把它当命运就是自我欺骗，清醒的人应像萨比娜那样不给偶然加冕",
+    "命运由偶然做成，但人只能把巧合念成命运、照着它活"
+   ],
+   "answer": 3,
+   "explanation": "书不是说命运不存在，而是说命运由偶然做成，我们照样得按命运来活；托马斯按下钢印失去一切，也因此有一生可讲。把它斥为自我欺骗是文中讲到最强的反方，但书自己站在另一边：萨比娜轻到极致的结果不是飞起来，是消失。",
+   "question_en": "Tomas calls his return to Prague \"es muss sein,\" yet later recalls that this \"fate\" rests on six coincidences. Which position is closest to the novel's own?",
+   "options_en": [
+    "A life lived once has no weight, so whether he returned to Prague made no difference",
+    "Fate is predetermined, and the six coincidences were simply signs of it appearing",
+    "Since it rests on coincidence, treating it as fate is self-deception; the lucid way is Sabina's, refusing to crown chance",
+    "Fate is made of chance, yet we can only read coincidence as fate and live by it"
+   ],
+   "explanation_en": "The book doesn't say fate doesn't exist; it says fate is made of chance and we must live by it anyway. Tomas stamps the seal and loses everything, but gains a life worth telling. Calling it self-deception is the strongest opposing case the piece presents, yet the book sides against it: Sabina's extreme lightness ends not in flight but in disappearance."
+  }
+ ]
+}

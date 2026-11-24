@@ -1,0 +1,69 @@
+{
+ "page": "/mathematics/optimization-day14.html",
+ "title": "优化理论 · Day 14 — Mathematics",
+ "page_en": "/mathematics/optimization-day14.en.html",
+ "title_en": "Optimization · Day 14 — Mathematics",
+ "src_hash": "afa136e1f908",
+ "questions": [
+  {
+   "id": "e1f96f55e8",
+   "question": "在「预算约束下让产出最大」的优化里，求得预算约束的拉格朗日乘子 λ = 3。它最直接的含义是什么？",
+   "options": [
+    "预算每放松一单位，最优产出大约能再提高 3",
+    "产出每增加一单位，需要额外花掉 3 单位预算",
+    "在最优点上，预算恰好被用掉了三分之一",
+    "目标函数的梯度大小恰好是 3，与约束无关"
+   ],
+   "answer": 0,
+   "explanation": "λ 是影子价格：约束每松动一单位，最优目标值改善多少，它量化了约束有多珍贵。把它理解成「多一单位产出要花多少预算」是把边际关系的方向搞反了。",
+   "question_en": "In maximizing output subject to a budget constraint, the Lagrange multiplier on the budget turns out to be λ = 3. What does that most directly mean?",
+   "options_en": [
+    "Relaxing the budget by one unit would raise the optimal output by about 3",
+    "Each additional unit of output costs 3 extra units of budget",
+    "At the optimum, exactly one third of the budget has been spent",
+    "The gradient of the objective has magnitude exactly 3, independent of the constraint"
+   ],
+   "explanation_en": "λ is a shadow price: the rate at which the optimal objective improves when the constraint is loosened by one unit, quantifying how valuable the constraint is. Reading it as the budget cost of one more unit of output reverses the direction of the marginal relationship."
+  },
+  {
+   "id": "9a79fab13d",
+   "question": "工程师常刻意给问题换变量、放松约束，把它改写成凸优化问题。这样做最主要是为了得到什么？",
+   "options": [
+    "目标函数的梯度处处为零，因而不再需要迭代",
+    "问题从非线性变成线性，这样就能直接套用线性代数的方法一步求解",
+    "模型的表达能力变强，能拟合更复杂的数据",
+    "局部最优即全局最优，能可靠解到最优并有保证"
+   ],
+   "answer": 3,
+   "explanation": "凸函数像一只碗，没有困住弹珠的假谷底，所以凸问题几乎总能可靠地解到全局最优，还带着最优性保证。Rockafellar 强调分水岭在凸与非凸之间，而不在线性与非线性之间；论表达力，反倒是非凸的深度学习更强。",
+   "question_en": "Engineers often deliberately change variables or relax constraints to recast a problem as a convex optimization. What is the main thing they gain?",
+   "options_en": [
+    "The gradient of the objective becomes zero everywhere, so no iteration is needed",
+    "The problem turns from nonlinear into linear, so linear algebra methods can solve it in one step",
+    "The model gains expressive power and can fit more complex data",
+    "Every local optimum is global, so it can be solved reliably with a guarantee of optimality"
+   ],
+   "explanation_en": "A convex function is like a bowl with no false valleys, so convex problems can almost always be solved to the global optimum with a certificate of optimality. Rockafellar's point is that the great watershed is convexity versus non-convexity, not linear versus nonlinear; and it is non-convex deep learning that buys more expressive power."
+  },
+  {
+   "id": "26b062a59f",
+   "question": "在海量数据上训练模型时，随机梯度下降（SGD）每步只用一小批样本估计梯度。它为什么通常优于每步都用全量数据？",
+   "options": [
+    "小批量估出的梯度比全量更精确，因为能过滤掉数据中的异常样本",
+    "SGD 达到同样精度所需的更新步数比全量梯度下降少得多",
+    "小批量梯度平均方向是对的，多走便宜的糙步胜过少走精步，噪声还能帮着跳出浅坑",
+    "小批量梯度虽然系统性地偏向某个方向，但这种偏差恰好指向全局最优，所以收敛更快更稳"
+   ],
+   "answer": 2,
+   "explanation": "小批量梯度是无偏估计，单次有误差但平均方向对，于是训练变成「用糙梯度换多得多的步数」的交易，而且噪声能把模型从浅坑里颠出来。SGD 赢在每步便宜、总步数多，不是步数少；它的估计也是无偏的，不存在指向全局最优的系统偏差。",
+   "question_en": "When training on massive datasets, stochastic gradient descent estimates the gradient from a small batch at each step. Why does it usually beat using the full dataset every step?",
+   "options_en": [
+    "The mini-batch gradient is more accurate than the full one because it filters out outlier samples",
+    "SGD needs far fewer update steps than full-batch descent to reach the same accuracy",
+    "The mini-batch gradient is right on average, so many cheap rough steps beat a few precise ones, and noise helps escape shallow pits",
+    "Mini-batch gradients are systematically biased, but the bias happens to point toward the global optimum, so they converge faster and more stably"
+   ],
+   "explanation_en": "The mini-batch gradient is an unbiased estimate: noisy per step but right on average, so training trades precise gradients for many more cheap steps, and the noise can bounce the model out of shallow minima. SGD wins because each step is cheap and you take many more, not because it needs fewer; and since the estimate is unbiased, there is no systematic bias toward the global optimum."
+  }
+ ]
+}

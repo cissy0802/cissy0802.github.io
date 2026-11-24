@@ -1,0 +1,69 @@
+{
+ "page": "/personal-finance/insurance-principles-day12.html",
+ "title": "个人理财 · Day 12 · 保险第一原则",
+ "page_en": "/personal-finance/insurance-principles-day12.en.html",
+ "title_en": "Personal Finance · Day 12 · First Principles of Insurance",
+ "src_hash": "4b17f3ebc3be",
+ "questions": [
+  {
+   "id": "6b02400826",
+   "question": "既然每份保险按期望值算都是亏的，一个理性的人为什么还应该买某些保险？",
+   "options": [
+    "因为保险公司在长期会把保费的一部分作为投资收益返还给投保人",
+    "因为只要选对了保险产品、算准了条款，期望赔付就能超过所交的保费",
+    "它用可预算的小支出削掉会让计划报废的尾部损失",
+    "因为身体好、开车稳的人出险概率低，买保险的实际成本更低"
+   ],
+   "answer": 2,
+   "explanation": "保费必然大于期望赔付，买的从来不是收益，而是削掉损失分布的尾巴；财富增长看连乘，一次归零就出局，所以挡住「出局」的负期望溢价也是理性的。认为「身体好就少买」是文中点名的误区：要保的恰恰是那个「不像你」的低概率情形。",
+   "question_en": "If every insurance policy loses money in expected-value terms, why should a rational person still buy some insurance?",
+   "options_en": [
+    "Over the long run, insurers return part of premiums to policyholders as investment returns",
+    "With the right product and carefully worked-out terms, expected payouts can exceed premiums",
+    "It swaps a small, predictable cost for removing tail losses that would wreck the plan",
+    "Healthy people and careful drivers are unlikely to claim, so their real cost of insurance is lower"
+   ],
+   "explanation_en": "Premiums must exceed expected payouts, so what you buy is never a return but the removal of the loss distribution's tail. Wealth grows multiplicatively, and a single wipeout takes you out of the game, so a negative-expectation premium that blocks ruin is rational. \"I'm healthy, so I need less\" is a named misconception: what you insure is precisely the unlikely case that doesn't look like you."
+  },
+  {
+   "id": "0eddd900cc",
+   "question": "按「发生频率 × 后果严重度」的筛法，下列哪一项最应该投保？",
+   "options": [
+    "手机碎屏险，因为手机屏幕摔碎是最常见的意外",
+    "意外死亡与伤残险，作为已有定期寿险之外再加一层的额外保障",
+    "延长保修，因为家电坏了维修很麻烦",
+    "车险中的责任限额，防一场重伤事故带来的、没有上限的求偿"
+   ],
+   "answer": 3,
+   "explanation": "保险唯一的战场是低概率、后果毁灭的风险：车最多赔到车没了，重伤事故的求偿却没有天花板。碎屏、保修属于高频小额，买了等于付手续费；意外死亡险只赔特定死因，寿险已覆盖。",
+   "question_en": "Using the \"frequency × severity\" filter, which of these most deserves insurance?",
+   "options_en": [
+    "Phone screen insurance, since a cracked screen is the most common mishap",
+    "Accidental death and dismemberment cover, as an extra layer on top of an existing term life policy",
+    "An extended warranty, since appliance repairs are a hassle",
+    "The liability limit on auto insurance, guarding against uncapped claims from a serious-injury accident"
+   ],
+   "explanation_en": "Insurance's only battlefield is low-probability, catastrophic risk: the most a car can cost you is the car, but injury claims have no ceiling. Screens and warranties are frequent, small losses where you are just paying fees; AD&D pays only for specific causes of death that term life already covers."
+  },
+  {
+   "id": "2fd917a186",
+   "question": "关于免赔额，下列哪种做法最符合文中的原则？",
+   "options": [
+    "免赔额只是保险公司的定价技巧，跟个人的应急资金无关",
+    "设在能一次性拿出的现金范围内，并确认这笔钱真的备着",
+    "免赔额越高越好，因为这样保费最低，至于账上有没有对应的现金都无所谓",
+    "免赔额越低越安全，宁可多付保费也要把自付部分压到最小"
+   ],
+   "answer": 1,
+   "explanation": "免赔额是主动划下的自保线，接着应急基金来定：缓冲越厚，保险越便宜。最低免赔额多付的保费几年累计往往超过多扛的金额；真正危险的不是免赔额高，而是免赔额高、账上却没有那笔现金。",
+   "question_en": "Which approach to deductibles best fits the article's principles?",
+   "options_en": [
+    "A deductible is just an insurer's pricing trick and has nothing to do with your emergency fund",
+    "Set it within the cash you could pay at once, and make sure that money really is set aside",
+    "The higher the deductible the better, since premiums are lowest; whether the cash is there doesn't matter",
+    "The lower the deductible the safer; pay more in premiums to minimize out-of-pocket costs"
+   ],
+   "explanation_en": "A deductible is a self-insurance line you draw yourself, tied to your emergency fund: the thicker the buffer, the cheaper the insurance. The extra premium for a minimal deductible often exceeds, within a few years, the extra risk you would have carried; the real danger is not a high deductible but a high deductible with no cash to cover it."
+  }
+ ]
+}

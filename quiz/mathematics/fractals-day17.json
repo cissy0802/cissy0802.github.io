@@ -1,0 +1,69 @@
+{
+ "page": "/mathematics/fractals-day17.html",
+ "title": "分形与自相似 · Day 17 — Mathematics",
+ "page_en": "/mathematics/fractals-day17.en.html",
+ "title_en": "Fractals & Self-Similarity · Day 17 — Mathematics",
+ "src_hash": "ddc09827d9ed",
+ "questions": [
+  {
+   "id": "625658588a",
+   "question": "测量海岸线时，尺子从 100 公里换到 1 公里，测出的长度越来越大且没有极限。对此最恰当的理解是什么？",
+   "options": [
+    "海岸线实际上是二维图形，应该测它的面积而不是长度",
+    "海岸线没有确定长度，应改用分形维数刻画它的粗糙程度",
+    "这是测量误差不断累积造成的，只要换用更精密的仪器重新测量就能消除",
+    "只要尺子足够短，测出的长度最终会收敛到一个真实值"
+   ],
+   "answer": 1,
+   "explanation": "尺子越短测得越长且趋于无穷，说明海岸线介于一维的线和二维的面之间，「多长」这个问题本身不成立；该量的是它的分形维数（约 1.25）。它比直线更密，但没铺满平面，所以也不是二维的面。",
+   "question_en": "Measuring a coastline with rulers shrinking from 100 km to 1 km yields ever larger lengths with no limit. What is the best way to understand this?",
+   "options_en": [
+    "A coastline is really a two-dimensional shape, so we should measure its area rather than its length",
+    "A coastline has no definite length; its roughness should be described with a fractal dimension instead",
+    "It comes from accumulated measurement error, which remeasuring with more precise instruments would remove",
+    "With a short enough ruler, the measured length eventually converges to a true value"
+   ],
+   "explanation_en": "Shorter rulers give longer lengths without bound, showing the coastline sits between a one-dimensional line and a two-dimensional surface, so \"how long is it\" has no answer. What should be measured is its fractal dimension, about 1.25; it is denser than a line but doesn't fill the plane, so it isn't a surface either."
+  },
+  {
+   "id": "c73d2eaef2",
+   "question": "某个自相似图形，按 1/3 的比例缩小后，需要 4 个副本才能拼回原图。按盒计数的思路，它的维数是多少？",
+   "options": [
+    "4 / 3，约 1.33",
+    "2，因为它由多个副本拼成，铺满了一块平面",
+    "log 4 / log 3，约 1.26",
+    "log 3 / log 4，约 0.79"
+   ],
+   "answer": 2,
+   "explanation": "维数 D 满足「副本数 = (1/缩放比)^D」，即 4 = 3^D，所以 D = log 4 / log 3 ≈ 1.26，这正是科赫曲线。正方形减半需 4 = 2^2 个副本得 D = 2，同样是对数之比而不是简单相除。",
+   "question_en": "A self-similar figure, when scaled down by a factor of 1/3, needs 4 copies to reassemble the original. By box-counting reasoning, what is its dimension?",
+   "options_en": [
+    "4 / 3, about 1.33",
+    "2, because it is tiled from multiple copies that cover a patch of the plane",
+    "log 4 / log 3, about 1.26",
+    "log 3 / log 4, about 0.79"
+   ],
+   "explanation_en": "The dimension D satisfies copies = (1/scale)^D, so 4 = 3^D and D = log 4 / log 3 ≈ 1.26, which is the Koch curve. A square halved needs 4 = 2^2 copies, giving D = 2; it is a ratio of logarithms, not a simple quotient."
+  },
+  {
+   "id": "0d5b097761",
+   "question": "一组数据在双对数坐标上大致排成一条直线，研究者据此宣布它服从幂律、是无标度的分形现象。按文中的提醒，问题在哪？",
+   "options": [
+    "双对数坐标上的直线意味着指数分布，恰好与幂律相反",
+    "直线的斜率必须是整数，才能算作分形维数",
+    "幂律只会出现在数学构造里，自然界里真实测得的数据不可能服从幂律分布",
+    "双对数图上像直线不等于幂律，对数正态分布也很像"
+   ],
+   "answer": 3,
+   "explanation": "幂律在双对数坐标上确实是直线，斜率就是维数，但反过来不成立：对数正态分布在这种坐标下也很像直线，这是经典的统计陷阱。自然界的统计自相似（河网、地震、城市规模）恰恰常用幂律刻画，斜率也可以是分数。",
+   "question_en": "A dataset falls roughly on a straight line in log-log coordinates, and a researcher declares it a scale-free power law. Per the caution in the text, what is wrong?",
+   "options_en": [
+    "A straight line on log-log axes indicates an exponential distribution, the opposite of a power law",
+    "The slope must be an integer before it can count as a fractal dimension",
+    "Power laws occur only in mathematical constructions; real measured data in nature can never follow one",
+    "Looking straight on a log-log plot doesn't prove a power law; a lognormal looks similar"
+   ],
+   "explanation_en": "A power law does appear as a straight line on log-log axes, with the slope giving the dimension, but the converse fails: lognormal distributions can look nearly straight too, a classic statistical trap. Statistical self-similarity in nature, from river networks to earthquakes and city sizes, is in fact commonly described by power laws, and the slope can be fractional."
+  }
+ ]
+}

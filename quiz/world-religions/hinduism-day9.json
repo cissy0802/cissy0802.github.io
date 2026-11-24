@@ -1,0 +1,69 @@
+{
+ "page": "/world-religions/hinduism-day9.html",
+ "title": "世界宗教 Day 9：印度教·概览",
+ "page_en": "/world-religions/hinduism-day9.en.html",
+ "title_en": "World Religions Day 9: Hinduism · Overview",
+ "src_hash": "22c2544989e5",
+ "questions": [
+  {
+   "id": "d90ee0d0af",
+   "question": "一位印度教徒清晨向克里希那祈祷，同时承认梵是唯一的终极实在，傍晚又去村庙敬奉地方女神。按印度教内部的主流理解，这该怎么看？",
+   "options": [
+    "这是信仰不纯的表现，正统印度教要求只敬拜一位神",
+    "这是殖民时期才出现的混合现象，古典印度教中没有",
+    "这说明印度教本质上是多神教，各位神彼此独立、各管一摊事务",
+    "并不矛盾：这些被理解为通向同一实相的不同层次与入口"
+   ],
+   "answer": 3,
+   "explanation": "印度教多用「层次」而非「非此即彼」思考：最高层梵唯一无形，敬拜层需要可亲近的人格神，日常层有地方神祇，它们是同一实相的不同面孔。把印度教简单看作众神各自独立的多神教，正是文中列出的常见误解。",
+   "question_en": "A Hindu prays to Krishna at dawn, affirms that Brahman is the one ultimate reality, and in the evening honors a local goddess at the village shrine. How does mainstream Hindu understanding see this?",
+   "options_en": [
+    "It shows impure faith; orthodox Hinduism requires worshipping only one god",
+    "It is a hybrid that emerged only in the colonial era and has no place in classical Hinduism",
+    "It shows Hinduism is essentially polytheistic, with independent gods each minding their own domain",
+    "No contradiction: these are understood as different levels of, and entry points to, one reality"
+   ],
+   "explanation_en": "Hinduism tends to think in levels rather than either/or: at the top, Brahman is one and formless; in worship people need an approachable personal deity; in daily life there are local gods. All are faces of the same reality. Seeing Hinduism as a polytheism of independent gods is one of the misconceptions the piece lists."
+  },
+  {
+   "id": "3bacd2a3c7",
+   "question": "有人说：「印度教讲业，所以人的处境都是命中注定的，只能接受。」这种理解错在哪？",
+   "options": [
+    "业是行为与后果的因果律，强调当下选择的责任，不是宿命",
+    "业只管来世，与今生的处境毫无关系",
+    "业只适用于高种姓，与其他人无关",
+    "业是神对人的奖惩，取决于神的意志和喜好，而不取决于人自己的行为"
+   ],
+   "answer": 0,
+   "explanation": "业的字面意思是「行为」：此刻的处境是过往行为的结果，此刻的行为又在书写未来，所以它恰恰强调选择的责任。文中也提醒，「今生之苦源于前世之业」若被滥用，会沦为对现世不公的合理化。",
+   "question_en": "Someone says: \"Hinduism teaches karma, so everyone's circumstances are fated and must simply be accepted.\" What's wrong with this?",
+   "options_en": [
+    "Karma is the causal law of action and consequence, stressing responsibility for present choices, not fate",
+    "Karma concerns only the next life and has nothing to do with present circumstances",
+    "Karma applies only to the upper castes and not to anyone else",
+    "Karma is divine reward and punishment, depending on the gods' will and whims rather than human action"
+   ],
+   "explanation_en": "Karma literally means \"action\": your present situation results from past actions, and present actions write the future, so it emphasizes responsibility for choices. The piece also warns that \"this life's suffering comes from past karma,\" if abused, can become a justification for present injustice."
+  },
+  {
+   "id": "ee6ca9b7f5",
+   "question": "印度教徒约有 12 亿，却始终以南亚为绝对重心。文中给出的主要解释是什么？",
+   "options": [
+    "它的经典只能用梵文诵读，语言门槛阻止了向外传播",
+    "它是民族—文明型宗教，极少主动传教，扩展主要靠移民",
+    "殖民政府禁止印度教在南亚以外建立庙宇和社群",
+    "它要求信徒必须出生在特定的种姓之中，外人因此无法皈依成为印度教徒"
+   ],
+   "answer": 1,
+   "explanation": "印度教与南亚土地文化深度缠结，极少主动向外传教，扩展更多靠移民（如殖民时代契约劳工去加勒比、斐济），这与基督教、伊斯兰教的普世传教型截然不同。种姓是社会历史现象，并非统一的必须信奉的教义。",
+   "question_en": "Hinduism has about 1.2 billion adherents, yet remains overwhelmingly centered in South Asia. What is the main explanation given?",
+   "options_en": [
+    "Its scriptures can only be recited in Sanskrit, and the language barrier blocked its spread",
+    "It is an ethnic-civilizational religion that rarely proselytized and spread mainly through migration",
+    "Colonial governments banned Hindu temples and communities outside South Asia",
+    "It requires believers to be born into a particular caste, so outsiders cannot convert to become Hindus"
+   ],
+   "explanation_en": "Hinduism is deeply entwined with South Asian land and culture and historically rarely sought converts; it spread mostly through migration, such as indentured laborers taken to the Caribbean and Fiji, unlike the universal missionary religions of Christianity and Islam. Caste is a social-historical phenomenon, not a unified mandatory doctrine."
+  }
+ ]
+}

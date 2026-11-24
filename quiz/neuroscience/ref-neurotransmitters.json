@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/ref-neurotransmitters.html",
+ "title": "参考 · 神经递质系统 — 神经科学",
+ "page_en": "/neuroscience/ref-neurotransmitters.en.html",
+ "title_en": "Reference · Neurotransmitter Systems — Neuroscience",
+ "src_hash": "b50c82bed701",
+ "questions": [
+  {
+   "id": "3b3d37e930",
+   "question": "SSRI 类抗抑郁药几小时内就能让突触间隙的血清素升高，但病人通常要两三周才见好。这段延迟说明了什么？",
+   "options": [
+    "药物要两三周才能把血清素累积到足够的浓度",
+    "抑郁的根源就是血清素不足，药物只是需要两三周时间才能慢慢把它补足",
+    "治病的是下游受体与调节工作点的慢变化，不是补足血清素",
+    "药物先作用于多巴胺系统，再间接带动血清素"
+   ],
+   "answer": 2,
+   "explanation": "药物几小时就把间隙里的血清素堆高了，见效却要几周，说明治病的那一步在下游的慢过程里，比如受体数量与敏感度的调整。由此也不能从「药有效」反推「病因是血清素少」。",
+   "question_en": "SSRIs raise serotonin in the synaptic cleft within hours, yet patients usually take two to three weeks to improve. What does this delay suggest?",
+   "options_en": [
+    "The drug needs two to three weeks to build serotonin up to a sufficient concentration",
+    "Depression is rooted in serotonin deficiency; the drug simply needs two to three weeks to gradually replenish it",
+    "The healing lies in slow downstream changes to receptors and the set point, not in topping up serotonin",
+    "The drug first acts on the dopamine system and only indirectly drives serotonin"
+   ],
+   "explanation_en": "Cleft serotonin rises within hours but improvement takes weeks, so the healing step must be a slower downstream process, such as receptor up- or down-regulation. It also means a drug's efficacy can't be used to infer that low serotonin is the cause."
+  },
+  {
+   "id": "9d2625ad75",
+   "question": "为什么说「某人多巴胺偏低」这类说法本身几乎没有含义？",
+   "options": [
+    "多巴胺只管运动启动，跟情绪和动机关系不大",
+    "效果由下游受体和通路决定，同一分子可能效果相反",
+    "多巴胺编码的就是快乐本身，所以高低只能靠当事人的主观感受报告来判断",
+    "多巴胺在脑内含量太少，目前的技术还测不准"
+   ],
+   "answer": 1,
+   "explanation": "递质只是钥匙，锁在下游：多巴胺在 D1 和 D2 受体上的效果可以相反，不说清哪条通路、哪种受体，「高低」就没有意义。多巴胺编码的是预测误差与凸显，不是快乐本身。",
+   "question_en": "Why is a claim like \"this person's dopamine is low\" almost meaningless on its own?",
+   "options_en": [
+    "Dopamine only governs movement initiation and has little to do with mood or motivation",
+    "Its effect depends on downstream receptors and pathways; the same molecule can act in opposite ways",
+    "Dopamine encodes pleasure itself, so its level can only be judged by the person's own subjective report",
+    "There is so little dopamine in the brain that current techniques can't measure it accurately"
+   ],
+   "explanation_en": "The transmitter is the key and the lock is downstream: dopamine can have opposite effects at D1 and D2 receptors, so without naming the pathway and receptor, \"high\" or \"low\" means nothing. Dopamine encodes prediction error and salience, not pleasure itself."
+  },
+  {
+   "id": "9ef6eefc81",
+   "question": "多巴胺、去甲肾上腺素、乙酰胆碱这类调制系统，和谷氨酸、GABA 的点对点传递相比，主要在做什么？",
+   "options": [
+    "主要负责把废物从突触间隙清除出去",
+    "直接命令下游神经元在什么时候放电、什么时候停止放电，精确控制每一个突触",
+    "从少数小核团弥散到全脑，调节区域的增益与可塑性",
+    "在单个突触上以毫秒速度传递具体的信息内容"
+   ],
+   "answer": 2,
+   "explanation": "调制系统细胞只有几万个，轴突却铺满全脑，以容积传递的方式改变增益：让区域更敏感或更迟钝、让连接更容易被改写。传递信息内容本身、在突触上做油门与刹车，是谷氨酸和 GABA 的活。",
+   "question_en": "Compared with the point-to-point signaling of glutamate and GABA, what do modulatory systems like dopamine, noradrenaline and acetylcholine mainly do?",
+   "options_en": [
+    "Mainly clear waste out of the synaptic cleft",
+    "Directly command downstream neurons when to fire and when to stop, precisely controlling each synapse",
+    "Spread from a few small nuclei across the brain, tuning regions' gain and plasticity",
+    "Carry specific informational content across single synapses on a millisecond timescale"
+   ],
+   "explanation_en": "These systems have only tens of thousands of cells, yet their axons blanket the brain and work by volume transmission to change gain: making regions more or less responsive and connections easier to rewrite. Carrying the content itself, acting as accelerator and brake at individual synapses, is the job of glutamate and GABA."
+  }
+ ]
+}

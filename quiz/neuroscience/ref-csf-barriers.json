@@ -1,0 +1,49 @@
+{
+ "page": "/neuroscience/ref-csf-barriers.html",
+ "title": "参考 · 脑脊液与脑屏障 — 神经科学",
+ "page_en": "/neuroscience/ref-csf-barriers.en.html",
+ "title_en": "Reference · CSF & Brain Barriers — Neuroscience",
+ "src_hash": "ab2c0ac568ae",
+ "questions": [
+  {
+   "id": "4c4dc5ef6b",
+   "question": "关于血脑屏障，下列哪种描述最准确？",
+   "options": [
+    "它挡住的主要是大分子蛋白质，绝大多数小分子药物都能顺利通过",
+    "像海关：脂溶性小分子自由过，葡萄糖走专用通道，蛋白质和多数药物被挡",
+    "它像一堵密不透风的墙：除了氧气之外，几乎所有物质都无法从血液进入脑组织",
+    "它覆盖全脑每一处，没有任何区域例外"
+   ],
+   "answer": 1,
+   "explanation": "屏障由紧密连接缝死的内皮细胞构成，但有专用通道（如 GLUT1 运葡萄糖），酒精这类脂溶性小分子也能自由通过；常被引用的约 98% 的小分子药物过不去。它还故意在室周器官留了不设关的口子。",
+   "question_en": "Which description of the blood-brain barrier is most accurate?",
+   "options_en": [
+    "It mainly blocks large proteins, while the vast majority of small-molecule drugs pass through easily",
+    "Like customs: lipid-soluble small molecules pass freely, glucose uses a dedicated transporter, proteins and most drugs are blocked",
+    "It is like an airtight wall: apart from oxygen, almost nothing can pass from the blood into brain tissue",
+    "It covers every part of the brain without exception"
+   ],
+   "explanation_en": "The barrier is built from endothelial cells sealed by tight junctions, yet it has dedicated channels such as GLUT1 for glucose, and lipid-soluble molecules like alcohol pass freely; an often-cited ~98% of small-molecule drugs cannot cross. It also deliberately leaves unguarded gaps at the circumventricular organs."
+  },
+  {
+   "id": "222b02ab5c",
+   "question": "脑内有少数区域（如最后区）故意不设血脑屏障，原因是什么？",
+   "options": [
+    "脑得直接感知血里有什么，比如探测毒素触发呕吐",
+    "这些区域负责把脑脊液排回静脉，所以必须与血液直接相通、不能隔开",
+    "这些区域代谢太旺盛，需要不受限制地从血里摄取葡萄糖",
+    "这些区域是专门给药物进入脑组织留的通道"
+   ],
+   "answer": 0,
+   "explanation": "这些「天窗」存在是为了让脑尝到血里的东西：最后区闻出毒素触发呕吐，下丘脑一小块直接感受激素和渗透压。脑脊液回流靠蛛网膜颗粒和脑膜淋巴管；葡萄糖则走 GLUT1 专用通道，不需要拆掉屏障。",
+   "question_en": "A few brain regions, such as the area postrema, deliberately lack a blood-brain barrier. Why?",
+   "options_en": [
+    "The brain must sense what's in the blood directly, e.g. detecting toxins to trigger vomiting",
+    "These regions drain CSF back into the veins, so they must connect directly with the blood",
+    "These regions are so metabolically active that they need unrestricted glucose uptake from the blood",
+    "These regions are reserved as entry routes for drugs into brain tissue"
+   ],
+   "explanation_en": "These \"skylights\" let the brain taste the blood: the area postrema detects toxins and triggers vomiting, and part of the hypothalamus senses hormones and osmolarity directly. CSF drains via arachnoid granulations and meningeal lymphatics, and glucose enters through GLUT1 without any need to drop the barrier."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/novel-deepread/rashomon-stories-novel110.html",
+ "title": "罗生门 · 竹林中 — 小说精读 No.110",
+ "page_en": "/novel-deepread/rashomon-stories-novel110.en.html",
+ "title_en": "Rashōmon and In a Grove — Novels, Deep-Read No.110",
+ "src_hash": "df740463643a",
+ "questions": [
+  {
+   "id": "858b3b2c6a",
+   "question": "《罗生门》里，那个一直迈不出「做贼」这一步的家丁，最终是什么让他下了手、剥走老太婆的衣服？",
+   "options": [
+    "他爬上门楼后饿得实在撑不住，生存本能压倒了犹豫",
+    "老太婆「不这么做就得饿死」的辩解，被他原样还给她",
+    "他对老太婆拔死人头发的憎恶，让他决定亲手惩罚这个在雨夜里作恶的人",
+    "雨停之后他终于有了去处，于是需要一件衣服御寒赶路"
+   ],
+   "answer": 1,
+   "explanation": "家丁缺的不是一口饭，而是一个能说出口的理由，老太婆亲手递给了他：她用「没办法」替自己开脱，他用一模一样的道理剥了她。那股憎恶式的正义感像火把，烧得旺却很快冷了，转向的勇气恰恰来自她的辩护。",
+   "question_en": "In \"Rashōmon,\" the servant can't bring himself to become a thief. What finally makes him strip the old woman of her clothes?",
+   "options_en": [
+    "Once up in the gatehouse he is too hungry to hold out, and survival instinct overrides his hesitation",
+    "Her excuse, \"if I don't, I'll starve,\" which he hands straight back to her",
+    "His disgust at her pulling hair from corpses, which makes him decide to punish this rainy-night wrongdoer himself",
+    "The rain stops and he finally has somewhere to go, so he needs clothes for the journey"
+   ],
+   "explanation_en": "What he lacks is not food but a reason he can say out loud, and the old woman hands it to him: she excuses herself with \"there was no choice,\" and he strips her with exactly the same logic. His righteous disgust burns hot like the torch but cools fast; the courage to turn comes from her own defense."
+  },
+  {
+   "id": "1234675781",
+   "question": "《竹林中》里，强盗、妻子、死者的鬼魂都说「人是我杀的」。按文中的解读，三人抢着认罪的根本原因是什么？",
+   "options": [
+    "三人当时都处在惊恐和神志不清之中，各自都真心以为是自己动的手",
+    "在平安时代的审判里，认罪可以换来从轻发落",
+    "三人都想替真正的凶手樵夫顶罪，以免他受到牵连",
+    "每个版本都保住了说话人的体面：宁认最重的罪，不认最深的耻"
+   ],
+   "answer": 3,
+   "explanation": "强盗保住了光明决斗的武名，妻子保住了为耻辱而杀的贞烈，武士保住了死于自己之手的体面；认罪比认耻便宜。樵夫只是很多读者回头怀疑的对象，小说并未点破；三人「抢着」认罪是芥川的设计：连认罪都能是自我粉饰。",
+   "question_en": "In \"In a Grove,\" the bandit, the wife and the dead man's ghost each claim, \"I killed him.\" According to the reading, why do all three rush to confess?",
+   "options_en": [
+    "All three were terrified and dazed at the time, and each sincerely believed they had struck the blow",
+    "Under Heian-era justice, confessing could win a lighter sentence",
+    "All three want to shield the real killer, the woodcutter, from being implicated",
+    "Each version saves the speaker's dignity: better to admit the gravest crime than the deepest shame"
+   ],
+   "explanation_en": "The bandit keeps the warrior's honor of a fair duel, the wife the chastity of killing out of shame, the samurai the dignity of dying by his own hand; confessing to the crime is cheaper than confessing to the shame. The woodcutter is only someone many readers come to suspect, never confirmed; the rush to confess is Akutagawa's design to show that even a confession can be self-flattery."
+  },
+  {
+   "id": "b1a75d7c00",
+   "question": "《竹林中》有尸体、凶器、嫌犯、证词，却怎么也推不出真凶。按文中「一台不给答案的机器」的拆解，关键原因是什么？",
+   "options": [
+    "芥川故意漏写了关键物证，只要找回那把刀就能定案",
+    "樵夫在第一段口供里已经暗示了自己就是凶手，其余的六段口供都只是作者设下的干扰",
+    "三份口供中有两份明显违反现场物证，排除后只剩一个可能",
+    "每条线索都能被至少两个版本吃下去，连死者也借巫女讲了自利的版本"
+   ],
+   "answer": 3,
+   "explanation": "三个版本都在外围证人的硬约束之内，各有摩擦却无一致命，所以线索无法裁决；侦探小说里唯一不撒谎的死者，在这里同样自利，还隔着巫女一张嘴。那把消失的刀不是能定案的漏写，而是引出了新的无解问题：拔刀的人是谁。",
+   "question_en": "\"In a Grove\" has a corpse, a weapon, suspects and testimony, yet the killer can never be deduced. Per the analysis of \"a machine that gives no answer,\" what is the key reason?",
+   "options_en": [
+    "Akutagawa deliberately omitted a key piece of evidence; recovering the knife would settle the case",
+    "The woodcutter already hints in the first testimony that he is the killer; the other six are just the author's distractions",
+    "Two of the three testimonies clearly contradict the physical evidence, leaving only one possibility",
+    "Every clue fits at least two versions, and even the dead man tells a self-serving story through a medium"
+   ],
+   "explanation_en": "All three versions fit within the hard constraints set by the outside witnesses, each with friction but none fatal, so no clue can adjudicate. The dead, the one witness who never lies in detective fiction, is self-serving here too, and speaks through a medium. The missing knife doesn't settle anything; it opens a new unanswerable question: whose hand pulled it out?"
+  }
+ ]
+}

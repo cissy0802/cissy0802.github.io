@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/human-condition-read78b.html",
+ "title": "《人的境况》",
+ "page_en": "/deep-reading/human-condition-read78b.en.html",
+ "title_en": "The Human Condition",
+ "src_hash": "8372c05fb025",
+ "questions": [
+  {
+   "id": "0513e45b51",
+   "question": "一位白领每天的主要任务是把收件箱清空、把每季度刷新的指标做完。按阿伦特对劳动、工作、行动的区分，这份差事在性质上更接近哪一种？为什么？",
+   "options": [
+    "劳动，因为产物随生随灭，只是维持循环，没留下经久之物",
+    "工作，因为它发生在办公室、靠脑力完成，不是体力活",
+    "行动，因为它需要和许多同事打交道、在众人之间进行",
+    "工作，因为它有明确的目标和完成标准，符合制作活动那种手段—目的的结构"
+   ],
+   "answer": 0,
+   "explanation": "劳动的标志不是辛苦或体力，而是产物随生随灭、活动永无尽头；每天清空的收件箱、每季刷新的 KPI 正是文中举的例子。阿伦特区分的是活动的性质而非职业类型；工作要留下经久之物，这里每一轮都被清零。",
+   "question_en": "An office worker's main tasks are emptying the inbox every day and hitting metrics that reset each quarter. Under Arendt's distinction of labor, work and action, which is this closest to in kind, and why?",
+   "options_en": [
+    "Labor, because its products vanish as they're made; it maintains a cycle and leaves nothing durable",
+    "Work, because it happens in an office and relies on mental rather than physical effort",
+    "Action, because it involves dealing with many colleagues among others",
+    "Work, because it has clear goals and completion criteria, fitting the means-end structure of fabrication"
+   ],
+   "explanation_en": "What marks labor is not toil or physical effort but that its products vanish as fast as they are made and the activity never ends; the daily-emptied inbox and quarterly-reset KPIs are the piece's own examples. Arendt distinguishes kinds of activity, not occupations; work leaves durable things, whereas here every round is wiped clean."
+  },
+  {
+   "id": "cb91e61c77",
+   "question": "一个暴君手握压倒性的军警，一群手无寸铁的人却团结一致到让军队倒戈。按阿伦特对权力的定义，该怎么理解？",
+   "options": [
+    "权力只在人们一起行动时出现；暴力能摧毁权力，却造不出权力",
+    "权力来自掌握工具和资源，群众倒戈是因为他们掌握了经济命脉",
+    "权力就是强制他人服从的能力，所以暴君权力最大，群众只是暂时占了上风",
+    "权力本质上是个人的力量与才能，群众胜在领袖更有魅力"
+   ],
+   "answer": 0,
+   "explanation": "阿伦特的权力与日常用法相反：它不像力量那样属于某个人，也不像暴力那样靠工具，而是在人们共同行动时出现、散开时消失。所以暴政的典型手段是孤立，让人无法聚在一起。",
+   "question_en": "A tyrant commands overwhelming armed force, yet an unarmed crowd stands together until the army switches sides. How does Arendt's definition of power explain this?",
+   "options_en": [
+    "Power arises only when people act together; violence can destroy power but never create it",
+    "Power comes from controlling tools and resources; the army switched because the crowd controlled the economy",
+    "Power is the ability to force others to obey, so the tyrant has the most power and the crowd merely got the upper hand for a moment",
+    "Power is essentially individual strength and talent; the crowd won because its leader was more charismatic"
+   ],
+   "explanation_en": "Arendt's power runs against ordinary usage: unlike strength it doesn't belong to an individual, and unlike violence it doesn't rely on instruments; it appears when people act together and vanishes when they disperse. That is why isolation is tyranny's signature tool."
+  },
+  {
+   "id": "4819d4eb52",
+   "question": "阿伦特认为行动有不可逆、不可预测的先天缺陷。她给出的解药是什么？",
+   "options": [
+    "退回私人领域，减少在公共场合的言说与行动",
+    "交给专家和官僚制度去统一管理，用明确的规则来消除行动带来的不确定性",
+    "深思熟虑、周密计划，在行动之前预见并控制所有后果",
+    "宽恕解开已做之事，承诺稳住未来，两者都只能在他人之间完成"
+   ],
+   "answer": 3,
+   "explanation": "行动落进人际之网，能开始故事却当不了作者；对付不可逆有宽恕，对付不可预测有承诺（契约、条约、宪法）。没有人能真正宽恕自己，也没人能被只对自己许下的诺言约束。官僚制在她看来是「无人统治」，可能是最暴虐的统治。",
+   "question_en": "Arendt holds that action is inherently irreversible and unpredictable. What remedies does she offer?",
+   "options_en": [
+    "Retreating into the private realm and speaking and acting less in public",
+    "Hand things to experts and bureaucracy to manage centrally, using clear rules to eliminate the uncertainty of action",
+    "Careful deliberation and planning to foresee and control every consequence before acting",
+    "Forgiveness releases what was done and promising steadies the future; both work only among others"
+   ],
+   "explanation_en": "Action enters a web of relationships: one can begin a story but never be its author. Against irreversibility there is forgiveness; against unpredictability, promising, in the form of contracts, treaties and constitutions. No one can truly forgive themselves or be bound by a promise made only to themselves. Bureaucracy, for her, is \"rule by nobody,\" possibly the most tyrannical rule."
+  }
+ ]
+}

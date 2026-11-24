@@ -2483,6 +2483,140 @@
     "fc33acb96d",
     "871911d159"
    ]
+  },
+  "/chapter-deepread/fosa-ch03-modularity-book210.html": {
+   "t": "FoSA 第 3 章 · 模块化：内聚、耦合与共生性 — 专业书籍精读 Book 210",
+   "f": "chapter-deepread/fosa-ch03-modularity-book210.json",
+   "q": [
+    "be3c7a86e7",
+    "28ebbbbc77",
+    "f9698b0e30"
+   ]
+  },
+  "/philosophy/ultimate-concern-day32.html": {
+   "t": "哲学经典详解：终极关怀 · Day 32 — Philosophy",
+   "f": "philosophy/ultimate-concern-day32.json",
+   "q": [
+    "50d769caae",
+    "86e10a33a2",
+    "e0aee335c4"
+   ]
+  },
+  "/neuroscience/ref-neurotransmitters.html": {
+   "t": "参考 · 神经递质系统 — 神经科学",
+   "f": "neuroscience/ref-neurotransmitters.json",
+   "q": [
+    "3b3d37e930",
+    "9d2625ad75",
+    "9ef6eefc81"
+   ]
+  },
+  "/mathematics/optimization-day14.html": {
+   "t": "优化理论 · Day 14 — Mathematics",
+   "f": "mathematics/optimization-day14.json",
+   "q": [
+    "e1f96f55e8",
+    "9a79fab13d",
+    "26b062a59f"
+   ]
+  },
+  "/writing/clarity-day1.html": {
+   "t": "写作与表达：清晰的原则 — Day 1",
+   "f": "writing/clarity-day1.json",
+   "q": [
+    "d7372201d0",
+    "d740a016fb",
+    "9a7c901aac"
+   ]
+  },
+  "/mathematics/fractals-day17.html": {
+   "t": "分形与自相似 · Day 17 — Mathematics",
+   "f": "mathematics/fractals-day17.json",
+   "q": [
+    "625658588a",
+    "c73d2eaef2",
+    "0d5b097761"
+   ]
+  },
+  "/neuroscience/ref-csf-barriers.html": {
+   "t": "参考 · 脑脊液与脑屏障 — 神经科学",
+   "f": "neuroscience/ref-csf-barriers.json",
+   "q": [
+    "4c4dc5ef6b",
+    "222b02ab5c"
+   ]
+  },
+  "/evolutionary-biology/gene-culture-coevolution-day30.html": {
+   "t": "进化生物学 Day 30：基因-文化协同演化",
+   "f": "evolutionary-biology/gene-culture-coevolution-day30.json",
+   "q": [
+    "75f4e8f0a6",
+    "c65ddae0ca",
+    "3305535b48"
+   ]
+  },
+  "/world-religions/hinduism-day9.html": {
+   "t": "世界宗教 Day 9：印度教·概览",
+   "f": "world-religions/hinduism-day9.json",
+   "q": [
+    "d90ee0d0af",
+    "3bacd2a3c7",
+    "ee6ca9b7f5"
+   ]
+  },
+  "/deep-reading/human-condition-read78b.html": {
+   "t": "《人的境况》",
+   "f": "deep-reading/human-condition-read78b.json",
+   "q": [
+    "0513e45b51",
+    "cb91e61c77",
+    "4819d4eb52"
+   ]
+  },
+  "/novel-deepread/rashomon-stories-novel110.html": {
+   "t": "罗生门 · 竹林中 — 小说精读 No.110",
+   "f": "novel-deepread/rashomon-stories-novel110.json",
+   "q": [
+    "858b3b2c6a",
+    "1234675781",
+    "b1a75d7c00"
+   ]
+  },
+  "/novel-deepread/unbearable-lightness-being-novel70.html": {
+   "t": "不能承受的生命之轻 — 小说精读 No.70",
+   "f": "novel-deepread/unbearable-lightness-being-novel70.json",
+   "q": [
+    "9954a4b47b",
+    "122dcd6a5c",
+    "878b71aa74"
+   ]
+  },
+  "/family-craft/building-structures-day12.html": {
+   "t": "一起做：搭建与结构",
+   "f": "family-craft/building-structures-day12.json",
+   "q": [
+    "9169ac22ae",
+    "03fb42ccb8",
+    "e682f46f70"
+   ]
+  },
+  "/personal-finance/insurance-principles-day12.html": {
+   "t": "个人理财 · Day 12 · 保险第一原则",
+   "f": "personal-finance/insurance-principles-day12.json",
+   "q": [
+    "6b02400826",
+    "0eddd900cc",
+    "2fd917a186"
+   ]
+  },
+  "/investing/shorting-special-situations-day53.html": {
+   "t": "投资经典：做空与特殊机会 — Day 53",
+   "f": "investing/shorting-special-situations-day53.json",
+   "q": [
+    "8045cf17a1",
+    "9ba36721c9",
+    "c4b22ba167"
+   ]
   }
  },
  "aliases": {

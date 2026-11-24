@@ -1,0 +1,69 @@
+{
+ "page": "/evolutionary-biology/gene-culture-coevolution-day30.html",
+ "title": "进化生物学 Day 30：基因-文化协同演化",
+ "page_en": "/evolutionary-biology/gene-culture-coevolution-day30.en.html",
+ "title_en": "Evolutionary Biology Day 30: Gene-Culture Coevolution",
+ "src_hash": "f6e76b432d58",
+ "questions": [
+  {
+   "id": "75f4e8f0a6",
+   "question": "关于欧洲人成年后能消化乳糖这件事，下列哪种说法符合基因-文化协同演化的叙述？",
+   "options": [
+    "变异碰巧出现，挤奶先存在了几千年，有奶处的携带者多留后代才使其变常见",
+    "这个变异先在欧洲出现并普及，才让当地人有条件开始挤奶和做奶制品",
+    "人们开始喝奶以后，身体为了适应奶制品而逐渐产生了这个变异，并很快在人群中普及开来",
+    "这个变异是全人类共有的祖先特征，只是在不喝奶的人群里后来丢失了"
+   ],
+   "answer": 0,
+   "explanation": "变异什么时候出、出在哪儿与有没有奶无关；陶片显示欧洲人挤奶至少九千年，变异却晚了好几千年才变常见，先动的是做法。断奶后关掉乳糖酶才是哺乳动物的默认状态，持续性是例外。",
+   "question_en": "Which account of adult lactose digestion in Europeans fits the gene-culture coevolution story?",
+   "options_en": [
+    "The variant arose by chance; milking came thousands of years first, and carriers left more offspring where milk was, so it spread",
+    "The variant first appeared and spread in Europe, which is what made it possible for people there to start dairying",
+    "Once people began drinking milk, the body gradually produced the variant to adapt to dairy, and it soon spread through the population",
+    "The variant is an ancestral trait shared by all humans that was later lost in populations that didn't drink milk"
+   ],
+   "explanation_en": "When and where the variant arises has nothing to do with milk being around. Pottery residues show Europeans were milking for at least 9,000 years, yet the variant became common thousands of years later: the practice moved first. Shutting off lactase after weaning is the mammalian default; persistence is the exception."
+  },
+  {
+   "id": "c65ddae0ca",
+   "question": "「演化选出了镰刀形基因来帮助人群对抗疟疾。」按文中的分析，这句话错在哪？",
+   "options": [
+    "它弄错了因果：其实是镰刀形基因在人群里的扩散，才让疟疾在当地变成了常驻病",
+    "它忽略了这个变异对种群整体是有利的，只是代价被夸大了",
+    "它把农业的作用说得太重，疟疾与砍林种山药其实没有关系",
+    "把统计结果说成了安排：只是疟区携带者后代更多，变异连同重病一起变多"
+   ],
+   "answer": 3,
+   "explanation": "没有任何东西在替种群算账：两个携带者的孩子平均四个里有一个得重病，这绝不是「对种群有好处」。链条是砍林种山药留下水坑、蚊子增多、疟疾常驻、携带者多留后代，每一步都不奔着下一步去，这就是生态位建构。",
+   "question_en": "\"Evolution selected the sickle-cell gene to help the population fight malaria.\" According to the analysis, what's wrong with this sentence?",
+   "options_en": [
+    "It reverses cause and effect: the spread of the sickle-cell gene through the population is what made malaria endemic there",
+    "It overlooks that the variant benefits the population as a whole; only its cost is overstated",
+    "It overstates the role of farming; malaria has nothing to do with clearing forest for yams",
+    "It turns a statistic into a plan: carriers simply left more offspring where malaria was, so the variant rose along with the disease"
+   ],
+   "explanation_en": "Nothing keeps accounts on behalf of the population: one in four children of two carriers gets a severe disease, so it is not \"good for the species.\" The chain runs from clearing forest for yams to sunlit pools, more mosquitoes, endemic malaria and carriers leaving more offspring, with no step aiming at the next. That pattern is niche construction."
+  },
+  {
+   "id": "3305535b48",
+   "question": "团队里有一条没人说得清来由的老规矩，有人主张「它存在这么多年，一定有道理，留着」。按文中的思路，该怎么判断？",
+   "options": [
+    "看现在有多少团队在用它，用的人越多越说明它有效",
+    "看出问题时谁疼、多久才疼；代价不落在留着它的人身上，「一直在」就不算证据",
+    "没人能解释原理的做法都是迷信，应当一律删除",
+    "传统经过了长期筛选，比个人的推理更可靠，所以一条规矩存在得越久就越应该保留"
+   ],
+   "answer": 1,
+   "explanation": "木薯工序之所以可信，是因为漏一步的人自己当场中毒，筛选重复了无数次；有害的传统同样能久传，只要出错代价不落在传它的人身上，所以「老」本身不是证据。删光也不对，留下的做法里确实藏着说不清的知识，能做对照实验时就该去测。",
+   "question_en": "Your team has an old rule nobody can explain, and someone argues, \"It's been around for years, so there must be a reason; keep it.\" Following the article's reasoning, how should you judge it?",
+   "options_en": [
+    "See how many teams use it now; the more widely used, the more it proves it works",
+    "Ask who gets hurt when it fails and how soon; if the cost doesn't land on those keeping it, its persistence is no evidence",
+    "Any practice whose rationale nobody can explain is superstition and should be removed",
+    "Traditions have been filtered over a long time and beat individual reasoning, so the longer a rule has existed, the more it should be kept"
+   ],
+   "explanation_en": "Manioc processing earns trust because anyone who skips a step poisons themselves on the spot, and that filtering repeated countless times. Harmful traditions can also persist as long as their costs don't land on those who pass them on, so age alone is no evidence. Deleting everything is wrong too, since surviving practices do hold unexplained knowledge; where an experiment is cheap, run it."
+  }
+ ]
+}

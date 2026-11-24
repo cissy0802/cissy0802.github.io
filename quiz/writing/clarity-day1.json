@@ -1,0 +1,69 @@
+{
+ "page": "/writing/clarity-day1.html",
+ "title": "写作与表达：清晰的原则 — Day 1",
+ "page_en": "/writing/clarity-day1.en.html",
+ "title_en": "Writing & Expression: The Principle of Clarity — Day 1",
+ "src_hash": "ae0a05da1746",
+ "questions": [
+  {
+   "id": "d7372201d0",
+   "question": "按「默认主动、被动是工具」的原则，下列哪种情况用被动语态最站得住？",
+   "options": [
+    "写绩效反馈时用「有些错误被犯了」，避免直接点名",
+    "写决策备忘时用「决定已经做出」，让文字显得更正式客观",
+    "向上级汇报项目延误时，用「出现了一些问题」显得更稳妥",
+    "新闻报道里为了保护信源，刻意不写出是谁透露了消息"
+   ],
+   "answer": 3,
+   "explanation": "被动的合法用途是刻意隐去施动者（如保护信源）或强调动作对象。对上沟通时躲进被动「求稳」正是文中点名的陷阱，结果显得没有 ownership；「Mistakes were made」是 Orwell 的经典反例。",
+   "question_en": "Under the rule \"active by default, passive as a tool,\" which use of the passive is most defensible?",
+   "options_en": [
+    "Writing \"some mistakes were made\" in performance feedback to avoid naming anyone",
+    "Writing \"a decision has been made\" in a decision memo to sound more formal and objective",
+    "Reporting a project delay to your manager as \"some problems arose\" to sound safer",
+    "A news report deliberately leaves out who leaked the information in order to protect the source"
+   ],
+   "explanation_en": "The passive is legitimate when you deliberately want to hide the actor, as in protecting a source, or to emphasize the object of the action. Hiding in the passive when reporting upward is exactly the trap the piece names, and it reads as a lack of ownership; \"Mistakes were made\" is Orwell's classic counterexample."
+  },
+  {
+   "id": "d740a016fb",
+   "question": "「该方案在用户体验方面具有较好的提升效果。」按具体名词与强动词的原则，哪种改法最好？",
+   "options": [
+    "该方案在体验方面取得了显著成效。",
+    "该方案极大地提升了用户体验。",
+    "该方案把首屏加载从 4 秒砍到 1 秒。",
+    "该方案对用户体验进行了全面优化。"
+   ],
+   "answer": 2,
+   "explanation": "原则要求用具体、可观察的事实替代抽象评价，并把埋在名词里的动作还原成强动词。加「极大地」是用副词救场，「进行了优化」是名词化加弱动词，都没有让读者落地。",
+   "question_en": "\"The solution has a fairly good improving effect in terms of user experience.\" Applying the principle of concrete nouns and strong verbs, which rewrite is best?",
+   "options_en": [
+    "The solution achieves remarkable results in terms of experience.",
+    "The solution greatly improves the user experience.",
+    "The solution cuts first-screen load time from 4 seconds to 1.",
+    "The solution carries out a comprehensive optimization of the user experience."
+   ],
+   "explanation_en": "The principle calls for replacing abstract judgments with concrete, observable facts and unburying the action from nominalizations into strong verbs. \"Greatly\" is an adverb trying to rescue a weak claim, and \"carries out an optimization\" is a nominalization with a weak verb; neither gives the reader anything to stand on."
+  },
+  {
+   "id": "9a7c901aac",
+   "question": "一份季度自评已经删光了套话、全用主动语态、压到最短。按 Zinsser 的四条信条，它还可能缺什么？",
+   "options": [
+    "更多专业术语，让读者感到写作者足够专业严谨",
+    "覆盖所有项目的全面细节，把每一项进展都写进去，避免遗漏任何可能被领导关注的成果",
+    "更委婉的措辞，避免在对上沟通中暴露自己的失误",
+    "人味：只删不留写作者本人的判断、失误与教训，就只剩冷冰冰的报告"
+   ],
+   "answer": 3,
+   "explanation": "清晰、简洁、精练是工程，人味是灵魂；示范里好的自评写出了「我低估了迁移风险」和下次的改法。堆术语会丢清晰、求全面会丢精练、为了稳妥拒绝立场恰恰会丢人味。",
+   "question_en": "A quarterly self-review has been stripped of filler, written entirely in the active voice and cut to the bone. By Zinsser's four articles of faith, what might it still lack?",
+   "options_en": [
+    "More technical jargon, so the reader sees how professional and rigorous the writer is",
+    "Comprehensive detail on every project, including every bit of progress, so nothing the manager might care about is left out",
+    "Softer wording, so as not to expose your own mistakes when reporting upward",
+    "Humanity: cutting away the writer's own judgment, mistakes and lessons leaves only a cold report"
+   ],
+   "explanation_en": "Clarity, simplicity and brevity are the engineering; humanity is the soul. The model self-review says \"I underestimated the migration risk\" and what will change next time. Piling on jargon costs clarity, chasing completeness costs brevity, and hedging to stay safe is exactly how humanity gets lost."
+  }
+ ]
+}

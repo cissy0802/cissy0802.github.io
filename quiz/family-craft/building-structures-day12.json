@@ -1,0 +1,69 @@
+{
+ "page": "/family-craft/building-structures-day12.html",
+ "title": "一起做：搭建与结构",
+ "page_en": "/family-craft/building-structures-day12.en.html",
+ "title_en": "Make Together: Building & Structures",
+ "src_hash": "5602f72aa00c",
+ "questions": [
+  {
+   "id": "9169ac22ae",
+   "question": "用意面和棉花糖搭的塔里，几个正方形框架一推就歪。最有效的加固办法是什么？",
+   "options": [
+    "把正方形的四条边都换成两根意面并排，把每条边加粗加固",
+    "把正方形放大一圈，让结构更舒展",
+    "在每个关节处多塞一颗棉花糖，让连接更牢",
+    "在每个正方形里加一根斜意面，把它变成两个三角形"
+   ],
+   "answer": 3,
+   "explanation": "三角形三条边一旦定死，怎么推都不变形；正方形即使边很粗、关节很牢，也会被压成菱形。加一根斜杠变成两个三角，就是工程师说的三角加固。",
+   "question_en": "In a spaghetti-and-marshmallow tower, several square frames sway as soon as they're pushed. What is the most effective fix?",
+   "options_en": [
+    "Double up every side of each square with two strands side by side, thickening and reinforcing it",
+    "Make each square bigger so the structure is more spread out",
+    "Push an extra marshmallow into every joint to make the connections stronger",
+    "Add a diagonal strand of spaghetti across each square, turning it into two triangles"
+   ],
+   "explanation_en": "Once a triangle's three sides are fixed, it can't deform however you push it, while a square, even with thick sides and firm joints, still folds into a rhombus. Adding a diagonal to make two triangles is what engineers call triangulation."
+  },
+  {
+   "id": "03fb42ccb8",
+   "question": "同一张纸平铺架在两摞书之间，放一枚硬币就塌；折成瓦楞状后能撑住十几枚。主要原因是什么？",
+   "options": [
+    "折叠后纸的总重量变大，桥身更压得住",
+    "折痕让纸的表面变得更粗糙，硬币不容易滑动，也就不容易把桥压塌",
+    "折出的棱和弧像一根根小梁，把压力分散开、撑住了形状",
+    "折叠后纸变短，两端搭在书上的部分更多了"
+   ],
+   "answer": 2,
+   "explanation": "平纸太薄一压就弯，折成瓦楞或卷成筒后，那些棱和弧成了小梁，分散压力并保持形状，这也是纸箱用瓦楞纸、钢梁做成工字形的道理。纸还是同一张，重量并没有变。",
+   "question_en": "A flat sheet of paper spanning two stacks of books collapses under one coin; folded into corrugations, the same sheet holds a dozen or more. What's the main reason?",
+   "options_en": [
+    "Folding makes the paper heavier overall, so the bridge sits more firmly",
+    "The creases roughen the surface so coins don't slide around, making the bridge less likely to collapse",
+    "The folded ridges and curves act like little beams, spreading the load and holding the shape",
+    "Folding shortens the paper, so more of each end rests on the books"
+   ],
+   "explanation_en": "Flat paper is too thin and bends under any load; corrugated or rolled, its ridges and curves become small beams that spread the force and hold the form, which is why boxes use corrugated card and steel beams are I-shaped. It is the same sheet, so its weight hasn't changed."
+  },
+  {
+   "id": "e682f46f70",
+   "question": "搭积木塔时，为什么底座宽、越往上越小、重块放下面的塔更能搭高不倒？",
+   "options": [
+    "这样每块积木之间的摩擦力更大，彼此卡得更紧",
+    "这样塔的形状会更接近三角形，而三角形的三条边互相锁死、不会变形",
+    "这样塔的总重量更轻，对底座的压力更小",
+    "这样整座塔的重心更低，也更容易落在底座范围之内，不容易翻倒"
+   ],
+   "answer": 3,
+   "explanation": "塔倒不倒，看重心有没有落在底座范围内：底宽、下重上轻，重心低又稳，所以高楼大厦多是下大上小。三角形不变形说的是杆件框架的道理，用在积木堆叠上是把两条规矩混在了一起。",
+   "question_en": "When stacking blocks, why can a tower with a wide base, narrowing upward, with the heavy blocks at the bottom, go higher without falling?",
+   "options_en": [
+    "It increases friction between the blocks so they lock together more tightly",
+    "It makes the tower closer to a triangle, whose three sides lock each other and can't deform",
+    "It makes the tower lighter overall, putting less pressure on the base",
+    "It keeps the tower's center of gravity low and more easily within the footprint of the base, so it's harder to tip over"
+   ],
+   "explanation_en": "Whether a tower falls depends on whether its center of gravity stays over the base: a wide, bottom-heavy tower keeps it low and stable, which is why tall buildings are wider at the bottom. Triangles resisting deformation is a principle about frames of struts; applying it to stacked blocks mixes up two different rules."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/investing/shorting-special-situations-day53.html",
+ "title": "投资经典：做空与特殊机会 — Day 53",
+ "page_en": "/investing/shorting-special-situations-day53.en.html",
+ "title_en": "Investing Classics: Shorting & Special Situations — Day 53",
+ "src_hash": "c917d79ec045",
+ "questions": [
+  {
+   "id": "8045cf17a1",
+   "question": "一笔已宣布的现金收购，标的股价比收购价低约 4%。有人想：「就差几个点就成交了，加大仓位稳赚。」按文中对并购套利的分析，这种想法错在哪？",
+   "options": [
+    "价差说明市场低估了标的公司，成交后股价还会继续上涨",
+    "4% 的价差太小，说明交易几乎没有风险，只是不值得投入资金",
+    "价差是对失败概率的报价：多数时候赚小钱，告吹就一次跌掉两三成",
+    "只要参考历史上同类交易的完成率，就能准确估计出这一笔交易的风险大小"
+   ],
+   "answer": 2,
+   "explanation": "价差不是折价，而是对失败概率的报价，形态上等同于卖出违约保险；Buffett 四问里第四问「失败会怎样」决定你活不活得下来。反垄断审查是制度变量而非概率常数，此前十年的历史违约率没有参考价值。",
+   "question_en": "A cash takeover has been announced and the target trades about 4% below the offer price. Someone thinks: \"It's only a few points from closing; I'll size up for a sure win.\" Per the analysis of merger arbitrage, what's wrong with this?",
+   "options_en": [
+    "The spread shows the market undervalues the target, so the stock will keep rising after the deal closes",
+    "A 4% spread is so small that the deal is nearly riskless, just not worth the capital",
+    "The spread prices the chance of failure: small gains most of the time, a 20–30% drop at once if the deal breaks",
+    "Historical completion rates for similar deals are enough to estimate this deal's risk accurately"
+   ],
+   "explanation_en": "The spread isn't a discount but a quote on failure probability, which makes the trade look like writing default insurance; Buffett's fourth question, what happens if the deal fails, decides whether you survive. Antitrust review is an institutional variable, not a probability constant, so the previous decade's failure rates offer no guide."
+  },
+  {
+   "id": "9ba36721c9",
+   "question": "投资一家正在破产重整的公司的证券，决定回收率的最关键因素是什么？",
+   "options": [
+    "破产消息公布后股价的反弹幅度",
+    "这家公司的业务前景好不好、品牌是否足够强大、产品有没有竞争力",
+    "管理层在重整后能否留任",
+    "这层证券在清偿顺序里的位置，以及支点证券落在哪一层"
+   ],
+   "answer": 3,
+   "explanation": "破产投资买的是资本结构里的位置：按绝对优先原则，上一层未足额受偿前下一层原则上一无所得，支点证券通常转成新公司股权。破产公布后旧普通股常暴涨，买的人多半不知道自己站在最底层；通用汽车一案也说明，最终分配还要经过谈判。",
+   "question_en": "When investing in securities of a company in bankruptcy reorganization, what most determines your recovery?",
+   "options_en": [
+    "How much the stock rebounds after the bankruptcy announcement",
+    "Whether the company's business prospects are good, its brand strong and its products competitive",
+    "Whether management stays on after the reorganization",
+    "Where that security sits in the priority of claims, and which layer the fulcrum security falls in"
+   ],
+   "explanation_en": "Distressed investing buys a position in the capital structure: under absolute priority, a lower layer gets essentially nothing until the one above is paid in full, and the fulcrum security usually converts into equity of the new company. Old common stock often spikes after a filing, bought by people who don't realize they're at the bottom; GM's case also shows the final split is negotiated."
+  },
+  {
+   "id": "c4b22ba167",
+   "question": "分拆（spin-off）出来的新股历史上常常跑赢市场。按文中的分析，这份超额收益主要从哪里来？今天还能机械地照做吗？",
+   "options": [
+    "来自被迫卖家（如指数基金）；如今已被充分预期，机械买入不再灵",
+    "来自分拆总能释放隐藏价值，母公司借此把最好的业务独立出来",
+    "来自新公司本身比母公司更优秀、更专注，所以只要买入分拆股就能长期跑赢市场",
+    "来自分析师对分拆股的密集覆盖，信息充分带来了定价优势"
+   ],
+   "answer": 0,
+   "explanation": "Greenblatt 说分拆是「把股票发到错误的人手里」：超额收益来自强制卖压、信息真空和激励重置，而不是新公司更好。分拆还常被用来甩掉债务、养老金或诉讼；一旦人人都知道谁被迫卖，异象就衰减，已发表因子发表后平均缩水约 58%。",
+   "question_en": "Spun-off stocks have historically often beaten the market. Per the analysis, where does that excess return mainly come from, and can you still exploit it mechanically?",
+   "options_en": [
+    "From forced sellers such as index funds; now widely anticipated, mechanical buying no longer works",
+    "From spin-offs always unlocking hidden value, as parents use them to set their best businesses free",
+    "From the new company being better and more focused than its parent, so simply buying spin-offs beats the market over time",
+    "From heavy analyst coverage of spin-offs, whose rich information creates a pricing edge"
+   ],
+   "explanation_en": "Greenblatt calls spin-offs a way of \"distributing stock to the wrong people\": the excess return comes from forced selling, an information vacuum and reset incentives, not a better business. Spin-offs are often used to offload debt, pensions or litigation, and once everyone knows who is forced to sell, the anomaly decays; published return predictors lose about 58% after publication."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/chapter-deepread/fosa-ch03-modularity-book210.html",
+ "title": "FoSA 第 3 章 · 模块化：内聚、耦合与共生性 — 专业书籍精读 Book 210",
+ "page_en": "/chapter-deepread/fosa-ch03-modularity-book210.en.html",
+ "title_en": "FoSA Ch 3 · Modularity: Cohesion, Coupling, and Connascence — Book Deep Read 210",
+ "src_hash": "fdd149e1c322",
+ "questions": [
+  {
+   "id": "be3c7a86e7",
+   "question": "一个工具包被 8 个包依赖、自己只依赖 2 个，且没有任何接口，与主序列的距离 D=0.8。按 FoSA 第 3 章的思路，首选的改进方向是什么？",
+   "options": [
+    "把依赖它的 8 个包合并进来，消除跨包耦合",
+    "抽出接口让调用方只依赖抽象，提高抽象度从而降低 D",
+    "把它拆成多个小包，让每个包的传入耦合都降下来",
+    "减少它对外的 2 个依赖，让不稳定度进一步接近 0"
+   ],
+   "answer": 1,
+   "explanation": "它又具体又被重度依赖，落在痛苦区；书给的解法是让依赖指向抽象，A 上升、D 下降，不一定要拆包。继续压低不稳定度只会让 D 更大，因为问题出在抽象度为零。",
+   "question_en": "A utility package has 8 packages depending on it, depends on only 2 itself, and contains no interfaces, giving a distance from the main sequence of D = 0.8. Following FoSA Chapter 3, what is the preferred fix?",
+   "options_en": [
+    "Merge the 8 dependent packages into it to eliminate cross-package coupling",
+    "Extract interfaces so callers depend only on abstractions, raising abstractness and lowering D",
+    "Split it into several smaller packages so each has lower afferent coupling",
+    "Cut its 2 outgoing dependencies so its instability moves even closer to 0"
+   ],
+   "explanation_en": "Being concrete yet heavily depended on puts it in the Zone of Pain; the book's remedy is to make dependencies point at abstractions, which raises A and lowers D, without necessarily splitting the package. Pushing instability further toward 0 would actually increase D, since the real problem is zero abstractness."
+  },
+  {
+   "id": "28ebbbbc77",
+   "question": "函数 updateSeat(\"14D\", \"Ford, N\") 两个参数都是字符串，调用时传反了编译器也不报错。按共生性的框架，最合适的处理是什么？",
+   "options": [
+    "改传带命名字段的对象或专门的座位类型",
+    "加一条注释写明参数顺序，让位置共生变得明确可见",
+    "把这个函数和所有调用方移进同一个模块，就不再存在共生",
+    "把参数合并成一个用分隔符拼接的字符串，减少参数个数"
+   ],
+   "answer": 0,
+   "explanation": "Weirich 的强度规则要求把强形式重构成弱形式：命名参数或 SeatNumber 类型能让传反在编译期就被拦下。注释不改变共生的强度；共生也不会因为挪进同一模块而消失，只是变得更可接受。",
+   "question_en": "updateSeat(\"14D\", \"Ford, N\") takes two strings, and swapping them compiles without error. Under the connascence framework, what is the best fix?",
+   "options_en": [
+    "Pass an object with named fields or a dedicated seat type",
+    "Add a comment documenting the argument order so the connascence of position is explicit",
+    "Move the function and all its callers into one module so the connascence disappears",
+    "Combine the arguments into a single delimited string to reduce the parameter count"
+   ],
+   "explanation_en": "Weirich's rule of strength says to refactor strong forms into weaker ones: named fields or a SeatNumber type let the compiler catch a swap. A comment doesn't change the strength, and moving code into one module doesn't eliminate connascence; it only makes it more tolerable."
+  },
+  {
+   "id": "f9698b0e30",
+   "question": "关于共生性，下列哪种说法符合 FoSA 第 3 章的立场？",
+   "options": [
+    "只要两个组件在不同服务里，它们之间的共生就不再需要考虑",
+    "目标是把共生彻底降到零，因为任何共生都意味着改一处就要连带改好几处",
+    "静态共生总是比动态共生更危险，因为它散落在源码各处",
+    "让共生弱且近：强共生留在模块内部，跨远距离就换成弱形式"
+   ],
+   "answer": 3,
+   "explanation": "完全没有共生的两段代码根本不协作，所以目标不是零，而是弱且近；局部性规则要求元素越远越该用弱形式。书里静态共生整体弱于动态共生，跨服务的强共生（如分布式事务）恰恰最危险。",
+   "question_en": "Which statement about connascence matches FoSA Chapter 3's position?",
+   "options_en": [
+    "Once two components live in different services, the connascence between them no longer matters",
+    "Aim for zero connascence altogether, since any connascence means one change forces several others",
+    "Static connascence is always more dangerous than dynamic, because it is scattered across the source",
+    "Keep connascence weak and local: strong forms stay inside a module, weaker forms across distance"
+   ],
+   "explanation_en": "Code with no connascence at all doesn't collaborate, so the goal is weak and local rather than zero; the rule of locality says the farther apart elements are, the weaker the form should be. The book treats static forms as weaker than dynamic ones, and strong connascence across services, like distributed transactions, is the most dangerous case."
+  }
+ ]
+}

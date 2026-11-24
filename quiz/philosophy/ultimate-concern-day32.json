@@ -1,0 +1,69 @@
+{
+ "page": "/philosophy/ultimate-concern-day32.html",
+ "title": "哲学经典详解：终极关怀 · Day 32 — Philosophy",
+ "page_en": "/philosophy/ultimate-concern-day32.en.html",
+ "title_en": "Philosophy Classics: Ultimate Concern · Day 32 — Philosophy",
+ "src_hash": "cf70db44845e",
+ "questions": [
+  {
+   "id": "50d769caae",
+   "question": "一位无神论者说：「我不信任何东西，但如果事业失败，我的整个人生就崩塌了。」按蒂利希的「终极关怀」，该怎么看他？",
+   "options": [
+    "他同样有终极关怀，只是把事业这个有限之物当成了终极",
+    "他的问题是不信神，只要皈依某种宗教就能摆脱焦虑",
+    "他的问题在于押注太集中，只要再多投入几个人生目标、把风险分散开就好",
+    "他没有终极关怀，因为终极关怀以信仰某个超越者为前提"
+   ],
+   "answer": 0,
+   "explanation": "蒂利希认为人人都有终极关怀，问题不在信不信，而在奉为终极的是不是有限之物；把有限当终极就是偶像崇拜，必致幻灭。分散风险是工程的思路，文章明确说蒂利希不劝人多押几个有限之物，而是要看清哪个配得上无条件。",
+   "question_en": "An atheist says: \"I don't believe in anything, but if my career fails my whole life collapses.\" How would Tillich's idea of ultimate concern read this person?",
+   "options_en": [
+    "They do have an ultimate concern; they have made a finite thing, their career, ultimate",
+    "Their problem is unbelief; converting to a religion would relieve the anxiety",
+    "Their problem is overconcentration; investing in several more life goals to spread the risk would fix it",
+    "They have no ultimate concern, since ultimate concern presupposes faith in a transcendent being"
+   ],
+   "explanation_en": "For Tillich everyone has an ultimate concern; the question is not whether you believe but whether what you treat as ultimate is finite. Elevating the finite to ultimacy is idolatry and ends in disillusion. Diversification is an engineering fix; Tillich doesn't urge you to bet on more finite things but to see which one truly deserves to be unconditional."
+  },
+  {
+   "id": "86e10a33a2",
+   "question": "佛学的「涅槃」作为终极安顿，和蒂利希、克尔凯郭尔的终极有什么根本不同？",
+   "options": [
+    "它是自我与渴求的彻底断灭，归于什么都不存在的虚无",
+    "它是在此世人伦中践行「道」，不需要任何超越者",
+    "它是让个体灵魂与梵合一，在永恒之中获得一个常住不灭、不再轮回的自我",
+    "做减法：熄灭贪嗔痴与渴爱，而不是获得某个无限对象"
+   ],
+   "answer": 3,
+   "explanation": "涅槃字义是「吹灭」，是负向超越，与前两位的肯定性终极恰成镜像。它既非断灭的虚无，也非永恒灵魂的常住；在此世人伦中行道是孔子的路子，不是佛学。",
+   "question_en": "How does Buddhist nirvana, as an ultimate resting place, differ fundamentally from the ultimates of Tillich and Kierkegaard?",
+   "options_en": [
+    "It is the total annihilation of self and craving, a return to sheer nothingness",
+    "It is practicing the Way within this-worldly human relations, with no need for anything transcendent",
+    "It is the soul's union with Brahman, gaining a permanent, undying self that no longer cycles through rebirth",
+    "It works by subtraction: extinguishing greed, hatred, delusion and craving, not attaining an infinite object"
+   ],
+   "explanation_en": "Nirvana literally means \"blowing out\": a negative transcendence that mirrors the affirmative ultimates of the other two. It is neither annihilationist nothingness nor the persistence of an eternal soul. Realizing the Way in human relations is Confucius's path, not Buddhism's."
+  },
+  {
+   "id": "e0aee335c4",
+   "question": "有人面对「要不要把一生托付给某项事业」，不断收集更多数据、跑更多模型，希望算出确定答案。克尔凯郭尔会怎么看？",
+   "options": [
+    "只要数据收集得足够充分、模型足够精确，理性终会给出值得委身的确定答案",
+    "应该放下对结果的一切关切，不再做任何承诺",
+    "这类承诺始于计算穷尽之处，是主体投入的问题，不是缺信息",
+    "应该交给普遍的伦理规范来判断，个人的激情不可靠"
+   ],
+   "answer": 2,
+   "explanation": "「主体性即真理」：最重大的承诺在数据穷尽处开始，再多的模型也只给概率、给不了全情投入。他恰恰反对用体系和普遍性吞没个体，而他要的是无限激情地委身，不是放弃承诺。",
+   "question_en": "Someone deciding whether to devote their life to a cause keeps gathering data and running models, hoping to compute a certain answer. How would Kierkegaard see this?",
+   "options_en": [
+    "With enough data and precise enough models, reason will eventually yield a certain answer worth committing to",
+    "They should let go of all concern for outcomes and stop making commitments at all",
+    "Such commitments begin where calculation runs out; it's a matter of subjective investment, not missing information",
+    "The decision should be handed to universal ethical norms, since individual passion is unreliable"
+   ],
+   "explanation_en": "\"Subjectivity is truth\": the gravest commitments start where data runs out; models give probabilities, not wholehearted commitment. Kierkegaard opposes dissolving the individual into the universal, and he calls for passionate commitment, not giving commitment up."
+  }
+ ]
+}
