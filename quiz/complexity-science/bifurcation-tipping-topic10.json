@@ -1,0 +1,69 @@
+{
+ "page": "/complexity-science/bifurcation-tipping-topic10.html",
+ "title": "分岔与临界转变 — 有些门只朝一个方向开 · 复杂性科学 T10",
+ "page_en": "/complexity-science/bifurcation-tipping-topic10.en.html",
+ "title_en": "Bifurcation & Tipping Points — Some Doors Only Open One Way · Complexity Science T10",
+ "src_hash": "3136d3b3e95c",
+ "questions": [
+  {
+   "id": "e55be2e65a",
+   "question": "一个浅湖因营养盐增加由清变浑。管理者把营养盐减回翻车前的水平，湖仍然不清。按分岔与滞后的框架，最合理的解释与对策是？",
+   "options": [
+    "湖泊已经永久性损坏，任何管理措施都无法让它在任何时间尺度上恢复清澈",
+    "翻车那年一定发生了某次反常的营养盐暴增，需要找出并清除那次的残留物",
+    "减排坚持的时间还不够长，只要维持当前的排放水平再多等几年，湖就会沿原路恢复",
+    "浑水态在该区间仍自我维持，需把营养盐压到远低于翻车时，或把湖踢过分水岭"
+   ],
+   "answer": 3,
+   "explanation": "滞后意味着清变浊的折点 F₁ 与浊变清的折点 F₂ 不在同一处，F₂ 往往远在左边；浑水态靠自己的正反馈回路维持。荷兰人的办法是把营养盐压得更低，同时用生物操纵把湖踢进清水态吸引域。跨过折点那年驱动量往往并无异常。",
+   "question_en": "A shallow lake flips from clear to turbid as nutrient loading rises. Managers cut nutrients back to pre-collapse levels, but the lake stays turbid. Under the bifurcation-and-hysteresis framework, what is the best explanation and response?",
+   "options_en": [
+    "The lake is permanently ruined, and no management measure can restore clarity on any timescale",
+    "Some abnormal nutrient spike must have occurred in the collapse year; find and remove what remains of it",
+    "The cuts haven't lasted long enough; hold emissions at the current level for a few more years and it will retrace its path",
+    "The turbid state is still self-sustaining there; push nutrients far below the collapse level, or kick the lake across the separatrix"
+   ],
+   "explanation_en": "Hysteresis means the fold where clear turns turbid (F₁) and the fold where turbid turns clear (F₂) sit in different places, with F₂ often far lower; the turbid state is held by its own feedback loop. The Dutch pushed nutrients much lower and used biomanipulation to kick lakes into the clear basin. Nothing unusual typically happens to the driver in the year of the flip."
+  },
+  {
+   "id": "8839509647",
+   "question": "一段单向的历史时间序列里出现了一次陡峭跳变。按文章的标准，能否据此断言系统跨过了临界点？",
+   "options": [
+    "能；陡峭跳变本身就是临界慢化的直接信号，说明系统已经跨过了折点",
+    "不能；临界点只存在于数学模型中，真实生态与社会系统里并不会出现",
+    "能；只要跳变足够陡峭且之后一直没有回落，就足以证明存在双稳态与不可逆的转变",
+    "不能；陡峭的平滑响应或驱动量自身跳变也会产生同样曲线，需要双向观测等证据"
+   ],
+   "answer": 3,
+   "explanation": "一次陡跳至少有三种同样自洽的解释：真跨过折点、对驱动量很陡但平滑的响应、驱动量自身突变，单向数据分不出来。要说临界点，得说出驱动量、两个稳态各自的维持回路，并有驱动量回退时的观测。文章并不否认湖泊、珊瑚礁这类做实了的个案。",
+   "question_en": "A one-directional historical time series shows a single steep jump. By the article's standard, can you conclude the system crossed a tipping point?",
+   "options_en": [
+    "Yes; a steep jump is itself a direct signal of critical slowing down, showing the fold has been crossed",
+    "No; tipping points exist only in mathematical models and never occur in real ecological or social systems",
+    "Yes; if the jump is steep enough and never reverses, that alone proves bistability and an irreversible transition",
+    "No; a steep but smooth response or a jump in the driver itself would produce the same curve, so you need two-way observations"
+   ],
+   "explanation_en": "A steep jump has at least three equally consistent explanations: a real fold, a steep but smooth response to the driver, or a sudden jump in the driver. One-way data can't tell them apart. Claiming a tipping point requires naming the driver, the feedback loops sustaining both states, and observations of what happens when the driver retreats. The article still accepts well-documented cases like lakes and reefs."
+  },
+  {
+   "id": "fd94387977",
+   "question": "按文章，在一个系统接近折点之前，哪种迹象最能提示它的稳定性正在流失？",
+   "options": [
+    "状态指标逼近了有记录以来的历史最大值",
+    "驱动量在某一年出现了反常的大幅增长",
+    "系统的状态值明显偏离了它的长期均值",
+    "系统被扰动后回到原状的速度越来越慢"
+   ],
+   "answer": 3,
+   "explanation": "折点之前，状态的位置几乎不动，谷变浅只体现在扰动后恢复变慢（临界慢化）。常规监控测的全是位置，所以读不出预警；跨过折点时驱动量也往往并无异常。用「当前值/历史最大值」当安全分母，文章明确说最没意义。",
+   "question_en": "According to the article, before a system reaches a fold, which sign best indicates that its stability is draining away?",
+   "options_en": [
+    "The state indicator is approaching the highest value ever recorded",
+    "The driver showed an unusually large increase in one particular year",
+    "Its state variable has drifted noticeably away from its long-run average",
+    "It takes longer and longer to return to its prior state after a disturbance"
+   ],
+   "explanation_en": "Before the fold, the state barely moves; a shallowing valley shows up only as slower recovery from disturbances (critical slowing down). Routine monitoring measures position, so it misses the warning, and the driver usually does nothing special at the crossing. The article singles out 'current value over historical max' as the least meaningful safety denominator."
+  }
+ ]
+}

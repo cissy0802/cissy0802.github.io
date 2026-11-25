@@ -1,0 +1,69 @@
+{
+ "page": "/thinker-arena/debate.html?d=telling-the-dying",
+ "title": "辩论：病人快不行了，该告诉他吗？",
+ "page_en": "/thinker-arena/debate.en.html?d=telling-the-dying",
+ "title_en": "When someone is dying, should we tell them?",
+ "src_hash": "4d0405691f66",
+ "questions": [
+  {
+   "id": "b468cd05db",
+   "question": "按这场辩论的共识，重病的父亲直视子女问「我是不是快不行了」，下面哪种回应站得住？",
+   "options": [
+    "回答「医生说会好的」，先护住他此刻脆弱的心绪",
+    "一次把诊断、预期存活时间等全部细节讲清楚",
+    "转移话题，等以后再请医生找机会向他宣布",
+    "不说假话，可以慢慢说、挑措辞，并留下来陪他"
+   ],
+   "answer": 3,
+   "explanation": "最大的共识是不对直接发问的人说谎：时机和措辞可以斟酌，「隐可以缓，不可以终」，陪伴不可缺。用「会好的」搪塞就是撒谎；一次倒出全部细节则是被各方否定的粗暴宣判。",
+   "question_en": "Under the debate's consensus, a gravely ill father looks his child in the eye and asks, 'Am I dying?' Which response holds up?",
+   "options_en": [
+    "Say 'the doctors say you'll get better' to protect his fragile peace of mind for now",
+    "Lay out the diagnosis, expected survival time, and every detail in one go",
+    "Change the subject and have a doctor break the news at some later point",
+    "Don't lie; tell it gradually, choose the words with care, and stay with him"
+   ],
+   "explanation_en": "The strongest consensus is: don't lie to someone who asks directly. Timing and wording can be weighed, concealment may delay but not replace the truth, and presence is essential. 'You'll get better' is a lie; dumping every detail at once is the blunt sentencing that all sides rejected."
+  },
+  {
+   "id": "c881d0c2ae",
+   "question": "辩论总结指出，家属陷入「瞒还是说」的两难，这个前提本身是怎么来的？据此最有效的改变在哪里？",
+   "options": [
+    "病人通常并不想知道造成的；应该尊重沉默，让医生全权替病人做决定",
+    "法律规定必须先通知家属造成的；只能等待相关法律条文的修改",
+    "家庭亲情天然如此；只能靠家属自己不断提高沟通技巧来化解两难",
+    "医院习惯先告诉家属造成的；应在检查前就问病人希望结果先告诉谁"
+   ],
+   "answer": 3,
+   "explanation": "消息握在家属手里，是流程造出来的：医院先把坏消息告诉家属，家属被推上守门人的位置。若检查前就问病人「结果出来先告诉您还是家人」，许多两难不会出现；能改的往往在更早的那张同意书上。辩论里多数病人其实想知道。",
+   "question_en": "The debate's summary says the premise behind the family's 'hide it or tell' dilemma was itself created somehow. Where does it come from, and where is the most effective fix?",
+   "options_en": [
+    "From patients usually not wanting to know; respect the silence and let doctors decide on their behalf",
+    "From laws requiring families be told first; the only option is to wait for the law to change",
+    "From the natural shape of family love; families can only resolve it by improving their own communication",
+    "From hospitals telling families first; ask patients before testing who should hear results first"
+   ],
+   "explanation_en": "Families hold the news because of process: hospitals deliver bad news to relatives first, making them gatekeepers. Asking the patient before tests, 'when results come, should we tell you or your family first?', prevents many dilemmas; the fix often lies in an earlier consent form. Most patients in fact want to know."
+  },
+  {
+   "id": "e564ef33d7",
+   "question": "按辩论的结论，为什么「要不要告诉」这件事不该等到病人「快不行了」才来决定？",
+   "options": [
+    "越早告诉病人，医生就越有时间去说服他接受更积极的抢救与各种强化治疗",
+    "临终前告诉病人会引发反安慰剂效应，所以最好永远不要告诉",
+    "家属在病人临终前情绪最脆弱，提前告知是为了减轻家属负担",
+    "多数临终是慢病的长下坡，医学能笃定时病人常已无力接收真相与做决定"
+   ],
+   "answer": 3,
+   "explanation": "慢阻肺、心衰、失智等慢病占临终多数，病程漫长模糊；等能笃定「快不行了」，病人往往已谵妄、镇静或认知退化。所以知情与托付要在心智完好时提前完成，例如趁健康写下偏好和预立医疗指示。辩论强调的是减少无效抢救，而非说服抢救。",
+   "question_en": "According to the debate's conclusions, why shouldn't the question of whether to tell wait until the patient is 'about to die'?",
+   "options_en": [
+    "The earlier patients are told, the more time doctors have to persuade them into aggressive treatment",
+    "Telling patients near death triggers a nocebo effect, so it's best never to tell them at all",
+    "Families are most fragile near the end, so early disclosure is mainly meant to ease their burden",
+    "Most deaths follow a long chronic decline; once doctors are sure, patients often can no longer take in the truth or decide"
+   ],
+   "explanation_en": "COPD, heart failure, and dementia account for most deaths, with long, uncertain declines; by the time 'dying' is certain, patients are often delirious, sedated, or cognitively impaired. So disclosure and delegation must happen while the mind is intact, for instance by writing down preferences and advance directives while healthy. The debate favors fewer futile interventions, not persuading patients into them."
+  }
+ ]
+}

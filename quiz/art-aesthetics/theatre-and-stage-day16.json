@@ -1,0 +1,69 @@
+{
+ "page": "/art-aesthetics/theatre-and-stage-day16.html",
+ "title": "艺术与审美：戏剧与舞台",
+ "page_en": "/art-aesthetics/theatre-and-stage-day16.en.html",
+ "title_en": "Art & Aesthetics: Theatre & the Stage",
+ "src_hash": "dc0232625f1a",
+ "questions": [
+  {
+   "id": "f559974730",
+   "question": "关于戏剧的「假定性」，下面哪种说法最符合它的要义？",
+   "options": [
+    "戏剧大方承认在演，正是这份默契把想象空间留给观众补完",
+    "假定性要求观众尽量忘记自己在看戏，完全沉浸于剧情而不出戏",
+    "假定性是东方戏曲独有的手法，西方剧场追求写实再现",
+    "戏剧条件有限才不得不假，布景越逼真演出就越高级"
+   ],
+   "answer": 0,
+   "explanation": "假定性是观演双方心照不宣的默契：台上越敢以虚代实，越给观众的想象留位置，满台真东西反而堵死想象。让观众忘记是假的恰恰是电影的路子；莎士比亚的空舞台也说明它不是东方独有。",
+   "question_en": "Which statement best captures the idea of theatrical convention (the audience's tacit agreement to accept the make-believe)?",
+   "options_en": [
+    "Theatre openly admits it is acting, and that shared pact leaves room for the audience's imagination to fill in",
+    "Convention asks the audience to forget as fully as possible that they are watching a play, and never step out of it",
+    "Convention is a technique unique to Chinese opera, while Western theatre pursues realistic depiction",
+    "Theatre fakes things only because its means are limited; the more realistic the set, the more sophisticated the show"
+   ],
+   "explanation_en": "Convention is an unspoken pact between stage and audience: the more boldly the stage suggests rather than shows, the more room it leaves for imagination, and a stage crammed with real objects shuts it down. Making audiences forget it's fake is cinema's approach, and Shakespeare's bare stage shows the idea isn't uniquely Eastern."
+  },
+  {
+   "id": "cba03ea137",
+   "question": "布莱希特的间离效果部分受梅兰芳演出启发。他在京剧表演里看到的关键是什么？",
+   "options": [
+    "唱腔情感浓烈，能把观众拖进角色内心",
+    "演员调动真实情感记忆，让观众忘情落泪、沉浸其中",
+    "演员是在「展示」角色，而不是「变成」角色",
+    "舞台写实考究，让观众相信眼前就是生活"
+   ],
+   "answer": 2,
+   "explanation": "布莱希特惊讶于京剧演员展示角色而非化身角色，这正是他想要的间离：时时提醒观众「这是在演戏」，让人清醒地想。调动情感记忆、让观众入戏落泪是斯坦尼体验派的追求，恰与间离相反。",
+   "question_en": "Brecht's alienation effect was partly inspired by seeing Mei Lanfang perform. What was the key thing he saw in Peking opera acting?",
+   "options_en": [
+    "The singing is so emotionally intense it pulls the audience into the character's inner life",
+    "The actor draws on real emotional memories to move the audience to tears and lose themselves",
+    "The actor demonstrates the character rather than becoming the character",
+    "The staging is meticulously realistic, convincing the audience they are seeing real life"
+   ],
+   "explanation_en": "Brecht was struck that Chinese opera performers showed their roles instead of becoming them, exactly the distance he wanted: a constant reminder that this is a performance, so the audience thinks clearly. Using emotional memory to make audiences weep is Stanislavski's aim, the opposite of alienation."
+  },
+  {
+   "id": "ea0d3aaf05",
+   "question": "京剧「守程式」，现代剧场「破成规」。两者的关系，最贴切的理解是？",
+   "options": [
+    "两者目的根本相反，一个追求让观众入戏，一个追求让观众出戏",
+    "路径相反但目的相同：都在对抗麻木的眼睛，让观众真正看见",
+    "一个是传统的保守，一个是现代的进步，后者终将取代前者",
+    "程式是偷懒的现成模板，破成规才是真正的艺术创造"
+   ],
+   "answer": 1,
+   "explanation": "京剧把动作锤炼到极致精纯来「化熟为美」，现代剧场靠陌生化「化熟为新」，敌人都是陈词滥调和麻木的眼睛。把程式看成偷懒模板是误读，它是几代人提炼出的最优解；入戏与出戏的对立说的是斯坦尼与布莱希特，不是这一对。",
+   "question_en": "Peking opera preserves codified forms, while modern theatre keeps breaking conventions. What is the best way to understand their relationship?",
+   "options_en": [
+    "Their aims are fundamentally opposed: one wants the audience absorbed, the other wants it detached",
+    "Opposite paths to the same end: both fight jaded perception so the audience truly sees",
+    "One is traditional conservatism and the other modern progress, which will eventually replace it",
+    "Codified forms are lazy ready-made templates; only breaking conventions is real artistic creation"
+   ],
+   "explanation_en": "Peking opera refines movement to perfect purity to make the familiar beautiful; modern theatre uses defamiliarization to make the familiar new. Both fight cliché and dulled eyes. Calling the forms lazy templates misreads them as generations of distilled best practice, and the absorbed-versus-detached contrast belongs to Stanislavski and Brecht, not to this pair."
+  }
+ ]
+}

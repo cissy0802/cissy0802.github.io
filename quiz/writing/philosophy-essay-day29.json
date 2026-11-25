@@ -1,0 +1,69 @@
+{
+ "page": "/writing/philosophy-essay-day29.html",
+ "title": "写作与表达：哲学与随笔 — Day 29",
+ "page_en": "/writing/philosophy-essay-day29.en.html",
+ "title_en": "Writing & Expression: Philosophy & the Essay — Day 29",
+ "src_hash": "1414ac6bdaf3",
+ "questions": [
+  {
+   "id": "7b3f9bd7e0",
+   "question": "随笔要展示思考过程，读者时间又宝贵。按文章，修改随笔时该删掉什么、留下什么？",
+   "options": [
+    "什么都不删，思考过程中的一切念头都应当原样留在纸上",
+    "删掉所有犹豫和转弯，只留下最终结论和支撑它的三条论据",
+    "删掉具体经验和个人细节，保留普遍适用的抽象道理",
+    "删掉没改变结论的原地踏步，留下真正改变了结论的犹豫与转弯"
+   ],
+   "answer": 3,
+   "explanation": "真正的矛盾不是过程与精炼，而是真过程与假过程。该留的是有信息量的转弯，判准是：删了读者会不会损失一个真正的发现。写成「观点 + 三条论据」会擦掉随笔最珍贵的思考现场；「散」也不能变成「松」，凑字的念头要删。",
+   "question_en": "An essay should show thinking in motion, but readers' time is precious. According to the article, what should you cut and what should you keep when revising?",
+   "options_en": [
+    "Cut nothing; every passing thought in the thinking process belongs on the page as it came",
+    "Cut every hesitation and turn, keeping only the final conclusion and three supporting arguments",
+    "Cut concrete experiences and personal details; keep the abstract lessons that apply universally",
+    "Cut the spinning in place that changed nothing; keep the hesitations and turns that actually changed the conclusion"
+   ],
+   "explanation_en": "The real tension isn't process versus concision but genuine versus fake process. Keep the informative turns; the test is whether cutting a hesitation would cost the reader a real discovery. A thesis-plus-three-points structure erases the live thinking that makes an essay valuable, and loose filler still has to go."
+  },
+  {
+   "id": "0956c16169",
+   "question": "按文章，周作人式「闲适」散文的关键功夫是什么？",
+   "options": [
+    "节制：不把话说满，把情绪压到纸面以下，靠语气的从容撑住小题材",
+    "清高：展示作者远离世俗的雅致品味，与大众趣味拉开明显距离",
+    "拔高：从小事中提炼出宏大的意义，让一杯茶承载五千年的文明",
+    "平铺：不做任何选择和提炼，把日常琐事按照发生的先后顺序如实记录下来"
+   ],
+   "answer": 0,
+   "explanation": "闲适是一种节制的智慧：越是小题材，越要靠语气的从容而非内容的宏大来撑住，用力过猛闲适就碎了。把茶举到天上是文章示范的反例；把闲适当炫耀清高也被点名为误区；平淡不是没东西可说，而是千锤百炼的节制。",
+   "question_en": "According to the article, what is the key skill behind Zhou Zuoren's leisurely familiar essays?",
+   "options_en": [
+    "Restraint: never saying it all, keeping emotion below the surface, carrying small subjects on an unhurried tone",
+    "Aloofness: displaying refined taste remote from the everyday, setting the writer clearly apart from popular taste",
+    "Elevation: drawing grand meaning from small things, so a cup of tea carries five thousand years of civilization",
+    "Flat recording: making no selections at all and simply logging daily trivia in the order it happened"
+   ],
+   "explanation_en": "Leisureliness is disciplined restraint: the smaller the subject, the more it rests on an easy tone rather than grand content, and forcing it breaks the mood. Lifting tea to the heavens is the article's own bad example, showing off refinement is named as a pitfall, and plainness isn't having nothing to say but hard-won restraint."
+  },
+  {
+   "id": "68b5502b3d",
+   "question": "AI 能模仿任何文风。按文章，个人随笔在 AI 时代的护城河在哪里？",
+   "options": [
+    "在思考的原材料：亲历的具体经验、独有判断和跨领域联想",
+    "在产量与速度：借助 AI 代写，比别人更快地大量发布",
+    "在文字的通顺与规范：写得比 AI 更流畅就能保持优势",
+    "在独特的文字风格：只要文风足够鲜明独特，AI 就难以模仿"
+   ],
+   "answer": 0,
+   "explanation": "文风会被模仿，经验不会被拥有：AI 能学会用词和节奏，却没有你的人生输入。通顺在 AI 时代只是地板；让 AI 整篇代写省下的是自己的思考成长。聪明的用法是把它当查证、扮反方的陪练。",
+   "question_en": "AI can imitate any writing style. According to the article, where does the personal essay's moat lie in the age of AI?",
+   "options_en": [
+    "In the raw material of thought: lived specifics, your own judgments, and cross-domain connections",
+    "In volume and speed: using AI ghostwriting to publish more, faster than others",
+    "In fluency and correctness: writing more smoothly than AI keeps you ahead",
+    "In a distinctive prose style: if your voice is striking enough, AI can't imitate it"
+   ],
+   "explanation_en": "Style can be imitated, but experience can't be owned: AI can learn your diction and rhythm but lacks your life's inputs. Fluency is now the floor, and handing whole essays to AI outsources your own growth in thinking. The smart use is AI as a sparring partner for fact-checking and counterarguments."
+  }
+ ]
+}

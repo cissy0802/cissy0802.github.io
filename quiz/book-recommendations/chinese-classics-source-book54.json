@@ -1,0 +1,69 @@
+{
+ "page": "/book-recommendations/chinese-classics-source-book54.html",
+ "title": "Issue 54：中国古典的源头 — 做人、自由、史识、情感，四套默认设置从哪来 | 好书推荐",
+ "page_en": "/book-recommendations/chinese-classics-source-book54.en.html",
+ "title_en": "Issue 54: The Wellsprings of the Chinese Classics — Where Four Default Settings Came From | Book Recommendations",
+ "src_hash": "d0beb1a4d4dc",
+ "questions": [
+  {
+   "id": "5797bec409",
+   "question": "「己所不欲，勿施于人」被文章看作一条格外经得起时间的准则，主要因为什么？",
+   "options": [
+    "它来自严密的系统论证，因此在逻辑上无法被任何时代的人反驳",
+    "它是肯定式的：要求人主动把自己认为好的东西，推己及人地给予身边所有人",
+    "它规定了每种关系里的固定等级与名分，让人人各安其位不生冲突",
+    "它是否定式：不替别人定义何为好，只要求不把自己不愿承受的强加于人"
+   ],
+   "answer": 3,
+   "explanation": "恕道的妙处在于否定式表述：不预设一个高高在上的「应当」，把参照点放回自己的切身感受，因而对任何时代、任何关系都成立。主动把自己认为好的给别人，恰恰要替别人定义「好」；《论语》是语录体，也谈不上严密系统论证。",
+   "question_en": "Why does the article regard 'do not impose on others what you would not want for yourself' as unusually durable?",
+   "options_en": [
+    "It rests on a rigorous systematic argument, so no one in any era can refute it logically",
+    "It's phrased positively: it asks people to actively extend whatever they consider good to everyone around them",
+    "It fixes a hierarchy and set of roles for every relationship, so everyone keeps their place without conflict",
+    "It's phrased negatively: rather than defining the good for others, it only forbids imposing what you wouldn't accept"
+   ],
+   "explanation_en": "Its strength is the negative form: it presupposes no lofty 'ought' and anchors judgment in your own lived experience, so it holds across eras and relationships. Giving others what you think is good requires defining the good for them, and the Analects is a collection of sayings, not a systematic argument."
+  },
+  {
+   "id": "9da270341c",
+   "question": "《庄子·齐物论》讲人睡湿处会腰痛而泥鳅不会、美人让鱼深潜鸟高飞。文章认为「齐物」的要义是？",
+   "options": [
+    "既然没有标准答案，那么怎样都行，任何判断都同样正确",
+    "判断都依赖未言明的立场，要拆掉的是只认自己那把尺子的独断",
+    "万物在本质上完全相同，所以美丑、是非这些区分本身没有任何意义",
+    "人应远离一切评价体系，退出社会关系，彻底遁世才能自由"
+   ],
+   "answer": 1,
+   "explanation": "齐物不是说万物真一样，也不是陷入「什么都行」的虚无，而是看穿是非美丑都依赖某个立场，拆掉「只有我这把尺子正确」的独断，精神由此松绑。文章也提醒，把它读成遁世逍遥是一种滑向回避责任的误读。",
+   "question_en": "Zhuangzi notes that sleeping somewhere damp gives people backaches but not eels, and that famed beauties make fish dive and birds fly off. What does the article take the point of 'the equality of things' to be?",
+   "options_en": [
+    "Since there's no correct answer, anything goes and every judgment is equally valid",
+    "Every judgment rests on an unstated standpoint; what must go is the dogma that only your own yardstick counts",
+    "All things are fundamentally identical, so distinctions like beauty and right or wrong are meaningless",
+    "One should withdraw from all systems of evaluation and social ties, since only full reclusion brings freedom"
+   ],
+   "explanation_en": "It doesn't claim all things are the same or slide into 'anything goes'; it shows that right, wrong, and beauty depend on a standpoint, dismantling the arrogance of a single correct yardstick and freeing the mind. The article warns that reading it as escapist reclusion slides toward dodging responsibility."
+  },
+  {
+   "id": "fa96b61ab1",
+   "question": "「关关雎鸠，在河之洲。窈窕淑女，君子好逑。」按文章，这体现了《诗经》哪种表达情感的方法？",
+   "options": [
+    "比：把淑女明确比作雎鸠，靠两者的相似之处来说理",
+    "赋：不借任何外物，直接铺陈陈述自己内心的情感",
+    "颂：用宗庙祭歌的庄重语气，赞美君子的高尚德行",
+    "兴：先写眼前看似无关的物象，再由它自然引出要说的情"
+   ],
+   "answer": 3,
+   "explanation": "兴是先说一个眼前的、看似无关的物象，再引出情感：水鸟和鸣与求偶之间没有逻辑论证，却有情绪上的自然勾连。这是把情感托付给外物、让物自己说话；赋是直陈，比是打比方，颂是宗庙祭歌的类别名。",
+   "question_en": "'Guan guan cry the ospreys on the islet in the river; the graceful maiden, a fine match for the gentleman.' According to the article, which way of expressing feeling in the Book of Songs does this show?",
+   "options_en": [
+    "Bi (comparison): explicitly liken the maiden to the osprey and argue from their resemblance",
+    "Fu (exposition): state one's inner feelings directly, without leaning on any outside object",
+    "Song (hymn): praise the gentleman's lofty virtue in the solemn tone of a temple ode",
+    "Xing (evocation): open with a seemingly unrelated image at hand, which then naturally calls up the feeling"
+   ],
+   "explanation_en": "Xing starts with a nearby image that seems unrelated and lets it draw out the emotion: there's no logical argument linking calling birds to courtship, only a natural emotional resonance, with feeling entrusted to the object. Fu is direct statement, bi is explicit comparison, and song names the category of temple hymns."
+  }
+ ]
+}

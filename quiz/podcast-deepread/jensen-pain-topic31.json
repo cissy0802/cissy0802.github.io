@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/jensen-pain-topic31.html",
+ "title": "黄仁勋专题 · 痛苦、品格与他给年轻人的话",
+ "page_en": "/podcast-deepread/jensen-pain-topic31.en.html",
+ "title_en": "Jensen Huang Series · Pain, Character and His Advice to the Young",
+ "src_hash": "336fe75eb22f",
+ "questions": [
+  {
+   "id": "a6b5a73c49",
+   "question": "被问到「祝你经历足够多的痛苦和磨难」时，黄仁勋的自我解释把这句话收窄成了什么意思？",
+   "options": [
+    "想成功就要压低对人生的期待，最好不要有远大的梦想",
+    "只有出身困苦的人才能成功，名校学生注定缺乏韧性",
+    "别把吃苦当成选错了路的信号，快乐不必是好日子的定义",
+    "人应当主动给自己制造痛苦，以此来锻炼坚韧的品格"
+   ],
+   "answer": 2,
+   "explanation": "他在 Stripe Sessions 说，人们把热情等同于快乐，少了一环：他并非每天都爱工作，快乐也不必是好日子的定义。所以他要的不是苦本身，而是别把苦当成走错路的信号。他说的低期望也不是不敢想，移民带着很大的希望和梦想。",
+   "question_en": "When asked about wishing students 'ample pain and suffering,' how did Jensen Huang's own explanation narrow its meaning?",
+   "options_en": [
+    "To succeed you must lower your hopes for life and preferably give up big dreams",
+    "Only people from hard backgrounds can succeed; elite students are doomed to lack grit",
+    "Don't treat hardship as a sign you chose the wrong path; joy needn't define a good day",
+    "People should deliberately inflict suffering on themselves to build a resilient character"
+   ],
+   "explanation_en": "At Stripe Sessions he said people equate passion with happiness and miss a step: he doesn't love every day of his job, and joy needn't define a good day. So what he wants isn't suffering itself but not reading hardship as a sign of a wrong turn. His 'low expectations' isn't about not dreaming; he describes immigrants as arriving with great hopes and dreams."
+  },
+  {
+   "id": "3747820a50",
+   "question": "文章认为黄仁勋自己的说法里最弱的一环在哪里？",
+   "options": [
+    "他主张趁早、便宜地试错，却又在 CUDA 上十年不肯掉头，两种做法互相矛盾",
+    "他说自己没有野心只想活下去，却同时承认自己每天都追求伟大和成功",
+    "他声称伟大来自品格而非聪明，却把 NVIDIA 的成功归因于技术判断的高明",
+    "他说创业者的超能力是不知道有多难，提前祝人吃苦恰恰拆掉了这项超能力"
+   ],
+   "answer": 3,
+   "explanation": "他在 Acquired 说，早知道有多苦就没人会出发，创业者的超能力是不知道有多难；对 Lex 又说挫折不要提前推演。那么提前祝人「多吃苦」就和这项超能力拧在一起。用词从 2011 年的快速试错变成后来的坚持，文章只是记录变化，没有当作矛盾核心。",
+   "question_en": "Where does the article locate the weakest link in Jensen Huang's own claims?",
+   "options_en": [
+    "He advocates failing early and cheaply, yet refused to change course on CUDA for ten years, two contradictory practices",
+    "He says he has no ambition and only wants to survive, while admitting he chases greatness and success every day",
+    "He says greatness comes from character not intelligence, yet credits NVIDIA's success to brilliant technical calls",
+    "He says a founder's superpower is not knowing how hard it will be, and wishing hardship on people in advance dismantles that"
+   ],
+   "explanation_en": "On Acquired he said no sane person would start if they knew how hard it would be, and that the founder's superpower is ignorance of the difficulty; to Lex he said not to simulate setbacks in advance. Wishing hardship on graduates beforehand thus works against that superpower. The shift from 2011's 'fail fast' to later 'endurance' is noted as a change in emphasis, not the core contradiction."
+  },
+  {
+   "id": "172816e9c3",
+   "question": "文章用 Seery 等人 2010 年的追踪研究检验「品格从吃过苦的人身上长出来」这一说法，结论是？",
+   "options": [
+    "逆境与心理健康完全无关，所以吃苦对品格的成长毫无作用",
+    "有一些逆境的人好于没有和很多的人，「足够多」的苦已越过最优点",
+    "逆境越多的人心理越健康、生活越满意，正好支持了这一说法",
+    "经历过苦难的人自述的成长与实际测到的变化高度一致"
+   ],
+   "answer": 1,
+   "explanation": "Seery 等人发现逆境与心理健康是 U 形关系：经历过一些逆境的人好于从没经历过的人，也好于经历很多的人；总体上逆境越多结果越差。所以这句话有据但说宽了。另一项研究还发现自述的创伤后成长与实测变化基本无关。",
+   "question_en": "The article tests the claim that character grows from suffering against Seery and colleagues' 2010 longitudinal study. What does it conclude?",
+   "options_en": [
+    "Adversity was unrelated to mental health, so hardship does nothing at all for the growth of character",
+    "People with some adversity fared better than those with none or a lot, so 'ample' suffering overshoots the optimum",
+    "The more adversity people had, the better their mental health and life satisfaction, directly supporting the claim",
+    "People's self-reported growth after hardship closely matched the changes actually measured in them"
+   ],
+   "explanation_en": "Seery et al. found a U-shaped relationship: people with some adversity did better than those with none and those with a lot, and overall more adversity meant worse outcomes. So the claim has support but is overstated. Another study found self-reported post-traumatic growth barely tracked measured change."
+  }
+ ]
+}

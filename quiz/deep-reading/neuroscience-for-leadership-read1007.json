@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/neuroscience-for-leadership-read1007.html",
+ "title": "《Neuroscience for Leadership》",
+ "page_en": "/deep-reading/neuroscience-for-leadership-read1007.en.html",
+ "title_en": "Neuroscience for Leadership",
+ "src_hash": "409eb0ec3fef",
+ "questions": [
+  {
+   "id": "889b400df6",
+   "question": "一位病人因前额叶腹内侧受损，智商、记忆和逻辑测验都正常，却连约个时间都定不下来。按躯体标记假说，这说明了什么？",
+   "options": [
+    "损伤削弱了工作记忆，他记不住、也比较不了需要权衡的那几个选项",
+    "前额叶是逻辑推理中枢，损伤后推理链条在中途断开",
+    "情绪平时在干扰判断，去掉情绪后理性反而过度精细",
+    "情绪先给选项贴上好坏标签、剪掉大半选项，没有它理性无从收敛"
+   ],
+   "answer": 3,
+   "explanation": "他的推理能力完好，缺的是感受不同选项的情绪分量；躯体标记先替理性剪枝，没有它理性不会更纯粹，只会瘫痪。说「情绪干扰判断」正是这个案例推翻的管理文化理想。",
+   "question_en": "A patient with damage to the ventromedial prefrontal cortex scores normally on IQ, memory, and logic tests, yet cannot even settle on an appointment time. What does the somatic marker hypothesis take this to show?",
+   "options_en": [
+    "The damage weakened his working memory, so he can't hold or compare the options he needs to weigh",
+    "The prefrontal cortex is the hub of logical inference, so his chains of reasoning break midway",
+    "Emotion normally distorts judgment; once removed, reasoning becomes excessively fine-grained",
+    "Emotion tags options as good or bad and prunes most of them; without it, reasoning can't converge"
+   ],
+   "explanation_en": "His reasoning is intact; what he lacks is the felt weight of each option. Somatic markers prune choices before deliberate reasoning works on the rest, so without emotion reason doesn't become purer, it stalls. The idea that emotion merely distorts judgment is exactly what this case overturns."
+  },
+  {
+   "id": "54de4708c7",
+   "question": "按书中对压力与前额叶的分析，一位领导者想提高团队在危机中的创造性思考，最该做的是哪件事？",
+   "options": [
+    "让团队更多依赖直觉快速反应，减少耗时的分析与权衡",
+    "制造短期、可控、有意义的挑战，同时拆掉长期不可控的威胁",
+    "持续加压并明确失败后果，让紧迫感逼出团队的潜能",
+    "尽量把压力降到最低，让团队在完全放松、毫无负担的状态下自由发挥"
+   ],
+   "answer": 1,
+   "explanation": "压力与表现呈倒 U 形：适度挑战让前额叶处在最优区，过大或长期的威胁会把控制权交给杏仁核，人变得刻板、只用老办法。完全放松同样落在曲线左端；用恐惧加压则是在系统性关掉下属最值钱的那部分大脑。",
+   "question_en": "Based on the book's account of stress and the prefrontal cortex, what should a leader do to improve a team's creative thinking during a crisis?",
+   "options_en": [
+    "Have the team rely more on fast intuitive reactions and cut back on slow analysis and trade-offs",
+    "Create short-term, controllable, meaningful challenges while removing chronic, uncontrollable threats",
+    "Keep raising the pressure and spell out the costs of failure so urgency unlocks potential",
+    "Push stress as close to zero as possible so the team can work fully relaxed, with no burden at all"
+   ],
+   "explanation_en": "Arousal and performance follow an inverted U: moderate challenge keeps the prefrontal cortex in its optimal zone, while excessive or chronic threat hands control to the amygdala and makes people rigid and habit-bound. Total relaxation sits at the other bad end of the curve; fear-driven pressure systematically switches off the most valuable part of people's brains."
+  },
+  {
+   "id": "a67a97530f",
+   "question": "书中给直觉的位置是「被压缩的经验」。按这个看法，下面哪种直觉最值得认真对待？",
+   "options": [
+    "从未做过并购的高管，对一笔并购产生的强烈好感",
+    "一位领导连续熬夜后对某个方案的强烈抵触",
+    "新任经理第一次面试时对候选人的第一印象",
+    "老练消防指挥官在火场里突然觉得「不对劲」"
+   ],
+   "answer": 3,
+   "explanation": "直觉只在有大量经验、且经验带有及时反馈的领域才可靠；消防指挥官正是这种情况。没有相关经验的人的「好感觉」只是情绪；熬夜后的强烈反应则更可能来自透支的大脑。即使可靠，也该把直觉当数据而不是判决。",
+   "question_en": "The book treats intuition as compressed experience. On that view, which gut feeling most deserves to be taken seriously?",
+   "options_en": [
+    "An executive who has never done an acquisition feeling strongly drawn to a deal",
+    "A leader's strong aversion to a proposal after several nights without proper sleep",
+    "A new manager's first impression of a candidate in their very first interview",
+    "A veteran fire commander suddenly sensing that something is wrong at a fire scene"
+   ],
+   "explanation_en": "Intuition is reliable only in domains where you have extensive experience with timely feedback, which is the fire commander's situation. An inexperienced person's good feeling about a deal is just emotion, and a sleep-deprived reaction more likely reflects a depleted brain. Even reliable intuition should be treated as data, not a verdict."
+  }
+ ]
+}

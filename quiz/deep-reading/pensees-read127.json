@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/pensees-read127.html",
+ "title": "《思想录》",
+ "page_en": "/deep-reading/pensees-read127.en.html",
+ "title_en": "Pensées",
+ "src_hash": "c690ec8aa16d",
+ "questions": [
+  {
+   "id": "70c9f4523c",
+   "question": "帕斯卡说，把一只兔子直接送给正要去打猎的人，他不会要。这个例子要说明什么？",
+   "options": [
+    "人天生更珍惜靠自己努力得来的东西，而不是白白送来的礼物",
+    "人的欲望没有止境，得到一样之后总想得到更多东西",
+    "猎人担心白送的兔子不新鲜，宁可自己亲手去捕获",
+    "人追的不是猎物，而是那场让他不必想自己处境的追逐"
+   ],
+   "answer": 3,
+   "explanation": "这是帕斯卡对「消遣」的机制分析：人要的是追逐带来的骚动，让自己别闲下来面对有限与死亡；同理赌徒要的不是钱而是让他忘我的游戏。把它读成「珍惜努力所得」只是常识的劝勉，抓不住「逃避自己」这一层。",
+   "question_en": "Pascal says that if you simply hand a hare to someone about to go hunting, he won't want it. What is this example meant to show?",
+   "options_en": [
+    "People naturally value what they earn by their own effort more than what they're simply given",
+    "Human desire has no limit; once you get one thing you always want something more",
+    "The hunter worries a gifted hare isn't fresh and would rather catch one himself",
+    "People pursue not the prey but the chase that keeps them from thinking about their own condition"
+   ],
+   "explanation_en": "This is Pascal's analysis of diversion: what people want is the commotion of pursuit, which keeps them from facing their finitude and death; likewise the gambler wants not money but the game that lets him forget himself. Reading it as 'we value what we earn' is ordinary moralizing that misses the point about fleeing oneself."
+  },
+  {
+   "id": "7158a59596",
+   "question": "帕斯卡的赌注里，对话者说：「我被造成这样，就是没办法相信。」帕斯卡给的出路是什么？",
+   "options": [
+    "凭意志力强迫自己立即相信，因为期望值的计算要求如此",
+    "承认自己无法相信，放下这笔赌注，过一种诚实怀疑的生活",
+    "继续寻找更多证据，直到理性能够证明上帝确实存在为止",
+    "照已信者起初那样做礼仪，让行为和习惯先走，带着心走"
+   ],
+   "answer": 3,
+   "explanation": "帕斯卡认为问题不在缺证据而在激情，建议去学那些已押上全部的人，领圣水、做弥撒，好像已经相信一样，让身体和习惯带着心走。赌注恰恰以「理性无法证明」为前提，所以等待证明不是出路；他也没有说硬凭意志去信。",
+   "question_en": "In Pascal's wager, the interlocutor says, 'I am made in such a way that I cannot believe.' What way forward does Pascal offer?",
+   "options_en": [
+    "Force yourself to believe immediately by willpower, since the expected-value math demands it",
+    "Admit you cannot believe, drop the wager, and live a life of honest doubt",
+    "Keep seeking more evidence until reason can prove that God really does exist",
+    "Do the rituals as believers did at first, letting behavior and habit lead and the heart follow"
+   ],
+   "explanation_en": "Pascal says the obstacle isn't missing evidence but the passions, so imitate those who have staked everything: take holy water, attend Mass as if you believed, and let body and habit carry the heart along. The wager presupposes reason can't settle the question, so waiting for proof is no way out, and he doesn't ask for belief by sheer willpower."
+  },
+  {
+   "id": "4d2da8f309",
+   "question": "「心有其理，是理智所根本不知道的。」按文章，帕斯卡这句话里的「心」指的是什么？",
+   "options": [
+    "宗教信仰的狂热，用来取代理性对世界的一切探究",
+    "人的潜意识欲望，暗中操纵着理性做出的各种判断",
+    "对第一原理的直觉性、整体性把握，理智只能在其上推理",
+    "人的情感和爱，意思是感情在重要的事上应当压倒理性"
+   ],
+   "answer": 2,
+   "explanation": "这句话常被当成浪漫口号，其实是认识论主张：空间、时间、数这类第一原理是心直接知道的，理智无法证明，只能以此为基础推理。帕斯卡既反对只承认理性，也反对排斥理性，所以「感情压倒理性」正是文章点名的误读。",
+   "question_en": "'The heart has its reasons, which reason does not know.' According to the article, what does 'the heart' mean here?",
+   "options_en": [
+    "Religious fervor, meant to replace all of reason's inquiry into the world",
+    "Unconscious desires that secretly steer the judgments reason produces",
+    "An intuitive, holistic grasp of first principles, which reason can only build on",
+    "Human emotion and love, meaning feeling should override reason in what matters"
+   ],
+   "explanation_en": "Though often quoted as a romantic slogan, it is an epistemological claim: first principles like space, time, and number are known directly by the heart; reason can't prove them, only reason from them. Pascal opposes both reason-only and reason-rejecting views, so 'feeling over reason' is precisely the misreading the article flags."
+  }
+ ]
+}

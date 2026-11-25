@@ -1,0 +1,69 @@
+{
+ "page": "/super-individual/git-workflow-skills-skill4.html",
+ "title": "Skill 04 · Git 工作流三件套 — Super Individual",
+ "page_en": "/super-individual/git-workflow-skills-skill4.en.html",
+ "title_en": "Skill 04 · Git Workflow Skills — Super Individual",
+ "src_hash": "9cfcca58f759",
+ "questions": [
+  {
+   "id": "1eec1f9478",
+   "question": "用 commit 类 skill 自动写提交信息，按文章，什么时候让它写效果最好？为什么？",
+   "options": [
+    "提交前先跑完全部测试，因为测试结果能告诉模型改动目的",
+    "刚改完、还在原会话里时，因为改动的动机此刻还在上下文中",
+    "攒满一周统一补写，因为模型能看到更完整的改动全貌",
+    "合并进主干之后再写，因为那时 diff 最终稳定不再变化"
+   ],
+   "answer": 1,
+   "explanation": "这类 skill 只吃 git diff，diff 完整回答「改了什么」却完全不含「为什么」。刚做完时 why 还在对话上下文里；隔天再补就只剩 diff，模型只能把 what 换个说法再讲一遍。文章明说「攒一周统一补」是最没用的用法。",
+   "question_en": "According to the article, when should you have a commit-message skill write the message, and why?",
+   "options_en": [
+    "After running the full test suite, because the results tell the model what the change was for",
+    "Right after the change, in the same session, because the reason for it is still in context",
+    "After batching a week of work, because the model then sees a fuller picture of the changes",
+    "After merging to main, because the diff is final and no longer changing at that point"
+   ],
+   "explanation_en": "These skills consume only the diff, which fully answers 'what changed' and says nothing about 'why'. Right after the work, the why is still in the conversation; a day later only the diff remains and the model just restates the what. The article calls batching a week of commits the least useful way to use them."
+  },
+  {
+   "id": "87899a001c",
+   "question": "你想确保 agent 永远不会执行 git push --force。按文章，最可靠的做法是？",
+   "options": [
+    "装上 finishing-a-development-branch 让人来把关",
+    "在 SKILL.md 里反复强调并加粗写明「不要强推」",
+    "安装 git-pushing，让它统一走自带的推送脚本",
+    "在 PreToolUse 钩子里用模式匹配直接拦下这条命令"
+   ],
+   "answer": 3,
+   "explanation": "skill 注入的是指令，模型可能不听、可能没被触发；钩子是代码，在事件上无条件执行，可以直接拒绝这次调用。有确定答案的交给钩子，需要判断的才交给 skill。脚本化推送和人工闸门各有用处，但都不是专门拦截这条命令的机制。",
+   "question_en": "You want to guarantee an agent never runs git push --force. According to the article, what is the most reliable approach?",
+   "options_en": [
+    "Install finishing-a-development-branch so a human makes the call",
+    "Repeat 'never force-push' in bold, many times, in SKILL.md",
+    "Install git-pushing so every push goes through its bundled script",
+    "Block the command with a pattern match in a PreToolUse hook"
+   ],
+   "explanation_en": "A skill injects instructions the model may ignore or never trigger; a hook is code that runs unconditionally on the event and can reject the call outright. Anything with a deterministic answer belongs in a hook; only judgment calls belong in a skill. Scripted pushes and human gates have their uses, but neither is a mechanism that specifically blocks this command."
+  },
+  {
+   "id": "aff0bd308b",
+   "question": "按文章，Conventional Commits（feat: / fix: / BREAKING CHANGE）真正值钱的地方在哪里？",
+   "options": [
+    "替代代码审查，凡是格式合规的提交都可以免去人工的逐条检查",
+    "让 AI 写的提交信息也能准确地解释每次改动背后的动机和理由",
+    "提交时给下游机器留下结构化元数据，让版本号与 changelog 能被算出来",
+    "让提交历史在格式上整齐统一，方便团队成员在 review 时一眼快速浏览和查找"
+   ],
+   "answer": 2,
+   "explanation": "文章说 feat/fix/BREAKING CHANGE 不是格式洁癖，而是留给下游机器的元数据：diff → message → changelog 每往下一步都在丢信息，留了结构，changelog 和版本号才能算出来。格式整齐是附带的；它也补不了 diff 里缺的 why。",
+   "question_en": "According to the article, where does the real value of Conventional Commits (feat: / fix: / BREAKING CHANGE) lie?",
+   "options_en": [
+    "It replaces code review, since any properly formatted commit can skip line-by-line human checks",
+    "It lets AI-written commit messages accurately explain the motivation behind each change",
+    "It leaves structured metadata for downstream tools, so version numbers and changelogs can be computed",
+    "It keeps commit history visually uniform so teammates can skim and search it quickly during review"
+   ],
+   "explanation_en": "The article says these prefixes aren't formatting fussiness but metadata left for downstream machines: each step from diff to message to changelog loses information, and only with that structure can changelogs and versions be computed. Tidiness is a side effect, and the format can't supply the why that the diff lacks."
+  }
+ ]
+}

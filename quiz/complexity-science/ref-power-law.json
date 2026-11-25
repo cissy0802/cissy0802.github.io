@@ -1,0 +1,69 @@
+{
+ "page": "/complexity-science/ref-power-law.html",
+ "title": "幂律的识别与误判 · 参考库 · 复杂性科学",
+ "page_en": "/complexity-science/ref-power-law.en.html",
+ "title_en": "Identifying and Misidentifying Power Laws · Reference · Complexity Science",
+ "src_hash": "a9e7d25c4665",
+ "questions": [
+  {
+   "id": "c8031f5196",
+   "question": "一组数据画在双对数坐标上看起来像直线，最小二乘拟合也很漂亮。按 Clauset 等人的流程，接下来最该做的是？",
+   "options": [
+    "直接报告回归斜率作为幂律指数，因为拟合优度已经足以说明它就是幂律",
+    "改用等宽直方图重新画一遍，确认尾部那些点也同样落在一条直线上",
+    "确定尾部下界，用极大似然估指数，做拟合优度检验，再与对数正态等对手比较",
+    "根据幂律形状推断它的生成机制，例如优先连接，然后外推到更大的规模"
+   ],
+   "answer": 2,
+   "explanation": "「看着像直线」几乎不携带证据，双对数图上的最小二乘会系统性低估指数。标准流程是定 x min、极大似然估指数、KS 加自助法检验、似然比对照对数正态等。等宽直方图在重尾数据上基本不可用；从形状反推机制和外推都超出这套方法能回答的范围。",
+   "question_en": "A dataset looks like a straight line on a log-log plot, and a least-squares fit looks great. Following Clauset et al.'s procedure, what should come next?",
+   "options_en": [
+    "Report the regression slope as the power-law exponent, since the good fit already shows it's a power law",
+    "Redraw it as an equal-width histogram to confirm the tail points also fall on a straight line",
+    "Find the tail's lower bound, estimate the exponent by maximum likelihood, run a goodness-of-fit test, then compare against log-normal and others",
+    "Infer the generating mechanism, such as preferential attachment, from the power-law shape and extrapolate to larger scales"
+   ],
+   "explanation_en": "Looking straight carries almost no evidence, and least squares on a log-log plot systematically underestimates the exponent. The standard steps are: pick x_min, fit by maximum likelihood, test with KS plus bootstrap, and use likelihood ratios against log-normal and others. Equal-width histograms are nearly useless for heavy tails, and inferring mechanism or extrapolating goes beyond what the method can answer."
+  },
+  {
+   "id": "dd34d88dc1",
+   "question": "按文章，把标准流程跑在真实数据上，常见结局是幂律和对数正态「分不清」。为什么会这样？",
+   "options": [
+    "似然比检验本身存在缺陷，在理论上就无法比较两种不同的分布",
+    "研究者普遍偏好幂律，所以检验时会有意压低对数正态的得分",
+    "对数正态分布只适用于小样本，大样本数据下它会自动退化为幂律",
+    "两者在两三个数量级内差别小于抽样噪声，而尾部数据天生稀少"
+   ],
+   "answer": 3,
+   "explanation": "幂律是每翻一倍概率乘固定系数，对数正态是取对数后呈钟形，在有限数量级内极其相似；想分开往往需多出一到两个数量级的数据，而尾部样本本来就少。这时诚实的输出就是「分不清」。发表偏好解释的是 2000 年前后幂律泛滥，不是检验本身分不开。",
+   "question_en": "According to the article, running the standard procedure on real data often ends with power law and log-normal being indistinguishable. Why?",
+   "options_en": [
+    "The likelihood-ratio test is inherently flawed and in principle cannot compare two different distributions",
+    "Researchers generally prefer power laws, so they deliberately depress the log-normal's score during testing",
+    "The log-normal applies only to small samples and automatically turns into a power law with large datasets",
+    "Over two or three orders of magnitude they differ by less than sampling noise, and tail data is inherently scarce"
+   ],
+   "explanation_en": "A power law multiplies probability by a fixed factor per doubling, while a log-normal is bell-shaped in log space, and over a limited range they look nearly identical; separating them typically needs one or two more orders of magnitude, and tails are sparse. The honest output is 'can't tell.' Publication bias explains the power-law boom around 2000, not why the test can't separate them."
+  },
+  {
+   "id": "42bc10f002",
+   "question": "某人的数据通过了幂律检验，于是宣布「这说明系统由优先连接机制驱动」。按文章，这个推论的问题是？",
+   "options": [
+    "检验通过说明拟合良好，但如果没有做双对数图的直线拟合，就不能据此谈机制",
+    "只要样本量足够大，从幂律形状就可以唯一确定其背后的生成机制",
+    "多种机制都能产出幂律，从形状反推机制答案不唯一，需另找该机制的可检验后果",
+    "优先连接只会产生对数正态分布，因此通过幂律检验反而排除了这种机制"
+   ],
+   "answer": 2,
+   "explanation": "检验通过只说明数据与幂律相容。优先连接、随机比例增长、临界连通、极值叠加都能产出幂律，从形状反推机制是在解一个多对一映射的逆。要主张机制，必须另找它的其他可检验后果；样本量再大也改变不了这种多对一。",
+   "question_en": "Someone's data passes a power-law test, and they announce 'this shows the system is driven by preferential attachment.' According to the article, what's wrong with this inference?",
+   "options_en": [
+    "Passing shows a good fit, but without a straight-line fit on a log-log plot you can't draw conclusions about mechanism",
+    "With a large enough sample, the power-law shape uniquely determines the mechanism behind it",
+    "Many mechanisms produce power laws, so shape alone can't identify one; you need other testable consequences of it",
+    "Preferential attachment produces only log-normal distributions, so passing a power-law test actually rules it out"
+   ],
+   "explanation_en": "Passing only shows the data are compatible with a power law. Preferential attachment, random multiplicative growth, critical percolation, and combinations of extremes all generate power laws, so inferring mechanism from shape inverts a many-to-one map. Claiming a mechanism requires testing its other consequences, and no sample size removes that many-to-one ambiguity."
+  }
+ ]
+}

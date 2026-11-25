@@ -1,0 +1,69 @@
+{
+ "page": "/leadership/creative-teams-day58.html",
+ "title": "领导力 Day 58：创意与研发团队领导",
+ "page_en": "/leadership/creative-teams-day58.en.html",
+ "title_en": "Leadership Day 58: Leading Creative & R&D Teams",
+ "src_hash": "ecfd5098aa05",
+ "questions": [
+  {
+   "id": "24a60cabc1",
+   "question": "评审会上，一个半熟的方案被资深成员当场说「这根本行不通」，主持人打圆场「大家都有道理」。按「心理安全 × 标准」的框架，这属于哪种情况？",
+   "options": [
+    "保住了高标准，是典型的学习区做法",
+    "保住了和气却丢了标准，落入舒适区",
+    "既有高安全又有高标准，最有利于创新",
+    "安全与标准都缺失，属于冷漠区"
+   ],
+   "answer": 1,
+   "explanation": "打圆场「大家都有道理」放弃了对事较真，是只有安全没有标准的舒适区；装没看见才是冷漠区。正确做法是先保护冒险者，再把「行不通」拆成具体假设去证伪，否定假设而不是否定人。",
+   "question_en": "In a design review, a senior member shoots down a half-baked proposal ('this will never work'), and the facilitator smooths it over: 'everyone has a point.' Under the safety-by-standards framework, what is this?",
+   "options_en": [
+    "High standards preserved: a classic learning-zone move",
+    "Harmony kept, standards dropped: the comfort zone",
+    "High safety plus high standards: best for innovation",
+    "Neither safety nor standards: the apathy zone"
+   ],
+   "explanation_en": "'Everyone has a point' gives up on rigor, which is safety without standards: the comfort zone. Pretending not to notice would be the apathy zone. The right move is to protect the person who took the risk, then break 'won't work' into specific assumptions to test, rejecting assumptions rather than people."
+  },
+  {
+   "id": "9b5c29fe92",
+   "question": "一次失败的项目里，团队对一个未知方向的大胆下注是合理的，但也跳过了一步已知的压测流程。按文章，领导者该怎么反馈？",
+   "options": [
+    "拆成具体决策逐条归因：表扬那次下注，同时明确纠正跳过压测",
+    "折中给出「整体还行，下次注意」的评价，避免各方面产生对立",
+    "整体定性为可避免的失败，因为任何疏忽都会让整次尝试失去价值",
+    "整体定性为聪明的失败，跳过压测不必提，以免打击冒险积极性"
+   ],
+   "answer": 0,
+   "explanation": "现实失败常是混合的，正因如此要拆开归因，不给整件事打模糊总分。同一事件里既表扬冒险又指出疏忽，是最精确的反馈；「整体还行下次注意」恰恰是文章点名的和稀泥。",
+   "question_en": "In a failed project, the team's bold bet on an unknown direction was sound, but they also skipped a known load-testing step. According to the article, how should the leader give feedback?",
+   "options_en": [
+    "Break it into specific decisions: praise the bet, and explicitly correct the skipped load test",
+    "Settle on 'overall fine, be careful next time' to avoid friction on either side",
+    "Label the whole thing a preventable failure, since any lapse strips the whole attempt of its value",
+    "Label the whole thing a smart failure and skip mentioning the load test, so as not to discourage risk-taking"
+   ],
+   "explanation_en": "Real failures are usually mixed, which is exactly why you split the attribution instead of giving one fuzzy overall grade. Praising the risk and naming the lapse within the same event is the most precise feedback; 'overall fine, be careful next time' is the very fudge the article calls out."
+  },
+  {
+   "id": "344b7811f0",
+   "question": "「给上下文，不给控制」用在一群资浅、方向感尚未建立的新人身上，文章怎么看？",
+   "options": [
+    "新人缺乏判断力，所以只需给结论和指令，不必向他们解释为什么",
+    "精神不变、密度随人变：对新人给更具体的方向和更密的 check-in",
+    "对新人同样应尽早完全放手，只有放手他们才能真正学会独立判断",
+    "这套原则只适合资深团队，带新人就该回到派任务、盯进度的方式"
+   ],
+   "answer": 1,
+   "explanation": "上下文与控制是一根随人成熟度滑动的滑块：对资浅的人，上下文里本就该包含更具体的方向、更密的 check-in、甚至示范，但永远解释 why。危险在于把高密度指导原样用在资深者身上，或对新人过早放手再怪他没搞定。",
+   "question_en": "How does the article view applying 'lead with context, not control' to junior people who haven't yet developed a sense of direction?",
+   "options_en": [
+    "Juniors lack judgment, so just give them conclusions and instructions without explaining why",
+    "Same principle, different density: give juniors more specific direction and more frequent check-ins",
+    "Juniors too should be given full autonomy early, since that is the only way to learn independent judgment",
+    "The principle only suits senior teams; with juniors, go back to assigning tasks and tracking progress"
+   ],
+   "explanation_en": "Context versus control is a slider that moves with maturity: for juniors, context should include more concrete direction, closer check-ins, even demonstration, but always with the why. The danger is applying that density to senior researchers, or letting go of newcomers too early and then blaming them for not managing."
+  }
+ ]
+}

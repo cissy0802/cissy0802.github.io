@@ -1,0 +1,69 @@
+{
+ "page": "/system-design/rate-limiting-day10.html",
+ "title": "Day 10 · Rate Limiting — System Design",
+ "page_en": "/system-design/rate-limiting-day10.en.html",
+ "title_en": "Day 10 · Rate Limiting — System Design",
+ "src_hash": "b3b2ee63869f",
+ "questions": [
+  {
+   "id": "57d265a380",
+   "question": "限流服务所依赖的 Redis 挂了。按文章，下面哪一层限流应该 fail-close（拒绝放行）？",
+   "options": [
+    "所有层都应 fail-close，以确保绝对安全",
+    "免费层「每月 1000 次调用」的计费配额层",
+    "防御 DDoS、保护整体可用性的那一层",
+    "按 IP 限制匿名爬虫请求频率的那一层"
+   ],
+   "answer": 1,
+   "explanation": "默认 fail-open，免得限流故障变成业务故障；但计费配额超额等于公司亏钱，宁可拒也不能放，这类层要 fail-close。实战分层是抗 DDoS 层 fail-open 保命、计费配额层 fail-close 保钱，两层独立部署；全部 fail-close 会让限流故障拖垮全站。",
+   "question_en": "The Redis instance behind a rate limiter goes down. According to the article, which layer should fail closed (reject traffic)?",
+   "options_en": [
+    "Every layer should fail closed to guarantee absolute safety",
+    "The billing-quota layer enforcing a free tier's 1,000 calls per month",
+    "The layer defending against DDoS and protecting overall availability",
+    "The layer throttling anonymous scrapers' request rate by IP"
+   ],
+   "explanation_en": "The default is fail-open so a limiter outage doesn't become a business outage; but exceeding billing quotas loses the company money, so that layer should fail closed. In practice the anti-DDoS layer fails open to stay alive and the billing layer fails closed to protect revenue, deployed separately; failing closed everywhere would let a limiter fault take down the whole site."
+  },
+  {
+   "id": "562cda92c6",
+   "question": "过载时 1000 个客户端都收到 429 和「Retry-After: 30」，30 秒后同时重试，再次压垮服务。按文章，最直接的对策是？",
+   "options": [
+    "把 Retry-After 统一延长到 300 秒，给服务更充分的恢复时间",
+    "改为返回 503，让客户端按照服务端故障的语义来处理重试",
+    "给 Retry-After 加随机抖动，或让 SDK 在退避时加 jitter",
+    "取消 Retry-After 头，让客户端自行决定什么时候重新发起"
+   ],
+   "answer": 2,
+   "explanation": "所有人拿到同一个固定值就会齐步重试，造成惊群；服务端返回带随机抖动的值或客户端 SDK 加 jitter，把重试时刻打散。统一延长只是把惊群推迟；429 与 503 语义不同，错用会误导重试；去掉 Retry-After 会让客户端死循环重试。",
+   "question_en": "During overload, 1,000 clients all get a 429 with 'Retry-After: 30', retry in unison 30 seconds later, and knock the service over again. According to the article, what's the most direct fix?",
+   "options_en": [
+    "Raise Retry-After to 300 seconds for everyone to give the service more time to recover",
+    "Return 503 instead so clients handle retries with server-failure semantics",
+    "Add random jitter to Retry-After, or have SDKs add jitter when backing off",
+    "Drop the Retry-After header and let clients decide on their own when to retry"
+   ],
+   "explanation_en": "Identical fixed values make everyone retry in lockstep, a thundering herd; jittered values from the server or jitter in client SDKs spread the retries out. A uniformly longer wait just postpones the herd, 429 and 503 mean different things and misusing them misleads retry logic, and dropping Retry-After invites tight retry loops."
+  },
+  {
+   "id": "21fd2e50f2",
+   "question": "按文章，一个单 key 限额 100 req/s 的令牌桶，capacity 与 refill rate 应该怎么理解和设置？",
+   "options": [
+    "capacity 是允许的突发大小，rate 是长期平均速率，二者按下游承受力分开设",
+    "refill rate 应设为 capacity 的十倍，让令牌桶更快地恢复到满额",
+    "两者都直接设为 100 最合理，这样就能严格保证每秒不超过 100 个请求",
+    "capacity 越大越好，这样正常用户的任何突发流量都不会被拒绝"
+   ],
+   "answer": 0,
+   "explanation": "cap=100 意味着攒满后可以瞬间发 100 个请求，1ms 内瞬时 QPS 就是 10 万，可能打爆下游。cap 由下游能扛多大瞬时 burst 决定，常见为 rate × 1~3；rate 是合同，cap 是仁慈。极端场景才设 cap = rate 让流量严格匀速。",
+   "question_en": "According to the article, how should you understand and set capacity and refill rate for a token bucket with a per-key limit of 100 req/s?",
+   "options_en": [
+    "Capacity is the allowed burst size, rate is the long-run average; set them separately based on what downstream can absorb",
+    "Refill rate should be ten times capacity so the bucket returns to full more quickly",
+    "Setting both to 100 is most sensible, since it strictly guarantees no more than 100 requests in any second",
+    "The bigger the capacity the better, so no burst from a normal user is ever rejected"
+   ],
+   "explanation_en": "With cap=100, a full bucket can fire 100 requests at once, which over 1ms is an instantaneous 100,000 QPS and can swamp downstream. Capacity should reflect the burst downstream can absorb, commonly 1 to 3 times the rate; the rate is the contract, the capacity is the grace. Only in extreme cases is cap set equal to rate to force a strictly even flow."
+  }
+ ]
+}

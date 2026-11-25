@@ -1,0 +1,69 @@
+{
+ "page": "/health-longevity/micronutrients-day15.html",
+ "title": "健康长寿 Day 15 — 微量营养素",
+ "page_en": "/health-longevity/micronutrients-day15.en.html",
+ "title_en": "Health & Longevity Day 15 — Micronutrients",
+ "src_hash": "f34187dfd681",
+ "questions": [
+  {
+   "id": "0ef3936bb7",
+   "question": "VITAL 试验给一般人群每天 2000 IU 维生素 D 共五年，没有降低癌症和心血管事件。按文章，这个结果该怎么理解？",
+   "options": [
+    "2000 IU 剂量太低，需要长期加到 5000 IU 以上才会见效",
+    "维 D 补充基本无效，任何人都可以停掉补充剂省下这笔钱",
+    "给本不缺的人补没有额外获益，不等于维 D 对缺乏者无用",
+    "维 D 只对骨骼有效，对其他器官系统完全不起任何作用"
+   ],
+   "answer": 2,
+   "explanation": "VITAL 招的是整体不缺维 D 的人群，缺口型营养素的效应只在缺乏者身上显现，全人群 RCT 会被不缺者稀释；缺乏者补足对骨密度和防跌倒仍有益。长期大剂量不复测反而有高钙血症风险。",
+   "question_en": "The VITAL trial gave the general population 2,000 IU of vitamin D daily for five years and found no reduction in cancer or cardiovascular events. According to the article, how should this be read?",
+   "options_en": [
+    "2,000 IU is too low a dose; it takes over 5,000 IU long-term before benefits appear",
+    "Vitamin D supplements basically don't work, so anyone can drop them and save the money",
+    "Supplementing people who aren't deficient adds nothing, which doesn't mean it's useless for those who are",
+    "Vitamin D only works on bones and has no effect at all on any other organ system"
+   ],
+   "explanation_en": "VITAL enrolled a largely non-deficient population. Gap-filling nutrients show effects only in deficient people, so whole-population trials get diluted by those who weren't lacking; correcting a real deficiency still helps bone density and fall prevention. Long-term high doses without retesting risk hypercalcemia."
+  },
+  {
+   "id": "6ec01e880e",
+   "question": "按文章引用的研究，为什么隔日单次补铁比每日多次总吸收更高？",
+   "options": [
+    "身体储铁的速度固定，补得越频繁肝脏排出得越多",
+    "铁需要与维生素 C 隔天交替服用才能被身体充分吸收",
+    "单次补铁会升高 hepcidin，抑制随后约一天的铁吸收",
+    "单次补铁会使胃酸分泌明显不足，导致后续服下的铁无法溶解"
+   ],
+   "answer": 2,
+   "explanation": "补铁会触发肝脏分泌 hepcidin，在随后约 24 小时关闭吸收闸门，每日多次的铁有相当部分被白白排掉，还徒增肠胃副作用。维 C 是同服以提升吸收，不是隔天交替。",
+   "question_en": "According to the research the article cites, why does a single dose of iron every other day lead to greater total absorption than multiple daily doses?",
+   "options_en": [
+    "The body stores iron at a fixed rate, so the liver excretes more the more often you dose",
+    "Iron must be alternated with vitamin C on separate days to be fully absorbed",
+    "A single dose raises hepcidin, which suppresses iron absorption for roughly the next day",
+    "Repeated dosing markedly reduces stomach acid, so later doses of iron can no longer dissolve"
+   ],
+   "explanation_en": "Iron triggers the liver to release hepcidin, which shuts the absorption gate for about 24 hours, so much of the repeated daily iron is wasted and adds gut side effects. Vitamin C is taken together with iron to boost absorption, not on alternate days."
+  },
+  {
+   "id": "951ff93ddf",
+   "question": "一位女性长期疲劳、掉发，体检血红蛋白正常。按文章的思路，下一步最该做的是？",
+   "options": [
+    "加测铁蛋白，因为储铁耗尽早于血红蛋白下降",
+    "只需多吃红肉，无需任何进一步的检测",
+    "血红蛋白正常即可排除缺铁，应转去排查其他病因",
+    "直接每日多次大剂量补铁，先补了再说"
+   ],
+   "answer": 0,
+   "explanation": "缺铁分三阶段：先耗尽储铁（铁蛋白下降），再红细胞生成受限，最后才贫血。血红蛋白是最后才掉的指标，铁蛋白才是早期敏感信号，低铁蛋白不贫血也会疲劳脱发。不测就猛补有铁过载风险，且每日多次反而吸收差。",
+   "question_en": "A woman has long-standing fatigue and hair loss, but her hemoglobin is normal. Following the article's reasoning, what is the best next step?",
+   "options_en": [
+    "Test ferritin, since iron stores run out before hemoglobin drops",
+    "Just eat more red meat; no further testing is needed",
+    "Treat normal hemoglobin as ruling out iron deficiency and look elsewhere",
+    "Start high-dose iron several times a day right away, test later"
+   ],
+   "explanation_en": "Iron deficiency progresses in stages: stores deplete first (ferritin falls), then red cell production suffers, and only then does anemia appear. Hemoglobin is the last marker to drop; ferritin is the early, sensitive signal, and low ferritin alone can cause fatigue and hair loss. Dosing blindly risks iron overload, and multiple daily doses absorb worse."
+  }
+ ]
+}

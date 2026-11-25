@@ -2617,6 +2617,141 @@
     "9ba36721c9",
     "c4b22ba167"
    ]
+  },
+  "/deep-reading/neuroscience-for-leadership-read1007.html": {
+   "t": "《Neuroscience for Leadership》",
+   "f": "deep-reading/neuroscience-for-leadership-read1007.json",
+   "q": [
+    "889b400df6",
+    "54de4708c7",
+    "a67a97530f"
+   ]
+  },
+  "/art-aesthetics/theatre-and-stage-day16.html": {
+   "t": "艺术与审美：戏剧与舞台",
+   "f": "art-aesthetics/theatre-and-stage-day16.json",
+   "q": [
+    "f559974730",
+    "cba03ea137",
+    "ea0d3aaf05"
+   ]
+  },
+  "/complexity-science/bifurcation-tipping-topic10.html": {
+   "t": "分岔与临界转变 — 有些门只朝一个方向开 · 复杂性科学 T10",
+   "f": "complexity-science/bifurcation-tipping-topic10.json",
+   "q": [
+    "e55be2e65a",
+    "8839509647",
+    "fd94387977"
+   ]
+  },
+  "/super-individual/git-workflow-skills-skill4.html": {
+   "t": "Skill 04 · Git 工作流三件套 — Super Individual",
+   "f": "super-individual/git-workflow-skills-skill4.json",
+   "q": [
+    "1eec1f9478",
+    "87899a001c",
+    "aff0bd308b"
+   ]
+  },
+  "/health-longevity/micronutrients-day15.html": {
+   "t": "健康长寿 Day 15 — 微量营养素",
+   "f": "health-longevity/micronutrients-day15.json",
+   "q": [
+    "0ef3936bb7",
+    "6ec01e880e",
+    "951ff93ddf"
+   ]
+  },
+  "/thinker-arena/debate.html?d=telling-the-dying": {
+   "t": "辩论：病人快不行了，该告诉他吗？",
+   "f": "thinker-arena/debate-telling-the-dying.json",
+   "q": [
+    "b468cd05db",
+    "c881d0c2ae",
+    "e564ef33d7"
+   ]
+  },
+  "/leadership/creative-teams-day58.html": {
+   "t": "领导力 Day 58：创意与研发团队领导",
+   "f": "leadership/creative-teams-day58.json",
+   "q": [
+    "24a60cabc1",
+    "9b5c29fe92",
+    "344b7811f0"
+   ]
+  },
+  "/book-recommendations/chinese-classics-source-book54.html": {
+   "t": "Issue 54：中国古典的源头 — 做人、自由、史识、情感，四套默认设置从哪来 | 好书推荐",
+   "f": "book-recommendations/chinese-classics-source-book54.json",
+   "q": [
+    "5797bec409",
+    "9da270341c",
+    "fa96b61ab1"
+   ]
+  },
+  "/deep-reading/pensees-read127.html": {
+   "t": "《思想录》",
+   "f": "deep-reading/pensees-read127.json",
+   "q": [
+    "70c9f4523c",
+    "7158a59596",
+    "4d2da8f309"
+   ]
+  },
+  "/meta-knowledge/formal-logic-day61.html": {
+   "t": "元知识详解：形式逻辑与证明 — Day 61",
+   "f": "meta-knowledge/formal-logic-day61.json",
+   "q": [
+    "2788a48c0f",
+    "cf2aa41e30",
+    "e1d9caefbc"
+   ]
+  },
+  "/podcast-deepread/jensen-pain-topic31.html": {
+   "t": "黄仁勋专题 · 痛苦、品格与他给年轻人的话",
+   "f": "podcast-deepread/jensen-pain-topic31.json",
+   "q": [
+    "a6b5a73c49",
+    "3747820a50",
+    "172816e9c3"
+   ]
+  },
+  "/complexity-science/ref-power-law.html": {
+   "t": "幂律的识别与误判 · 参考库 · 复杂性科学",
+   "f": "complexity-science/ref-power-law.json",
+   "q": [
+    "c8031f5196",
+    "dd34d88dc1",
+    "42bc10f002"
+   ]
+  },
+  "/mental-models/ecology-evolution-day18.html": {
+   "t": "思维模型详解：生态与进化类 · 2026-05-16",
+   "f": "mental-models/ecology-evolution-day18.json",
+   "q": [
+    "14c41bbc19",
+    "028c9d67dd",
+    "7bbe9ba2d3"
+   ]
+  },
+  "/writing/philosophy-essay-day29.html": {
+   "t": "写作与表达：哲学与随笔 — Day 29",
+   "f": "writing/philosophy-essay-day29.json",
+   "q": [
+    "7b3f9bd7e0",
+    "0956c16169",
+    "68b5502b3d"
+   ]
+  },
+  "/system-design/rate-limiting-day10.html": {
+   "t": "Day 10 · Rate Limiting — System Design",
+   "f": "system-design/rate-limiting-day10.json",
+   "q": [
+    "57d265a380",
+    "562cda92c6",
+    "21fd2e50f2"
+   ]
   }
  },
  "aliases": {

@@ -1,0 +1,69 @@
+{
+ "page": "/meta-knowledge/formal-logic-day61.html",
+ "title": "元知识详解：形式逻辑与证明 — Day 61",
+ "page_en": "/meta-knowledge/formal-logic-day61.en.html",
+ "title_en": "Meta-Knowledge: Formal Logic & Proof — Day 61",
+ "src_hash": "c2a396202c1a",
+ "questions": [
+  {
+   "id": "2788a48c0f",
+   "question": "告警规则的条件是「所有节点都健康」。它的逻辑否定是什么？",
+   "options": [
+    "所有节点都不健康",
+    "存在至少一个节点不健康",
+    "存在至少一个节点是健康的",
+    "没有任何节点是健康的"
+   ],
+   "answer": 1,
+   "explanation": "对全称量词取否定，要把 ∀ 换成 ∃ 并否定谓词：¬∀x 健康(x) ≡ ∃x ¬健康(x)。「所有节点都不健康」是最常见的错误，它把否定放错了位置，强得多也窄得多。",
+   "question_en": "An alert rule's condition is 'all nodes are healthy.' What is its logical negation?",
+   "options_en": [
+    "Every node is unhealthy",
+    "At least one node is unhealthy",
+    "At least one node is healthy",
+    "No node at all is healthy"
+   ],
+   "explanation_en": "Negating a universal swaps ∀ for ∃ and negates the predicate: ¬∀x healthy(x) ≡ ∃x ¬healthy(x). 'Every node is unhealthy' is the classic mistake: it misplaces the negation and makes a far stronger, narrower claim."
+  },
+  {
+   "id": "cf2aa41e30",
+   "question": "下面哪个说法是对哥德尔不完全性定理（及其在计算理论中的姊妹结论）的正当推论？",
+   "options": [
+    "既然有真而不可证的命题，科学结论就都不可靠，只能依靠信仰与直觉",
+    "它证明了人脑必然胜过任何机器，因为人能看出机器证不了的真理",
+    "不存在能检测出任意程序全部 bug 的万能工具，这是数学限制而非工程不足",
+    "给系统补上足够多的新公理，最终就能证明所有真命题并达到完备"
+   ],
+   "answer": 2,
+   "explanation": "停机问题与莱斯定理表明程序的非平凡语义性质不可判定，所以不存在万能验证器，实践里才要靠测试、类型、形式化验证的组合拳。定理只对形式系统内的可证性发言，推不出「科学不可靠」或「人脑胜机器」；加公理只会冒出新的不可证真命题。",
+   "question_en": "Which of the following is a legitimate inference from Gödel's incompleteness theorems (and their sibling results in computability theory)?",
+   "options_en": [
+    "Since some truths can't be proven, all scientific conclusions are unreliable and we must rely on faith and intuition",
+    "It proves human minds must beat any machine, because people can see truths a machine can't prove",
+    "No universal tool can find every bug in arbitrary programs, a mathematical limit and not an engineering shortfall",
+    "Adding enough new axioms to the system will eventually let it prove every true statement and become complete"
+   ],
+   "explanation_en": "The halting problem and Rice's theorem show that non-trivial semantic properties of programs are undecidable, so there's no universal verifier and practice relies on a mix of tests, types, and formal methods. The theorems speak only to provability within formal systems; they don't imply science is unreliable or that minds beat machines, and adding axioms just yields new unprovable truths."
+  },
+  {
+   "id": "e1d9caefbc",
+   "question": "在命题逻辑的实质蕴含下，「如果月亮是奶酪做的，那么 2+2=5」这句话的真值是什么？",
+   "options": [
+    "真，因为前件为假时蕴含恒为真",
+    "假，因为它的后件 2+2=5 在算术上为假",
+    "无法确定，因为前后件毫无关联",
+    "无真值，因为它构成了自指悖论"
+   ],
+   "answer": 0,
+   "explanation": "实质蕴含 P→Q 只在 P 真而 Q 假时为假，前件为假时整句恒真，这就是「假前提能推出任何结论」。它与日常说的「因果性如果」是两回事，所以前后件有没有关联不影响真值；这句话也不涉及自指。",
+   "question_en": "Under material implication in propositional logic, what is the truth value of 'If the moon is made of cheese, then 2+2=5'?",
+   "options_en": [
+    "True, because an implication with a false antecedent is always true",
+    "False, because its consequent, 2+2=5, is arithmetically false",
+    "Undetermined, because antecedent and consequent are unrelated",
+    "No truth value, because it forms a self-referential paradox"
+   ],
+   "explanation_en": "Material implication P→Q is false only when P is true and Q is false, so with a false antecedent the whole statement is true; this is why a false premise implies anything. It differs from the everyday causal 'if', so whether the parts are related doesn't matter, and nothing here is self-referential."
+  }
+ ]
+}

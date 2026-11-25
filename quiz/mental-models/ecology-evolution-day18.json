@@ -1,0 +1,69 @@
+{
+ "page": "/mental-models/ecology-evolution-day18.html",
+ "title": "思维模型详解：生态与进化类 · 2026-05-16",
+ "page_en": "/mental-models/ecology-evolution-day18.en.html",
+ "title_en": "Mental Models Deep Dive: Ecology & Evolution · 2026-05-16",
+ "src_hash": "3b822288cd72",
+ "questions": [
+  {
+   "id": "14c41bbc19",
+   "question": "按文章对「适者生存」的解读，下面哪种策略最符合真正的进化优势？",
+   "options": [
+    "回避一切环境变化，固守自己已经最熟悉的那块领域",
+    "尽可能变得比所有竞争者都更强大，以绝对实力取胜",
+    "把全部资源集中到当前最优策略上，做到最完美的适应",
+    "保留一部分资源做探索，训练在新环境中快速学习的能力"
+   ],
+   "answer": 3,
+   "explanation": "fitness 指与特定环境的契合度，而非绝对力量；环境一变，最适者可能变成最不适者。过度特化是隐蔽的脆弱，越完美适应当前环境，剧变时损失越大，所以真正的优势是保持适应能力（元适应性），保留冗余去探索。",
+   "question_en": "Based on the article's reading of 'survival of the fittest,' which strategy best reflects true evolutionary advantage?",
+   "options_en": [
+    "Avoid all environmental change and hold onto the territory you know best",
+    "Become stronger than every competitor and win through sheer absolute power",
+    "Pour every resource into the currently best strategy and achieve the most perfect fit",
+    "Keep some resources for exploration and train the ability to learn fast in new environments"
+   ],
+   "explanation_en": "Fitness means fit with a particular environment, not absolute strength; when the environment shifts, the fittest can become the least fit. Over-specialization is a hidden fragility, since the more perfectly you fit now, the more you lose in upheaval. Real advantage is staying adaptable (meta-fitness) with slack reserved for exploration."
+  },
+  {
+   "id": "028c9d67dd",
+   "question": "某个领域里所有人都在加速学习同一套新工具。按红皇后效应，你在这条赛道上持续投入，最可能的结果是？",
+   "options": [
+    "绝对能力提升必然带来相应比例的相对优势提升",
+    "只能维持相对位置，要拉开差距得转向竞争者未到的生态位",
+    "只要投入足够多，就能建立起长期稳固的领先优势",
+    "大家同步进步，整个行业的竞争会逐渐减弱直至消失"
+   ],
+   "answer": 1,
+   "explanation": "红皇后效应：竞争者同时在进化，绝对进步不保证相对优势，停滞等于退步，正如猎豹与瞪羚都变快、格局几乎不变。文章的建议是在红皇后维度上用自动化维持效率，把创造性资源投到竞争者尚未到达的维度。",
+   "question_en": "Everyone in a field is racing to learn the same new toolset. Under the Red Queen effect, what is the most likely result of you investing heavily in that race?",
+   "options_en": [
+    "Gains in absolute ability necessarily bring proportional gains in relative advantage",
+    "You merely hold your relative position; pulling ahead means moving to a niche rivals haven't reached",
+    "Invest enough and you'll build a durable, long-term lead over everyone else",
+    "Since everyone improves together, competition in the field will fade and eventually disappear"
+   ],
+   "explanation_en": "In the Red Queen effect, competitors evolve at the same time, so absolute progress doesn't guarantee relative advantage and standing still means falling behind. The article advises automating the Red Queen dimensions to keep pace and investing creative effort in dimensions competitors haven't reached."
+  },
+  {
+   "id": "7bbe9ba2d3",
+   "question": "按竞争排斥原则（高斯原则），两个生态位完全相同的物种放在同一环境里，长期会怎样？",
+   "options": [
+    "其中一个被淘汰，或者被迫分化到不同的生态位",
+    "双方平分资源，以较小的种群规模长期稳定共存",
+    "两者逐渐融合成一个新物种，从而占据这个生态位",
+    "二者轮流占据优势地位，形成周期性交替的稳定格局"
+   ],
+   "answer": 0,
+   "explanation": "竞争排斥原则指出，生态位完全相同的物种不能长期共存，必然一个被淘汰或分化到不同生态位。草原上狮子、猎豹、花豹、野犬正是通过时间、空间、猎物大小的分化才得以共存；平分资源长期共存恰是这条原则否定的情形。",
+   "question_en": "Under the competitive exclusion principle (Gause's principle), what happens in the long run when two species with identical niches share an environment?",
+   "options_en": [
+    "One is eliminated, or one is forced to shift into a different niche",
+    "They split resources and coexist stably long-term at smaller population sizes",
+    "They gradually merge into a single new species that occupies the niche",
+    "They take turns dominating, forming a stable pattern of periodic alternation"
+   ],
+   "explanation_en": "Competitive exclusion says species with identical niches can't coexist indefinitely: one is eliminated or differentiates. Lions, cheetahs, leopards, and wild dogs coexist on the savanna precisely by dividing time, space, and prey size; long-term sharing of an identical niche is exactly what the principle rules out."
+  }
+ ]
+}
