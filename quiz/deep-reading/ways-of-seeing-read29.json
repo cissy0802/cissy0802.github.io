@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/ways-of-seeing-read29.html",
+ "title": "《观看之道》",
+ "page_en": "/deep-reading/ways-of-seeing-read29.en.html",
+ "title_en": "Ways of Seeing — Deep Reading Read 29",
+ "src_hash": "3e9d185c995b",
+ "questions": [
+  {
+   "id": "3732fbfa2c",
+   "question": "伯格认为广告继承了欧洲油画的视觉语法，但做了一个根本调转。这个调转是什么？",
+   "options": [
+    "油画只服务有产者，广告让大众也能享有图像，把观看民主化了",
+    "油画庆祝已有的占有，广告让人不满现状、羡慕买后的自己",
+    "油画追求无功利的纯美，广告第一次把图像用于商业目的",
+    "油画靠画家的手艺打动人，广告改用写实摄影来如实呈现商品"
+   ],
+   "answer": 1,
+   "explanation": "油画对拥有者说「这些都是你的」，庆祝已然的占有；广告说「你还不是这样的人，买下它就能变成」，贩卖被羡慕的未来的自己，需要你对现状略微不满。说油画追求无功利的纯美，恰恰是伯格要拆穿的神话——他认为油画的常态本就是有产者的财产清单。",
+   "question_en": "Berger argues that advertising inherits the visual grammar of European oil painting but makes one fundamental reversal. What is it?",
+   "options_en": [
+    "Oil painting served only the propertied, while publicity opens images to everyone and democratizes looking",
+    "Oil painting celebrates what the owner already has; publicity makes you dissatisfied and envious of who you could become",
+    "Oil painting pursued disinterested beauty, while publicity was the first to put images to commercial use",
+    "Oil painting moved viewers through the painter's craft, while publicity uses realistic photography to show products as they are"
+   ],
+   "explanation_en": "Oil painting tells its owner 'all this is yours', celebrating possession already achieved; publicity says 'you are not yet this person, but buy this and you will be', selling an envied future self and relying on mild dissatisfaction with the present. The idea that oil painting pursued disinterested beauty is the very myth Berger dismantles: he sees the tradition's norm as an inventory of property."
+  },
+  {
+   "id": "a881ee741e",
+   "question": "照相与印刷让名画可以被无限复制。按伯格的看法，原作的「灵光」随后经历了什么？",
+   "options": [
+    "复制品与原作意义一致，变化只在于传播得更广、看到的人更多",
+    "原作的独特性被瓦解，机构又用天价与权威给它罩上假神圣",
+    "复制反而让人认清真迹不可替代，原作因此获得了更真实的神圣性",
+    "灵光彻底消失，艺术从此真正成为普通人可以直接拥有和理解的东西"
+   ],
+   "answer": 1,
+   "explanation": "复制本可是一种解放，但伯格指出一个反转：正因原作的独特性被瓦解，艺术机构反而拼命用「无价真迹」的市场价格与文化权威重新制造神秘感，灵光没有消失，只是被偷换。他同时强调复制品的意义随上下文被不断改写，并不与原作一致；把重获的神圣当成「更真实」的，正好落入他要剥掉的那层假象。",
+   "question_en": "Photography and print made famous paintings infinitely reproducible. In Berger's view, what then happened to the original's 'aura'?",
+   "options_en": [
+    "Reproductions keep the original's meaning; the only change is that far more people now see it",
+    "Its uniqueness was undone, but institutions re-wrapped it in a false, priced-up sanctity",
+    "Reproduction made people see that the original is irreplaceable, giving it a more genuine sanctity",
+    "The aura vanished entirely, and art finally became something ordinary people could own and understand directly"
+   ],
+   "explanation_en": "Reproduction could have been liberating, but Berger points to a reversal: because the original's uniqueness was undermined, institutions worked all the harder to re-mystify it as a priceless original backed by market value and cultural authority. The aura wasn't lost, just swapped out. He also stresses that a reproduction's meaning shifts with every context, so it doesn't preserve the original's meaning; treating the restored sanctity as 'more genuine' falls for the very illusion he strips away."
+  },
+  {
+   "id": "605a2f616e",
+   "question": "许多古典裸女画让画中女子手持镜子，并题名为《虚荣》。按伯格的解读，这面镜子起了什么作用？",
+   "options": [
+    "让画家为男性观者的快感画她，却把道德责任推到她身上",
+    "让女子成为观看自己的主体，从而反转了男性凝视的方向",
+    "表达画家对女性自恋的劝诫，使裸体画具备了道德教化意义",
+    "象征她在坦然审视真实的自己，说明这是 naked 而非 nude"
+   ],
+   "answer": 0,
+   "explanation": "伯格点破的双标是：把她画成为满足观者快感而生的样子，再往她手里塞面镜子骂她虚荣，责任就被推给了被当作对象的女人。这正是 nude 的遮蔽——一丝不挂却并非「做自己」，而是为画外那个观看者兼拥有者摆布出的「穿着」，所以它既不是道德劝诫，也不是女性成为观看主体。",
+   "question_en": "Many classical nudes show a woman holding a mirror, titled 'Vanity'. On Berger's reading, what does the mirror do?",
+   "options_en": [
+    "It lets him paint her for the male viewer's pleasure, then shift the moral blame onto her",
+    "It makes the woman the subject who looks at herself, reversing the direction of the male gaze",
+    "It voices the painter's warning against female self-love, giving the nude a moral, edifying purpose",
+    "It shows her candidly examining her real self, marking the image as naked rather than nude"
+   ],
+   "explanation_en": "Berger's point is the hypocrisy: you paint her as existing for the viewer's pleasure, then put a mirror in her hand and call her vain, so the blame falls on the woman you treated as an object. That is the concealment of the nude—unclothed yet not herself, posed as a kind of costume for the spectator-owner outside the frame—so it is neither a moral lesson nor the woman becoming the one who looks."
+  }
+ ]
+}

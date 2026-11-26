@@ -1,0 +1,69 @@
+{
+ "page": "/blog-deepread/the-intrinsic-perspective-blog5.html",
+ "title": "Erik Hoel · The Intrinsic Perspective — 梦不是在整理白天，是在防止你被白天学傻",
+ "page_en": "/blog-deepread/the-intrinsic-perspective-blog5.en.html",
+ "title_en": "Erik Hoel · The Intrinsic Perspective — Dreams aren't filing away your day, they're stopping your day from making you stupid",
+ "src_hash": "c06d70193c43",
+ "questions": [
+  {
+   "id": "24f5cc7928",
+   "question": "梦通常很稀疏（几乎读不清字、看不清屏幕），又很荒诞（一个人同时是两个人）。按 Erik Hoel 的「过拟合大脑假说」，这两个特征该怎么理解？",
+   "options": [
+    "它们是记忆巩固过程溅出的副产品，梦真正的工作是把白天的经历重放归档",
+    "它们是情绪处理的伪装，大脑把白天的冲突改头换面，以免睡眠被惊醒打断",
+    "它们说明大脑夜间算力不足，只能低分辨率地重演白天，荒诞是重演出错所致",
+    "它们正是梦的功能：类似 dropout 与域随机化，防止对日常过拟合"
+   ],
+   "answer": 3,
+   "explanation": "Hoel 坚持一个梦的理论必须解释梦是什么样子。大脑的训练集是活过的日子，有限、高度相关，又关不掉学习，于是有过拟合风险；梦的稀疏对应随机丢掉信息的 dropout，荒诞对应往数据里掺入不可能输入的域随机化。主流的记忆巩固说恰恰要把梦的内容当成副产品，而且梦里几乎不出现具体记忆，这正是他反对它的理由。",
+   "question_en": "Dreams are typically sparse (you can almost never read text or a screen) and hallucinatory (one person is two people at once). Under Erik Hoel's overfitted brain hypothesis, how should these features be understood?",
+   "options_en": [
+    "They are by-products spilling out of memory consolidation, whose real job is to replay and file away the day",
+    "They disguise emotional processing: the brain reshapes the day's conflicts so you won't be startled awake",
+    "They show the brain lacks computing power at night, so it replays the day at low resolution and the oddities are replay errors",
+    "They are the point: like dropout and domain randomisation, they stop overfitting to repetitive days"
+   ],
+   "explanation_en": "Hoel insists a theory of dreams must explain what dreams are like. The brain's training set is lived experience: limited, highly correlated, and it can't switch learning off, so it risks overfitting. Sparseness corresponds to dropout, randomly discarding information; bizarreness corresponds to domain randomisation, injecting impossible inputs. The mainstream consolidation account has to treat dream content as a by-product, and the near-absence of specific memories in dreams is exactly why he rejects it."
+  },
+  {
+   "id": "e09194bac1",
+   "question": "Hoel 把小说和电影看作「外包的梦」，却又说「虚构过量的唯一解药是好的虚构」，而不是少看虚构。他这样主张的理由是什么？",
+   "options": [
+    "艺术与娱乐的高下只是品味与阶层之分，好作品的价值在于带来更多审美愉悦",
+    "套路娱乐是副本的副本，自身已过拟合，满足冲动却完不成功能",
+    "任何虚构都能起到做梦的作用，所以问题只在总量太多，挑选内容并不重要",
+    "虚构会挤占睡眠时间，只有足够精彩的作品才值得用来替代真正的梦"
+   ],
+   "answer": 1,
+   "explanation": "既然梦有功能，履行不了功能的梦就是坏的梦。他说娱乐对世界的再现是拉马克式的，副本的副本直到图像糊掉，像糖果仍有热量却不再有营养。所以艺术与娱乐的区分在他这里有机制依据，不是势利眼；禁欲不管用，安全的是审美家而不是苦行僧。",
+   "question_en": "Hoel treats novels and films as 'outsourced dreams', yet says the cure for too much fiction is good fiction rather than less of it. What is his reason?",
+   "options_en": [
+    "The gap between art and entertainment is just taste and class, and good work matters because it gives more aesthetic pleasure",
+    "Formulaic entertainment is itself overfitted: it feeds the urge to dream but can't do the dream's job",
+    "Any fiction serves the function of dreaming, so the only problem is quantity and choosing what to watch doesn't matter",
+    "Fiction eats into sleep, so only truly great work is worth the trade against real dreaming at night"
+   ],
+   "explanation_en": "If dreams have a function, a dream that can't perform it is a bad dream. He calls entertainment Lamarckian in how it represents the world: copies of copies until the image blurs, like candy that still has calories but no nutrition. So for him the art/entertainment distinction has a mechanistic basis rather than being snobbery; abstinence doesn't work, and it's the aesthete, not the ascetic, who is safest."
+  },
+  {
+   "id": "2d2166c2da",
+   "question": "对于票房被续集垄断、网红脸和汽车外形越来越相像，Hoel 在《我们过拟合的世纪》里给出的解释是什么？",
+   "options": [
+    "根源在大众口味退化，观众越来越不愿冒险，市场只是被动地迎合这种保守需求",
+    "根源在资本垄断与过长的版权期，只要拆分巨头、缩短版权，多样性就会自然恢复",
+    "系统高效到反馈极紧、判别器极灵敏时就会过拟合，像模式崩溃那样压缩产出的方差",
+    "根源在生成式 AI 的普及，模型训练于同质化数据，又把同质化内容大量回灌给文化"
+   ],
+   "answer": 2,
+   "explanation": "他把文化看作一个关不掉学习的宏观大脑：当生产足够高效、反馈足够紧、判别足够灵敏时，就像生成对抗网络中过于挑剔的判别器让生成器只产出相似的东西。版权、垄断、互联网等解释他认为多半有道理，但都只是同一件事的不同层面。他明确说不能怪 AI，这个趋势早于 ChatGPT，AI 只是加速。",
+   "question_en": "Faced with box offices dominated by sequels and increasingly similar influencer faces and car designs, what explanation does Hoel offer in 'Our Overfitted Century'?",
+   "options_en": [
+    "The root is declining public taste: audiences grow risk-averse and the market merely caters to that conservatism",
+    "The root is monopoly capital and overlong copyright, so breaking up giants and shortening terms would restore diversity",
+    "Hyper-efficient systems with tight feedback and picky discriminators overfit, collapsing output variety",
+    "The root is generative AI: models trained on homogeneous data pump homogeneous content back into the culture"
+   ],
+   "explanation_en": "He treats culture as a macroscale brain that can't stop learning: when production is efficient, feedback tight and discrimination sharp, it behaves like a GAN whose overly picky discriminator drives the generator toward near-identical outputs. He grants that explanations like copyright, monopoly and the internet are mostly right, but sees them as layers of the same thing. He explicitly declines to blame AI: the trend predates ChatGPT, and AI only accelerates it."
+  }
+ ]
+}

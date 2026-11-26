@@ -1,0 +1,69 @@
+{
+ "page": "/thinker-arena/debate.html?d=acceptable-inequality",
+ "title": "辩论：什么样的不平等是可以接受的？",
+ "page_en": "/thinker-arena/debate.en.html?d=acceptable-inequality",
+ "title_en": "What kind of inequality is acceptable?",
+ "src_hash": "d6d8408e2679",
+ "questions": [
+  {
+   "id": "b27b72111f",
+   "question": "社会甲贫富差距较大，但规则透明、上升通道畅通；社会乙差距较小，但财富多靠关系攫取、阶层板结。按这场辩论的共识，哪一个更难让人接受？",
+   "options": [
+    "甲，因为差距的绝对幅度才是点燃不满的主要因素",
+    "甲，因为通道越畅通，落后的人越会被说成是自己活该",
+    "两者差不多，只要不平等程度接近，公众的感受就大体一致",
+    "乙，因为人们对差距正不正当比对差距大小更敏感"
+   ],
+   "answer": 3,
+   "explanation": "共识认为点燃愤怒或换来安宁的往往不是差距大小，而是它看起来正不正当、上升的梯子还在不在动；差距小却分明被操纵的局，比差距大却人人有机会的局更让人难以忍受。「通道畅通会让落在后面的人被视为活该」确实是辩论中提醒的风险，但它被当作要配上对运气的谦卑来纠正，并没有推翻这个判断。",
+   "question_en": "Society A has wide gaps between rich and poor but transparent rules and open mobility; Society B has narrower gaps, but wealth comes mostly from connections and classes are frozen. By the debate's consensus, which is harder to accept?",
+   "options_en": [
+    "A, because the sheer magnitude of the gap is what mainly drives public resentment",
+    "A, because the more open the ladder, the more those left behind get told they deserve it",
+    "Neither, since societies with similar levels of inequality produce roughly the same public feeling",
+    "B, because people react more to whether a gap looks legitimate than to its size"
+   ],
+   "explanation_en": "The consensus is that what sparks anger or buys peace is less the size of the gap than whether it looks legitimate and whether mobility is real; a small but rigged gap is more intolerable than a large one with genuine opportunity. The worry that open ladders breed 'you deserve it' contempt was raised, but it was treated as something to temper with humility about luck, not as overturning that judgment."
+  },
+  {
+   "id": "0b32a243ca",
+   "question": "一家公司员工对薪酬差距怨气很大，管理层只能先做一件事。按这场辩论得出的务实次序，最该优先做的是？",
+   "options": [
+    "逐步把各级薪酬拉近，直到差距缩小到大家不再抱怨",
+    "维持市场定价不动，因为市场结果谈不上公正与否",
+    "给最高薪和最低薪设定一个固定倍数，超过就强制压缩",
+    "公开薪酬与晋升规则，拆掉靠关系和出身上位的通道"
+   ],
+   "answer": 3,
+   "explanation": "共识给出的次序是先拆掉作弊与堵路的机关，再谈比例；程序公平与机会流动能买到单纯拉平买不到的安宁，因此透明规则、打破靠关系上位最优先。设固定倍数或逐步拉平都是在纠结比例数字；「市场结果无所谓公正」则是辩论中被多数人否定的立场。",
+   "question_en": "Employees at a company are angry about pay gaps, and management can only do one thing first. Following the practical order of priorities the debate arrived at, what comes first?",
+   "options_en": [
+    "Gradually pull pay levels closer together until the gap is small enough that complaints stop",
+    "Leave market-set pay alone, since market outcomes are neither just nor unjust",
+    "Cap top pay at a fixed multiple of the lowest salary and force compression above that line",
+    "Make pay and promotion rules transparent and shut routes that reward connections"
+   ],
+   "explanation_en": "The consensus ordering is to dismantle rigging and blocked ladders before arguing about ratios: procedural fairness and mobility buy a social peace that leveling alone cannot. Fixed multiples and gradual leveling are both about the ratio; 'market outcomes are neither just nor unjust' is a position most of the debate rejected."
+  },
+  {
+   "id": "9197a32541",
+   "question": "按这场辩论的共识，判断一种不平等是否已经变得危险，最关键的信号是什么？",
+   "options": [
+    "它是否已成了不可申诉、不可跨越的命运",
+    "它是否主要由市场竞争而非政府干预所造成的",
+    "它的幅度是否超过了公认的收入差距警戒线",
+    "社会总财富是否仍在增长，让蛋糕持续做大"
+   ],
+   "answer": 0,
+   "explanation": "共识认为不平等的危险常不在差距本身，而在它变成不可申诉、不可流动、不可逆的命运：规则黑箱、靠关系继承、一代翻不了身。看幅度是在做被辩论否定的「比例题」；蛋糕做大本身也不够，差距还须惠及最弱者、不靠压迫与世袭维持。",
+   "question_en": "By the debate's consensus, what is the clearest sign that an inequality has become dangerous?",
+   "options_en": [
+    "It has hardened into a fate that cannot be appealed, escaped, or corrected",
+    "It was produced mainly by market competition rather than by state intervention",
+    "Its size has crossed some widely accepted threshold for income disparity",
+    "Total wealth is still growing, so the pie keeps getting bigger overall"
+   ],
+   "explanation_en": "The consensus holds that the danger usually lies not in the gap itself but in its becoming unappealable, immobile and irreversible: opaque rules, inherited advantage, no way back after failure. Watching the size is the 'ratio question' the debate moved away from, and a growing pie is not enough on its own; the gap must also serve the worst-off and not rest on coercion or inheritance."
+  }
+ ]
+}

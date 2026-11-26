@@ -2752,6 +2752,141 @@
     "562cda92c6",
     "21fd2e50f2"
    ]
+  },
+  "/complexity-science/small-world-topic21.html": {
+   "t": "小世界 — 你缺的不是更多人脉，是几条跨圈捷径 · 复杂性科学 T21",
+   "f": "complexity-science/small-world-topic21.json",
+   "q": [
+    "0c328b861c",
+    "8505cc2984",
+    "02beded169"
+   ]
+  },
+  "/thinker-arena/debate.html?d=acceptable-inequality": {
+   "t": "辩论：什么样的不平等是可以接受的？",
+   "f": "thinker-arena/debate-acceptable-inequality.json",
+   "q": [
+    "b27b72111f",
+    "0b32a243ca",
+    "9197a32541"
+   ]
+  },
+  "/world-religions/secularization-day25.html": {
+   "t": "世界宗教 Day 25：世俗化与信仰的未来",
+   "f": "world-religions/secularization-day25.json",
+   "q": [
+    "2121051476",
+    "a0385f73a9",
+    "e06198dc97"
+   ]
+  },
+  "/health-longevity/pain-science-day40.html": {
+   "t": "健康长寿 Day 40 — 疼痛科学",
+   "f": "health-longevity/pain-science-day40.json",
+   "q": [
+    "64fd5174a4",
+    "f9f8e36e32",
+    "48ef8e2907"
+   ]
+  },
+  "/deep-reading/ways-of-seeing-read29.html": {
+   "t": "《观看之道》",
+   "f": "deep-reading/ways-of-seeing-read29.json",
+   "q": [
+    "3732fbfa2c",
+    "a881ee741e",
+    "605a2f616e"
+   ]
+  },
+  "/civics-geopolitics/energy-geopolitics-day27.html": {
+   "t": "政治·法律·地缘：能源地缘",
+   "f": "civics-geopolitics/energy-geopolitics-day27.json",
+   "q": [
+    "8795c9d841",
+    "2fc4a07870",
+    "202b946d08"
+   ]
+  },
+  "/cs-papers-deepread/ansi-sql-isolation-critique-paper62.html": {
+   "t": "A Critique of ANSI SQL Isolation Levels（SQL 隔离级别批判）— IT 论文精读 Paper 62",
+   "f": "cs-papers-deepread/ansi-sql-isolation-critique-paper62.json",
+   "q": [
+    "8e31e2ae93",
+    "ebff582cf4",
+    "b68859a94e"
+   ]
+  },
+  "/blog-deepread/the-view-from-hell-blog47.html": {
+   "t": "Sarah Perry · The View from Hell — 现代生活什么都不缺，缺的是「麻烦」",
+   "f": "blog-deepread/the-view-from-hell-blog47.json",
+   "q": [
+    "29ebea21d7",
+    "0022695374",
+    "0b123905fc"
+   ]
+  },
+  "/deep-reading/embodied-mind-read73.html": {
+   "t": "《具身心智》— 好书精读 Read 73",
+   "f": "deep-reading/embodied-mind-read73.json",
+   "q": [
+    "daed5cc92c",
+    "69cc8695ac",
+    "9f5bf866fd"
+   ]
+  },
+  "/blog-deepread/the-intrinsic-perspective-blog5.html": {
+   "t": "Erik Hoel · The Intrinsic Perspective — 梦不是在整理白天，是在防止你被白天学傻",
+   "f": "blog-deepread/the-intrinsic-perspective-blog5.json",
+   "q": [
+    "24f5cc7928",
+    "e09194bac1",
+    "2d2166c2da"
+   ]
+  },
+  "/chapter-deepread/fosa-ch11-pipeline-architecture-book218.html": {
+   "t": "FoSA 第 11 章 · 管道架构：单向的传送带，只做一件事的工位 — 专业书籍精读 Book 218",
+   "f": "chapter-deepread/fosa-ch11-pipeline-architecture-book218.json",
+   "q": [
+    "f5f9342c5f",
+    "afe4eb039c",
+    "7131a7a485"
+   ]
+  },
+  "/nobel-prizes/chemistry-2025-mofs-prize9.html": {
+   "t": "2025 化学奖 · 几克粉末里，藏着一个足球场 — 诺奖精读",
+   "f": "nobel-prizes/chemistry-2025-mofs-prize9.json",
+   "q": [
+    "daa6bf5c4c",
+    "6902f60332",
+    "04d220f900"
+   ]
+  },
+  "/system-design/caching-day2.html": {
+   "t": "Day 2 · 缓存 (Caching) — System Design",
+   "f": "system-design/caching-day2.json",
+   "q": [
+    "95c2a2e59b",
+    "23a7567735",
+    "fe86ff0ae1"
+   ]
+  },
+  "/writing/podcast-audio-day44.html": {
+   "t": "写作与表达：播客与音频脚本 — Day 44",
+   "f": "writing/podcast-audio-day44.json",
+   "q": [
+    "6703fe46d1",
+    "06e6c6e640",
+    "6260e2132c"
+   ]
+  },
+  "/evolutionary-biology/microbiome-symbiosis-day22.html": {
+   "t": "进化生物学 Day 22：微生物组与共生",
+   "f": "evolutionary-biology/microbiome-symbiosis-day22.json",
+   "q": [
+    "81dc2c6f43",
+    "4a729d4c0e",
+    "8e67e80f40"
+   ]
   }
  },
  "aliases": {

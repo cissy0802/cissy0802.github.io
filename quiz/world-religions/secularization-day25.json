@@ -1,0 +1,69 @@
+{
+ "page": "/world-religions/secularization-day25.html",
+ "title": "世界宗教 Day 25：世俗化与信仰的未来",
+ "page_en": "/world-religions/secularization-day25.en.html",
+ "title_en": "World Religions Day 25: Secularization & the Future of Faith",
+ "src_hash": "79bc8b8d3d29",
+ "questions": [
+  {
+   "id": "2121051476",
+   "question": "把「世俗化」拆成制度分化、个人信仰衰退、宗教私人化三条主张后，哪一条在全球范围内站得最稳？",
+   "options": [
+    "宗教人口占世界人口的份额持续稳定下降",
+    "宗教与政治、法律、教育等领域在制度上分家",
+    "个人的信仰与宗教实践随现代化普遍减少",
+    "宗教退出公共议题，转为纯粹的私人事务"
+   ],
+   "answer": 1,
+   "explanation": "三条主张中只有制度分化在全球站得住。个人衰退主要发生在西欧，1979 年以来多处发展否定了它作为普遍规律；私人化则被宗教重回公共议题的「去私人化」直接反驳。份额下降也不成立：由于生育率与年龄结构，宗教人口份额未来可能回升。",
+   "question_en": "Once 'secularization' is split into institutional differentiation, decline of individual belief, and privatization of religion, which claim holds up best worldwide?",
+   "options_en": [
+    "Religious people make up a steadily shrinking share of the world population",
+    "Religion has separated institutionally from politics, law and education",
+    "Individual belief and practice decline generally as societies modernize",
+    "Religion withdraws from public debate and becomes a purely private matter"
+   ],
+   "explanation_en": "Only differentiation holds globally. Individual decline happened mainly in Western Europe and was refuted as a universal law by developments since 1979; privatization is contradicted by 'deprivatization', religion's return to public issues. A falling religious share doesn't hold either: fertility and age structure may push it back up."
+  },
+  {
+   "id": "a0385f73a9",
+   "question": "某国调查显示「无宗教归属」比例十年里明显上升。由此最稳妥的推论是什么？",
+   "options": [
+    "更多人不认宗教机构的标签，但未必不信神",
+    "信仰没变，下降的只是去宗教场所的频率",
+    "无神论者占人口的比例大致以同样幅度上升了",
+    "该国宗教与政治、教育之间的制度分化正在退潮"
+   ],
+   "answer": 0,
+   "explanation": "「无归属」是用否定定义的类别，量的是与宗教机构的关系，不是世界观：美国无归属者中约七成信神或某种更高力量，严格的无信仰者只占约五分之一。认同、信念、实践是三层不同的东西，任何一层的数字都不能替另外两层说话，所以既不能当作无神论者增长，也不能断言只是实践下降而信念不变。",
+   "question_en": "Surveys in a country show the share of 'religiously unaffiliated' rising markedly over a decade. What is the safest conclusion?",
+   "options_en": [
+    "More people reject an institutional label, though many may still believe in God",
+    "Belief is unchanged; only attendance at places of worship has dropped",
+    "The share of atheists in the population has risen by roughly the same amount",
+    "The institutional separation of religion from politics and education is receding"
+   ],
+   "explanation_en": "'Unaffiliated' is defined negatively: it measures a relationship to institutions, not a worldview. About 70% of unaffiliated Americans believe in God or a higher power, and strict nonbelievers are only about a fifth. Identity, belief and practice are separate layers, and a number for one cannot speak for the others, so it neither means atheism grew nor proves that belief stayed put while only practice fell."
+  },
+  {
+   "id": "e06198dc97",
+   "question": "全球无宗教归属者十年里增加了约 2.7 亿，但其占世界人口的份额未来几十年反而可能下降。主要原因是什么？",
+   "options": [
+    "新的统计口径会把大量民间信仰者重新计入宗教人口",
+    "改宗方向正在逆转，从无归属转入宗教的人开始多于流出",
+    "许多无归属者到晚年会回到童年所属的宗教传统",
+    "无归属者年龄偏大、生育率偏低，份额被人口结构拉回"
+   ],
+   "answer": 3,
+   "explanation": "份额的变动主要由人口学决定：无归属者年龄偏大、生育率偏低，2055–60 年出生的婴儿预计只有约 9% 生于无归属母亲，所以即使改宗持续单向流向无归属，宗教人口份额也未必下降。改宗的实际方向恰恰是流向无归属，并没有逆转。",
+   "question_en": "The global unaffiliated population grew by about 270 million in a decade, yet its share of the world population may fall in coming decades. Why?",
+   "options_en": [
+    "New counting methods will reclassify many folk-religion practitioners as religious",
+    "Switching has reversed, with more people now moving from no affiliation into a religion",
+    "Many unaffiliated people return to the religion of their childhood in later life",
+    "The unaffiliated skew older and have fewer children, pulling their share down"
+   ],
+   "explanation_en": "Shares are driven mainly by demography: the unaffiliated are older and have fewer children, and only about 9% of babies born in 2055–60 are projected to have unaffiliated mothers. So even with switching flowing steadily toward no affiliation, the religious share need not fall. Switching has not reversed; it still runs toward the unaffiliated."
+  }
+ ]
+}

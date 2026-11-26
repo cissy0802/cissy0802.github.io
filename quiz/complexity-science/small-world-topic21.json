@@ -1,0 +1,69 @@
+{
+ "page": "/complexity-science/small-world-topic21.html",
+ "title": "小世界 — 你缺的不是更多人脉，是几条跨圈捷径 · 复杂性科学 T21",
+ "page_en": "/complexity-science/small-world-topic21.en.html",
+ "title_en": "Small World — What You Lack Is Not More Contacts, but a Few Shortcuts · Complexity Science T21",
+ "src_hash": "b4c0b581cd4e",
+ "questions": [
+  {
+   "id": "0c328b861c",
+   "question": "按「禁止三元组」的推理，为什么一条强关系几乎不可能成为社会网络里的「桥」？",
+   "options": [
+    "强关系维持成本太高，往往在传递信息的途中就先断掉了",
+    "强关系两端通常有一圈共同朋友，拿掉它也能就近绕通，不是捷径",
+    "强关系双方信息高度重合，所以彼此不愿意再替对方转介新人",
+    "强关系数量本来就少，覆盖不到距离自己很远的那些圈子"
+   ],
+   "answer": 1,
+   "explanation": "两个人都和 A 关系很强，彼此几乎必然也会认识，所以强关系总被闭合三角包着，拿掉它两端仍能就近绕通，不符合「桥」的定义。信息重合是弱关系有价值的另一层原因，并不是强关系当不了桥的结构性理由。",
+   "question_en": "Following the 'forbidden triad' argument, why can a strong tie almost never be a bridge in a social network?",
+   "options_en": [
+    "Strong ties cost so much to maintain that they tend to break before information gets through",
+    "Its two ends usually share mutual friends, so cutting it still leaves a short way around",
+    "Strongly tied people know the same things, so they are reluctant to refer anyone new to each other",
+    "People have too few strong ties for them to reach the clusters that lie far away from their own"
+   ],
+   "explanation_en": "If A has strong ties to both B and C, B and C almost certainly know each other, so a strong tie sits inside closed triangles and its endpoints stay close even if it is cut. That makes it the opposite of a bridge. Overlapping information is a separate reason weak ties are valuable; it is not the structural reason strong ties can't be bridges."
+  },
+  {
+   "id": "8505cc2984",
+   "question": "一家公司的工单常在部门之间「转给更懂的人」，结果反复绕圈、迟迟到不了对的人手里。按 Kleinberg 关于可导航性的结论，最该先做什么？",
+   "options": [
+    "把全公司完整的协作关系图公开，让每个人都能查最短路径",
+    "让每个员工多认识几个其他部门的同事，扩大各自的通讯录",
+    "在各部门与管理层之间增设几条可以直接越级的长程通道",
+    "给工单配一套每一步都能比较「谁离目标更近」的分层标签"
+   ],
+   "answer": 3,
+   "explanation": "可导航性是网络加上手里那把距离尺的联合属性：只靠局部信息转发能否成功，取决于每一步能不能判断「交给谁更近」，所以要先造尺子再造网络。多加连接或捷径不解决这个问题；公开全局关系图则绕开了现实中人只掌握局部信息的处境，也不是文章给的方向。",
+   "question_en": "A company's support tickets keep getting passed to 'someone who knows more' and end up going in circles. According to Kleinberg's result on navigability, what should be fixed first?",
+   "options_en": [
+    "Publish the company's full collaboration graph so anyone can look up the shortest path",
+    "Have every employee get to know more people in other departments to widen their contact lists",
+    "Add a few long-range channels that let tickets skip straight from teams up to management",
+    "Give tickets a layered label so each person can tell who is closer to the issue"
+   ],
+   "explanation_en": "Navigability belongs to the network plus the distance metric in the searcher's hands: greedy forwarding on local information only works if each person can judge who is closer. So build the ruler before the network. More links or shortcuts don't address that, and publishing the global graph sidesteps the real constraint that people act on local information, which is not what the article recommends."
+  },
+  {
+   "id": "02beded169",
+   "question": "要让一群人采纳一种有风险、需要看到身边多人都在用才会动的新做法，按「复杂传染」的结论，资源该怎么投？",
+   "options": [
+    "找关系最铁的一个人深度说服，靠这份信任跨过采纳门槛",
+    "尽量找分属不同圈子的人各转发一次，覆盖面撒得越开越好越快",
+    "集中在一个小圈子里铺多条平行连接，让人从几个人那里看到",
+    "主要依靠弱关系去宣传，因为弱关系带来的信息最不冗余"
+   ],
+   "answer": 2,
+   "explanation": "复杂传染需要从多个不同的人那里反复接触，长桥只给对岸带去一次曝光，够不到门槛，所以要的是桥的宽度而非长度。「跨圈转发、越散越好」对消息有效，对行为常常是死路；只靠一个人说服也凑不出「多个来源」。",
+   "question_en": "You want a group to adopt a risky new practice that people only take up after seeing several others around them do it. Following the logic of complex contagion, where should the effort go?",
+   "options_en": [
+    "Have the single closest, most trusted contact persuade each person and carry them past the threshold",
+    "Get one person in each of many different circles to share it once, spreading as widely as possible",
+    "Concentrate on one small cluster with several parallel ties, so people see it from multiple others",
+    "Promote it mainly through weak ties, since weak ties carry the least redundant information"
+   ],
+   "explanation_en": "A complex contagion needs repeated exposure from several distinct sources. A long bridge delivers only one exposure to the far side, which falls short of the threshold, so what matters is bridge width, not length. Wide, scattered sharing works for information but is often a dead end for behavior, and one persuader cannot supply multiple sources."
+  }
+ ]
+}

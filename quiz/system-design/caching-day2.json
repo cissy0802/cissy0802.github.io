@@ -1,0 +1,69 @@
+{
+ "page": "/system-design/caching-day2.html",
+ "title": "Day 2 · 缓存 (Caching) — System Design",
+ "page_en": "/system-design/caching-day2.en.html",
+ "title_en": "Day 2 · Caching — System Design",
+ "src_hash": "a1e2d0a77f46",
+ "questions": [
+  {
+   "id": "95c2a2e59b",
+   "question": "用 cache-aside 模式时，写操作更新完数据库后，为什么标准做法是删除缓存里的 key，而不是把新值写进缓存？",
+   "options": [
+    "更新会让 LRU 把这个 key 提到最近访问的位置，挤掉真正的热点数据",
+    "并发写可能乱序更新缓存，使其停在旧值；删除后由下次读回填",
+    "删除能把缓存和数据库之间的不一致窗口彻底降到零，更新做不到",
+    "删除比更新少一次序列化和网络往返，写延迟更低，这是主要的考虑"
+   ],
+   "answer": 1,
+   "explanation": "A 写 v1、B 写 v2，B 先更新缓存、A 后更新，缓存就永远停在 v1；删除则把「该存什么」交给下一次读数据库。但删除也不能让不一致窗口归零：删完立刻有人读，仍可能回填旧值，所以才有延迟双删，而且必须给业务定好能容忍多旧的数据。",
+   "question_en": "In the cache-aside pattern, after a write updates the database, why is the standard practice to delete the cache key rather than write the new value into the cache?",
+   "options_en": [
+    "Updating makes LRU treat the key as recently used, pushing out the data that is actually hot",
+    "Concurrent writes can land out of order and strand a stale value; deleting lets the next read refill it",
+    "Deleting shrinks the inconsistency window between cache and database to zero, which updating cannot do",
+    "Deleting saves a serialization step and a network round trip, so write latency is lower; that is the main reason"
+   ],
+   "explanation_en": "If A writes v1 and B writes v2, but B updates the cache before A does, the cache is stuck on v1 for good. Deleting leaves the question of what to cache to the next database read. Deleting doesn't close the inconsistency window either: a read right after the delete can still refill a stale value, which is why delayed double-delete exists and why the business must set an explicit staleness tolerance."
+  },
+  {
+   "id": "23a7567735",
+   "question": "大促前夜批量预热了几十万个商品缓存，TTL 都设成 3600 秒。一小时后数据库突然被打爆，过了一会儿又恢复。这是哪类问题，对应的解法是什么？",
+   "options": [
+    "LRU 被一次性批量写入污染，改用带准入控制的 W-TinyLFU",
+    "单个热 key 过期引发的击穿，用 single-flight 只放一个请求回源",
+    "大批 key 同一时刻过期的雪崩，给 TTL 加随机抖动错开过期时间",
+    "大量请求查不存在的 key 的穿透，用 Bloom Filter 在前面拦截"
+   ],
+   "answer": 2,
+   "explanation": "同一批写入、同一个 TTL，就会同一时刻集体过期，这是雪崩，解法是在 TTL 上加随机抖动，比如 3600 加 0 到 300 秒的随机值。击穿说的是单个热 key 过期，single-flight 能挡住同一个 key 的并发回源，却挡不住几十万个不同 key 同时失效。",
+   "question_en": "The night before a big sale, hundreds of thousands of product entries are pre-warmed into the cache, all with a TTL of 3,600 seconds. An hour later the database is suddenly overwhelmed, then recovers after a while. What kind of problem is this, and what is the fix?",
+   "options_en": [
+    "LRU pollution from a one-off bulk write; switch to W-TinyLFU with admission control",
+    "A thundering herd from one hot key expiring; use single-flight so only one request goes to the database",
+    "A cache avalanche from many keys expiring at the same moment; add random jitter to the TTLs to spread out expiry",
+    "Cache penetration from requests for nonexistent keys; put a Bloom filter in front to block them"
+   ],
+   "explanation_en": "Keys written together with the same TTL all expire together: that's an avalanche, fixed by adding random jitter to the TTL, e.g. 3600 plus a random 0 to 300 seconds. A thundering herd involves a single hot key; single-flight collapses concurrent misses on one key but can't help when hundreds of thousands of different keys expire at once."
+  },
+  {
+   "id": "fe86ff0ae1",
+   "question": "一个用 LRU 淘汰的缓存，平时命中率很高；某天有爬虫把全站页面挨个抓了一遍，之后命中率大跌，热门内容反复回源。以下哪种分析最准确？",
+   "options": [
+    "根源是缓存容量不够；只要容量能装下全站页面，换什么淘汰策略都无关紧要",
+    "这是 LFU 式的旧数据沉淀，新热点进不来；应给访问计数加衰减，或者换回 LRU",
+    "LRU 扫描抗性差，一次性访问挤走了热点；W-TinyLFU 的准入控制能挡住它们",
+    "爬虫请求的大多是不存在的页面，属于缓存穿透；应缓存空值，或加 Bloom Filter"
+   ],
+   "answer": 2,
+   "explanation": "LRU 只看最近有没有被访问，一次性扫描会把大量只用一次的 key 推到最新的位置，把真正的热点挤出去，这就是扫描抗性差。旧热点沉淀、新热点进不来是 LFU 的毛病，症状正好相反；W-TinyLFU 用 Count-Min Sketch 估计频率，让稀有 key 进不了缓存。",
+   "question_en": "A cache using LRU eviction normally has a high hit rate. One day a crawler fetches every page on the site once, and afterward the hit rate collapses and popular content keeps missing. Which diagnosis is most accurate?",
+   "options_en": [
+    "The root cause is insufficient capacity; if the cache held the whole site, the eviction policy wouldn't matter",
+    "This is LFU-style stale entries piling up so new hot items can't get in; add decay to the access counts, or switch back to LRU",
+    "LRU has poor scan resistance, so one-off hits flushed the hot set; W-TinyLFU's admission filter blocks them",
+    "The crawler mostly requested nonexistent pages, which is cache penetration; cache the empty results or add a Bloom filter"
+   ],
+   "explanation_en": "LRU only tracks recency, so a one-time scan pushes a flood of single-use keys to the front and evicts the real hot set; that's poor scan resistance. Old hot items settling in and blocking new ones is LFU's weakness, the opposite symptom. W-TinyLFU estimates frequency with a Count-Min Sketch and refuses admission to rarely seen keys."
+  }
+ ]
+}

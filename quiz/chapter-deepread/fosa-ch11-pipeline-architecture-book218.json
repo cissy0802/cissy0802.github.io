@@ -1,0 +1,69 @@
+{
+ "page": "/chapter-deepread/fosa-ch11-pipeline-architecture-book218.html",
+ "title": "FoSA 第 11 章 · 管道架构：单向的传送带，只做一件事的工位 — 专业书籍精读 Book 218",
+ "page_en": "/chapter-deepread/fosa-ch11-pipeline-architecture-book218.en.html",
+ "title_en": "FoSA Chapter 11 · Pipeline Architecture: A One-Way Conveyor Belt and Stations That Do One Thing — Book Deep Read 218",
+ "src_hash": "7767372554c2",
+ "questions": [
+  {
+   "id": "f5f9342c5f",
+   "question": "一条管道架构的数据处理流程需要加一个「去重」步骤，它必须记住之前流过的所有记录。按《软件架构基础》对管道架构约束的分析，这样做的主要后果是什么？",
+   "options": [
+    "破坏了过滤器无状态的约束，这一步不能再随意重排和复用",
+    "它要求管道改成广播，让下游每个过滤器都能读到去重表",
+    "它必须做成测试器，因为只有测试器有权决定数据是否继续往下流",
+    "它只影响性能：管道里的数据变大了，组合式复用本身不受影响"
+   ],
+   "answer": 0,
+   "explanation": "管道架构的组合式复用来自过滤器只通过数据说话、一般无状态；去重、窗口聚合这类天然有状态的步骤一旦塞进来，就失去可随意重排的性质。说它只影响性能是最诱人的错误：真正受损的是可重组性，不只是载荷大小。",
+   "question_en": "A pipeline-architecture data flow needs a deduplication step that has to remember every record it has already seen. According to Fundamentals of Software Architecture's analysis of the style's constraints, what is the main consequence?",
+   "options_en": [
+    "It breaks the stateless-filter rule, so that step can no longer be freely reordered or reused",
+    "It forces the pipes to broadcast so every downstream filter can read the dedup table",
+    "It must be a tester, since only testers are allowed to decide whether data keeps flowing",
+    "It only costs performance: the payload in the pipes grows, but compositional reuse is unaffected"
+   ],
+   "explanation_en": "The style's compositional reuse comes from filters that communicate only through data and are generally stateless. Inherently stateful steps such as deduplication or windowed aggregation lose the ability to be freely reordered. Calling it a pure performance issue is the tempting mistake: what suffers is recomposability, not just payload size."
+  },
+  {
+   "id": "afe4eb039c",
+   "question": "一个按管道架构写的夜间 ETL 里，「汇率换算」这一步成了瓶颈，团队想只给它加机器。按书中对管道架构的评分理由，为什么通常做不到？",
+   "options": [
+    "单向管道无法把结果汇回上游，多个实例并行后的输出没有办法合并",
+    "转换器内部攒着跨请求的状态，复制成多个实例后换算结果会不一致",
+    "整条管道作为一个单元部署，量子为 1，无法单独扩容一个过滤器",
+    "管道是点对点的，给一个过滤器加实例就违反了「一条管道只连两个过滤器」"
+   ],
+   "answer": 2,
+   "explanation": "书给管道架构的伸缩、弹性、容错都只打 1 星，理由是它仍是单体：整条线一起部署，无法只给最忙的过滤器扩容，一处内存溢出整个单元一起倒。点对点约束是为了性能而定的拓扑规矩，不是扩容受限的原因；真要单独扩容，就得把过滤器拆成独立服务，那已经是分布式风格了。",
+   "question_en": "In a nightly ETL job built in the pipeline style, the currency-conversion step has become the bottleneck and the team wants to add machines for that step alone. Based on the book's reasoning behind its ratings, why usually can't they?",
+   "options_en": [
+    "A one-way pipe can't send results back upstream, so outputs from parallel instances can't be merged",
+    "The transformer accumulates cross-request state, so multiple copies would produce inconsistent conversions",
+    "The pipeline deploys as one unit (a quantum of 1), so no single filter can scale on its own",
+    "Pipes are point-to-point, so adding instances of one filter would break the rule that each pipe connects exactly two filters"
+   ],
+   "explanation_en": "The book gives the pipeline style one star for scalability, elasticity and fault tolerance because it is still a monolith: everything deploys together, you can't scale only the busiest filter, and one out-of-memory error takes the whole unit down. Point-to-point pipes are a topology rule chosen for performance, not the reason scaling is limited. Scaling one filter independently means splitting filters into separate services, which is already a distributed style."
+  },
+  {
+   "id": "7131a7a485",
+   "question": "团队把管道里的每个过滤器拆成独立部署的服务，用 Kafka 主题当管道，并宣称「还是管道架构，书里的特征评分照样适用」。按书中的观点，这个说法错在哪里？",
+   "options": [
+    "这已变成微内核架构，Kafka 是核心系统，各过滤器就是插件",
+    "这仍属于单体，因为逻辑还是按过滤器类型做技术分区，只是部署方式变了",
+    "这仍是管道架构，但测试器必须改成消费者，因为消息系统不支持分流",
+    "已成分布式事件驱动风格，评分整体改写，还要背上八个谬误的账"
+   ],
+   "answer": 3,
+   "explanation": "书把管道架构当作单体风格评分；过滤器一旦独立部署、靠消息系统相连，就成了分布式的事件驱动风格，换来伸缩性，也付出网络、延迟等分布式代价，原来那张星级表不再适用。按技术分区切逻辑不等于是单体：是不是单体看的是部署单元，而不是切分方式。",
+   "question_en": "A team splits every filter in its pipeline into an independently deployed service, using Kafka topics as the pipes, and claims: \"It's still the pipeline architecture, so the book's characteristic ratings still apply.\" According to the book, what is wrong with this?",
+   "options_en": [
+    "It has become a microkernel architecture, with Kafka as the core system and each filter as a plug-in",
+    "It is still a monolith, since logic is still technically partitioned by filter type; only the deployment changed",
+    "It is still a pipeline, but testers must become consumers because a messaging system can't route data to branches",
+    "It's now a distributed event-driven style: the ratings all change and the eight fallacies apply"
+   ],
+   "explanation_en": "The book rates the pipeline style as a monolith. Once filters deploy independently and talk through a messaging system, it becomes a distributed event-driven style: it gains scalability but takes on network and latency costs, and the original star ratings no longer hold. Technical partitioning doesn't make something a monolith; that depends on the deployment unit, not on how the logic is partitioned."
+  }
+ ]
+}

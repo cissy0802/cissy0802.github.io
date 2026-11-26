@@ -1,0 +1,69 @@
+{
+ "page": "/health-longevity/pain-science-day40.html",
+ "title": "健康长寿 Day 40 — 疼痛科学",
+ "page_en": "/health-longevity/pain-science-day40.en.html",
+ "title_en": "Health & Longevity Day 40 — The Science of Pain",
+ "src_hash": "cbb58113035c",
+ "questions": [
+  {
+   "id": "64fd5174a4",
+   "question": "一位 45 岁、腰痛三个月的人，排除了外伤、发热、夜间痛等危险信号，核磁显示「椎间盘膨出」。按疼痛科学，该怎么理解这张片子？",
+   "options": [
+    "应每隔几个月复查影像，跟踪膨出变化来判断康复进度",
+    "膨出说明组织还没愈合，在影像改善之前应尽量卧床静养",
+    "膨出就是病根，治疗应当围绕把这个结构问题修好来展开",
+    "这在无腰痛的同龄人里也很常见，不能据此认定是痛源"
+   ],
+   "answer": 3,
+   "explanation": "无症状人群的系统回顾显示椎间盘退变与膨出极其普遍，40 岁时膨出约占一半，多属正常老化。没有红旗征时反复拍片不改变处理，反而强化「我坏了」的信念；慢性痛的目标应从修复损伤转向恢复功能、降低敏化，长期卧床只会加速失能。",
+   "question_en": "A 45-year-old has had low back pain for three months; red flags such as trauma, fever and night pain are ruled out, and an MRI shows a disc bulge. How should the scan be read, according to pain science?",
+   "options_en": [
+    "Repeat the imaging every few months and track the bulge to gauge recovery",
+    "It shows the tissue hasn't healed, so bed rest is advised until the scan improves",
+    "The bulge is the root cause, and treatment should focus on fixing that structural problem",
+    "Bulges are common in pain-free people that age, so it may not be the pain source"
+   ],
+   "explanation_en": "Systematic reviews of people without symptoms find disc degeneration and bulges extremely common, about half at age 40, mostly normal aging. Without red flags, repeat imaging doesn't change management and reinforces the belief that 'I'm broken'. For chronic pain the goal shifts from repairing damage to restoring function and reducing sensitization, and prolonged rest speeds disability."
+  },
+  {
+   "id": "f9f8e36e32",
+   "question": "如果疼痛是大脑综合各种证据后「输出」的保护性结论，那么慢性疼痛能否靠意志直接「想没」？",
+   "options": [
+    "能，既然痛由大脑生成，只要下决心转移注意力就能把它彻底关掉",
+    "不能直接命令，但改变教育、暴露、睡眠等输入可间接调低",
+    "不能，因为疼痛的真正来源始终是组织损伤，大脑只负责传递",
+    "不能，因为这说明慢性痛多半是想象出来的，并不是真实疼痛"
+   ],
+   "answer": 1,
+   "explanation": "疼痛由大脑无意识生成，不受直接意志支配，就像无法用意志关掉恐惧；能改变的是输入——更新信念、提供「其实安全」的新证据、降低威胁背景，从而间接调小疼痛增益。脑生成的疼痛和任何疼痛一样真实，并非想象；而认为大脑只是传递损伤信号，正是这套框架所否定的。",
+   "question_en": "If pain is a protective conclusion the brain 'outputs' after weighing all the evidence, can chronic pain simply be willed away?",
+   "options_en": [
+    "Yes: since the brain produces it, firmly redirecting attention is enough to switch it off",
+    "Not by command, but changing inputs like beliefs, exposure and sleep can turn it down",
+    "No, because the true source is always tissue damage and the brain merely relays the signal",
+    "No, because it shows chronic pain is mostly imagined rather than real pain"
+   ],
+   "explanation_en": "Pain is generated unconsciously and isn't under direct voluntary control, much as you can't will away fear. What can change are the inputs—updated beliefs, new evidence of safety, a lower threat background—which indirectly lower the gain. Brain-generated pain is as real as any other, and the idea that the brain only relays damage signals is exactly what this framework rejects."
+  },
+  {
+   "id": "48ef8e2907",
+   "question": "一位慢性疼痛患者按「每天走 20 分钟」的配额锻炼。某天感觉特别好，按文章的方案该怎么做？",
+   "options": [
+    "趁状态好多走一些，把之前痛的日子落下的量补回来",
+    "照常完成 20 分钟，好日子不加量，坏日子不归零",
+    "既然不痛了就停掉配额，改为按身体感觉自由安排",
+    "今天先多走，明天如果痛起来就完全休息到不痛为止"
+   ],
+   "answer": 1,
+   "explanation": "关键在按计划而非按痛感推进（pacing）：好日子超量、坏日子归零会形成「暴动-崩溃」循环，配额则按约每周 10% 渐进上调。目标是把活动量推上去，疼痛回落是结果而非前提，所以不能让当天的痛感来指挥运动量。",
+   "question_en": "A person with chronic pain follows a quota of walking 20 minutes a day. One day they feel unusually good. What does the article's approach say to do?",
+   "options_en": [
+    "Walk more while it feels good, to make up for what was missed on painful days",
+    "Do the usual 20 minutes: no extra on good days, and no zero on bad days",
+    "Drop the quota now that it doesn't hurt, and let how the body feels set the amount",
+    "Walk extra today, and if it hurts tomorrow, rest completely until the pain is gone"
+   ],
+   "explanation_en": "The key is pacing by plan rather than by pain: overdoing it on good days and stopping on bad ones creates a boom-and-bust cycle, while the quota rises gradually, about 10% a week. The goal is to raise activity, with lower pain as a result rather than a prerequisite, so the day's pain shouldn't dictate how much you do."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/nobel-prizes/chemistry-2025-mofs-prize9.html",
+ "title": "2025 化学奖 · 几克粉末里，藏着一个足球场 — 诺奖精读",
+ "page_en": "/nobel-prizes/chemistry-2025-mofs-prize9.en.html",
+ "title_en": "2025 Chemistry · A football pitch in a few grams of powder — Nobel Prizes, Explained",
+ "src_hash": "c99375ce8d20",
+ "questions": [
+  {
+   "id": "daa6bf5c4c",
+   "question": "研究者想要一种孔比 MOF-5 更大、能装下更大分子的材料。按亚吉提出的「网状化学」思路，最直接的做法是什么？",
+   "options": [
+    "调高结晶温度、加快生长，让晶体里多出缺陷，用缺陷连成更大的孔道",
+    "节点不动，换一种更长的直链连杆，网的连法不变、空腔变大",
+    "换用能连更多邻居的金属节点，让整张网改成另一种拓扑来容纳大分子",
+    "改用柔性连杆，让骨架在大分子进入时自行撑开，按需变出更大的孔"
+   ],
+   "answer": 1,
+   "explanation": "网状化学的核心是先选好刚性积木，再组装进事先定好的网：节点不换，只把连杆换长、换短或挂上别的基团，就得到同一张网孔径不同的一整个家族，亚吉就这样做出了 16 种 MOF-5。柔性框架是北川进的方向，它恰恰让「按图设计」变得更难预测，不是网状化学按图改孔径的办法。",
+   "question_en": "A researcher wants a material with larger pores than MOF-5, big enough for bulkier molecules. Following Yaghi's reticular chemistry, what is the most direct approach?",
+   "options_en": [
+    "Raise the crystallization temperature to speed growth, so the extra defects link up into larger channels",
+    "Keep the zinc-oxide nodes and swap in a longer straight linker: same net topology, larger cavities",
+    "Switch to metal nodes that bond to more neighbors, changing the whole net to a different topology that fits large molecules",
+    "Use flexible linkers so the framework props itself open when large molecules enter, creating bigger pores on demand"
+   ],
+   "explanation_en": "Reticular chemistry means picking rigid building blocks and assembling them into a predetermined net. Keep the nodes, lengthen, shorten or functionalize the linkers, and you get a whole family of the same net with different pore sizes. That is how Yaghi made 16 versions of MOF-5. Flexible frameworks are Kitagawa's line of work, and they make design-by-blueprint less predictable, not more; they are not how reticular chemistry tunes pore size."
+  },
+  {
+   "id": "6902f60332",
+   "question": "有人说：「MOF-5 每克内表面积约 2900 平方米，沸石只有几百，所以它能装的气体一定比沸石多好几倍。」哪种纠正最准确？",
+   "options": [
+    "这个面积是抽空后测的，一旦装气体骨架就会塌，实际容量远低于估算",
+    "表面积换算成体积后与沸石相差不大，「足球场」的说法只是营销夸张",
+    "内表面积越大墙就越薄，装得越多越不稳定，容量和稳定性此消彼长",
+    "内表面积只说明孔多墙薄，能装多少要看分子与孔壁的吸引"
+   ],
+   "answer": 3,
+   "explanation": "「一克一个足球场」说的是内表面积，不是体积：它说明孔多、墙薄，不说明能装多少，装多少取决于分子和墙之间的吸引。说装气就会塌是把早期框架的问题套到了 MOF-5 头上，MOF-5 抽空后加热到 300°C 都站得住。",
+   "question_en": "Someone argues: \"MOF-5 has about 2,900 square meters of internal surface per gram, while zeolites have a few hundred, so it must hold several times more gas than a zeolite.\" Which correction is most accurate?",
+   "options_en": [
+    "That area is measured after evacuation, and the framework collapses once gas is loaded, so real capacity is far below the estimate",
+    "Converted to volume, the surface area is close to a zeolite's; the football-field line is mostly marketing exaggeration",
+    "The larger the internal surface, the thinner the walls, so loading more gas makes it less stable; capacity and stability trade off",
+    "Surface area only shows many pores and thin walls; capacity depends on how strongly molecules are drawn to the walls"
+   ],
+   "explanation_en": "\"A football field in a gram\" refers to internal surface area, not volume. It says there are many pores with thin walls, not how much the material can store; that depends on the attraction between the molecules and the walls. The collapse claim applies an early-framework problem to MOF-5, which stays intact even when evacuated and heated to 300°C."
+  },
+  {
+   "id": "04d220f900",
+   "question": "九十年代北川进的经费申请屡屡被拒，评审的理由是：沸石已经能吸气体，而且更稳，为什么要造一个更差的？他后来是怎样让这类材料站住脚的？",
+   "options": [
+    "用吸附数据证明 MOF 的内表面积是沸石的好几倍，吸附量更大",
+    "讲清 MOF 独有而沸石没有的：可多种分子组合设计，骨架能是软的",
+    "证明 MOF 原料便宜、合成简单，比沸石更容易放大到工业规模",
+    "用后续实验证明 MOF 在稳定性和耐热性上最终都超过了沸石"
+   ],
+   "answer": 1,
+   "explanation": "北川没有在沸石的强项上硬拼，而是把「无用」翻译成一张新的打分表：可由多种分子组合，而且可以是会随客人进出而伸缩的柔性多孔晶体，这是沸石没有的维度。2900 平方米每克的表面积纪录来自亚吉 1999 年的 MOF-5，不是北川回应评审的论点。",
+   "question_en": "In the 1990s, Susumu Kitagawa's grant applications kept getting rejected on the grounds that zeolites already adsorb gases and are more stable, so why make something worse? How did he eventually make the case for these materials?",
+   "options_en": [
+    "By using adsorption data to show MOFs have several times the internal surface of zeolites and so adsorb more",
+    "By spelling out what zeolites lack: MOFs can be built from many molecules, and they can be soft",
+    "By showing that MOFs use cheap ingredients and simple synthesis, making them easier than zeolites to scale up industrially",
+    "By showing in later experiments that MOFs eventually surpass zeolites in both stability and heat resistance"
+   ],
+   "explanation_en": "Kitagawa didn't fight zeolites on their strengths. He turned \"useless\" into a new scorecard: MOFs can be assembled from many different molecules, and they can be soft porous crystals that flex as guest molecules enter and leave, a dimension zeolites lack. The record of 2,900 square meters per gram came from Yaghi's MOF-5 in 1999; it wasn't Kitagawa's answer to the reviewers."
+  }
+ ]
+}

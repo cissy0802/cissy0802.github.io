@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/embodied-mind-read73.html",
+ "title": "《具身心智》— 好书精读 Read 73",
+ "page_en": "/deep-reading/embodied-mind-read73.en.html",
+ "title_en": "The Embodied Mind — Deep Reading Read 73",
+ "src_hash": "72b1f2afb009",
+ "questions": [
+  {
+   "id": "daed5cc92c",
+   "question": "一朵花在人眼里是纯白的，在蜜蜂眼里却有一圈指向蜜腺的紫外「跑道」。按《具身心智》对颜色的分析，哪一种说法最准确？",
+   "options": [
+    "人看到的才是标准颜色，因为跨语言的基本色词研究表明人类色觉具有普遍性",
+    "两种颜色都只是各自大脑编出来的，所以颜色怎么看都行，无所谓对错",
+    "问哪个是花「真正的」颜色就问错了：颜色相对于身体而真实，却不任意",
+    "蜜蜂看到的更接近真实颜色，因为它的视觉系统捕捉到了更多的光谱信息"
+   ],
+   "answer": 2,
+   "explanation": "书里的颜色是生成出来的：视觉系统的结构与环境的反射特性长期耦合后共同带出的一个维度。客观主义解释不了不同物种看到的世界为何不同，主观主义又解释不了色词的跨语言规律，也解释不了你无法靠决心把红看成绿。「相对于身体」是一种强约束，视锥细胞的吸收曲线不跟你商量。",
+   "question_en": "A flower looks pure white to us, but to a bee it has an ultraviolet 'runway' leading to the nectar. According to The Embodied Mind's account of colour, which statement is most accurate?",
+   "options_en": [
+    "The human view is the standard, since cross-linguistic colour-term research shows human colour vision is universal",
+    "Both colours are just inventions of each brain, so any way of seeing them is fine and none is wrong",
+    "'Which is the real colour?' is the wrong question: colour is real relative to a body, yet not arbitrary",
+    "The bee's view is closer to the true colour, because its visual system captures more of the spectrum"
+   ],
+   "explanation_en": "For the authors, colour is enacted: a dimension brought forth by the long coupling between a visual system's structure and the environment's reflectances. Objectivism can't explain why species see such different worlds; subjectivism can't explain the cross-linguistic regularities of colour terms or why you can't simply decide to see red as green. 'Relative to a body' is a tight constraint: your cone absorption curves aren't up for negotiation."
+  },
+  {
+   "id": "69cc8695ac",
+   "question": "有人说：「我认同具身认知：身体状态会影响思维，比如疲劳让人判断变差；不过原则上，只要保留计算结构，心智就能拷贝到别的载体上运行。」按书中的标准，这个立场属于哪一种？",
+   "options": [
+    "属于主观主义：它认为心智独立于世界，所以世界只是心智投射出来的产物",
+    "属于生成主义的温和版：承认身体有作用，只是对心智能否复制保持开放",
+    "正是本书的立场：书中的「具身」指的就是身体状态对思维有可测量的影响",
+    "仍在表征主义里：身体只被当作调制因素，而不是认知的构成部分"
+   ],
+   "answer": 3,
+   "explanation": "书里专门点名了这个高频误读：把「具身」稀释成「身体对思维有影响」，谁都会同意。本书主张更强的命题：认知结构由感觉-运动耦合的历史构成，而不只是受它调制。分辨方法正是看它是否允许「保留计算结构就能把心智从身体里拷贝出来」，允许就还在表征主义里。",
+   "question_en": "Someone says: 'I accept embodied cognition: bodily states affect thinking, as when fatigue worsens judgement. Still, in principle the mind could be copied onto another substrate as long as its computational structure is preserved.' By the book's criterion, where does this position fall?",
+   "options_en": [
+    "Subjectivism: it holds that the mind is independent of the world, so the world is merely its projection",
+    "A moderate form of enactivism: it grants the body a role while staying open on whether minds can be copied",
+    "It is exactly the book's view: 'embodied' there simply means bodily states measurably influence thought",
+    "Still representationalist: it lets the body modulate cognition rather than constitute it"
+   ],
+   "explanation_en": "The book flags this as a common misreading: watering 'embodiment' down to 'the body influences thinking', which nobody disputes. Its claim is stronger: cognitive structures are constituted by a history of sensorimotor coupling, not just modulated by it. The test is precisely whether a view allows the mind to be copied out of the body by preserving its computational structure; if it does, it's still representationalist."
+  },
+  {
+   "id": "9f5bf866fd",
+   "question": "一位冥想者在内观中找不到那个「拥有」念头与感受的人，于是断定：「既然没有我，那一切都无意义，怎样都无所谓。」按书中借中观对此的诊断，这个结论错在哪里？",
+   "options": [
+    "它的推理没有错，书中承认无我必然导向冷漠，只是认为冷漠可以靠戒律约束",
+    "它把佛教的形而上学当成了科学结论，而本书只采纳正念对心理健康的疗效",
+    "它仍困在笛卡尔式焦虑里，只是从「必须有绝对地基」翻到了「什么都没有」",
+    "它的观察有误，只要修习足够深入，最终一定能找到一个恒常不变的真我"
+   ],
+   "answer": 2,
+   "explanation": "笛卡尔式焦虑是「要么有绝对地基，要么一切虚无」的二选一，书里认为这个二选一本身就是病。中观的空指没有独立自存的本质，不是什么都不存在，龙树点名排除的正是虚无那一端。书中还说虚无主义恰恰是没放下自我的表现：背后站着一个失望的、原本要求世界给它保障的自我。真正松开执取，长出的是慈悲而非冷漠。",
+   "question_en": "In meditation, a practitioner can't find anyone who 'owns' the thoughts and feelings, and concludes: 'Since there's no self, nothing means anything and nothing matters.' Drawing on Madhyamaka, how does the book diagnose this conclusion?",
+   "options_en": [
+    "The reasoning is sound; the book grants that no-self leads to indifference but holds that precepts can restrain it",
+    "It mistakes Buddhist metaphysics for a scientific result, whereas the book adopts only mindfulness's mental-health benefits",
+    "It's still Cartesian anxiety, just flipping from 'there must be a ground' to 'there is nothing'",
+    "The observation is faulty; with deep enough practice one will eventually find a permanent, unchanging true self"
+   ],
+   "explanation_en": "Cartesian anxiety is the either-or of 'an absolute foundation or utter nihilism', and the book treats that dichotomy itself as the illness. Emptiness in Madhyamaka means lacking independent, self-standing essence, not nonexistence; Nāgārjuna explicitly rules out the nihilist extreme. The book adds that nihilism is a sign of not having let go of the self: behind it stands a disappointed self that wanted the world to guarantee it a foundation. Genuinely loosening that grip frees energy toward others, yielding compassion rather than indifference."
+  }
+ ]
+}

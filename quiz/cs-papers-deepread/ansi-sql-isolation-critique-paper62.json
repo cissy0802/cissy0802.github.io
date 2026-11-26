@@ -1,0 +1,69 @@
+{
+ "page": "/cs-papers-deepread/ansi-sql-isolation-critique-paper62.html",
+ "title": "A Critique of ANSI SQL Isolation Levels（SQL 隔离级别批判）— IT 论文精读 Paper 62",
+ "page_en": "/cs-papers-deepread/ansi-sql-isolation-critique-paper62.en.html",
+ "title_en": "A Critique of ANSI SQL Isolation Levels — CS Papers Deep-Read Paper 62",
+ "src_hash": "68c208ca4c59",
+ "questions": [
+  {
+   "id": "8e31e2ae93",
+   "question": "一对夫妻各有一个账户，银行规定两账户合计不得为负。两人在快照隔离下同时查到合计 100 元，随后各从自己的账户取 80 元，两笔事务都成功提交。快照隔离为什么没拦住？",
+   "options": [
+    "快照隔离读完就释放读锁，别人随即可以修改自己读过的那一行",
+    "提交时只查是否写了同一数据项，两人写的不同账户，冲突藏在读里",
+    "两人各自读到的快照不一致，一个账户是旧值、另一个是新值",
+    "快照隔离允许读到别人未提交的数据，两人看到的余额本身就是脏的"
+   ],
+   "answer": 1,
+   "explanation": "这是写偏斜：两个事务读了同一份状态，写的却是不同的数据项。快照隔离的「先提交者获胜」只拦截写同一项的冲突，看不见建立在过期快照上的读依赖。快照隔离不会读到未提交数据，每个事务看到的也是一张一致的照片，所以脏读和读偏斜都不是原因；它也不靠读锁。",
+   "question_en": "A couple each hold an account, and the bank requires the two balances to sum to at least zero. Under snapshot isolation they both see a combined 100, then each withdraws 80 from their own account, and both transactions commit. Why didn't snapshot isolation stop this?",
+   "options_en": [
+    "Snapshot isolation drops read locks right after reading, so others can immediately change rows already read",
+    "The commit check only catches writes to the same item; the conflict here lies in the reads",
+    "Their snapshots were inconsistent, with one account showing an old value and the other a new one",
+    "Snapshot isolation lets transactions read uncommitted data, so the balances they saw were dirty"
+   ],
+   "explanation_en": "This is write skew: both transactions read the same state but write different items. First-committer-wins only catches conflicting writes to the same item and can't see read dependencies built on a stale snapshot. Snapshot isolation never exposes uncommitted data and gives each transaction a consistent snapshot, so neither dirty reads nor read skew explain it; it doesn't rely on read locks either."
+  },
+  {
+   "id": "ebff582cf4",
+   "question": "T1 从账户 x 转 40 元到 y，刚扣完 x、还没加到 y 时，T2 读走了 x 和 y，算出总额少了 40；之后 T1 正常提交。按 SQL-92 关于脏读的字面表述与论文的主张，该如何定性？",
+   "options": [
+    "这不属于脏读，而是幻读，因为 T2 按条件读到的那批行数发生了变化",
+    "既然 T1 最终提交了，T2 读到的值后来确实成立过，所以论文也认为无害",
+    "字面读法只在 T1 回滚时才算脏读，所以放过了它；论文主张取宽读，应予禁止",
+    "字面读法和宽读都会禁止它，因为 T2 读到了未提交的数据，这一点没有争议"
+   ],
+   "answer": 2,
+   "explanation": "标准的散文写的是「如果 T1 随后回滚」，照字面只禁 A1 那个窄模式；论文用这个转账反例说明，即使 T1 提交，T2 也读到了一笔从未作为整体存在过的账，所以必须取宽读 P1：只要读了未提交的值就算。只有宽读下，排除三种现象才等价于可串行化。幻读只针对按谓词读出的一批行，这里没有涉及。",
+   "question_en": "T1 transfers 40 from account x to y. After debiting x but before crediting y, T2 reads both and computes a total that is 40 short; T1 then commits normally. Given SQL-92's literal wording on dirty reads and the paper's argument, how should this be classified?",
+   "options_en": [
+    "It isn't a dirty read but a phantom, because the set of rows T2 read by predicate changed",
+    "Since T1 committed, the values T2 saw did become real, so the paper also treats it as harmless",
+    "The literal reading needs T1 to abort, so it slips through; the paper's broad reading forbids it",
+    "Both the literal and broad readings forbid it, since T2 read uncommitted data, and that was never in dispute"
+   ],
+   "explanation_en": "The standard's prose says 'if T1 then rolls back', so read literally it only bans the narrow pattern A1. The paper uses this transfer counterexample to show that even when T1 commits, T2 saw a state that never existed as a whole, so the broad reading P1 is required: reading any uncommitted value counts. Only under the broad readings does excluding the three phenomena amount to serializability. Phantoms concern sets of rows read by predicate, which isn't involved here."
+  },
+  {
+   "id": "b68859a94e",
+   "question": "有人说「快照隔离介于 READ COMMITTED 和 SERIALIZABLE 之间，所以它要么比 REPEATABLE READ 强，要么比它弱」。按论文的结论，哪种说法正确？",
+   "options": [
+    "快照隔离更强：它挡住了 REPEATABLE READ 能挡的全部异常，还额外挡住了幻读",
+    "两者等价：都禁止不可重复读和丢失更新，差别只在实现方式是加锁还是多版本",
+    "两者互不包含：基于锁的 REPEATABLE READ 挡得住写偏斜却放过幻读，快照隔离正相反",
+    "REPEATABLE READ 更强：读锁握到提交，因此快照隔离能挡的它都能挡，反之不成立"
+   ],
+   "answer": 2,
+   "explanation": "论文最有分量的结论是隔离级别排不成一条直线。REPEATABLE READ 把读锁握到提交，别人改不动它读过的行，所以挡住写偏斜，但它不锁谓词，新插入的行会造成幻读；快照隔离的定格快照不受这种幻读影响，却对写偏斜束手无策。各有对方放过的异常，所以是一张偏序网，「某一方更强」的说法都不成立。",
+   "question_en": "Someone argues: 'Snapshot isolation sits between READ COMMITTED and SERIALIZABLE, so it must be either stronger or weaker than REPEATABLE READ.' According to the paper, what's the correct view?",
+   "options_en": [
+    "Snapshot isolation is stronger: it blocks every anomaly REPEATABLE READ does and also blocks phantoms",
+    "They're equivalent: both forbid non-repeatable reads and lost updates and differ only in locking versus multiversioning",
+    "Neither contains the other: locking REPEATABLE READ stops write skew but not phantoms; SI is the reverse",
+    "REPEATABLE READ is stronger: read locks held to commit cover everything snapshot isolation prevents, but not vice versa"
+   ],
+   "explanation_en": "The paper's sharpest result is that isolation levels don't form a single line. REPEATABLE READ holds read locks to commit, so nobody can change rows it read, which blocks write skew; but it doesn't lock predicates, so newly inserted rows create phantoms. Snapshot isolation's frozen snapshot isn't troubled by those phantoms, yet it is helpless against write skew. Each permits something the other forbids, so the levels form a partial order and neither is simply stronger."
+  }
+ ]
+}

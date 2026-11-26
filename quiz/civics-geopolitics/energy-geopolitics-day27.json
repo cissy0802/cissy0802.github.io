@@ -1,0 +1,69 @@
+{
+ "page": "/civics-geopolitics/energy-geopolitics-day27.html",
+ "title": "政治·法律·地缘：能源地缘",
+ "page_en": "/civics-geopolitics/energy-geopolitics-day27.en.html",
+ "title_en": "Civics, Law & Geopolitics: Energy Geopolitics",
+ "src_hash": "c985906ac96b",
+ "questions": [
+  {
+   "id": "8795c9d841",
+   "question": "某国为保障稀土供应，斥巨资买下多座海外稀土矿山。按「关键矿产的卡点在中游」的分析，这一做法的主要盲点是什么？",
+   "options": [
+    "矿石仍要送去精炼，而精炼产能集中在别处，控制点并没有转移",
+    "稀土在地壳中极为稀少，买到的矿山储量很快就会被采空",
+    "矿山所在国随时可以没收资产，上游的政治风险比中游更高",
+    "矿山投产周期长达十几年，远远慢于建设一座精炼厂"
+   ],
+   "answer": 0,
+   "explanation": "关键矿产的控制点在分离精炼这一中游环节：它低利润、重资本、环境成本高，各国企业当年自愿退出，集中便形成了。买断矿山只是「找地方」，没有重建精炼能力，矿石还得送去别人那里加工。稀土其实并不稀少，靠储量枯竭来解释是把「关键」误当成「稀有」。",
+   "question_en": "A country spends heavily to buy several overseas rare-earth mines to secure its supply. Under the view that the chokepoint for critical minerals lies midstream, what is the main blind spot of this move?",
+   "options_en": [
+    "The ore still has to be refined where refining is concentrated, so the chokepoint hasn't moved",
+    "Rare earths are extremely scarce in the crust, so the purchased reserves will soon be exhausted",
+    "Host countries can expropriate the mines at any time, making upstream political risk higher than midstream",
+    "Mines take well over a decade to bring online, far longer than building a refinery"
+   ],
+   "explanation_en": "The control point is midstream separation and refining: low-margin, capital-heavy and environmentally costly, it was abandoned voluntarily by firms elsewhere, which is how concentration arose. Buying mines only solves 'finding a location'; it doesn't rebuild refining capability, so the ore still has to go to someone else's plant. Rare earths are not actually rare, so the depletion story confuses 'critical' with 'scarce'."
+  },
+  {
+   "id": "2fc4a07870",
+   "question": "与以石油、天然气为主的系统相比，一个以风电、光伏为主的电力系统，地缘脆弱性主要发生了什么变化？",
+   "options": [
+    "风和阳光无法被禁运，所以地缘风险基本上被消除了",
+    "风险从进口端转到了运行端，主要表现为日常燃料价格波动",
+    "脆弱窗口从每天的燃料通道，前移到设备与矿产的采购环节",
+    "脆弱点仍在海上航线，只是运输的货物从油气换成了设备"
+   ],
+   "answer": 2,
+   "explanation": "化石能源是流量，断一天缺一天，航线和管道天然是筹码；风光是存量加设备，燃料免费且不可禁运，但要先进口设备与矿产。所以转型不是摆脱地缘，而是把风险从「持续的燃料通道」移到「一次性的供应链」。「可再生等于能源独立」正是被点名的常见误解：设备、矿产的依赖还在，电网互联还加深了对邻国的依赖。",
+   "question_en": "Compared with a system built on oil and gas, how does the geopolitical vulnerability of a power system built mainly on wind and solar change?",
+   "options_en": [
+    "Wind and sunlight can't be embargoed, so geopolitical risk is essentially eliminated",
+    "Risk moves from imports to operations, showing up mainly as day-to-day fuel price swings",
+    "Exposure moves from the daily fuel corridor to the purchase of equipment and minerals",
+    "The weak point stays on the sea lanes; only the cargo changes from oil and gas to equipment"
+   ],
+   "explanation_en": "Fossil energy is a flow: every day without supply is a day short, so shipping lanes and pipelines are natural leverage. Wind and solar are a stock plus equipment: the fuel is free and can't be embargoed, but the hardware and minerals must be imported first. The transition doesn't escape geopolitics; it moves the risk from a continuous fuel corridor to a one-off supply chain. 'Renewables mean energy independence' is exactly the misconception flagged: equipment and mineral dependence remain, and grid interconnection deepens reliance on neighbours."
+  },
+  {
+   "id": "202b946d08",
+   "question": "能源危机中油价飙升，某政府宣布大规模补贴燃料价格，称此举是在「保障能源安全」。按「物理短缺 vs 价格冲击」的区分，最贴切的评价是什么？",
+   "options": [
+    "补贴有效，只要财政撑得住，价格稳定就等同于可获得性和可靠性都有了保障",
+    "这是正确的做法，因为能源危机的本质就是物理断供，压低价格才能保住供给",
+    "补贴价格与保障供应是两种政策，混为一谈往往既花了钱，又没提升系统韧性",
+    "补贴无效，因为能源安全的含义就是自给自足，只有扩大本国产量才算数"
+   ],
+   "answer": 2,
+   "explanation": "真正的断供罕见，常见的是价格重排：货还在，只是变贵了。补贴缓解的是可负担性，并没有增加备用容量、多元来源或储备，所以不能等同于保障供应。能源安全也几乎从不指自给自足，它包含可获得性、可负担性、可靠性、可持续性四个互相冲突的维度。",
+   "question_en": "During an energy crisis oil prices spike, and a government launches large fuel-price subsidies, calling them a way to 'safeguard energy security'. Given the distinction between physical shortage and price shock, which assessment fits best?",
+   "options_en": [
+    "Subsidies work: as long as the budget holds, stable prices mean availability and reliability are secured too",
+    "It's the right call, since an energy crisis is essentially a physical cutoff and lower prices keep supply flowing",
+    "Subsidising prices isn't securing supply; mixing them up spends money without adding resilience",
+    "Subsidies are pointless because energy security means self-sufficiency, and only more domestic output counts"
+   ],
+   "explanation_en": "Genuine supply cutoffs are rare; what usually happens is a price reshuffle: the fuel is there, it just costs more. A subsidy addresses affordability but adds no spare capacity, diversification or reserves, so it isn't the same as securing supply. And energy security almost never means self-sufficiency; it bundles four conflicting goals: availability, affordability, reliability and sustainability."
+  }
+ ]
+}

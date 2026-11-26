@@ -1,0 +1,69 @@
+{
+ "page": "/writing/podcast-audio-day44.html",
+ "title": "写作与表达：播客与音频脚本 — Day 44",
+ "page_en": "/writing/podcast-audio-day44.en.html",
+ "title_en": "Writing & Expression: Podcasts & Audio Scripts — Day 44",
+ "src_hash": "6bcf526aabab",
+ "questions": [
+  {
+   "id": "6703fe46d1",
+   "question": "把一段书面稿改成播客口播稿，原文有一句「前者成本低但慢，后者快但贵，上述两种方案各有取舍」。按「为耳朵写」的原则，最该怎么改？",
+   "options": [
+    "保留原句，朗读时在逗号处放慢、加重停顿，让听众跟上句子结构",
+    "在这句前加一句「综上所述」，给听众一个清楚的结构路标",
+    "把「前者」「后者」「上述」换回方案名字，再拆成短句",
+    "改成一句更凝练的复合长句，减少听众需要记住的句子数量"
+   ],
+   "answer": 2,
+   "explanation": "听众不能回看，书面里那种回指上文的代词和「上述」会让耳朵丢线索，所以要用重复名词代替指代、用短句代替长句。「综上所述」是书面腔，口语里该说「所以」；路标词指的是「先说第一点」这类说话时的提示，不是把书面连接词照搬进稿子。",
+   "question_en": "You're turning a written passage into a podcast script. It contains the line: \"The former is cheap but slow, the latter fast but costly; both of the above involve trade-offs.\" Following the principle of writing for the ear, what's the best fix?",
+   "options_en": [
+    "Keep the sentence, but slow down and pause hard at the commas when reading so listeners can follow the structure",
+    "Put \"In summary\" in front of it to give listeners a clear structural signpost",
+    "Name each option again instead of saying \"the former\" or \"the latter,\" and split it into short sentences",
+    "Compress it into one tighter compound sentence so listeners have fewer sentences to hold in mind"
+   ],
+   "explanation_en": "Listeners can't scroll back, and written back-references like \"the former\" or \"the above\" make the ear lose the thread, so you repeat the noun instead of pointing back to it and use short sentences instead of long ones. \"In summary\" is written register; spoken, you'd just say \"so\". Signposts here mean spoken cues like \"first thing\", not written connectives carried over into the script."
+  },
+  {
+   "id": "06e6c6e640",
+   "question": "有人担心技术内容的口播稿写得太口语化会丢掉精确。按文中对「口语化」和「不严谨」的区分，哪种看法最站得住？",
+   "options": [
+    "口语化难免牺牲部分精确，限定条件和数据应移到节目文字简介里，口播只讲大意",
+    "口语化只改句法，事实、因果和限定照留；该警惕的是空洞的书面腔",
+    "精确主要靠术语保证，口播时一律保留术语原样，其余句子再尽量改得口语化",
+    "技术段落应保留书面句式以确保精确，只在开场和过渡处使用口语化的表达"
+   ],
+   "answer": 1,
+   "explanation": "文中认为两者不冲突：口语化动的是短句、少定语这些句法，严谨守的是事实与逻辑，限定条件一个不能少，比如「大部分情况这招管用，但有个例外，我一会儿讲」。真正的敌人是「显著」「一定程度上」这类听着严谨、其实什么也没说的书面腔；把限定挪进简介，等于承认口语装不下精确，正是文中反驳的看法。",
+   "question_en": "Someone worries that making a technical podcast script too conversational will cost precision. Based on the distinction drawn between \"conversational\" and \"imprecise,\" which view holds up best?",
+   "options_en": [
+    "Conversational style inevitably sacrifices some precision, so caveats and data belong in the show notes while the audio gives the gist",
+    "Conversational style changes the syntax, not the facts or caveats; the real risk is vague formal phrasing",
+    "Precision rests mainly on terminology, so keep every technical term as is and make only the remaining sentences conversational",
+    "Technical passages should keep written sentence structure for accuracy, with conversational style only for openings and transitions"
+   ],
+   "explanation_en": "The piece argues there's no conflict: conversational style changes the syntax (short sentences, fewer nested modifiers), while rigor protects the facts and logic, caveats included, as in \"this works most of the time, but there's one exception I'll get to.\" The real enemy is formal vagueness, words like \"significant\" or \"to some extent\" that sound rigorous and say nothing. Moving caveats to the show notes concedes that speech can't carry precision, which is exactly the view the piece rejects."
+  },
+  {
+   "id": "6260e2132c",
+   "question": "一期叙事播客试听后，听众的反馈是：「一路都想知道后面怎么样了，可听完不知道它想说什么。」按 Ira Glass 的故事引擎，这期节目最缺什么？",
+   "options": [
+    "把结尾改成悬念，用 cliffhanger 把听众的好奇带到下一期",
+    "在开头加一段本期要点的目录，先让听众知道整期要讲哪几点",
+    "在动作段落之间插入反思时刻，点明这一串事情为什么值得听",
+    "多放现场声和当事人原声，让听众亲耳听见而不是听旁白转述"
+   ],
+   "answer": 2,
+   "explanation": "Ira Glass 把故事拆成两块积木：轶事靠「然后呢」勾人，反思时刻回答「所以呢」。听众一路想听下去却说不出意义，说明只有动作、没有反思。开头报目录是文中明确反对的做法，那种结构是给眼睛的；悬念收尾只会再多勾一次好奇，补不上意义。",
+   "question_en": "After a test listen to a narrative podcast episode, listeners say: \"I kept wanting to know what happened next, but by the end I had no idea what it was trying to say.\" In terms of Ira Glass's story engine, what is the episode missing most?",
+   "options_en": [
+    "A cliffhanger ending that carries listeners' curiosity into the next episode",
+    "A table of contents at the top so listeners know which points the episode will cover",
+    "Moments of reflection between the action sequences that say why this chain of events was worth hearing",
+    "More ambient tape and first-person audio, so listeners hear it directly instead of through narration"
+   ],
+   "explanation_en": "Glass splits a story into two building blocks: the anecdote pulls you along with \"and then what?\", and the moment of reflection answers \"so what?\". Listeners who kept going but found no point got action without reflection. A table-of-contents opening is exactly what the piece warns against, since that structure is built for the eye, and a cliffhanger only adds more curiosity without supplying meaning."
+  }
+ ]
+}

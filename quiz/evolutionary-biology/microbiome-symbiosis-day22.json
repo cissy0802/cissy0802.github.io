@@ -1,0 +1,69 @@
+{
+ "page": "/evolutionary-biology/microbiome-symbiosis-day22.html",
+ "title": "进化生物学 Day 22：微生物组与共生",
+ "page_en": "/evolutionary-biology/microbiome-symbiosis-day22.en.html",
+ "title_en": "Evolutionary Biology Day 22: The Microbiome and Symbiosis",
+ "src_hash": "a95a2df6a718",
+ "questions": [
+  {
+   "id": "81dc2c6f43",
+   "question": "蚜虫体内的布赫纳氏菌住在宿主细胞里、吃宿主的东西，却从不「多拿一点、少给一点」。最准确的解释是什么？",
+   "options": [
+    "它只能经卵传代，多拿的变异缩小了自己唯一的出口，留不下来",
+    "蚜虫的免疫系统能识别并清除多拿养分的菌株，这种惩罚让作弊得不偿失",
+    "它的基因组已缩减到约五百八十个基因，早就没有多拿养分的能力了",
+    "长期共演化让菌群整体形成了合作倾向，作弊在群体层面上被选择淘汰"
+   ],
+   "answer": 0,
+   "explanation": "关键是传递通道：菌的拷贝只能坐在卵里出去，宿主多一个后代它就多一批拷贝，宿主死了它这条线就断，于是作弊的品系没传下来，不是它选择了忠诚。基因组缩减是长期只随卵传之后的结果，不是它不作弊的原因，把因果倒过来了。",
+   "question_en": "Buchnera bacteria live inside aphid cells and feed on the host, yet never evolve to take a little more and give a little less. What is the most accurate explanation?",
+   "options_en": [
+    "It can only leave through the mother's eggs, so greedier strains shrink their own only exit and die out",
+    "The aphid's immune system detects and clears strains that take extra nutrients, and that punishment makes cheating a losing bet",
+    "Their genome has shrunk to about 580 genes, so they no longer have the capacity to take extra nutrients",
+    "Long coevolution has given the bacterial population a cooperative disposition, and cheating is selected out at the group level"
+   ],
+   "explanation_en": "The key is the transmission channel. Copies of the bacterium can only leave inside an egg, so every extra host offspring means more copies and a dead host ends the line; cheating strains simply left no descendants, and nothing chose loyalty. Genome reduction is a consequence of long-term egg-only transmission, not the reason they don't cheat, so that option reverses cause and effect."
+  },
+  {
+   "id": "4a729d4c0e",
+   "question": "在一种昆虫身上发现了一种新的细菌，它和布赫纳氏菌一样只随卵传给下一代，精子里没有它。仅凭这一点，能推出什么？",
+   "options": [
+    "它与宿主的繁殖成功已经绑成同一个数，迟早会演化成像布赫纳氏菌那样的互利共生",
+    "不能断定利益一致：雄性对它是死胡同，它可能把性别比往雌性掰",
+    "它会像线粒体那样不断丢基因，最终变成宿主细胞里一个不再独立的细胞器",
+    "既然只走母系一条通道，它不可能在种群里扩散得比不带菌的个体更快"
+   ],
+   "answer": 1,
+   "explanation": "沃尔巴克氏体也只随卵传，却用杀雄、雄变雌、孤雌生殖和胞质不亲和在种群里铺开，对昆虫毫无好处。文中的结论是：出口窄不等于利益对齐，要看窄在哪儿。它只搭雌性这条线，所以与宿主整体的繁殖成功并没有绑成同一个数。",
+   "question_en": "A new bacterium is found in an insect. Like Buchnera, it is passed to offspring only through eggs and never through sperm. What can be concluded from that fact alone?",
+   "options_en": [
+    "Its reproductive success is now locked to the host's, so it will eventually become a mutualist like Buchnera",
+    "Not that interests align: males are a dead end for it, so it may skew the host's sex ratio toward females",
+    "Like mitochondria, it will keep shedding genes until it becomes an organelle that is no longer independent of the host cell",
+    "Since it only travels down the maternal line, it can't spread through a population faster than uninfected individuals"
+   ],
+   "explanation_en": "Wolbachia also travels only in eggs, yet it spreads through populations via male-killing, feminization, parthenogenesis and cytoplasmic incompatibility, with no benefit to the insect. The piece's point is that a narrow exit doesn't guarantee aligned interests; it depends on where the bottleneck sits. Riding only the female line, it isn't tied to the host's overall reproductive success."
+  },
+  {
+   "id": "8e67e80f40",
+   "question": "有人主张把宿主和它身上的全部微生物当作一个「全生物」，让自然选择作用在这个整体上。按文中采用的判据，要判断某个宿主和菌的组合能不能这样当成一个演化单位，关键看什么？",
+   "options": [
+    "微生物的细胞数量是否和宿主细胞相当，甚至多于宿主细胞",
+    "这整套组成是否可靠地、成套地一起传给宿主的下一代",
+    "这些微生物对宿主生理是否不可或缺，缺了它宿主就发育异常",
+    "宿主和微生物在代谢上是否互补，彼此稳定地交换养分"
+   ],
+   "answer": 1,
+   "explanation": "能不能当成单位来结算，取决于整套是否连续地一起传下去：蚜虫和布赫纳氏菌满足，人和肠道菌群不满足，因为人的大多数肠道菌是陆续从环境中捡来的、随时会换。无菌小鼠发育异常说明菌很重要，但重要不等于成套遗传，这正是文中先承认、再说明不够的那部分。",
+   "question_en": "Some argue that a host and all its microbes should be treated as a single holobiont, with natural selection acting on the whole. By the criterion the piece adopts, what decides whether a given host–microbe combination can be treated as an evolutionary unit?",
+   "options_en": [
+    "Whether microbial cells are as numerous as the host's own cells, or more so",
+    "Whether the whole set is reliably passed to the next generation together, as a package",
+    "Whether the microbes are physiologically essential, such that the host develops abnormally without them",
+    "Whether host and microbes are metabolically complementary, stably exchanging nutrients"
+   ],
+   "explanation_en": "Whether something can be treated as a unit depends on whether the package is passed on together, generation after generation. Aphids and Buchnera qualify; humans and their gut flora don't, because most gut microbes are picked up piecemeal from the environment and can change at any time. Abnormal germ-free mice show that microbes matter, but mattering isn't the same as being inherited as a set. The piece grants that point and then explains why it isn't enough."
+  }
+ ]
+}

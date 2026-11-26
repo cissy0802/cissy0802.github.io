@@ -1,0 +1,69 @@
+{
+ "page": "/blog-deepread/the-view-from-hell-blog47.html",
+ "title": "Sarah Perry · The View from Hell — 现代生活什么都不缺，缺的是「麻烦」",
+ "page_en": "/blog-deepread/the-view-from-hell-blog47.en.html",
+ "title_en": "Sarah Perry · The View from Hell — Modern life lacks nothing but the burdens",
+ "src_hash": "a32e268e35d5",
+ "questions": [
+  {
+   "id": "29ebea21d7",
+   "question": "Sarah Perry 以不锈钢刀取代碳钢刀、一次性笔取代钢笔为例，她想论证的核心是什么？",
+   "options": [
+    "市场去掉了麻烦，却把同等的麻烦换了个形式留下，总的麻烦并没有减少",
+    "厂商为压低成本刻意降低质量，消费者在信息不对称下被迫接受更差的产品",
+    "东西要求你付出的正是它回馈你的；花钱就能得到的，证明不了你变好",
+    "老工具在功能上总是优于新工具，现代化本质上是一场以便利为名的质量倒退"
+   ],
+   "answer": 2,
+   "explanation": "她的第一块拼图是：碳钢刀要求你马上擦干、学会磨刀，而你能否让它保持锋利就是你作为厨子的价值；市场把这些非金钱成本一样样拿掉，结果谁都能买到，也就不再能确认你的价值和特别之处。钢笔的例子里，灌墨水的麻烦确实被换成了写字手疼的麻烦，但那只是旁证，论点不在麻烦总量是否守恒，而在付出与价值感的联系被切断。",
+   "question_en": "Sarah Perry points to stainless knives replacing carbon-steel ones and disposable pens replacing fountain pens. What is the core claim she uses these to make?",
+   "options_en": [
+    "The market removes hassle only to leave an equal hassle in another form, so total hassle never shrinks",
+    "Manufacturers cut quality to lower costs, and information asymmetry forces consumers to accept worse goods",
+    "What a thing demands of you is what it gives back; what money alone buys can't show you've grown",
+    "Old tools are always functionally superior, so modernisation is a decline in quality disguised as convenience"
+   ],
+   "explanation_en": "Her first puzzle piece: a carbon-steel knife demands that you dry it at once and learn to sharpen it, and keeping it sharp is your worth as a cook. The market strips out such non-monetary costs one by one until anyone can buy the thing, and then it can no longer confirm your value or specialness. With pens the refilling hassle really was swapped for the hassle of writing with a bad pen, but that's a supporting detail; the point isn't conservation of hassle but the severed link between effort and a sense of worth."
+  },
+  {
+   "id": "0022695374",
+   "question": "18 世纪初，法国的苦修兄弟会放下集体自我鞭笞、改为默想与慈善，此后内讧增多，他们的对策是制定更细的规章，却没能止住衰败。按 Perry 的「火、燃料、氧气」框架，规章为什么补不上？",
+   "options": [
+    "鞭笞兼供昂贵信号与仪式心理状态，而纸上条文证明不了真诚",
+    "规章本身不够严格，只要罚则足够重，成员间的纷争就能被有效压下去",
+    "启蒙运动削弱了教会的权威，任何仪式或规章在当时都注定无法挽回局面",
+    "默想和慈善属于私人行为，只要改成当众进行，就能起到和鞭笞一样的作用"
+   ],
+   "answer": 0,
+   "explanation": "她把合作比作仪式的火，昂贵信号是燃料，仪式唤起的心理状态是氧气；收起鞭子，燃料和氧气同时断了。章程只是文字，而当众做出来的仪式本身就是承诺。启蒙与教会变迁是文章另外提出的反驳，说明两者可能只是同一潮流的结果，那不是 Perry 自己的解释。",
+   "question_en": "In the early 18th century, French penitential confraternities gave up collective self-flagellation for meditation and charity. Infighting grew, and they responded with ever more detailed bylaws, which failed to stop the decline. In Perry's 'fire, fuel, oxygen' framework, why couldn't rules fill the gap?",
+   "options_en": [
+    "The whip supplied both a costly signal and a ritual mental state; written rules can't prove sincerity",
+    "The bylaws weren't strict enough; with heavy penalties the disputes could have been suppressed",
+    "The Enlightenment had eroded Church authority, so no ritual or rule could have saved them at that point",
+    "Meditation and charity were private acts; done publicly, they would have worked just as well as flagellation"
+   ],
+   "explanation_en": "She casts cooperation as ritual's fire, costly signalling as its fuel and the ritual mental state as its oxygen; put away the whips and both fuel and oxygen are cut off. Bylaws are just words, while a ritual performed in public is itself a commitment. The Enlightenment-and-Church explanation is a counterargument the piece raises against her, suggesting both trends may stem from a common cause; it isn't Perry's own account."
+  },
+  {
+   "id": "0b123905fc",
+   "question": "一张纯黑方块不乱，一片随机噪点也不乱，而一张印着重叠文字和商标的纸却是乱的，尽管描述它所需的信息比噪点还少。Perry 由此给「乱」下的定义是什么？",
+   "options": [
+    "乱来自缺乏对称性，自然物总能保持对称，人造物一旦损坏就失去对称",
+    "碎片各自暗示一种强烈的、像出自人意图的秩序，这些秩序彼此冲突、没有兑现",
+    "乱是信息熵偏高的状态，只是人眼对中等程度的熵比对极端值更敏感",
+    "乱是材料老化的结果，人造物不像自然物那样能自我修复，所以终会变乱"
+   ],
+   "answer": 1,
+   "explanation": "她先用熵当候选答案，又亲手驳倒：熵最低和最高的图都不乱。她的答案是，平整表面、印刷文字都在许诺特定的秩序，乱就是这些许诺被别的、互相冲突的秩序破坏。云是不对称的却不乱，所以对称也不是标准；苔藓覆盖的废墟不乱，说明问题也不在老化本身。",
+   "question_en": "A solid black square isn't messy, and neither is pure random noise, yet a sheet printed with overlapping text and logos is messy even though it takes less information to describe than the noise. How does Perry define mess in light of this?",
+   "options_en": [
+    "Mess comes from a lack of symmetry: natural things keep it, while damaged artefacts lose it",
+    "Fragments each imply a strong, intended-looking order, and those orders clash unfulfilled",
+    "Mess is a state of high entropy; human eyes just respond more to moderate entropy than to extremes",
+    "Mess is the result of material decay, since artefacts can't repair themselves the way natural things can"
+   ],
+   "explanation_en": "She tries entropy first and refutes it herself: the lowest- and highest-entropy images are both tidy. Her answer is that flat surfaces and printed text each promise a particular order, and mess is that promise broken by other, conflicting orders. Clouds are asymmetric yet never messy, so symmetry isn't the criterion; a moss-covered ruin isn't messy either, so decay as such isn't the issue."
+  }
+ ]
+}
