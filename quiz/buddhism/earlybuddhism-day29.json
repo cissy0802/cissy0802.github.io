@@ -1,0 +1,69 @@
+{
+ "page": "/buddhism/earlybuddhism-day29.html",
+ "title": "佛经详解：早期佛教与历史佛陀 — Day 29",
+ "page_en": "/buddhism/earlybuddhism-day29.en.html",
+ "title_en": "Sutra Study: Early Buddhism & the Historical Buddha — Day 29",
+ "src_hash": "cac232497486",
+ "questions": [
+  {
+   "id": "04e55b3402",
+   "question": "佛陀临终说「自洲自依、法洲法依」，不指定接班人。按文章的理解，若某位老师要求弟子放弃对法的独立检验、只管照他说的做，这与遗训是什么关系？",
+   "options": [
+    "符合遗训：依法就是依传法的老师，老师代表法，服从老师即服从法",
+    "恰好违背了遗训：可以尊师、借师承传法，但最终裁断要靠自己验证法",
+    "与遗训无关：这句话只针对佛灭时僧团的继承问题，不涉及一般的师徒关系",
+    "并不违背：遗训的重点在戒律传承，只要老师持戒清净，弟子就可以全然依止"
+   ],
+   "answer": 1,
+   "explanation": "文章区分「法」与「承载法的人格权威」：佛陀反对的是让某人的裁断代替你自己的验证，并不否定师承与僧团作为传递管道。理想是以人为舟、以法为岸，尊师而不盲从。",
+   "question_en": "On his deathbed the Buddha said, “Be islands unto yourselves, take the Dharma as your refuge,” naming no successor. Per the article, if a teacher demands that disciples give up independently testing the teaching and simply obey, how does that relate to his last instruction?",
+   "options_en": [
+    "It fits it: relying on the Dharma means relying on the teacher who transmits it, so obeying him is obeying the Dharma",
+    "It directly contradicts it: one may honor teachers and rely on lineage, but the final judgment rests on one's own verification",
+    "It's unrelated: the saying addressed only succession in the sangha after his death, not ordinary teacher–student ties",
+    "It's no violation: the instruction was about monastic discipline, so a teacher who keeps the precepts may be followed wholly"
+   ],
+   "explanation_en": "The article separates the Dharma from the personal authority of those who carry it: the Buddha opposed letting anyone's verdict replace your own verification, but not lineage or sangha as channels of transmission. The ideal is the teacher as boat, the Dharma as shore—respect without blind obedience."
+  },
+  {
+   "id": "303b282255",
+   "question": "学者想逼近最早的佛陀教说层，用的「对读法」是怎么做的？",
+   "options": [
+    "比对巴利《尼柯耶》与汉译《阿含》，取两条传承共有的内容，剥离后世增益",
+    "比对南北两传对部派分裂的记载，选出叙述更详细的一方作为可信原始版本",
+    "以阿育王石刻法敕为标准答案，经文中凡是与法敕内容不一致的部分都予以剔除",
+    "以年代最早的贝叶写本为准，凡是后来写本中多出来的段落一律视为后世伪作删去"
+   ],
+   "answer": 0,
+   "explanation": "文章说对读法比对两条独立传承的共通部分，可剥离后世增益；并补充愈是各派共有、愈质朴不利于教团的记载，可信度愈高。对两传的分裂记载，文章主张交叉比对、留意书写者的利害，而不是挑更详细的一方。",
+   "question_en": "To get at the earliest layer of the Buddha's teaching, scholars use a “comparative reading” method. How does it work?",
+   "options_en": [
+    "Compare the Pali Nikayas with the Chinese Agamas and keep what both independent lineages preserve, stripping later accretions",
+    "Compare the southern and northern accounts of the schism and adopt the more detailed one as the authentic original",
+    "Treat Ashoka's rock edicts as the answer key and remove any scriptural content that disagrees with the edicts",
+    "Take the oldest palm-leaf manuscript as the standard and delete any passage added in later manuscripts as a forgery"
+   ],
+   "explanation_en": "The article says comparing the shared portions of two independent transmissions strips away later additions, adding that records shared across schools and plain or unflattering to the order are most credible. For the two schism accounts, it urges cross-checking and noting each writer's stake—not picking the more detailed one."
+  },
+  {
+   "id": "9cb2ddb750",
+   "question": "阿育王在羯陵伽之战后转向「法胜」。文章特别提醒，法敕中的「正法」应当如何理解？",
+   "options": [
+    "包容各教的公共道德，如不杀生、孝亲、宽容；他护持佛法却不强人皈依",
+    "狭义的佛教教义宣传，法敕的主要目的是借国家之力推动全国百姓皈依佛教",
+    "一份关于佛陀生平的权威记载，补上了口传经典在史实细节上缺失的那部分",
+    "一部约束僧团的戒律法典，用来平息当时大众部与上座部之间激烈争端"
+   ],
+   "answer": 0,
+   "explanation": "文章说要诚实指出：法敕里的正法是包容各教的公共道德，不是教派宣传；阿育王的伟大恰在护法而不强人皈依，佛教由此从地方教团变成世界宗教。",
+   "question_en": "After the Kalinga war, Ashoka turned to “conquest by Dharma.” What does the article specifically caution about how to understand the “Dharma” in his edicts?",
+   "options_en": [
+    "An inclusive public ethic—non-killing, filial piety, tolerance, truthfulness; he supported Buddhism without forcing conversion",
+    "Narrow Buddhist doctrinal propaganda whose main purpose was to use state power to convert the entire population",
+    "An authoritative record of the Buddha's life, filling in historical details missing from the oral scriptures",
+    "A legal code of monastic discipline, meant to settle the fierce dispute between the Mahasamghika and Sthavira schools"
+   ],
+   "explanation_en": "The article insists on honesty here: the edicts' Dharma is an inclusive public morality, not sectarian propaganda. Ashoka's greatness lay in protecting the teaching without forcing conversion, which turned Buddhism from a regional order into a world religion."
+  }
+ ]
+}

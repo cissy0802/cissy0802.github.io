@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/influence-read947.html",
+ "title": "《影响力》— 好书精读",
+ "page_en": "/deep-reading/influence-read947.en.html",
+ "title_en": "Influence — Deep Reading",
+ "src_hash": "321bdf86493f",
+ "questions": [
+  {
+   "id": "9cf07fe945",
+   "question": "买车时销售先报了一个低得诱人的价，你试驾、填表、说服了家人，签约前价格却因「算漏一项」回到正常水平。按书中的建议，这一刻该怎么判断？",
+   "options": [
+    "抓住对方理亏的机会砍价，把多出来的那一项费用压回到最初报价格",
+    "把价格问题放一边，只要车本身合心意，最初那个价是真是假无关紧要",
+    "问自己：如果一开始就是这个价，我还会点头吗？答案是否就立刻走人",
+    "既然已经投入了大量时间和精力，就该按新价成交，免得前面的付出白费"
+   ],
+   "answer": 2,
+   "explanation": "这是「虚报低价」：最初的价格早已不是你买车的理由，你在它上面堆了一整套自己造的理由，抽掉地基楼照样站着。书给的唯一防守就是回到那个问题；因为投入了沉没成本而成交，正是这招想要的效果。",
+   "question_en": "A car salesperson quotes an irresistibly low price; you test-drive, fill out forms, and win over your family—then before signing, the price returns to normal because “an item was left out.” What does the book advise at this moment?",
+   "options_en": [
+    "Seize on their mistake to haggle, pushing the extra item back down toward the original quoted price",
+    "Set the price aside; as long as the car itself suits you, whether the first quote was genuine doesn't matter",
+    "Ask yourself: if this had been the price from the start, would I have said yes? If not, walk away at once",
+    "Having already invested so much time and effort, close at the new price so the earlier effort isn't wasted"
+   ],
+   "explanation_en": "This is the lowball: the original price is no longer why you're buying—you've built a whole set of your own reasons on top of it, so the structure stands even after the foundation is pulled. The book's sole defense is that question; closing because of sunk effort is exactly what the tactic counts on."
+  },
+  {
+   "id": "f7888fe102",
+   "question": "一座城市想减少乱扔垃圾，宣传牌写着「本市每年有数十万人乱扔垃圾，严重破坏环境」。按书中社会认同的原理，这块牌子最可能的问题是什么？",
+   "options": [
+    "它没有借助权威，如果署上环保专家的名字，人们的服从率就会明显提高",
+    "它用的是统计数字，人们对抽象数字无感，换成触目惊心的照片才会奏效",
+    "它的语气不够严厉，也没写明罚款数额，所以对乱扔垃圾的人缺少威慑力",
+    "它强调问题有多普遍，等于告诉人「大家这么做」，可能反而助长乱扔"
+   ],
+   "answer": 3,
+   "explanation": "书中化石森林公园的实验里，谴责「大量游客带走木化石」的告示反而让偷窃率上升。「问题有多普遍」和「你不该做」互相拆台；更有效的是说多数人都在遵守。",
+   "question_en": "A city trying to reduce littering posts signs reading, “Hundreds of thousands of residents litter every year, seriously damaging our environment.” By the book's principle of social proof, what is the sign's likely problem?",
+   "options_en": [
+    "It invokes no authority; adding an environmental expert's name would noticeably raise compliance",
+    "It relies on statistics, which people find abstract; shocking photos would be needed for it to work",
+    "Its tone isn't stern enough and it omits the fine amount, so it lacks any deterrent force against litterers",
+    "By stressing how common the problem is, it tells people “everyone does this,” which may actually encourage littering"
+   ],
+   "explanation_en": "In the book's Petrified Forest experiment, a sign condemning the many visitors who take petrified wood actually raised theft. “How widespread this is” and “you shouldn't do it” undercut each other; it works better to say most people comply."
+  },
+  {
+   "id": "003f1c9ca2",
+   "question": "书的结论是知道了还是会中招。那它给出的真正防守是什么？",
+   "options": [
+    "彻底关掉这些自动反应，每件事都先做全面的理性分析，然后再做决定",
+    "不关掉捷径，只加一道真伪检测：线索若是伪造的，就不再欠它顺从",
+    "一律拒绝陌生人的任何赠品和请求，从源头上杜绝互惠原则被人利用",
+    "熟记七条原则的名字和招数，读懂了这本书就能在当场获得免疫力"
+   ],
+   "answer": 1,
+   "explanation": "书认为捷径关不掉也不该关，它们平时多半是对的；伪造的恩惠不是恩惠，那笔债当场作废，再加一条：凡逼你现在决定的，一律明天再说。熟读原则就能免疫，正是书最后否认的那一点。",
+   "question_en": "The book concludes that knowing about these tactics won't stop you from falling for them. What, then, is the real defense it offers?",
+   "options_en": [
+    "Switch these automatic reactions off entirely, and analyze everything fully and rationally before deciding",
+    "Don't switch off the shortcuts—add an authenticity check: once you spot a fabricated cue, you owe it no compliance",
+    "Refuse every gift and request from strangers, eliminating any chance for reciprocity to be exploited",
+    "Memorize the seven principles and their tricks; understanding the book grants on-the-spot immunity"
+   ],
+   "explanation_en": "The book holds that shortcuts can't and shouldn't be switched off—they're usually right. A fake favor isn't a favor, so the debt is void on the spot, plus one rule: anything pushing you to decide now waits until tomorrow. Immunity through study is exactly what the book denies at the end."
+  }
+ ]
+}

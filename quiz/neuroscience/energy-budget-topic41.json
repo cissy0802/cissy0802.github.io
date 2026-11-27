@@ -1,0 +1,69 @@
+{
+ "page": "/neuroscience/energy-budget-topic41.html",
+ "title": "Topic 41 · 20 瓦的奇迹 — 神经科学",
+ "page_en": "/neuroscience/energy-budget-topic41.en.html",
+ "title_en": "Topic 41 · The 20-Watt Miracle — Neuroscience",
+ "src_hash": "e0e89ecc84d1",
+ "questions": [
+  {
+   "id": "051cc005a4",
+   "question": "按文章修正后的皮层能量预算，脑的能量大头花在哪里？",
+   "options": [
+    "执行高难度认知任务时的额外运算，所以认真思考时全脑能耗会明显地飙升",
+    "神经元放电那一刻开闸放电本身，信号越多越密集，花在思考上的能量就越大",
+    "合成神经递质和长出新突触，学习新东西时这部分开销占到总能耗一半以上",
+    "事后钠钾泵烧 ATP 把离子抽回原位，其中突触后接收约占一半，比放电贵"
+   ],
+   "answer": 3,
+   "explanation": "文章说放电是顺浓度差开闸放水，几乎不花钱；真正付账的是事后泵把离子抽回。修正版里接收约占一半、放电约两成，静息漏电又占两成。2001 年的旧表曾以为放电占近一半，后来被改掉了。",
+   "question_en": "According to the article's revised cortical energy budget, where does most of the brain's energy go?",
+   "options_en": [
+    "To extra computation during demanding cognitive tasks, which is why whole-brain energy use spikes when you concentrate",
+    "To the moment of firing itself; the more and denser the signals, the more energy goes into thinking",
+    "To synthesizing neurotransmitters and growing new synapses, which takes over half the total when learning something new",
+    "Afterward, to Na⁺/K⁺ pumps spending ATP to restore ions—with postsynaptic receiving taking about half, more than spiking itself"
+   ],
+   "explanation_en": "The article says firing is like opening a floodgate along the gradient—nearly free; the bill comes afterward as pumps restore the ions. In the revised budget, receiving takes about half, spiking about a fifth, and resting leak another fifth. The 2001 estimate had spiking at nearly half before it was revised."
+  },
+  {
+   "id": "bf105544ad",
+   "question": "人脑有 860 亿个神经元，却只耗约 20 瓦。按文章，这两者为什么能并存？",
+   "options": [
+    "我们平时只用了大约 10% 的大脑，其余九成神经元长期闲置，几乎不消耗能量",
+    "脑在进化中缩小了单个神经元的体积，神经元越小，维持静息电位所需能量越少",
+    "每个神经元单次放电的能耗都极低，所以即使全部同时活跃，总功率也不会很高",
+    "账单跟着同时活跃的数量走，预算只许皮层约 1% 同时活跃，容量与成本分开"
+   ],
+   "answer": 3,
+   "explanation": "文章说稀疏是被电费逼出来的纪律：用 20 瓦除以单个脉冲的成本，同一时刻只养得起约 1% 的神经元活跃，就像拥有一座巨大的图书馆、一次只开一盏灯。「只用了 10% 的大脑」被文章明确驳斥：进化不会为常年闲置九成的组织付钱。",
+   "question_en": "The human brain has 86 billion neurons yet runs on about 20 watts. Per the article, how can both be true?",
+   "options_en": [
+    "We normally use only about 10% of the brain, and the other 90% of neurons sit idle, consuming almost no energy",
+    "Evolution shrank individual neurons, and the smaller a neuron, the less energy it needs to hold its resting potential",
+    "Each spike costs so little energy that even if every neuron fired at once, total power would stay low",
+    "The bill tracks how many neurons are active at once, and the budget lets only about 1% of cortex be active—capacity and cost are decoupled"
+   ],
+   "explanation_en": "The article calls sparseness a discipline imposed by the power bill: dividing 20 watts by the cost of a spike means only about 1% of neurons can be active at once—like owning a vast library and lighting one lamp at a time. The “10% of the brain” myth is explicitly refuted: evolution wouldn't pay for tissue that idles 90% of the time."
+  },
+  {
+   "id": "094d882ce0",
+   "question": "有人说「做难题很费卡路里，所以用脑之后会饿」。按文章的能量账，哪种说法最准确？",
+   "options": [
+    "脑的能耗完全由血糖决定，多吃糖就能让脑转得更快，做难题前应先补充糖分",
+    "做难题时全脑能耗会翻倍，高强度脑力劳动的消耗接近一场中等强度运动",
+    "发呆时脑几乎停止耗能，只有专心思考时才大量调用能量，所以想得越多越饿",
+    "任务增量通常不到 5%，大部分开销是不管干什么都在烧的自发活动"
+   ],
+   "answer": 3,
+   "explanation": "文章说任务增量通常在 5% 以内，算下来一天不过几十千卡；其余是 Raichle 所说的脑的暗能量。所以发呆在能量账上是全价的；文章也说补糖提高认知的效应零散而且小。",
+   "question_en": "Someone says, “Hard problems burn lots of calories, which is why thinking makes you hungry.” By the article's energy accounting, which statement is most accurate?",
+   "options_en": [
+    "Brain energy use is set entirely by blood sugar; eating sugar makes the brain run faster, so fuel up before hard problems",
+    "Whole-brain energy use doubles on hard problems, so intense mental work burns about as much as moderate exercise",
+    "The brain nearly stops using energy when idle and draws heavily only when focused, so more thinking means more hunger",
+    "Task-driven energy increases are usually under 5%; most of the brain's spending is intrinsic activity that runs whatever you're doing"
+   ],
+   "explanation_en": "The article says task increments are usually within 5%—a few dozen kilocalories a day—while the rest is what Raichle calls the brain's dark energy. Daydreaming is thus paid at full price; the article also says sugar's effects on cognition are scattered and small."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/buddhism/buddhistart-day32.html",
+ "title": "佛经详解：佛教艺术与象征 — Day 32",
+ "page_en": "/buddhism/buddhistart-day32.en.html",
+ "title_en": "Sutra Deep Dive: Buddhist Art & Symbolism — Day 32",
+ "src_hash": "7ae9567b5c38",
+ "questions": [
+  {
+   "id": "48c314af71",
+   "question": "按《观无量寿佛经》揭示的造像原理，佛像的三十二相与各种手印最准确的定位是什么？",
+   "options": [
+    "观想的视觉词汇：借外在相好作所缘，唤起内在的「是心作佛」",
+    "信众礼拜祈福的对象本身，像越庄严，供奉它所得的功德也就越大",
+    "佛陀真实容貌的写实记录，靠弟子们代代口传描述才得以保存下来",
+    "画工依个人审美自由发挥的装饰，主要用来区分不同寺院风格"
+   ],
+   "answer": 0,
+   "explanation": "文章强调像是「观」的所缘而不是崇拜的偶像，次序是先有观想的需求、后有图像的法度。把像当作礼拜的终点，正是文中所说的「执像为实」。",
+   "question_en": "According to the principle the Contemplation Sutra reveals, what are the Buddha's thirty-two marks and hand gestures (mudras) best understood as?",
+   "options_en": [
+    "A visual vocabulary for visualization—outer marks serving as supports that awaken the inner “this mind becomes Buddha”",
+    "Objects of worship in their own right; the more splendid the image, the greater the merit of venerating it",
+    "A realistic record of the Buddha's actual appearance, preserved through generations of oral description",
+    "Ornaments left to each painter's taste, used mainly to tell one monastery's style from another's"
+   ],
+   "explanation_en": "The article stresses that images are supports for contemplation, not idols: the need to visualize came first, the iconographic rules after. Treating the image as the endpoint of worship is exactly what it calls “grasping the image as real.”"
+  },
+  {
+   "id": "ca4e691ebe",
+   "question": "《造像量度经》以「指」为单位严格规定佛身比例。文章怎样看这种约束与创造的关系？",
+   "options": [
+    "以规矩证庄严：统一比例让互不相识的匠人造出一致可辨、令人起敬的相好",
+    "它是为维护宗教正统而牺牲艺术个性的代价，所以唐卡的艺术价值低于自由创作",
+    "比例来自对佛陀真身的实测，严守量度是为了让佛像在外形上忠实于历史原貌",
+    "它只在清代宫廷造像中通行，民间画师大多不依量度，凭自己眼光直接起稿"
+   ],
+   "answer": 0,
+   "explanation": "文章说量度不是束缚创造，而是大规模一致性的前提，类比设计规范让分散的团队产出可互操作的系统。把它看成牺牲个性的代价，恰是文章要反驳的直觉。",
+   "question_en": "The Iconometry Sutra fixes the Buddha's proportions in finger-width units. How does the article view the relationship between this constraint and creativity?",
+   "options_en": [
+    "Rules bear witness to majesty: shared proportions let artisans who never met produce consistent, recognizable, awe-inspiring images",
+    "It is a price paid for orthodoxy at the expense of individuality, which is why thangka ranks below free artistic creation",
+    "The proportions were measured from the Buddha's actual body, so strict adherence keeps images historically faithful",
+    "It applied only to Qing court commissions; most folk painters ignored the measurements and sketched entirely by eye"
+   ],
+   "explanation_en": "The article says the measurements don't fetter creativity—they are the precondition for consistency at scale, like a design system letting distributed teams build interoperable parts. Seeing them as a sacrifice of individuality is the intuition the article argues against."
+  },
+  {
+   "id": "e05744ed68",
+   "question": "曼荼罗以中心的大日如来统摄诸尊，中观却说一切无自性、无中心。文章如何调和这两者？",
+   "options": [
+    "曼荼罗只是寺院里装饰画，并不承载义理，所以根本谈不上与中观相互矛盾",
+    "二者本来就矛盾，密教在这一点上背离了中观，只能把它看作后起的一种民间信仰",
+    "中心大日是世俗谛上的方便施设，大日遍一切处，所谓中心恰恰无所不在",
+    "中观只破其他诸法的自性，大日如来作为宇宙的实有主宰，并不在被破的范围之内"
+   ],
+   "answer": 2,
+   "explanation": "文章用二谛化解：中观在胜义谛上破一切自性，密教的中心是世俗谛上的方便施设，执其中心为实反失密意。说大日是实有主宰，正是文章否定的读法；文章也强调曼荼罗不是装饰画。",
+   "question_en": "A mandala places Mahavairocana at the center of all deities, while Madhyamaka holds that nothing has inherent existence or a center. How does the article reconcile them?",
+   "options_en": [
+    "The mandala is only a decorative temple painting with no doctrinal content, so no conflict with Madhyamaka arises",
+    "They genuinely conflict; esoteric Buddhism departed from Madhyamaka here and should be seen as a later folk belief",
+    "The central Buddha is a conventional-truth device; since he pervades everywhere without fixed place, the “center” is in fact everywhere",
+    "Madhyamaka refutes the inherent existence of other dharmas only; Mahavairocana as a real cosmic ruler is exempt"
+   ],
+   "explanation_en": "The article resolves it with the two truths: Madhyamaka negates all inherent existence at the ultimate level, while the esoteric center is a skillful device at the conventional level—grasping it as real misses the point. Treating Mahavairocana as a real ruler is the reading the article rejects, and it insists the mandala is not decoration."
+  }
+ ]
+}

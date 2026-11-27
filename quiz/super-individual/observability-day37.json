@@ -1,0 +1,69 @@
+{
+ "page": "/super-individual/observability-day37.html",
+ "title": "Day 37 · AI 可观测性 — Super Individual",
+ "page_en": "/super-individual/observability-day37.en.html",
+ "title_en": "Day 37 · AI Observability — Super Individual",
+ "src_hash": "74a5ca2cd8d8",
+ "questions": [
+  {
+   "id": "52ff1718e2",
+   "question": "你的 LLM 应用最近输出长度和拒答率突然变了，但同期用户输入的分布经检测很稳定，你也没改代码。按文章的漂移矩阵，最该先排查什么？",
+   "options": [
+    "模型或配置侧的变化，例如供应商静默更新了模型，或 prompt、温度被人改过",
+    "用户涌入了新话题和新问法，应该尽快补充 few-shot 示例并重新做线下测试",
+    "可观测后端的采样率设置有误，导致统计出来的输出分布出现了随机波动",
+    "服务器负载过高造成响应被截断，应该先扩容推理集群并调高超时时间"
+   ],
+   "answer": 0,
+   "explanation": "输入稳定而输出漂移，几乎一定是模型侧或配置侧变了，这是托管 API 最危险的失败模式。补 few-shot、重测是输入漂移那一格的处方，而这里输入恰恰没变。",
+   "question_en": "Your LLM app's output length and refusal rate shifted suddenly, yet monitoring shows the input distribution is stable and you changed no code. Per the article's drift matrix, what should you check first?",
+   "options_en": [
+    "A change on the model or config side, such as a silent vendor model update or someone editing the prompt or temperature",
+    "An influx of new topics and phrasings from users; add few-shot examples promptly and rerun offline evaluation",
+    "A misconfigured sampling rate in the observability backend, producing random fluctuations in output statistics",
+    "Responses truncated under heavy server load; scale out the inference cluster and raise timeout limits first"
+   ],
+   "explanation_en": "Stable input with drifting output almost always means the model or config changed—the most dangerous failure mode of hosted APIs. Adding few-shot and retesting is the prescription for input drift, and here the input didn't change."
+  },
+  {
+   "id": "7a8701c0b3",
+   "question": "团队打算在每个请求返回给用户之前，先同步调用 LLM-as-judge 给全部回答打分，并把分数当作质量的标准答案。按文章，这个方案错在哪？",
+   "options": [
+    "同步打分本身没有问题，只是应该改用比被测模型更弱的小模型来降低推理成本",
+    "在线 eval 应异步旁路、judge 只跑采样，且 judge 会漂，要定期用人工校准",
+    "LLM-as-judge 完全不可靠，在线评估只应该使用规则检查，judge 只能留给线下测试",
+    "方案大体可行，只要把 judge 的打分结果缓存起来，重复的问题就不必再算一遍"
+   ],
+   "answer": 1,
+   "explanation": "文章要求在线 eval 绝不能挡在响应的关键路径上；全量跑 judge 的成本可能反超推理本身；judge 有偏且会漂，适合做趋势告警而不是终审，需要人工校准。文章并没有否定 judge，而是按成本分层使用。",
+   "question_en": "A team plans to synchronously call an LLM-as-judge on every answer before returning it to the user, treating the score as ground truth for quality. Per the article, what's wrong with this?",
+   "options_en": [
+    "Synchronous scoring is fine; they should just switch to a model weaker than the one under test to cut inference cost",
+    "Online eval should run async off the hot path with the judge on a sample, and the judge itself drifts, so calibrate it against human labels",
+    "LLM-as-judge is entirely unreliable; online eval should use only rule-based checks, leaving judges for offline tests",
+    "The plan is basically sound; caching the judge's scores means repeated questions won't need to be scored again"
+   ],
+   "explanation_en": "The article insists online eval must never sit on the response's critical path; judging all traffic can cost more than inference itself; and judges are biased and drift, fit for trend alerts rather than final verdicts, so they need human calibration. The article doesn't reject judges—it layers them by cost."
+  },
+  {
+   "id": "5445e4ac2c",
+   "question": "本月 LLM 账单突然翻倍。为什么文章认为只监控总 token 和总花费是不够的？",
+   "options": [
+    "成本异常常是某个 feature 的一次回归，如去掉 cache 断点，淹没在总量里",
+    "总量只反映平均值，文章建议改为只盯每任务成本的中位数，并忽略掉长尾请求",
+    "总花费受供应商调价影响太大，必须先换算成固定单价，才能和上个月的账单做比较",
+    "总 token 统计里混入了失败请求，只要剔除那些报错的调用，账单就能恢复正常"
+   ],
+   "answer": 0,
+   "explanation": "文章说成本高度集中在少数昂贵路径上，要沿 span 树按 feature、用户、prompt 版本、步骤归因，才知道哪里贵。它建议盯的是 p95，正因为平均值会被便宜请求拉低、长尾才烧钱。",
+   "question_en": "This month's LLM bill suddenly doubled. Why does the article say monitoring only total tokens and total spend isn't enough?",
+   "options_en": [
+    "Cost anomalies are often a single feature's regression, like a removed cache breakpoint, which gets buried in the totals",
+    "Totals only reflect averages; the article advises watching the median per-task cost instead and ignoring the tail",
+    "Total spend swings too much with vendor price changes and must first be normalized to a fixed unit price",
+    "Total token counts include failed requests; once errored calls are excluded, the bill will return to normal"
+   ],
+   "explanation_en": "The article says cost concentrates on a few expensive paths, so you must attribute it along the span tree by feature, user, prompt version, and step to see where it goes. It recommends p95 precisely because averages are pulled down by cheap requests while the tail burns money."
+  }
+ ]
+}

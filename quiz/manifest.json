@@ -2887,6 +2887,140 @@
     "4a729d4c0e",
     "8e67e80f40"
    ]
+  },
+  "/buddhism/buddhistart-day32.html": {
+   "t": "佛经详解：佛教艺术与象征 — Day 32",
+   "f": "buddhism/buddhistart-day32.json",
+   "q": [
+    "48c314af71",
+    "ca4e691ebe",
+    "e05744ed68"
+   ]
+  },
+  "/psychology/self-compassion-day6.html": {
+   "t": "心理学 Day 6：自我同情 — 给自己的话，能换成给朋友的吗？",
+   "f": "psychology/self-compassion-day6.json",
+   "q": [
+    "7bad5411e2",
+    "8afebc2c1e",
+    "3793a4c6a4"
+   ]
+  },
+  "/deep-reading/power-of-habit-read908.html": {
+   "t": "《习惯的力量》— 每日精读 Read 908",
+   "f": "deep-reading/power-of-habit-read908.json",
+   "q": [
+    "d04d678069",
+    "0c631fd2a4",
+    "ff40c32e5b"
+   ]
+  },
+  "/biographies/curie-day16.html": {
+   "t": "人物传记 · Marie Curie · Day 16",
+   "f": "biographies/curie-day16.json",
+   "q": [
+    "b923e75cef",
+    "e3ffbe01c3"
+   ]
+  },
+  "/deep-reading/influence-read947.html": {
+   "t": "《影响力》— 好书精读",
+   "f": "deep-reading/influence-read947.json",
+   "q": [
+    "9cf07fe945",
+    "f7888fe102",
+    "003f1c9ca2"
+   ]
+  },
+  "/podcast-deepread/elon-manufacturing-topic36.html": {
+   "t": "Elon Musk 专题 · 工厂才是产品",
+   "f": "podcast-deepread/elon-manufacturing-topic36.json",
+   "q": [
+    "a8a218cca6",
+    "78a66394db",
+    "ff23092adc"
+   ]
+  },
+  "/super-individual/observability-day37.html": {
+   "t": "Day 37 · AI 可观测性 — Super Individual",
+   "f": "super-individual/observability-day37.json",
+   "q": [
+    "52ff1718e2",
+    "7a8701c0b3",
+    "5445e4ac2c"
+   ]
+  },
+  "/evolutionary-biology/replaying-lifes-tape-day38.html": {
+   "t": "进化生物学 Day 38：重放生命的磁带",
+   "f": "evolutionary-biology/replaying-lifes-tape-day38.json",
+   "q": [
+    "742c1a1085",
+    "ffd25e1ee6",
+    "cd5060f983"
+   ]
+  },
+  "/chapter-deepread/fosa-ch17-microservices-architecture-book224.html": {
+   "t": "FoSA 第 17 章 · 微服务架构：宁可重复，也不要耦合 — 专业书籍精读 Book 224",
+   "f": "chapter-deepread/fosa-ch17-microservices-architecture-book224.json",
+   "q": [
+    "891a130ee7",
+    "9f3d714c24",
+    "65f3492bcd"
+   ]
+  },
+  "/buddhism/earlybuddhism-day29.html": {
+   "t": "佛经详解：早期佛教与历史佛陀 — Day 29",
+   "f": "buddhism/earlybuddhism-day29.json",
+   "q": [
+    "04e55b3402",
+    "303b282255",
+    "9cb2ddb750"
+   ]
+  },
+  "/novel-deepread/candide-novel117.html": {
+   "t": "老实人 — 小说精读 No.117",
+   "f": "novel-deepread/candide-novel117.json",
+   "q": [
+    "1031e5922b",
+    "436fd3715c",
+    "5e4ecfb761"
+   ]
+  },
+  "/thinker-arena/debate.html?d=walden-simple-living": {
+   "t": "辩论：该主动过「极简 / 少欲」的生活吗？",
+   "f": "thinker-arena/debate-walden-simple-living.json",
+   "q": [
+    "90d0717696",
+    "b6db6074b6",
+    "0f238d2815"
+   ]
+  },
+  "/meta-knowledge/immunology-day35.html": {
+   "t": "元知识详解：免疫学 — Day 35",
+   "f": "meta-knowledge/immunology-day35.json",
+   "q": [
+    "8199731302",
+    "3d1450b73e",
+    "e6ba61d76b"
+   ]
+  },
+  "/neuroscience/energy-budget-topic41.html": {
+   "t": "Topic 41 · 20 瓦的奇迹 — 神经科学",
+   "f": "neuroscience/energy-budget-topic41.json",
+   "q": [
+    "051cc005a4",
+    "bf105544ad",
+    "094d882ce0"
+   ]
+  },
+  "/meta-knowledge/geometric-thinking-day63.html": {
+   "t": "元知识详解：几何思维 — Day 63",
+   "f": "meta-knowledge/geometric-thinking-day63.json",
+   "q": [
+    "8098d94e42",
+    "d3d8f364de",
+    "42eb03f5cd"
+   ]
   }
  },
  "aliases": {

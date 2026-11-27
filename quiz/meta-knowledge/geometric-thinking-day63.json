@@ -1,0 +1,69 @@
+{
+ "page": "/meta-knowledge/geometric-thinking-day63.html",
+ "title": "元知识详解：几何思维 — Day 63",
+ "page_en": "/meta-knowledge/geometric-thinking-day63.en.html",
+ "title_en": "Meta-Knowledge: Geometric Thinking — Day 63",
+ "src_hash": "0dc74955c3a8",
+ "questions": [
+  {
+   "id": "8098d94e42",
+   "question": "19 世纪的数学家否定欧氏几何的第五公设，得到了自洽的双曲几何和椭圆几何。文章认为这件事最深的意义是什么？",
+   "options": [
+    "几何是可选的公理系统：换掉一条公理就得到另一个同样自洽的世界",
+    "它说明数学真理依赖人的空间直觉，因而印证了康德的空间先验哲学",
+    "它终于证明了欧氏几何是错的，真实的空间是弯曲的，平直几何不过是一种近似",
+    "它证明了第五公设其实可以由前四条推出，从而解决了这个悬置两千年的难题"
+   ],
+   "answer": 0,
+   "explanation": "文章说非欧几何把「必然」降级为「约定」：三套几何内部都无矛盾。用前四条证出第五公设的尝试全部失败；这一步动摇而非印证了康德「空间直觉先于经验」的哲学。",
+   "question_en": "In the 19th century, mathematicians negated Euclid's fifth postulate and obtained consistent hyperbolic and elliptic geometries. What does the article see as the deepest significance?",
+   "options_en": [
+    "Geometry is a choosable axiom system: swap one axiom and you get another equally consistent world, none more correct",
+    "It showed mathematical truth rests on human spatial intuition, thereby vindicating Kant's a priori philosophy of space",
+    "It finally proved Euclidean geometry wrong—real space is curved, and flat geometry is merely an approximation",
+    "It showed the fifth postulate could in fact be derived from the first four, settling the two-thousand-year problem"
+   ],
+   "explanation_en": "The article says non-Euclidean geometry demoted “necessity” to “convention”: all three geometries are internally consistent. Every attempt to derive the fifth postulate from the other four failed, and the episode undermined rather than confirmed Kant's view that spatial intuition precedes experience."
+  },
+  {
+   "id": "d3d8f364de",
+   "question": "一张平纸能无损地卷成圆筒，却无论如何也服帖不了一个球。按高斯的绝妙定理，原因是什么？",
+   "options": [
+    "纸张的纤维缺乏延展性，若换成足够薄而有弹性的材料，就能无损地贴合球面",
+    "平面和圆筒内蕴曲率都为零，弯折不改变它；球面曲率为正，二者内蕴不同",
+    "圆筒只在一个方向上弯曲、弯得比球面少，纸张的韧性刚好能承受住这种程度",
+    "球面是三维物体而纸是二维的，维度不同的物体在几何上本来就无法贴合"
+   ],
+   "answer": 1,
+   "explanation": "文章说曲率是内禀性质，在只弯折、不拉伸的变形下保持不变；平面和圆筒曲率都是零，球面为正，所以硬贴必然起皱或撕裂，这也是所有平面世界地图都必然变形的原因。靠有弹性的材料去贴就是拉伸，改变了长度关系，不再是无损贴合。",
+   "question_en": "A flat sheet of paper can be rolled into a cylinder without distortion but can never lie smoothly over a sphere. According to Gauss's Theorema Egregium, why?",
+   "options_en": [
+    "Paper fibers lack stretchiness; a thin enough elastic material could be made to fit the sphere without distortion",
+    "Plane and cylinder both have zero intrinsic curvature, which bending without stretching preserves; a sphere's is positive, so they differ intrinsically",
+    "A cylinder bends in only one direction, less than a sphere does, and paper's toughness can just withstand that degree",
+    "A sphere is three-dimensional while paper is two-dimensional, and objects of different dimensions can never fit geometrically"
+   ],
+   "explanation_en": "The article says curvature is intrinsic and stays unchanged under bending without stretching; plane and cylinder are both zero, the sphere positive, so forcing a fit must wrinkle or tear—which is also why every flat world map distorts. An elastic material fits only by stretching, which changes lengths, so it's no longer distortion-free."
+  },
+  {
+   "id": "42eb03f5cd",
+   "question": "五次及以上的多项式方程没有通用的根式求根公式。文章怎样解释这一点？",
+   "options": [
+    "五次方程的计算量随次数急剧膨胀，人工无法完成推导，但计算机原则上能找出公式",
+    "五次方程的根大多不是实数，而根式运算只能处理实数，所以写不出公式",
+    "数学家只是证明了目前已知的方法都行不通，未来仍有可能发现全新的求根公式",
+    "不是没找到而是不存在：能否根式求解取决于对称群，五次方程的群不可解"
+   ],
+   "answer": 3,
+   "explanation": "文章说伽罗瓦证明：方程能否用根式求解取决于它的对称群结构，五次方程的对称群 S₅ 不是可解群，通路被从根本上封死。一个看似纯计算的问题，答案藏在对称性里。",
+   "question_en": "Polynomial equations of degree five and above have no general formula in radicals. How does the article explain this?",
+   "options_en": [
+    "The computation explodes with the degree; humans can't finish the derivation, but a computer could find the formula in principle",
+    "Most roots of a quintic aren't real numbers, and radical operations handle only real numbers, so no formula can be written",
+    "Mathematicians have only shown that all currently known methods fail; an entirely new formula might still be found someday",
+    "It isn't undiscovered—it can't exist: solvability by radicals depends on the symmetry group, and the quintic's group isn't solvable"
+   ],
+   "explanation_en": "The article says Galois proved that solvability by radicals depends on the symmetry group, and the quintic's group S₅ is not solvable, so the path is closed in principle. A seemingly computational question turns out to hinge on symmetry."
+  }
+ ]
+}

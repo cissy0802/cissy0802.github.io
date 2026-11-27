@@ -1,0 +1,69 @@
+{
+ "page": "/psychology/self-compassion-day6.html",
+ "title": "心理学 Day 6：自我同情 — 给自己的话，能换成给朋友的吗？",
+ "page_en": "/psychology/self-compassion-day6.en.html",
+ "title_en": "Psychology Day 6: Self-Compassion — Could You Say That to a Friend?",
+ "src_hash": "597db46769e9",
+ "questions": [
+  {
+   "id": "7bad5411e2",
+   "question": "研究显示，得到自我同情提示的人失败后更愿意重做任务、投入更久。按文章的解释，自我同情提升动机的机制是什么？",
+   "options": [
+    "拿掉羞耻之后，人才敢正视自己的错误，学习也才有可能发生",
+    "它带来愉快的情绪奖励，用好心情抵消了失败带来的疲惫感",
+    "它降低了对自己的标准，目标变得容易达成，于是更愿意尝试",
+    "它像高自尊一样让人相信自己比别人强，因而更有信心再赢一次"
+   ],
+   "answer": 0,
+   "explanation": "文章的链条是：羞耻导致回避、回避阻断学习；同情带来安全感，能正视错误才会学习。文章明确说自我同情不降低标准，也把它与依赖比较、要求赢的自尊区分开。",
+   "question_en": "Studies found that people prompted toward self-compassion were more willing to retry a failed task and kept at it longer. By the article's account, how does self-compassion raise motivation?",
+   "options_en": [
+    "Removing shame lets people face their mistakes squarely, which is what makes learning possible",
+    "It delivers a pleasant emotional reward, and the good mood offsets the fatigue that failure brings",
+    "It lowers the standards people hold themselves to, so goals feel easier and they try more readily",
+    "Like high self-esteem, it makes people believe they outperform others, boosting confidence to win again"
+   ],
+   "explanation_en": "The article's chain: shame breeds avoidance, avoidance blocks learning; compassion brings safety, and facing errors is what lets learning happen. It states plainly that self-compassion doesn't lower standards, and it distinguishes it from self-esteem, which depends on comparison and needs to win."
+  },
+  {
+   "id": "8afebc2c1e",
+   "question": "孩子沮丧地说「只有我考砸了」。按文章对共通人性的理解，哪种回应最贴切？",
+   "options": [
+    "「一次考试而已，真没什么大不了，别再为这件事难过了。」",
+    "「下次复习再认真一点，你肯定就能考出好成绩来。」",
+    "「每个人都会有搞砸的感觉，这就是人在学习的样子。」",
+    "「班上肯定有人考得比你还差，你根本不是最差的那个。」"
+   ],
+   "answer": 2,
+   "explanation": "文章特别提醒不要说「别人也有考差的」，那是比较；共通人性是承认痛苦的强度，同时把它放回人类共有的处境，「AND 不是 BUT」。说没什么大不了，则是在淡化痛苦。",
+   "question_en": "A child says dejectedly, “I'm the only one who flunked.” Based on the article's idea of common humanity, which response fits best?",
+   "options_en": [
+    "“It's just one test, honestly no big deal, so stop being upset about it.”",
+    "“Just study a bit harder next time and you'll definitely get a good score.”",
+    "“Everyone has that feeling of messing up—it's part of how people learn.”",
+    "“I'm sure someone in your class did worse—you're definitely not the worst.”"
+   ],
+   "explanation_en": "The article specifically warns against “others did badly too,” which is comparison. Common humanity acknowledges how much it hurts while placing it within a shared human experience—“and,” not “but.” Calling it no big deal is minimizing."
+  },
+  {
+   "id": "3793a4c6a4",
+   "question": "一位长期照顾家人、习惯忍让的人已经耗竭，身边人还常常得寸进尺。按文章的 tender/fierce 框架，此时更该加强的是什么？",
+   "options": [
+    "凶猛的自我同情：划清边界、说不，为被苛待的自己挺身而出",
+    "更严格地反省自己哪里做得不够，用高标准逼自己走出低落状态",
+    "先把照顾的事做得无可挑剔，等压力小了再练习自我同情",
+    "柔软的自我同情：更多地安慰和接纳自己，继续练习包容身边的人"
+   ],
+   "answer": 0,
+   "explanation": "文章指出照顾者型往往 tender 多、fierce 缺，结果是耗竭和被剥削；对长期 tender 偏多的人，fierce 才是疗愈入口，不是更多忍耐。「先把事做好再来自我同情」被文章明确称为把顺序弄倒了。",
+   "question_en": "Someone who has long cared for family and habitually gives way is now burned out, and people around them keep taking more. Under the article's tender/fierce framework, what should they build up?",
+   "options_en": [
+    "Fierce self-compassion: drawing boundaries, saying no, standing up for the self that has been mistreated",
+    "Scrutinize more strictly where they fall short, using high standards to push out of the slump",
+    "Make their caregiving flawless first, and start practicing self-compassion once the pressure eases",
+    "Tender self-compassion: more comforting and accepting of themselves, while continuing to accommodate others"
+   ],
+   "explanation_en": "The article notes that caretaker types tend to have plenty of tender and too little fierce, ending in exhaustion and exploitation; for them, fierce self-compassion—not more endurance—is the way in. “Do the work first, self-compassion later” is something the article explicitly calls backwards."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/deep-reading/power-of-habit-read908.html",
+ "title": "《习惯的力量》— 每日精读 Read 908",
+ "page_en": "/deep-reading/power-of-habit-read908.en.html",
+ "title_en": "The Power of Habit — Deep Read 908",
+ "src_hash": "5c486d419f55",
+ "questions": [
+  {
+   "id": "d04d678069",
+   "question": "一个人每天下午三点会去买零食，细查发现他真正想要的是离开工位、和人说几句话。按书中改变习惯的黄金法则，最可能奏效的做法是？",
+   "options": [
+    "保留三点这个提示和社交放松的奖赏，只把买零食换成找同事聊几分钟",
+    "下定决心连续二十一天坚决不碰零食，熬过这段时间新习惯就会自动养成",
+    "把办公室和抽屉里零食全部清掉，从源头上切断提示，让习惯自然消失",
+    "每次买零食就罚自己一笔钱，用足够大的代价把这段惯常行为彻底压下去"
+   ],
+   "answer": 0,
+   "explanation": "黄金法则是习惯删不掉、只能改写：提示和奖赏两头不动，只换中间的惯常行为。「21 天养成习惯」被文章点名为不出自本书、也没有可靠依据的误读。",
+   "question_en": "Someone buys a snack at 3 p.m. every day; on closer look, what they really want is to get away from their desk and chat with someone. Under the book's Golden Rule of habit change, what is most likely to work?",
+   "options_en": [
+    "Keep the 3 p.m. cue and the social-break reward, and swap only the snack run for a few minutes chatting with a colleague",
+    "Resolve to go twenty-one days without snacks; once that stretch is over, the new habit will form on its own",
+    "Clear every snack out of the office and drawers, cutting off the cue at the source so the habit simply fades away",
+    "Fine yourself every time you buy a snack, making the cost high enough to stamp out the routine for good"
+   ],
+   "explanation_en": "The Golden Rule says habits can't be deleted, only rewritten: leave the cue and reward in place and replace the routine in the middle. The “21 days” claim is singled out in the article as a myth that doesn't come from this book and lacks solid evidence."
+  },
+  {
+   "id": "0c631fd2a4",
+   "question": "美铝新任 CEO 只抓员工安全，结果利润翻了数倍。按书的解释，安全这个关键习惯为什么能带动全局？",
+   "options": [
+    "华尔街认可这种重视员工的姿态，股价随之上涨，公司得以用更低成本融资",
+    "工伤减少直接省下了大笔赔偿和停工损失，这些省下的钱构成了利润的增长",
+    "为零工伤建起汇报、授权与复盘机制是通用管道，质量效率顺着它被带动",
+    "员工感激公司关心自己的安全，于是自愿加班加点，生产效率自然大幅提高"
+   ],
+   "answer": 2,
+   "explanation": "文章说关键习惯之所以能连锁，是因为它逼你重建一整套底层结构，而这套结构本身是通用的。省下赔偿是常识性的解释，但不是书讲的机制；文章还记下投资人当时以为他疯了。",
+   "question_en": "Alcoa's new CEO focused solely on worker safety, and profits multiplied. Per the book, why could safety, as a keystone habit, lift the whole company?",
+   "options_en": [
+    "Wall Street applauded the employee-friendly stance, the stock rose, and the company could raise capital more cheaply",
+    "Fewer injuries directly saved large sums in compensation and downtime, and those savings made up the profit growth",
+    "The reporting, empowerment, and review routines built for zero injuries were general-purpose channels that carried quality and efficiency along",
+    "Grateful employees, seeing the company cared about their safety, voluntarily worked extra hours, boosting output"
+   ],
+   "explanation_en": "The article says keystone habits cascade because they force you to rebuild underlying structures that are themselves general-purpose. Saved compensation is the commonsense story, not the book's mechanism—and investors at the time reportedly thought he was mad."
+  },
+  {
+   "id": "ff40c32e5b",
+   "question": "书中把意志力描述为会在一天里被反复使用而「耗竭」的资源。文章对这一说法的态度是什么？",
+   "options": [
+    "它是作者自己原创的研究结论，至今学界还没有人系统地检验过它是否真正成立",
+    "它依赖的自我耗竭理论在大规模多实验室复现中基本没能重现，地基已很可疑",
+    "它在实验室里得到了反复验证，只是作者把效应量讲得比原始研究稍微大了一些",
+    "它是全书最扎实的部分，后来脑成像已直接观测到前额叶能量被逐渐耗尽"
+   ],
+   "answer": 1,
+   "explanation": "文章专门给了一条更正：书出版后，自我耗竭理论遭遇复现危机，「意志力像油箱会被用光」的效应基本没能重现。说只是效应量被讲大了，低估了问题：是效应本身没重现出来。文章也说明这本书不是作者的原创研究。",
+   "question_en": "The book describes willpower as a resource that gets “depleted” by repeated use over the day. What is the article's stance on this?",
+   "options_en": [
+    "It is the author's own original research finding, which no one in the field has yet systematically tested",
+    "The ego-depletion theory it rests on largely failed to replicate in a large multi-lab effort, so this foundation is now quite doubtful",
+    "It has been replicated repeatedly in the lab; the author merely made the effect sound a bit larger than the original studies did",
+    "It is the book's most solid part; later brain imaging has directly observed prefrontal energy running out over the day"
+   ],
+   "explanation_en": "The article issues an explicit correction: after publication, ego depletion was hit by the replication crisis, and the “willpower as a fuel tank” effect largely failed to reproduce. Saying the effect size was merely inflated understates it—the effect itself didn't replicate. The article also notes the book is synthesis, not the author's own research."
+  }
+ ]
+}

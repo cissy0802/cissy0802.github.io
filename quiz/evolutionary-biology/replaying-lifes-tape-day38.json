@@ -1,0 +1,69 @@
+{
+ "page": "/evolutionary-biology/replaying-lifes-tape-day38.html",
+ "title": "进化生物学 Day 38：重放生命的磁带",
+ "page_en": "/evolutionary-biology/replaying-lifes-tape-day38.en.html",
+ "title_en": "Evolutionary Biology Day 38: Replaying Life's Tape",
+ "src_hash": "c3b48e407e97",
+ "questions": [
+  {
+   "id": "742c1a1085",
+   "question": "长期演化实验中只有一条线在约三万一千代时学会吃柠檬酸。解冻不同时期的存档重跑：祖先和头一万五千代的存档里一个也长不出，从更晚的存档重跑却反复出现。这说明什么？",
+   "options": [
+    "柠檬酸利用来自一次极其罕见的单个幸运突变，任何存档重跑都几乎不可能把它再现",
+    "看倒回多深：先要攒下几个本身无益的变化铺路，门开之后才会反复出现",
+    "后期存档的培养环境被意外改变了，这使得柠檬酸利用在那些重跑里变得更容易",
+    "演化是完全可重复，只要给足时间，从任何存档重跑最终会长出同样能力"
+   ],
+   "answer": 1,
+   "explanation": "文章说这不是一个幸运突变的故事：前面那些看不出好处的变化把门打开，倒回门开之前怎么跑都出不来，倒回门开之后它几乎等着再来。答案既不是「可重复」也不是「偶然」，而是取决于倒回的深度。",
+   "question_en": "In the long-term evolution experiment, only one line learned to use citrate, around generation 31,000. Replaying frozen samples from different times, researchers got none from the ancestor or the first 15,000 generations, but repeatedly from later samples. What does this show?",
+   "options_en": [
+    "Citrate use came from one extraordinarily rare lucky mutation that almost no replay from any sample could reproduce",
+    "Repeatability depends on how far back you rewind: neutral-looking changes must first pave the way, after which it can recur",
+    "The culture conditions of the later samples had been accidentally altered, making citrate use easier in those replays",
+    "Evolution is fully repeatable; given enough time, every replay from any sample would eventually evolve the same trait"
+   ],
+   "explanation_en": "The article says this isn't a lucky-mutation story: earlier changes with no visible benefit opened the door. Rewind to before it opened and it never appears; rewind to after and it practically waits to recur. The answer is neither “repeatable” nor “chance”—it depends on how deep you rewind."
+  },
+  {
+   "id": "ffd25e1ee6",
+   "question": "文章区分了「历史偶然性」和「随机」。下列哪种说法最符合它的意思？",
+   "options": [
+    "偶然性意味着优秀物种总能活下来，只是它们具体在什么时候胜出无法预测",
+    "偶然性就是演化没有规律，每一步都像掷骰子，所以重放生命的结果完全无从谈起",
+    "偶然性只出现在突变那一层，一旦进入自然选择，结果就由环境完全决定、可以预测",
+    "偶然性要求因果很硬：每步都有原因，但能走到哪取决于哪些支系碰巧活下来"
+   ],
+   "answer": 3,
+   "explanation": "文章说随机只在变异那一层，偶然说的是后果的结构：正因为前面几步真的关掉了一些门，起点稍动，后面的路线图就整个换了。把偶然等同于没有规律，正是文章要澄清的误解；它还提到大灭绝里活下来的常常与优秀无关。",
+   "question_en": "The article distinguishes “historical contingency” from “randomness.” Which statement best matches its meaning?",
+   "options_en": [
+    "Contingency means superior species always survive, though exactly when they come out on top is impossible to predict",
+    "Contingency means evolution has no regularity; every step is a dice roll, so the outcome of a replay can't be discussed at all",
+    "Contingency exists only at the mutation level; once selection takes over, outcomes are fully set by environment and predictable",
+    "Contingency requires firm causation: every step has a cause, but where you can go depends on which lineages happened to survive"
+   ],
+   "explanation_en": "The article says randomness lives only at the level of mutation; contingency describes the structure of consequences—because earlier steps really closed some doors, a small shift at the start redraws the whole later map. Equating contingency with lawlessness is the misunderstanding it clears up, and it notes survivors of mass extinctions often weren't the superior ones."
+  },
+  {
+   "id": "cd5060f983",
+   "question": "加拉帕戈斯的达尔文雀在 1977 年大旱后一代之内喙就明显变深，后来条件反转，喙又变了回去。文章用这组数据说明了什么？",
+   "options": [
+    "演化总在朝更优的方向积累，喙在不断变深的过程中变得越来越适合吃坚硬的种子",
+    "演化速度太快、波动太大，说明自然选择的方向在任何时间尺度上都完全无法预测",
+    "已知条件时短期方向可预测，但条件一反转方向反转，没有长期的「越来越好」",
+    "喙的变化来自个体在旱年里反复啃硬种子后的锻炼，并通过后天习得传给了下一代"
+   ],
+   "answer": 2,
+   "explanation": "文章说短期方向可预测，前提是你知道明年的雨水；长期没有稳定的「越来越」。可预测说的是条件与后果之间的稳定关系，跟有没有目标、是不是越来越好是两件事。",
+   "question_en": "On the Galápagos, Darwin's finch beaks deepened noticeably within a generation after the 1977 drought, then reverted when conditions reversed. What does the article use this to show?",
+   "options_en": [
+    "Evolution always accumulates toward the optimum; beaks kept deepening and grew ever better suited to hard seeds",
+    "Evolution moves too fast and fluctuates too much, so selection's direction is unpredictable on any timescale",
+    "Given known conditions the short-term direction is predictable, but it flips when conditions flip—there's no lasting “ever better”",
+    "Beak changes came from individuals gnawing hard seeds during drought years and passing on the acquired trait"
+   ],
+   "explanation_en": "The article says the short-term direction is predictable if you know next year's rainfall, but there's no stable long-term “more and more.” Predictability means a stable link between conditions and outcomes, which is a separate matter from having a goal or getting better."
+  }
+ ]
+}

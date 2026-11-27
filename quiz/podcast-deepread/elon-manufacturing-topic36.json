@@ -1,0 +1,69 @@
+{
+ "page": "/podcast-deepread/elon-manufacturing-topic36.html",
+ "title": "Elon Musk 专题 · 工厂才是产品",
+ "page_en": "/podcast-deepread/elon-manufacturing-topic36.en.html",
+ "title_en": "Elon Musk Series · The Factory Is the Product",
+ "src_hash": "7687ce1bbf8a",
+ "questions": [
+  {
+   "id": "a8a218cca6",
+   "question": "SpaceX 先在帐篷里造星舰，弄清楚之后才盖 Starfactory 厂房，最后才自动化。按 Musk 的说法，这样安排的理由是什么？",
+   "options": [
+    "帐篷的单位产出其实比厂房更高，早期产量需求大，只有帐篷才跟得上生产节奏",
+    "当时连火箭最终长什么样都不知道，帐篷里工位能随便挪，可先摸清顺序",
+    "厂房需要冗长的环保审批，先搭帐篷是为了在等待期间不让工程团队闲着没事做",
+    "自动化设备在帐篷里更容易调试，调好之后再连同设备一起搬进厂房"
+   ],
+   "answer": 1,
+   "explanation": "文章说帐篷效率很低，但在产品还没定型时就早早自动化，违反了「自动化放在最后」的规矩；等弄清要造什么再盖厂房，钱才不会白花。",
+   "question_en": "SpaceX built Starship in tents first, put up the Starfactory building only after figuring things out, and automated last. By Musk's account, why this order?",
+   "options_en": [
+    "Tents actually yield more output per unit than buildings, and only tents could keep pace with early production demand",
+    "They didn't even know what the rocket would end up looking like; in tents stations could be moved freely to work out the sequence",
+    "The building required lengthy environmental approvals, so tents kept the engineering team busy in the meantime",
+    "Automation equipment is easier to debug in a tent, then can be moved into the new factory once it's tuned"
+   ],
+   "explanation_en": "The article says tents are inefficient, but automating before the product stabilized would break the “automate last” rule; building the factory only once you know what you're making keeps money from being wasted."
+  },
+  {
+   "id": "78a66394db",
+   "question": "新产线刚搭起来时，中途设了很多检测点来定位问题。问题找到之后，Musk 主张怎么处理这些检测？",
+   "options": [
+    "把检测从产线末端前移到每一道工序，让质量问题在源头上就被逐个拦截下来",
+    "把人工检测全部换成自动视觉检测，保持原有的密度，同时让节拍不受到影响",
+    "只要末端合格率够高就几乎全挪到线尾，因为中途检测拖慢节拍、误剔好件",
+    "全部保留并继续加密，检测点越多越能及早拦住缺陷，从长期看反而更加省钱"
+   ],
+   "answer": 2,
+   "explanation": "Musk 说调试工程师常忘了撤掉这些检测，它们本身成了瓶颈，还会把好零件当废品剔掉。文章也提醒，Deming 要的是工序稳定到不需要大规模检验，不只是把检验挪到线尾。",
+   "question_en": "When a new line is first set up, many mid-line inspection points are added to locate problems. Once the problems are found, what does Musk propose doing with them?",
+   "options_en": [
+    "Move inspection from the end of the line into every station so quality problems are intercepted at the source",
+    "Replace all manual checks with automated vision inspection at the same density so that takt time is unaffected",
+    "If end-of-line yield is high enough, move nearly all of them to the end, since mid-line checks slow takt and reject good parts",
+    "Keep them all and add more; the more checkpoints, the earlier defects are caught, which saves money in the long run"
+   ],
+   "explanation_en": "Musk says engineers often forget to remove these checks, which then become bottlenecks and scrap good parts. The article adds that Deming wanted processes stable enough not to need mass inspection—not merely inspection moved to the end."
+  },
+  {
+   "id": "ff23092adc",
+   "question": "Tesla 年产量在 2023 年达到高峰后，2024、2025 年没有再往上走。文章怎样解读这组数据对「工厂才是产品」这一主张的意义？",
+   "options": [
+    "它证明「工厂才是产品」从一开始就是错的，Tesla 的增长其实全靠产品设计",
+    "数字本身分不清是工厂到了顶还是需求到了顶，曲线变平后卡住的也许已不是工厂",
+    "它证明工厂效率已如宏图计划所言提高了五到十倍，产量自然触到了物理上的极限",
+    "它说明产量停滞完全是芯片短缺所致，工厂和需求这两方面都不存在任何问题"
+   ],
+   "answer": 1,
+   "explanation": "文章指出这一主张默认只要把工厂造好、产量就跟得上，而这些数字无法区分瓶颈在哪；「五到十倍」也没有公开指标可查。说主张全错则走过了头，文章承认工厂确实越做越好。",
+   "question_en": "Tesla's annual output peaked in 2023 and didn't rise further in 2024 or 2025. How does the article read this for the claim that “the factory is the product”?",
+   "options_en": [
+    "It proves “the factory is the product” was wrong from the start, and that Tesla's growth came entirely from design",
+    "The numbers alone can't tell whether the factory or demand has topped out; once the curve flattens, the factory may no longer be the bottleneck",
+    "It proves factory efficiency rose five- to tenfold as the master plan predicted, so output naturally hit a physical limit",
+    "It shows the stall was caused entirely by chip shortages, with no problem on either the factory or the demand side"
+   ],
+   "explanation_en": "The article notes the claim assumes output follows once the factory is built well, but these figures can't pin down the bottleneck—and the “five to ten times” promise has no public metric. Calling the claim wholly wrong goes too far; the article grants the factories did keep improving."
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "page": "/chapter-deepread/fosa-ch17-microservices-architecture-book224.html",
+ "title": "FoSA 第 17 章 · 微服务架构：宁可重复，也不要耦合 — 专业书籍精读 Book 224",
+ "page_en": "/chapter-deepread/fosa-ch17-microservices-architecture-book224.en.html",
+ "title_en": "FoSA Chapter 17 · Microservices Architecture: Prefer Duplication to Coupling — Book Deep Read 224",
+ "src_hash": "8a6043a6c997",
+ "questions": [
+  {
+   "id": "891a130ee7",
+   "question": "好几个微服务都需要一个 Address 地址类。按书中「宁可重复，也不要耦合」的原则，下列哪种复用是书推荐的？",
+   "options": [
+    "在 API 网关里集中实现地址校验等业务规则，各服务只管调用网关给出的结果",
+    "让所有服务共用一个集成数据库，地址数据只存一份，从而彻底避免数据重复",
+    "把 Address 这类通用领域类抽成公共库，各服务继承或组合，改一处全局生效",
+    "把日志、监控、熔断等运维能力放进 sidecar，再连成服务网格统一管理"
+   ],
+   "answer": 3,
+   "explanation": "书的精确修正是：领域逻辑不复用，Address 宁可各写一份；运维关切和领域关切分开，运维能力通过 sidecar 和服务网格复用。共享集成数据库和把业务规则塞进网关，书都明确反对。",
+   "question_en": "Several microservices need an Address class. Under the book's principle of “prefer duplication to coupling,” which kind of reuse does it recommend?",
+   "options_en": [
+    "Implement business rules such as address validation centrally in the API gateway, with services just calling its results",
+    "Have all services share a single integration database so address data is stored once and duplication is eliminated",
+    "Extract common domain classes like Address into a shared library every service inherits from, so one change applies everywhere",
+    "Put operational capabilities like logging, monitoring, and circuit breaking in sidecars, maintained by a shared team as a service mesh"
+   ],
+   "explanation_en": "The book's precise refinement: don't reuse domain logic—duplicate Address in each service—but separate operational from domain concerns and reuse operations via sidecars and a service mesh. It explicitly rejects shared integration databases and business logic in the gateway."
+  },
+  {
+   "id": "9f3d714c24",
+   "question": "某系统里几乎每个业务动作都要靠 Saga 跨好几个服务协调，并配套大量补偿事务。按书的观点，这首先说明什么？",
+   "options": [
+    "这是微服务的正常形态，只要补偿事务写成幂等的，就不必再担心",
+    "应该把所有服务都改成同步调用，按顺序执行就能避免出现中间状态",
+    "服务粒度切错了，总在同一事务里一起改的实体应该合回同一个服务",
+    "团队应该引入两阶段提交，用分布式事务重新获得数据库那样的 ACID"
+   ],
+   "answer": 2,
+   "explanation": "书说别在微服务里做事务、去修粒度；偶尔几个 Saga 可以接受，常态化就说明边界划错了。把幂等补偿当作解药，忽略了中间态对外可见、补偿本身也可能失败的代价。",
+   "question_en": "In one system, nearly every business action needs a Saga coordinating several services, with many compensating transactions. What does the book say this indicates first?",
+   "options_en": [
+    "This is normal for microservices; as long as every compensating transaction is idempotent, there's nothing to worry about",
+    "All services should switch to synchronous calls; executing in sequence avoids any intermediate states",
+    "The service granularity is wrong; entities that always change together in one transaction should be merged into one service",
+    "The team should adopt two-phase commit, regaining database-style ACID guarantees through distributed transactions"
+   ],
+   "explanation_en": "The book says don't do transactions in microservices—fix the granularity. A few Sagas are acceptable; if they become routine, the boundaries are wrong. Treating idempotent compensation as the cure ignores that intermediate states are visible and compensations can fail."
+  },
+  {
+   "id": "65f3492bcd",
+   "question": "一个团队把系统拆成十个独立部署的服务，但它们共用同一个数据库，改一张表要所有服务一起协调。按书的说法，这算什么？",
+   "options": [
+    "一种合理的微服务折中：共享库保证了强一致性，又保留了独立部署的好处",
+    "一种事件驱动架构，依靠数据库触发器在这些服务之间传递消息和状态变化",
+    "标准的微服务架构，只要每个服务的代码仓库和部署流水线彼此独立就够了",
+    "一个分布式单体：既有单体的耦合又有分布式的开销，并不是真正微服务"
+   ],
+   "answer": 3,
+   "explanation": "书明确说「共享数据库的微服务」不是微服务：边界上下文要求数据也隔离，不允许多个服务共享集成数据库，否则改一张表又牵动所有服务。独立部署只解决了一半问题。",
+   "question_en": "A team splits its system into ten independently deployed services, but they share one database, so changing a table requires coordinating all of them. What does the book call this?",
+   "options_en": [
+    "A sensible microservices compromise: the shared database ensures strong consistency while keeping independent deployment",
+    "An event-driven architecture that relies on database triggers to pass messages and state changes between services",
+    "Standard microservices architecture, as long as each service has its own code repository and deployment pipeline",
+    "A distributed monolith: it carries the monolith's coupling and the overhead of distribution, and isn't really microservices"
+   ],
+   "explanation_en": "The book is explicit that “microservices sharing a database” aren't microservices: bounded contexts require data isolation and forbid shared integration databases, or changing one table ripples through every service. Independent deployment solves only half the problem."
+  }
+ ]
+}

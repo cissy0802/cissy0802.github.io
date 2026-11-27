@@ -1,0 +1,69 @@
+{
+ "page": "/novel-deepread/candide-novel117.html",
+ "title": "老实人 — 小说精读 No.117",
+ "page_en": "/novel-deepread/candide-novel117.en.html",
+ "title_en": "Candide — Novels, Deep-Read No.117",
+ "src_hash": "89f931d58ab7",
+ "questions": [
+  {
+   "id": "1031e5922b",
+   "question": "邦葛罗斯能把梅毒、地震、绞索都证明成「最好的安排」。文章认为他这台论证机器的要害是什么？",
+   "options": [
+    "它的毛病是太悲观，把世上一切都看成必要之恶，让人对善失去信心",
+    "它的逻辑推演本身有明显漏洞，只要指出其中一步的错误，整套说法就会立刻崩塌",
+    "它只适用于个人遭遇的小灾小难，一碰上里斯本地震这样的大灾就再也解释不通",
+    "任何坏事下游总能找到一点好事，所以它永不卡住，也就什么都没解释"
+   ],
+   "answer": 3,
+   "explanation": "文章说这台机器分三步：发生坏事、找下游的好事、宣布坏事是那件好事的必要条件；只要世界是连着的就永不卡住。能解释一切的体系等于什么都没解释，只在事后发合格证。邦葛罗斯在大灾难里照样转，所以「碰上大灾就失灵」不对。",
+   "question_en": "Pangloss can prove syphilis, earthquakes, and the gallows are all “for the best.” What does the article see as the crux of his argument machine?",
+   "options_en": [
+    "Its flaw is excessive pessimism: by treating everything as a necessary evil, it makes people lose faith in goodness",
+    "Its chain of logic contains an obvious flaw; point out the mistaken step and the whole argument immediately collapses",
+    "It works only for small personal misfortunes and breaks down as soon as it meets a catastrophe like Lisbon's earthquake",
+    "Since the world is interconnected, some good can always be found downstream of any evil—so it never jams, and thus explains nothing"
+   ],
+   "explanation_en": "The article lays out three steps—something bad happens, find a downstream good, declare the first a necessary condition of the second—and as long as the world is connected it never jams. A system that explains everything explains nothing, merely issuing certificates after the fact. It keeps running through the great disasters, so “breaks on big catastrophes” is wrong."
+  },
+  {
+   "id": "436fd3715c",
+   "question": "文章特别标出「邦葛罗斯不是莱布尼茨」。两者的关键区别是什么？",
+   "options": [
+    "莱布尼茨其实是悲观主义者，认为恶的力量更大，邦葛罗斯把他的立场完全歪曲了",
+    "莱布尼茨论证含恶的世界总体最优，没说每件事单独看好；伏尔泰打的是通俗版",
+    "两者观点完全一致，伏尔泰用一部小说从哲学上彻底驳倒了莱布尼茨的最优世界论",
+    "莱布尼茨的论证建立在经验观察上，邦葛罗斯则抛开经验，只靠纯粹的逻辑推理"
+   ],
+   "answer": 1,
+   "explanation": "文章说莱布尼茨的论证关乎整体：排除恶会损失更大的善；邦葛罗斯把它降成逐件发奖状的诡辩。伏尔泰打的是它在布道坛、沙龙和灾后安慰里的样子，「这是讽刺，不是反驳」。悲观属于玛丁那种摩尼教式立场，不是莱布尼茨。",
+   "question_en": "The article explicitly flags that “Pangloss is not Leibniz.” What is the key difference?",
+   "options_en": [
+    "Leibniz was in fact a pessimist who thought evil had the upper hand, and Pangloss distorts his position entirely",
+    "Leibniz argued that a world containing evil is optimal as a whole, not that each event is good in itself; Voltaire targets the popular version",
+    "Their views are identical, and Voltaire used a novel to refute Leibniz's best-possible-world argument philosophically",
+    "Leibniz built his argument on empirical observation, while Pangloss dropped experience for pure logical deduction"
+   ],
+   "explanation_en": "The article says Leibniz's argument concerns the whole: excluding evils would lose greater goods. Pangloss reduces it to a sophistry of handing out awards event by event. Voltaire attacks the version heard in pulpits, salons, and post-disaster consolation—“this is satire, not refutation.” The pessimism belongs to Martin's Manichaean view, not Leibniz."
+  },
+  {
+   "id": "5e4ecfb761",
+   "question": "结尾邦葛罗斯又把三十章苦难串成一条通向蜜饯和开心果的因果链，老实人答：「说得好，但是我们得耕种自己的园子。」按文章的读法，这句话的分量在哪？",
+   "options": [
+    "老实人终于认同了邦葛罗斯，承认所有苦难都是通向今天幸福的必要条件",
+    "老实人最终接受了玛丁的悲观主义，承认世界由恶主导、人只能埋头干活",
+    "老实人终于找到邦葛罗斯论证中漏洞，用一句话彻底驳倒乐观主义",
+    "不是驳倒那串因果，而是不再在「世界好坏」上争论，转而动手做事"
+   ],
+   "answer": 3,
+   "explanation": "文章说「说得好」是真的承认那串因果无懈可击，「但是」后面接的不是反驳，而是换了话题；结尾的办法是不在这个层面上赢——不是驳倒，是不再需要。玛丁的悲观被文章看作同一台机器的反面，伏尔泰也没让他赢。",
+   "question_en": "At the end Pangloss again strings thirty chapters of suffering into a causal chain leading to candied fruit and pistachios, and Candide replies, “That is well said, but we must cultivate our garden.” By the article's reading, where does the line's weight lie?",
+   "options_en": [
+    "Candide finally agrees with Pangloss that all the suffering was a necessary condition for today's happiness",
+    "Candide finally accepts Martin's pessimism, conceding evil rules the world and one can only keep one's head down",
+    "Candide finally finds the hole in Pangloss's argument and refutes optimism once and for all in a single sentence",
+    "It doesn't refute the causal chain; it stops arguing about whether the world is good and turns to doing the work"
+   ],
+   "explanation_en": "The article reads “well said” as genuinely conceding the chain is airtight, while “but” introduces not a rebuttal but a change of subject—the ending wins by refusing that level of debate: not refutation, but no longer needing it. Martin's pessimism is the same machine in reverse, and Voltaire doesn't let him win either."
+  }
+ ]
+}

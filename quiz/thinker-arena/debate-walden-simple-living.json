@@ -1,0 +1,69 @@
+{
+ "page": "/thinker-arena/debate.html?d=walden-simple-living",
+ "title": "辩论：该主动过「极简 / 少欲」的生活吗？",
+ "page_en": "/thinker-arena/debate.en.html?d=walden-simple-living",
+ "title_en": "Should we deliberately live simply?",
+ "src_hash": "0d72d0f9423c",
+ "questions": [
+  {
+   "id": "90d0717696",
+   "question": "有人砍掉了每月一笔昂贵的订阅，几周后发现省下的时间都被短视频吃掉了，于是认定「简化没用」。按这场辩论的共识，问题出在哪？",
+   "options": [
+    "他砍错了对象，应该先扔掉实体物品，等家里清空了再去处理数字服务",
+    "砍得还不够彻底，应当继续减到只剩生存必需品，诱惑才会真正消失不见",
+    "这说明简化只对意志力强的人有效，普通人更适合维持原来消费习惯",
+    "减法没配接盘者：砍掉开销后，要立刻给腾出的时间和钱指定具体去处"
+   ],
+   "answer": 3,
+   "explanation": "结论指出，砍掉一笔开销后若不给腾出的时间指定去处，它会被屏幕、加班或新开销悄悄收走，人于是得出简化没用的结论；顺序该倒过来，先问腾出来做什么，再决定减什么。比谁减得更彻底，恰是共识所警惕的。",
+   "question_en": "Someone cut an expensive monthly subscription, only to find weeks later that the freed time had been eaten by short videos, and concluded “simplifying doesn't work.” By this debate's consensus, what went wrong?",
+   "options_en": [
+    "They cut the wrong thing; physical belongings should go first, with digital services handled once the home is cleared",
+    "They didn't cut deeply enough; only by reducing to bare necessities would the temptations truly disappear",
+    "It shows simplifying only works for people with strong willpower; ordinary people should keep their old habits",
+    "The subtraction had no destination: right after cutting a cost, the freed time and money need a specific place to go"
+   ],
+   "explanation_en": "The conclusion notes that if freed time isn't given a destination, screens, overtime, or a new expense quietly absorb it, and people conclude simplifying is useless. The order should be reversed: decide what the freed resources are for, then what to cut. Competing over who cuts most is what the consensus warns against."
+  },
+  {
+   "id": "b6db6074b6",
+   "question": "一个收入刚够付房租的家庭受极简风潮影响，打算清掉备用被褥、通勤用的旧车，以及给老人孩子备着的药和现金，好让家里显得清爽。按这场辩论的共识，该怎么看？",
+   "options": [
+    "这是值得鼓励的少欲实践，物品数量降到最低，才能真正摆脱对物质的依赖",
+    "只要动机是自愿而非被迫，清掉哪些东西属个人自由，不必再另作判断",
+    "生存线和缓冲不该拿来极简：越脆弱越需要冗余，好的简化要降低脆弱性",
+    "应该先清掉最占地方的大件，再慢慢减少小件，按体积由大到小逐步推进"
+   ],
+   "answer": 2,
+   "explanation": "结论说许多「多余」其实是缓冲，在失业、生病、停电时救命；生存线以下的节省不是简朴而是透支。判断一件东西留不留，不只问常不常用，也要问没有它时出事的概率多大、替代成本多高。",
+   "question_en": "A household whose income barely covers rent, swept up in the minimalism trend, plans to get rid of spare bedding, the old car used for commuting, and the medicine and cash set aside for elders and kids, so home feels cleaner. How does the debate's consensus view this?",
+   "options_en": [
+    "It's a commendable practice of fewer desires; only by minimizing possessions can one truly escape material dependence",
+    "As long as the motive is voluntary rather than forced, what to discard is personal freedom and needs no further judgment",
+    "The survival line and buffers aren't for minimizing: the more fragile you are, the more redundancy you need, and good simplifying lowers fragility",
+    "They should clear the bulkiest items first and then gradually reduce small ones, working from largest to smallest"
+   ],
+   "explanation_en": "The conclusion says much “excess” is actually buffer that saves you in job loss, illness, or outages; savings below the survival line aren't frugality but overdraft. Whether to keep something depends not only on how often it's used but on the risk and replacement cost of being without it."
+  },
+  {
+   "id": "0f238d2815",
+   "question": "某人践行极简后，每天在社交平台晒自己比别人拥有得更少，并从中获得很强的成就感。按这场辩论的结论，该怎么看？",
+   "options": [
+    "这说明极简本身就是一种虚伪，所有自愿的简朴说到底都只是为被别人看见",
+    "这可能只是换了一个瘾：少欲是少被牵着走，「我比你少」成了计分板就偏了",
+    "只要他的物品数量确实很少，展示与否只是个人风格，并不影响这种简朴的价值",
+    "这是最彻底的少欲：公开展示能强化自我承诺，也能带动更多人一起过简朴的生活"
+   ],
+   "answer": 1,
+   "explanation": "结论强调少欲的核心不是少，而是少被牵着走；若「我比你少」变成新的计分板，不过是换了一个瘾。判断简朴是自由还是身份，看它是让你不必再向谁证明什么，还是递给你一样新东西去证明。说一切自愿简朴都虚伪则走过了头。",
+   "question_en": "After going minimalist, someone posts daily about owning less than others and gets a strong sense of achievement from it. How does the debate's conclusion view this?",
+   "options_en": [
+    "It proves minimalism is inherently hypocritical, since all voluntary simplicity is ultimately about being seen by others",
+    "It may just be swapping one addiction for another: the point is being pulled around less, and “I have less than you” as a scoreboard misses it",
+    "As long as their possessions really are few, posting about it is just personal style and doesn't affect the value of the simplicity",
+    "It's the most thorough form of fewer desires: public display strengthens commitment and inspires others to live simply"
+   ],
+   "explanation_en": "The conclusion stresses that the point isn't having less but being pulled around less; if “I have less than you” becomes a new scoreboard, it's merely a new addiction. Whether simplicity is freedom or status depends on whether it frees you from proving anything or hands you something new to prove. Calling all voluntary simplicity hypocrisy overshoots."
+  }
+ ]
+}

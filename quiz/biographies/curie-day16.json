@@ -1,0 +1,49 @@
+{
+ "page": "/biographies/curie-day16.html",
+ "title": "人物传记 · Marie Curie · Day 16",
+ "page_en": "/biographies/curie-day16.en.html",
+ "title_en": "Biography · Marie Curie · Day 16",
+ "src_hash": "4ba29dde9c4e",
+ "questions": [
+  {
+   "id": "b923e75cef",
+   "question": "居里拒绝为镭的提纯工艺申请专利、把方法完全公开。文章指出这一选择后来的实际结果是什么？",
+   "options": [
+    "别的公司抢先为同一工艺申请了专利，反过来禁止她的实验室继续提纯镭",
+    "各国实验室竞相提纯，镭价格很快大跌，肿瘤病人因此普遍用得起镭疗",
+    "公开没有回流：镭商照样高价卖镭，她自己反要靠募捐买实验用的镭",
+    "法国政府为表彰她的无私给予终身科研资助，居里一家从此再无经济之忧"
+   ],
+   "answer": 2,
+   "explanation": "文章借公共品博弈指出：她向公共池投了钱，镭商照样以十万美元一克出售，全家终身清贫。价格大跌、惠及病人是听起来顺理成章的结局，但文章记录的恰恰相反。",
+   "question_en": "Curie refused to patent her radium purification process and published it openly. What does the article say actually followed?",
+   "options_en": [
+    "Another company patented the same process first and then barred her laboratory from continuing to purify radium",
+    "Labs worldwide raced to purify it, radium prices soon collapsed, and tumor patients could widely afford radium therapy",
+    "Openness had no way to flow back to her: dealers still sold radium at high prices, while she relied on donations to buy it",
+    "The French government rewarded her selflessness with lifelong research funding, and the family never wanted again"
+   ],
+   "explanation_en": "Drawing on the public-goods game, the article notes she paid into the common pool, yet dealers still sold radium at $100,000 a gram while her family stayed poor. Falling prices and patient access sound like the natural ending, but the article records the opposite."
+  },
+  {
+   "id": "e3ffbe01c3",
+   "question": "身边研究者陆续出现灼伤、贫血、早逝，居里仍坚持镭基本无害。文章认为这一盲区更深的根源是什么？",
+   "options": [
+    "她长期孤立于学界之外，没有任何渠道接触到同行陆续发表辐射损伤报告",
+    "她担心镭被证明有害会断送镭疗产业，让自己失去来自企业的经费和长期赞助",
+    "当时完全没有任何关于辐射危害的证据，任何科学家处在她的位置都会这样判断",
+    "她对镭近乎信仰式的投入，使承认它有害几乎等于否定她自己的身份与意义"
+   ],
+   "answer": 3,
+   "explanation": "文章说不能全推给时代，1900 年代已有同行因辐射受伤甚至死亡，证据并非完全缺席；根源是当一个发现成了你的身份，承认它有害就等于否定自己。破解之道是刻意制造外部视角。",
+   "question_en": "As colleagues suffered burns, anemia, and early deaths, Curie still insisted radium was essentially harmless. What does the article see as the deeper root of this blind spot?",
+   "options_en": [
+    "She was long isolated from the scientific community and had no access to colleagues' reports on radiation injury",
+    "She feared proof of harm would kill the radium-therapy industry and cost her corporate funding and sponsorship",
+    "There was no evidence at all of radiation harm back then; any scientist in her position would have judged the same way",
+    "Her near-religious devotion to radium meant admitting its harm would amount to negating her own identity and meaning"
+   ],
+   "explanation_en": "The article says it can't all be blamed on the era—by the 1900s colleagues had already been injured or killed, so evidence wasn't absent. The root is that once a discovery becomes your identity, admitting its harm means negating yourself; the remedy is deliberately seeking an outside view."
+  }
+ ]
+}

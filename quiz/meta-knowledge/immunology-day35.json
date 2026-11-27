@@ -1,0 +1,69 @@
+{
+ "page": "/meta-knowledge/immunology-day35.html",
+ "title": "元知识详解：免疫学 — Day 35",
+ "page_en": "/meta-knowledge/immunology-day35.en.html",
+ "title_en": "Meta Knowledge Explained: Immunology — Day 35",
+ "src_hash": "5227ea726f0c",
+ "questions": [
+  {
+   "id": "8199731302",
+   "question": "早期疫苗学反复失败：把纯抗原打进体内，几乎产生不了免疫力。按文章，问题出在哪？",
+   "options": [
+    "抗原形状不够精确：必须用活病原，B 细胞才能生成匹配的受体并完成记忆",
+    "缺少危险信号：先天免疫没点火，适应免疫就不启动，甚至可能诱导出耐受",
+    "抗原在体内降解太快：佐剂主要是延长抗原的保存时间，让它慢慢地释放",
+    "抗原剂量太低：适应免疫需要大量抗原才能被激活，只要加大剂量就能解决"
+   ],
+   "answer": 1,
+   "explanation": "文章说树突细胞必须先呈递抗原并附上「这是危险的」信号，适应免疫才肯行动；所以要加佐剂人为制造危险信号，否则免疫系统判定无害而忽略，反而诱导耐受。这说明先天免疫不是备胎而是点火开关。",
+   "question_en": "Early vaccinology kept failing: injecting pure antigen produced almost no immunity. Per the article, what was the problem?",
+   "options_en": [
+    "The antigen's shape wasn't precise enough; only live pathogens let B cells generate matching receptors and memory",
+    "No danger signal: without innate immunity igniting, adaptive immunity never starts and may even be steered toward tolerance",
+    "The antigen degraded too quickly; adjuvants mainly prolong its life in the body so it is released slowly",
+    "The antigen dose was too low: adaptive immunity needs large amounts of antigen, so a bigger dose would solve it"
+   ],
+   "explanation_en": "The article says dendritic cells must present antigen along with a “this is dangerous” signal before adaptive immunity acts, hence adjuvants to supply that signal; otherwise the system deems it harmless and ignores it, even inducing tolerance. This is why innate immunity is the ignition switch, not a backup."
+  },
+  {
+   "id": "3d1450b73e",
+   "question": "免疫受体是随机生成的上亿种，必然有些会识别自身组织。按文章，免疫系统「不攻击自己」靠的是什么？",
+   "options": [
+    "先天免疫一发现自反应克隆就立即启动炎症反应，把这些细胞就地全部清除掉",
+    "受体在基因层面就被设定成识别不了自身分子，因此天生就不会攻击自己的组织",
+    "自身组织表面没有可被识别的抗原，免疫细胞根本无从发起针对自身的攻击",
+    "后天学会忽略自己：胸腺淘汰强自反应 T 细胞，调节性 T 细胞压制漏网者"
+   ],
+   "answer": 3,
+   "explanation": "文章强调耐受不是「天生认识自己」，而是「主动学会忽略自己」的后天过程：中枢耐受在胸腺淘汰，外周耐受靠调节性 T 细胞持续压制；一旦失灵就是自身免疫病。",
+   "question_en": "Immune receptors are randomly generated in the hundreds of millions, so some inevitably recognize the body's own tissue. Per the article, how does the immune system avoid attacking itself?",
+   "options_en": [
+    "Innate immunity triggers inflammation as soon as it detects self-reactive clones, wiping those cells out on the spot",
+    "Receptors are genetically programmed to be unable to recognize self molecules, so they are innately incapable of attacking self",
+    "The body's own tissues carry no recognizable antigens on their surface, so immune cells have nothing to target",
+    "By actively learning to ignore self: the thymus eliminates strongly self-reactive T cells, and regulatory T cells suppress those that slip through"
+   ],
+   "explanation_en": "The article stresses that tolerance isn't “innately knowing self” but an acquired process of “actively learning to ignore self”: central tolerance culls in the thymus, peripheral tolerance relies on regulatory T cells; when it fails, autoimmune disease results."
+  },
+  {
+   "id": "e6ba61d76b",
+   "question": "一个孩子得过麻疹康复后，接下来两三年里，对一些早已接种过疫苗或得过的其他传染病又变得易感。按文章，最合理的解释是？",
+   "options": [
+    "那些病原像流感一样不断改写表面抗原，让孩子原有记忆认错人",
+    "麻疹专门杀伤记忆细胞，擦除了此前对其他病原已获得的免疫记忆",
+    "麻疹与这些病原抗原相似，交叉反应耗尽了孩子体内的全部抗体储备",
+    "康复后免疫系统进入长期休眠，需要两三年才能重新自然地启动起来"
+   ],
+   "answer": 1,
+   "explanation": "文章说最反直觉的是麻疹本身会「擦除」免疫记忆：它专门杀伤记忆细胞，让人对此前已免疫的其他病原重新易感，可持续两三年。抗原变异是流感、冠状病毒让旧记忆失效的原因，不是这里的机制。",
+   "question_en": "After recovering from measles, a child becomes susceptible again for two or three years to other infections they had been vaccinated against or had before. Per the article, what's the most plausible explanation?",
+   "options_en": [
+    "Those pathogens, like flu, keep rewriting their surface antigens, so the child's existing memory misidentifies them",
+    "Measles specifically kills memory cells, erasing immune memory previously acquired against other pathogens",
+    "Measles antigens resemble those pathogens, and cross-reactivity used up every antibody in the child's body",
+    "After recovery, the immune system enters a long dormancy and needs two or three years to restart naturally"
+   ],
+   "explanation_en": "The article notes the most counterintuitive fact: measles itself “erases” immune memory by killing memory cells, making people susceptible again to pathogens they were immune to, for two to three years. Antigenic change is why flu and coronaviruses outrun old memory—not the mechanism here."
+  }
+ ]
+}
